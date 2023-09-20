@@ -1,0 +1,137 @@
+#page-topbar{
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  z-index:1002;
+  background-color:#0747A6;
+  -webkit-transition:all .1s ease-out;
+  transition:all .1s ease-out;
+  border-bottom:1px solid white
+}
+#page-topbar.topbar-shadow{
+  -webkit-box-shadow:0 1px 2px rgba(56,65,74,.15);
+  box-shadow:0 1px 2px rgba(56,65,74,.15)
+}
+@media (min-width:768px){
+  #page-topbar{
+      left:250px;
+  }
+}
+.navbar-header{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -ms-flex-pack:justify;
+  -webkit-box-pack:justify;
+  justify-content:space-between;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  margin:0 auto;
+  height:70px;
+  padding:0 1.5rem 0 calc(1.5rem * .5)
+}
+@media (max-width:767.98px){
+  .navbar-header{
+      padding:0 calc(1.5rem * .5) 0 calc(1.5rem * .5)
+  }
+}
+.navbar-header .topbar-head-dropdown .dropdown-menu.show{
+  top:13px!important
+}
+
+
+
+.navbar-header .btn-topbar{
+  height:42px;
+  width:42px;
+  color:#fff;
+  -webkit-transition:all .5s ease;
+  transition:all .5s ease
+}
+.navbar-header .btn-topbar.active,.navbar-header .btn-topbar:active,.navbar-header .btn-topbar:focus,.navbar-header .btn-topbar:hover{
+  background-color:#ffffff69;
+}
+@media (max-width:360px){
+  .navbar-header .btn-topbar{
+      height:36px;
+      width:36px
+  }
+}
+.navbar-header .user-name-sub-text{
+  color:#fff;
+}
+.navbar-header .user-name-text{
+  color:#fff;
+}
+.app-search{
+  padding:calc(32px * .5) 0
+}
+.app-search .form-control{
+  border: none;
+  height: 40px;
+  padding-left: 15px;
+  padding-right: 103px;
+  background-color: #ffffff7a;
+  color: #ffffff;
+  box-shadow: none;
+}
+.app-search span.search-widget-icon{
+  position:absolute;
+  z-index:10;
+  font-size:18px;
+  line-height:38px;
+  left:13px;
+  top:0;
+  color:#fff;
+}
+.app-search .search-widget-icon-close{
+  right:7px;
+  left:auto!important
+}
+@media (max-width:1023.99px){
+  .app-search{
+      padding-left:calc(1.5rem * .5)
+  }
+}
+@media (max-width:767.98px){
+  .logo span.logo-lg{
+      display:none
+  }
+  .logo span.logo-sm{
+      display:inline-block
+  }
+}
+.header-item{
+  height:70px;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center
+}
+.header-profile-user{
+  height:32px;
+  width:32px
+}
+.topbar-badge-sm{
+  right:0;
+  top:7px!important
+}
+.topbar-badge{
+  right:-9px;
+  top:4px!important
+}
+
+.hamburger{
+filter:brightness(0) invert(1);
+}
+.top-icon img{
+  filter: brightness(0) invert(1);
+  background-color: #ffffff37;
+  padding: 6px;
+  border-radius: 5px;
+}
+
