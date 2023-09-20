@@ -1,4 +1,4 @@
-<div class="app-menu navbar-menu " [class.collapsed]="isNavbarCollapsed">
+<div class="app-menu navbar-menu " >
     <!-- LOGO -->
     <div class="navbar-brand-box">
       <!-- Dark Logo-->
@@ -31,7 +31,7 @@
               aria-controls="sidebarDashboards"
             >
               <img src="../../../assets/icons/home.png" />
-              <span data-key="t-dashboards">Dashboards</span>
+              <span (click)="navigateToPage('/dashboard')" data-key="t-dashboards">Dashboards</span>
             </a>
           </li>
           <!-- end Dashboard Menu -->
@@ -45,7 +45,7 @@
               aria-controls="sidebarApps"
             >
               <img src="../../../assets/icons/login.png" />
-              <span data-key="t-apps">Log in</span>
+              <span (click)="navigateToPage('/login')"  data-key="t-apps">Log in</span>
             </a>
           </li>
           <li class="nav-item">

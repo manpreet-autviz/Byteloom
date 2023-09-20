@@ -30,8 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/echarts/dist/echarts.css"
+              "src/styles.scss"
+             
             ],
             "scripts": [
               "node_modules/echarts/dist/echarts.min.js"
@@ -96,8 +96,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/echarts/dist/echarts.css"
+              "src/styles.scss"
+             
             ],
             "scripts": [
               "node_modules/echarts/dist/echarts.min.js"

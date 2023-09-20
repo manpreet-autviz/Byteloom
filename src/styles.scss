@@ -6,38 +6,68 @@
   font-family: "Nunito Sans", sans-serif;
   box-sizing: border-box;
 }
-.f-3{
+.f-3 {
   font-weight: 300;
 }
-.f-4{
+.f-4 {
   font-weight: 400;
 }
-.f-5{
+.f-5 {
   font-weight: 500;
 }
-.f-6{
+.f-6 {
   font-weight: 600;
 }
-.f-7{
+.f-7 {
   font-weight: 700;
 }
-.f-8{
+.f-8 {
   font-weight: 700;
 }
-.small-text{
+.small-text {
   font-size: 13px;
 }
-.bg-blue{
-   background: #0747A6;
+.bg-blue {
+  background: #0747a6;
 }
-.bg-orange{
-  background: #FF821C;
+.bg-orange {
+  background: #ff821c;
+}
+.bg-purple {
+  background: #7e74fb;
+}
+.bg-light-blue {
+  background: #5a96e3;
+}
 
+.card {
+  border: none !important;
 }
-.bg-purple{
-  background: #7E74FB;
-}
-.bg-light-blue{
-  background: #5A96E3;
 
+.graph-card{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); /* Adjust opacity here */
+  transition: box-shadow 0.3s ease;
+}
+
+.tile-chart canvas {
+  left: -9px !important;
+  top: -19px !important;
+  width: 106px !important;
+  height: 106px !important;
+}
+
+.page-content {
+  padding: calc(70px + 1.5rem) calc(1.5rem * 0.5) 60px calc(1.5rem * 0.5);
+}
+.main-content {
+  margin-left: 250px;
+  background-color: #f4f4f4;
+  height: 100vh;
+}
+.navbar-menu.show {
+  width: 270px;
+}
+.navbar-menu {
+  width: 80px;
+  overflow-x:hidden;
 }

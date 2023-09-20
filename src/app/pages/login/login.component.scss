@@ -1,0 +1,44 @@
+.filter-btn-trend{
+  min-width: 120px;
+}
+.sidebar-menu.show {
+
+  width: 270px;
+
+}
+
+.sidebar-menu{
+
+width: 70px;
+
+background-color: black;
+
+height: 100vh;
+
+position: absolute;
+
+left: 0;
+
+transform: all 0.4 ease-out;
+
+}
+
+ 
+
+.sidebar-menu ul li{
+
+list-style: none;
+
+color:#fff;
+
+gap: 10px;
+
+display: flex;
+
+}
+
+.sidebar-menu ul li i{
+
+margin-right: 10px;
+
+}

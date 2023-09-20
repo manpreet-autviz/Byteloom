@@ -77,7 +77,7 @@ export class DashboardComponent {
           },
           progress: {
             show: true,
-            width: 10,
+            width: 15,
           },
 
           pointer: {
@@ -85,7 +85,7 @@ export class DashboardComponent {
           },
           axisLine: {
             lineStyle: {
-              width: 10,
+              width: 15,
             },
           },
           axisTick: {
@@ -153,7 +153,7 @@ export class DashboardComponent {
           },
           progress: {
             show: true,
-            width: 10,
+            width: 15,
           },
 
           pointer: {
@@ -161,7 +161,7 @@ export class DashboardComponent {
           },
           axisLine: {
             lineStyle: {
-              width: 10,
+              width: 15,
             },
           },
           axisTick: {

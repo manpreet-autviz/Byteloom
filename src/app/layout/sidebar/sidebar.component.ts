@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavbarService } from 'src/app/services/navbar.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,11 @@ import { NavbarService } from 'src/app/services/navbar.service';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  constructor(private navbarService: NavbarService) {}
+  constructor(private router : Router){
 
-  get isNavbarCollapsed(): boolean {
-    return this.navbarService.isCollapsed;
+  }
+
+  navigateToPage(path:string){
+    this.router.navigate([path]);
   }
 }

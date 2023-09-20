@@ -1,15 +1,21 @@
 import { Component } from '@angular/core';
-import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  constructor(private navbarService: NavbarService) {}
+  isMenuVisible: boolean = true;
+  toggleMenuDisplay() {
+    const menu = document.querySelector('.navbar-menu') as HTMLElement;
 
-  toggleNavbar(): void {
-    this.navbarService.toggleNavbar();
+    if (this.isMenuVisible) {
+      menu.classList.remove('show');
+    } else {
+      menu.classList.add('show');
+    }
+
+    this.isMenuVisible = !this.isMenuVisible;
   }
 }
