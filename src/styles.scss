@@ -54,20 +54,50 @@
   top: -19px !important;
   width: 106px !important;
   height: 106px !important;
+  margin-left: 15%;
 }
 
 .page-content {
-  padding: calc(70px + 1.5rem) calc(1.5rem * 0.5) 60px calc(1.5rem * 0.5);
+  padding: calc(70px + 1.5rem) calc(1.5rem * 0.5) 60px calc(0.75rem * 0.5);
+}
+
+.collapse-content .main-content {
+  margin-left: 90px !important;
+  transition: all 0.3s ease-out;
+
 }
 .main-content {
-  margin-left: 250px;
+  margin-left: 270px;
   background-color: #f4f4f4;
-  height: 100vh;
+  transition: all 0.3s ease-out;
+
 }
-.navbar-menu.show {
-  width: 270px;
+.collapse-content .navbar-menu {
+  width: 90px;
+  transition: all 0.3s ease-out;
+
 }
 .navbar-menu {
-  width: 80px;
+  width: 270px;
   overflow-x:hidden;
+  transition: all 0.3s ease-out;
+
 }
+.collapse-content .navbar-menu .navbar-nav .nav-link span , .collapse-content .navbar-menu .navbar-brand-box{
+display: none !important;
+}
+.collapse-content .navbar-menu .navbar-nav .nav-link {
+  align-items: center;
+  top:50%;
+  }
+  .collapse-content .navbar-header{
+    margin-left: 90px;
+  }
+ .navbar-header{
+     margin-left:250px !important;
+ }
+
+.chart-pie{
+  margin-left: 17%;
+}
+

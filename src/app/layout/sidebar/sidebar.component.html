@@ -23,6 +23,7 @@
         <ul class="navbar-nav border-top py-2" id="navbar-nav">
           <li class="nav-item">
             <a
+             (click)="navigateToPage('/dashboard')"
               class="nav-link menu-link"
               href="#sidebarDashboards"
               data-bs-toggle="collapse"
@@ -31,12 +32,13 @@
               aria-controls="sidebarDashboards"
             >
               <img src="../../../assets/icons/home.png" />
-              <span (click)="navigateToPage('/dashboard')" data-key="t-dashboards">Dashboards</span>
+              <span  data-key="t-dashboards">Dashboards</span>
             </a>
           </li>
           <!-- end Dashboard Menu -->
           <li class="nav-item">
             <a
+            (click)="navigateToPage('/login')" 
               class="nav-link menu-link"
               href="#"
               data-bs-toggle="collapse"
@@ -45,7 +47,7 @@
               aria-controls="sidebarApps"
             >
               <img src="../../../assets/icons/login.png" />
-              <span (click)="navigateToPage('/login')"  data-key="t-apps">Log in</span>
+              <span  data-key="t-apps">Log in</span>
             </a>
           </li>
           <li class="nav-item">

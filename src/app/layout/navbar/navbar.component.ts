@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   isMenuVisible: boolean = true;
   toggleMenuDisplay() {
-    const menu = document.querySelector('.navbar-menu') as HTMLElement;
-
+    const menu = document.querySelector('.wrapper') as HTMLElement;
+   
     if (this.isMenuVisible) {
-      menu.classList.remove('show');
+      menu.classList.remove('collapse-content');
     } else {
-      menu.classList.add('show');
+      menu.classList.add('collapse-content');
     }
 
     this.isMenuVisible = !this.isMenuVisible;
