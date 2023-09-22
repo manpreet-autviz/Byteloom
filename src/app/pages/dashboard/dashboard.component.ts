@@ -9,6 +9,7 @@ import * as echarts from 'echarts';
 export class DashboardComponent {
   option!: echarts.EChartsOption;
   states: string[] = [
+    'Pan India',
     'Punjab',
     'Haryana',
     'NCR',
@@ -18,13 +19,15 @@ export class DashboardComponent {
     'Maharashtra',
   ];
   filters: string[] = [
-    'Last month',
-    'Last 3 months',
-    'Last 6 months  ',
-    // 'Select custom'
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September'
   ];
-  selectedState: string = 'Punjab';
-  selectedFilter: string = 'Last month';
+  selectedState: string = 'Pan India';
+  selectedFilter: string = 'September';
   IrrChart!: echarts.ECharts;
   pfChart!: echarts.ECharts;
   loginTotalAmount: number = 3.95;

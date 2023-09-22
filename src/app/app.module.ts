@@ -7,13 +7,15 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { LoginComponent } from './pages/login/login.component';
+import { FinancialApprovalsComponent } from './pages/financial-approvals/financial-approvals.component';
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     SidebarComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    FinancialApprovalsComponent
   ],
   imports: [
     BrowserModule,
