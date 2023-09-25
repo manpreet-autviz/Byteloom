@@ -17,7 +17,7 @@
               >
                 {{!isToggled ?'See Trend' : 'Normal View'}} <i  class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
               </button>
-              <select
+              <select *ngIf="!isToggled" 
                 id="dropdown"
                 class="form-select me-2"
                 [(ngModel)]="selectedFilter"
@@ -27,11 +27,23 @@
                   {{ filter }}
                 </option>
               </select>
+              <select *ngIf="isToggled" 
+              id="dropdown"
+              class="form-select me-2"
+              [(ngModel)]="selectedTrendFilter"
+              (ngModelChange)=" onTrendFilterChange($event) "
+            >
+              <option *ngFor="let filter of monthFilters" [value]="filter">
+                {{ filter }}
+              </option>
+              
+            </select>
+
               <select
                 id="dropdown"
                 class="form-select"
                 [(ngModel)]="selectedState"
-                (ngModelChange)="onStateChange($event)"
+                (ngModelChange)="!isToggled ?onStateChange($event) : ontrendStateChange($event)"
               >
                 <option *ngFor="let state of states" [value]="state">
                   {{ state }}

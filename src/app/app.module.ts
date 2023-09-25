@@ -8,6 +8,7 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FinancialApprovalsComponent } from './pages/financial-approvals/financial-approvals.component';
+import { DisbursalComponent } from './pages/disbursal/disbursal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +16,8 @@ import { FinancialApprovalsComponent } from './pages/financial-approvals/financi
     SidebarComponent,
     NavbarComponent,
     LoginComponent,
-    FinancialApprovalsComponent
+    FinancialApprovalsComponent,
+    DisbursalComponent
   ],
   imports: [
     BrowserModule,

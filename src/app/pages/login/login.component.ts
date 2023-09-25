@@ -18,7 +18,7 @@ export class LoginComponent implements AfterViewInit {
   trendSchemeLoginsChart!: echarts.ECharts;
   trendProductLoginsChart!: echarts.ECharts;
   trendSourceChart!: echarts.ECharts;
-
+  monthFilters: string[] = ['Month to Date', 'Three month'];
   states: string[] = [
     'Pan India',
     'Punjab',
@@ -38,6 +38,7 @@ export class LoginComponent implements AfterViewInit {
     'September',
     // 'Select custom'
   ];
+  selectedTrendFilter: string = 'Month to Date';
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
   showContent!: boolean;
@@ -248,7 +249,7 @@ export class LoginComponent implements AfterViewInit {
             },
             data: [
               { value: 27, name: 'Top-Up', itemStyle: { color: '#FF7629' } },
-              { value: 45, name: 'Fresh', itemStyle: { color: '#FF0000' } },
+              { value: 45, name: 'Fresh', itemStyle: { color: '#FF7629' } },
               { value: 26, name: 'BT', itemStyle: { color: '#94DD1D' } },
             ],
           },
@@ -1093,6 +1094,7 @@ export class LoginComponent implements AfterViewInit {
   }
 
   onFilterChange(selectedValue: string) {
+    console.log(selectedValue)
     this.generateStateRandomData();
     this.generateAverageStateRandomData();
     this.generateSchemeRandomData();
@@ -1104,6 +1106,7 @@ export class LoginComponent implements AfterViewInit {
   }
 
   onStateChange(selectedValue: string) {
+    console.log(selectedValue)
     this.generateStateRandomData();
     this.generateAverageStateRandomData();
     this.generateSchemeRandomData();
@@ -1206,4 +1209,226 @@ export class LoginComponent implements AfterViewInit {
     this.sourceOption.series[0].data = newData;
     this.SourceChart.setOption(this.sourceOption);
   }
+
+
+  ontrendStateChange(selectedValue: string){
+    console.log(selectedValue)
+    this.TrendgenerateStateRandomData(selectedValue);
+    this.TrendgenerateAverageStateRandomData(selectedValue);
+    this.TrendgenerateSchemeRandomData(selectedValue);
+    this.TrendgenerateProductRandomData(selectedValue);
+    this.TrendgenerateSourceRandomData(selectedValue);
+   
+  }
+
+  onTrendFilterChange(selectedValue: string) {
+    this.TrendgenerateStateRandomData(selectedValue);
+    this.TrendgenerateAverageStateRandomData(selectedValue);
+    this.TrendgenerateSchemeRandomData(selectedValue);
+    this.TrendgenerateProductRandomData(selectedValue);
+    this.TrendgenerateSourceRandomData(selectedValue);
+    
+  }
+
+  TrendgenerateStateRandomData(selectedValue: string) {
+    if (selectedValue === 'Three month') {
+      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      this.trendStateOption.xAxis[0].data = newAxisdata;
+      const StateminValues = [550, 1000, 2500];
+      const StatemaxValues = [1000, 2000, 3500];
+
+      const newData = StateminValues.map((min, index) => {
+        const max = StatemaxValues[index];
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      });
+      this.trendStateOption.series[0].data = newData;
+      this.trendStateChart.setOption(this.trendStateOption);
+    }
+    else{
+      const newAxisdata = [ 'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+      'Jan',
+      'Feb',
+      'Mar',];
+      this.trendStateOption.xAxis[0].data = newAxisdata;
+      const StateminValues = [550, 1000, 2500,3000,3500];
+      const StatemaxValues = [1000, 2000, 3500,4000,4000];
+
+      const newData = StateminValues.map((min, index) => {
+        const max = StatemaxValues[index];
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      });
+      this.trendStateOption.series[0].data = newData;
+      this.trendStateChart.setOption(this.trendStateOption);
+    }
+  }
+
+  TrendgenerateAverageStateRandomData(selectedValue: string) {
+
+    if (selectedValue === 'Three month') {
+      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      this.trendAverageStateOption.xAxis[0].data = newAxisdata;
+      const StateminValues = [10.7, 12.5, 14];
+      const StatemaxValues = [11, 13, 15];
+
+      const newData = StateminValues.map((min, index) => {
+        const max = StatemaxValues[index];
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      });
+      this.trendAverageStateOption.series[0].data = newData;
+      this.trendAverageStateChart.setOption(this.trendAverageStateOption);
+    }
+    else{
+      const newAxisdata = [ 'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+      'Jan',
+      'Feb',
+      'Mar',];
+      this.trendAverageStateOption.xAxis[0].data = newAxisdata;
+      const StateminValues = [10.7, 11.5,12.2,13.4, 14];
+      const StatemaxValues = [11,12, 13,14, 15];
+
+      const newData = StateminValues.map((min, index) => {
+        const max = StatemaxValues[index];
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      });
+      this.trendAverageStateOption.series[0].data = newData;
+      this.trendAverageStateChart.setOption(this.trendAverageStateOption);
+    }
+  }
+
+  TrendgenerateSchemeRandomData(selectedValue: string) {
+    if (selectedValue === 'Three month') {
+      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      this.trendSchemeloginsOption.xAxis[0].data = newAxisdata;
+      const StateminValues = [550, 1000, 2500];;
+      const StatemaxValues =  [1000, 2000, 3500];
+
+      const newData = StateminValues.map((min, index) => {
+        const max = StatemaxValues[index];
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      });
+      this.trendSchemeloginsOption.series[0].data = newData;
+      this.trendSchemeLoginsChart.setOption(this.trendSchemeloginsOption);
+    }
+    else{
+      const newAxisdata = [ 'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+      'Jan',
+      'Feb',
+      'Mar',];
+      this.trendSchemeloginsOption.xAxis[0].data = newAxisdata;
+      const StateminValues = [550, 1000, 2500,3000,3500];
+      const StatemaxValues =  [1000, 2000, 3500,4000,4000];
+
+      const newData = StateminValues.map((min, index) => {
+        const max = StatemaxValues[index];
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      });
+      this.trendSchemeloginsOption.series[0].data = newData;
+      this.trendSchemeLoginsChart.setOption(this.trendSchemeloginsOption);
+    }
+  }
+
+  TrendgenerateProductRandomData(selectedValue: string) {
+    if (selectedValue === 'Three month') {
+      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      this.trendProductloginsOption.xAxis[0].data = newAxisdata;
+      const StateminValues = [550, 1000, 2500];;
+      const StatemaxValues =  [1000, 2000, 3500];;
+
+      const newData = StateminValues.map((min, index) => {
+        const max = StatemaxValues[index];
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      });
+      this.trendProductloginsOption.series[0].data = newData;
+      this.trendProductLoginsChart.setOption(this.trendProductloginsOption);
+    }
+    else{
+      const newAxisdata = [ 'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+      'Jan',
+      'Feb',
+      'Mar',];
+      this.trendProductloginsOption.xAxis[0].data = newAxisdata;
+      const StateminValues = [550, 1000, 2500,3000,3500];;
+      const StatemaxValues =  [1000, 2000, 3500,4000,4000];;
+
+      const newData = StateminValues.map((min, index) => {
+        const max = StatemaxValues[index];
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      });
+      this.trendProductloginsOption.series[0].data = newData;
+      this.trendProductLoginsChart.setOption(this.trendProductloginsOption);
+    }
+  }
+  TrendgenerateSourceRandomData(selectedValue: string) {
+    if (selectedValue === 'Three month') {
+      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      this.trendSourceOption.xAxis[0].data = newAxisdata;
+      const StateminValues = [40.6, 45, 49];
+      const StatemaxValues = [46, 47, 50];
+
+      const newData = StateminValues.map((min, index) => {
+        const max = StatemaxValues[index];
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      });
+      this.trendSourceOption.series[0].data = newData;
+      this.trendSourceChart.setOption(this.trendSourceOption);
+    }
+    else{
+      const newAxisdata = [ 'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+      'Jan',
+      'Feb',
+      'Mar',];
+      this.trendSourceOption.xAxis[0].data = newAxisdata;
+      const StateminValues = [40.5, 43, 45.5,46,48];
+      const StatemaxValues = [43, 45, 47,47.5,50];
+
+      const newData = StateminValues.map((min, index) => {
+        const max = StatemaxValues[index];
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      });
+      this.trendSourceOption.series[0].data = newData;
+      this.trendSourceChart.setOption(this.trendSourceOption);
+    }
+  }
+
+
 }

@@ -48,6 +48,9 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); /* Adjust opacity here */
   transition: box-shadow 0.3s ease;
 }
+.filter-btn-trend{
+  min-width: 120px;
+}
 
 .tile-chart canvas {
   left: -9px !important;
@@ -101,3 +104,6 @@ display: none !important;
   margin-left: 17%;
 }
 
+.btn:hover {
+  background: #0747a6 !important;
+}

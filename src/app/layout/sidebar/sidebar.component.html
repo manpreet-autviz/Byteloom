@@ -24,7 +24,8 @@
           <li class="nav-item">
             <a
              (click)="navigateToPage('/dashboard')"
-              class="nav-link menu-link"
+             [class.active]="activeItem === '/dashboard'"
+              class="nav-link menu-link "
               href="#sidebarDashboards"
               data-bs-toggle="collapse"
               role="button"
@@ -39,6 +40,7 @@
           <li class="nav-item">
             <a
             (click)="navigateToPage('/login')" 
+            [class.active]="activeItem === '/login'"
               class="nav-link menu-link"
               href="#"
               data-bs-toggle="collapse"
@@ -51,7 +53,8 @@
             </a>
           </li>
           <li class="nav-item">
-            <a
+            <a  (click)="navigateToPage('/financial-approvals')" 
+            [class.active]="activeItem === '/financial'"
               class="nav-link menu-link"
               href="#"
               data-bs-toggle="collapse"
@@ -79,7 +82,8 @@
             </a>
           </li>
           <li class="nav-item">
-            <a
+            <a (click)="navigateToPage('/disbursal')"
+            [class.active]="activeItem === '/disbursal'"
               class="nav-link menu-link"
               href="#"
               data-bs-toggle="collapse"
