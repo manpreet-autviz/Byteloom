@@ -52,6 +52,7 @@ font-size:12px;
 .graph-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); /* Adjust opacity here */
   transition: box-shadow 0.3s ease;
+  margin-top: 20px;
 }
 .filter-btn-trend {
   min-width: 120px;
@@ -65,16 +66,15 @@ font-size:12px;
   margin-left: 15%;
 }
 
-.page-content {
-  padding: calc(70px + 1.5rem) calc(1.5rem * 0.5) 60px calc(0.75rem * 0.5);
+.breadcrumb {
+  padding-top: 62px;
 }
-
 .collapse-content .main-content {
   margin-left: 90px !important;
   transition: all 0.3s ease-out;
 }
 .main-content {
-  margin-left: 252px;
+  margin-left: 238px;
   background-color: #f4f4f4;
   transition: all 0.3s ease-out;
 }
@@ -83,7 +83,7 @@ font-size:12px;
   transition: all 0.3s ease-out;
 }
 .navbar-menu {
-  width: 252px;
+  width: 238px;
   transition: all 0.3s ease-out;
 }
 .collapse-content .navbar-menu .navbar-nav .nav-link span,
@@ -98,7 +98,43 @@ font-size:12px;
   margin-left: 90px !important;
 }
 .navbar-header {
-  margin-left: 250px !important;
+  margin-left: 240px !important;
+}
+@media only screen and (max-width: 991px){ 
+  
+.collapse-content .main-content {
+  margin-left: 237px !important;
+  transition: all 0.3s ease-out;
+}
+.main-content {
+  margin-left: 90px;
+  background-color: #f4f4f4;
+  transition: all 0.3s ease-out;
+}
+.collapse-content .navbar-menu {
+  width: 234px;
+  transition: all 0.3s ease-out;
+}
+.navbar-menu {
+  width: 90px;
+  transition: all 0.3s ease-out;
+}
+.navbar-menu .navbar-nav .nav-link span,
+ .navbar-menu .navbar-brand-box {
+  display: none !important;
+}
+.collapse-content .navbar-menu .navbar-nav .nav-link {
+  align-items: center;
+  top: 50%;
+}
+.collapse-content .navbar-header {
+  margin-left: 234px !important;
+}
+.navbar-header {
+  margin-left: 90px !important;
+}
+ 
+
 }
 
 .chart-pie {
@@ -111,12 +147,13 @@ font-size:12px;
 
 ///calender css
 
-.fc-scrollgrid-sync-inner {
-  a {
+.fc-scrollgrid-sync-inner a {
+
     text-decoration: none !important;
+    color: #444343;
     
   }
-}
+
 
 .fc-daygrid-day-top{
   a{
@@ -125,5 +162,40 @@ font-size:12px;
     font-size: 15px;
     line-height: 20.46px;
     text-align: Right;
+    background-color: #F3F3F3;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
   }
+}
+@media only screen and (max-width: 1024px) and (min-width: 991px){
+.state-chart canvas {
+  left: -9px !important;
+  top: -19px !important;
+  width: 380px !important;
+  height: 380px !important;
+  margin-left: 15%;
+}
+}
+@media only screen and (max-width: 990px) and (min-width: 768px){
+  .state-chart canvas {
+    left: -9px !important;
+    top: -19px !important;
+    width: 350px !important;
+    height: 350px !important;
+    margin-left: 15%;
+  }
+  }
+  .calender-widget .fc-daygrid-event-harness .fc-h-event  {
+    width: 50px !important;
+    height: 50px;
+    border-radius: 50%;
+    background-color:#ff821c;
+    border: none;
+    line-height: 50px;
+    text-align: center;
+}
+.fc .fc-daygrid-day-frame{
+padding: 10px;
 }
