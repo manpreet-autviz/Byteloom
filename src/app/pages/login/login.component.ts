@@ -11,7 +11,7 @@ export class LoginComponent implements AfterViewInit {
   calendarOptions: CalendarOptions = {
     plugins: [dayGridPlugin],
     initialView: 'dayGridMonth',
-    weekends: false,
+    weekends: true,
     events: this.generateRandomEvents(),
   };
 
