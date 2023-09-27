@@ -44,11 +44,11 @@
   border: none !important;
 }
 
-.graph-card{
+.graph-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); /* Adjust opacity here */
   transition: box-shadow 0.3s ease;
 }
-.filter-btn-trend{
+.filter-btn-trend {
   min-width: 120px;
 }
 
@@ -67,43 +67,59 @@
 .collapse-content .main-content {
   margin-left: 90px !important;
   transition: all 0.3s ease-out;
-
 }
 .main-content {
   margin-left: 270px;
   background-color: #f4f4f4;
   transition: all 0.3s ease-out;
-
 }
 .collapse-content .navbar-menu {
   width: 90px;
   transition: all 0.3s ease-out;
-
 }
 .navbar-menu {
   width: 270px;
-  overflow-x:hidden;
+  overflow-x: hidden;
   transition: all 0.3s ease-out;
-
 }
-.collapse-content .navbar-menu .navbar-nav .nav-link span , .collapse-content .navbar-menu .navbar-brand-box{
-display: none !important;
+.collapse-content .navbar-menu .navbar-nav .nav-link span,
+.collapse-content .navbar-menu .navbar-brand-box {
+  display: none !important;
 }
 .collapse-content .navbar-menu .navbar-nav .nav-link {
   align-items: center;
-  top:50%;
-  }
-  .collapse-content .navbar-header{
-    margin-left: 90px;
-  }
- .navbar-header{
-     margin-left:250px !important;
- }
+  top: 50%;
+}
+.collapse-content .navbar-header {
+  margin-left: 90px;
+}
+.navbar-header {
+  margin-left: 250px !important;
+}
 
-.chart-pie{
+.chart-pie {
   margin-left: 17%;
 }
 
 .btn:hover {
   background: #0747a6 !important;
+}
+
+///calender css
+
+.fc-scrollgrid-sync-inner {
+  a {
+    text-decoration: none !important;
+    
+  }
+}
+
+.fc-daygrid-day-top{
+  a{
+    color: black;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20.46px;
+    text-align: Right;
+  }
 }

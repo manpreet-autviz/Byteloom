@@ -1,12 +1,20 @@
 import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 import * as echarts from 'echarts';
-
+import { CalendarOptions } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements AfterViewInit {
+  calendarOptions: CalendarOptions = {
+    plugins: [dayGridPlugin],
+    initialView: 'dayGridMonth',
+    weekends: false,
+    events: this.generateRandomEvents(),
+  };
+
   StateChart!: echarts.ECharts;
   AverageStateChart!: echarts.ECharts;
   SchemeLoginsChart!: echarts.ECharts;
@@ -60,17 +68,41 @@ export class LoginComponent implements AfterViewInit {
     this.initializeChart();
   }
 
+  generateRandomEvents() {
+    const today = new Date();
+    const startDate = new Date(today.getFullYear(), today.getMonth(), 1); // 1st day of the current month
+    const endDate = today;
+
+    const events = [];
+
+    const maxValue = 150;
+    const minValue = 101;
+    while (startDate <= endDate) {
+      const randomValue = Math.floor(
+        Math.random() * (maxValue - minValue + 1) + minValue
+      );
+
+      events.push({
+        title: `${randomValue}`,
+        start: new Date(startDate),
+        allDay: true, // Set allDay to true to remove the time
+      });
+
+      startDate.setDate(startDate.getDate() + 1); // Move to the next day
+    }
+
+    return events;
+  }
+
   toggle(): void {
     this.isToggled = !this.isToggled;
     setTimeout(() => {
       this.initializeChart();
-    }, 0); 
+    }, 0);
     this.cdRef.detectChanges();
   }
 
   initializeChart() {
-   
-
     if (!this.isToggled) {
       this.StateChart = echarts.init(
         document.getElementById('StateWiseChart') as HTMLDivElement
@@ -1094,7 +1126,7 @@ export class LoginComponent implements AfterViewInit {
   }
 
   onFilterChange(selectedValue: string) {
-    console.log(selectedValue)
+    console.log(selectedValue);
     this.generateStateRandomData();
     this.generateAverageStateRandomData();
     this.generateSchemeRandomData();
@@ -1106,7 +1138,7 @@ export class LoginComponent implements AfterViewInit {
   }
 
   onStateChange(selectedValue: string) {
-    console.log(selectedValue)
+    console.log(selectedValue);
     this.generateStateRandomData();
     this.generateAverageStateRandomData();
     this.generateSchemeRandomData();
@@ -1210,15 +1242,13 @@ export class LoginComponent implements AfterViewInit {
     this.SourceChart.setOption(this.sourceOption);
   }
 
-
-  ontrendStateChange(selectedValue: string){
-    console.log(selectedValue)
+  ontrendStateChange(selectedValue: string) {
+    console.log(selectedValue);
     this.TrendgenerateStateRandomData(selectedValue);
     this.TrendgenerateAverageStateRandomData(selectedValue);
     this.TrendgenerateSchemeRandomData(selectedValue);
     this.TrendgenerateProductRandomData(selectedValue);
     this.TrendgenerateSourceRandomData(selectedValue);
-   
   }
 
   onTrendFilterChange(selectedValue: string) {
@@ -1227,7 +1257,6 @@ export class LoginComponent implements AfterViewInit {
     this.TrendgenerateSchemeRandomData(selectedValue);
     this.TrendgenerateProductRandomData(selectedValue);
     this.TrendgenerateSourceRandomData(selectedValue);
-    
   }
 
   TrendgenerateStateRandomData(selectedValue: string) {
@@ -1243,23 +1272,24 @@ export class LoginComponent implements AfterViewInit {
       });
       this.trendStateOption.series[0].data = newData;
       this.trendStateChart.setOption(this.trendStateOption);
-    }
-    else{
-      const newAxisdata = [ 'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-      'Jan',
-      'Feb',
-      'Mar',];
+    } else {
+      const newAxisdata = [
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+        'Jan',
+        'Feb',
+        'Mar',
+      ];
       this.trendStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500,3000,3500];
-      const StatemaxValues = [1000, 2000, 3500,4000,4000];
+      const StateminValues = [550, 1000, 2500, 3000, 3500];
+      const StatemaxValues = [1000, 2000, 3500, 4000, 4000];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1271,7 +1301,6 @@ export class LoginComponent implements AfterViewInit {
   }
 
   TrendgenerateAverageStateRandomData(selectedValue: string) {
-
     if (selectedValue === 'Three month') {
       const newAxisdata = ['Jul', 'Aug', 'Sep'];
       this.trendAverageStateOption.xAxis[0].data = newAxisdata;
@@ -1284,23 +1313,24 @@ export class LoginComponent implements AfterViewInit {
       });
       this.trendAverageStateOption.series[0].data = newData;
       this.trendAverageStateChart.setOption(this.trendAverageStateOption);
-    }
-    else{
-      const newAxisdata = [ 'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-      'Jan',
-      'Feb',
-      'Mar',];
+    } else {
+      const newAxisdata = [
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+        'Jan',
+        'Feb',
+        'Mar',
+      ];
       this.trendAverageStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [10.7, 11.5,12.2,13.4, 14];
-      const StatemaxValues = [11,12, 13,14, 15];
+      const StateminValues = [10.7, 11.5, 12.2, 13.4, 14];
+      const StatemaxValues = [11, 12, 13, 14, 15];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1315,8 +1345,8 @@ export class LoginComponent implements AfterViewInit {
     if (selectedValue === 'Three month') {
       const newAxisdata = ['Jul', 'Aug', 'Sep'];
       this.trendSchemeloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500];;
-      const StatemaxValues =  [1000, 2000, 3500];
+      const StateminValues = [550, 1000, 2500];
+      const StatemaxValues = [1000, 2000, 3500];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1324,23 +1354,24 @@ export class LoginComponent implements AfterViewInit {
       });
       this.trendSchemeloginsOption.series[0].data = newData;
       this.trendSchemeLoginsChart.setOption(this.trendSchemeloginsOption);
-    }
-    else{
-      const newAxisdata = [ 'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-      'Jan',
-      'Feb',
-      'Mar',];
+    } else {
+      const newAxisdata = [
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+        'Jan',
+        'Feb',
+        'Mar',
+      ];
       this.trendSchemeloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500,3000,3500];
-      const StatemaxValues =  [1000, 2000, 3500,4000,4000];
+      const StateminValues = [550, 1000, 2500, 3000, 3500];
+      const StatemaxValues = [1000, 2000, 3500, 4000, 4000];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1355,8 +1386,8 @@ export class LoginComponent implements AfterViewInit {
     if (selectedValue === 'Three month') {
       const newAxisdata = ['Jul', 'Aug', 'Sep'];
       this.trendProductloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500];;
-      const StatemaxValues =  [1000, 2000, 3500];;
+      const StateminValues = [550, 1000, 2500];
+      const StatemaxValues = [1000, 2000, 3500];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1364,23 +1395,24 @@ export class LoginComponent implements AfterViewInit {
       });
       this.trendProductloginsOption.series[0].data = newData;
       this.trendProductLoginsChart.setOption(this.trendProductloginsOption);
-    }
-    else{
-      const newAxisdata = [ 'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-      'Jan',
-      'Feb',
-      'Mar',];
+    } else {
+      const newAxisdata = [
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+        'Jan',
+        'Feb',
+        'Mar',
+      ];
       this.trendProductloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500,3000,3500];;
-      const StatemaxValues =  [1000, 2000, 3500,4000,4000];;
+      const StateminValues = [550, 1000, 2500, 3000, 3500];
+      const StatemaxValues = [1000, 2000, 3500, 4000, 4000];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1403,23 +1435,24 @@ export class LoginComponent implements AfterViewInit {
       });
       this.trendSourceOption.series[0].data = newData;
       this.trendSourceChart.setOption(this.trendSourceOption);
-    }
-    else{
-      const newAxisdata = [ 'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-      'Jan',
-      'Feb',
-      'Mar',];
+    } else {
+      const newAxisdata = [
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+        'Jan',
+        'Feb',
+        'Mar',
+      ];
       this.trendSourceOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [40.5, 43, 45.5,46,48];
-      const StatemaxValues = [43, 45, 47,47.5,50];
+      const StateminValues = [40.5, 43, 45.5, 46, 48];
+      const StatemaxValues = [43, 45, 47, 47.5, 50];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1429,6 +1462,6 @@ export class LoginComponent implements AfterViewInit {
       this.trendSourceChart.setOption(this.trendSourceOption);
     }
   }
-
-
 }
+
+
