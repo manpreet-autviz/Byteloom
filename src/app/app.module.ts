@@ -10,6 +10,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FinancialApprovalsComponent } from './pages/financial-approvals/financial-approvals.component';
 import { DisbursalComponent } from './pages/disbursal/disbursal.component';
+import { TatAnalysisComponent } from './pages/tat-analysis/tat-analysis.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { DisbursalComponent } from './pages/disbursal/disbursal.component';
     NavbarComponent,
     LoginComponent,
     FinancialApprovalsComponent,
-    DisbursalComponent
+    DisbursalComponent,
+    TatAnalysisComponent
   ],
   imports: [
     BrowserModule,

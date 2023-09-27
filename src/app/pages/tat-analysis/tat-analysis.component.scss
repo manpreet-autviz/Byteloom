@@ -1,0 +1,37 @@
+.progress{
+    height: 52px;
+}
+.dot-red {
+    width: 10px;
+    height: 10px;
+    background-color: #FF0000;
+    border-radius: 50%;
+}
+.dot-orange {
+    width: 10px;
+    height: 10px;
+    background-color: #FF821C;
+    border-radius: 50%;
+}
+.dot-green {
+    width: 10px;
+    height: 10px;
+    background-color: #07A14E;
+    border-radius: 50%;
+}
+.progres-line-bg{
+    box-shadow: 0px 0px 3px 2px #e4e4e4 inset;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+.red-bar{
+    background-color: #FF0000;
+}
+.orange-bar{
+    background-color: #FF821C;
+}
+.green-bar{
+    background-color: #07A14E;
+}

@@ -54,7 +54,7 @@
           </li>
           <li class="nav-item">
             <a  (click)="navigateToPage('/financial-approvals')" 
-            [class.active]="activeItem === '/financial'"
+            [class.active]="activeItem === '/financial-approvals'"
               class="nav-link menu-link"
               href="#"
               data-bs-toggle="collapse"
@@ -110,6 +110,8 @@
           </li>
           <li class="nav-item">
             <a
+            (click)="navigateToPage('/tat-analysis')"
+            [class.active]="activeItem === '/tat-analysis'"
               class="nav-link menu-link"
               href="#"
               data-bs-toggle="collapse"

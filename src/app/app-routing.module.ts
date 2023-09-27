@@ -4,6 +4,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FinancialApprovalsComponent } from './pages/financial-approvals/financial-approvals.component';
 import { DisbursalComponent } from './pages/disbursal/disbursal.component';
+import { TatAnalysisComponent } from './pages/tat-analysis/tat-analysis.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'financial-approvals', component: FinancialApprovalsComponent },
   { path: 'disbursal', component: DisbursalComponent },
+  { path: 'tat-analysis', component: TatAnalysisComponent },
 ];
 
 @NgModule({
