@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tat-analysis',
@@ -40,7 +41,7 @@ export class TatAnalysisComponent {
   minValue3: number = 6;
   maxValue3: number = 8;
 
-  constructor(private cdRef: ChangeDetectorRef) {}
+  constructor(private cdRef: ChangeDetectorRef,private router:Router) {}
 
   ngAfterViewInit(): void {
     this.initializeChart();
@@ -94,5 +95,7 @@ export class TatAnalysisComponent {
     }
   }
 
-  toggleContent() {}
+  navigateToTatTable(){
+    this.router.navigate(['/tat-table']);
+  }
 }

@@ -11,6 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { FinancialApprovalsComponent } from './pages/financial-approvals/financial-approvals.component';
 import { DisbursalComponent } from './pages/disbursal/disbursal.component';
 import { TatAnalysisComponent } from './pages/tat-analysis/tat-analysis.component';
+import { TatAnalysisTablesComponent } from './pages/tat-analysis-tables/tat-analysis-tables.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { TatAnalysisComponent } from './pages/tat-analysis/tat-analysis.componen
     LoginComponent,
     FinancialApprovalsComponent,
     DisbursalComponent,
-    TatAnalysisComponent
+    TatAnalysisComponent,
+    TatAnalysisTablesComponent
   ],
   imports: [
     BrowserModule,
