@@ -4,7 +4,7 @@
       <div class="breadcrumb">
         <div class="card card-animate w-100">
           <div
-            class="card-body d-flex align-items-center justify-content-between"
+            class="p-2 d-flex align-items-center justify-content-between"
           >
             <div>
               <span class="f-7 fs-5"> Dashboard </span>
@@ -12,7 +12,7 @@
             <div class="dropdown">
               <select
                 id="dropdown"
-                class="form-select"
+                class="form-select filter-dropdown"
                 [(ngModel)]="selectedState"
                 (ngModelChange)="onStateChange($event)"
               >
@@ -30,7 +30,7 @@
             <div class="col-md-3">
               <select
                 id="dropdown"
-                class="form-select"
+                class="form-select "
                 [(ngModel)]="selectedFilter"
                 (ngModelChange)="onFilterChange($event)"
               >
