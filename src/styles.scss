@@ -60,7 +60,7 @@ font-size:12px;
   margin-top: 20px;
 }
 .filter-btn-trend {
-  min-width: 120px;
+  min-width: 140px;
 }
 
 .tile-chart canvas {
@@ -82,10 +82,31 @@ font-size:12px;
   margin-left: 238px;
   background-color: #f4f4f4;
   transition: all 0.3s ease-out;
+  min-height: 100vh;
 }
 .collapse-content .navbar-menu {
   width: 90px;
   transition: all 0.3s ease-out;
+}
+.collapse-content .navbar-menu:hover  {
+  width: 238px;
+  transition: all 0.3s ease-out;
+}
+.collapse-content .navbar-header .hamburger-open  {
+  display:none;
+}
+.collapse-content .navbar-header .hamburger-close  {
+  display:block;
+}
+.navbar-header .hamburger-open  {
+   display:block;
+}
+.navbar-header .hamburger-close  {
+  display:none;
+}
+.collapse-content .navbar-menu:hover  .navbar-nav  .nav-link span ,
+.collapse-content .navbar-menu:hover  .navbar-brand-box {
+  display: block !important;
 }
 .navbar-menu {
   width: 238px;
@@ -138,8 +159,6 @@ font-size:12px;
 .navbar-header {
   margin-left: 90px !important;
 }
- 
-
 }
 
 .chart-pie {
@@ -174,24 +193,7 @@ font-size:12px;
     text-align: center;
   }
 }
-@media only screen and (max-width: 1024px) and (min-width: 991px){
-.state-chart canvas {
-  left: -9px !important;
-  top: -19px !important;
-  width: 380px !important;
-  height: 380px !important;
-  margin-left: 15%;
-}
-}
-@media only screen and (max-width: 990px) and (min-width: 768px){
-  .state-chart canvas {
-    left: -9px !important;
-    top: -19px !important;
-    width: 350px !important;
-    height: 350px !important;
-    margin-left: 15%;
-  }
-  }
+
   .calender-widget .fc-daygrid-event-harness .fc-h-event  {
     width: 50px !important;
     height: 50px;
@@ -203,4 +205,12 @@ font-size:12px;
 }
 .fc .fc-daygrid-day-frame{
 padding: 10px;
+}
+.form-select:focus{
+  border-color:none !important;
+  outline: 0;
+  box-shadow:none !important;
+} 
+.form-select{
+  font-size: 14px;
 }

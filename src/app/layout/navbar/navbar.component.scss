@@ -107,8 +107,10 @@
 }
 .header-profile-user{
   height:32px;
-  width:32px
+  width:32px;
+  cursor: pointer;
 }
+
 .topbar-badge-sm{
   right:0;
   top:7px!important
@@ -130,4 +132,16 @@ filter:brightness(0) invert(1);
 .topnav-hamburger{
   margin-right: 1rem;
 }
-
+.topbar-user .dropdown-menu{
+  transition: 0.5s;
+}
+.topbar-user .dropdown-menu.show {
+  display: block;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0px 0px 6px 1px #ccc;
+  top: 7px !important;
+}
+.topbar-user  .dropdown-item.active{
+  background-color: #0747A6 !important;
+}
