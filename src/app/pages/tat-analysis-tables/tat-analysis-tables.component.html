@@ -1,26 +1,83 @@
 <div class="main-content">
-    <div class="page-content">
-      <div class="container-fluid">
-        <div class="breadcrumb">
-          <div class="card card-animate w-100">
-            <div
-              class="card-body d-flex align-items-center justify-content-between"
-            >
-              <div>
-                <span class="f-7 fs-5"> <a routerLink="/tat-analysis">TAT Analysis</a> / Login to PD TAT  </span>
+  <div class="page-content">
+    <div class="container-fluid">
+      <div class="breadcrumb">
+        <div class="card card-animate w-100">
+          <div
+            class="card-body d-flex align-items-center justify-content-between"
+          >
+            <div>
+              <span class="f-7 fs-5">
+                <a routerLink="/tat-analysis">TAT Analysis</a> / Login to PD
+                TAT 
+              </span>
+            </div>
+            <div class="d-flex">
+              <select
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedFilter"
+                (ngModelChange)="onFilterChange($event)"
+              >
+                <option *ngFor="let filter of filters" [value]="filter">
+                  {{ filter }}
+                </option>
+              </select>
+
+              <select
+                id="dropdown"
+                class="form-select"
+                [(ngModel)]="selectedState"
+                (ngModelChange)="onStateChange($event)"
+              >
+                <option *ngFor="let state of states" [value]="state">
+                  {{ state }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-animate w-100 mt-2">
+          <div class="card-body align-items-center justify-content-between">
+            <div class="row">
+              <div class="col">
+                <button class="btn bg-blue text-white">
+                  <i class="fa-solid fa-arrow-left"></i>Back
+                </button>
               </div>
-              <div class="d-flex">
+            </div>
+
+            <div class="border-bottom mt-3"></div>
+            <div class="row mt-3">
+              <div class="col-md-2 d-flex align-items-center">
+                <span class="f-6"> Search Filter</span>
+              </div>
+              <div class="col-md-3">
                 <select
                   id="dropdown"
-                  class="form-select me-2"
-                  [(ngModel)]="selectedFilter"
-                  (ngModelChange)="onFilterChange($event)"
+                  class="form-select"
+                  [(ngModel)]="selectedState"
+                  (ngModelChange)="onStateChange($event)"
                 >
-                  <option *ngFor="let filter of filters" [value]="filter">
-                    {{ filter }}
+                  <option *ngFor="let state of states" [value]="state">
+                    {{ state }}
                   </option>
                 </select>
-  
+              </div>
+              <div class="col-md-3">
+                <select
+                  id="dropdown"
+                  class="form-select"
+                  [(ngModel)]="selectedState"
+                  (ngModelChange)="onStateChange($event)"
+                >
+                  <option *ngFor="let state of states" [value]="state">
+                    {{ state }}
+                  </option>
+                </select>
+              </div>
+              <div class="col-md-3">
                 <select
                   id="dropdown"
                   class="form-select"
@@ -33,4 +90,36 @@
                 </select>
               </div>
             </div>
+            <div class="mt-3">
+              <p-treeTable
+                [value]="files"
+                [scrollable]="true"
+                [tableStyle]="{ 'min-width': '50rem' }"
+              >
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th>Name</th>
+                    <th>Size</th>
+                    <th>Type</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+                  <tr [ttRow]="rowNode">
+                    <td>
+                      <p-treeTableToggler
+                        [rowNode]="rowNode"
+                      ></p-treeTableToggler>
+                      {{ rowData.name }}
+                    </td>
+                    <td>{{ rowData.size }}</td>
+                    <td>{{ rowData.type }}</td>
+                  </tr>
+                </ng-template>
+              </p-treeTable>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

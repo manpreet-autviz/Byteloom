@@ -12,6 +12,7 @@ import { FinancialApprovalsComponent } from './pages/financial-approvals/financi
 import { DisbursalComponent } from './pages/disbursal/disbursal.component';
 import { TatAnalysisComponent } from './pages/tat-analysis/tat-analysis.component';
 import { TatAnalysisTablesComponent } from './pages/tat-analysis-tables/tat-analysis-tables.component';
+import { TreeTableModule } from 'primeng/treetable';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { TatAnalysisTablesComponent } from './pages/tat-analysis-tables/tat-anal
     BrowserModule,
     FullCalendarModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    TreeTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -130,6 +130,9 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           splitLine: {
             show: false,
           },
+          axisLine: {
+            show: true,
+          },
           min: 20,
           max: 180,
           interval: 20,
@@ -175,7 +178,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: 0,
+            rotate: -45,
             overflow: 'break',
           },
         },
@@ -290,7 +293,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: 0,
+            rotate: -45,
             overflow: 'break',
           },
         },
@@ -315,6 +318,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         series: [
           {
+            
             barWidth: 20,
             data: [50, 36, 44, 40, 45],
             type: 'bar',
@@ -332,7 +336,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: 0,
+            rotate: -45,
             overflow: 'break',
           },
         },
@@ -397,6 +401,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
 
       this.trendStateApprovalOption = {
         title: {},
+        responsive: true, 
         tooltip: {
           trigger: 'axis',
           axisPointer: {
@@ -582,6 +587,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             },
           },
         },
+        responsive: true, 
         legend: {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
           
@@ -706,6 +712,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             },
           },
         },
+        responsive: true, 
         legend: {
           data: ['Top Up', 'Fresh', 'BT'],
         },
@@ -818,6 +825,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             },
           },
         },
+        responsive: true, 
         legend: {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
         },
@@ -938,6 +946,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             },
           },
         },
+        responsive: true, 
         legend: {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
         },
@@ -1061,6 +1070,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             },
           },
         },
+        responsive: true, 
         legend: {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
         },

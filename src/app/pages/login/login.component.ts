@@ -139,6 +139,7 @@ export class LoginComponent implements AfterViewInit {
             return `No of Files: ${barValue}<br> Amount(Cr): ${randomAmount}`;
           },
         },
+        responsive: true, 
         legend: {},
         grid: {
           top: '3%',
@@ -152,6 +153,9 @@ export class LoginComponent implements AfterViewInit {
           boundaryGap: [0, 0.01],
           splitLine: {
             show: false,
+          },
+          axisLine: {
+            show: true,
           },
           min: 0,
           max: 4000,
@@ -198,6 +202,7 @@ export class LoginComponent implements AfterViewInit {
             type: 'shadow',
           },
         },
+        responsive: true, 
         legend: {},
         grid: {
           top: '3%',
@@ -211,6 +216,9 @@ export class LoginComponent implements AfterViewInit {
           boundaryGap: [0, 0.01],
           splitLine: {
             show: false,
+          },
+          axisLine: {
+            show: true,
           },
           min: 0,
           max: 15,
@@ -254,6 +262,7 @@ export class LoginComponent implements AfterViewInit {
         tooltip: {
           trigger: 'item',
         },
+        responsive: true, 
         legend: {
           top: '5%',
           left: 'center',
@@ -292,6 +301,7 @@ export class LoginComponent implements AfterViewInit {
         tooltip: {
           trigger: 'item',
         },
+        responsive: true, 
         legend: {
           top: '5%',
           left: 'center',
@@ -328,6 +338,7 @@ export class LoginComponent implements AfterViewInit {
       };
 
       this.sourceOption = {
+        responsive: true, 
         xAxis: {
           type: 'category',
           data: ['Direct', 'DSA', 'Power Partner', 'Saathi', 'Online Partner'],

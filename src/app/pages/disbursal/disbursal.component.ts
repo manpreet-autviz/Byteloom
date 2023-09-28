@@ -119,6 +119,7 @@ export class DisbursalComponent {
         series: [
           {
             type: 'gauge',
+            responsive: true,
             axisLine: {
               lineStyle: {
                 width: 25,
@@ -193,6 +194,7 @@ export class DisbursalComponent {
             return `No of Files: ${barValue}<br> Amount(Cr): ${randomAmount}`;
           },
         },
+        responsive: true,
         legend: {},
         grid: {
           top: '3%',
@@ -207,6 +209,10 @@ export class DisbursalComponent {
           splitLine: {
             show: false,
           },
+          axisLine: {
+            show: true,
+          },
+
           min: 10,
           max: 150,
           interval: 20,
@@ -246,10 +252,16 @@ export class DisbursalComponent {
       };
 
       this.averageDisbursalOption = {
+        responsive: true,
         xAxis: {
           type: 'category',
 
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          axisLabel: {
+            interval: 0,
+            rotate: 0,
+            overflow: 'break',
+          },
         },
         yAxis: {
           type: 'value',
@@ -368,7 +380,14 @@ export class DisbursalComponent {
             { product: 'SBL', IRR: 16, PF: 3.7, Insurance: 3 },
           ],
         },
-        xAxis: { type: 'category' },
+        xAxis: {
+          type: 'category',
+          axisLabel: {
+            interval: 0,
+            rotate: 0,
+            overflow: 'break',
+          },
+        },
         yAxis: {
           min: 2,
           max: 16,
@@ -409,7 +428,7 @@ export class DisbursalComponent {
           data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: 0,
+            rotate: -45,
             overflow: 'break',
           },
         },
@@ -447,7 +466,7 @@ export class DisbursalComponent {
           data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: 0,
+            rotate: -45,
             overflow: 'break',
           },
         },
@@ -531,9 +550,7 @@ export class DisbursalComponent {
             },
           },
         },
-        legend: {
-          
-        },
+        legend: {},
         toolbox: {
           feature: {
             saveAsImage: {},
@@ -585,7 +602,6 @@ export class DisbursalComponent {
         ],
         series: [
           {
-           
             type: 'line',
 
             areaStyle: {
@@ -599,9 +615,8 @@ export class DisbursalComponent {
             },
             data: [90, 93, 94, 92, 99, 100],
           },
-         
         ],
-      }
+      };
 
       this.trendStateDisbursalOption = {
         title: {},
@@ -1342,7 +1357,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [5,6, 6.5, 7.9, 8, 8.5, 9, 9.5],
+            data: [5, 6, 6.5, 7.9, 8, 8.5, 9, 9.5],
           },
           {
             name: 'LAP',
@@ -1501,11 +1516,12 @@ export class DisbursalComponent {
             },
             data: [3.2, 3.4, 3.3, 3.7, 3.6, 3.9],
           },
-          
         ],
-      }
+      };
 
-      this.trendDisbursalAchievementChart.setOption(this.trendDisbursalAchievementOption);
+      this.trendDisbursalAchievementChart.setOption(
+        this.trendDisbursalAchievementOption
+      );
       this.trendStateDisbursalChart.setOption(this.trendStateDisbursalOption);
       this.trendAverageDisbursalChart.setOption(
         this.trendAverageDisbursalOption
@@ -1768,7 +1784,7 @@ export class DisbursalComponent {
     this.TrendgenerateIRPFRandomdata(selectedValue);
   }
 
-  TrendgenerateDisbursalAchievement(selectedValue: string){
+  TrendgenerateDisbursalAchievement(selectedValue: string) {
     if (selectedValue === 'Three month') {
       const newAxisdata = ['Jul', 'Aug', 'Sep'];
       this.trendDisbursalAchievementOption.xAxis[0].data = newAxisdata;
@@ -1780,7 +1796,9 @@ export class DisbursalComponent {
         return Math.floor(Math.random() * (max - min + 1)) + min;
       });
       this.trendDisbursalAchievementOption.series[0].data = newData;
-      this.trendDisbursalAchievementChart.setOption(this.trendDisbursalAchievementOption);
+      this.trendDisbursalAchievementChart.setOption(
+        this.trendDisbursalAchievementOption
+      );
     } else {
       const newAxisdata = [
         'Apr',
@@ -1798,14 +1816,16 @@ export class DisbursalComponent {
       ];
       this.trendDisbursalAchievementOption.xAxis[0].data = newAxisdata;
       const StateminValues = [91, 93, 96, 96, 98];
-      const StatemaxValues = [93, 95.5, 97,5, 98, 100];
+      const StatemaxValues = [93, 95.5, 97, 5, 98, 100];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
         return Math.floor(Math.random() * (max - min + 1)) + min;
       });
       this.trendDisbursalAchievementOption.series[0].data = newData;
-      this.trendDisbursalAchievementChart.setOption(this.trendDisbursalAchievementOption);
+      this.trendDisbursalAchievementChart.setOption(
+        this.trendDisbursalAchievementOption
+      );
     }
   }
 
@@ -1940,7 +1960,6 @@ export class DisbursalComponent {
     }
   }
 
-
   TrendgenerateStateRandomData(selectedValue: string) {
     if (selectedValue === 'Three month') {
       const newAxisdata = ['Jul', 'Aug', 'Sep'];
@@ -1994,9 +2013,7 @@ export class DisbursalComponent {
         return Math.floor(Math.random() * (max - min + 1)) + min;
       });
       this.trendDisbursalTatOption.series[0].data = newData;
-      this.trendDisbursalTatChart.setOption(
-        this.trendDisbursalTatOption
-      );
+      this.trendDisbursalTatChart.setOption(this.trendDisbursalTatOption);
     } else {
       const newAxisdata = [
         'Apr',
@@ -2012,24 +2029,19 @@ export class DisbursalComponent {
         'Feb',
         'Mar',
       ];
-      this.trendDisbursalTatOption
-      .xAxis[0].data = newAxisdata;
-      const StateminValues = [6, 7, 12,15,18];
-      const StatemaxValues = [9, 10, 14,17,20];
+      this.trendDisbursalTatOption.xAxis[0].data = newAxisdata;
+      const StateminValues = [6, 7, 12, 15, 18];
+      const StatemaxValues = [9, 10, 14, 17, 20];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
         return Math.floor(Math.random() * (max - min + 1)) + min;
       });
-      this.trendDisbursalTatOption
-      .series[0].data = newData;
-      this.trendDisbursalTatChart.setOption(
-        this.trendDisbursalTatOption
-
-      );
+      this.trendDisbursalTatOption.series[0].data = newData;
+      this.trendDisbursalTatChart.setOption(this.trendDisbursalTatOption);
     }
   }
- 
+
   TrendgenerateloginDisbursalRatioRandomData(selectedValue: string) {
     if (selectedValue === 'Three month') {
       const newAxisdata = ['Jul', 'Aug', 'Sep'];
@@ -2042,7 +2054,9 @@ export class DisbursalComponent {
         return Math.floor(Math.random() * (max - min + 1)) + min;
       });
       this.trendLoginDisbursalRatioOption.series[0].data = newData;
-      this.trendLoginDisbursalRatioChart.setOption(this.trendLoginDisbursalRatioOption);
+      this.trendLoginDisbursalRatioChart.setOption(
+        this.trendLoginDisbursalRatioOption
+      );
     } else {
       const newAxisdata = [
         'Apr',
@@ -2060,17 +2074,18 @@ export class DisbursalComponent {
       ];
       this.trendLoginDisbursalRatioOption.xAxis[0].data = newAxisdata;
       const StateminValues = [55, 60, 64, 68, 75];
-     const StatemaxValues = [60, 67, 78, 83, 90];
+      const StatemaxValues = [60, 67, 78, 83, 90];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
         return Math.floor(Math.random() * (max - min + 1)) + min;
       });
       this.trendLoginDisbursalRatioOption.series[0].data = newData;
-      this.trendLoginDisbursalRatioChart.setOption(this.trendLoginDisbursalRatioOption);
+      this.trendLoginDisbursalRatioChart.setOption(
+        this.trendLoginDisbursalRatioOption
+      );
     }
   }
-
 
   TrendgenerateIRPFRandomdata(selectedValue: string) {
     if (selectedValue === 'Three month') {
@@ -2084,9 +2099,7 @@ export class DisbursalComponent {
         return Math.floor(Math.random() * (max - min + 1)) + min;
       });
       this.trendIrPfOption.series[0].data = newData;
-      this.trendIrPfChart.setOption(
-        this.trendIrPfOption
-      );
+      this.trendIrPfChart.setOption(this.trendIrPfOption);
     } else {
       const newAxisdata = [
         'Apr',
@@ -2111,10 +2124,7 @@ export class DisbursalComponent {
         return Math.floor(Math.random() * (max - min + 1)) + min;
       });
       this.trendIrPfOption.series[0].data = newData;
-      this.trendIrPfChart.setOption(
-        this.trendIrPfOption
-      );
+      this.trendIrPfChart.setOption(this.trendIrPfOption);
     }
   }
-
 }
