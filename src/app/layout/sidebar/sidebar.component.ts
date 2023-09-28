@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuService } from 'src/app/services/menu.service';
 
 
 @Component({
@@ -8,14 +9,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  activeItem = '/dashboard';
-  constructor(private router : Router){
+  activeItem: string | null = '/dashboard';
+  constructor(private router : Router,private menuService: MenuService){
 
+  }
+  ngOnInit(): void {
+    this.activeItem = this.menuService.getActiveMenuItem();
   }
 
   navigateToPage(path:string){
     this.router.navigate([path]);
     this.activeItem = path;
+    this.menuService.setActiveMenuItem(path);
   }
 
  

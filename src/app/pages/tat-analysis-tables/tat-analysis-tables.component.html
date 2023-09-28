@@ -106,7 +106,7 @@
                 <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
                   <tr [ttRow]="rowNode">
                     <td>
-                      <p-treeTableToggler
+                      <p-treeTableToggler [ngClass]="'custom-toggler'"
                         [rowNode]="rowNode"
                       ></p-treeTableToggler>
                       {{ rowData.name }}

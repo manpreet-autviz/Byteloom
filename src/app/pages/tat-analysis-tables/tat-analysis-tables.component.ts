@@ -33,11 +33,6 @@ export class TatAnalysisTablesComponent {
     
   ];
   
-  
-    
-
-
-
 
   constructor(private cdRef: ChangeDetectorRef) {}
 
@@ -60,29 +55,7 @@ export class TatAnalysisTablesComponent {
                   "size":"25mb",
                   "type":"Folder"
               },
-              "children":[  
-                  {  
-                      "data":{  
-                          "name":"angular.app",
-                          "size":"10mb",
-                          "type":"Application"
-                      }
-                  },
-                  {  
-                      "data":{  
-                          "name":"cli.app",
-                          "size":"10mb",
-                          "type":"Application"
-                      }
-                  },
-                  {  
-                      "data":{  
-                          "name":"mobile.app",
-                          "size":"5mb",
-                          "type":"Application"
-                      }
-                  }
-              ]
+             
           },
           {  
               "data":{  
@@ -159,22 +132,7 @@ export class TatAnalysisTablesComponent {
                   "size":"55kb",
                   "type":"Folder"
               },
-              "children":[  
-                  {  
-                      "data":{  
-                          "name":"Expenses.doc",
-                          "size":"30kb",
-                          "type":"Document"
-                      }
-                  },
-                  {  
-                      "data":{  
-                          "name":"Resume.doc",
-                          "size":"25kb",
-                          "type":"Resume"
-                      }
-                  }
-              ]
+           
           },
           {  
               "data":{  
@@ -182,15 +140,7 @@ export class TatAnalysisTablesComponent {
                   "size":"20kb",
                   "type":"Folder"
               },
-              "children":[  
-                  {  
-                      "data":{  
-                          "name":"Invoices",
-                          "size":"20kb",
-                          "type":"Text"
-                      }
-                  }
-              ]
+             
           }
       ]
   },
@@ -207,22 +157,7 @@ export class TatAnalysisTablesComponent {
                   "size":"10mb",
                   "type":"Folder"
               },
-              "children":[  
-                  {  
-                      "data":{  
-                          "name":"tutorial-a1.txt",
-                          "size":"5mb",
-                          "type":"Text"
-                      }
-                  },
-                  {  
-                      "data":{  
-                          "name":"tutorial-a2.txt",
-                          "size":"5mb",
-                          "type":"Text"
-                      }
-                  }
-              ]
+             
           },
           {  
               "data":{  
@@ -230,22 +165,7 @@ export class TatAnalysisTablesComponent {
                   "size":"15mb",
                   "type":"Text"
               },
-              "children":[  
-                  {  
-                      "data":{  
-                          "name":"Hotel.pdf",
-                          "size":"10mb",
-                          "type":"PDF"
-                      }
-                  },
-                  {  
-                      "data":{  
-                          "name":"Flight.pdf",
-                          "size":"5mb",
-                          "type":"PDF"
-                      }
-                  }
-              ]
+              
           }
       ]
   },
