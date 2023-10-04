@@ -95,7 +95,29 @@ export class TatAnalysisComponent {
     }
   }
 
-  navigateToTatTable(){
-    this.router.navigate(['/tat-table']);
+  navigateToLoginToPD(){
+    this.router.navigate(['/tat-table', 'Login to PD TAT ']);
   }
+  navigateToLoginToFinancial(){
+    this.router.navigate(['/tat-table', 'Login to financial approval TAT  ']);
+  }
+  navigateToQuerycompletionTAT(){
+    this.router.navigate(['/tat-table', 'Query completion TAT   ']);
+  }
+  navigateToFinalapprovalTAT(){
+    this.router.navigate(['/tat-table', 'Final approval TAT  ']);
+  }
+
+  navigateToDisbursalTAT (){
+    this.router.navigate(['/tat-table', 'Disbursal TAT ']);
+  }
+
+  navigateToTechnicalTAT (){
+    this.router.navigate(['/tat-table', 'Technical TAT  ']);
+  }
+
+  LegalTAT(){
+    this.router.navigate(['/tat-table', 'Legal TAT ']);
+  }
+
 }

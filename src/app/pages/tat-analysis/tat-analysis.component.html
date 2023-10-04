@@ -41,14 +41,23 @@
               <div class="row">
                 <div class="col-lg-4 col-md-6 col-12">
                   <div class="card graph-card">
-                    <div class="card-body text-center">
+                    <div class="card-body text-center " >
                       <span class="f-6"> Login to PD TAT  </span>
-                      <div class=" d-flex justify-content-center mt-3 cursor-pointer" (click)="navigateToTatTable()">
-                          <div class=" align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"> <div class="mx-1 dot-red"></div>0 - 2 (days)</div>
-                          <div class="align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"><div class="mx-1 dot-orange"></div> 2- 5 (days)</div>
-                          <div class="align-items-center border d-flex p-2 rounded mx-1 indicators  fs-12"> <div class="mx-1 dot-green"></div>Upper 5 (days)</div>
+                      <div class="row mt-3 cursor-pointer" (click)="navigateToLoginToPD()" >
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-red"></div>
+                          <span class="indicators px-1 fs-12">> 2 (days)</span>
+                        </div>
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-orange"></div>
+                          <span class="indicators px-1 fs-12">>5 (days)</span>
+                        </div>
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-green"></div>
+                          <span class="indicators px-1 fs-12">< 5 (days)</span>
+                        </div>
                       </div>
-                      <div class="progres-line-bg cursor-pointer " (click)="navigateToTatTable()">
+                      <div class="progres-line-bg cursor-pointer " (click)="navigateToLoginToPD()" >
                         <div class="progress" >
                           <div
                             class="progress-bar green-bar"
@@ -87,14 +96,23 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-12">
                   <div class="card graph-card">
-                    <div class="card-body text-center">
+                    <div class="card-body text-center" >
                       <span class="f-6"> Login to financial approval TAT </span>
-                      <div class=" d-flex justify-content-center mt-3 cursor-pointer" (click)="navigateToTatTable()">
-                        <div class=" align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"> <div class="mx-1 dot-red"></div>0 - 2 (days)</div>
-                        <div class="align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"><div class="mx-1 dot-orange"></div> 2- 5 (days)</div>
-                        <div class="align-items-center border d-flex p-2 rounded mx-1 indicators  fs-12"> <div class="mx-1 dot-green"></div>Upper 5 (days)</div>
-                    </div>
-                      <div class="progres-line-bg">
+                      <div class="row mt-3 cursor-pointer" (click)="navigateToLoginToFinancial()">
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-red"></div>
+                          <span class="indicators px-1 fs-12">> 2 (days)</span>
+                        </div>
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-orange"></div>
+                          <span class="indicators px-1 fs-12">>5 (days)</span>
+                        </div>
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-green"></div>
+                          <span class="indicators px-1 fs-12">< 5 (days)</span>
+                        </div>
+                      </div>
+                      <div class="progres-line-bg cursor-pointer" (click)="navigateToLoginToFinancial()">
                         <div class="progress">
                             <div
                               class="progress-bar green-bar"
@@ -135,12 +153,21 @@
                   <div class="card graph-card">
                     <div class="card-body text-center">
                       <span class="f-6"> Query completion TAT  </span>
-                      <div class=" d-flex justify-content-center mt-3 cursor-pointer" (click)="navigateToTatTable()">
-                        <div class=" align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"> <div class="mx-1 dot-red"></div>0 - 2 (days)</div>
-                        <div class="align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"><div class="mx-1 dot-orange"></div> 2- 5 (days)</div>
-                        <div class="align-items-center border d-flex p-2 rounded mx-1 indicators  fs-12"> <div class="mx-1 dot-green"></div>Upper 5 (days)</div>
-                    </div>
-                      <div class="progres-line-bg">
+                      <div class="row mt-3 cursor-pointer" (click)="navigateToQuerycompletionTAT()">
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-red"></div>
+                          <span class="indicators px-1 fs-12">> 2 (days)</span>
+                        </div>
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-orange"></div>
+                          <span class="indicators px-1 fs-12">>5 (days)</span>
+                        </div>
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-green"></div>
+                          <span class="indicators px-1 fs-12">< 5 (days)</span>
+                        </div>
+                      </div>
+                      <div class="progres-line-bg cursor-pointer" (click)="navigateToQuerycompletionTAT()">
                         <div class="progress">
                             <div
                               class="progress-bar green-bar"
@@ -188,12 +215,21 @@
                   <div class="card graph-card">
                     <div class="card-body text-center">
                       <span class="f-6">Final approval TAT  </span>
-                      <div class=" d-flex justify-content-center mt-3 cursor-pointer" (click)="navigateToTatTable()">
-                        <div class=" align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"> <div class="mx-1 dot-red"></div>0 - 2 (days)</div>
-                        <div class="align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"><div class="mx-1 dot-orange"></div> 2- 5 (days)</div>
-                        <div class="align-items-center border d-flex p-2 rounded mx-1 indicators  fs-12"> <div class="mx-1 dot-green"></div>Upper 5 (days)</div>
-                    </div>
-                      <div class="progres-line-bg">
+                      <div class="row mt-3 cursor-pointer" (click)="navigateToFinalapprovalTAT()">
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-red"></div>
+                          <span class="indicators px-1 fs-12">> 2 (days)</span>
+                        </div>
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-orange"></div>
+                          <span class="indicators px-1 fs-12">>5 (days)</span>
+                        </div>
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-green"></div>
+                          <span class="indicators px-1 fs-12">< 5 (days)</span>
+                        </div>
+                      </div>
+                      <div class="progres-line-bg cursor-pointer" (click)="navigateToFinalapprovalTAT()">
                         <div class="progress">
                             <div
                               class="progress-bar green-bar"
@@ -234,12 +270,21 @@
                   <div class="card graph-card">
                     <div class="card-body text-center">
                       <span class="f-6"> Disbursal TAT  </span>
-                      <div class=" d-flex justify-content-center mt-3 cursor-pointer" (click)="navigateToTatTable()">
-                        <div class=" align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"> <div class="mx-1 dot-red"></div>0 - 2 (days)</div>
-                        <div class="align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"><div class="mx-1 dot-orange"></div> 2- 5 (days)</div>
-                        <div class="align-items-center border d-flex p-2 rounded mx-1 indicators  fs-12"> <div class="mx-1 dot-green"></div>Upper 5 (days)</div>
-                    </div>
-                      <div class="progres-line-bg">
+                      <div class="row mt-3 cursor-pointer" (click)="navigateToDisbursalTAT ()">
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-red"></div>
+                          <span class="indicators px-1 fs-12">> 2 (days)</span>
+                        </div>
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-orange"></div>
+                          <span class="indicators px-1 fs-12">>5 (days)</span>
+                        </div>
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-green"></div>
+                          <span class="indicators px-1 fs-12">< 5 (days)</span>
+                        </div>
+                      </div>
+                      <div class="progres-line-bg cursor-pointer"  (click)="navigateToDisbursalTAT ()">
                         <div class="progress">
                             <div
                               class="progress-bar green-bar"
@@ -280,12 +325,21 @@
                   <div class="card graph-card">
                     <div class="card-body text-center">
                       <span class="f-6"> Technical TAT  </span>
-                      <div class=" d-flex justify-content-center mt-3 cursor-pointer" (click)="navigateToTatTable()">
-                        <div class=" align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"> <div class="mx-1 dot-red"></div>0 - 2 (days)</div>
-                        <div class="align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"><div class="mx-1 dot-orange"></div> 2- 5 (days)</div>
-                        <div class="align-items-center border d-flex p-2 rounded mx-1 indicators  fs-12"> <div class="mx-1 dot-green"></div>Upper 5 (days)</div>
-                    </div>
-                      <div class="progres-line-bg">
+                      <div class="row mt-3 cursor-pointer"  (click)="navigateToTechnicalTAT ()">
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-red"></div>
+                          <span class="indicators px-1 fs-12">> 2 (days)</span>
+                        </div>
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-orange"></div>
+                          <span class="indicators px-1 fs-12">>5 (days)</span>
+                        </div>
+                        <div class="col px-1 border d-flex align-items-center">
+                          <div class="dot-green"></div>
+                          <span class="indicators px-1 fs-12">< 5 (days)</span>
+                        </div>
+                      </div>
+                      <div class="progres-line-bg cursor-pointer" (click)="navigateToTechnicalTAT ()">
                         <div class="progress">
                             <div
                               class="progress-bar green-bar"
@@ -333,12 +387,21 @@
                 <div class="card graph-card">
                   <div class="card-body text-center">
                     <span class="f-6">Legal TAT   </span>
-                    <div class=" d-flex justify-content-center mt-3 cursor-pointer" (click)="navigateToTatTable()">
-                      <div class=" align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"> <div class="mx-1 dot-red"></div>0 - 2 (days)</div>
-                      <div class="align-items-center border d-flex p-2 rounded mx-1 indicators fs-12"><div class="mx-1 dot-orange"></div> 2- 5 (days)</div>
-                      <div class="align-items-center border d-flex p-2 rounded mx-1 indicators  fs-12"> <div class="mx-1 dot-green"></div>Upper 5 (days)</div>
-                  </div>
-                    <div class="progres-line-bg">
+                    <div class="row mt-3 cursor-pointer " (click)="LegalTAT()">
+                      <div class="col px-1 border d-flex align-items-center">
+                        <div class="dot-red"></div>
+                        <span class="indicators px-1 fs-12">> 2 (days)</span>
+                      </div>
+                      <div class="col px-1 border d-flex align-items-center">
+                        <div class="dot-orange"></div>
+                        <span class="indicators px-1 fs-12">>5 (days)</span>
+                      </div>
+                      <div class="col px-1 border d-flex align-items-center">
+                        <div class="dot-green"></div>
+                        <span class="indicators px-1 fs-12">< 5 (days)</span>
+                      </div>
+                    </div>
+                    <div class="progres-line-bg cursor-pointer"  (click)="LegalTAT()">
                         <div class="progress">
                             <div
                               class="progress-bar green-bar"

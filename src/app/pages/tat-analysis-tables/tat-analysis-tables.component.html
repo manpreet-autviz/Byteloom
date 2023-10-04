@@ -8,8 +8,7 @@
           >
             <div>
               <span class="f-7 fs-5">
-                <a routerLink="/tat-analysis">TAT Analysis</a> / Login to PD
-                TAT 
+                <a routerLink="/tat-analysis">TAT Analysis</a> /{{routeName}}
               </span>
             </div>
             <div class="d-flex">
@@ -42,7 +41,7 @@
           <div class="card-body align-items-center justify-content-between">
             <div class="row">
               <div class="col">
-                <button class="btn bg-blue text-white">
+                <button class="btn bg-blue text-white" routerLink="/tat-analysis">
                   <i class="fa-solid fa-arrow-left"></i>Back
                 </button>
               </div>
@@ -57,10 +56,10 @@
                 <select
                   id="dropdown"
                   class="form-select"
-                  [(ngModel)]="selectedState"
-                  (ngModelChange)="onStateChange($event)"
+                  [(ngModel)]="selectedFilterState"
+                  (ngModelChange)="onStateFilterChange($event)"
                 >
-                  <option *ngFor="let state of states" [value]="state">
+                  <option *ngFor="let state of statesFilter" [value]="state">
                     {{ state }}
                   </option>
                 </select>
@@ -69,11 +68,11 @@
                 <select
                   id="dropdown"
                   class="form-select"
-                  [(ngModel)]="selectedState"
-                  (ngModelChange)="onStateChange($event)"
+                  [(ngModel)]="selectedTat"
+                  (ngModelChange)="onTatChange($event)"
                 >
-                  <option *ngFor="let state of states" [value]="state">
-                    {{ state }}
+                  <option *ngFor="let tat of tats" [value]="tat">
+                    {{ tat }}
                   </option>
                 </select>
               </div>
@@ -81,11 +80,11 @@
                 <select
                   id="dropdown"
                   class="form-select"
-                  [(ngModel)]="selectedState"
-                  (ngModelChange)="onStateChange($event)"
+                  [(ngModel)]="selectedStatus"
+                  (ngModelChange)="onStatusChange($event)"
                 >
-                  <option *ngFor="let state of states" [value]="state">
-                    {{ state }}
+                  <option *ngFor="let status of statuss" [value]="status">
+                    {{ status }}
                   </option>
                 </select>
               </div>
@@ -98,10 +97,46 @@
               >
                 <ng-template pTemplate="header">
                   <tr>
-                    <th>Name</th>
-                    <th>Size</th>
-                    <th>Type</th>
+                    <th>State Name</th>
+                    <th>Current month login</th>
+                    <th>Carry Forward</th>
+                    <th>Total</th>
+                    <th>Within 03 days</th>
+                    <th>04 to 05 days</th>
+                    <th>More than 5 days</th>
+                    <th>Reject before PD</th>
                   </tr>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>
+                      <tr>
+                        <th>No</th>
+                        <th>%</th>
+                      </tr>
+                    </th>
+                    <th>
+                      <tr>
+                        <th>No</th>
+                        <th>%</th>
+                      </tr>
+                    </th>
+                    <th>
+                      <tr>
+                        <th>No</th>
+                        <th>%</th>
+                      </tr>
+                    </th>
+                    <th>
+                      <tr>
+                        <th>No</th>
+                        <th>%</th>
+                      </tr>
+                    </th>
+                  </tr>
+                  
                 </ng-template>
                 <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
                   <tr [ttRow]="rowNode">
@@ -109,10 +144,22 @@
                       <p-treeTableToggler [ngClass]="'custom-toggler'"
                         [rowNode]="rowNode"
                       ></p-treeTableToggler>
-                      {{ rowData.name }}
+                      {{ rowData.StateName }}
                     </td>
-                    <td>{{ rowData.size }}</td>
-                    <td>{{ rowData.type }}</td>
+                    <td>{{ rowData.CurrentMmonthLogin }}</td>
+                    <td>{{ rowData.CarryForward }}</td>
+                    <td>{{ rowData.Total }}</td>
+                    <td>{{ rowData.Within03Number }}</td>
+                    <td>{{ rowData.Within03percent }}</td>
+                    
+                    <td>{{ rowData.to05number }}</td>
+                    <td>{{ rowData.to05npercent }}</td>
+
+                    <td>{{ rowData.Morethan5Number }}</td>
+                    <td>{{ rowData.Morethan5Percent }}</td>
+                    
+                    <td>{{ rowData.RejectBeforeNumber }}</td>
+                    <td>{{ rowData.RejectBeforePercent }}</td>
                   </tr>
                 </ng-template>
               </p-treeTable>
