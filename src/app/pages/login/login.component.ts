@@ -2,17 +2,32 @@ import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 import * as echarts from 'echarts';
 import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
+const today = new Date();
+const currentMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+const currentMonthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+const customValidRange = {
+  start: '2023-09-01', // Define the start date you want to display
+  end: '2023-09-30',   // Define the end date you want to display
+};
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
+
+
 export class LoginComponent implements AfterViewInit {
   calendarOptions: CalendarOptions = {
     plugins: [dayGridPlugin],
     initialView: 'dayGridMonth',
-    weekends: true,
+    visibleRange: {
+      start: new Date(), // Start from the current date
+      end: new Date(new Date().getFullYear(), new Date().getMonth(), 1), // End at the first day of the current month
+    },
+    // weekends: true,
+    
     events: this.generateRandomEvents(),
+    
   };
 
   StateChart!: echarts.ECharts;
@@ -68,6 +83,7 @@ export class LoginComponent implements AfterViewInit {
     this.initializeChart();
   }
 
+  
   generateRandomEvents() {
     const today = new Date();
     const startDate = new Date(today.getFullYear(), today.getMonth(), 1); // 1st day of the current month
@@ -151,6 +167,7 @@ export class LoginComponent implements AfterViewInit {
         xAxis: {
           type: 'value',
           boundaryGap: [0, 0.01],
+          
           splitLine: {
             show: false,
           },
@@ -269,7 +286,7 @@ export class LoginComponent implements AfterViewInit {
         },
         series: [
           {
-            name: 'Access From',
+           
             type: 'pie',
             radius: ['30%', '80%'],
             avoidLabelOverlap: false,
@@ -290,7 +307,7 @@ export class LoginComponent implements AfterViewInit {
             },
             data: [
               { value: 27, name: 'Top-Up', itemStyle: { color: '#FF7629' } },
-              { value: 45, name: 'Fresh', itemStyle: { color: '#FF7629' } },
+              { value: 45, name: 'Fresh', itemStyle: { color: '#00E1EF' } },
               { value: 26, name: 'BT', itemStyle: { color: '#94DD1D' } },
             ],
           },
@@ -308,7 +325,6 @@ export class LoginComponent implements AfterViewInit {
         },
         series: [
           {
-            name: 'Access From',
             type: 'pie',
             radius: ['30%', '80%'],
             avoidLabelOverlap: false,
@@ -344,7 +360,7 @@ export class LoginComponent implements AfterViewInit {
           data: ['Direct', 'DSA', 'Power Partner', 'Saathi', 'Online Partner'],
           axisLabel: {
             interval: 0,
-            rotate: 0,
+            rotate: -45,
             overflow: 'break',
           },
         },
@@ -353,9 +369,7 @@ export class LoginComponent implements AfterViewInit {
           nameLocation: 'middle',
           nameGap: 30,
 
-          nameTextStyle: {
-            fontWeight: 700,
-          },
+         
           type: 'value',
           axisLine: {
             show: true,
@@ -367,7 +381,7 @@ export class LoginComponent implements AfterViewInit {
           max: 70,
           interval: 10,
           axisLabel: {
-            formatter: '{value}%',
+            formatter: '{value}',
             margin: 1,
           },
         },
@@ -1194,7 +1208,7 @@ export class LoginComponent implements AfterViewInit {
       {
         value: this.getRandomValue(40, 45),
         name: 'Fresh',
-        itemStyle: { color: '#FF0000' },
+        itemStyle: { color: '#00E1EF' },
       },
       {
         value: this.getRandomValue(23, 26),

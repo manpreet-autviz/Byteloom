@@ -138,7 +138,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           interval: 20,
           name: 'NUMBER OF FILES',
           nameLocation: 'middle',
-          nameGap: 30,
+          nameGap: 25,
           nameTextStyle: {
             fontWeight: 700,
           },
@@ -172,6 +172,19 @@ export class FinancialApprovalsComponent implements AfterViewInit {
       };
 
       this.averageApprovalOption = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow',
+          },
+          formatter: (params: any) => {
+            
+            const barValue = params[0].value;
+            
+            // Create the tooltip content with the actual value and random amount
+            return `Amount In  (Lacs): ${barValue}`;
+          },
+        },
         xAxis: {
           type: 'category',
 
@@ -195,7 +208,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           },
           name: 'AMOUNT IN LACS',
           nameLocation: 'middle',
-          nameGap: 30,
+          nameGap: 25,
         },
         series: [
           {
@@ -219,7 +232,6 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         series: [
           {
-            name: 'Access From',
             type: 'pie',
             radius: ['30%', '80%'],
             avoidLabelOverlap: false,
@@ -240,7 +252,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             },
             data: [
               { value: 27, name: 'Top-Up', itemStyle: { color: '#FF7629' } },
-              { value: 45, name: 'Fresh', itemStyle: { color: '#FF7629' } },
+              { value: 45, name: 'Fresh', itemStyle: { color: '#00E1EF' } },
               { value: 26, name: 'BT', itemStyle: { color: '#94DD1D' } },
             ],
           },
@@ -257,7 +269,6 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         series: [
           {
-            name: 'Access From',
             type: 'pie',
             radius: ['30%', '80%'],
             avoidLabelOverlap: false,
@@ -287,6 +298,19 @@ export class FinancialApprovalsComponent implements AfterViewInit {
       };
 
       this.conversionOption = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow',
+          },
+          formatter: (params: any) => {
+            
+            const barValue = params[0].value;
+            
+            // Create the tooltip content with the actual value and random amount
+            return ` ${barValue}%`;
+          },
+        },
         xAxis: {
           type: 'category',
 
@@ -308,11 +332,11 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           splitLine: {
             show: false,
           },
-          name: 'DAYS',
+          name: 'PERCENTAGE',
           nameLocation: 'middle',
-          nameGap: 30,
+          nameGap: 25,
           axisLabel: {
-            formatter: '{value}%',
+            formatter: '{value}',
             margin: 1,
           },
         },
@@ -330,6 +354,19 @@ export class FinancialApprovalsComponent implements AfterViewInit {
       };
 
       this.financialTatOption = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow',
+          },
+          formatter: (params: any) => {
+            
+            const barValue = params[0].value;
+            
+            // Create the tooltip content with the actual value and random amount
+            return `Days: ${barValue}`;
+          },
+        },
         xAxis: {
           type: 'category',
 
@@ -353,7 +390,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           },
           name: 'DAYS',
           nameLocation: 'middle',
-          nameGap: 30,
+          nameGap: 25,
         },
         series: [
           {
@@ -464,7 +501,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             interval: 10,
             name: 'Amount in Crore ',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 30,
           },
         ],
         series: [
@@ -634,7 +671,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             interval: 10,
             name: 'Amount in Crore',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap:  30,
           },
         ],
         series: [
@@ -758,9 +795,9 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             interval: 10,
             name: 'Percentage',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap:  25,
             axisLabel: {
-              formatter: '{value}%',
+              formatter: '{value}',
               margin: 1,
             },
           },
@@ -992,7 +1029,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             interval: 2,
             name: 'Days',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap:  25,
           },
         ],
         series: [
@@ -1116,9 +1153,9 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             interval: 2,
             name: 'Percentage',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap:  20,
             axisLabel: {
-              formatter: '{value}%',
+              formatter: '{value}',
               margin: 1,
             },
           },

@@ -89,77 +89,57 @@
                 </select>
               </div>
             </div>
-            <div class="mt-3">
+            <div class="mt-3 tat-table">
               <p-treeTable
                 [value]="files"
                 [scrollable]="true"
                 [tableStyle]="{ 'min-width': '50rem' }"
               >
-                <ng-template pTemplate="header">
-                  <tr>
-                    <th>State Name</th>
+                <ng-template pTemplate="header" class="table-header">
+                  <tr class="tat-head-first-r text-center" >
+                    <th colspan="2">State Name</th>
                     <th>Current month login</th>
                     <th>Carry Forward</th>
                     <th>Total</th>
-                    <th>Within 03 days</th>
-                    <th>04 to 05 days</th>
-                    <th>More than 5 days</th>
-                    <th>Reject before PD</th>
+                    <th colspan="2">Within 03 days</th>
+                    <th colspan="2">04 to 05 days</th>
+                    <th colspan="2">More than 5 days</th>
+                    <th colspan="2">Reject before PD</th>
                   </tr>
-                  <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th>
-                      <tr>
-                        <th>No</th>
-                        <th>%</th>
-                      </tr>
-                    </th>
-                    <th>
-                      <tr>
-                        <th>No</th>
-                        <th>%</th>
-                      </tr>
-                    </th>
-                    <th>
-                      <tr>
-                        <th>No</th>
-                        <th>%</th>
-                      </tr>
-                    </th>
-                    <th>
-                      <tr>
-                        <th>No</th>
-                        <th>%</th>
-                      </tr>
-                    </th>
+                  <tr class="tat-head-second-r " >
+                    <th colspan="5"></th>
+                        <th class="text-center">No</th>
+                        <th class="text-center border-end">%</th>
+                        <th class="text-center">No</th>
+                        <th class="text-center border-end">%</th>  
+                        <th class="text-center">No</th>
+                        <th class="text-center border-end">%</th>
+                        <th class="text-center">No</th>
+                        <th class="text-center">%</th>
                   </tr>
-                  
                 </ng-template>
                 <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
-                  <tr [ttRow]="rowNode">
-                    <td>
+                  <tr [ttRow]="rowNode" >
+                    <td colspan="2"  >
                       <p-treeTableToggler [ngClass]="'custom-toggler'"
                         [rowNode]="rowNode"
                       ></p-treeTableToggler>
                       {{ rowData.StateName }}
                     </td>
-                    <td>{{ rowData.CurrentMmonthLogin }}</td>
-                    <td>{{ rowData.CarryForward }}</td>
-                    <td>{{ rowData.Total }}</td>
-                    <td>{{ rowData.Within03Number }}</td>
-                    <td>{{ rowData.Within03percent }}</td>
+                    <td class="text-center">{{ rowData.CurrentMmonthLogin }}</td>
+                    <td class="text-center">{{ rowData.CarryForward }}</td>
+                    <td class="text-center">{{ rowData.Total }}</td>
+                    <td class="text-center">{{ rowData.Within03Number }}</td>
+                    <td class="text-center">{{ rowData.Within03percent }}</td>
                     
-                    <td>{{ rowData.to05number }}</td>
-                    <td>{{ rowData.to05npercent }}</td>
+                    <td class="text-center">{{ rowData.to05number }}</td>
+                    <td class="text-center">{{ rowData.to05npercent }}</td>
 
-                    <td>{{ rowData.Morethan5Number }}</td>
-                    <td>{{ rowData.Morethan5Percent }}</td>
+                    <td class="text-center">{{ rowData.Morethan5Number }}</td>
+                    <td class="text-center">{{ rowData.Morethan5Percent }}</td>
                     
-                    <td>{{ rowData.RejectBeforeNumber }}</td>
-                    <td>{{ rowData.RejectBeforePercent }}</td>
+                    <td class="text-center">{{ rowData.RejectBeforeNumber }}</td>
+                    <td class="text-center">{{ rowData.RejectBeforePercent }}</td>
                   </tr>
                 </ng-template>
               </p-treeTable>
