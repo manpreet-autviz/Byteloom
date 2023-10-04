@@ -53,11 +53,8 @@ font-size:12px;
 .card {
   border: none !important;
 }
-
-.graph-card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); /* Adjust opacity here */
-  transition: box-shadow 0.3s ease;
-  margin-top: 20px;
+.box-s{
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.09);
 }
 .filter-btn-trend {
   min-width: 140px;
@@ -213,4 +210,46 @@ padding: 10px;
 } 
 .form-select{
   font-size: 14px;
+}
+
+button.fc-next-button.fc-button.fc-button-primary ,
+button.fc-prev-button.fc-button.fc-button-primary,button.fc-today-button.fc-button.fc-button-primary {
+  display: none;
+}
+.fc .fc-toolbar.fc-header-toolbar {
+  justify-content: center;
+}
+.fc-day-past.fc-daygrid-day {
+  height: 50px;
+}
+.fc-view-harness  {
+ height:630px !important;
+}
+.tat-table .p-treetable .p-treetable-thead > tr > th{
+  background-color: transparent !important;
+  color:#fff;
+  padding: 1rem 0rem;
+}
+.tat-table .p-treetable  .p-treetable-tbody > tr > td{
+  background-color: transparent !important;
+  padding: 1rem 0rem;
+  border-bottom:0.2px solid#ccc;
+}
+
+.tat-table .p-treetable-scrollable-header {
+  border-radius: 4px;
+}
+.tat-table .p-treetable-scrollable-header .tat-head-first-r {
+  border-radius: 4px;
+  background-color:#0747a6;
+  padding: 10px;
+}
+
+.tat-table .p-treetable-scrollable-header .tat-head-second-r{
+  border-radius: 4px;
+  background-color:#0A5BD4;
+  padding: 10px;
+}
+.p-treetable-scrollable-header-box{
+  padding-right: 0px !important;
 }

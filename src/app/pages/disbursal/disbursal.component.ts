@@ -219,9 +219,7 @@ export class DisbursalComponent {
           name: 'AMOUNT IN CRORE',
           nameLocation: 'middle',
           nameGap: 30,
-          nameTextStyle: {
-            fontWeight: 700,
-          },
+         
         },
         yAxis: {
           type: 'category',
@@ -252,6 +250,19 @@ export class DisbursalComponent {
       };
 
       this.averageDisbursalOption = {
+        tooltip: {
+          trigger: 'axis',
+          
+          formatter: (params: any) => {
+           
+            const barValue = params[0].value;
+           
+       
+
+            // Create the tooltip content with the actual value and random amount
+            return `Amount in (Lacs): ${barValue}`;
+          },
+        },
         responsive: true,
         xAxis: {
           type: 'category',
@@ -259,7 +270,7 @@ export class DisbursalComponent {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: 0,
+            rotate: -45,
             overflow: 'break',
           },
         },
@@ -276,7 +287,7 @@ export class DisbursalComponent {
           },
           name: 'AMOUNT IN LACS',
           nameLocation: 'middle',
-          nameGap: 30,
+          nameGap: 25,
         },
         series: [
           {
@@ -300,7 +311,6 @@ export class DisbursalComponent {
         },
         series: [
           {
-            name: 'Access From',
             type: 'pie',
             radius: ['30%', '80%'],
             avoidLabelOverlap: false,
@@ -321,7 +331,7 @@ export class DisbursalComponent {
             },
             data: [
               { value: 27, name: 'Top-Up', itemStyle: { color: '#FF7629' } },
-              { value: 45, name: 'Fresh', itemStyle: { color: '#FF7629' } },
+              { value: 45, name: 'Fresh', itemStyle: { color: '#00E1EF' } },
               { value: 26, name: 'BT', itemStyle: { color: '#94DD1D' } },
             ],
           },
@@ -338,7 +348,6 @@ export class DisbursalComponent {
         },
         series: [
           {
-            name: 'Access From',
             type: 'pie',
             radius: ['30%', '80%'],
             avoidLabelOverlap: false,
@@ -384,7 +393,7 @@ export class DisbursalComponent {
           type: 'category',
           axisLabel: {
             interval: 0,
-            rotate: 0,
+            rotate: -45,
             overflow: 'break',
           },
         },
@@ -392,10 +401,16 @@ export class DisbursalComponent {
           min: 2,
           max: 16,
           interval: 2,
+          axisLine: {
+            show: true,
+          },
           axisLabel: {
-            formatter: '{value}%',
+            formatter: '{value}',
             margin: 1,
           },
+          name: 'PERCENTAGE',
+          nameLocation: 'middle',
+          nameGap: 25,
         },
         // Declare several bar series, each will be mapped
         // to a column of dataset.source by default.
@@ -422,6 +437,21 @@ export class DisbursalComponent {
       };
 
       this.disbursalTatOption = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow',
+          },
+          formatter: (params: any) => {
+           
+            const barValue = params[0].value;
+           
+       
+
+            // Create the tooltip content with the actual value and random amount
+            return `Days: ${barValue}`;
+          },
+        },
         xAxis: {
           type: 'category',
 
@@ -445,7 +475,7 @@ export class DisbursalComponent {
           },
           name: 'DAYS',
           nameLocation: 'middle',
-          nameGap: 30,
+          nameGap: 25,
         },
         series: [
           {
@@ -460,6 +490,21 @@ export class DisbursalComponent {
       };
 
       this.loginDisbursalRatioOption = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow',
+          },
+          formatter: (params: any) => {
+           
+            const barValue = params[0].value;
+           
+       
+
+            // Create the tooltip content with the actual value and random amount
+            return ` ${barValue}%`;
+          },
+        },
         xAxis: {
           type: 'category',
 
@@ -481,11 +526,11 @@ export class DisbursalComponent {
           splitLine: {
             show: false,
           },
-          name: 'DAYS',
+          name: 'PERCENTAGE',
           nameLocation: 'middle',
-          nameGap: 30,
+          nameGap: 25,
           axisLabel: {
-            formatter: '{value}%',
+            formatter: '{value}',
             margin: 1,
           },
         },
@@ -1671,7 +1716,7 @@ export class DisbursalComponent {
   }
 
   generateAverageStateRandomData() {
-    const minValues = [7, 8.5, 9, 9.2, 11, 11.4, 12.5, 13];
+    const minValues = [8.2, 8.5, 9, 9.2, 11, 11.4, 12.5, 13];
     const maxValues = [10, 10, 11, 11.9, 12, 12, 13, 15];
 
     const newData = minValues.map((min, index) => {
@@ -1691,7 +1736,7 @@ export class DisbursalComponent {
       {
         value: this.getRandomValue(40, 45),
         name: 'Fresh',
-        itemStyle: { color: '#FF0000' },
+        itemStyle: { color: '#00E1EF' },
       },
       {
         value: this.getRandomValue(23, 26),
