@@ -1,0 +1,229 @@
+<div class="main-content">
+  <div class="page-content">
+    <div class="container-fluid">
+      <div class="breadcrumb">
+        <div class="card card-animate w-100">
+          <div
+            class="card-body d-flex align-items-center justify-content-between"
+          >
+            <div>
+              <span class="f-7 fs-5"> Insights</span>
+            </div>
+            <div class="d-flex">
+              <select
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedFilter"
+                (ngModelChange)="onFilterChange($event)"
+              >
+                <option *ngFor="let filter of filters" [value]="filter">
+                  {{ filter }}
+                </option>
+              </select>
+
+              <select
+                id="dropdown"
+                class="form-select"
+                [(ngModel)]="selectedState"
+                (ngModelChange)="onStateChange($event)"
+              >
+                <option *ngFor="let state of states" [value]="state">
+                  {{ state }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-animate w-100 mt-3">
+          <div class="row four-tile-card p-4">
+            <div class="col-xl-4 col-md-6 col-sm-12">
+              <div class="card">
+                <div class="card-body text-white bg-blue rounded">
+                  <div class="d-flex">
+                    <p class="f-7 mb-0">Total Logins</p>
+                  </div>
+                  <div class="d-flex align-items-end justify-content-between">
+                    <div class="">
+                      <span class="fs-3">
+                        <img src="../../../assets/icons/user-logo.png" />
+                      </span>
+                    </div>
+                    <div>
+                      <span class="f-6 small-text">Total Amount</span><br />
+                      <span class="f-7 fs-6 py-2"
+                        >{{ loginTotalAmount }} Cr</span
+                      ><br />
+                      <span class="f-4 small-text">Total Files</span><br />
+                      <span class="f-7 fs-4">{{ loginTotalFiles }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6 col-sm-12">
+              <div class="card">
+                <div class="card-body text-white bg-orange rounded">
+                  <div class="d-flex">
+                    <p class="f-7 mb-0">Financial Approval</p>
+                  </div>
+                  <div class="d-flex align-items-end justify-content-between">
+                    <div class="">
+                      <span class="fs-3">
+                        <img src="../../../assets/icons/financial.png" />
+                      </span>
+                    </div>
+                    <div>
+                      <span class="f-6 small-text">Total Files</span><br />
+                      <span class="f-7 fs-6 py-2">{{
+                        financialTotalFiles
+                      }}</span
+                      ><br />
+                      <span class="f-4 small-text">Total Amount</span><br />
+                      <span class="f-7 fs-4">{{ financialTotalAmount }}Cr</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-md-6 col-sm-12">
+              <div class="card">
+                <div class="card-body text-white bg-purple rounded">
+                  <div class="d-flex">
+                    <p class="f-7 mb-0">Disbursals</p>
+                  </div>
+                  <div class="d-flex align-items-end justify-content-between">
+                    <div class="">
+                      <span class="fs-3">
+                        <img
+                          src="../../../assets/icons/solar_wallet-bold.png"
+                        />
+                      </span>
+                    </div>
+                    <div>
+                      <span class="f-6 small-text">Total Files</span><br />
+                      <span class="f-7 fs-6 py-2">{{
+                        disbursalTotalFiles
+                      }}</span
+                      ><br />
+                      <span class="f-4 small-text">Total Amount</span><br />
+                      <span class="f-7 fs-4">{{ disbursalTotalAmount }}Cr</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-animate w-100 mt-2">
+          <div class="card-body align-items-center justify-content-between">
+            <div class="border-bottom mt-3"></div>
+            <div class="row mt-3">
+              <div class="col-md-2 d-flex align-items-center">
+                <span class="f-6"> Search Filter</span>
+              </div>
+              <div class="col-md-3">
+                <select
+                  id="dropdown"
+                  class="form-select"
+                  [(ngModel)]="selectedFilterState"
+                  (ngModelChange)="onStateFilterChange($event)"
+                >
+                  <option *ngFor="let state of statesFilter" [value]="state">
+                    {{ state }}
+                  </option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <select
+                  id="dropdown"
+                  class="form-select"
+                  [(ngModel)]="selectedTat"
+                  (ngModelChange)="onTatChange($event)"
+                >
+                  <option *ngFor="let tat of tats" [value]="tat">
+                    {{ tat }}
+                  </option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <select
+                  id="dropdown"
+                  class="form-select"
+                  [(ngModel)]="selectedStatus"
+                  (ngModelChange)="onStatusChange($event)"
+                >
+                  <option *ngFor="let status of statuss" [value]="status">
+                    {{ status }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="mt-3">
+              <p-treeTable
+                [value]="files"
+                [scrollable]="true"
+                [tableStyle]="{ 'min-width': '50rem' }"
+              >
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th></th>
+                    <th>Login</th>
+                    <th>Financial</th>
+                    <th>Disbursal</th>
+                  </tr>
+                  <tr>
+                    <th>State Name</th>
+
+                    <th>
+                      <tr>
+                        <th>Number of file</th>
+                        <th>Amount</th>
+                      </tr>
+                    </th>
+                    <th>
+                      <tr>
+                        <th>Number of file</th>
+                        <th>Amount</th>
+                      </tr>
+                    </th>
+
+                    <th>
+                      <tr>
+                        <th>Target</th>
+                        <th>Actual</th>
+                        <th>Percentage</th>
+                      </tr>
+                    </th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+                  <tr [ttRow]="rowNode">
+                    <td>
+                      <p-treeTableToggler
+                        [ngClass]="'custom-toggler'"
+                        [rowNode]="rowNode"
+                      ></p-treeTableToggler>
+                      {{ rowData.StateName }}
+                    </td>
+                    <td>{{ rowData.loginFiles }}</td>
+                    <td class="cursor-pointer" routerLink="/business-insights">{{ rowData.loginAmount }} </td>
+                    <td>{{ rowData.financialFiles }}</td>
+                    <td>{{ rowData.financialAmount }}</td>
+                    <td>{{ rowData.target }}</td>
+
+                    <td>{{ rowData.actual }}</td>
+                    <td>{{ rowData.percentage }}</td>
+                  </tr>
+                </ng-template>
+              </p-treeTable>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

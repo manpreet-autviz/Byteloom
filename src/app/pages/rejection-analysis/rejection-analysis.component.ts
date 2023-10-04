@@ -613,6 +613,24 @@ export class RejectionAnalysisComponent {
   }
   stateLoginRandomValues() {
 
+    const loginToFinancialApprovalMin = [39, 39, 39, 39, 39, 39, 39, 75];
+    const loginToFinancialApprovalMax = [40, 40, 40, 40, 40, 40, 40, 80];
+    const financialApprovalToDisbursalMin = [63, 63, 63, 63, 63, 63, 63, 222];
+    const financialApprovalToDisbursalMax = [65, 65, 65, 65, 65, 65, 65, 225];
+    const loginToDisbursalMin = [1900, 1900, 1900, 1900, 1900, 1900, 1900, 5900];
+    const loginToDisbursalMax = [2000, 2000, 2000, 2000, 2000, 2000, 2000, 6000];
+
+    // Generate random values for each series
+    const loginToFinancialApprovalValues = this.generateRandomValues(loginToFinancialApprovalMin, loginToFinancialApprovalMax);
+    const financialApprovalToDisbursalValues = this.generateRandomValues(financialApprovalToDisbursalMin, financialApprovalToDisbursalMax);
+    const loginToDisbursalValues = this.generateRandomValues(loginToDisbursalMin, loginToDisbursalMax);
+
+    // Update the data property of the series objects
+    this.StateLoginOption.series[0].data = loginToFinancialApprovalValues;
+    this.StateLoginOption.series[1].data = financialApprovalToDisbursalValues;
+    this.StateLoginOption.series[2].data = loginToDisbursalValues;
+    this.StateLoginChart.setOption(this.StateLoginOption);
+
   }
   
   ProductConversionRandomValues() {
@@ -639,7 +657,27 @@ export class RejectionAnalysisComponent {
     this.ProductRejectionRandomValues();
     this.rejectionAnalysisRandomValues();
   }
-  stateRejectionRandomValues() {}
+  stateRejectionRandomValues() {
+
+    const loginToFinancialApprovalMin = [39, 39, 39, 39, 39, 39, 39, 75];
+    const loginToFinancialApprovalMax = [40, 40, 40, 40, 40, 40, 40, 80];
+    const financialApprovalToDisbursalMin = [63, 63, 63, 63, 63, 63, 63, 222];
+    const financialApprovalToDisbursalMax = [65, 65, 65, 65, 65, 65, 65, 225];
+    const loginToDisbursalMin = [1900, 1900, 1900, 1900, 1900, 1900, 1900, 5900];
+    const loginToDisbursalMax = [2000, 2000, 2000, 2000, 2000, 2000, 2000, 6000];
+
+    // Generate random values for each series
+    const loginToFinancialApprovalValues = this.generateRandomValues(loginToFinancialApprovalMin, loginToFinancialApprovalMax);
+    const financialApprovalToDisbursalValues = this.generateRandomValues(financialApprovalToDisbursalMin, financialApprovalToDisbursalMax);
+    const loginToDisbursalValues = this.generateRandomValues(loginToDisbursalMin, loginToDisbursalMax);
+
+    // Update the data property of the series objects
+    this.StateRejectionOption.series[0].data = loginToFinancialApprovalValues;
+    this.StateRejectionOption.series[1].data = financialApprovalToDisbursalValues;
+    this.StateRejectionOption.series[2].data = loginToDisbursalValues;
+
+    this.StateRejectionChart.setOption(this.StateRejectionOption);
+  }
   ProductRejectionRandomValues() {
     const StateminValues = [55, 60, 64,68,75];
     const StatemaxValues = [60, 67, 78,83,90];
@@ -667,4 +705,17 @@ export class RejectionAnalysisComponent {
     this.AnalysisRejectionOption.series[0].data = newData;
     this.AnalysisRejectionChart.setOption(this.AnalysisRejectionOption);
   }
+
+ 
+  generateRandomValues(minArray: number[], maxArray: number[]): number[] {
+    if (minArray.length !== maxArray.length) {
+      throw new Error('minArray and maxArray must have the same length');
+    }
+
+    return minArray.map((min, index) => {
+      const max = maxArray[index];
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    });
+  }
+  
 }
