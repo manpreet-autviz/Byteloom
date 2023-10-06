@@ -37,6 +37,9 @@ font-size:12px;
 .small-text {
   font-size: 13px;
 }
+.smallTextSize{
+  font-size: 10px;
+}
 .bg-blue {
   background: #0747a6;
 }
@@ -236,7 +239,8 @@ button.fc-prev-button.fc-button.fc-button-primary,button.fc-today-button.fc-butt
   border-bottom:0.2px solid#ccc;
 }
 
-.tat-table .p-treetable-scrollable-header {
+.tat-table .p-treetable-scrollable-header,
+.insight-table .p-treetable-scrollable-header {
   border-radius: 4px;
 }
 .tat-table .p-treetable-scrollable-header .tat-head-first-r {
@@ -250,6 +254,40 @@ button.fc-prev-button.fc-button.fc-button-primary,button.fc-today-button.fc-butt
   background-color:#0A5BD4;
   padding: 10px;
 }
+.insight-table .p-treetable-scrollable-header .tat-head-first-r .theadcolor-1 {
+ 
+  background-color:#7460EE33 !important;
+  padding: 10px;
+}
+.insight-table .p-treetable-scrollable-header .tat-head-first-r .theadcolor-2 {
+
+  background-color:#F8565633 !important;
+  padding: 10px;
+}.insight-table .p-treetable-scrollable-header .tat-head-first-r .theadcolor-3 {
+
+  background-color:#07A14E33 !important;
+  padding: 10px;
+}
+.insight-table .p-treetable  .p-treetable-thead  > tr > th{
+  background-color: transparent !important;
+  padding: 1rem 0rem;
+  border-bottom:0.2px solid#ccc;
+}
+.insight-table .p-treetable  .p-treetable-tbody > tr > td{
+  background-color: transparent !important;
+  padding: 1rem 0rem;
+  border-bottom:0.2px solid#ccc;
+}
+
+.insight-table .p-treetable-scrollable-header .tat-head-second-r{
+  border-radius: 4px;
+  background-color:#5281FF;
+  padding: 10px;
+}
 .p-treetable-scrollable-header-box{
   padding-right: 0px !important;
+}
+.business-insights-table{
+  color: #6A6A6A;
+  font-size: 12px;
 }

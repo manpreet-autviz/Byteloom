@@ -1,0 +1,223 @@
+<div class="main-content">
+  <div class="page-content">
+    <div class="container-fluid">
+      <div class="breadcrumb">
+        <div class="card card-animate w-100">
+          <div
+            class="card-body d-flex align-items-center justify-content-between"
+          >
+            <div>
+              <span class="f-7 fs-5">360</span>
+            </div>
+            <div class="d-flex">
+              <select
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedFilter"
+                (ngModelChange)="onFilterChange($event)"
+              >
+                <option *ngFor="let filter of filters" [value]="filter">
+                  {{ filter }}
+                </option>
+              </select>
+
+              <select
+                id="dropdown"
+                class="form-select"
+                [(ngModel)]="selectedState"
+                (ngModelChange)="onStateChange($event)"
+              >
+                <option *ngFor="let state of states" [value]="state">
+                  {{ state }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-animate w-100 mt-2">
+          <div class="card-body align-items-center justify-content-between">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-body text-white bg-orange rounded">
+                    <div class="d-flex">
+                      <p class="f-7 mb-0">AUM</p>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <span class="f-6 smallTextSize">Number of Files</span>
+                        <h5>5000</h5>
+                      </div>
+                      <div class="col-md-6">
+                        <span class="f-6 smallTextSize">Amount in Crore</span>
+                        <h3>955 Cr</h3>
+                      </div>
+                    </div>
+
+                    <span class="customer-btn"
+                      >Total number of customer 7000</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card box-s">
+                  <div class="card-body text-center">
+                    <span class="f-6"> Product Wise Tat </span>
+                    <div
+                      class="state-chart"
+                      id="product-wise-Chart"
+                      style="width: 100%; height: 400px"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card box-s">
+                  <div class="card-body text-center">
+                    <span class="f-6"> Login / Approvals /Disbursal </span>
+                    <div
+                      class="state-chart"
+                      id="Login-Approvals-Disbursal-Chart"
+                      style="width: 100%; height: 400px"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-animate w-100 mt-2">
+          <div class="card-body align-items-center justify-content-between">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card box-s">
+                  <div class="card-body text-center">
+                    <span class="f-6"> Avg ticked size product wise </span>
+                    <div
+                      class="state-chart"
+                      id="Avg-ticked-size"
+                      style="width: 100%; height: 400px"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card box-s">
+                  <div class="card-body text-center">
+                    <span class="f-6"> Distribution mix </span>
+                    <div
+                      class="state-chart"
+                      id="distribution-mix"
+                      style="width: 100%; height: 400px"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card box-s">
+                  <div class="card-body text-center">
+                    <span class="f-6"> Conversion ratio </span>
+                    <div
+                      class="state-chart"
+                      id="conversion-ratio"
+                      style="width: 100%; height: 400px"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-animate w-100 mt-2">
+          <div class="card-body align-items-center justify-content-between">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card box-s">
+                  <div class="card-body text-center">
+                    <span class="f-6"> IRR/PF/Insurance </span>
+                    <div
+                      class="state-chart"
+                      id="Irr-pf-insurance"
+                      style="width: 100%; height: 400px"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card box-s">
+                  <div class="card-body text-center">
+                    <span class="f-6">
+                      OTC/PDD pending/Cheque handover pending
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-animate w-100 mt-2">
+          <div class="card-body align-items-center justify-content-between">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card box-s">
+                  <div class="card-body text-center">
+                    <span class="f-6"> IMD </span>
+                    <div
+                      class="state-chart"
+                      id="IMD-chart"
+                      style="width: 100%; height: 400px"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card box-s">
+                  <div class="card-body text-center">
+                    <span class="f-6">
+                      OTC/PDD pending/Cheque handover pending
+                    </span>
+                    <div
+                      class="state-chart"
+                      id="IMD-chart"
+                      style="width: 100%; height: 400px"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-animate w-100 mt-2">
+          <div class="card-body align-items-center justify-content-between">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card box-s">
+                  <div class="card-body text-center">
+                    <span class="f-6"> Disbursal </span>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card box-s">
+                  <div class="card-body text-center">
+                    <span class="f-6">
+                    Branch Performance
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

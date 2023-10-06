@@ -9,6 +9,7 @@ import { TatAnalysisTablesComponent } from './pages/tat-analysis-tables/tat-anal
 import { RejectionAnalysisComponent } from './pages/rejection-analysis/rejection-analysis.component';
 import { InsightsComponent } from './pages/insights/insights.component';
 import { BusinessInsightsComponent } from './pages/business-insights/business-insights.component';
+import { ThreeSixtyComponent } from './pages/three-sixty/three-sixty.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'rejection-ananlysis', component: RejectionAnalysisComponent },
   { path: 'insights', component: InsightsComponent },
   { path: 'business-insights', component: BusinessInsightsComponent },
+  { path: '360', component: ThreeSixtyComponent },
 ];
 
 @NgModule({
