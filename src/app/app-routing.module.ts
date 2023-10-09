@@ -10,6 +10,9 @@ import { RejectionAnalysisComponent } from './pages/rejection-analysis/rejection
 import { InsightsComponent } from './pages/insights/insights.component';
 import { BusinessInsightsComponent } from './pages/business-insights/business-insights.component';
 import { ThreeSixtyComponent } from './pages/three-sixty/three-sixty.component';
+import { ProductivitySalesComponent } from './pages/productivity-sales/productivity-sales.component';
+import { ChannelPartnersComponent } from './pages/channel-partners/channel-partners.component';
+import { CreditComponent } from './pages/credit/credit.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -23,10 +26,13 @@ const routes: Routes = [
   { path: 'insights', component: InsightsComponent },
   { path: 'business-insights', component: BusinessInsightsComponent },
   { path: '360', component: ThreeSixtyComponent },
+  { path: 'productivity/sales', component: ProductivitySalesComponent },
+  { path: 'productivity/channel-partner', component: ChannelPartnersComponent },
+  { path: 'productivity/credit', component: CreditComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
