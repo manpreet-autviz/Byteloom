@@ -174,6 +174,15 @@ export class ChannelPartnersComponent {
     setTimeout(() => {
       this.initializeChart();
     }, 0);
+    this.zone.runOutsideAngular(() => {
+      setTimeout(() => {
+        $(this.elementRef.nativeElement.querySelector('#table')).DataTable({
+          lengthChange: false,
+          searching: false,
+          ordering: false
+        });
+      }, 0);
+    });
     this.cdRef.detectChanges();
     this.isActiveButton = button;
   }

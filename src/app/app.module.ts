@@ -21,6 +21,12 @@ import { ThreeSixtyComponent } from './pages/three-sixty/three-sixty.component';
 import { ProductivitySalesComponent } from './pages/productivity-sales/productivity-sales.component';
 import { ChannelPartnersComponent } from './pages/channel-partners/channel-partners.component';
 import { CreditComponent } from './pages/credit/credit.component';
+import { TechnicalComponent } from './technical/technical.component';
+import { LegalComponent } from './pages/legal/legal.component';
+import { BusinessRMComponent } from './pages/business-rm/business-rm.component';
+import { ChequesSummaryComponent } from './pages/cheques-summary/cheques-summary.component';
+import { OtcPddComponent } from './pages/otc-pdd/otc-pdd.component';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +46,12 @@ import { CreditComponent } from './pages/credit/credit.component';
     ProductivitySalesComponent,
     ChannelPartnersComponent,
     CreditComponent,
+    TechnicalComponent,
+    LegalComponent,
+    BusinessRMComponent,
+    ChequesSummaryComponent,
+    OtcPddComponent,
+
   ],
   imports: [
     BrowserModule,
