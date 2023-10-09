@@ -10,6 +10,8 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class SidebarComponent {
   activeItem: string | null = '/dashboard';
+  showSubmenu:boolean = false;
+  submenus: any = {};
   constructor(private router : Router,private menuService: MenuService){
 
   }
@@ -23,5 +25,10 @@ export class SidebarComponent {
     this.menuService.setActiveMenuItem(path);
   }
 
+
+  toggleSubmenu(submenuName: string){
+    console.log("hgere,", this.showSubmenu)
+    this.submenus[submenuName] = !this.submenus[submenuName];
+  }
  
 }
