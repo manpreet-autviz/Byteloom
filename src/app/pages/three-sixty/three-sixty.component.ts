@@ -18,6 +18,16 @@ export class ThreeSixtyComponent {
     'MP',
     'Maharashtra',
   ];
+  
+  progressValue1: number = 60;
+  progressValue2: number = 15;
+  progressValue3: number = 25;
+  minValue1: number = 80;
+  maxValue1: number = 75;
+  minValue2: number = 10;
+  maxValue2: number = 12;
+  minValue3: number = 6;
+  maxValue3: number = 8;
 
   selectedState: string = 'Pan India';
   selectedFilter: string = 'Month To Date';
