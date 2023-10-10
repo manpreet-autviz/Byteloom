@@ -1,0 +1,286 @@
+.header-data {
+  border-radius: 25px;
+  background: rgba(7, 71, 166, 0.13);
+  padding: 6px 10px;
+  font-size: 12px;
+}
+.profile-info{
+  padding: 5px 17px;
+  margin-top: 27px; 
+}
+.profile-box{
+  height: 100%;
+}
+.Attrition-box {
+  border-radius: 5px;
+  background: #f1f1f1;
+  padding: 10px 20px;
+  align-items: center;
+}
+.Attrition-box h6 {
+  margin-bottom: 0;
+}
+.Attrition-card {
+  min-height: 456px;
+  height: 100%;
+}
+
+.user-img {
+  width: 89px;
+  height: 89px;
+  border-radius: 89px;
+}
+
+.Activity-tat-card {
+  min-height: 456px;
+  height: 100%;
+}
+.bg-pink {
+  background: rgba(254, 84, 25, 0.22);
+  border-radius: 4px;
+  border: 1px solid #fe5419;
+}
+.rm-cards {
+  padding: 20px 0px;
+}
+
+.rm-blue {
+  background: rgba(7, 71, 166, 0.22);
+  border-radius: 4px;
+  border: 1px solid #0747a6;
+}
+
+.rm-sky-blue {
+  border-radius: 4px;
+  border: 1px solid #a7e1fb;
+  background: rgba(167, 225, 251, 0.25);
+}
+.rm-light-green {
+  border-radius: 4px;
+  border: 1px solid #07a14e;
+  background: rgba(58, 218, 132, 0.22);
+}
+.rm-light-violet {
+  border-radius: 4px;
+  border: 1px solid #7460ee;
+  background: rgba(116, 96, 238, 0.22);
+}
+.rm-light-orange {
+  border-radius: 4px;
+  border: 1px solid #ff821c;
+  background: rgba(251, 140, 0, 0.22);
+}
+
+.bg-icons {
+  padding: 7px;
+  border-radius: 5px;
+  background: #fff;
+}
+.simple-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.simple-table th,
+.simple-table td {
+  border: none;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Optional: Add some margin to the table for spacing */
+.simple-table {
+  margin-top: 20px;
+}
+
+.customer-btn {
+  border: 1px solid;
+  background: rgba(255, 255, 255, 0.29);
+  padding: 5px;
+  border-radius: 20px;
+}
+.cheque-polygon {
+  width: 110px;
+  height: 110px;
+  transform: rotateZ(45deg);
+  border-top: 10px solid #c5bdf5;
+  border-left: 10px solid #c5bdf5;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 15px auto;
+  position: relative;
+}
+.pending-cheque li {
+  list-style: none;
+  position: relative;
+  font-size: 12px;
+}
+.pending-cheque {
+  transform: rotate(316deg);
+}
+.pending-cheque li:before {
+  position: absolute;
+  content: "";
+  background: #000;
+  width: 10px;
+  height: 10px;
+  top: 3px;
+  left: 13px;
+  border-radius: 50px;
+}
+.pending-cheque li:nth-child(1):before {
+  background: #3ada84;
+}
+.pending-cheque li:nth-child(2):before {
+  background: #ff821c;
+}
+ul.pending-cheque {
+  padding: 20px 12px;
+}
+.cheque-polygon.first-cheque:after {
+  position: absolute;
+  content: "";
+  background: #e3e3e3;
+  height: 127px;
+  width: 2px;
+  top: -138px;
+  left: 45px;
+}
+.cheque-polygon.second-cheque:after {
+  position: absolute;
+  content: "";
+  background: #e3e3e3;
+  height: 135px;
+  width: 2px;
+  top: -29px;
+  left: -80px;
+  transform: rotateZ(91deg);
+}
+.otc-three-box p {
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+.ot-normal {
+  transform: rotate(0);
+}
+.pending-cheque.ot-normal li:before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  top: 2px;
+  left: -20px;
+  border-radius: 50px;
+}
+.pending-cheque.ot-normal li {
+  text-align: left;
+  font-size: 12px;
+}
+ul.pending-cheque.ot-normal {
+  position: absolute;
+  left: calc(50% - 60px);
+  bottom: -20px;
+}
+.otc-three-box {
+  margin-top: 20px;
+}
+
+.disbursal-dots {
+  background-color: #000;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot-purple {
+  background-color: #7460ee;
+}
+.dot-gray {
+  background-color: #636363;
+}
+.dot-blue {
+  background-color: #00e1ef;
+}
+.purple-bar {
+  background-color: #7460ee;
+}
+.gray-bar {
+  background-color: #636363;
+}
+.blue-bar {
+  background-color: #00e1ef;
+}
+.dot-orange {
+  background-color: #ff821c;
+}
+.dot-red {
+  background-color: #f00;
+}
+.dot-green {
+  background-color: #07a14e;
+}
+.orange-bar {
+  background-color: #ff821c;
+}
+.green-bar {
+  background-color: #07a14e;
+}
+.red-bar {
+  background-color: #f00;
+}
+.progres-line-bg {
+  box-shadow: 0px 0px 3px 2px #e4e4e4 inset;
+  padding: 8px;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+@media (max-width: 1240px) and (min-width: 1088px) {
+  .cheque-polygon.first-cheque:after {
+    height: 85px;
+    width: 2px;
+    top: -94px;
+    left: 17px;
+  }
+  .cheque-polygon.second-cheque:after {
+    height: 91px;
+    width: 2px;
+    top: -35px;
+    left: -54px;
+    transform: rotateZ(91deg);
+  }
+}
+@media (max-width: 1088px) {
+  .cheque-polygon.first-cheque[_ngcontent-ng-c2409015658]:after {
+    height: 82px;
+    width: 2px;
+    top: -92px;
+    left: 5px;
+  }
+  .cheque-polygon.second-cheque[_ngcontent-ng-c2409015658]:after {
+    height: 89px;
+    width: 2px;
+    top: -42px;
+    left: -55px;
+  }
+}
+@media (max-width: 767px) {
+  .cheque-polygon.second-cheque:after,
+  .cheque-polygon.first-cheque:after {
+    display: none;
+  }
+  .divider-line {
+    display: block !important;
+  }
+  ul.pending-cheque.ot-normal {
+    position: static !important;
+    max-width: 190px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .box-2-ot {
+    margin-top: 50px;
+  }
+  .pending-cheque.ot-normal li {
+    text-align: center !important;
+  }
+}

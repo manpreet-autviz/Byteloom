@@ -39,17 +39,27 @@ export class ThreeSixtyComponent {
   ConversionRatioChart!: echarts.ECharts;
   irrPFInsChart!: echarts.ECharts;
   IMDChart!: echarts.ECharts;
+  EDGNPANPAChart!: echarts.ECharts;
 
   AvgTickedSizeOption: any;
   DistributionMixOption: any;
   ConversionRatioOption: any;
   irrPFInsOption: any;
+  EDGNPANPAOption:any;
 
   ProductWiseOption: any;
   LoginApprovalsDisbursalOption: any;
   IMDOption: any;
+  showprogressChart: boolean = false;
 
-  onFilterChange(selectedValue: string) {}
+  onFilterChange(selectedValue: string) {
+    
+    if(selectedValue==='Last Month'){
+     this.showprogressChart = true;
+    }else{
+      this.showprogressChart = false; 
+    }
+  }
 
   onStateChange(selectedValue: string) {}
 
@@ -87,6 +97,10 @@ export class ThreeSixtyComponent {
       document.getElementById('IMD-chart') as HTMLDivElement
     );
 
+    this.EDGNPANPAChart = echarts.init(
+      document.getElementById('ED-GNPA-NPA-chart') as HTMLDivElement
+    );
+    
     this.ProductWiseOption = {
       title: {},
       tooltip: {
@@ -524,6 +538,56 @@ export class ThreeSixtyComponent {
       ],
     };
 
+    this.EDGNPANPAOption = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow',
+        },
+        formatter: (params: any) => {
+          const barValue = params[0].value;
+
+          // Create the tooltip content with the actual value and random amount
+          return `Days: ${barValue}`;
+        },
+      },
+      xAxis: {
+        type: 'category',
+
+        data: ['ED','GNPA','NPA'],
+        axisLabel: {
+          interval: 0,
+          rotate: -45,
+          overflow: 'break',
+        },
+      },
+      yAxis: {
+        type: 'value',
+        min: 70,
+        max: 10,
+        interval: 10,
+        axisLine: {
+          show: true,
+        },
+        splitLine: {
+          show: false,
+        },
+        name: 'PERCENTAGE',
+        nameLocation: 'middle',
+        nameGap: 25,
+      },
+      series: [
+        {
+          barWidth: 40,
+          data: [70, 50, 45,],
+          type: 'bar',
+          itemStyle: {
+            color: '#5D5BCC',
+          },
+        },
+      ],
+    };
+
     this.ProductWiseChart.setOption(this.ProductWiseOption);
     this.LoginApprovalsDisbursalChart.setOption(
       this.LoginApprovalsDisbursalOption
@@ -533,6 +597,6 @@ export class ThreeSixtyComponent {
     this.ConversionRatioChart.setOption(this.ConversionRatioOption);
     this.irrPFInsChart.setOption(this.irrPFInsOption);
     this.IMDChart.setOption(this.IMDOption);
-
+    this.EDGNPANPAChart.setOption(this.EDGNPANPAOption);
   }
 }

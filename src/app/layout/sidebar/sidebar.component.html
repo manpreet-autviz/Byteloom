@@ -66,13 +66,20 @@
           </a>
         </li>
         <li class="nav-item" (click)="toggleSubmenu('submenu1')">
-
-          <a (click)="navigateToPage('/work-in-progress')" [class.active]="activeItem === '/work-in-progress'"  class="nav-link menu-link dropdown-toggle" href="#" data-bs-toggle="collapse" role="button"
-            aria-expanded="false" aria-controls="sidebarApps">
-            <img src="../../../assets/icons/work-in-progress.svg" /><span data-key="t-apps">Work in Progress</span>
-
-         
-
+          <a
+            (click)="navigateToPage('/work-in-progress')"
+            [class.active]="activeItem === '/work-in-progress'"
+            class="nav-link menu-link dropdown-toggle"
+            href="#"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="sidebarApps"
+          >
+            <img src="../../../assets/icons/work-in-progress.svg" /><span
+              data-key="t-apps"
+              >Work in Progress</span
+            >
           </a>
 
           <ul class="submenu" *ngIf="submenus.submenu1">

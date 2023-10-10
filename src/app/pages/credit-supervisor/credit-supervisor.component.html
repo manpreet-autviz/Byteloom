@@ -1,1 +1,437 @@
-<p>credit-supervisor works!</p>
+<div class="main-content">
+  <div class="page-content">
+    <div class="container-fluid">
+      <div class="breadcrumb">
+        <div class="card card-animate w-100">
+          <div class="p-2 d-flex align-items-center justify-content-between">
+            <div>
+              <span class="f-7 fs-5"> Credit supervisor </span>
+            </div>
+            <div class="d-flex">
+              <button
+                type="button "
+                class="text-white filter-btn-trend btn bg-blue border me-2"
+                (click)="toggle()"
+              >
+                {{ !isToggled ? "See Trend" : "Normal View" }}
+                <i class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
+              </button>
+              <select
+                *ngIf="!isToggled"
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedFilter"
+                (ngModelChange)="onFilterChange($event)"
+              >
+                <option *ngFor="let filter of filters" [value]="filter">
+                  {{ filter }}
+                </option>
+              </select>
+              <select
+                *ngIf="isToggled"
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedTrendFilter"
+                (ngModelChange)="onTrendFilterChange($event)"
+              >
+                <option *ngFor="let filter of monthFilters" [value]="filter">
+                  {{ filter }}
+                </option>
+              </select>
+              <select
+                id="dropdown"
+                class="form-select"
+                [(ngModel)]="selectedState"
+                (ngModelChange)="
+                  !isToggled
+                    ? onStateChange($event)
+                    : ontrendStateChange($event)
+                "
+              >
+                <option *ngFor="let state of states" [value]="state">
+                  {{ state }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="normal-view" *ngIf="!isToggled" class="normal-view w-100">
+          <div class="row mt-3">
+            <div class="col-md-9">
+              <div class="card p-4 mt-3">
+                <div class="row mt-3">
+                  <div class="col-md-4">
+                    <div class="card">
+                      <div class="card-body bg-pink rounded">
+                        <div
+                          class="rm-cards d-flex align-items-end justify-content-between"
+                        >
+                          <div class="">
+                            <span class="fs-3">
+                              <img
+                                class="bg-icons"
+                                src="../../../assets/icons/rm.svg"
+                              />
+                            </span>
+                            <p class="f-7 mb-0">PDs</p>
+                          </div>
+                          <div>
+                            <h2 class="f-7">2000</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card">
+                      <div class="card-body rm-blue rounded">
+                        <div
+                          class="rm-cards d-flex align-items-end justify-content-between"
+                        >
+                          <div class="">
+                            <span class="fs-3">
+                              <img
+                                class="bg-icons"
+                                src="../../../assets/icons/rm.svg"
+                              />
+                            </span>
+                            <p class="f-7 mb-0">Approvals</p>
+                          </div>
+                          <div>
+                            <h2 class="f-7">1560</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card">
+                      <div class="card-body rm-sky-blue rounded">
+                        <div
+                          class="rm-cards d-flex align-items-end justify-content-between"
+                        >
+                          <div class="">
+                            <span class="fs-3">
+                              <img
+                                class="bg-icons"
+                                src="../../../assets/icons/rm.svg"
+                              />
+                            </span>
+                            <p class="f-7 mb-0">Disbursals</p>
+                          </div>
+                          <div>
+                            <h2 class="f-7">440</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mt-3">
+                    <div class="card">
+                      <div class="card-body rm-light-green rounded">
+                        <div
+                          class="rm-cards d-flex align-items-end justify-content-between"
+                        >
+                          <div class="">
+                            <span class="fs-3">
+                              <img
+                                class="bg-icons"
+                                src="../../../assets/icons/rm.svg"
+                              />
+                            </span>
+                            <p class="f-7 mb-0">ED</p>
+                          </div>
+                          <div>
+                            <h2 class="f-7">39%</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mt-3">
+                    <div class="card">
+                      <div class="card-body rm-light-violet rounded">
+                        <div
+                          class="rm-cards d-flex align-items-end justify-content-between"
+                        >
+                          <div>
+                            <h2 class="f-7">50%</h2>
+                          </div>
+                          <div class="">
+                            <span class="fs-3">
+                              <img
+                                class="bg-icons"
+                                src="../../../assets/icons/rm.svg"
+                              />
+                            </span>
+                            <p class="f-7 mb-0">Conversion ratio</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mt-3">
+                    <div class="card box-s Activity-tat-card">
+                      <div class="card-body">
+                        <span class="f-6"> Activity Tat </span>
+                      </div>
+                      <div class="border-bottom mt-3"></div>
+                      <table class="simple-table">
+                        <thead>
+                          <tr>
+                            <th>Role</th>
+                            <th>Count</th>
+                            <th>Percentage</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>PDs</td>
+                            <td>10</td>
+                            <td>
+                              <div class="progress">
+                                <div
+                                  class="progress-bar"
+                                  role="progressbar"
+                                  style="width: 1%"
+                                  aria-valuenow="1"
+                                  aria-valuemin="0"
+                                  aria-valuemax="100"
+                                >
+                                  1%
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Approvals</td>
+                            <td>30</td>
+                            <td>
+                              <div class="progress">
+                                <div
+                                  class="progress-bar"
+                                  role="progressbar"
+                                  style="width: 10%"
+                                  aria-valuenow="10"
+                                  aria-valuemin="0"
+                                  aria-valuemax="100"
+                                >
+                                  10%
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Disbursal</td>
+                            <td>300</td>
+                            <td>
+                              <div class="progress">
+                                <div
+                                  class="progress-bar"
+                                  role="progressbar"
+                                  style="width: 91%"
+                                  aria-valuenow="91"
+                                  aria-valuemin="0"
+                                  aria-valuemax="100"
+                                >
+                                  91%
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td class="f-7">Total</td>
+                            <td class="f-7">330</td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mt-3">
+                    <div class="card box-s Activity-tat-card">
+                      <div class="card-body text-center">
+                        <span class="f-6">
+                          OTC/PDD pending/Cheque handover pending
+                        </span>
+
+                        <div class="otc-three-box">
+                          <p>OTC</p>
+                          <div class="cheque-polygon box-s mt-3">
+                            <ul class="pending-cheque">
+                              <li>34</li>
+                              <li>34</li>
+                            </ul>
+                          </div>
+
+                          <div
+                            class="d-flex justify-content-around align-items-center divider-line"
+                          >
+                            <div class="box-2-ot">
+                              <p>PDD</p>
+                              <div
+                                class="cheque-polygon first-cheque box-s mt-3"
+                              >
+                                <ul class="pending-cheque">
+                                  <li>34</li>
+                                  <li>34</li>
+                                </ul>
+                              </div>
+                            </div>
+
+                            <div class="box-2-ot">
+                              <p>Cheque handover <br />pending</p>
+                              <div
+                                class="cheque-polygon second-cheque box-s mt-3"
+                              >
+                                <ul class="pending-cheque">
+                                  <li>34</li>
+                                  <li>34</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="color-info">
+                            <ul class="pending-cheque ot-normal">
+                              <li>Total</li>
+                              <li>More than 45 days</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mt-3">
+              <div class="card box-s profile-box">
+                <div class="card-body text-center">
+                  <img
+                    class="user-img"
+                    src="../../../assets/icons/user-img.png"
+                  />
+                  <h6>Mathew Anderson</h6>
+                  <div class="border profile-info">
+                    <div class="d-flex justify-content-between mt-4">
+                      <div>
+                        <h6>Vintage with company</h6>
+                      </div>
+                      <div>
+                        <h6 class="header-data">WiseGrowth Capital</h6>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-4">
+                      <div>
+                        <h6>Total experience</h6>
+                      </div>
+                      <div>
+                        <h6 class="header-data">6 Year</h6>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-4">
+                      <div>
+                        <h6>Compensation</h6>
+                      </div>
+                      <div>
+                        <h6 class="header-data">6.5 lacs</h6>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-4">
+                      <div>
+                        <h6>YTD: % achievement</h6>
+                      </div>
+                      <div>
+                        <h6 class="header-data">90%</h6>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-4">
+                      <div>
+                        <h6>Incentive earned</h6>
+                      </div>
+                      <div>
+                        <h6 class="header-data">last month 23000 & 100000</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card card-animate w-100 mt-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="card box-s">
+                        <div class="card-body text-center">
+                          <span class="f-6">Total approvals done</span>
+                          <div
+                            class="state-chart"
+                            id="Total-approval-chart"
+                            style="width: 100%; height: 400px"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card box-s Attrition-card">
+                        <div class="card-body text-center">
+                          <span class="f-6">Attrition/ CM adequacy </span>
+                          <div
+                            class="Attrition-box d-flex justify-content-between mt-4"
+                          >
+                            <div>
+                              <h6>Budgeted RM</h6>
+                            </div>
+                            <div>
+                              <h6>15</h6>
+                            </div>
+                          </div>
+                          <div
+                            class="Attrition-box d-flex justify-content-between mt-4"
+                          >
+                            <div>
+                              <h6>Current RM</h6>
+                            </div>
+                            <div>
+                              <h6>12</h6>
+                            </div>
+                          </div>
+                          <div
+                            class="Attrition-box d-flex justify-content-between mt-4"
+                          >
+                            <div>
+                              <h6>Adequacy</h6>
+                            </div>
+                            <div>
+                              <h6>80%</h6>
+                            </div>
+                          </div>
+                          <div
+                            class="Attrition-box d-flex justify-content-between mt-4"
+                          >
+                            <div>
+                              <h6>Attrition YTD</h6>
+                            </div>
+                            <div>
+                              <h6>5 ( 33%)</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
