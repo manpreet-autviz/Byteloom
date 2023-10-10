@@ -35,7 +35,7 @@ export class CreditComponent {
 
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
-  isActiveButton: string = 'button';
+  isActiveButton: string = 'button1';
 
   AvgCMFilesChart!: echarts.ECharts;
   SCMWorkloadChart!: echarts.ECharts;
@@ -189,6 +189,15 @@ export class CreditComponent {
     setTimeout(() => {
       this.initializeChart();
     }, 0);
+    this.zone.runOutsideAngular(() => {
+      setTimeout(() => {
+        $(this.elementRef.nativeElement.querySelector('#table')).DataTable({
+          lengthChange: false,
+          searching: false,
+          ordering: false
+        });
+      }, 0);
+    });
     this.cdRef.detectChanges();
     this.isActiveButton = button;
   }
