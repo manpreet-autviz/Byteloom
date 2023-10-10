@@ -2,18 +2,20 @@ import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 import * as echarts from 'echarts';
 
 @Component({
-  selector: 'app-business-rm',
-  templateUrl: './business-rm.component.html',
-  styleUrls: ['./business-rm.component.scss'],
+  selector: 'app-credit-cm',
+  templateUrl: './credit-cm.component.html',
+  styleUrls: ['./credit-cm.component.scss']
 })
-export class BusinessRMComponent {
+export class CreditCmComponent {
   PotentialLostBusinessChart!: echarts.ECharts;
   DistributionMixChart!: echarts.ECharts;
   SourceLoginChart!: echarts.ECharts;
+  IrrPfInsuranceChart!: echarts.ECharts;
 
   PotentialLostBusinessOption: any;
   DistributionMixOption:any;
   SourceLoginOption:any;
+  IrrPfInsuranceOption:any;
 
   states: string[] = [
     'Pan India',
@@ -70,6 +72,9 @@ export class BusinessRMComponent {
         document.getElementById('source-login-chart') as HTMLDivElement
       );
       
+      this.IrrPfInsuranceChart = echarts.init(
+        document.getElementById('Irr-pf-Insurance') as HTMLDivElement
+      );
 
       this.PotentialLostBusinessOption = {
         tooltip: {
@@ -254,6 +259,128 @@ export class BusinessRMComponent {
         ],
       };
 
+      this.IrrPfInsuranceOption = {
+        title: {},
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'cross',
+            label: {
+              backgroundColor: '#6a7985',
+            },
+          },
+        },
+        legend: {
+          data: ['IRR', 'PF', 'Insurance'],
+        },
+        toolbox: {
+          feature: {
+            saveAsImage: {},
+          },
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true,
+        },
+        xAxis: [
+          {
+            type: 'category',
+            axisLine: {
+              show: false,
+            },
+            splitLine: {
+              show: false,
+            },
+            boundaryGap: false,
+            data: [
+              'Apr',
+              'May',
+              'Jun',
+              'Jul',
+              'Aug',
+              'Sep',
+              'Oct',
+              'Nov',
+              'Dec',
+              'Jan',
+              'Feb',
+              'Mar',
+            ],
+          },
+        ],
+        yAxis: [
+          {
+            type: 'value',
+            axisLine: {
+              show: false,
+            },
+            splitLine: {
+              show: false,
+            },
+            min: 10,
+            max: 100,
+            interval: 10,
+            name: 'Percentage',
+            nameLocation: 'middle',
+            nameGap: 43,
+            axisLabel: {
+              formatter: '{value}%',
+              margin: 1,
+            },
+          },
+        ],
+        series: [
+          {
+            name: 'IRR',
+            type: 'line',
+
+            areaStyle: {
+              opacity: 0,
+            },
+            emphasis: {
+              focus: 'series',
+              areaStyle: {
+                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+              },
+            },
+            data: [30, 34, 37, 40, 42, 45],
+          },
+          {
+            name: 'PF',
+            type: 'line',
+
+            areaStyle: {
+              opacity: 0,
+            },
+            emphasis: {
+              focus: 'series',
+              areaStyle: {
+                opacity: 1, // Reduce opacity on hover to make it semi-transparent
+              },
+            },
+            data: [45, 47, 49, 47,50, 53],
+          },
+          {
+            name: 'Insurance',
+            type: 'line',
+
+            areaStyle: {
+              opacity: 0,
+            },
+            emphasis: {
+              focus: 'series',
+              areaStyle: {
+                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+              },
+            },
+            data: [60, 65, 63, 67, 69, 68],
+          },
+        ],
+      };
+
+
       this.PotentialLostBusinessChart.setOption(
         this.PotentialLostBusinessOption
       );
@@ -263,6 +390,9 @@ export class BusinessRMComponent {
       );
       this.SourceLoginChart.setOption(
         this.SourceLoginOption
+      );
+      this.IrrPfInsuranceChart.setOption(
+        this.IrrPfInsuranceOption
       );
     } else {
     }
@@ -292,3 +422,4 @@ export class BusinessRMComponent {
 
   onTrendFilterChange(selectedValue: string) {}
 }
+

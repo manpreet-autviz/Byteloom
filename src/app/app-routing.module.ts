@@ -17,6 +17,10 @@ import { TechnicalComponent } from './technical/technical.component';
 import { LegalComponent } from './pages/legal/legal.component';
 import { ChequesSummaryComponent } from './pages/cheques-summary/cheques-summary.component';
 import { OtcPddComponent } from './pages/otc-pdd/otc-pdd.component';
+import { BusinessRMComponent } from './pages/business-rm/business-rm.component';
+import { BusinessSupervisorComponent } from './pages/business-supervisor/business-supervisor.component';
+import { CreditCmComponent } from './pages/credit-cm/credit-cm.component';
+import { CreditSupervisorComponent } from './pages/credit-supervisor/credit-supervisor.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -37,6 +41,10 @@ const routes: Routes = [
   { path: 'productivity/legal', component: LegalComponent },
   { path: 'summary', component: ChequesSummaryComponent },
   { path: 'otc-pdd', component: OtcPddComponent },
+  { path: 'business-rm', component: BusinessRMComponent },
+  { path: 'business-supervisor', component: BusinessSupervisorComponent },
+  { path: 'credit-cm', component: CreditCmComponent },
+  { path: 'credit-supervisor', component: CreditSupervisorComponent },
 ];
 
 @NgModule({

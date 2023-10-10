@@ -62,7 +62,6 @@ export class OtcPddComponent {
     table.destroy();
   }
   initializeChart() {
- 
 
     this.TotalReportChart = echarts.init(
       document.getElementById('Total-Report-Chart') as HTMLDivElement
@@ -73,7 +72,7 @@ export class OtcPddComponent {
     this.OwnerWiseChart = echarts.init(
       document.getElementById('owner-wise-chart') as HTMLDivElement
     );
-    this.OwnerWiseChart = echarts.init(
+    this.DaysWiseOTCChart = echarts.init(
       document.getElementById('Days-wise-otc') as HTMLDivElement
     );
 
@@ -107,6 +106,12 @@ export class OtcPddComponent {
           rotate: -45,
           overflow: 'break',
         },
+        axisLine: {
+          show: false,
+        },
+        splitLine: {
+          show: false,
+        },
       },
       yAxis: {
         type: 'value',
@@ -114,7 +119,11 @@ export class OtcPddComponent {
         max: 1800,
         interval: 200,
         name: 'Value',
+        
         axisLine: {
+          show: false,
+        },
+        splitLine: {
           show: false,
         },
       },
@@ -308,8 +317,80 @@ export class OtcPddComponent {
       ],
     };
 
+    this.DaysWiseOTCOption = {
+      legend: {},
+      tooltip: {},
+      dataset: {
+        dimensions: ['product', '0-45 Days', '46-90 Days', '90+ Days'],
+        source: [
+          { product: 'Punjab', '0-45 Days': 76, '46-90 Days': 46, '90+ Days': 62 },
+          { product: 'Haryana', '0-45 Days': 75, '46-90 Days': 46, '90+ Days': 62 },
+          { product: 'NCR', '0-45 Days': 85, '46-90 Days': 43, '90+ Days': 60 },
+          { product: 'Rajasthan', '0-45 Days': 80, '46-90 Days': 46, '90+ Days': 62 },
+          { product: 'Gujarat', '0-45 Days': 83, '46-90 Days': 46, '90+ Days': 62 },
+          { product: 'MP', '0-45 Days': 78, '46-90 Days': 46, '90+ Days': 62 },
+          { product: 'Maharashtra', '0-45 Days': 83, '46-90 Days': 46, '90+ Days': 62 },
+        ],
+      },
+      xAxis: {
+        type: 'category',
+        axisLine: {
+          show: false,
+        },
+        splitLine: {
+          show: false,
+        },
+        axisLabel: {
+          interval: 0,
+          rotate: -45,
+          overflow: 'break',
+        },
+      },
+      yAxis: {
+        min: 10,
+        max: 100,
+        interval: 10,
+        axisLine: {
+          show: false,
+        },
+        splitLine: {
+          show: false,
+        },
+        axisLabel: {
+          formatter: '{value}',
+          margin: 1,
+        },
+        name: 'PERCENTAGE',
+        nameLocation: 'middle',
+        nameGap: 25,
+      },
+      // Declare several bar series, each will be mapped
+      // to a column of dataset.source by default.
+      series: [
+        {
+          type: 'bar',
+          itemStyle: {
+            color: '#7460EE', // Set the color for the first bar series (IRR)
+          },
+        },
+        {
+          type: 'bar',
+          itemStyle: {
+            color: '#00EB97', // Set the color for the first bar series (IRR)
+          },
+        },
+        {
+          type: 'bar',
+          itemStyle: {
+            color: '#F85656', // Set the color for the first bar series (IRR)
+          },
+        },
+      ],
+    };
+
     this.TotalReportChart.setOption(this.TotalReportOption);
     this.CriticalNonCriticalChart.setOption(this.CriticalNonCriticalOption)
     this.OwnerWiseChart.setOption(this.OwnerWiseOption)
+    this.DaysWiseOTCChart.setOption(this.DaysWiseOTCOption)
   }
 }

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
 
-
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -25,9 +24,7 @@ export class SidebarComponent {
     this.menuService.setActiveMenuItem(path);
   }
 
-
   toggleSubmenu(submenuName: string){
-    console.log("hgere,", this.showSubmenu)
     this.submenus[submenuName] = !this.submenus[submenuName];
   }
  
