@@ -21,6 +21,9 @@ import { ThreeSixtyComponent } from './pages/three-sixty/three-sixty.component';
 import { ProductivitySalesComponent } from './pages/productivity-sales/productivity-sales.component';
 import { ChannelPartnersComponent } from './pages/channel-partners/channel-partners.component';
 import { CreditComponent } from './pages/credit/credit.component';
+
+import { WorkInProgressComponent } from './pages/work-in-progress/work-in-progress.component';
+
 import { TechnicalComponent } from './technical/technical.component';
 import { LegalComponent } from './pages/legal/legal.component';
 import { BusinessRMComponent } from './pages/business-rm/business-rm.component';
@@ -29,6 +32,7 @@ import { OtcPddComponent } from './pages/otc-pdd/otc-pdd.component';
 import { BusinessSupervisorComponent } from './pages/business-supervisor/business-supervisor.component';
 import { CreditCmComponent } from './pages/credit-cm/credit-cm.component';
 import { CreditSupervisorComponent } from './pages/credit-supervisor/credit-supervisor.component';
+
 
 
 @NgModule({
@@ -49,6 +53,9 @@ import { CreditSupervisorComponent } from './pages/credit-supervisor/credit-supe
     ProductivitySalesComponent,
     ChannelPartnersComponent,
     CreditComponent,
+
+    WorkInProgressComponent,
+
     TechnicalComponent,
     LegalComponent,
     BusinessRMComponent,
