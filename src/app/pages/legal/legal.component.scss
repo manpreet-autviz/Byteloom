@@ -1,0 +1,53 @@
+.assignee-list ul li:before {
+    position: absolute;
+    content: '';
+    background: red;
+    width: 17px;
+    height: 7px;
+    top: 4px;
+    left: -25px;
+}
+.assignee-list li {
+    position: relative;
+    list-style: none
+}
+.name-clr-no {
+    display: flex;
+    justify-content: space-between;
+}
+.name h6 {
+    font-size: 12px;
+    font-weight: 400;
+}
+.number h6 {
+    font-size: 12px;
+    font-weight: 600;
+}
+.text-left{
+    text-align: left;
+}
+li.bg-green::before {
+    background: #33B27D !important;
+}
+li.bg-lblue::before {
+    background: #518AFE !important;
+}
+li.bg-dblue::before {
+    background: #0067FF !important;
+}
+li.bg-lgray::before {
+    background: #5D6C83 !important;
+}
+li.bg-yellow::before {
+    background: #FFAB00 !important;
+}
+li.bg-sky::before {
+    background: #00B8DA !important;
+}
+li.bg-lorange::before {
+    background: #FF5531 !important;
+}
+
+li.bg-lpurple::before {
+    background: #A294F9 !important;
+}

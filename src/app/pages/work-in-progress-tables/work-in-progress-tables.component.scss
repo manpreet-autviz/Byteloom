@@ -1,0 +1,18 @@
+span.bg-light-green {
+    background: #3ada842b !important;
+    border-radius: 10px;
+    padding: 10px;  
+}
+tr.top-row {
+    background: #E1DCFB;
+    color: #000;
+}
+td.border-bottom {
+    text-align: center;
+}
+th.border-bottom.sorting_disabled {
+    text-align: center;
+}
+td, th {
+    padding: 15px 0 !important;
+}

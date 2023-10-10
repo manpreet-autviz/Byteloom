@@ -84,7 +84,7 @@
 
           <ul class="submenu" *ngIf="submenus.submenu1">
             <li classs="nav-item">
-              <a class="nav-link menu-link">Out of TAT</a>
+              <a (click)="navigateToPage('/out-of-tat')" [class.active]="activeItem === '/out-of-tat'" class="nav-link menu-link">Out of TAT</a>
             </li>
           </ul>
         </li>

@@ -24,6 +24,8 @@ import { BusinessRMComponent } from './pages/business-rm/business-rm.component';
 import { BusinessSupervisorComponent } from './pages/business-supervisor/business-supervisor.component';
 import { CreditCmComponent } from './pages/credit-cm/credit-cm.component';
 import { CreditSupervisorComponent } from './pages/credit-supervisor/credit-supervisor.component';
+import { OutOfTatComponent } from './pages/out-of-tat/out-of-tat.component';
+import { WorkInProgressTablesComponent } from './pages/work-in-progress-tables/work-in-progress-tables.component';
 
 
 const routes: Routes = [
@@ -52,6 +54,8 @@ const routes: Routes = [
   { path: 'business-supervisor', component: BusinessSupervisorComponent },
   { path: 'credit-cm', component: CreditCmComponent },
   { path: 'credit-supervisor', component: CreditSupervisorComponent },
+  { path: 'out-of-tat', component: OutOfTatComponent },
+  { path: 'work-in-progress-table', component: WorkInProgressTablesComponent },
 
 ];
 
