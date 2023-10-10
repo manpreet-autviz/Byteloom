@@ -30,7 +30,6 @@
 .tree.vertical {
     display: flex;
     overflow-x: auto;
-    justify-content: center;
 }
 .tree.vertical ul {
     display: flex;
@@ -162,15 +161,15 @@ ul.tree.vertical ul li div p{
     content: '';
     background: #e4e4e4;
     height: 1px;
-    width: 33%;
+    width: 32%;
 }
 .divider:after {
     top: 0px;
-    left: 224px;
+    left: 226px;
 }
 .divider:before {
     top: 0px;
-    right: 224px;
+    right: 226px;
 }
 .divider2 {
     padding: 0 !important;

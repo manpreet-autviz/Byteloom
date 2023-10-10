@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-work-in-progress',
@@ -21,8 +22,12 @@ export class WorkInProgressComponent {
   ];
   selectedState: string = 'Pan India';
   selectedFilter: string = 'Month To Date';
+
+  constructor(private router:Router) {}
   onFilterChange(selectedValue: string) {}
 
   onStateChange(selectedValue: string) {}
-
+  workInprogressTable(){
+    this.router.navigate(['/work-in-progress-table']);
+  }
 }

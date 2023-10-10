@@ -32,6 +32,8 @@ import { OtcPddComponent } from './pages/otc-pdd/otc-pdd.component';
 import { BusinessSupervisorComponent } from './pages/business-supervisor/business-supervisor.component';
 import { CreditCmComponent } from './pages/credit-cm/credit-cm.component';
 import { CreditSupervisorComponent } from './pages/credit-supervisor/credit-supervisor.component';
+import { WorkInProgressTablesComponent } from './pages/work-in-progress-tables/work-in-progress-tables.component';
+import { OutOfTatComponent } from './pages/out-of-tat/out-of-tat.component';
 
 
 
@@ -64,6 +66,8 @@ import { CreditSupervisorComponent } from './pages/credit-supervisor/credit-supe
     BusinessSupervisorComponent,
     CreditCmComponent,
     CreditSupervisorComponent,
+    WorkInProgressTablesComponent,
+    OutOfTatComponent,
 
   ],
   imports: [
