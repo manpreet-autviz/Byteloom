@@ -1,0 +1,294 @@
+.tree {
+    padding: 0;
+}
+.tree:not(:empty):before, .tree:not(:empty):after, .tree ul:not(:empty):before, .tree ul:not(:empty):after, .tree li:not(:empty):before, .tree li:not(:empty):after {
+    display: block;
+    position: absolute;
+    content: "";
+}
+.tree ul, .tree li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.main-tree-head {
+    background: transparent !important;
+    border: 1px solid #BEBABA;
+    padding: 16px 30px !important;
+}
+.tree li {
+    list-style: none;
+}
+.tree li > div {
+    border: 1px solid #bfbfbf4f;
+    color: #222;
+    padding: 9px 15px;
+    display: inline-block;
+    font-size: 10px;
+    border-radius: 4px;
+}
+.tree.vertical {
+    display: flex;
+    overflow-x: auto;
+    justify-content: center;
+}
+.tree.vertical ul {
+    display: flex;
+    justify-content: center;
+}
+.tree.vertical li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tree.vertical li div {
+    margin: 12px 6px;
+}
+.tree.vertical li:before {
+    border-left: 1px solid #ddd;
+    height: 12px;
+    width: 0;
+    top: 0;
+}
+.tree.vertical li:after {
+    border-top: 1px solid #ddd;
+    height: 0;
+    width: 100%;
+}
+.tree.vertical li:first-child:after {
+    border-top: 1px solid #ddd;
+    height: 0;
+    width: 50%;
+    left: 50%;
+}
+.tree.vertical li:last-child:after {
+    border-top: 1px solid #ddd;
+    height: 0;
+    width: 50%;
+    right: 50%;
+}
+.tree.vertical li:only-child:after {
+    content: none;
+}
+.tree.vertical li ul:before {
+    border-left: 1px solid #ddd;
+    height: 12px;
+    width: 0;
+    top: -12px;
+}
+.tree.vertical > li:only-child:before, .tree.vertical > li:only-child:after {
+    content: none;
+}
+.tree .tree.vertical .cascade, .tree.vertical .tree .cascade, .tree .tree.vertical.cascade-1 > li, .tree .tree.vertical.cascade-2 > li > ul > li, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li {
+    flex-direction: column;
+    align-items: start;
+    padding: 0 12px;
+}
+.tree .tree.vertical .cascade:before, .tree.vertical .tree .cascade:before, .tree .tree.vertical.cascade-1 > li:before, .tree .tree.vertical.cascade-2 > li > ul > li:before, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li:before, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li:before {
+    left: 24px;
+}
+.tree .tree.vertical .cascade:after, .tree.vertical .tree .cascade:after, .tree .tree.vertical.cascade-1 > li:after, .tree .tree.vertical.cascade-2 > li > ul > li:after, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li:after, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li:after {
+    left: 0;
+}
+.tree .tree.vertical .cascade:first-child:after, .tree.vertical .tree .cascade:first-child:after, .tree .tree.vertical.cascade-1 > li:first-child:after, .tree .tree.vertical.cascade-2 > li > ul > li:first-child:after, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li:first-child:after, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li:first-child:after {
+    left: 24px;
+    width: 100%;
+}
+.tree .tree.vertical .cascade:last-child:after, .tree.vertical .tree .cascade:last-child:after, .tree .tree.vertical.cascade-1 > li:last-child:after, .tree .tree.vertical.cascade-2 > li > ul > li:last-child:after, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li:last-child:after, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li:last-child:after {
+    left: 0;
+    width: 24px;
+}
+.tree .tree.vertical .cascade ul, .tree.vertical .tree .cascade ul, .tree .tree.vertical.cascade-1 > li ul, .tree .tree.vertical.cascade-2 > li > ul > li ul, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li ul, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li ul, .tree .tree.vertical .cascade li, .tree.vertical .tree .cascade li, .tree .tree.vertical.cascade-1 > li li, .tree .tree.vertical.cascade-2 > li > ul > li li, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li li, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li li {
+    display: block;
+}
+.tree .tree.vertical .cascade ul:before, .tree.vertical .tree .cascade ul:before, .tree .tree.vertical.cascade-1 > li ul:before, .tree .tree.vertical.cascade-2 > li > ul > li ul:before, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li ul:before, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li ul:before, .tree .tree.vertical .cascade ul:after, .tree.vertical .tree .cascade ul:after, .tree .tree.vertical.cascade-1 > li ul:after, .tree .tree.vertical.cascade-2 > li > ul > li ul:after, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li ul:after, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li ul:after, .tree .tree.vertical .cascade li:before, .tree.vertical .tree .cascade li:before, .tree .tree.vertical.cascade-1 > li li:before, .tree .tree.vertical.cascade-2 > li > ul > li li:before, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li li:before, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li li:before, .tree .tree.vertical .cascade li:after, .tree.vertical .tree .cascade li:after, .tree .tree.vertical.cascade-1 > li li:after, .tree .tree.vertical.cascade-2 > li > ul > li li:after, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li li:after, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li li:after {
+    border: none;
+}
+.tree .tree.vertical .cascade div, .tree.vertical .tree .cascade div, .tree .tree.vertical.cascade-1 > li div, .tree .tree.vertical.cascade-2 > li > ul > li div, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li div, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li div {
+    margin: 0;
+    margin-top: 12px;
+}
+.tree .tree.vertical .cascade li, .tree.vertical .tree .cascade li, .tree .tree.vertical.cascade-1 > li li, .tree .tree.vertical.cascade-2 > li > ul > li li, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li li, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li li {
+    margin-left: 24px;
+}
+.tree .tree.vertical .cascade li:before, .tree.vertical .tree .cascade li:before, .tree .tree.vertical.cascade-1 > li li:before, .tree .tree.vertical.cascade-2 > li > ul > li li:before, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li li:before, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li li:before {
+    border-left: 1px solid #ddd;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: -12px;
+}
+.tree .tree.vertical .cascade li:after, .tree.vertical .tree .cascade li:after, .tree .tree.vertical.cascade-1 > li li:after, .tree .tree.vertical.cascade-2 > li > ul > li li:after, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li li:after, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li li:after {
+    border-top: 1px solid #ddd;
+    width: 12px;
+    height: 0;
+    left: -12px;
+    top: 24px;
+    content: "";
+}
+.tree .tree.vertical .cascade li:last-child:before, .tree.vertical .tree .cascade li:last-child:before, .tree .tree.vertical.cascade-1 > li li:last-child:before, .tree .tree.vertical.cascade-2 > li > ul > li li:last-child:before, .tree .tree.vertical.cascade-3 > li > ul > li > ul > li li:last-child:before, .tree .tree.vertical.cascade-4 > li > ul > li > ul > li > ul > li li:last-child:before {
+    height: 24px;
+    top: 0;
+}
+ul.tree.vertical ul li div {
+    text-transform: uppercase;
+}
+ul.tree.vertical ul li div p{
+    margin-bottom: 0;
+    text-align: center;
+}
+.tree .box-s p {
+    padding: 6px 11px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 4px;
+}
+.bg-brown{
+    background-color: #982C09;
+}
+.bg-green{
+    background-color: #07A14E;
+}
+.bg-yellow{
+    background-color: #FB8C00;
+}
+.divider {
+    position: relative;
+    width: 100%;
+    border: none !important;
+}
+.divider:after, .divider:before{
+      position: absolute;
+    content: '';
+    background: #e4e4e4;
+    height: 1px;
+    width: 33%;
+}
+.divider:after {
+    top: 0px;
+    left: 224px;
+}
+.divider:before {
+    top: 0px;
+    right: 224px;
+}
+.divider2 {
+    padding: 0 !important;
+    border: none !important;
+    margin: 0 !important;
+    position: relative;
+}
+
+.divider2:after, .divider2:before {
+    position: absolute;
+    content: '';
+    background: #ddd;
+    width: 1px;
+    height: 25px;
+}
+.divider2:after{
+    top: -54px;
+    left: 413px;
+}
+.divider2:before{
+    top: -54px;
+    right: 413px;
+}
+.single-top-border .box-s.custom-top {
+    position: relative;
+}
+.single-top-border .box-s.custom-top:before {
+    position: absolute;
+    content: '';
+    height: 67px;
+    width: 1px;
+    background: #ccc;
+    top: -68px;
+    left: 73px;
+}
+
+
+.work-tabs ul.nav-pills {
+    border: 1px solid #908C8C;
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 1px;
+}
+.work-tabs ul li button {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 15px;
+    color: #000;
+}
+.work-tabs .nav-pills .nav-link.active, .nav-pills .show>.nav-link button#pills-financial-tab {
+    background: #0747A6;
+    padding: 15px;
+    border-radius: 50px 0 0 50px;
+    color: #000;
+}
+.work-tabs .nav-pills .nav-link.active{
+    color: #fff;
+}
+.work-tabs .nav-pills .nav-link.right-tab-border.active {
+    border-radius: 0px 50px 50px 0px;
+}
+.work-tabs {
+    max-width: 475px;
+    width: 100%;
+}
+.dot-purple {
+    background-color: #7460EE;
+}
+.dot-orange {
+    background-color: #FF821C;
+}
+.disbursal-dots {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.number-crore{
+    display: flex;
+    justify-content: end;
+}
+.main-tree-head.login {
+    max-width: 250px;
+    width: 100%;
+    border: 4px solid #0747A6 !important;
+    padding: 5px !important;
+}
+.main-tree-head.login h3{
+    color: #0747A6;
+    font-size: 22px !important;
+}
+
+
+
+@media (max-width: 991px){
+    .number-crore{
+        justify-content: center;
+    }
+}
+@media (max-width: 1470px){
+    .divider:after, .divider:before{
+      width: 34%;
+  }
+  .divider:after  {
+      left: 200px;
+  }
+  .divider:before{
+    right: 200px;
+  }
+}
+@media (max-width: 767px){
+.work-tabs ul.nav-pills {
+    padding: 0;
+}
+.work-tabs ul li button {
+    padding: 10px !important;
+    font-size: 12px !important;
+}
+.work-tabs {
+    max-width: 422px !important;
+}
+}

@@ -21,6 +21,7 @@ import { ThreeSixtyComponent } from './pages/three-sixty/three-sixty.component';
 import { ProductivitySalesComponent } from './pages/productivity-sales/productivity-sales.component';
 import { ChannelPartnersComponent } from './pages/channel-partners/channel-partners.component';
 import { CreditComponent } from './pages/credit/credit.component';
+import { WorkInProgressComponent } from './pages/work-in-progress/work-in-progress.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { CreditComponent } from './pages/credit/credit.component';
     ProductivitySalesComponent,
     ChannelPartnersComponent,
     CreditComponent,
+    WorkInProgressComponent,
   ],
   imports: [
     BrowserModule,

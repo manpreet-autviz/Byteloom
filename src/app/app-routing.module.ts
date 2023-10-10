@@ -13,6 +13,7 @@ import { ThreeSixtyComponent } from './pages/three-sixty/three-sixty.component';
 import { ProductivitySalesComponent } from './pages/productivity-sales/productivity-sales.component';
 import { ChannelPartnersComponent } from './pages/channel-partners/channel-partners.component';
 import { CreditComponent } from './pages/credit/credit.component';
+import { WorkInProgressComponent } from './pages/work-in-progress/work-in-progress.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'productivity/sales', component: ProductivitySalesComponent },
   { path: 'productivity/channel-partner', component: ChannelPartnersComponent },
   { path: 'productivity/credit', component: CreditComponent },
+  { path: 'work-in-progress', component: WorkInProgressComponent },
 ];
 
 @NgModule({
