@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, NgZone } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 declare var $: any;
 @Component({
   selector: 'app-work-in-progress-tables',
@@ -137,10 +137,12 @@ export class WorkInProgressTablesComponent {
     },
     // Add more data as needed
   ];
+  routeName!: string | null;
   constructor(
     private elementRef: ElementRef,
     private zone: NgZone,
-    private cdRef: ChangeDetectorRef
+    private cdRef: ChangeDetectorRef,
+    private route: ActivatedRoute
   ) {}
   ngAfterViewInit(): void {
     this.zone.runOutsideAngular(() => {
@@ -154,7 +156,12 @@ export class WorkInProgressTablesComponent {
     });
 
   }
-
+  ngOnInit() {
+    this.route.paramMap.subscribe((params) => {
+      this.routeName = params.get('data');
+    });
+    
+  }
   
   onFilterChange(selectedValue: string) {}
 

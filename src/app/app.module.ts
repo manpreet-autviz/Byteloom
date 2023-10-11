@@ -34,6 +34,7 @@ import { CreditCmComponent } from './pages/credit-cm/credit-cm.component';
 import { CreditSupervisorComponent } from './pages/credit-supervisor/credit-supervisor.component';
 import { WorkInProgressTablesComponent } from './pages/work-in-progress-tables/work-in-progress-tables.component';
 import { OutOfTatComponent } from './pages/out-of-tat/out-of-tat.component';
+import { PortfolioHealthComponent } from './portfolio-health/portfolio-health.component';
 
 
 
@@ -68,6 +69,7 @@ import { OutOfTatComponent } from './pages/out-of-tat/out-of-tat.component';
     CreditSupervisorComponent,
     WorkInProgressTablesComponent,
     OutOfTatComponent,
+    PortfolioHealthComponent,
 
   ],
   imports: [

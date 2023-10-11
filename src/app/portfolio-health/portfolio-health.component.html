@@ -1,0 +1,140 @@
+<div class="main-content">
+  <div class="page-content">
+    <div class="container-fluid">
+      <div class="breadcrumb">
+        <div class="card card-animate w-100">
+          <div class="p-2 d-flex align-items-center justify-content-between">
+            <div>
+              <span class="f-7 fs-5"> Portfolio health </span>
+            </div>
+            <div class="d-flex">
+              <button
+                type="button "
+                class="text-white filter-btn-trend btn bg-blue border me-2"
+                (click)="toggle()"
+              >
+                {{ !isToggled ? "See Trend" : "Normal View" }}
+                <i class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
+              </button>
+              <select
+                *ngIf="!isToggled"
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedFilter"
+                (ngModelChange)="onFilterChange($event)"
+              >
+                <option *ngFor="let filter of filters" [value]="filter">
+                  {{ filter }}
+                </option>
+              </select>
+              <select
+                *ngIf="isToggled"
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedTrendFilter"
+                (ngModelChange)="onTrendFilterChange($event)"
+              >
+                <option *ngFor="let filter of monthFilters" [value]="filter">
+                  {{ filter }}
+                </option>
+              </select>
+              <select
+                id="dropdown"
+                class="form-select"
+                [(ngModel)]="selectedState"
+                (ngModelChange)="
+                  !isToggled
+                    ? onStateChange($event)
+                    : ontrendStateChange($event)
+                "
+              >
+                <option *ngFor="let state of states" [value]="state">
+                  {{ state }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="normal-view" *ngIf="!isToggled" class="normal-view w-100">
+          <div class="card card-animate w-100 mt-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6"> ED/GNPA/NPA </span>
+                      <div
+                        class="state-chart"
+                        id="ED-GNPA-NPA-chart"
+                        style="width: 100%; height: 400px"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6">CIBIL score wise delinquency </span>
+                      <div
+                        class="state-chart"
+                        id="CIBIL-score-chart"
+                        style="width: 100%; height: 400px"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6"> Product wise delinquency </span>
+                      <div
+                        class="state-chart"
+                        id="Product-wise-chart"
+                        style="width: 100%; height: 400px"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-animate w-100 mt-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6"> Non started cases</span>
+                      <div
+                        class="state-chart"
+                        id="Non-started-cases"
+                        style="width: 100%; height: 400px"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6"> Bucket wise list </span>
+                      <div
+                        class="state-chart"
+                        id="Bucket-wise-list"
+                        style="width: 100%; height: 400px"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+             
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="trend-view" *ngIf="isToggled" class="trend-view w-100">
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
