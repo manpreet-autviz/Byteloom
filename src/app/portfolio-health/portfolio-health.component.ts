@@ -37,11 +37,14 @@ export class PortfolioHealthComponent {
   EDGNPANPAOption: any;
   CIBILScoreOption:any;
   ProductWiseOption:any;
+  NonStartedCasesOption:any;
+  BucketWiseListOption:any;
 
   EDGNPANPAChart!: echarts.ECharts;
   CIBILScoreChart!: echarts.ECharts;
   ProductWiseChart!: echarts.ECharts;
-
+  BucketWiseListChart!: echarts.ECharts;
+  NonStartedCasesChart!: echarts.ECharts;
 
   public isToggled = false;
   constructor(private cdRef: ChangeDetectorRef) {}
@@ -70,6 +73,14 @@ export class PortfolioHealthComponent {
         document.getElementById('Product-wise-chart') as HTMLDivElement
       );
 
+      this.NonStartedCasesChart = echarts.init(
+        document.getElementById('Non-started-cases') as HTMLDivElement
+      );
+
+      this.BucketWiseListChart = echarts.init(
+        document.getElementById('Bucket-wise-list') as HTMLDivElement
+      );
+
       this.EDGNPANPAOption = {
         tooltip: {
           trigger: 'axis',
@@ -85,7 +96,9 @@ export class PortfolioHealthComponent {
         },
         xAxis: {
           type: 'category',
-  
+          axisLine: {
+            show: false,
+          },
           data: ['ED','GNPA','NPA'],
           axisLabel: {
             interval: 0,
@@ -99,7 +112,7 @@ export class PortfolioHealthComponent {
           max: 10,
           interval: 10,
           axisLine: {
-            show: true,
+            show: false,
           },
           splitLine: {
             show: false,
@@ -133,7 +146,7 @@ export class PortfolioHealthComponent {
           },
         },
         legend: {
-          data: ['HL', 'BL', 'LAP', 'SBL'],
+          data: ['ED', 'NPA'],
         },
         toolbox: {
           feature: {
@@ -149,19 +162,26 @@ export class PortfolioHealthComponent {
         xAxis: [
           {
             type: 'category',
+            axisLine: {
+              show: false,
+            },
+           
             boundaryGap: false,
-            data: ['HL', 'BL', 'LAP', 'SBL'],
+            data: ['<650', '-1', '>650'],
           },
         ],
         yAxis: [
           {
             type: 'value',
             axisLine: {
-              show: true,
+              show: false,
             },
-            min: 10,
-            max: 100,
-            interval: 20,
+            splitLine: {
+              show: false,
+            },
+            min: 0.50,
+            max: 2.5,
+            interval: 0.5,
             name: 'Percentage ',
             nameLocation: 'middle',
             nameGap: 43,
@@ -169,7 +189,7 @@ export class PortfolioHealthComponent {
         ],
         series: [
           {
-            name: 'HL',
+            name: 'ED',
             type: 'line',
   
             areaStyle: {
@@ -181,10 +201,10 @@ export class PortfolioHealthComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [12, 15, 25, 30, 35, 45],
+            data: [2.5, 1.8, 1.2, ],
           },
           {
-            name: 'BL',
+            name: 'NPA',
             type: 'line',
   
             areaStyle: {
@@ -196,45 +216,246 @@ export class PortfolioHealthComponent {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [30, 35, 45, 50, 58, 65],
+            data: [1.0, 0.75, 0.54],
+            itemStyle: {
+              color: '#FF821C',
+            },
+          },
+         
+        ],
+      };
+
+      this.ProductWiseOption = {
+        legend: {},
+        tooltip: {},
+        dataset: {
+          dimensions: ['state', 'ED', 'NPA', ],
+         
+          source: [
+            { state: 'HL', ED: 2.0,  NPA: 0.6  },
+            { state: 'LAP', ED: 2.5, NPA: 0.9  },
+            { state: 'BL', ED: 2.25, NPA: 0.8 },
+            { state: 'SBL',ED: 2.25, NPA: 0.7 },
+           
+          ],
+        },
+        xAxis: {
+          type: 'category',
+          axisLabel: {
+            interval: 0,
+            rotate: -45,
+            overflow: 'break',
+          },
+          axisLine: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+        },
+        yAxis: {
+          min: 0.5,
+          max: 3.5,
+          interval: 0.5,
+          axisLine: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+          axisLabel: {
+            formatter: '{value}',
+            margin: 1,
+          },
+          name: 'PERCENTAGE %',
+          nameLocation: 'middle',
+          nameGap: 25,
+        },
+        // Declare several bar series, each will be mapped
+        // to a column of dataset.source by default.
+        series: [
+          {
+            type: 'bar',
+            itemStyle: {
+              color: '#4FC3F7', // Set the color for the first bar series (IRR)
+            },
           },
           {
-            name: 'LAP',
-            type: 'line',
-  
-            areaStyle: {
-              opacity: 0,
+            type: 'bar',
+            itemStyle: {
+              color: '#3ADA84', // Set the color for the first bar series (IRR)
             },
-            emphasis: {
-              focus: 'series',
-              areaStyle: {
-                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-              },
+          },
+        
+        ],
+      };
+
+      this.NonStartedCasesOption = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow',
+          },
+        },
+        legend: {
+          data: ['Financial', 'Non-financial'],
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true,
+        },
+        xAxis: {
+          type: 'value',
+          splitLine: {
+            show: false,
+          },
+
+          boundaryGap: [0, 0.01],
+          axisLabel: {
+            show: false, // Set this to false to hide x-axis labels
+          },
+        },
+        yAxis: {
+          type: 'category',
+          axisLine: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+          data: [
+            'Maharashtra',
+            'MP',
+            'Gujarat',
+            'Rajasthan',
+            'NCR',
+            'PCH',
+          ],
+        },
+
+        series: [
+          {
+            name: 'Financial',
+            type: 'bar',
+            data: [123, 120, 150, 25, 65, 120],
+            label: {
+              show: true,
+              position: 'right',
+              formatter: '{c}',
             },
-            data: [35, 45, 47, 50, 55, 67],
+            itemStyle: {
+              color: '#5281FF', // Set the color for the first bar series (IRR)
+            },
           },
           {
-            name: 'SBL',
-            type: 'line',
-  
-            areaStyle: {
-              opacity: 0,
+            name: 'Non-financial',
+            type: 'bar',
+            data: [111, 110, 115, 110, 65, 130],
+            label: {
+              show: true,
+              position: 'right',
+              formatter: '{c} ',
             },
-            emphasis: {
-              focus: 'series',
-              areaStyle: {
-                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-              },
+            itemStyle: {
+              color: '#F49494', // Set the color for the first bar series (IRR)
             },
-            data: [37, 46, 48, 52, 57, 69],
           },
         ],
       };
 
+      this.BucketWiseListOption = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow',
+          },
+        },
+        legend: {
+          data: ['ED', 'GNPA','  NPA'],
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true,
+        },
+        xAxis: {
+          type: 'value',
+          splitLine: {
+            show: false,
+          },
+
+          boundaryGap: [0, 0.01],
+          axisLabel: {
+            show: false, // Set this to false to hide x-axis labels
+          },
+        },
+        yAxis: {
+          type: 'category',
+          axisLine: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+          data: [
+            '0-30',
+            '31-60',
+            '61-90',
+            '90+',
+          ],
+        },
+
+        series: [
+          {
+            name: 'ED',
+            type: 'bar',
+            data: [860, 850, 750, 100],
+            label: {
+              show: true,
+              position: 'right',
+              formatter: '{c}Cr',
+            },
+            itemStyle: {
+              color: '#3C7EBE', // Set the color for the first bar series (IRR)
+            },
+          },
+          {
+            name: 'GNPA',
+            type: 'bar',
+            data: [800, 777, 650, 1000],
+            label: {
+              show: true,
+              position: 'right',
+              formatter: '{c} ',
+            },
+            itemStyle: {
+              color: '#5BC8EF', // Set the color for the first bar series (IRR)
+            },
+          },
+          {
+            name: 'NPA',
+            type: 'bar',
+            data: [55, 55, 55, 55],
+            label: {
+              show: true,
+              position: 'right',
+              formatter: '{c}% ',
+            },
+            itemStyle: {
+              color: '#89BDEC', // Set the color for the first bar series (IRR)
+            },
+          },
+        ],
+      };
 
       this.EDGNPANPAChart.setOption(this.EDGNPANPAOption);
       this.CIBILScoreChart.setOption(this.CIBILScoreOption);
       this.ProductWiseChart.setOption(this.ProductWiseOption);
+      this.NonStartedCasesChart.setOption(this.NonStartedCasesOption);
+      this.BucketWiseListChart.setOption(this.BucketWiseListOption);
     } else {
     }
   }
