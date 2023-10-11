@@ -267,6 +267,9 @@ ul.tree.vertical ul li div p{
     .number-crore{
         justify-content: center;
     }
+    .work-tabs{
+        margin: 0 auto;
+    }
 }
 @media (max-width: 1470px){
     .divider:after, .divider:before{
@@ -280,6 +283,12 @@ ul.tree.vertical ul li div p{
   }
 }
 @media (max-width: 767px){
+    .work-tabs ul li{
+        margin: 0 auto;
+    }
+    .number-crore .indicators {
+        margin: 0 !important;
+    }
 .work-tabs ul.nav-pills {
     padding: 0;
 }
@@ -290,4 +299,20 @@ ul.tree.vertical ul li div p{
 .work-tabs {
     max-width: 422px !important;
 }
+}
+@media (max-width: 567px){
+    .work-tabs .nav-pills .nav-link.active, .nav-pills .show>.nav-link button#pills-financial-tab {
+        border-radius: 50px !important;    
+    }
+    .work-tabs .nav-pills{
+        border: none !important;
+    }
+    .work-tabs .nav-pills .nav-link.right-tab-border.active {
+        border-radius: 50px !important;
+    }
+    .work-tabs .nav-pills .nav-link {
+        border-radius: 50px !important;
+        border: 1px solid #ccc;
+        margin:  5px 10px;
+    }
 }

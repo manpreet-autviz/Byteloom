@@ -75,6 +75,9 @@ export class LoginComponent implements AfterViewInit {
   trendSchemeloginsOption: any;
   trendProductloginsOption: any;
   trendSourceOption: any;
+  IMDChart!: echarts.ECharts;
+
+  IMDOption: any;
 
   public isToggled = false;
   constructor(private cdRef: ChangeDetectorRef) {}
@@ -137,6 +140,10 @@ export class LoginComponent implements AfterViewInit {
 
       this.SourceChart = echarts.init(
         document.getElementById('Source') as HTMLDivElement
+      );
+
+      this.IMDChart = echarts.init(
+        document.getElementById('IMD-chart') as HTMLDivElement
       );
 
       this.stateOption = {
@@ -353,6 +360,51 @@ export class LoginComponent implements AfterViewInit {
         ],
       };
 
+      this.IMDOption = {
+        tooltip: {
+          trigger: 'item',
+          formatter: '{a} <br/>{b}: {c} ({d}%)' 
+        },
+        legend: {
+          top: '5%',
+          left: 'center',
+          // doesn't perfectly work with our tricks, disable it
+          selectedMode: false,
+        },
+        series: [
+          {
+            name: 'Access From',
+            type: 'pie',
+            radius: ['40%', '70%'],
+            center: ['50%', '70%'],
+            // adjust the start angle
+            startAngle: 180,
+           
+            data: [
+              { value: 1048, name: 'Online', itemStyle: { color: '#7C41DA' } },
+              { value: 735, name: 'Cheque', itemStyle: { color: '#FB8C00' } },
+              { value: 580, name: 'Cash', itemStyle: { color: '#07A14E' } },
+              { value: 784, name: 'UPI', itemStyle: { color: '#636363' } },
+  
+              {
+                // make an record to fill the bottom 50%
+                value: 1048 + 735 + 580 + 484 + 300,
+                itemStyle: {
+                  // stop the chart from rendering this piece
+                  color: 'none',
+                  decal: {
+                    symbol: 'none',
+                  },
+                },
+                label: {
+                  show: false,
+                },
+              },
+            ],
+          },
+        ],
+      };
+
       this.sourceOption = {
         responsive: true, 
         xAxis: {
@@ -405,6 +457,7 @@ export class LoginComponent implements AfterViewInit {
       this.SchemeLoginsChart.setOption(this.schemeloginsOption);
       this.ProductLoginsChart.setOption(this.productloginsOption);
       this.SourceChart.setOption(this.sourceOption);
+      this.IMDChart.setOption(this.IMDOption);
     } else {
       this.trendStateChart = echarts.init(
         document.getElementById('trendStateWiseChart') as HTMLDivElement
@@ -1485,6 +1538,7 @@ export class LoginComponent implements AfterViewInit {
       });
       this.trendSourceOption.series[0].data = newData;
       this.trendSourceChart.setOption(this.trendSourceOption);
+   
     }
   }
 }

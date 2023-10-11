@@ -106,7 +106,7 @@ export class RejectionAnalysisComponent {
         ],
         axisLabel: {
           interval: 0,
-          rotate: 15,
+          rotate: -18,
           overflow: 'break',
         },
       },
@@ -534,7 +534,7 @@ export class RejectionAnalysisComponent {
         trigger: 'item',
       },
       legend: {
-        top: '5%',
+        top: '1%',
         left: 'center',
       },
       series: [
@@ -543,7 +543,7 @@ export class RejectionAnalysisComponent {
           radius: ['40%', '70%'],
           avoidLabelOverlap: false,
           itemStyle: {
-            borderRadius: 10,
+            borderRadius: 0,
             borderColor: '#fff',
             borderWidth: 2,
           },
