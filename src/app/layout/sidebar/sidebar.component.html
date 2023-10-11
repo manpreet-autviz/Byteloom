@@ -238,6 +238,8 @@
 
         <li class="nav-item">
           <a
+          (click)="navigateToPage('/portfolio-health')"
+          [class.active]="activeItem === '/portfolio-health'"
             class="nav-link menu-link"
             data-bs-toggle="collapse"
             role="button"
