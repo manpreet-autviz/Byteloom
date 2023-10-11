@@ -1,516 +1,878 @@
 <div class="main-content">
-    <div class="page-content">
-        <div class="container-fluid">
-            <div class="breadcrumb">
-                <div class="card card-animate w-100">
-                    <div class="card-body d-flex align-items-center justify-content-between">
-                        <div>
-                            <span class="f-7 fs-5">Work in progress</span>
-                        </div>
-                        <div class="d-flex">
-                            <select id="dropdown" class="form-select me-2" [(ngModel)]="selectedFilter"
-                                (ngModelChange)="onFilterChange($event)">
-                                <option *ngFor="let filter of filters" [value]="filter">
-                                    {{ filter }}
-                                </option>
-                            </select>
-
-                            <select id="dropdown" class="form-select" [(ngModel)]="selectedState"
-                                (ngModelChange)="onStateChange($event)">
-                                <option *ngFor="let state of states" [value]="state">
-                                    {{ state }}
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="card card-animate w-100 mt-2">
-                    <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6">
-                                <div class="work-tabs">
-                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link active text-uppercase" id="pills-financial-tab"
-                                                data-bs-toggle="pill" data-bs-target="#pills-financial" type="button"
-                                                role="tab" aria-controls="pills-home" aria-selected="true">financial
-                                                approval</button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link text-uppercase right-tab-border"
-                                                id="pills-status-tab" data-bs-toggle="pill"
-                                                data-bs-target="#pills-status" type="button" role="tab"
-                                                aria-controls="pills-status" aria-selected="false">STAUS OF FINANCIALLY
-                                                APPROVED
-                                                CASES</button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="number-crore">
-                                    <div class="box-s rounded d-inline-block justify-content-center py-2 ">
-                                        <div class=" d-flex mx-3">
-                                            <div class="indicators align-items-center d-flex mx-3 fs-12">
-                                                <div class="disbursal-dots dot-purple mx-1"></div>NUMBER OF FILES
-                                            </div>
-                                            <div class="indicators align-items-center d-flex mx-3 fs-12">
-                                                <div class="disbursal-dots dot-orange mx-1"></div>AMOUNT IN CRORES
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active mt-5" id="pills-financial" role="tabpanel"
-                                aria-labelledby="pills-financial-tab">
-                                <div>
-                                    <ul class="tree vertical">
-                                        <li>
-                                            <div class="main-tree-head login text-uppercase text-center"><h3><b>Login</b></h3>
-                                                <div
-                                                class="indicators align-items-center d-flex justify-content-between mx-3 fs-12 m-0">
-                                                <div class="d-flex align-items-center m-0 fs-12">
-                                                    <div class="disbursal-dots dot-purple mx-1  m-0"></div>1500
-                                                    </div>
-                                                    <div
-                                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                        <div class="disbursal-dots dot-orange mx-1"></div>700CR
-                                                    </div>
-                                                </div>
-                                                </div>
-                                            <ul>
-                                                <li>
-                                                    <div class="box-s" (click)="workInprogressTable()">
-                                                        <p class="bg-purple">PD pending</p>
-                                                        <div class="d-flex align-items-center fs-12 m-0">
-                                                            <div class="disbursal-dots dot-purple mx-1  m-0"></div>500
-                                                            <div
-                                                                class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                <div class="disbursal-dots dot-orange mx-1"></div>200CR
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="box-s">
-                                                        <p class="bg-brown">PD done</p>
-                                                        <div class="d-flex align-items-center fs-12 m-0">
-                                                            <div class="disbursal-dots dot-purple mx-1  m-0"></div>200
-                                                            <div
-                                                                class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                <div class="disbursal-dots dot-orange mx-1"></div>55CR
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <ul>
-                                                        <li>
-                                                            <div class="box-s">
-                                                                <p class="bg-purple">PD  Positive</p>
-                                                                <div class="d-flex align-items-center fs-12 m-0">
-                                                                    <div class="disbursal-dots dot-purple mx-1  m-0"></div>800
-                                                                  <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                    <div class="disbursal-dots dot-orange mx-1"></div>280CR
-                                                                  </div>
-                                                                  </div>
-                                                                </div>
-                                                            <ul>
-                                                                <li>
-                                                                    <div class="box-s">
-                                                                        <p class="bg-yellow">
-                                                                            Appraisal Pending</p>
-                                                                        <div class="d-flex align-items-center fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-purple mx-1  m-0"></div>100
-                                                                          <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-orange mx-1"></div>60CR
-                                                                          </div>
-                                                                          </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li>
-                                                                    <div class="box-s">
-                                                                        <p class="bg-green">
-                                                                            Appraisal done</p>
-                                                                        <div class="d-flex align-items-center fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-purple mx-1  m-0"></div>600
-                                                                          <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-orange mx-1"></div>180CR
-                                                                          </div>
-                                                                          </div>
-                                                                    </div>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <div class="box-s">
-                                                                                <p class="bg-yellow">
-                                                                                    Approval Pending</p>
-                                                                                <div class="d-flex align-items-center fs-12 m-0">
-                                                                                    <div class="disbursal-dots dot-purple mx-1  m-0"></div>100
-                                                                                  <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                                    <div class="disbursal-dots dot-orange mx-1"></div>60CR
-                                                                                  </div>
-                                                                                  </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="box-s">
-                                                                                <p class="bg-yellow">
-                                                                                    Approval Done</p>
-                                                                                <div class="d-flex align-items-center fs-12 m-0">
-                                                                                    <div class="disbursal-dots dot-purple mx-1  m-0"></div>400
-                                                                                  <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                                    <div class="disbursal-dots dot-orange mx-1"></div>110CR
-                                                                                  </div>
-                                                                                  </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="box-s">
-                                                                                <p class="bg-yellow">
-                                                                                   Under query</p>
-                                                                                <div class="d-flex align-items-center fs-12 m-0">
-                                                                                    <div class="disbursal-dots dot-purple mx-1  m-0"></div>100
-                                                                                  <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                                    <div class="disbursal-dots dot-orange mx-1"></div>10CR
-                                                                                  </div>
-                                                                                  </div>
-                                                                            </div>
-                                                                        </li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li>
-                                                                    <div class="box-s">
-                                                                        <p class="bg-purple">
-                                                                            Under Query</p>
-                                                                        <div class="d-flex align-items-cente fs-12r m-0">
-                                                                            <div class="disbursal-dots dot-purple mx-1  m-0"></div>100
-                                                                          <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-orange mx-1"></div>60CR
-                                                                          </div>
-                                                                          </div>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <div class="box-s">
-                                                                <p class="bg-yellow">PD Negative</p>
-                                                                <div class="d-flex align-items-center fs-12 m-0">
-                                                                    <div class="disbursal-dots dot-purple mx-1  m-0">
-                                                                    </div>100
-                                                                    <div
-                                                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                        <div class="disbursal-dots dot-orange mx-1">
-                                                                        </div>100CR
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="box-s">
-                                                                <p class="bg-green">Decision pending</p>
-                                                                <div class="d-flex align-items-center fs-12 m-0">
-                                                                    <div class="disbursal-dots dot-purple mx-1  m-0">
-                                                                    </div>100
-                                                                    <div
-                                                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                        <div class="disbursal-dots dot-orange mx-1">
-                                                                        </div>120CR
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade mt-5" id="pills-status" role="tabpanel"
-                                aria-labelledby="pills-status-tab">
-                                <div>
-                                    <ul class="tree vertical">
-                                        <li>
-                                            <div class="main-tree-head text-uppercase">
-                                                <h3><b>Status of financial Approved
-                                                CAses</b></h3>
-                                            </div>
-                                            <ul>
-                                                <li>
-                                                    <div class="box-s">
-                                                        <p class="bg-purple">Technical</p>
-                                                        <div class="d-flex align-items-center fs-12 m-0">
-                                                            <div class="disbursal-dots dot-purple mx-1  m-0"></div>200
-                                                            <div
-                                                                class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                <div class="disbursal-dots dot-orange mx-1"></div>55CR
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <ul>
-                                                        <li>
-                                                            <div class="box-s">
-                                                                <p class="bg-green">Report rec.</p>
-                                                                <div class="d-flex align-items-center fs-12 m-0">
-                                                                    <div class="disbursal-dots dot-purple mx-1  m-0">
-                                                                    </div>170
-                                                                    <div
-                                                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                        <div class="disbursal-dots dot-orange mx-1">
-                                                                        </div>45CR
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <ul>
-                                                                <li>
-                                                                    <div class="box-s">
-                                                                        <p class="bg-green">Vetting done</p>
-                                                                        <div class="d-flex align-items-center fs-12 m-0">
-                                                                            <div
-                                                                                class="disbursal-dots dot-purple mx-1  m-0">
-                                                                            </div>20
-                                                                            <div
-                                                                                class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                                <div
-                                                                                    class="disbursal-dots dot-orange mx-1">
-                                                                                </div>7CR
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li>
-                                                                    <div class="box-s">
-                                                                        <p class="bg-yellow">Vetting pending</p>
-                                                                        <div class="d-flex align-items-center fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-purple mx-1  m-0"></div>150
-                                                                          <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-orange mx-1"></div>38CR
-                                                                          </div>
-                                                                          </div>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <div class="box-s">
-                                                                <p class="bg-yellow">Initiation pending</p>
-                                                                <div class="d-flex align-items-center fs-12 m-0">
-                                                                    <div class="disbursal-dots dot-purple mx-1  m-0"></div>15
-                                                                  <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                    <div class="disbursal-dots dot-orange mx-1"></div>5CR
-                                                                  </div>
-                                                                  </div>
-                                                                </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="box-s">
-                                                                <p class="bg-purple">Report pending</p>
-                                                                <div class="d-flex align-items-center fs-12 m-0">
-                                                                    <div class="disbursal-dots dot-purple mx-1  m-0"></div>15
-                                                                  <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                    <div class="disbursal-dots dot-orange mx-1"></div>5CR
-                                                                  </div>
-                                                                  </div>
-                                                            </div>
-                                                            <ul>
-                                                                <li>
-                                                                    <div class="box-s">
-                                                                        <p class="bg-purple">Under Query</p>
-                                                                        <div class="d-flex align-items-center fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-purple mx-1  m-0"></div>15
-                                                                          <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-orange mx-1"></div>10CR
-                                                                          </div>
-                                                                          </div>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <div class="box-s">
-                                                        <p class="bg-brown">LEGAL</p>
-                                                        <div class="d-flex align-items-center fs-12 m-0">
-                                                            <div class="disbursal-dots dot-purple mx-1  m-0"></div>200
-                                                            <div
-                                                                class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                <div class="disbursal-dots dot-orange mx-1"></div>55CR
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <ul>
-                                                        <li>
-                                                            <div class="box-s">
-                                                                <p class="bg-purple">Report pending</p>
-                                                                <div class="d-flex align-items-center fs-12 m-0">
-                                                                    <div class="disbursal-dots dot-purple mx-1  m-0"></div>15
-                                                                  <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                    <div class="disbursal-dots dot-orange mx-1"></div>10CR
-                                                                  </div>
-                                                                  </div>
-                                                                </div>
-                                                            <ul>
-                                                                <li>
-                                                                    <div class="box-s">
-                                                                        <p class="bg-purple">
-                                                                        Under Query</p>
-                                                                        <div class="d-flex align-items-center fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-purple mx-1  m-0"></div>15
-                                                                          <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-orange mx-1"></div>10CR
-                                                                          </div>
-                                                                          </div>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <div class="box-s">
-                                                                <p class="bg-yellow">Initiation pending</p>
-                                                                <div class="d-flex align-items-center fs-12 m-0">
-                                                                    <div class="disbursal-dots dot-purple mx-1  m-0">
-                                                                    </div>15
-                                                                    <div
-                                                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                        <div class="disbursal-dots dot-orange mx-1">
-                                                                        </div>5CR
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="box-s">
-                                                                <p class="bg-green">Report rec.</p>
-                                                                <div class="d-flex align-items-center fs-12 m-0">
-                                                                    <div class="disbursal-dots dot-purple mx-1  m-0">
-                                                                    </div>170
-                                                                    <div
-                                                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                        <div class="disbursal-dots dot-orange mx-1">
-                                                                        </div>40CR
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <ul>
-                                                                <li>
-                                                                    <div class="box-s">
-                                                                        <p class="bg-green">Vetting done</p>
-                                                                        <div class="d-flex align-items-center fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-purple mx-1  m-0"></div>150
-                                                                          <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-orange mx-1"></div>55CR
-                                                                          </div>
-                                                                          </div>
-                                                                    </div>
-                                                                </li>
-                                                                <li>
-                                                                    <div class="box-s">
-                                                                        <p class="bg-yellow">Vetting pending</p>
-                                                                        <div class="d-flex align-items-center fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-purple mx-1  m-0"></div>20
-                                                                          <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                            <div class="disbursal-dots dot-orange mx-1"></div>10CR
-                                                                          </div>
-                                                                          </div>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <div class="divider"></div>
-                                            <div class="divider2"></div>
-                                            <ul>
-                                            <li class="single-top-border mt-4">
-                                                <div class="box-s custom-top">
-                                                    <p class="bg-green">Final approval</p>
-                                                    <div class="d-flex align-items-center fs-12 m-0">
-                                                        <div class="disbursal-dots dot-purple mx-1  m-0">
-                                                        </div>170
-                                                        <div
-                                                            class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                            <div class="disbursal-dots dot-orange mx-1">
-                                                            </div>40CR
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <ul>
-                                                    <li>
-                                                        <div class="box-s">
-                                                            <p class="bg-green">done</p>
-                                                            <div class="d-flex align-items-center fs-12 m-0">
-                                                                <div class="disbursal-dots dot-purple mx-1  m-0"></div>250
-                                                              <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                <div class="disbursal-dots dot-orange mx-1"></div>60CR
-                                                              </div>
-                                                              </div>
-                                                        </div>
-                                                        <ul>
-                                                            <li>
-                                                                <div class="box-s">
-                                                                    <p class="bg-green">Disbursal</p>
-                                                                    <div class="d-flex align-items-center fs-12 m-0">
-                                                                        <div class="disbursal-dots dot-purple mx-1  m-0"></div>250
-                                                                      <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                        <div class="disbursal-dots dot-orange mx-1"></div>60CR
-                                                                      </div>
-                                                                      </div>
-                                                                </div>
-                                                                <ul>
-                                                                    <li>
-                                                                        <div class="box-s">
-                                                                            <p class="bg-green">done</p>
-                                                                            <div class="d-flex align-items-center fs-12 m-0">
-                                                                                <div class="disbursal-dots dot-purple mx-1  m-0"></div>150
-                                                                              <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                                <div class="disbursal-dots dot-orange mx-1"></div>45CR
-                                                                              </div>
-                                                                              </div>
-                                                                        </div>
-                                                                    </li>
-                                                                    <li>
-                                                                        <div class="box-s">
-                                                                            <p class="bg-yellow">done</p>
-                                                                            <div class="d-flex align-items-center fs-12 m-0">
-                                                                                <div class="disbursal-dots dot-purple mx-1  m-0"></div>100
-                                                                              <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                                <div class="disbursal-dots dot-orange mx-1"></div>15CR
-                                                                              </div>
-                                                                              </div>
-                                                                        </div>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <div class="box-s">
-                                                            <p class="bg-yellow">Pending</p>
-                                                            <div class="d-flex align-items-center fs-12 m-0">
-                                                                <div class="disbursal-dots dot-purple mx-1  m-0"></div>50
-                                                              <div class="indicators align-items-center d-flex mx-3 fs-12 m-0">
-                                                                <div class="disbursal-dots dot-orange mx-1"></div>13CR
-                                                              </div>
-                                                              </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div class="page-content">
+    <div class="container-fluid">
+      <div class="breadcrumb">
+        <div class="card card-animate w-100">
+          <div
+            class="card-body d-flex align-items-center justify-content-between"
+          >
+            <div>
+              <span class="f-7 fs-5">Work in progress</span>
             </div>
+            <div class="d-flex">
+              <select
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedFilter"
+                (ngModelChange)="onFilterChange($event)"
+              >
+                <option *ngFor="let filter of filters" [value]="filter">
+                  {{ filter }}
+                </option>
+              </select>
+
+              <select
+                id="dropdown"
+                class="form-select"
+                [(ngModel)]="selectedState"
+                (ngModelChange)="onStateChange($event)"
+              >
+                <option *ngFor="let state of states" [value]="state">
+                  {{ state }}
+                </option>
+              </select>
+            </div>
+          </div>
         </div>
+
+        <div class="card card-animate w-100 mt-2">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <div class="work-tabs">
+                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link active text-uppercase"
+                        id="pills-financial-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#pills-financial"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-home"
+                        aria-selected="true"
+                      >
+                        financial approval
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link text-uppercase right-tab-border"
+                        id="pills-status-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#pills-status"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-status"
+                        aria-selected="false"
+                      >
+                        STAUS OF FINANCIALLY APPROVED CASES
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="number-crore">
+                  <div
+                    class="box-s rounded d-inline-block justify-content-center py-2"
+                  >
+                    <div class="d-flex mx-3">
+                      <div
+                        class="indicators align-items-center d-flex mx-3 fs-12"
+                      >
+                        <div class="disbursal-dots dot-purple mx-1"></div>
+                        NUMBER OF FILES
+                      </div>
+                      <div
+                        class="indicators align-items-center d-flex mx-3 fs-12"
+                      >
+                        <div class="disbursal-dots dot-orange mx-1"></div>
+                        AMOUNT IN CRORES
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" id="pills-tabContent">
+              <div
+                class="tab-pane fade show active mt-5"
+                id="pills-financial"
+                role="tabpanel"
+                aria-labelledby="pills-financial-tab"
+              >
+                <div>
+                  <ul class="tree vertical">
+                    <li>
+                      <div
+                        class="main-tree-head login text-uppercase text-center"
+                      >
+                        <h3><b>Login</b></h3>
+                        <div
+                          class="indicators align-items-center d-flex justify-content-between mx-3 fs-12 m-0"
+                        >
+                          <div class="d-flex align-items-center m-0 fs-12">
+                            <div
+                              class="disbursal-dots dot-purple mx-1 m-0"
+                            ></div>
+                            1500
+                          </div>
+                          <div
+                            class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                          >
+                            <div class="disbursal-dots dot-orange mx-1"></div>
+                            700CR
+                          </div>
+                        </div>
+                      </div>
+                      <ul>
+                        <li>
+                          <div
+                            class="box-s cursor-pointer"
+                            (click)="workInprogressTable('/PD Pending / Login')"
+                          >
+                            <p class="bg-purple">PD pending</p>
+                            <div class="d-flex align-items-center fs-12 m-0">
+                              <div
+                                class="disbursal-dots dot-purple mx-1 m-0"
+                              ></div>
+                              500
+                              <div
+                                class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                              >
+                                <div
+                                  class="disbursal-dots dot-orange mx-1"
+                                ></div>
+                                200CR
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="box-s cursor-pointer"
+                            (click)="
+                              workInprogressTable(
+                                'PD Positive, PD Negative, Under query & Appraisal pending'
+                              )
+                            "
+                          >
+                            <p class="bg-brown">PD done</p>
+                            <div class="d-flex align-items-center fs-12 m-0">
+                              <div
+                                class="disbursal-dots dot-purple mx-1 m-0"
+                              ></div>
+                              200
+                              <div
+                                class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                              >
+                                <div
+                                  class="disbursal-dots dot-orange mx-1"
+                                ></div>
+                                55CR
+                              </div>
+                            </div>
+                          </div>
+                          <ul>
+                            <li>
+                              <div
+                                class="box-s cursor-pointer"
+                                (click)="
+                                  workInprogressTable(
+                                    'PD Positive, PD Negative, Under query & Appraisal pending'
+                                  )
+                                "
+                              >
+                                <p class="bg-purple">PD Positive</p>
+                                <div
+                                  class="d-flex align-items-center fs-12 m-0"
+                                >
+                                  <div
+                                    class="disbursal-dots dot-purple mx-1 m-0"
+                                  ></div>
+                                  800
+                                  <div
+                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                  >
+                                    <div
+                                      class="disbursal-dots dot-orange mx-1"
+                                    ></div>
+                                    280CR
+                                  </div>
+                                </div>
+                              </div>
+                              <ul>
+                                <li>
+                                  <div
+                                    class="box-s cursor-pointer"
+                                    (click)="
+                                      workInprogressTable(
+                                        'PD Positive, PD Negative, Under query & Appraisal pending'
+                                      )
+                                    "
+                                  >
+                                    <p class="bg-yellow">Appraisal Pending</p>
+                                    <div
+                                      class="d-flex align-items-center fs-12 m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-purple mx-1 m-0"
+                                      ></div>
+                                      100
+                                      <div
+                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                      >
+                                        <div
+                                          class="disbursal-dots dot-orange mx-1"
+                                        ></div>
+                                        60CR
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div
+                                    class="box-s cursor-pointer"
+                                    (click)="
+                                      workInprogressTable(
+                                        'Appraisal Done & Approval pending'
+                                      )
+                                    "
+                                  >
+                                    <p class="bg-green">Appraisal done</p>
+                                    <div
+                                      class="d-flex align-items-center fs-12 m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-purple mx-1 m-0"
+                                      ></div>
+                                      600
+                                      <div
+                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                      >
+                                        <div
+                                          class="disbursal-dots dot-orange mx-1"
+                                        ></div>
+                                        180CR
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <ul>
+                                    <li>
+                                      <div class="box-s">
+                                        <p class="bg-yellow">
+                                          Approval Pending
+                                        </p>
+                                        <div
+                                          class="d-flex align-items-center fs-12 m-0"
+                                        >
+                                          <div
+                                            class="disbursal-dots dot-purple mx-1 m-0"
+                                          ></div>
+                                          100
+                                          <div
+                                            class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                          >
+                                            <div
+                                              class="disbursal-dots dot-orange mx-1"
+                                            ></div>
+                                            60CR
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div class="box-s">
+                                        <p class="bg-yellow">Approval Done</p>
+                                        <div
+                                          class="d-flex align-items-center fs-12 m-0"
+                                        >
+                                          <div
+                                            class="disbursal-dots dot-purple mx-1 m-0"
+                                          ></div>
+                                          400
+                                          <div
+                                            class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                          >
+                                            <div
+                                              class="disbursal-dots dot-orange mx-1"
+                                            ></div>
+                                            110CR
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div class="box-s">
+                                        <p class="bg-yellow">Under query</p>
+                                        <div
+                                          class="d-flex align-items-center fs-12 m-0"
+                                        >
+                                          <div
+                                            class="disbursal-dots dot-purple mx-1 m-0"
+                                          ></div>
+                                          100
+                                          <div
+                                            class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                          >
+                                            <div
+                                              class="disbursal-dots dot-orange mx-1"
+                                            ></div>
+                                            10CR
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <div class="box-s">
+                                    <p
+                                      class="bg-purple cursor-pointer"
+                                      (click)="
+                                        workInprogressTable(
+                                          'PD Positive, PD Negative, Under query & Appraisal pending'
+                                        )
+                                      "
+                                    >
+                                      Under Query
+                                    </p>
+                                    <div
+                                      class="d-flex align-items-cente fs-12r m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-purple mx-1 m-0"
+                                      ></div>
+                                      100
+                                      <div
+                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                      >
+                                        <div
+                                          class="disbursal-dots dot-orange mx-1"
+                                        ></div>
+                                        60CR
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div
+                                class="box-s cursor-pointer"
+                                (click)="
+                                  workInprogressTable(
+                                    'PD Positive, PD Negative, Under query & Appraisal pending'
+                                  )
+                                "
+                              >
+                                <p class="bg-yellow">PD Negative</p>
+                                <div
+                                  class="d-flex align-items-center fs-12 m-0"
+                                >
+                                  <div
+                                    class="disbursal-dots dot-purple mx-1 m-0"
+                                  ></div>
+                                  100
+                                  <div
+                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                  >
+                                    <div
+                                      class="disbursal-dots dot-orange mx-1"
+                                    ></div>
+                                    100CR
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="box-s">
+                                <p class="bg-green">Decision pending</p>
+                                <div
+                                  class="d-flex align-items-center fs-12 m-0"
+                                >
+                                  <div
+                                    class="disbursal-dots dot-purple mx-1 m-0"
+                                  ></div>
+                                  100
+                                  <div
+                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                  >
+                                    <div
+                                      class="disbursal-dots dot-orange mx-1"
+                                    ></div>
+                                    120CR
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade mt-5"
+                id="pills-status"
+                role="tabpanel"
+                aria-labelledby="pills-status-tab"
+              >
+                <div>
+                  <ul class="tree vertical">
+                    <li>
+                      <div class="main-tree-head text-uppercase">
+                        <h3><b>Status of financial Approved CAses</b></h3>
+                      </div>
+                      <ul>
+                        <li>
+                          <div class="box-s">
+                            <p class="bg-purple">Technical</p>
+                            <div class="d-flex align-items-center fs-12 m-0">
+                              <div
+                                class="disbursal-dots dot-purple mx-1 m-0"
+                              ></div>
+                              200
+                              <div
+                                class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                              >
+                                <div
+                                  class="disbursal-dots dot-orange mx-1"
+                                ></div>
+                                55CR
+                              </div>
+                            </div>
+                          </div>
+                          <ul>
+                            <li>
+                              <div class="box-s cursor-pointer" (click)="workInprogressTable('PD Positive, PD Negative, Under query & Appraisal pending')" >
+                                <p class="bg-green">Report rec.</p>
+                                <div
+                                  class="d-flex align-items-center fs-12 m-0"
+                                >
+                                  <div
+                                    class="disbursal-dots dot-purple mx-1 m-0"
+                                  ></div>
+                                  170
+                                  <div
+                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                  >
+                                    <div
+                                      class="disbursal-dots dot-orange mx-1"
+                                    ></div>
+                                    45CR
+                                  </div>
+                                </div>
+                              </div>
+                              <ul>
+                                <li>
+                                  <div class="box-s cursor-pointer" (click)="workInprogressTable('PD Positive, PD Negative, Under query & Appraisal pending')" >
+                                    <p class="bg-green">Vetting done</p>
+                                    <div
+                                      class="d-flex align-items-center fs-12 m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-purple mx-1 m-0"
+                                      ></div>
+                                      20
+                                      <div
+                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                      >
+                                        <div
+                                          class="disbursal-dots dot-orange mx-1"
+                                        ></div>
+                                        7CR
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="box-s cursor-pointer" (click)="workInprogressTable('PD Positive, PD Negative, Under query & Appraisal pending')" >
+                                    <p class="bg-yellow">Vetting pending</p>
+                                    <div
+                                      class="d-flex align-items-center fs-12 m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-purple mx-1 m-0"
+                                      ></div>
+                                      150
+                                      <div
+                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                      >
+                                        <div
+                                          class="disbursal-dots dot-orange mx-1"
+                                        ></div>
+                                        38CR
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="box-s">
+                                <p class="bg-yellow">Initiation pending</p>
+                                <div
+                                  class="d-flex align-items-center fs-12 m-0"
+                                >
+                                  <div
+                                    class="disbursal-dots dot-purple mx-1 m-0"
+                                  ></div>
+                                  15
+                                  <div
+                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                  >
+                                    <div
+                                      class="disbursal-dots dot-orange mx-1"
+                                    ></div>
+                                    5CR
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="box-s">
+                                <p class="bg-purple">Report pending</p>
+                                <div
+                                  class="d-flex align-items-center fs-12 m-0"
+                                >
+                                  <div
+                                    class="disbursal-dots dot-purple mx-1 m-0"
+                                  ></div>
+                                  15
+                                  <div
+                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                  >
+                                    <div
+                                      class="disbursal-dots dot-orange mx-1"
+                                    ></div>
+                                    5CR
+                                  </div>
+                                </div>
+                              </div>
+                              <ul>
+                                <li>
+                                  <div class="box-s">
+                                    <p class="bg-purple">Under Query</p>
+                                    <div
+                                      class="d-flex align-items-center fs-12 m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-purple mx-1 m-0"
+                                      ></div>
+                                      15
+                                      <div
+                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                      >
+                                        <div
+                                          class="disbursal-dots dot-orange mx-1"
+                                        ></div>
+                                        10CR
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <div class="box-s cursor-pointer" (click)="workInprogressTable('Legal & Technical')" >
+                            <p class="bg-brown">LEGAL</p>
+                            <div class="d-flex align-items-center fs-12 m-0">
+                              <div
+                                class="disbursal-dots dot-purple mx-1 m-0"
+                              ></div>
+                              200
+                              <div
+                                class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                              >
+                                <div
+                                  class="disbursal-dots dot-orange mx-1"
+                                ></div>
+                                55CR
+                              </div>
+                            </div>
+                          </div>
+                          <ul>
+                            <li>
+                              <div class="box-s cursor-pointer" (click)="workInprogressTable('PD Pending / Login')" >
+                                <p class="bg-purple">Report pending</p>
+                                <div
+                                  class="d-flex align-items-center fs-12 m-0"
+                                >
+                                  <div
+                                    class="disbursal-dots dot-purple mx-1 m-0"
+                                  ></div>
+                                  15
+                                  <div
+                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                  >
+                                    <div
+                                      class="disbursal-dots dot-orange mx-1"
+                                    ></div>
+                                    10CR
+                                  </div>
+                                </div>
+                              </div>
+                              <ul>
+                                <li>
+                                  <div class="box-s">
+                                    <p class="bg-purple">Under Query</p>
+                                    <div
+                                      class="d-flex align-items-center fs-12 m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-purple mx-1 m-0"
+                                      ></div>
+                                      15
+                                      <div
+                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                      >
+                                        <div
+                                          class="disbursal-dots dot-orange mx-1"
+                                        ></div>
+                                        10CR
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="box-s">
+                                <p class="bg-yellow">Initiation pending</p>
+                                <div
+                                  class="d-flex align-items-center fs-12 m-0"
+                                >
+                                  <div
+                                    class="disbursal-dots dot-purple mx-1 m-0"
+                                  ></div>
+                                  15
+                                  <div
+                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                  >
+                                    <div
+                                      class="disbursal-dots dot-orange mx-1"
+                                    ></div>
+                                    5CR
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="box-s">
+                                <p class="bg-green">Report rec.</p>
+                                <div
+                                  class="d-flex align-items-center fs-12 m-0"
+                                >
+                                  <div
+                                    class="disbursal-dots dot-purple mx-1 m-0"
+                                  ></div>
+                                  170
+                                  <div
+                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                  >
+                                    <div
+                                      class="disbursal-dots dot-orange mx-1"
+                                    ></div>
+                                    40CR
+                                  </div>
+                                </div>
+                              </div>
+                              <ul>
+                                <li>
+                                  <div class="box-s">
+                                    <p class="bg-green">Vetting done</p>
+                                    <div
+                                      class="d-flex align-items-center fs-12 m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-purple mx-1 m-0"
+                                      ></div>
+                                      150
+                                      <div
+                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                      >
+                                        <div
+                                          class="disbursal-dots dot-orange mx-1"
+                                        ></div>
+                                        55CR
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="box-s">
+                                    <p class="bg-yellow">Vetting pending</p>
+                                    <div
+                                      class="d-flex align-items-center fs-12 m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-purple mx-1 m-0"
+                                      ></div>
+                                      20
+                                      <div
+                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                      >
+                                        <div
+                                          class="disbursal-dots dot-orange mx-1"
+                                        ></div>
+                                        10CR
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <div class="divider"></div>
+                      <div class="divider2"></div>
+                      <ul>
+                        <li class="single-top-border mt-4">
+                          <div class="box-s custom-top">
+                            <p class="bg-green">Final approval</p>
+                            <div class="d-flex align-items-center fs-12 m-0">
+                              <div
+                                class="disbursal-dots dot-purple mx-1 m-0"
+                              ></div>
+                              170
+                              <div
+                                class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                              >
+                                <div
+                                  class="disbursal-dots dot-orange mx-1"
+                                ></div>
+                                40CR
+                              </div>
+                            </div>
+                          </div>
+                          <ul>
+                            <li>
+                              <div class="box-s cursor-pointer" (click)="workInprogressTable('PD Positive, PD Negative, Under query & Appraisal pending')" >
+                                <p class="bg-green">done</p>
+                                <div
+                                  class="d-flex align-items-center fs-12 m-0"
+                                >
+                                  <div
+                                    class="disbursal-dots dot-purple mx-1 m-0"
+                                  ></div>
+                                  250
+                                  <div
+                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                  >
+                                    <div
+                                      class="disbursal-dots dot-orange mx-1"
+                                    ></div>
+                                    60CR
+                                  </div>
+                                </div>
+                              </div>
+                              <ul>
+                                <li>
+                                  <div class="box-s">
+                                    <p class="bg-green">Disbursal</p>
+                                    <div
+                                      class="d-flex align-items-center fs-12 m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-purple mx-1 m-0"
+                                      ></div>
+                                      250
+                                      <div
+                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                      >
+                                        <div
+                                          class="disbursal-dots dot-orange mx-1"
+                                        ></div>
+                                        60CR
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <ul>
+                                    <li>
+                                      <div class="box-s">
+                                        <p class="bg-green">done</p>
+                                        <div
+                                          class="d-flex align-items-center fs-12 m-0"
+                                        >
+                                          <div
+                                            class="disbursal-dots dot-purple mx-1 m-0"
+                                          ></div>
+                                          150
+                                          <div
+                                            class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                          >
+                                            <div
+                                              class="disbursal-dots dot-orange mx-1"
+                                            ></div>
+                                            45CR
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div class="box-s">
+                                        <p class="bg-yellow">done</p>
+                                        <div
+                                          class="d-flex align-items-center fs-12 m-0"
+                                        >
+                                          <div
+                                            class="disbursal-dots dot-purple mx-1 m-0"
+                                          ></div>
+                                          100
+                                          <div
+                                            class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                          >
+                                            <div
+                                              class="disbursal-dots dot-orange mx-1"
+                                            ></div>
+                                            15CR
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="box-s cursor-pointer" (click)="workInprogressTable('Appraisal Done & Approval pending')" >
+                                <p class="bg-yellow">Pending</p>
+                                <div
+                                  class="d-flex align-items-center fs-12 m-0"
+                                >
+                                  <div
+                                    class="disbursal-dots dot-purple mx-1 m-0"
+                                  ></div>
+                                  50
+                                  <div
+                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                  >
+                                    <div
+                                      class="disbursal-dots dot-orange mx-1"
+                                    ></div>
+                                    13CR
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

@@ -56,7 +56,7 @@ const routes: Routes = [
   { path: 'credit-cm', component: CreditCmComponent },
   { path: 'credit-supervisor', component: CreditSupervisorComponent },
   { path: 'out-of-tat', component: OutOfTatComponent },
-  { path: 'work-in-progress-table', component: WorkInProgressTablesComponent },
+  { path: 'work-in-progress-table/:data', component: WorkInProgressTablesComponent },
   { path: 'portfolio-health', component: PortfolioHealthComponent },
 ];
 
