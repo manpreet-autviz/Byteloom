@@ -1,4 +1,41 @@
-.active{
-  
-    background: rgba(58, 218, 132, 0.17)
+
+.productivity-tabs ul.nav-pills {
+    border: 1px solid #908C8C;
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 1px;
+}
+.productivity-tabs ul li button {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 15px;
+    color: #000;
+}
+.productivity-tabs .nav-pills .nav-link.active, .nav-pills .show>.nav-link button#pills-financial-tab {
+    background: #0747A6;
+    padding: 15px;
+    border-radius: 50px 0 0 50px;
+    color: #000;
+}
+.productivity-tabs .nav-pills .nav-link.active{
+    color: #fff;
+}
+.productivity-tabs .nav-pills .nav-link.right-tab-border.active {
+    border-radius: 0px 50px 50px 0px;
+}
+.productivity-tabs {
+    max-width: 247px;
+    width: 100%;
+}
+@media (max-width: 767px){
+.productivity-tabs ul.nav-pills {
+    padding: 0;
+}
+.productivity-tabs ul li button {
+    padding: 10px !important;
+    font-size: 12px !important;
+}
+.productivity-tabs {
+    max-width: 422px !important;
+}
 }

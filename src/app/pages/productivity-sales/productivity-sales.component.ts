@@ -260,13 +260,15 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
         containLabel: true,
       },
       xAxis: [
-        {
+         {
           type: 'category',
+          axisLine: {
+            show: false,
+          },
           boundaryGap: false,
           data: [
             'Pan India',
-            'Punjab',
-            'Haryana',
+            'PCH',
             'NCR',
             'Rajasthan',
             'Gujarat',
@@ -284,7 +286,7 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
         {
           type: 'value',
           axisLine: {
-            show: true,
+            show: false,
           },
           min: 2,
           max: 8,
@@ -293,7 +295,7 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
           nameLocation: 'middle',
           nameGap: 43,
           axisLabel: {
-            margin: 1,
+            margin: 15,
           },
         },
       ],
@@ -311,7 +313,7 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [2, 3, 2.5, 4, 4.5, 5, 5.5, 6],
+          data: [2, 3, 4, 4.5, 5, 5.5, 6],
         },
         {
           name: 'Disbursal',
@@ -399,7 +401,7 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
         trigger: 'item',
       },
       legend: {
-        top: '5%',
+        top: '1%',
         left: 'center',
       },
       series: [
@@ -408,7 +410,7 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
           radius: ['40%', '70%'],
           avoidLabelOverlap: false,
           itemStyle: {
-            borderRadius: 10,
+            borderRadius: 0,
             borderColor: '#fff',
             borderWidth: 2,
           },
@@ -642,10 +644,17 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
           return ` ${barValue}%`;
         },
       },
+      legend: {
+        top: '1%',
+        left: 'center',
+      },
       xAxis: {
         type: 'category',
 
         data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+        axisLine: {
+          show: false,
+        },
         axisLabel: {
           interval: 0,
           rotate: 45,
@@ -658,7 +667,7 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
         max: 70,
         interval: 10,
         axisLine: {
-          show: true,
+          show: false,
         },
         splitLine: {
           show: false,
