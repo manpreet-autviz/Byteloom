@@ -141,19 +141,19 @@ ul.pending-cheque {
   position: absolute;
   content: "";
   background: #e3e3e3;
-  height: 127px;
+  height: 98px;
   width: 2px;
-  top: -138px;
-  left: 45px;
+  top: -108px;
+  left: 29px
 }
 .cheque-polygon.second-cheque:after {
   position: absolute;
   content: "";
   background: #e3e3e3;
-  height: 135px;
+  height: 105px;
   width: 2px;
   top: -29px;
-  left: -80px;
+  left: -64px;
   transform: rotateZ(91deg);
 }
 .otc-three-box p {
@@ -264,8 +264,9 @@ ul.pending-cheque.ot-normal {
     left: -55px;
   }
 }
-@media (max-width: 767px) {
-  .cheque-polygon.second-cheque:after,
+
+@media (max-width: 991px) {
+.cheque-polygon.second-cheque:after,
   .cheque-polygon.first-cheque:after {
     display: none;
   }
