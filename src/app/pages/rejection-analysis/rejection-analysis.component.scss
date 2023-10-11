@@ -1,0 +1,48 @@
+.custom-width{
+    max-width: 640px;
+    width: 100%;
+}
+.modal-header h5 {
+    background: #3ada8436;
+    padding: 10px 40px;
+    border-radius: 50px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+button.btn-close {
+    border: 2px solid #c5c5c5;
+    border-radius: 50px;
+    font-size: 12px;
+    opacity: 1;
+}
+.modal-header{
+    border-bottom: none !important;
+}
+.issue-popup {
+    background: #F8F8F8;
+    border-radius: 20px;
+    padding: 13px 11px;
+}
+.main-head h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.main-head {
+    display: flex;
+    justify-content: space-between;
+    background: #7460ee21;
+    padding: 9px 28px;
+    border-radius: 5px;
+}
+.listing ul li{
+    list-style: none;
+    padding: 10px 38px 10px 18px;
+}
+.listing ul li:not(:last-child){
+    border-bottom: 1px solid #E3E3E3;
+}
+.listing ul li h6{
+    margin: 0;
+    font-size: 14px;
+}
