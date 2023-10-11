@@ -95,6 +95,7 @@ export class RejectionAnalysisComponent {
       document.getElementById('rejection-analysis') as HTMLDivElement
     );
 
+
     this.StateOption = {
       xAxis: {
         type: 'category',
@@ -717,5 +718,5 @@ export class RejectionAnalysisComponent {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     });
   }
-  
+
 }

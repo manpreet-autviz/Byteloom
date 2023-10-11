@@ -298,6 +298,24 @@ ul.tree.vertical ul li div p{
 }
 .work-tabs {
     max-width: 422px !important;
+    margin: 0 auto;
+}
+ul#pills-tab {
+    display: block;
+    border-radius: 30px;
+    padding: 5px;
+}
+.work-tabs {
+    max-width: 100%;
+    border-radius: 10px;
+}
+button#pills-financial-tab {
+    border-radius: 50px;
+    width: 100%;
+}
+button#pills-status-tab {
+    width: 100%;
+    border-radius: 30px;
 }
 }
 @media (max-width: 567px){

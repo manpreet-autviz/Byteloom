@@ -63,6 +63,38 @@
     margin-bottom: 15px;
 }
 
+
+@media (max-width: 767px){
+    .work-tabs ul.nav-pills {
+        padding: 0;
+    }
+    .work-tabs ul li button {
+        padding: 10px !important;
+        font-size: 12px !important;
+    }
+    .work-tabs {
+        max-width: 422px !important;
+        margin: 0 auto;
+    }
+    ul#pills-tab {
+        display: block;
+        border-radius: 30px;
+        padding: 5px;
+    }
+    .work-tabs {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    button#pills-financial-tab {
+        border-radius: 50px;
+        width: 100%;
+    }
+    button#pills-status-tab {
+        width: 100%;
+        border-radius: 30px;
+    }
+    }
+
 @media (max-width: 623px){
     .work-tabs .nav-pills li{
         margin: 0 auto;
@@ -82,3 +114,4 @@
         margin:  5px 10px;
     }
 }
+
