@@ -234,9 +234,9 @@ export class RejectionAnalysisComponent {
           },
         },
       },
-      legend: {
-        data: ['HL', 'BL', 'LAP', 'SBL'],
-      },
+      // legend: {
+      //   data: ['HL', 'BL', 'LAP', 'SBL'],
+      // },
       toolbox: {
         feature: {
           saveAsImage: {},
@@ -263,7 +263,7 @@ export class RejectionAnalysisComponent {
           },
           min: 10,
           max: 100,
-          interval: 20,
+          interval: 10,
           name: 'Percentage ',
           nameLocation: 'middle',
           nameGap: 43,
@@ -283,53 +283,53 @@ export class RejectionAnalysisComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [12, 15, 25, 30, 35, 45],
+          data: [60, 50, 48, 45],
         },
-        {
-          name: 'BL',
-          type: 'line',
+        // {
+        //   name: 'BL',
+        //   type: 'line',
 
-          areaStyle: {
-            opacity: 0,
-          },
-          emphasis: {
-            focus: 'series',
-            areaStyle: {
-              opacity: 1, // Reduce opacity on hover to make it semi-transparent
-            },
-          },
-          data: [30, 35, 45, 50, 58, 65],
-        },
-        {
-          name: 'LAP',
-          type: 'line',
+        //   areaStyle: {
+        //     opacity: 0,
+        //   },
+        //   emphasis: {
+        //     focus: 'series',
+        //     areaStyle: {
+        //       opacity: 1, // Reduce opacity on hover to make it semi-transparent
+        //     },
+        //   },
+        //   data: [30, 35, 45, 50, 58, 65],
+        // },
+        // {
+        //   name: 'LAP',
+        //   type: 'line',
 
-          areaStyle: {
-            opacity: 0,
-          },
-          emphasis: {
-            focus: 'series',
-            areaStyle: {
-              opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-            },
-          },
-          data: [35, 45, 47, 50, 55, 67],
-        },
-        {
-          name: 'SBL',
-          type: 'line',
+        //   areaStyle: {
+        //     opacity: 0,
+        //   },
+        //   emphasis: {
+        //     focus: 'series',
+        //     areaStyle: {
+        //       opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+        //     },
+        //   },
+        //   data: [35, 45, 47, 50, 55, 67],
+        // },
+        // {
+        //   name: 'SBL',
+        //   type: 'line',
 
-          areaStyle: {
-            opacity: 0,
-          },
-          emphasis: {
-            focus: 'series',
-            areaStyle: {
-              opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-            },
-          },
-          data: [37, 46, 48, 52, 57, 69],
-        },
+        //   areaStyle: {
+        //     opacity: 0,
+        //   },
+        //   emphasis: {
+        //     focus: 'series',
+        //     areaStyle: {
+        //       opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+        //     },
+        //   },
+        //   data: [37, 46, 48, 52, 57, 69],
+        // },
       ],
     };
 
