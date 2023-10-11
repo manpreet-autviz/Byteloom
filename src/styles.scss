@@ -56,6 +56,11 @@ font-size:12px;
 .bg-light-blue {
   background: #5a96e3;
 }
+
+.title{
+  font-size: 18px;
+  font-weight: 700;
+
 /* width */
 .navbar-menu::-webkit-scrollbar {
   width: 3px;
@@ -76,6 +81,7 @@ font-size:12px;
 /* Handle on hover */
 .navbar-menu::-webkit-scrollbar-thumb:hover {
   background: #b30000; 
+
 }
 .card {
   border: none !important;
@@ -225,7 +231,7 @@ font-size:12px;
     width: 50px !important;
     height: 50px;
     border-radius: 50%;
-    background-color:#ff821c;
+    background-color:#4F709C;
     border: none;
     line-height: 50px;
     text-align: center;
@@ -248,6 +254,12 @@ button.fc-prev-button.fc-button.fc-button-primary,button.fc-today-button.fc-butt
 }
 .fc .fc-toolbar.fc-header-toolbar {
   justify-content: center;
+}
+.fc-toolbar-chunk h2 {
+  font-size: 23px !important;
+  background: #3ada843d;
+  padding: 10px 23px;
+  border-radius: 30px;
 }
 .fc-day-past.fc-daygrid-day {
   height: 50px;

@@ -62,3 +62,23 @@
 .content-list ul li:not(:last-child) {
     margin-bottom: 15px;
 }
+
+@media (max-width: 623px){
+    .work-tabs .nav-pills li{
+        margin: 0 auto;
+    }
+    .work-tabs .nav-pills .nav-link.active, .nav-pills .show>.nav-link button#pills-financial-tab {
+        border-radius: 50px !important;    
+    }
+    .work-tabs .nav-pills{
+        border: none !important;
+    }
+    .work-tabs .nav-pills .nav-link.right-tab-border.active {
+        border-radius: 50px !important;
+    }
+    .work-tabs .nav-pills .nav-link {
+        border-radius: 50px !important;
+        border: 1px solid #ccc;
+        margin:  5px 10px;
+    }
+}
