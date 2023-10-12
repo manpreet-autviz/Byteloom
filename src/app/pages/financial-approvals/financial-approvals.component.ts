@@ -136,11 +136,12 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           min: 10,
           max: 90,
           interval: 10,
-          name: 'Amount (in Crore)',
+          name: 'Amount (in Rs. Crore)',
           nameLocation: 'middle',
           nameGap: 25,
           nameTextStyle: {
-            fontWeight: 700,
+            fontWeight: 600,
+            fontSize:14,
           },
         },
         yAxis: {
@@ -218,6 +219,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           name: 'Amount (in Rs. Lacs)',
           nameLocation: 'middle',
           nameGap: 25,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
         },
         series: [
           {
@@ -353,6 +358,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             formatter: '{value}',
             margin: 1,
           },
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
         },
         series: [
           {
@@ -407,9 +416,13 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           splitLine: {
             show: false,
           },
-          name: 'DAYS',
+          name: 'Days',
           nameLocation: 'middle',
           nameGap: 25,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
         },
         series: [
           {
@@ -478,11 +491,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             'Maharashtra',
           ],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+     
         grid: {
           left: '3%',
           right: '4%',
@@ -518,9 +527,13 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             min: 10,
             max: 120,
             interval: 10,
-            name: 'Amount in Crore ',
+            name: 'Amount  ( in  Rs. Crore )',
             nameLocation: 'middle',
             nameGap: 30,
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
+            },
           },
         ],
         series: [
@@ -648,11 +661,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
           
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+    
         grid: {
           left: '3%',
           right: '4%',
@@ -688,9 +697,13 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             min: 10,
             max: 120,
             interval: 10,
-            name: 'Amount in Crore',
+            name: 'Amount ( in Rs. Crore )',
             nameLocation: 'middle',
             nameGap:  30,
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
+            },
           },
         ],
         series: [
@@ -770,13 +783,9 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         responsive: true, 
         legend: {
-          data: ['Top Up', 'Fresh', 'BT'],
+          data: ['Fresh', 'Top Up',  'BT'],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+    
         grid: {
           left: '3%',
           right: '4%',
@@ -812,12 +821,16 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             min: 10,
             max: 100,
             interval: 10,
-            name: 'Percentage',
+            name: 'Percentage %',
             nameLocation: 'middle',
             nameGap:  25,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
+            },
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
             },
           },
         ],
@@ -885,11 +898,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         legend: {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+   
         grid: {
           left: '3%',
           right: '4%',
@@ -1006,11 +1015,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         legend: {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+    
         grid: {
           left: '3%',
           right: '4%',
@@ -1049,6 +1054,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             name: 'Days',
             nameLocation: 'middle',
             nameGap:  25,
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
+            },
           },
         ],
         series: [
@@ -1130,11 +1139,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         legend: {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+   
         grid: {
           left: '3%',
           right: '4%',
@@ -1170,13 +1175,18 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             min: 40,
             max: 50,
             interval: 2,
-            name: 'Percentage',
+            name: 'Percentage %',
             nameLocation: 'middle',
             nameGap:  20,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
             },
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
+            },
+
           },
         ],
         series: [

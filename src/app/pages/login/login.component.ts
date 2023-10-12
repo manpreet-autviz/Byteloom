@@ -186,11 +186,12 @@ export class LoginComponent implements AfterViewInit {
           min: 0,
           max: 4000,
           interval: 500,
-          name: 'NUMBER OF FILES',
+          name: 'Number of files',
           nameLocation: 'middle',
           nameGap: 30,
           nameTextStyle: {
-            fontWeight: 700,
+            fontWeight: 600,
+            fontSize:14,
           },
         },
         yAxis: {
@@ -250,11 +251,12 @@ export class LoginComponent implements AfterViewInit {
           min: 0,
           max: 15,
           interval: 1,
-          name: 'NUMBER OF FILES',
+          name: 'Number of files',
           nameLocation: 'middle',
           nameGap: 30,
           nameTextStyle: {
-            fontWeight: 700,
+            fontWeight: 600,
+            fontSize:14,
           },
         },
         yAxis: {
@@ -319,8 +321,8 @@ export class LoginComponent implements AfterViewInit {
             },
             data: [
               { value: 45, name: 'Fresh', itemStyle: { color: '#f6c342' } },
-              { value: 27, name: 'Top-Up', itemStyle: { color: '#198754' } },
-              { value: 26, name: 'BT', itemStyle: { color: '#6c757d' } },
+              { value: 27, name: 'Top-Up', itemStyle: { color: '#6c757d' } },
+              { value: 26, name: 'BT', itemStyle: { color: '#198754' } },
             ],
           },
         ],
@@ -433,7 +435,7 @@ export class LoginComponent implements AfterViewInit {
           },
         },
         yAxis: {
-          name: 'PERCENTAGE',
+          name: 'Percentage %',
           nameLocation: 'middle',
           nameGap: 30,
 
@@ -516,11 +518,7 @@ export class LoginComponent implements AfterViewInit {
             'Maharashtra',
           ],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+    
         grid: {
           left: '3%',
           right: '4%',
@@ -556,9 +554,13 @@ export class LoginComponent implements AfterViewInit {
             min: 500,
             max: 4000,
             interval: 500,
-            name: 'NUMBER OF FILES',
+            name: 'Number of files',
             nameLocation: 'middle',
             nameGap: 43,
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
+            },
           },
         ],
         series: [
@@ -691,11 +693,7 @@ export class LoginComponent implements AfterViewInit {
             'Maharashtra',
           ],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+     
         grid: {
           left: '3%',
           right: '4%',
@@ -731,9 +729,13 @@ export class LoginComponent implements AfterViewInit {
             min: 2,
             max: 20,
             interval: 2,
-            name: 'NUMBER OF FILES',
+            name: 'Number of files',
             nameLocation: 'middle',
             nameGap: 43,
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
+            },
           },
         ],
         series: [
@@ -858,11 +860,7 @@ export class LoginComponent implements AfterViewInit {
         legend: {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+   
         grid: {
           left: '3%',
           right: '4%',
@@ -898,9 +896,13 @@ export class LoginComponent implements AfterViewInit {
             min: 500,
             max: 4000,
             interval: 500,
-            name: 'NUMBER OF FILES',
+            name: 'Number of files',
             nameLocation: 'middle',
             nameGap: 43,
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
+            },
           },
         ],
         series: [
@@ -978,13 +980,9 @@ export class LoginComponent implements AfterViewInit {
           },
         },
         legend: {
-          data: ['Top Up', 'Fresh', 'BT'],
+          data: ['Fresh' , 'Top Up','BT'],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+    
         grid: {
           left: '3%',
           right: '4%',
@@ -1020,9 +1018,13 @@ export class LoginComponent implements AfterViewInit {
             min: 500,
             max: 4000,
             interval: 500,
-            name: 'NUMBER OF FILES',
+            name: 'Number of files',
             nameLocation: 'middle',
             nameGap: 43,
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
+            },
           },
         ],
         series: [
@@ -1087,11 +1089,7 @@ export class LoginComponent implements AfterViewInit {
         legend: {
           data: ['Direct', 'DSA', 'Power Partner', 'Saathi', 'Online Partner'],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+  
         grid: {
           left: '3%',
           right: '4%',
@@ -1127,9 +1125,13 @@ export class LoginComponent implements AfterViewInit {
             min: 10,
             max: 110,
             interval: 10,
-            name: 'NUMBER OF FILES',
+            name: 'Number of files',
             nameLocation: 'middle',
             nameGap: 43,
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
+            },
           },
         ],
         series: [
