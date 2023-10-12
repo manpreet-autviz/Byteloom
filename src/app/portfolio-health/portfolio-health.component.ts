@@ -99,6 +99,9 @@ export class PortfolioHealthComponent {
           axisLine: {
             show: false,
           },
+          axisTick: {
+            show: false, 
+          },
           data: ['ED','GNPA','NPA'],
           axisLabel: {
             interval: 0,
@@ -164,6 +167,9 @@ export class PortfolioHealthComponent {
             type: 'category',
             axisLine: {
               show: false,
+            },
+            axisTick: {
+              show: false, 
             },
            
             boundaryGap: false,
@@ -252,6 +258,9 @@ export class PortfolioHealthComponent {
           splitLine: {
             show: false,
           },
+          axisTick: {
+            show: false, 
+          },
         },
         yAxis: {
           min: 0.5,
@@ -324,6 +333,9 @@ export class PortfolioHealthComponent {
           },
           splitLine: {
             show: false,
+          },
+          axisTick: {
+            show: false, 
           },
           data: [
             'Maharashtra',
@@ -399,6 +411,9 @@ export class PortfolioHealthComponent {
           },
           splitLine: {
             show: false,
+          },
+          axisTick: {
+            show: false, 
           },
           data: [
             '0-30',

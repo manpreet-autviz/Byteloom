@@ -131,12 +131,12 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             show: false,
           },
           axisLine: {
-            show: true,
+            show: false,
           },
-          min: 20,
-          max: 180,
-          interval: 20,
-          name: 'NUMBER OF FILES',
+          min: 10,
+          max: 90,
+          interval: 10,
+          name: 'Amount (in Crore)',
           nameLocation: 'middle',
           nameGap: 25,
           nameTextStyle: {
@@ -146,26 +146,30 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         yAxis: {
           type: 'category',
           axisLine: {
-            show: true,
+            show: false,
+          },
+          axisTick: {
+
+            show: false, // Hide tick lines
+
           },
           data: [
             'Maharashtra',
             'MP',
             'Gujarat',
             'Rajasthan',
-            'NCR',
-            'Haryana',
-            'Punjab',
-            'Pan India',
+            'NCR',  
+            'PCH',
+            
           ],
         },
         series: [
           {
             barWidth: 20,
             type: 'bar',
-            data: [25, 39, 27, 50, 32, 22, 25, 180],
+            data: [70, 65, 50, 30, 40, 50],
             itemStyle: {
-              color: '#055316',
+              color: '#6096B4',
             },
           },
         ],
@@ -187,7 +191,12 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         xAxis: {
           type: 'category',
-
+          axisTick: {
+            show: false, 
+          },
+          axisLine: {
+            show: false,
+          },
           data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
@@ -201,12 +210,12 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           max: 16,
           interval: 2,
           axisLine: {
-            show: true,
+            show: false,
           },
           splitLine: {
             show: false,
           },
-          name: 'AMOUNT IN LACS',
+          name: 'Amount (in Lacs)',
           nameLocation: 'middle',
           nameGap: 25,
         },
@@ -216,7 +225,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             data: [12, 16, 10.3, 8.6, 5.7],
             type: 'bar',
             itemStyle: {
-              color: '#FB8C00',
+              color: '#55BBCC',
             },
           },
         ],
@@ -313,7 +322,12 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         xAxis: {
           type: 'category',
-
+          axisTick: {
+            show: false, 
+          },
+          axisLine: {
+            show: false,
+          },
           data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
@@ -327,12 +341,12 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           max: 70,
           interval: 10,
           axisLine: {
-            show: true,
+            show: false,
           },
           splitLine: {
             show: false,
           },
-          name: 'PERCENTAGE',
+          name: 'Percentage %',
           nameLocation: 'middle',
           nameGap: 25,
           axisLabel: {
@@ -347,7 +361,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             data: [50, 36, 44, 40, 45],
             type: 'bar',
             itemStyle: {
-              color: '#4FC3F7',
+              color: '#8675A9',
             },
           },
         ],
@@ -369,7 +383,12 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         xAxis: {
           type: 'category',
-
+          axisTick: {
+            show: false, 
+          },
+          axisLine: {
+            show: false,
+          },
           data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
@@ -383,7 +402,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           max: 12,
           interval: 1,
           axisLine: {
-            show: true,
+            show: false,
           },
           splitLine: {
             show: false,
@@ -1264,8 +1283,8 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   }
 
   generateStateRandomData() {
-    const minValues = [23, 35, 25, 45, 20, 21, 22, 170];
-    const maxValues = [25, 39, 27, 50, 32, 22, 25, 180];
+    const minValues = [67, 62, 48, 27, 37, 46];
+    const maxValues = [70, 65, 50, 30, 40, 50];
 
     const newData = minValues.map((min, index) => {
       const max = maxValues[index];

@@ -205,18 +205,16 @@ export class LoginComponent implements AfterViewInit {
             'Gujarat',
             'Rajasthan',
             'NCR',
-            'Haryana',
-            'Punjab',
-            'Pan India',
+            'PCH'
           ],
         },
         series: [
           {
             barWidth: 20,
             type: 'bar',
-            data: [1700, 500, 600, 1900, 700, 800, 1000, 4000],
+            data: [2000, 700, 800, 2100, 1000, 1500],
             itemStyle: {
-              color: '#0747a6',
+              color: '#5BC8EF',
             },
           },
         ],
@@ -271,8 +269,7 @@ export class LoginComponent implements AfterViewInit {
             'Gujarat',
             'Rajasthan',
             'NCR',
-            'Haryana',
-            'Punjab',
+            'PCH',
             'Pan India',
           ],
         },
@@ -280,9 +277,9 @@ export class LoginComponent implements AfterViewInit {
           {
             barWidth: 20,
             type: 'bar',
-            data: [10, 7, 5, 13, 9, 8, 7, 15],
+            data: [11, 8, 6, 12, 10, 7, 9],
             itemStyle: {
-              color: '#18A838',
+              color: '#3C7EBE',
             },
           },
         ],
@@ -385,7 +382,12 @@ export class LoginComponent implements AfterViewInit {
             center: ['50%', '70%'],
             // adjust the start angle
             startAngle: 180,
-           
+            labelLine: {
+              show: false, // Set this property to false to hide label lines
+            },
+            label: {
+              show: false, // Set this property to false to hide labels
+            },
             data: [
               { value: 1048, name: 'Online', itemStyle: { color: '#7C41DA' } },
               { value: 735, name: 'Cheque', itemStyle: { color: '#FB8C00' } },
@@ -452,10 +454,10 @@ export class LoginComponent implements AfterViewInit {
         series: [
           {
             data: [
-              { value: 37, itemStyle: { color: '#07A14E' } },
-              { value: 20, itemStyle: { color: '#FB8C00' } },
-              { value: 16, itemStyle: { color: '#6659F7' } },
-              { value: 16, itemStyle: { color: '#2962FF' } },
+              { value: 37, itemStyle: { color: '#6096B4' } },
+              { value: 20, itemStyle: { color: '#46CDCF' } },
+              { value: 16, itemStyle: { color: '#F0997D' } },
+              { value: 16, itemStyle: { color: 'rgba(41, 98, 255, 0.42)' } },
               { value: 15, itemStyle: { color: '#CAEDFF' } },
             ],
             barWidth: 40,
@@ -1241,8 +1243,8 @@ export class LoginComponent implements AfterViewInit {
   }
 
   generateStateRandomData() {
-    const minValues = [1500, 250, 400, 1700, 500, 600, 800, 2500];
-    const maxValues = [1700, 500, 600, 1900, 700, 800, 1000, 4000];
+    const minValues = [1900, 600, 700, 2000, 900, 1400];
+    const maxValues = [2000, 700, 800, 2100, 1000, 1500];
 
     const newData = minValues.map((min, index) => {
       const max = maxValues[index];
@@ -1253,8 +1255,8 @@ export class LoginComponent implements AfterViewInit {
   }
 
   generateAverageStateRandomData() {
-    const minValues = [7, 5, 2, 11, 6, 4, 5, 13];
-    const maxValues = [10, 7, 5, 13, 9, 8, 7, 15];
+    const minValues = [7, 5, 3, 11, 7, 4, 5];
+    const maxValues = [11, 8, 6, 12, 10, 7, 9];
 
     const newData = minValues.map((min, index) => {
       const max = maxValues[index];

@@ -89,8 +89,12 @@ export class OtcPddComponent {
         data: [],
         top: '10',
       },
+
       xAxis: {
         type: 'category',
+        axisTick: {
+          show: false, 
+        },
         data: [
           'Maharashtra',
           'MP',
@@ -133,7 +137,7 @@ export class OtcPddComponent {
           type: 'bar',
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [320, 330, 430, 540, 630,960,1100,1400],
+          data: [1400,1100,960,630,540,430,330,320],
           itemStyle: {
             color: '#00EB97', // Color for Category 1
           },
@@ -143,7 +147,7 @@ export class OtcPddComponent {
           type: 'bar',
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [320, 700, 960, 1050, 1250,1400,1600,1780],
+          data: [1780,1600,1400,1250,1050,960,700,320],
           itemStyle: {
             color: '#7460EE', // Color for Category 2
           },
@@ -186,6 +190,9 @@ export class OtcPddComponent {
         type: 'category',
         axisLine: {
           show: false,
+        },
+        axisTick: {
+          show: false, 
         },
         splitLine: {
           show: false,
@@ -273,6 +280,9 @@ export class OtcPddComponent {
         splitLine: {
           show: false,
         },
+        axisTick: {
+          show: false, 
+        },
         data: [
           'Maharashtra',
           'MP',
@@ -336,6 +346,9 @@ export class OtcPddComponent {
         type: 'category',
         axisLine: {
           show: false,
+        },
+        axisTick: {
+          show: false, 
         },
         splitLine: {
           show: false,

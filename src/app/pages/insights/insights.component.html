@@ -46,7 +46,7 @@
                   <div class="d-flex align-items-end justify-content-between">
                     <div class="">
                       <span class="fs-3">
-                        <img src="../../../assets/icons/user-logo.png" />
+                        <img src="../../../assets/icons/insight login.svg" />
                       </span>
                     </div>
                     <div>
@@ -71,7 +71,7 @@
                   <div class="d-flex align-items-end justify-content-between">
                     <div class="">
                       <span class="fs-3">
-                        <img src="../../../assets/icons/financial.png" />
+                        <img src="../../../assets/icons/insight financial.svg" />
                       </span>
                     </div>
                     <div>
@@ -97,7 +97,7 @@
                   <div class="d-flex align-items-end justify-content-between">
                     <div class="">
                       <span class="fs-3">
-                        <img src="../../../assets/icons/financial.png" />
+                        <img src="../../../assets/icons/insight final.svg" />
                       </span>
                     </div>
                     <div>
@@ -124,7 +124,7 @@
                     <div class="">
                       <span class="fs-3">
                         <img
-                          src="../../../assets/icons/solar_wallet-bold.png"
+                          src="../../../assets/icons/insight disbursal.svg"
                         />
                       </span>
                     </div>
@@ -197,15 +197,15 @@
                 <ng-template pTemplate="header">
                   <tr class="tat-head-first-r text-center text-white">
                     <th colspan="2"></th>
-                    <th colspan="2" class="theadcolor-1">Login</th>
-                    <th colspan="2" class="theadcolor-2">Financial</th>
+                    <th colspan="1" class="theadcolor-1">Login</th>
+                    <th colspan="1" class="theadcolor-2">Financial</th>                    
+                    <th colspan="1" class="theadcolor-1">Final Approval</th>                    
                     <th colspan="3" class="theadcolor-3">Disbursal</th>
                   </tr>
                   <tr class="tat-head-second-r  ">
                     <th colspan="2" class=" text-center text-white">State Name</th>
                         <th class=" text-center text-white">Number of file</th>
                         <th class=" text-center text-white" >Amount</th>
-                        <th class=" text-center text-white">Number of file</th>
                         <th class=" text-center text-white">Amount</th> 
                         <th class=" text-center text-white">Number of file</th>
                         <th class=" text-center text-white">Amount</th>
@@ -223,7 +223,6 @@
                     </td>
                     <td class="text-center">{{ rowData.loginFiles }}</td>
                     <td class="text-center cursor-pointer border-end" routerLink="/business-insights">{{ rowData.loginAmount }} </td>
-                    <td class="text-center">{{ rowData.financialFiles }}</td>
                     <td class="text-center border-end">{{ rowData.financialAmount }}</td>
                     <td class="text-center">{{ rowData.target }}</td>
 

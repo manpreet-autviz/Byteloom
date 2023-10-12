@@ -28,7 +28,7 @@ export class BusinessInsightsComponent {
     'Maharashtra',
   ];
   branchFilter: string[] = [
-    'Chandigarh	',
+    'Chandigarh',
     'Mumbai',
     'Delhi',
     'Indore',
@@ -162,8 +162,8 @@ export class BusinessInsightsComponent {
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
 
-  selectedFilterState: string = 'All';
-  selectedFilterBranch: string = 'All';
+  selectedFilterState: string = 'Pan India';
+  selectedFilterBranch: string = 'Chandigarh';
   routeName!: string | null;
 
   constructor(private route: ActivatedRoute) {
