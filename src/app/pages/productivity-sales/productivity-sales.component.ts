@@ -1,4 +1,11 @@
-import { AfterViewInit,ElementRef, NgZone, Component, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import {
+  AfterViewInit,
+  ElementRef,
+  NgZone,
+  Component,
+  OnDestroy,
+  ChangeDetectorRef,
+} from '@angular/core';
 import * as echarts from 'echarts';
 declare var $: any;
 @Component({
@@ -6,7 +13,7 @@ declare var $: any;
   templateUrl: './productivity-sales.component.html',
   styleUrls: ['./productivity-sales.component.scss'],
 })
-export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
+export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
   states: string[] = [
     'Pan India',
     'Punjab',
@@ -42,10 +49,10 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
   AvgRMOption: any;
   TargetAchievementOption: any;
   SourceLoginFilesOption: any;
-  FTROption:any;
-  PotentialLostOptions:any;
-  ConversionOption:any;
-  RMOption:any;
+  FTROption: any;
+  PotentialLostOptions: any;
+  ConversionOption: any;
+  RMOption: any;
 
   data = [
     {
@@ -171,7 +178,11 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
     // Add more data as needed
   ];
 
-  constructor(private elementRef: ElementRef, private zone: NgZone,private cdRef: ChangeDetectorRef) {}
+  constructor(
+    private elementRef: ElementRef,
+    private zone: NgZone,
+    private cdRef: ChangeDetectorRef
+  ) {}
 
   onFilterChange(selectedValue: string) {}
 
@@ -186,7 +197,7 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
         $(this.elementRef.nativeElement.querySelector('#table')).DataTable({
           lengthChange: false,
           searching: false,
-          ordering: false
+          ordering: false,
         });
       }, 0);
     });
@@ -195,24 +206,23 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
   }
 
   ngAfterViewInit(): void {
-    
     this.zone.runOutsideAngular(() => {
       setTimeout(() => {
         $(this.elementRef.nativeElement.querySelector('#table')).DataTable({
           lengthChange: false,
           searching: false,
-          ordering: false
+          ordering: false,
         });
       }, 0);
     });
-    
+
     this.initializeChart();
-    
   }
 
-
   ngOnDestroy() {
-    const table = $(this.elementRef.nativeElement.querySelector('#table')).DataTable();
+    const table = $(
+      this.elementRef.nativeElement.querySelector('#table')
+    ).DataTable();
     table.destroy();
   }
   initializeChart() {
@@ -240,7 +250,7 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
       document.getElementById('Conversion-chart') as HTMLDivElement
     );
 
-    this.RMChart= echarts.init(
+    this.RMChart = echarts.init(
       document.getElementById('RM-chart') as HTMLDivElement
     );
 
@@ -256,7 +266,7 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
         },
       },
       legend: {
-        data: ['Login ', 'Disbursal '],
+        data: ['Login', 'Disbursal'],
       },
       toolbox: {
         feature: {
@@ -270,10 +280,16 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
         containLabel: true,
       },
       xAxis: [
-         {
+        {
           type: 'category',
           axisLine: {
             show: false,
+          },
+          axisTick: {
+            show: false, 
+          },
+          splitLine:{
+            show: false, 
           },
           boundaryGap: false,
           data: [
@@ -298,6 +314,9 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
           axisLine: {
             show: false,
           },
+          splitLine:{
+            show: false, 
+          },
           min: 2,
           max: 8,
           interval: 2,
@@ -313,7 +332,9 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
         {
           name: 'Login',
           type: 'line',
-         
+          itemStyle: {
+            color: '#FB8C00',
+          },
           areaStyle: {
             opacity: 0,
           },
@@ -328,7 +349,9 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
         {
           name: 'Disbursal',
           type: 'line',
-         
+          itemStyle: {
+            color: '#07A14E',
+          },
           areaStyle: {
             opacity: 0,
           },
@@ -417,11 +440,11 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
       series: [
         {
           type: 'pie',
-          radius: ['40%', '70%'],
+          radius: ['25%', '70%'],
           avoidLabelOverlap: false,
           itemStyle: {
             borderRadius: 0,
-            borderColor: '#fff',
+
             borderWidth: 2,
           },
           label: {
@@ -444,28 +467,28 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
               value: 35,
               name: 'Direct ',
               itemStyle: {
-                color: '#3ADA84',
+                color: '#7C41DA',
               },
             },
             {
               value: 20,
               name: 'Power Partner',
               itemStyle: {
-                color: 'rgba(5, 83, 22, 0.65)',
+                color: '#F99B00',
               },
             },
             {
               value: 10,
               name: 'DSA',
               itemStyle: {
-                color: '#0B9DE8',
+                color: '#636363',
               },
             },
             {
               value: 20,
               name: 'Other',
               itemStyle: {
-                color: '#FF821C',
+                color: '#07A14E',
               },
             },
           ],
@@ -484,9 +507,7 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
           },
         },
       },
-      legend: {
-       
-      },
+      legend: {},
       toolbox: {
         feature: {
           saveAsImage: {},
@@ -504,8 +525,7 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
           boundaryGap: false,
           data: [
             'Pan India',
-            'Punjab',
-            'Haryana',
+           'PCH',
             'NCR',
             'Rajasthan',
             'Gujarat',
@@ -517,13 +537,22 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
             rotate: 45,
             overflow: 'break',
           },
+          axisLine:{
+            show: false, 
+          },
+         axisTick: {
+            show: false, 
+          },
         },
       ],
       yAxis: [
         {
           type: 'value',
           axisLine: {
-            show: true,
+            show: false,
+          },
+          splitLine:{
+            show: false, 
           },
           min: 10,
           max: 100,
@@ -549,12 +578,11 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [85,84,86,89,93,91,95,97],
+          data: [85, 84, 86, 93, 91, 95, 97],
           itemStyle: {
             color: '#07A14E',
           },
         },
-      
       ],
     };
 
@@ -566,10 +594,7 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
         },
       },
       legend: {
-        data: [
-          'CNI',
-          'Cancellation',
-        ],
+        data: ['CNI', 'Cancellation'],
       },
       grid: {
         left: '3%',
@@ -596,47 +621,49 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
         splitLine: {
           show: false,
         },
+        axisTick: {
+          show: false, 
+        },
         data: [
           'Maharashtra',
           'MP',
           'Gujarat',
           'Rajasthan',
           'NCR',
-          'Haryana',
-          'Punjab',
+          'PCH',
           'Pan India',
         ],
       },
 
       series: [
         {
-          name: 'CNI ',
+          name: 'CNI',
           type: 'bar',
-          data: [40, 40, 40, 40, 40, 40, 40, 80],
+          data: [10, 10, 11.5, 11.2, 10.25, 10.50, 12],
           label: {
             show: true,
             position: 'right',
-            formatter: '{c}%',
+            formatter: '{c}cr',
           },
           itemStyle: {
-            color: '#F49494',
+            color: '#3C7EBE',
+            borderRadius:50
           },
-
         },
         {
-          name: 'Cancellation ',
+          name: 'Cancellation',
           type: 'bar',
-          data: [65, 65, 65, 65, 65, 65, 65, 225],
+          data: [10.02, 10.11, 10.58, 10, 10.10, 10.2, 11],
           label: {
             show: true,
             position: 'right',
             formatter: '{c} Cr',
           },
           itemStyle: {
-            color: '#5281FF',
+            color: '#5BC8EF',
+            borderRadius:50
           },
         },
-       
       ],
     };
 
@@ -647,9 +674,8 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
           type: 'shadow',
         },
         formatter: (params: any) => {
-          
           const barValue = params[0].value;
-          
+
           // Create the tooltip content with the actual value and random amount
           return ` ${barValue}%`;
         },
@@ -663,6 +689,9 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
 
         data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
         axisLine: {
+          show: false,
+        },
+        axisTick: {
           show: false,
         },
         axisLabel: {
@@ -692,12 +721,11 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
       },
       series: [
         {
-          
           barWidth: 20,
           data: [50, 36, 44, 40, 45],
           type: 'bar',
           itemStyle: {
-            color: '#07A14E',
+            color: '#5D5BCC',
           },
         },
       ],
@@ -714,9 +742,7 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
           },
         },
       },
-      legend: {
-       
-      },
+      legend: {},
       toolbox: {
         feature: {
           saveAsImage: {},
@@ -732,6 +758,12 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
         {
           type: 'category',
           boundaryGap: false,
+          axisLine:{
+            show: false, 
+          },
+          axisTick: {
+            show: false, 
+          },
           data: [
             'Pan India',
             'Punjab',
@@ -747,13 +779,17 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
             rotate: 45,
             overflow: 'break',
           },
+          
         },
       ],
       yAxis: [
         {
           type: 'value',
           axisLine: {
-            show: true,
+            show: false,
+          },
+          splitLine:{
+            show: false, 
           },
           min: 10,
           max: 100,
@@ -779,10 +815,8 @@ export class ProductivitySalesComponent implements  AfterViewInit, OnDestroy  {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [85,84,86,89,93,91,95,97],
-          
+          data: [85, 84, 86, 89, 93, 91, 95, 97],
         },
-      
       ],
     };
 

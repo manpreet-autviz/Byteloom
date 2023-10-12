@@ -293,9 +293,8 @@ export class CreditComponent {
           'Gujarat',
           'Rajasthan',
           'NCR',
-          'Haryana',
-          'Punjab',
-          'Pan India',
+          'PCH',
+          'Pan India'
         ],
       },
 
@@ -303,11 +302,11 @@ export class CreditComponent {
         {
           name: 'PD',
           type: 'bar',
-          data: [40, 40, 40, 40, 40, 40, 40, 80],
+          data: [15, 28, 15, 14, 8, 18, 12],
           label: {
             show: true,
             position: 'right',
-            formatter: '{c}%',
+            formatter: '{c}',
           },
           itemStyle: {
             color: '#F49494',
@@ -316,11 +315,11 @@ export class CreditComponent {
         {
           name: 'Approval',
           type: 'bar',
-          data: [65, 65, 65, 65, 65, 65, 65, 225],
+          data: [13,13,13,13, 10, 20, 14],
           label: {
             show: true,
             position: 'right',
-            formatter: '{c} Cr',
+            formatter: '{c}',
           },
           itemStyle: {
             color: '#3ADA84',
@@ -329,11 +328,11 @@ export class CreditComponent {
         {
           name: 'Disbursal',
           type: 'bar',
-          data: [2000, 2000, 2000, 2000, 2000, 2000, 2000, 6000],
+          data: [15, 26, 27, 27, 12, 11, 25],
           label: {
             show: true,
             position: 'right',
-            formatter: '{c} ',
+            formatter: '{c}',
           },
           itemStyle: {
             color: '#5281FF',

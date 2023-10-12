@@ -257,19 +257,28 @@ export class ChannelPartnersComponent {
           rotate: -45,
           overflow: 'break',
         },
+        axisTick: {
+          show: false, 
+        },
+        axisLine:{
+          show: false, 
+        },
       },
       yAxis: {
         min: 1000,
         max: 1500,
         interval: 100,
         axisLine: {
-          show: true,
+          show: false,
+        },
+        splitLine:{
+          show: false, 
         },
         axisLabel: {
           formatter: '{value}',
           margin: 1,
         },
-        name: 'PERCENTAGE',
+        name: 'Number of CPs',
         nameLocation: 'middle',
         nameGap: 25,
       },
@@ -279,13 +288,13 @@ export class ChannelPartnersComponent {
         {
           type: 'bar',
           itemStyle: {
-            color: '#F85656', // Set the color for the first bar series (IRR)
+            color: '#3282B8', // Set the color for the first bar series (IRR)
           },
         },
         {
           type: 'bar',
           itemStyle: {
-            color: '#7460EE', // Set the color for the first bar series (IRR)
+            color: '#3FC1C9', // Set the color for the first bar series (IRR)
           },
         },
       
@@ -310,8 +319,7 @@ export class ChannelPartnersComponent {
 
         data: [
           'Pan India',
-          'Punjab',
-          'Haryana',
+          'PCH',
           'NCR',
           'Rajasthan',
           'Gujarat',
@@ -323,6 +331,12 @@ export class ChannelPartnersComponent {
           rotate: 45,
           overflow: 'break',
         },
+        axisTick: {
+          show: false, 
+        },
+        axisLine:{
+          show: false, 
+        },
       },
       yAxis: {
         type: 'value',
@@ -330,12 +344,12 @@ export class ChannelPartnersComponent {
         max: 35,
         interval: 2,
         axisLine: {
-          show: true,
+          show: false,
         },
         splitLine: {
           show: false,
         },
-        name: 'NUMBER OF CPs',
+        name: 'Number of CPs',
         nameLocation: 'middle',
         nameGap: 25,
         axisLabel: {
@@ -346,10 +360,10 @@ export class ChannelPartnersComponent {
       series: [
         {
           barWidth: 20,
-          data: [26, 31, 28, 31, 27, 31, 27, 31],
+          data: [26, 31, 28, 31, 31, 27, 31],
           type: 'bar',
           itemStyle: {
-            color: '#FB8C00',
+            color: '#DBA39A',
           },
         },
       ],
@@ -373,8 +387,7 @@ export class ChannelPartnersComponent {
 
         data: [
           'Pan India',
-          'Punjab',
-          'Haryana',
+           'PCH',
           'NCR',
           'Rajasthan',
           'Gujarat',
@@ -386,6 +399,12 @@ export class ChannelPartnersComponent {
           rotate: 45,
           overflow: 'break',
         },
+        axisTick: {
+          show: false, 
+        },
+        axisLine:{
+          show: false, 
+        },
       },
       yAxis: {
         type: 'value',
@@ -393,12 +412,12 @@ export class ChannelPartnersComponent {
         max: 22,
         interval: 1,
         axisLine: {
-          show: true,
+          show: false,
         },
         splitLine: {
           show: false,
         },
-        name: '% OF TOTAL DISBURSAL',
+        name: '% of Total Disbursal',
         nameLocation: 'middle',
         nameGap: 25,
         axisLabel: {
@@ -409,7 +428,7 @@ export class ChannelPartnersComponent {
       series: [
         {
           barWidth: 20,
-          data: [18, 20.5, 19, 20.5, 18.5, 20.5, 18.5, 20.5],
+          data: [18, 20.5, 19, 18.5, 20.5, 18.5, 20.5],
           type: 'bar',
           itemStyle: {
             color: '#0747A6',
@@ -449,6 +468,12 @@ export class ChannelPartnersComponent {
           rotate: 45,
           overflow: 'break',
         },
+        axisTick: {
+          show: false, 
+        },
+        axisLine:{
+          show: false, 
+        },
       },
       yAxis: {
         type: 'value',
@@ -456,12 +481,12 @@ export class ChannelPartnersComponent {
         max: 1.25,
         interval: 0.1,
         axisLine: {
-          show: true,
+          show: false,
         },
         splitLine: {
           show: false,
         },
-        name: 'DELINQUENCY IN %',
+        name:  'Delinquency in %',
         nameLocation: 'middle',
         nameGap: 25,
         axisLabel: {
@@ -475,7 +500,7 @@ export class ChannelPartnersComponent {
           data: [0.95, 1.15, 1.05, 1.15, 1.03, 1.15, 1.03, 1.15],
           type: 'bar',
           itemStyle: {
-            color: '#7460EE',
+            color: '#8675A9',
           },
         },
       ],
