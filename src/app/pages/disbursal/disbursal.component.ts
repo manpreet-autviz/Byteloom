@@ -218,7 +218,7 @@ export class DisbursalComponent {
           min: 10,
           max: 150,
           interval: 20,
-          name: 'AMOUNT IN CRORE',
+          name: 'AMOUNT (IN RS. CRORE)',
           nameLocation: 'middle',
           nameGap: 30,
          
@@ -237,9 +237,7 @@ export class DisbursalComponent {
             'Gujarat',
             'Rajasthan',
             'NCR',
-            'Haryana',
-            'Punjab',
-            'Pan India',
+            'PCH',
           ],
         },
         series: [
@@ -299,7 +297,7 @@ export class DisbursalComponent {
           splitLine: {
             show: false,
           },
-          name: 'AMOUNT IN LACS',
+          name: 'AMOUNT (IN RS. LACS)',
           nameLocation: 'middle',
           nameGap: 25,
         },
@@ -434,7 +432,7 @@ export class DisbursalComponent {
             formatter: '{value}',
             margin: 1,
           },
-          name: 'PERCENTAGE',
+          name: 'PERCENTAGE %',
           nameLocation: 'middle',
           nameGap: 25,
         },
@@ -570,7 +568,7 @@ export class DisbursalComponent {
           splitLine: {
             show: false,
           },
-          name: 'PERCENTAGE',
+          name: 'PERCENTAGE %',
           nameLocation: 'middle',
           nameGap: 25,
           axisLabel: {
