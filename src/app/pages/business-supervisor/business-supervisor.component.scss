@@ -63,9 +63,34 @@
     font-size: 12px;
   }
   .profile-info{
-    padding: 5px 17px;
+    padding: 26px 10px;
     margin-top: 27px; 
   }
   .profile-box{
     height: 100%;
+  }
+  .profile-info h6{
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  .profile-info p{
+    margin: 0;
+  }
+  .incentive {
+    background: #dee7f45c;
+    border-radius: 4px;
+    padding: 22px 21px;
+  }
+  .incentive-list h6{
+    margin: 0;
+  }
+  .incentive-list {
+    margin-top: 20px;
+  }
+  .price h6 {
+    background: #fff;
+    padding: 5px 58px;
+    text-align: right;
+    border-radius: 25px;
+    font-size: 12px;
   }
