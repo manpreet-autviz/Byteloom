@@ -24,7 +24,7 @@
     color: #222;
     padding: 9px 15px;
     display: inline-block;
-    font-size: 10px;
+    font-size: 11px;
     border-radius: 4px;
 }
 .tree.vertical {
@@ -167,15 +167,15 @@ ul.tree.vertical ul li div p{
     content: '';
     background: #e4e4e4;
     height: 1px;
-    width: 32%;
+    width: 31%;
 }
 .divider:after {
     top: 0px;
-    left: 232px;
+    left: 252px;
 }
 .divider:before {
     top: 0px;
-    right: 232px;
+    right: 252px;
 }
 .divider2 {
     padding: 0 !important;
@@ -209,7 +209,7 @@ ul.tree.vertical ul li div p{
     width: 1px;
     background: #ccc;
     top: -68px;
-    left: 73px;
+    left: 75px;
 }
 
 
