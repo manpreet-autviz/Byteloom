@@ -127,7 +127,7 @@ export class RejectionAnalysisComponent {
         splitLine: {
           show: false,
         },
-        name: 'PERCENTAGE',
+        name: 'Percentage %',
         nameLocation: 'middle',
         nameGap: 25,
       },
@@ -203,6 +203,7 @@ export class RejectionAnalysisComponent {
           data: [41, 40, 40, 35, 50, 40, 60],
           itemStyle: {
             color: '#1A5F7A',
+            borderRadius: 15,
           },
           label: {
             show: true,
@@ -216,6 +217,7 @@ export class RejectionAnalysisComponent {
           data: [29, 30, 28, 45, 32, 45, 70],
           itemStyle: {
             color: '#419197',
+            borderRadius: 15,
           },
           label: {
             show: true,
@@ -229,6 +231,7 @@ export class RejectionAnalysisComponent {
           data: [22, 20, 20, 20, 20, 30, 55],
           itemStyle: {
             color: '#78D6C6',
+            borderRadius: 15,
           },
           label: {
             show: true,
@@ -247,18 +250,14 @@ export class RejectionAnalysisComponent {
         axisPointer: {
           type: 'cross',
           label: {
-            backgroundColor: '#6a7985',
+            backgroundColor: '#78D6C6',
           },
         },
       },
       // legend: {
       //   data: ['HL', 'BL', 'LAP', 'SBL'],
       // },
-      toolbox: {
-        feature: {
-          saveAsImage: {},
-        },
-      },
+    
       grid: {
         left: '3%',
         right: '4%',
@@ -268,6 +267,9 @@ export class RejectionAnalysisComponent {
       xAxis: [
         {
           type: 'category',
+          axisLine: {
+            show: false,
+          },
           axisTick: {
             show: false, // Hide tick lines
           },
@@ -281,6 +283,9 @@ export class RejectionAnalysisComponent {
           axisLine: {
             show: false,
           },
+          splitLine:{
+            show:false
+          },
           min: 10,
           max: 100,
           interval: 10,
@@ -293,6 +298,7 @@ export class RejectionAnalysisComponent {
         {
           name: 'HL',
           type: 'line',
+          color:'#78D6C6',
 
           areaStyle: {
             opacity: 0,
@@ -438,11 +444,7 @@ export class RejectionAnalysisComponent {
       legend: {
         data: [],
       },
-      toolbox: {
-        feature: {
-          saveAsImage: {},
-        },
-      },
+     
       grid: {
         left: '3%',
         right: '4%',
@@ -470,10 +472,13 @@ export class RejectionAnalysisComponent {
           },
           min: 10,
           max: 100,
-          interval: 20,
+          interval: 10,
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 22,
+          nameGap: 25,
+          splitLine: {
+            show: false,
+          },
         },
       ],
       series: [
@@ -499,7 +504,7 @@ export class RejectionAnalysisComponent {
         trigger: 'item',
       },
       legend: {
-        top: '1%',
+        top: '2%',
         left: 'center',
       },
       series: [
@@ -507,6 +512,7 @@ export class RejectionAnalysisComponent {
           type: 'pie',
           radius: ['40%', '70%'],
           avoidLabelOverlap: false,
+          top: '6%',
           itemStyle: {
             borderRadius: 0,
 
