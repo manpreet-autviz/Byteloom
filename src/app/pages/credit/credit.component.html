@@ -35,28 +35,54 @@
             </div>
           </div>
   
+          <div class="sales w-100">
+            <div class="card card-animate w-100 mt-3">
+              <div class="card-body">
           <div class="col-md-12 text-center mt-3">
-            <div class="bg-white p-3 w-auto rounded-3 d-inline-block">
+            <div class="productivity-tabs">
+              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
               <button
                 type="button"
-                class="toggle-btns btn border"
+                id="pills-financial-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-financial" 
+                ype="button"
+                role="tab"
+                aria-controls="pills-home" 
+                aria-selected="true"
+                class="nav-link active text-uppercase"
                 [class.active]="isActiveButton === 'button1'"
                 (click)="setActiveButton('button1')"
               >
-              Credit 
+                Credit
               </button>
+            </li>
+            <li class="nav-item" role="presentation">
               <button
-                type="button"
-                class="toggle-btns btn border ms-2"
+              type="button"
+              id="pills-financial-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-financial" 
+              ype="button"
+              role="tab"
+              aria-controls="pills-home" 
+              aria-selected="true"
+              class="nav-link right-tab-border text-uppercase"
                 [class.active]="isActiveButton === 'button2'"
                 (click)="setActiveButton('button2')"
               >
-              Credit  Leaderboard
+              Credit Leaderboard
               </button>
+            </li>
+              </ul>
             </div>
           </div>
+          </div>
+          </div>
+          </div>
           <div class="sales w-100" *ngIf="isActiveButton === 'button1'">
-            <div class="card card-animate w-100 mt-3">
+            <div class="card card-animate w-100">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-5">
@@ -166,44 +192,44 @@
             class="sales-leaderborad w-100"
             *ngIf="isActiveButton === 'button2'"
           >
-            <div class="card card-animate w-100 mt-2">
+            <div class="card card-animate w-100">
               <div class="card-body align-items-center justify-content-between">
                 <div class="box-s p-2">
                   <div class="container mt-5">
                     <table
-                      id="table"
-                      class="table border rounded business-insights-table"
-                      style="width: 100%"
-                    >
-                      <thead>
-                        <tr>
-                          <th class="border-bottom">S.no</th>
-                          <th class="border-bottom">CM Name</th>
-                          <th class="border-bottom">Emp Code</th>
-                          <th class="border-bottom">Branch </th>
-                          <th class="border-bottom">Area </th>
-                          <th class="border-bottom">State</th>
-                          <th class="border-bottom">Total PD(in no.s)</th>
-                          <th class="border-bottom">Total Approvals(in no.s)</th>
-                          <th class="border-bottom">Total Disbursal</th>
-                          <th class="border-bottom">% ED</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let item of data">
-                          <td class="border-bottom">{{ item.SNo }}</td>
-                          <td class="border-bottom">{{ item.CMName }}</td>
-                          <td class="border-bottom">{{ item.EmpCode }}</td>                       
-                          <td class="border-bottom">{{ item.branchName }}</td>
-                          <td class="border-bottom">{{ item.Area }}</td>
-                          <td class="border-bottom">{{ item.State }}</td>
-                          <td class="border-bottom">{{ item.TotalPD }}</td>
-                          <td class="border-bottom">{{ item.TotalApproval }}</td>
-                          <td class="border-bottom">{{ item.TotalDisbursal }}</td>
-                          <td class="border-bottom">{{ item.PercentEd }}</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    id="table"
+                    class="table border rounded business-insights-table"
+                    style="width: 100%"
+                  >
+                    <thead>
+                      <tr class="bg-lightblue">
+                        <th class="border-bottom">S.no</th>
+                        <th class="border-bottom">RM NAME</th>
+                        <th class="border-bottom">EMP code</th>
+                        <th class="border-bottom">Branch</th>
+                        <th class="border-bottom">Area</th>
+                        <th class="border-bottom">State</th>
+                        <th class="border-bottom">Total Logins (in no.s)</th>
+                        <th class="border-bottom">Total Disbursal (in amount lacs)</th>
+                        <th class="border-bottom">% Target achieved</th>
+                        <th class="border-bottom">% Delinquency</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of data">
+                        <td class="border-bottom">{{ item.SNo }}</td>
+                        <td class="border-bottom">{{ item.RmName }}</td>
+                        <td class="border-bottom">{{ item.EmpCode }}</td>
+                        <td class="border-bottom bg-yellow">{{ item.Branch }}</td>
+                        <td class="border-bottom">{{ item.Area }}</td>
+                        <td class="border-bottom">{{ item.TotalLogins }}</td>
+                        <td class="border-bottom bg-red">{{ item.TotalDisbursal }}</td>
+                        <td class="border-bottom">{{ item.State }}</td>
+                        <td class="border-bottom bg-green">{{ item.Target }}</td>
+                        <td class="border-bottom">{{ item.Delinquency }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
                   </div>
                 </div>
               </div>

@@ -27,6 +27,31 @@
     max-width: 247px;
     width: 100%;
 }
+tr.bg-lightblue {
+    background: #F3F6F9;
+}
+ul.pagination {
+    gap: 10px;
+}
+div#table_info {
+    font-size: 13px;
+}
+.bg-yellow {
+    background: #FEEEE1 !important;
+}
+.bg-red{
+    background-color: #FBDDDD;
+}
+.bg-green{
+    background-color: #D5F6E4;
+}
+td {
+    font-weight: bold;
+}
+
+
+
+
 @media (max-width: 767px){
 .productivity-tabs ul.nav-pills {
     padding: 0;

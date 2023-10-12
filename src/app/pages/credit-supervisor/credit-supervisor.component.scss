@@ -233,7 +233,20 @@ ul.pending-cheque.ot-normal {
   margin: 10px;
   border-radius: 4px;
 }
-
+.profile-info{
+  padding: 26px 10px;
+  margin-top: 27px; 
+}
+.profile-box{
+  height: 100%;
+}
+.profile-info h6{
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.profile-info p{
+  margin: 0;
+}
 
 @media (max-width: 1240px) and (min-width: 1088px) {
   .cheque-polygon.first-cheque:after {

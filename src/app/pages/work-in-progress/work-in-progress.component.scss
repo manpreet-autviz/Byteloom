@@ -149,12 +149,18 @@ ul.tree.vertical ul li div p{
     background-color: #07A14E;
 }
 .bg-yellow{
-    background-color: #FB8C00;
+    background-color: #F6C342;
 }
 .divider {
     position: relative;
     width: 100%;
     border: none !important;
+}
+.bg-gray{
+    background-color: #6C757D;
+}
+.bg-bred{
+    background-color: #D04437;
 }
 .divider:after, .divider:before{
       position: absolute;
@@ -165,11 +171,11 @@ ul.tree.vertical ul li div p{
 }
 .divider:after {
     top: 0px;
-    left: 226px;
+    left: 232px;
 }
 .divider:before {
     top: 0px;
-    right: 226px;
+    right: 232px;
 }
 .divider2 {
     padding: 0 !important;
@@ -236,7 +242,7 @@ ul.tree.vertical ul li div p{
     width: 100%;
 }
 .dot-purple {
-    background-color: #7460EE;
+    background-color: #8750ff;
 }
 .dot-orange {
     background-color: #FF821C;
