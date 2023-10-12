@@ -256,7 +256,7 @@ export class ThreeSixtyComponent {
       series: [
         {
          
-          name: 'Funnel',
+          name: '',
           type: 'funnel',
           left: '-25%',
           top: 60,

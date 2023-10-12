@@ -86,7 +86,9 @@ export class OtcPddComponent {
         trigger: 'axis',
       },
       legend: {
-        data: [],
+        data: [
+          'Critical',
+          'Non-Critical',],
         top: '10',
       },
 
@@ -101,8 +103,7 @@ export class OtcPddComponent {
           'Gujarat',
           'Rajasthan',
           'NCR',
-          'Haryana',
-          'Punjab',
+          'PCH',
           'Pan India',
         ],
         axisLabel: {
@@ -122,7 +123,9 @@ export class OtcPddComponent {
         min: 200,
         max: 1800,
         interval: 200,
-        name: 'Value',
+        name: 'Number',
+        nameLocation: 'middle',
+        nameGap: 40,
         
         axisLine: {
           show: false,
@@ -135,11 +138,13 @@ export class OtcPddComponent {
         {
           name: 'Category 1',
           type: 'bar',
+          
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [1400,1100,960,630,540,430,330,320],
+          data: [1400,1100,960,630,540,430,320],
           itemStyle: {
-            color: '#00EB97', // Color for Category 1
+            color: '#00EB97',
+             // Color for Category 1
           },
         },
         {
@@ -147,9 +152,10 @@ export class OtcPddComponent {
           type: 'bar',
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [1780,1600,1400,1250,1050,960,700,320],
+          data: [1780,1600,1400,1250,1050,960,320],
           itemStyle: {
-            color: '#7460EE', // Color for Category 2
+            color: '#7460EE',
+            borderRadius: 4,// Color for Category 2
           },
         },
       ],
@@ -203,8 +209,7 @@ export class OtcPddComponent {
           'Gujarat',
           'Rajasthan',
           'NCR',
-          'Haryana',
-          'Punjab',
+          'PCH',
           'Pan India',
         ],
       },
@@ -213,27 +218,29 @@ export class OtcPddComponent {
         {
           name: 'Critical',
           type: 'bar',
-          data: [65, 65, 65, 65, 65, 65, 65, 225],
+          data: [65, 65, 65, 65, 65, 65, 225],
           label: {
             show: true,
             position: 'right',
             formatter: '{c} Cr',
           },
           itemStyle: {
-            color: '#3C7EBE', // Set the color for the first bar series (IRR)
+            color: '#3C7EBE',
+            borderRadius: 15, // Set the color for the first bar series (IRR)
           },
         },
         {
           name: 'Non-Critical',
           type: 'bar',
-          data: [40, 40, 40, 40, 40, 40, 40, 80],
+          data: [40, 40, 40, 40, 40, 40, 80],
           label: {
             show: true,
             position: 'right',
             formatter: '{c}%',
           },
           itemStyle: {
-            color: '#5BC8EF', // Set the color for the first bar series (IRR)
+            color: '#5BC8EF',
+            borderRadius: 15,  // Set the color for the first bar series (IRR)
           },
         },
         
@@ -289,8 +296,7 @@ export class OtcPddComponent {
           'Gujarat',
           'Rajasthan',
           'NCR',
-          'Haryana',
-          'Punjab',
+          'PCH',
           'Pan India',
         ],
       },
@@ -299,27 +305,29 @@ export class OtcPddComponent {
         {
           name: 'Credit',
           type: 'bar',
-          data: [65, 65, 65, 65, 65, 65, 65, 225],
+          data: [65, 65, 65, 65, 65, 65, 225],
           label: {
             show: true,
             position: 'right',
             formatter: '{c} Cr',
           },
           itemStyle: {
-            color: '#3C7EBE', // Set the color for the first bar series (IRR)
+            color: '#3C7EBE',
+            borderRadius: 15,  // Set the color for the first bar series (IRR)
           },
         },
         {
           name: 'Sales',
           type: 'bar',
-          data: [40, 40, 40, 40, 40, 40, 40, 80],
+          data: [40, 40, 40, 40, 40, 40, 80],
           label: {
             show: true,
             position: 'right',
             formatter: '{c}%',
           },
           itemStyle: {
-            color: '#5BC8EF', // Set the color for the first bar series (IRR)
+            color: '#5BC8EF',
+            borderRadius: 15,  // Set the color for the first bar series (IRR)
           },
         },
         
@@ -333,8 +341,8 @@ export class OtcPddComponent {
       dataset: {
         dimensions: ['product', '0-45 Days', '46-90 Days', '90+ Days'],
         source: [
-          { product: 'Punjab', '0-45 Days': 76, '46-90 Days': 46, '90+ Days': 62 },
-          { product: 'Haryana', '0-45 Days': 75, '46-90 Days': 46, '90+ Days': 62 },
+          { product: 'Pan India', '0-45 Days': 75, '46-90 Days': 46, '90+ Days': 62 },
+          { product: 'PCH', '0-45 Days': 76, '46-90 Days': 46, '90+ Days': 62 },
           { product: 'NCR', '0-45 Days': 85, '46-90 Days': 43, '90+ Days': 60 },
           { product: 'Rajasthan', '0-45 Days': 80, '46-90 Days': 46, '90+ Days': 62 },
           { product: 'Gujarat', '0-45 Days': 83, '46-90 Days': 46, '90+ Days': 62 },
