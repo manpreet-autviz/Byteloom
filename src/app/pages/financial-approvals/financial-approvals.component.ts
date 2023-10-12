@@ -215,7 +215,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           splitLine: {
             show: false,
           },
-          name: 'Amount (in Lacs)',
+          name: 'Amount (in Rs. Lacs)',
           nameLocation: 'middle',
           nameGap: 25,
         },
@@ -260,8 +260,8 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               show: false,
             },
             data: [
-              { value: 27, name: 'Top-Up', itemStyle: { color: '#6C757D' } },
               { value: 45, name: 'Fresh', itemStyle: { color: '#F6C342' } },
+              { value: 27, name: 'Top-Up', itemStyle: { color: '#6C757D' } },
               { value: 26, name: 'BT', itemStyle: { color: '#198754' } },
             ],
           },
