@@ -129,7 +129,8 @@ export class BusinessRMComponent {
               formatter: '{c}%',
             },
             itemStyle: {
-              color: '#5281FF', // Set the color for the first bar series (IRR)
+              color: '#3C7EBE', // Set the color for the first bar series (IRR)
+              borderRadius: 10,
             },
           },
           {
@@ -142,7 +143,8 @@ export class BusinessRMComponent {
               formatter: '{c} Cr',
             },
             itemStyle: {
-              color: '#F49494', // Set the color for the first bar series (IRR)
+              color: '#5BC8EF', // Set the color for the first bar series (IRR)
+              borderRadius: 10,
             },
           },
         ],
@@ -179,9 +181,9 @@ export class BusinessRMComponent {
             },
             data: [
               { value: 45, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
-              { value: 20, name: 'LAP', itemStyle: { color: '#F99B00' } },
+              { value: 20, name: 'LAP', itemStyle: { color: '#07A14E' } },
               { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
-              { value: 25, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
+              { value: 25, name: 'SBL', itemStyle: { color: '#F99B00' } },
             ],
           },
         ],
@@ -201,7 +203,6 @@ export class BusinessRMComponent {
             radius: ['40%', '70%'],
             avoidLabelOverlap: false,
             itemStyle: {
-              borderRadius: 10,
               borderColor: '#fff',
               borderWidth: 2,
             },

@@ -344,8 +344,8 @@ export class DisbursalComponent {
               show: false,
             },
             data: [
-              { value: 27, name: 'Top-Up', itemStyle: { color: '#6C757D ' } },
               { value: 45, name: 'Fresh', itemStyle: { color: '#F6C342' } },
+              { value: 27, name: 'Top-Up', itemStyle: { color: '#6C757D ' } },
               { value: 26, name: 'BT', itemStyle: { color: '#198754' } },
             ],
           },

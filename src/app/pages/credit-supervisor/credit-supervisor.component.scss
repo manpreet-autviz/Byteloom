@@ -137,24 +137,29 @@
 ul.pending-cheque {
   padding: 20px 12px;
 }
-.cheque-polygon.first-cheque:after {
+.otc-three-box:after {
   position: absolute;
   content: "";
-  background: #e3e3e3;
-  height: 98px;
+  background: #E3E3E3;
+  height: 61%;
   width: 2px;
-  top: -108px;
-  left: 29px
+  top: 70px;
+  left: 42%;
+  display: inline-block;
+  transform: rotate(45deg);
+  z-index: -1;
 }
-.cheque-polygon.second-cheque:after {
+.otc-three-box:before {
   position: absolute;
   content: "";
-  background: #e3e3e3;
-  height: 105px;
+  background: #E3E3E3;
+  height: 61%;
   width: 2px;
-  top: -29px;
-  left: -64px;
-  transform: rotateZ(91deg);
+  top: 70px;
+  right : 42%;
+  display: inline-block;
+  transform: rotate(-45deg);
+  z-index: -1;
 }
 .otc-three-box p {
   font-size: 12px;
@@ -183,6 +188,8 @@ ul.pending-cheque.ot-normal {
 }
 .otc-three-box {
   margin-top: 20px;
+  position: relative;
+  z-index: 9;
 }
 
 .disbursal-dots {
@@ -248,41 +255,12 @@ ul.pending-cheque.ot-normal {
   margin: 0;
 }
 
-@media (max-width: 1240px) and (min-width: 1088px) {
-  .cheque-polygon.first-cheque:after {
-    height: 85px;
-    width: 2px;
-    top: -94px;
-    left: 17px;
-  }
-  .cheque-polygon.second-cheque:after {
-    height: 91px;
-    width: 2px;
-    top: -35px;
-    left: -54px;
-    transform: rotateZ(91deg);
-  }
-}
-@media (max-width: 1088px) {
-  .cheque-polygon.first-cheque[_ngcontent-ng-c2409015658]:after {
-    height: 82px;
-    width: 2px;
-    top: -92px;
-    left: 5px;
-  }
-  .cheque-polygon.second-cheque[_ngcontent-ng-c2409015658]:after {
-    height: 89px;
-    width: 2px;
-    top: -42px;
-    left: -55px;
-  }
-}
+
 
 @media (max-width: 991px) {
-.cheque-polygon.second-cheque:after,
-  .cheque-polygon.first-cheque:after {
-    display: none;
-  }
+ .otc-three-box:after, .otc-three-box:before{
+  display: none;
+}
   .divider-line {
     display: block !important;
   }
