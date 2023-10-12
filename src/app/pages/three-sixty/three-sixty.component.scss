@@ -65,24 +65,24 @@ ul.pending-cheque {
     position: absolute;
     content: "";
     background: #E3E3E3;
-    height: 86%;
+    height: 50%;
     width: 2px;
-    top: 40px;
+    top: 100px;
     left: 38%;
     display: inline-block;
-    transform: rotate(45deg);
+    transform: rotate(40deg);
     z-index: -1;
 }
 .otc-three-box:before {
     position: absolute;
     content: "";
     background: #E3E3E3;
-    height: 86%;
+    height: 50%;
     width: 2px;
-    top: 40px;
+    top: 100px;
     right: 38%;
     display: inline-block;
-    transform: rotate(-45deg);
+    transform: rotate(-40deg);
     z-index: -1;
 }
 .otc-three-box p{

@@ -108,30 +108,30 @@ export class ThreeSixtyComponent {
         axisPointer: {
           type: 'cross',
           label: {
-            backgroundColor: '#6a7985',
+            backgroundColor: '#07A14E',
           },
         },
       },
       responsive: true,
-      legend: {
-        data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
-      },
-      toolbox: {
-        feature: {
-          saveAsImage: {},
-        },
-      },
+
       grid: {
-        left: '3%',
+        left: '4%',
         right: '4%',
         bottom: '3%',
         containLabel: true,
       },
       xAxis: [
+        
         {
+          axisLine: {
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
           axisLabel: {
             interval: 0,
-            rotate: 70,
+            rotate: -70,
             overflow: 'break',
           },
           type: 'category',
@@ -143,17 +143,24 @@ export class ThreeSixtyComponent {
         {
           type: 'value',
           axisLine: {
-            show: true,
+            show: false,
+          },
+          splitLine: {
+            show: false,
           },
           min: 5,
           max: 30,
           interval: 5,
+          name: 'Days ',
+        nameLocation: 'middle',
+        nameGap: 25,
         },
       ],
       series: [
         {
           name: 'All Products',
           type: 'line',
+          color:'#07A14E',
 
           areaStyle: {
             opacity: 0,
@@ -164,68 +171,68 @@ export class ThreeSixtyComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [11.1, 11.5, 11.9, 12, 12.3, 12.5, 12.9],
+          data: [14, 17, 15, 17, 13],
         },
-        {
-          name: 'Home Loan',
-          type: 'line',
+        // {
+        //   name: 'Home Loan',
+        //   type: 'line',
 
-          areaStyle: {
-            opacity: 0,
-          },
-          emphasis: {
-            focus: 'series',
-            areaStyle: {
-              opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-            },
-          },
-          data: [13.1, 13.5, 13.9, 14, 14.3, 15.5, 15.9],
-        },
-        {
-          name: 'LAP',
-          type: 'line',
+        //   areaStyle: {
+        //     opacity: 0,
+        //   },
+        //   emphasis: {
+        //     focus: 'series',
+        //     areaStyle: {
+        //       opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+        //     },
+        //   },
+        //   data: [13.1, 13.5, 13.9, 14, 14.3, 15.5, 15.9],
+        // },
+        // {
+        //   name: 'LAP',
+        //   type: 'line',
 
-          areaStyle: {
-            opacity: 0,
-          },
-          emphasis: {
-            focus: 'series',
-            areaStyle: {
-              opacity: 1, // Reduce opacity on hover to make it semi-transparent
-            },
-          },
-          data: [15.3, 15.6, 16, 17.4, 18.6, 19.9, 20],
-        },
-        {
-          name: 'BL',
-          type: 'line',
+        //   areaStyle: {
+        //     opacity: 0,
+        //   },
+        //   emphasis: {
+        //     focus: 'series',
+        //     areaStyle: {
+        //       opacity: 1, // Reduce opacity on hover to make it semi-transparent
+        //     },
+        //   },
+        //   data: [15.3, 15.6, 16, 17.4, 18.6, 19.9, 20],
+        // },
+        // {
+        //   name: 'BL',
+        //   type: 'line',
 
-          areaStyle: {
-            opacity: 0,
-          },
-          emphasis: {
-            focus: 'series',
-            areaStyle: {
-              opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-            },
-          },
-          data: [20.5, 20.9, 21.4, 23.9, 24, 24.2, 24.6],
-        },
-        {
-          name: 'SBL',
-          type: 'line',
+        //   areaStyle: {
+        //     opacity: 0,
+        //   },
+        //   emphasis: {
+        //     focus: 'series',
+        //     areaStyle: {
+        //       opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+        //     },
+        //   },
+        //   data: [20.5, 20.9, 21.4, 23.9, 24, 24.2, 24.6],
+        // },
+        // {
+        //   name: 'SBL',
+        //   type: 'line',
 
-          areaStyle: {
-            opacity: 0,
-          },
-          emphasis: {
-            focus: 'series',
-            areaStyle: {
-              opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-            },
-          },
-          data: [25.7, 26, 26.5, 27, 27.3, 27.9, 29.9],
-        },
+        //   areaStyle: {
+        //     opacity: 0,
+        //   },
+        //   emphasis: {
+        //     focus: 'series',
+        //     areaStyle: {
+        //       opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+        //     },
+        //   },
+        //   data: [25.7, 26, 26.5, 27, 27.3, 27.9, 29.9],
+        // },
       ],
     };
 
@@ -234,25 +241,27 @@ export class ThreeSixtyComponent {
         trigger: 'item',
         formatter: '{a} <br/>{b} : {c}%',
       },
-      toolbox: {
-        feature: {
-          dataView: { readOnly: false },
-          restore: {},
-          saveAsImage: {},
-        },
-      },
+    
+      // toolbox: {
+      //   feature: {
+      //     dataView: { readOnly: false },
+      //     restore: {},
+      //     saveAsImage: {},
+      //   },
+      // },
       legend: {
         top: 25,
         data: ['Login', 'Approval', 'Disbursal'],
       },
       series: [
         {
+         
           name: 'Funnel',
           type: 'funnel',
-          left: '10%',
+          left: '-25%',
           top: 60,
           bottom: 60,
-          width: '100%',
+          width: '150%',
           min: 0,
           max: 100,
           minSize: '0%',
@@ -262,6 +271,7 @@ export class ThreeSixtyComponent {
           label: {
             show: true,
             position: 'inside',
+            
           },
           labelLine: {
             length: 10,
@@ -274,6 +284,7 @@ export class ThreeSixtyComponent {
           itemStyle: {
             borderColor: '#fff',
             borderWidth: 1,
+            borderRadius: 15,
           },
           emphasis: {
             label: {
@@ -282,7 +293,7 @@ export class ThreeSixtyComponent {
             },
           },
           data: [
-            { value: 60, name: 'Login', itemStyle: { color: '#F99B00' } },
+            { value: 60, name: 'Login', itemStyle: { color: '#F99B00'  } },
             { value: 40, name: 'Approval', itemStyle: { color: '#342D2D' } },
             { value: 20, name: 'Disbursal', itemStyle: { color: '#7460EE' } },
           ],
@@ -304,6 +315,12 @@ export class ThreeSixtyComponent {
         },
       },
       xAxis: {
+        axisLine: {
+          show: false,
+        },
+        axisTick: {
+          show: false, // Hide tick lines
+        },
         type: 'category',
 
         data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
@@ -319,12 +336,12 @@ export class ThreeSixtyComponent {
         max: 15,
         interval: 1,
         axisLine: {
-          show: true,
+          show: false,
         },
         splitLine: {
           show: false,
         },
-        name: 'AMOUNT IN LACS ',
+        name: 'Amount ( in Rs. Lacs ) ',
         nameLocation: 'middle',
         nameGap: 25,
       },
@@ -351,6 +368,7 @@ export class ThreeSixtyComponent {
       series: [
         {
           type: 'pie',
+          top: '5%',
           radius: ['30%', '80%'],
           avoidLabelOverlap: false,
           label: {
@@ -397,6 +415,13 @@ export class ThreeSixtyComponent {
         },
       },
       xAxis: {
+        axisLine: {
+          show: false,
+        },
+      
+        axisTick: {
+          show: false, // Hide tick lines
+        },
         type: 'category',
 
         data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
@@ -412,12 +437,12 @@ export class ThreeSixtyComponent {
         max: 10,
         interval: 10,
         axisLine: {
-          show: true,
+          show: false,
         },
         splitLine: {
           show: false,
         },
-        name: 'PERCENTAGE',
+        name: 'Percentage %',
         nameLocation: 'middle',
         nameGap: 25,
       },
@@ -447,6 +472,12 @@ export class ThreeSixtyComponent {
         ],
       },
       xAxis: {
+        axisLine: {
+          show: false,
+        },
+        axisTick: {
+          show: false, // Hide tick lines
+        },
         type: 'category',
         axisLabel: {
           interval: 0,
@@ -459,13 +490,16 @@ export class ThreeSixtyComponent {
         max: 16,
         interval: 2,
         axisLine: {
-          show: true,
+          show: false,
+        },
+        splitLine: {
+          show: false,
         },
         axisLabel: {
           formatter: '{value}',
           margin: 1,
         },
-        name: 'PERCENTAGE',
+        name: 'Percentage %',
         nameLocation: 'middle',
         nameGap: 25,
       },
@@ -552,6 +586,12 @@ export class ThreeSixtyComponent {
         },
       },
       xAxis: {
+        axisLine: {
+          show: false,
+        },
+        axisTick: {
+          show: false, // Hide tick lines
+        },
         type: 'category',
 
         data: ['ED','GNPA','NPA'],
@@ -567,12 +607,12 @@ export class ThreeSixtyComponent {
         max: 10,
         interval: 10,
         axisLine: {
-          show: true,
+          show: false,
         },
         splitLine: {
           show: false,
         },
-        name: 'PERCENTAGE',
+        name: 'Percentage %',
         nameLocation: 'middle',
         nameGap: 25,
       },
