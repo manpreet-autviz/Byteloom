@@ -95,11 +95,16 @@ export class RejectionAnalysisComponent {
       document.getElementById('rejection-analysis') as HTMLDivElement
     );
 
-
     this.StateOption = {
       xAxis: {
         type: 'category',
         nameGap: 25,
+        axisLine: {
+          show: false,
+        },
+        axisTick: {
+          show: false, // Hide tick lines
+        },
         data: [
           'Login to disbursal ',
           'Financial approval to disbursal ',
@@ -117,12 +122,12 @@ export class RejectionAnalysisComponent {
         max: 10,
         interval: 10,
         axisLine: {
-          show: true,
+          show: false,
         },
         splitLine: {
           show: false,
         },
-        name: 'DAYS',
+        name: 'PERCENTAGE',
         nameLocation: 'middle',
         nameGap: 25,
       },
@@ -147,9 +152,9 @@ export class RejectionAnalysisComponent {
       },
       legend: {
         data: [
-          'Login to financial approval (%)',
-          'Financial approval to disbursal (Crores)',
-          'Login to disbursal (Number)',
+          'Login to financial approval',
+          'Financial approval to disbursal',
+          'Login to disbursal',
         ],
       },
       grid: {
@@ -174,6 +179,9 @@ export class RejectionAnalysisComponent {
         axisLine: {
           show: false,
         },
+        axisTick: {
+          show: false, // Hide tick lines
+        },
         splitLine: {
           show: false,
         },
@@ -183,17 +191,19 @@ export class RejectionAnalysisComponent {
           'Gujarat',
           'Rajasthan',
           'NCR',
-          'Haryana',
-          'Punjab',
+          'PCH',
           'Pan India',
         ],
       },
 
       series: [
         {
-          name: 'Login to financial approval (%) ',
+          name: 'Login to financial approval',
           type: 'bar',
-          data: [40, 40, 40, 40, 40, 40, 40, 80],
+          data: [41, 40, 40, 35, 50, 40, 60],
+          itemStyle: {
+            color: '#1A5F7A',
+          },
           label: {
             show: true,
             position: 'right',
@@ -201,23 +211,29 @@ export class RejectionAnalysisComponent {
           },
         },
         {
-          name: 'Financial approval to disbursal(Crores) ',
+          name: 'Financial approval to disbursal',
           type: 'bar',
-          data: [65, 65, 65, 65, 65, 65, 65, 225],
+          data: [29, 30, 28, 45, 32, 45, 70],
+          itemStyle: {
+            color: '#419197',
+          },
           label: {
             show: true,
             position: 'right',
-            formatter: '{c} Cr',
+            formatter: '{c}%',
           },
         },
         {
-          name: 'Login to disbursal (Number) ',
+          name: 'Login to disbursal',
           type: 'bar',
-          data: [2000, 2000, 2000, 2000, 2000, 2000, 2000, 6000],
+          data: [22, 20, 20, 20, 20, 30, 55],
+          itemStyle: {
+            color: '#78D6C6',
+          },
           label: {
             show: true,
             position: 'right',
-            formatter: '{c} ',
+            formatter: '{c}% ',
           },
         },
       ],
@@ -252,6 +268,9 @@ export class RejectionAnalysisComponent {
       xAxis: [
         {
           type: 'category',
+          axisTick: {
+            show: false, // Hide tick lines
+          },
           boundaryGap: false,
           data: ['HL', 'BL', 'LAP', 'SBL'],
         },
@@ -265,9 +284,9 @@ export class RejectionAnalysisComponent {
           min: 10,
           max: 100,
           interval: 10,
-          name: 'Percentage ',
+          name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 43,
+          nameGap: 25,
         },
       ],
       series: [
@@ -342,11 +361,7 @@ export class RejectionAnalysisComponent {
         },
       },
       legend: {
-        data: [
-          'Login to financial approval (%)',
-          'Financial approval to disbursal (Crores)',
-          'Login to disbursal (Number)',
-        ],
+        data: [],
       },
       grid: {
         left: '3%',
@@ -370,6 +385,10 @@ export class RejectionAnalysisComponent {
         axisLine: {
           show: false,
         },
+        axisTick: {
+          show: false, // Hide tick lines
+        },
+        
         splitLine: {
           show: false,
         },
@@ -379,8 +398,7 @@ export class RejectionAnalysisComponent {
           'Gujarat',
           'Rajasthan',
           'NCR',
-          'Haryana',
-          'Punjab',
+          'PCH',
           'Pan India',
         ],
       },
@@ -389,31 +407,16 @@ export class RejectionAnalysisComponent {
         {
           name: 'Login to financial approval (%) ',
           type: 'bar',
-          data: [40, 40, 40, 40, 40, 40, 40, 80],
+          barWidth: '25%',
+          data: [41, 41, 42, 40, 35, 50, 45],
           label: {
             show: true,
             position: 'right',
             formatter: '{c}%',
           },
-        },
-        {
-          name: 'Financial approval to disbursal(Crores) ',
-          type: 'bar',
-          data: [65, 65, 65, 65, 65, 65, 65, 225],
-          label: {
-            show: true,
-            position: 'right',
-            formatter: '{c} Cr',
-          },
-        },
-        {
-          name: 'Login to disbursal (Number) ',
-          type: 'bar',
-          data: [2000, 2000, 2000, 2000, 2000, 2000, 2000, 6000],
-          label: {
-            show: true,
-            position: 'right',
-            formatter: '{c} ',
+          itemStyle: {
+            color: '#514EFF',
+            borderRadius: 15,
           },
         },
       ],
@@ -429,10 +432,11 @@ export class RejectionAnalysisComponent {
           label: {
             backgroundColor: '#6a7985',
           },
+          
         },
       },
       legend: {
-        data: ['HL', 'BL', 'LAP', 'SBL'],
+        data: [],
       },
       toolbox: {
         feature: {
@@ -447,6 +451,12 @@ export class RejectionAnalysisComponent {
       },
       xAxis: [
         {
+          axisLine: {
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
           type: 'category',
           boundaryGap: false,
           data: ['HL', 'BL', 'LAP', 'SBL'],
@@ -456,19 +466,18 @@ export class RejectionAnalysisComponent {
         {
           type: 'value',
           axisLine: {
-            show: true,
+            show: false,
           },
           min: 10,
           max: 100,
           interval: 20,
-          name: 'Percentage ',
+          name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 43,
+          nameGap: 22,
         },
       ],
       series: [
         {
-          name: 'HL',
           type: 'line',
 
           areaStyle: {
@@ -481,51 +490,6 @@ export class RejectionAnalysisComponent {
             },
           },
           data: [12, 15, 25, 30, 35, 45],
-        },
-        {
-          name: 'BL',
-          type: 'line',
-
-          areaStyle: {
-            opacity: 0,
-          },
-          emphasis: {
-            focus: 'series',
-            areaStyle: {
-              opacity: 1, // Reduce opacity on hover to make it semi-transparent
-            },
-          },
-          data: [30, 35, 45, 50, 58, 65],
-        },
-        {
-          name: 'LAP',
-          type: 'line',
-
-          areaStyle: {
-            opacity: 0,
-          },
-          emphasis: {
-            focus: 'series',
-            areaStyle: {
-              opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-            },
-          },
-          data: [35, 45, 47, 50, 55, 67],
-        },
-        {
-          name: 'SBL',
-          type: 'line',
-
-          areaStyle: {
-            opacity: 0,
-          },
-          emphasis: {
-            focus: 'series',
-            areaStyle: {
-              opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-            },
-          },
-          data: [37, 46, 48, 52, 57, 69],
         },
       ],
     };
@@ -545,7 +509,7 @@ export class RejectionAnalysisComponent {
           avoidLabelOverlap: false,
           itemStyle: {
             borderRadius: 0,
-            borderColor: '#fff',
+
             borderWidth: 2,
           },
           label: {
@@ -564,13 +528,58 @@ export class RejectionAnalysisComponent {
             show: false,
           },
           data: [
-            { value: 35, name: 'Repayment issue' },
-            { value: 20, name: 'Intention issue' },
-            { value: 10, name: 'Income Issue' },
-            { value: 20, name: 'Legal / Technical' },
-            { value: 10, name: 'Customer not interested' },
-            { value: 8, name: 'End use' },
-            { value: 10, name: 'Duplicate lead' },
+            {
+              value: 35,
+              name: 'Repayment issue',
+              itemStyle: {
+                color: '#3ADA84',
+              },
+            },
+            {
+              value: 8,
+              name: 'End use',
+              itemStyle: {
+                color: '#FF821C',
+              },
+            },
+            {
+              value: 10,
+              name: 'Income Issue',
+              itemStyle: {
+                color: '#0B9DE8',
+              },
+            },
+            {
+              value: 20,
+              name: 'Intention issue',
+              itemStyle: {
+                color: '#5D8F68',
+              },
+            },
+           
+            {
+              value: 20,
+              name: 'Legal / Technical',
+              itemStyle: {
+                color: '#0747A6',
+              },
+            },
+            {
+              value: 10,
+              name: 'Duplicate lead',
+              itemStyle: {
+                color: '#333333',
+              },
+            },
+            {
+              value: 10,
+              name: 'Customer not interested',
+              itemStyle: {
+                color: '#7460EE',
+              },
+            },
+            
+           
           ],
         },
       ],
@@ -601,7 +610,7 @@ export class RejectionAnalysisComponent {
   }
 
   stateConversionRandomValues() {
-    const minValues = [15, 32, 50, 65,];
+    const minValues = [15, 32, 50, 65];
     const maxValues = [30, 45, 60, 75];
 
     const newData = minValues.map((min, index) => {
@@ -610,33 +619,43 @@ export class RejectionAnalysisComponent {
     });
     this.StateOption.series[0].data = newData;
     this.StateChart.setOption(this.StateOption);
-
   }
   stateLoginRandomValues() {
-
     const loginToFinancialApprovalMin = [39, 39, 39, 39, 39, 39, 39, 75];
     const loginToFinancialApprovalMax = [40, 40, 40, 40, 40, 40, 40, 80];
     const financialApprovalToDisbursalMin = [63, 63, 63, 63, 63, 63, 63, 222];
     const financialApprovalToDisbursalMax = [65, 65, 65, 65, 65, 65, 65, 225];
-    const loginToDisbursalMin = [1900, 1900, 1900, 1900, 1900, 1900, 1900, 5900];
-    const loginToDisbursalMax = [2000, 2000, 2000, 2000, 2000, 2000, 2000, 6000];
+    const loginToDisbursalMin = [
+      1900, 1900, 1900, 1900, 1900, 1900, 1900, 5900,
+    ];
+    const loginToDisbursalMax = [
+      2000, 2000, 2000, 2000, 2000, 2000, 2000, 6000,
+    ];
 
     // Generate random values for each series
-    const loginToFinancialApprovalValues = this.generateRandomValues(loginToFinancialApprovalMin, loginToFinancialApprovalMax);
-    const financialApprovalToDisbursalValues = this.generateRandomValues(financialApprovalToDisbursalMin, financialApprovalToDisbursalMax);
-    const loginToDisbursalValues = this.generateRandomValues(loginToDisbursalMin, loginToDisbursalMax);
+    const loginToFinancialApprovalValues = this.generateRandomValues(
+      loginToFinancialApprovalMin,
+      loginToFinancialApprovalMax
+    );
+    const financialApprovalToDisbursalValues = this.generateRandomValues(
+      financialApprovalToDisbursalMin,
+      financialApprovalToDisbursalMax
+    );
+    const loginToDisbursalValues = this.generateRandomValues(
+      loginToDisbursalMin,
+      loginToDisbursalMax
+    );
 
     // Update the data property of the series objects
     this.StateLoginOption.series[0].data = loginToFinancialApprovalValues;
     this.StateLoginOption.series[1].data = financialApprovalToDisbursalValues;
     this.StateLoginOption.series[2].data = loginToDisbursalValues;
     this.StateLoginChart.setOption(this.StateLoginOption);
-
   }
-  
+
   ProductConversionRandomValues() {
-    const StateminValues = [55, 60, 64,68,75];
-    const StatemaxValues = [60, 67, 78,83,90];
+    const StateminValues = [55, 60, 64, 68, 75];
+    const StatemaxValues = [60, 67, 78, 83, 90];
 
     const newData = StateminValues.map((min, index) => {
       const max = StatemaxValues[index];
@@ -644,7 +663,6 @@ export class RejectionAnalysisComponent {
     });
     this.ProductConversionOption.series[0].data = newData;
     this.ProductConversionChart.setOption(this.ProductConversionOption);
-
   }
 
   onRejectionFilterChange(selectedValue: string) {
@@ -659,29 +677,42 @@ export class RejectionAnalysisComponent {
     this.rejectionAnalysisRandomValues();
   }
   stateRejectionRandomValues() {
-
     const loginToFinancialApprovalMin = [39, 39, 39, 39, 39, 39, 39, 75];
     const loginToFinancialApprovalMax = [40, 40, 40, 40, 40, 40, 40, 80];
     const financialApprovalToDisbursalMin = [63, 63, 63, 63, 63, 63, 63, 222];
     const financialApprovalToDisbursalMax = [65, 65, 65, 65, 65, 65, 65, 225];
-    const loginToDisbursalMin = [1900, 1900, 1900, 1900, 1900, 1900, 1900, 5900];
-    const loginToDisbursalMax = [2000, 2000, 2000, 2000, 2000, 2000, 2000, 6000];
+    const loginToDisbursalMin = [
+      1900, 1900, 1900, 1900, 1900, 1900, 1900, 5900,
+    ];
+    const loginToDisbursalMax = [
+      2000, 2000, 2000, 2000, 2000, 2000, 2000, 6000,
+    ];
 
     // Generate random values for each series
-    const loginToFinancialApprovalValues = this.generateRandomValues(loginToFinancialApprovalMin, loginToFinancialApprovalMax);
-    const financialApprovalToDisbursalValues = this.generateRandomValues(financialApprovalToDisbursalMin, financialApprovalToDisbursalMax);
-    const loginToDisbursalValues = this.generateRandomValues(loginToDisbursalMin, loginToDisbursalMax);
+    const loginToFinancialApprovalValues = this.generateRandomValues(
+      loginToFinancialApprovalMin,
+      loginToFinancialApprovalMax
+    );
+    const financialApprovalToDisbursalValues = this.generateRandomValues(
+      financialApprovalToDisbursalMin,
+      financialApprovalToDisbursalMax
+    );
+    const loginToDisbursalValues = this.generateRandomValues(
+      loginToDisbursalMin,
+      loginToDisbursalMax
+    );
 
     // Update the data property of the series objects
     this.StateRejectionOption.series[0].data = loginToFinancialApprovalValues;
-    this.StateRejectionOption.series[1].data = financialApprovalToDisbursalValues;
+    this.StateRejectionOption.series[1].data =
+      financialApprovalToDisbursalValues;
     this.StateRejectionOption.series[2].data = loginToDisbursalValues;
 
     this.StateRejectionChart.setOption(this.StateRejectionOption);
   }
   ProductRejectionRandomValues() {
-    const StateminValues = [55, 60, 64,68,75];
-    const StatemaxValues = [60, 67, 78,83,90];
+    const StateminValues = [55, 60, 64, 68, 75];
+    const StatemaxValues = [60, 67, 78, 83, 90];
 
     const newData = StateminValues.map((min, index) => {
       const max = StatemaxValues[index];
@@ -699,7 +730,6 @@ export class RejectionAnalysisComponent {
       { value: this.getRandomValue(7, 10), name: 'Customer not interested' },
       { value: this.getRandomValue(6, 8), name: 'End use' },
       { value: this.getRandomValue(6, 10), name: 'Duplicate lead' },
-
     ];
 
     // Update the pie chart data with the new random values
@@ -707,7 +737,6 @@ export class RejectionAnalysisComponent {
     this.AnalysisRejectionChart.setOption(this.AnalysisRejectionOption);
   }
 
- 
   generateRandomValues(minArray: number[], maxArray: number[]): number[] {
     if (minArray.length !== maxArray.length) {
       throw new Error('minArray and maxArray must have the same length');
@@ -718,5 +747,4 @@ export class RejectionAnalysisComponent {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     });
   }
-
 }

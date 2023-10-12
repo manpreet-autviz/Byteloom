@@ -179,7 +179,7 @@ export class LoginComponent implements AfterViewInit {
             show: false,
           },
           axisLine: {
-            show: true,
+            show: false,
           },
           min: 0,
           max: 4000,
@@ -194,7 +194,10 @@ export class LoginComponent implements AfterViewInit {
         yAxis: {
           type: 'category',
           axisLine: {
-            show: true,
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
           },
           data: [
             'Maharashtra',
@@ -242,7 +245,7 @@ export class LoginComponent implements AfterViewInit {
             show: false,
           },
           axisLine: {
-            show: true,
+            show: false,
           },
           min: 0,
           max: 15,
@@ -257,7 +260,10 @@ export class LoginComponent implements AfterViewInit {
         yAxis: {
           type: 'category',
           axisLine: {
-            show: true,
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
           },
           data: [
             'Maharashtra',
@@ -313,9 +319,9 @@ export class LoginComponent implements AfterViewInit {
               show: false,
             },
             data: [
-              { value: 27, name: 'Top-Up', itemStyle: { color: '#FF7629' } },
-              { value: 45, name: 'Fresh', itemStyle: { color: '#00E1EF' } },
-              { value: 26, name: 'BT', itemStyle: { color: '#94DD1D' } },
+              { value: 27, name: 'Top-Up', itemStyle: { color: '#6C757D' } },
+              { value: 45, name: 'Fresh', itemStyle: { color: '#F6C342' } },
+              { value: 26, name: 'BT', itemStyle: { color: '#198754' } },
             ],
           },
         ],
@@ -409,6 +415,12 @@ export class LoginComponent implements AfterViewInit {
         responsive: true, 
         xAxis: {
           type: 'category',
+          axisTick: {
+            show: false, // Hide tick lines
+          },
+          axisLine: {
+            show: false,
+          },
           data: ['Direct', 'DSA', 'Power Partner', 'Saathi', 'Online Partner'],
           axisLabel: {
             interval: 0,
@@ -424,7 +436,7 @@ export class LoginComponent implements AfterViewInit {
          
           type: 'value',
           axisLine: {
-            show: true,
+            show: false,
           },
           splitLine: {
             show: false,
@@ -1256,17 +1268,17 @@ export class LoginComponent implements AfterViewInit {
       {
         value: this.getRandomValue(22, 27),
         name: 'Top-Up',
-        itemStyle: { color: '#FF7629' },
+        itemStyle: { color: '#6C757D' },
       },
       {
         value: this.getRandomValue(40, 45),
         name: 'Fresh',
-        itemStyle: { color: '#00E1EF' },
+        itemStyle: { color: '#F6C342' },
       },
       {
         value: this.getRandomValue(23, 26),
         name: 'BT',
-        itemStyle: { color: '#94DD1D' },
+        itemStyle: { color: '#198754' },
       },
     ];
 
