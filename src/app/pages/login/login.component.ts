@@ -24,9 +24,11 @@ export class LoginComponent implements AfterViewInit {
       start: new Date(), // Start from the current date
       end: new Date(new Date().getFullYear(), new Date().getMonth(), 1), // End at the first day of the current month
     },
+    
     // weekends: true,
     
     events: this.generateRandomEvents(),
+    
     
   };
 
@@ -316,9 +318,9 @@ export class LoginComponent implements AfterViewInit {
               show: false,
             },
             data: [
-              { value: 27, name: 'Top-Up', itemStyle: { color: '#6C757D' } },
-              { value: 45, name: 'Fresh', itemStyle: { color: '#F6C342' } },
-              { value: 26, name: 'BT', itemStyle: { color: '#198754' } },
+              { value: 45, name: 'Fresh', itemStyle: { color: '#f6c342' } },
+              { value: 27, name: 'Top-Up', itemStyle: { color: '#198754' } },
+              { value: 26, name: 'BT', itemStyle: { color: '#6c757d' } },
             ],
           },
         ],
