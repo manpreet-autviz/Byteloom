@@ -210,9 +210,11 @@ export class DisbursalComponent {
             show: false,
           },
           axisLine: {
-            show: true,
+            show: false,
           },
-
+          axisTick: {
+            show: false, // Hide tick lines
+          },
           min: 10,
           max: 150,
           interval: 20,
@@ -224,7 +226,10 @@ export class DisbursalComponent {
         yAxis: {
           type: 'category',
           axisLine: {
-            show: true,
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
           },
           data: [
             'Maharashtra',
@@ -243,7 +248,7 @@ export class DisbursalComponent {
             type: 'bar',
             data: [25, 39, 27, 50, 32, 22, 25, 180],
             itemStyle: {
-              color: '#9747FF',
+              color: '#F8913D',
             },
           },
         ],
@@ -273,6 +278,12 @@ export class DisbursalComponent {
             rotate: -45,
             overflow: 'break',
           },
+          axisLine: {
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
         },
         yAxis: {
           type: 'value',
@@ -280,7 +291,10 @@ export class DisbursalComponent {
           max: 15,
           interval: 1,
           axisLine: {
-            show: true,
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
           },
           splitLine: {
             show: false,
@@ -306,7 +320,7 @@ export class DisbursalComponent {
           trigger: 'item',
         },
         legend: {
-          top: '5%',
+          top: '1%',
           left: 'center',
         },
         series: [
@@ -330,9 +344,9 @@ export class DisbursalComponent {
               show: false,
             },
             data: [
-              { value: 27, name: 'Top-Up', itemStyle: { color: '#FF7629' } },
-              { value: 45, name: 'Fresh', itemStyle: { color: '#00E1EF' } },
-              { value: 26, name: 'BT', itemStyle: { color: '#94DD1D' } },
+              { value: 27, name: 'Top-Up', itemStyle: { color: '#6C757D ' } },
+              { value: 45, name: 'Fresh', itemStyle: { color: '#F6C342' } },
+              { value: 26, name: 'BT', itemStyle: { color: '#198754' } },
             ],
           },
         ],
@@ -343,7 +357,7 @@ export class DisbursalComponent {
           trigger: 'item',
         },
         legend: {
-          top: '5%',
+          top: '1%',
           left: 'center',
         },
         series: [
@@ -396,13 +410,25 @@ export class DisbursalComponent {
             rotate: -45,
             overflow: 'break',
           },
+          axisLine: {
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
         },
         yAxis: {
           min: 2,
           max: 16,
           interval: 2,
           axisLine: {
-            show: true,
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
+          splitLine: {
+            show: false,
           },
           axisLabel: {
             formatter: '{value}',
@@ -461,6 +487,12 @@ export class DisbursalComponent {
             rotate: -45,
             overflow: 'break',
           },
+          axisLine: {
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
         },
         yAxis: {
           type: 'value',
@@ -468,10 +500,13 @@ export class DisbursalComponent {
           max: 20,
           interval: 2,
           axisLine: {
-            show: true,
+            show: false,
           },
           splitLine: {
             show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
           },
           name: 'DAYS',
           nameLocation: 'middle',
@@ -483,7 +518,7 @@ export class DisbursalComponent {
             data: [15, 13, 10, 9, 7],
             type: 'bar',
             itemStyle: {
-              color: '#FB8C00',
+              color: '#5BC8EF',
             },
           },
         ],
@@ -514,6 +549,12 @@ export class DisbursalComponent {
             rotate: -45,
             overflow: 'break',
           },
+          axisLine: {
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
         },
         yAxis: {
           type: 'value',
@@ -521,7 +562,10 @@ export class DisbursalComponent {
           max: 70,
           interval: 10,
           axisLine: {
-            show: true,
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
           },
           splitLine: {
             show: false,
@@ -978,7 +1022,7 @@ export class DisbursalComponent {
           },
         },
         legend: {
-          data: ['Top Up', 'Fresh', 'BT'],
+          data: ['Fresh', 'Top Up', 'BT'],
         },
         toolbox: {
           feature: {

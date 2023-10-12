@@ -35,6 +35,9 @@
           </div>
         </div>
 
+        <div class="sales w-100">
+          <div class="card card-animate w-100 mt-3">
+            <div class="card-body">
         <div class="col-md-12 text-center mt-3">
           <div class="productivity-tabs">
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -75,8 +78,11 @@
             </ul>
           </div>
         </div>
+        </div>
+        </div>
+        </div>
         <div class="sales w-100" *ngIf="isActiveButton === 'button1'">
-          <div class="card card-animate w-100 mt-3">
+          <div class="card card-animate w-100">
             <div class="card-body">
               <div class="row">
                 <div class="col-md-4">
@@ -186,7 +192,7 @@
           class="sales-leaderborad w-100"
           *ngIf="isActiveButton === 'button2'"
         >
-          <div class="card card-animate w-100 mt-2">
+          <div class="card card-animate w-100">
             <div class="card-body align-items-center justify-content-between">
               <div class="box-s p-2">
                 <div class="container mt-5">
@@ -196,29 +202,31 @@
                     style="width: 100%"
                   >
                     <thead>
-                      <tr>
+                      <tr class="bg-lightblue">
                         <th class="border-bottom">S.no</th>
-                        <th class="border-bottom">Lead No</th>
+                        <th class="border-bottom">RM NAME</th>
+                        <th class="border-bottom">EMP code</th>
+                        <th class="border-bottom">Branch</th>
+                        <th class="border-bottom">Area</th>
                         <th class="border-bottom">State</th>
-                        <th class="border-bottom">Cluster</th>
-                        <th class="border-bottom">Branch Name</th>
-                        <th class="border-bottom">Customer Name</th>
-                        <th class="border-bottom">Product Name</th>
-                        <th class="border-bottom">Scheme</th>
-                        <th class="border-bottom">Login Date</th>
+                        <th class="border-bottom">Total Logins (in no.s)</th>
+                        <th class="border-bottom">Total Disbursal (in amount lacs)</th>
+                        <th class="border-bottom">% Target achieved</th>
+                        <th class="border-bottom">% Delinquency</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let item of data">
                         <td class="border-bottom">{{ item.SNo }}</td>
-                        <td class="border-bottom">{{ item.leadNo }}</td>
-                        <td class="border-bottom">{{ item.state }}</td>
-                        <td class="border-bottom">{{ item.cluster }}</td>
-                        <td class="border-bottom">{{ item.branchName }}</td>
-                        <td class="border-bottom">{{ item.customerName }}</td>
-                        <td class="border-bottom">{{ item.productName }}</td>
-                        <td class="border-bottom">{{ item.Scheme }}</td>
-                        <td class="border-bottom">{{ item.LoginDate }}</td>
+                        <td class="border-bottom">{{ item.RmName }}</td>
+                        <td class="border-bottom">{{ item.EmpCode }}</td>
+                        <td class="border-bottom bg-yellow">{{ item.Branch }}</td>
+                        <td class="border-bottom">{{ item.Area }}</td>
+                        <td class="border-bottom">{{ item.TotalLogins }}</td>
+                        <td class="border-bottom bg-red">{{ item.TotalDisbursal }}</td>
+                        <td class="border-bottom">{{ item.State }}</td>
+                        <td class="border-bottom bg-green">{{ item.Target }}</td>
+                        <td class="border-bottom">{{ item.Delinquency }}</td>
                       </tr>
                     </tbody>
                   </table>
