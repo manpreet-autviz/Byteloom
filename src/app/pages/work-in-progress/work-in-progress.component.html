@@ -4,12 +4,12 @@
       <div class="breadcrumb">
         <div class="card card-animate w-100">
           <div
-            class="card-body d-flex align-items-center justify-content-between"
+            class="card-body breadcraumb-align align-items-center justify-content-between"
           >
             <div>
               <span class="f-7 fs-5">Work in progress</span>
             </div>
-            <div class="d-flex">
+            <div class="breadcrumb-right-btn">
               <select
                 id="dropdown"
                 class="form-select me-2"
@@ -103,317 +103,333 @@
                 role="tabpanel"
                 aria-labelledby="pills-financial-tab"
               >
-                <div>
-                  <ul class="tree vertical">
-                    <li>
+              <div>
+                <ul class="tree vertical ">
+                  <li class="wip-binery-tree binery-tree-steps">
+                    <div
+                      class="main-tree-head login text-uppercase text-center"
+                    >
+                      <h3><b>Login</b></h3>
                       <div
-                        class="main-tree-head login text-uppercase text-center"
+                        class="indicators align-items-center d-flex justify-content-between mx-3 fs-12 m-0"
                       >
-                        <h3><b>Login</b></h3>
+                        <div class="d-flex align-items-center m-0 fs-12">
+                          <div
+                            class="disbursal-dots dot-purple mx-1 m-0"
+                          ></div>
+                          1500
+                        </div>
                         <div
-                          class="indicators align-items-center d-flex justify-content-between mx-3 fs-12 m-0"
+                          class="indicators align-items-center d-flex mx-3 fs-12 m-0"
                         >
-                          <div class="d-flex align-items-center m-0 fs-12">
+                          <div class="disbursal-dots dot-orange mx-1"></div>
+                          700CR
+                        </div>
+                      </div>
+                    </div>
+
+                      <ul class="">
+                      <li>
+                        <div
+                          class="box-s cursor-pointer"
+                          (click)="workInprogressTable('/PD Pending / Login')"
+                        >
+                          <p class="bg-yellow">PD pending</p>
+                          <div class="d-flex align-items-center fs-12 m-0">
                             <div
                               class="disbursal-dots dot-purple mx-1 m-0"
                             ></div>
-                            1500
-                          </div>
-                          <div
-                            class="indicators align-items-center d-flex mx-3 fs-12 m-0"
-                          >
-                            <div class="disbursal-dots dot-orange mx-1"></div>
-                            700CR
+                            500
+                            <div
+                              class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                            >
+                              <div
+                                class="disbursal-dots dot-orange mx-1"
+                              ></div>
+                              200CR
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <ul>
-                        <li>
-                          <div
-                            class="box-s cursor-pointer"
-                            (click)="workInprogressTable('/PD Pending / Login')"
-                          >
-                            <p class="bg-yellow">PD pending</p>
-                            <div class="d-flex align-items-center fs-12 m-0">
+                      </li>
+                      <li>
+                        <div
+                          class="box-s cursor-pointer"
+                          (click)="
+                            workInprogressTable(
+                              'PD Positive, PD Negative, Under query & Appraisal pending'
+                            )
+                          "
+                        >
+                          <p class="bg-green">PD done</p>
+                          <div class="d-flex align-items-center fs-12 m-0">
+                            <div
+                              class="disbursal-dots dot-purple mx-1 m-0"
+                            ></div>
+                            200
+                            <div
+                              class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                            >
                               <div
-                                class="disbursal-dots dot-purple mx-1 m-0"
+                                class="disbursal-dots dot-orange mx-1"
                               ></div>
-                              500
-                              <div
-                                class="indicators align-items-center d-flex mx-3 fs-12 m-0"
-                              >
-                                <div
-                                  class="disbursal-dots dot-orange mx-1"
-                                ></div>
-                                200CR
-                              </div>
+                              55CR
                             </div>
                           </div>
+                        </div>
                         </li>
+                      </ul>
+                        <ul class="wip-tree-second-step">
                         <li>
-                          <div
-                            class="box-s cursor-pointer"
-                            (click)="
-                              workInprogressTable(
-                                'PD Positive, PD Negative, Under query & Appraisal pending'
-                              )
-                            "
-                          >
-                            <p class="bg-green">PD done</p>
-                            <div class="d-flex align-items-center fs-12 m-0">
+                            <div
+                              class="box-s cursor-pointer"
+                              (click)="
+                                workInprogressTable(
+                                  'PD Positive, PD Negative, Under query & Appraisal pending'
+                                )
+                              "
+                            >
+                              <p class="bg-green">PD Positive</p>
                               <div
-                                class="disbursal-dots dot-purple mx-1 m-0"
-                              ></div>
-                              200
-                              <div
-                                class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                class="d-flex align-items-center fs-12 m-0"
                               >
                                 <div
-                                  class="disbursal-dots dot-orange mx-1"
+                                  class="disbursal-dots dot-purple mx-1 m-0"
                                 ></div>
-                                55CR
-                              </div>
-                            </div>
-                          </div>
-                          <ul>
-                            <li>
-                              <div
-                                class="box-s cursor-pointer"
-                                (click)="
-                                  workInprogressTable(
-                                    'PD Positive, PD Negative, Under query & Appraisal pending'
-                                  )
-                                "
-                              >
-                                <p class="bg-green">PD Positive</p>
+                                800
                                 <div
-                                  class="d-flex align-items-center fs-12 m-0"
+                                  class="indicators align-items-center d-flex mx-3 fs-12 m-0"
                                 >
                                   <div
-                                    class="disbursal-dots dot-purple mx-1 m-0"
+                                    class="disbursal-dots dot-orange mx-1"
                                   ></div>
-                                  800
-                                  <div
-                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
-                                  >
-                                    <div
-                                      class="disbursal-dots dot-orange mx-1"
-                                    ></div>
-                                    280CR
-                                  </div>
+                                  280CR
                                 </div>
                               </div>
-                              <ul>
-                                <li>
+                            </div>
+
+                            </li>
+                              <li>
+                                <div
+                                  class="box-s cursor-pointer"
+                                  (click)="
+                                    workInprogressTable(
+                                      'PD Positive, PD Negative, Under query & Appraisal pending'
+                                    )
+                                  "
+                                >
+                                  <p class="bg-yellow">PD Negative</p>
                                   <div
-                                    class="box-s cursor-pointer"
+                                    class="d-flex align-items-center fs-12 m-0"
+                                  >
+                                    <div
+                                      class="disbursal-dots dot-purple mx-1 m-0"
+                                    ></div>
+                                    100
+                                    <div
+                                      class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-orange mx-1"
+                                      ></div>
+                                      60CR
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                          
+                              <li>
+                                <div
+                                  class="box-s cursor-pointer"
+                                  (click)="
+                                    workInprogressTable(
+                                      'Appraisal Done & Approval pending'
+                                    )
+                                  "
+                                >
+                                  <p class="bg-green">Decision Pending</p>
+                                  <div
+                                    class="d-flex align-items-center fs-12 m-0"
+                                  >
+                                    <div
+                                      class="disbursal-dots dot-purple mx-1 m-0"
+                                    ></div>
+                                    600
+                                    <div
+                                      class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-orange mx-1"
+                                      ></div>
+                                      180CR
+                                    </div>
+                                  </div>
+                                </div>
+                                </li>
+                              </ul>
+                                <ul class="wip-tree-third-step">
+                                  <li>
+                                    <div class="box-s">
+                                      <p class="bg-yellow">
+                                        Appraisal Pending
+                                      </p>
+                                      <div
+                                        class="d-flex align-items-center fs-12 m-0"
+                                      >
+                                        <div
+                                          class="disbursal-dots dot-purple mx-1 m-0"
+                                        ></div>
+                                        100
+                                        <div
+                                          class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                        >
+                                          <div
+                                            class="disbursal-dots dot-orange mx-1"
+                                          ></div>
+                                          60CR
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="box-s">
+                                      <p class="bg-green">Appraisal Done</p>
+                                      <div
+                                        class="d-flex align-items-center fs-12 m-0"
+                                      >
+                                        <div
+                                          class="disbursal-dots dot-purple mx-1 m-0"
+                                        ></div>
+                                        400
+                                        <div
+                                          class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                        >
+                                          <div
+                                            class="disbursal-dots dot-orange mx-1"
+                                          ></div>
+                                          110CR
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="box-s">
+                                      <p class="bg-gray">Under query</p>
+                                      <div
+                                        class="d-flex align-items-center fs-12 m-0"
+                                      >
+                                        <div
+                                          class="disbursal-dots dot-purple mx-1 m-0"
+                                        ></div>
+                                        100
+                                        <div
+                                          class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                        >
+                                          <div
+                                            class="disbursal-dots dot-orange mx-1"
+                                          ></div>
+                                          10CR
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                </ul>
+<ul class="wip-tree-fourth-step">
+                              <li>
+                                <div class="box-s">
+                                  <p
+                                    class="bg-gray cursor-pointer"
                                     (click)="
                                       workInprogressTable(
                                         'PD Positive, PD Negative, Under query & Appraisal pending'
                                       )
                                     "
                                   >
-                                    <p class="bg-yellow">Appraisal Pending</p>
+                                  Approval Pending
+                                  </p>
+                                  <div
+                                    class="d-flex align-items-center fs-12r m-0"
+                                  >
                                     <div
-                                      class="d-flex align-items-center fs-12 m-0"
+                                      class="disbursal-dots dot-purple mx-1 m-0"
+                                    ></div>
+                                    100
+                                    <div
+                                      class="indicators align-items-center d-flex mx-3 fs-12 m-0"
                                     >
                                       <div
-                                        class="disbursal-dots dot-purple mx-1 m-0"
+                                        class="disbursal-dots dot-orange mx-1"
                                       ></div>
-                                      100
-                                      <div
-                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0"
-                                      >
-                                        <div
-                                          class="disbursal-dots dot-orange mx-1"
-                                        ></div>
-                                        60CR
-                                      </div>
+                                      60CR
                                     </div>
                                   </div>
-                                </li>
-                                <li>
-                                  <div
-                                    class="box-s cursor-pointer"
+                                </div>
+                              </li>
+                              <li>
+                                <div class="box-s">
+                                  <p
+                                    class="bg-gray cursor-pointer"
                                     (click)="
                                       workInprogressTable(
-                                        'Appraisal Done & Approval pending'
+                                        'PD Positive, PD Negative, Under query & Appraisal pending'
                                       )
                                     "
                                   >
-                                    <p class="bg-green">Appraisal done</p>
-                                    <div
-                                      class="d-flex align-items-center fs-12 m-0"
-                                    >
-                                      <div
-                                        class="disbursal-dots dot-purple mx-1 m-0"
-                                      ></div>
-                                      600
-                                      <div
-                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0"
-                                      >
-                                        <div
-                                          class="disbursal-dots dot-orange mx-1"
-                                        ></div>
-                                        180CR
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <ul>
-                                    <li>
-                                      <div class="box-s">
-                                        <p class="bg-yellow">
-                                          Approval Pending
-                                        </p>
-                                        <div
-                                          class="d-flex align-items-center fs-12 m-0"
-                                        >
-                                          <div
-                                            class="disbursal-dots dot-purple mx-1 m-0"
-                                          ></div>
-                                          100
-                                          <div
-                                            class="indicators align-items-center d-flex mx-3 fs-12 m-0"
-                                          >
-                                            <div
-                                              class="disbursal-dots dot-orange mx-1"
-                                            ></div>
-                                            60CR
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </li>
-                                    <li>
-                                      <div class="box-s">
-                                        <p class="bg-green">Approval Done</p>
-                                        <div
-                                          class="d-flex align-items-center fs-12 m-0"
-                                        >
-                                          <div
-                                            class="disbursal-dots dot-purple mx-1 m-0"
-                                          ></div>
-                                          400
-                                          <div
-                                            class="indicators align-items-center d-flex mx-3 fs-12 m-0"
-                                          >
-                                            <div
-                                              class="disbursal-dots dot-orange mx-1"
-                                            ></div>
-                                            110CR
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </li>
-                                    <li>
-                                      <div class="box-s">
-                                        <p class="bg-gray">Under query</p>
-                                        <div
-                                          class="d-flex align-items-center fs-12 m-0"
-                                        >
-                                          <div
-                                            class="disbursal-dots dot-purple mx-1 m-0"
-                                          ></div>
-                                          100
-                                          <div
-                                            class="indicators align-items-center d-flex mx-3 fs-12 m-0"
-                                          >
-                                            <div
-                                              class="disbursal-dots dot-orange mx-1"
-                                            ></div>
-                                            10CR
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </li>
-                                <li>
-                                  <div class="box-s">
-                                    <p
-                                      class="bg-gray cursor-pointer"
-                                      (click)="
-                                        workInprogressTable(
-                                          'PD Positive, PD Negative, Under query & Appraisal pending'
-                                        )
-                                      "
-                                    >
-                                      Under Query
-                                    </p>
-                                    <div
-                                      class="d-flex align-items-center fs-12r m-0"
-                                    >
-                                      <div
-                                        class="disbursal-dots dot-purple mx-1 m-0"
-                                      ></div>
-                                      100
-                                      <div
-                                        class="indicators align-items-center d-flex mx-3 fs-12 m-0"
-                                      >
-                                        <div
-                                          class="disbursal-dots dot-orange mx-1"
-                                        ></div>
-                                        60CR
-                                      </div>
-                                    </div>
-                                  </div>
-                                </li>
-                              </ul>
-                            </li>
-                            <li>
-                              <div
-                                class="box-s cursor-pointer"
-                                (click)="
-                                  workInprogressTable(
-                                    'PD Positive, PD Negative, Under query & Appraisal pending'
-                                  )
-                                "
-                              >
-                                <p class="bg-bred">PD Negative</p>
-                                <div
-                                  class="d-flex align-items-center fs-12 m-0"
-                                >
+                                  Approval Done
+                                  </p>
                                   <div
-                                    class="disbursal-dots dot-purple mx-1 m-0"
-                                  ></div>
-                                  100
-                                  <div
-                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                    class="d-flex align-items-center fs-12r m-0"
                                   >
                                     <div
-                                      class="disbursal-dots dot-orange mx-1"
+                                      class="disbursal-dots dot-purple mx-1 m-0"
                                     ></div>
-                                    100CR
+                                    100
+                                    <div
+                                      class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-orange mx-1"
+                                      ></div>
+                                      60CR
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="box-s">
-                                <p class="bg-yellow">Decision pending</p>
-                                <div
-                                  class="d-flex align-items-center fs-12 m-0"
-                                >
+                              </li>
+                              <li>
+                                <div class="box-s">
+                                  <p
+                                    class="bg-gray cursor-pointer"
+                                    (click)="
+                                      workInprogressTable(
+                                        'PD Positive, PD Negative, Under query & Appraisal pending'
+                                      )
+                                    "
+                                  >
+                               Under Query
+                                  </p>
                                   <div
-                                    class="disbursal-dots dot-purple mx-1 m-0"
-                                  ></div>
-                                  100
-                                  <div
-                                    class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                    class="d-flex align-items-center fs-12r m-0"
                                   >
                                     <div
-                                      class="disbursal-dots dot-orange mx-1"
+                                      class="disbursal-dots dot-purple mx-1 m-0"
                                     ></div>
-                                    120CR
+                                    100
+                                    <div
+                                      class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                                    >
+                                      <div
+                                        class="disbursal-dots dot-orange mx-1"
+                                      ></div>
+                                      60CR
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
+                              </li>
+                            </ul>
+                
+
+</li>
+</ul>
+</div>
               </div>
               <div
                 class="tab-pane fade mt-5"
@@ -752,7 +768,7 @@
                               </div>
                             </div>
                           </div>
-                          <ul>
+                          <ul class="binery-tree-final-done">
                             <li>
                               <div class="box-s cursor-pointer" (click)="workInprogressTable('PD Positive, PD Negative, Under query & Appraisal pending')" >
                                 <p class="bg-green">done</p>

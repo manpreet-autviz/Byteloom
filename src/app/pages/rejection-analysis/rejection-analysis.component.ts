@@ -143,7 +143,7 @@ export class RejectionAnalysisComponent {
           data: [70, 30, 75],
           type: 'bar',
           itemStyle: {
-            color: '#0747A6',
+            color: '#6096B4',
           },
         },
       ],
@@ -256,7 +256,8 @@ export class RejectionAnalysisComponent {
         axisPointer: {
           type: 'cross',
           label: {
-            backgroundColor: '#78D6C6',
+            backgroundColor: '#DBA39A',
+           
           },
         },
       },
@@ -297,7 +298,7 @@ export class RejectionAnalysisComponent {
           interval: 10,
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 23,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -308,7 +309,7 @@ export class RejectionAnalysisComponent {
         {
           name: 'HL',
           type: 'line',
-          color:'#78D6C6',
+          color:'#DBA39A',
 
           areaStyle: {
             opacity: 0,
@@ -431,7 +432,7 @@ export class RejectionAnalysisComponent {
             formatter: '{c}%',
           },
           itemStyle: {
-            color: '#514EFF',
+            color: '#DE8F5F',
             borderRadius: 15,
           },
         },
@@ -498,6 +499,7 @@ export class RejectionAnalysisComponent {
       series: [
         {
           type: 'line',
+          color:'#F0997D',
 
           areaStyle: {
             opacity: 0,
@@ -552,28 +554,28 @@ export class RejectionAnalysisComponent {
               value: 35,
               name: 'Repayment issue',
               itemStyle: {
-                color: '#3ADA84',
+                color: '#7D6E83',
               },
             },
             {
               value: 8,
               name: 'End use',
               itemStyle: {
-                color: '#FF821C',
+                color: '#A75D5D',
               },
             },
             {
               value: 10,
               name: 'Income Issue',
               itemStyle: {
-                color: '#0B9DE8',
+                color: '#5D8F68',
               },
             },
             {
               value: 20,
               name: 'Intention issue',
               itemStyle: {
-                color: '#5D8F68',
+                color: '#DF7861',
               },
             },
            
@@ -581,21 +583,21 @@ export class RejectionAnalysisComponent {
               value: 20,
               name: 'Legal / Technical',
               itemStyle: {
-                color: '#0747A6',
+                color: '#ECB390',
               },
             },
             {
               value: 10,
               name: 'Duplicate lead',
               itemStyle: {
-                color: '#333333',
+                color: '#AD8B73',
               },
             },
             {
               value: 10,
               name: 'Customer not interested',
               itemStyle: {
-                color: '#7460EE',
+                color: '#9D76C1',
               },
             },
             

@@ -377,6 +377,7 @@ export class LoginComponent implements AfterViewInit {
           left: 'center',
           // doesn't perfectly work with our tricks, disable it
           selectedMode: false,
+          borderRadius:50,
         },
         series: [
           {

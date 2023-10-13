@@ -30,6 +30,23 @@
 .tree.vertical {
     display: flex;
     overflow-x: auto;
+    width: 100%;
+}
+.binery-tree-steps{
+    max-width: 1300px;
+    width:100%;
+}
+.wip-tree-second-step{
+    left:6.5%
+}
+.wip-tree-third-step{
+    right:6.5%
+}
+.wip-tree-fourth-step{
+    right:6.5% 
+}
+.binery-tree-final-done{
+    right:6.5% 
 }
 .tree.vertical ul {
     display: flex;
@@ -267,7 +284,11 @@ ul.tree.vertical ul li div p{
     font-size: 22px !important;
 }
 
+.wip-binery-tree{
+  display: flex;
+  flex-direction: row;
 
+}
 
 @media (max-width: 991px){
     .number-crore{

@@ -31,7 +31,7 @@ export class TatAnalysisComponent {
   selectedFilter: string = 'September';
   showContent!: boolean;
 
-  progressValue1: number = 80;
+  progressValue1: number = 85;
   progressValue2: number = 12;
   progressValue3: number = 8;
   minValue1: number = 80;
