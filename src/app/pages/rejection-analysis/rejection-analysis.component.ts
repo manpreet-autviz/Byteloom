@@ -130,6 +130,12 @@ export class RejectionAnalysisComponent {
         name: 'Percentage %',
         nameLocation: 'middle',
         nameGap: 25,
+        nameTextStyle: {
+          fontWeight: 600,
+          fontSize:14,
+          
+        },
+   
       },
       series: [
         {
@@ -292,8 +298,12 @@ export class RejectionAnalysisComponent {
           name: 'Percentage %',
           nameLocation: 'middle',
           nameGap: 25,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
         },
-      ],
+            ],
       series: [
         {
           name: 'HL',
@@ -479,6 +489,10 @@ export class RejectionAnalysisComponent {
           splitLine: {
             show: false,
           },
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
         },
       ],
       series: [
@@ -494,7 +508,7 @@ export class RejectionAnalysisComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [12, 15, 25, 30, 35, 45],
+          data: [29, 35, 30, 45,],
         },
       ],
     };

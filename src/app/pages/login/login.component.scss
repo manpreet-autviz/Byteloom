@@ -1,11 +1,49 @@
+
 .pan-btn p {
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
     background: #5bc8ef33;
-    max-width: 110px;
+    max-width: fit-content;
     width: 100%;
     padding: 6px 8px;
     position: absolute;
     right: 40px;
     top: 67px;
+    border-radius: 4px;
+    font-weight: 600;
 }
+.total-btn p {
+    margin: 0;
+    font-size: 20px;
+    width: 100%;
+    padding: 6px 8px;
+    position: absolute;
+    right: 1%;
+    top: 28%;
+    font-weight: 700;
+}
+.campaign-btn p{
+margin: 0;
+font-size: 16px;
+border:1px solid #D6F7E5;
+max-width: fit-content;
+padding: 10px 8px;
+width: 100%;
+position: absolute;
+left: 40px;
+top: 50px;
+border-radius: 4px;
+font-weight: 700;
+display: flex;
+align-items: center;
+    gap: 8px;
+}
+.campaign-dot{
+    width:15px;
+    height: 15px;
+    background-color: #D6F7E5;
+    border-radius: 50%;
+    align-items: center;
+
+}
+

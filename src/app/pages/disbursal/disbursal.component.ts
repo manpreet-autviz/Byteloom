@@ -218,9 +218,13 @@ export class DisbursalComponent {
           min: 10,
           max: 150,
           interval: 20,
-          name: 'AMOUNT (IN RS. CRORE)',
+          name: 'Amount (in Rs. Crore)',
           nameLocation: 'middle',
           nameGap: 30,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
          
         },
         yAxis: {
@@ -297,9 +301,13 @@ export class DisbursalComponent {
           splitLine: {
             show: false,
           },
-          name: 'AMOUNT (IN RS. LACS)',
+          name: 'Amount (in Rs. Lacs)',
           nameLocation: 'middle',
           nameGap: 25,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
         },
         series: [
           {
@@ -432,9 +440,13 @@ export class DisbursalComponent {
             formatter: '{value}',
             margin: 1,
           },
-          name: 'PERCENTAGE %',
+          name: 'Percentage %',
           nameLocation: 'middle',
           nameGap: 25,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
         },
         // Declare several bar series, each will be mapped
         // to a column of dataset.source by default.
@@ -506,9 +518,13 @@ export class DisbursalComponent {
           axisTick: {
             show: false, // Hide tick lines
           },
-          name: 'DAYS',
+          name: 'Days',
           nameLocation: 'middle',
           nameGap: 25,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
         },
         series: [
           {
@@ -568,12 +584,16 @@ export class DisbursalComponent {
           splitLine: {
             show: false,
           },
-          name: 'PERCENTAGE %',
+          name: 'Percentage %',
           nameLocation: 'middle',
           nameGap: 25,
           axisLabel: {
             formatter: '{value}',
             margin: 1,
+          },
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
           },
         },
         series: [
@@ -638,11 +658,7 @@ export class DisbursalComponent {
           },
         },
         legend: {},
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+   
         grid: {
           left: '3%',
           right: '4%',
@@ -678,12 +694,16 @@ export class DisbursalComponent {
             min: 10,
             max: 100,
             interval: 10,
-            name: 'Percentage ',
+            name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 30,
             axisLabel: {
               formatter: '{value}%',
               margin: 1,
+            },
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
             },
           },
         ],
@@ -727,11 +747,7 @@ export class DisbursalComponent {
             'Maharashtra',
           ],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+      
         grid: {
           left: '3%',
           right: '4%',
@@ -767,9 +783,13 @@ export class DisbursalComponent {
             min: 10,
             max: 100,
             interval: 10,
-            name: 'Amount in Crore ',
+            name: 'Amount ( in Rs. Crore)  ',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 30,
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
+            },
           },
         ],
         series: [
@@ -895,11 +915,7 @@ export class DisbursalComponent {
         legend: {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+      
         grid: {
           left: '3%',
           right: '4%',
@@ -935,12 +951,16 @@ export class DisbursalComponent {
             min: 10,
             max: 100,
             interval: 10,
-            name: 'Percentage',
+            name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 30,
             axisLabel: {
               formatter: '{value}%',
               margin: 1,
+            },
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
             },
           },
         ],
@@ -1022,11 +1042,7 @@ export class DisbursalComponent {
         legend: {
           data: ['Fresh', 'Top Up', 'BT'],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+     
         grid: {
           left: '3%',
           right: '4%',
@@ -1062,12 +1078,16 @@ export class DisbursalComponent {
             min: 10,
             max: 100,
             interval: 10,
-            name: 'Percentage',
+            name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 30,
             axisLabel: {
               formatter: '{value}%',
               margin: 1,
+            },
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
             },
           },
         ],
@@ -1134,11 +1154,7 @@ export class DisbursalComponent {
         legend: {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+    
         grid: {
           left: '3%',
           right: '4%',
@@ -1254,11 +1270,7 @@ export class DisbursalComponent {
         legend: {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+  
         grid: {
           left: '3%',
           right: '4%',
@@ -1294,12 +1306,16 @@ export class DisbursalComponent {
             min: 10,
             max: 100,
             interval: 10,
-            name: 'Percentage',
+            name: 'Percentage %' ,
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 30,
             axisLabel: {
               formatter: '{value}%',
               margin: 1,
+            },
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
             },
           },
         ],
@@ -1381,11 +1397,7 @@ export class DisbursalComponent {
         legend: {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+  
         grid: {
           left: '3%',
           right: '4%',
@@ -1421,12 +1433,16 @@ export class DisbursalComponent {
             min: 5,
             max: 20,
             interval: 2,
-            name: 'Percentage',
+            name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 30,
             axisLabel: {
               formatter: '{value}%',
               margin: 1,
+            },
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
             },
           },
         ],
@@ -1508,11 +1524,7 @@ export class DisbursalComponent {
         legend: {
           data: ['IRR', 'PF', 'Insurance'],
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+   
         grid: {
           left: '3%',
           right: '4%',
@@ -1548,12 +1560,16 @@ export class DisbursalComponent {
             min: 2,
             max: 15,
             interval: 2,
-            name: 'Percentage',
+            name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 30,
             axisLabel: {
               formatter: '{value}%',
               margin: 1,
+            },
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
             },
           },
         ],

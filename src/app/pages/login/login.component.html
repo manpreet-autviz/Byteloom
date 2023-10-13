@@ -15,7 +15,7 @@
                 class="text-white filter-btn-trend btn bg-blue border me-2"
                (click)="toggle()" 
               >
-                {{!isToggled ?'See Trend' : 'Normal View'}} <i  class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
+                {{!isToggled ?'View Trend' : 'Normal View'}} <i  class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
               </button>
               <select *ngIf="!isToggled" 
                 id="dropdown"
@@ -76,6 +76,9 @@
                   <div class="card box-s">
                     <div class="card-body text-center">
                       <span class="f-6 title"> IMD </span>
+                      <div class="total-btn">
+                        <p>Total - 90%</p>
+                      </div>
                       <div class="state-chart" id="IMD-chart" style="width: 100%; height: 400px"></div>
                     </div>
                   </div>
@@ -149,6 +152,9 @@
                   <div class="card box-s">
                     <div class="card-body text-center calender-widget">
                       <span class="f-6 title">Days wise logins </span>
+                      <div class="campaign-btn">
+                        <p>Pan India- 3500 <span class="campaign-dot"></span></p>
+                      </div>
                       <full-calendar [options]="calendarOptions"></full-calendar>
                     </div>
                   </div>
