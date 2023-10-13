@@ -54,7 +54,7 @@ export class CreditComponent {
   data = [
     {
       SNo: 1,
-      RmName: '1231',
+      CmName: '1231',
       EmpCode: 'PCH',
       Area: 'CHANDIGARH',
       Branch: 'CLUSTER',
@@ -66,7 +66,7 @@ export class CreditComponent {
     },
     {
       SNo: 2,
-      RmName: '1232',
+      CmName: '1232',
       EmpCode: 'NCR',
       Area: 'DELHI',
       Branch: 'CLUSTER',
@@ -78,7 +78,7 @@ export class CreditComponent {
     },
     {
       SNo: 3,
-      RmName: '1233',
+      CmName: '1233',
       EmpCode: 'NCR',
       Area: 'DELHI',
       Branch: 'CLUSTER',
@@ -90,7 +90,7 @@ export class CreditComponent {
     },
     {
       SNo: 4,
-      RmName: '1234',
+      CmName: '1234',
       EmpCode: 'RAJASTHAN',
       Area: 'JAIPUR',
       Branch: 'CLUSTER',
@@ -102,7 +102,7 @@ export class CreditComponent {
     },
     {
       SNo: 5,
-      RmName: '1235',
+      CmName: '1235',
       EmpCode: 'GUJRAT',
       Area: 'AHMEDABAD',
       Branch: 'CLUSTER',
@@ -114,7 +114,7 @@ export class CreditComponent {
     },
     {
       SNo: 6,
-      RmName: '1236',
+      CmName: '1236',
       EmpCode: 'SURAT',
       Area: 'RUNDH',
       Branch: 'CLUSTER',
@@ -126,7 +126,7 @@ export class CreditComponent {
     },
     {
       SNo: 7,
-      RmName: '1237',
+      CmName: '1237',
       EmpCode: 'MP',
       Area: 'INDORE',
       Branch: 'CLUSTER',
@@ -138,7 +138,7 @@ export class CreditComponent {
     },
     {
       SNo: 8,
-      RmName: '1238',
+      CmName: '1238',
       EmpCode: 'MP',
       Area: 'UJJAIN',
       Branch: 'CLUSTER',
@@ -150,7 +150,7 @@ export class CreditComponent {
     },
     {
       SNo: 9,
-      RmName: '1239',
+      CmName: '1239',
       EmpCode: 'MAHARASHTRA',
       Area: 'MUMBAI',
       Branch: 'CLUSTER',
@@ -162,7 +162,7 @@ export class CreditComponent {
     },
     {
       SNo: 10,
-      RmName: '1240',
+      CmName: '1240',
       EmpCode: 'MAHARASHTRA',
       Area: 'MUMBAI',
       Branch: 'CLUSTER',
@@ -439,6 +439,12 @@ export class CreditComponent {
           rotate: 45,
           overflow: 'break',
         },
+        axisLine: {
+          show: false,
+        },
+        axisTick: {
+          show: false, // Hide tick lines
+        },
       },
       yAxis: {
         type: 'value',
@@ -446,7 +452,10 @@ export class CreditComponent {
         max: 70,
         interval: 10,
         axisLine: {
-          show: true,
+          show: false,
+        },
+        axisTick: {
+          show: false, // Hide tick lines
         },
         splitLine: {
           show: false,
@@ -516,13 +525,25 @@ export class CreditComponent {
             rotate: 75,
             overflow: 'break',
           },
+          axisLine: {
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
         },
       ],
       yAxis: [
         {
           type: 'value',
           axisLine: {
-            show: true,
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
+          splitLine: {
+            show: false,
           },
           min: 5,
           max: 30,
@@ -622,6 +643,12 @@ export class CreditComponent {
           rotate: 45,
           overflow: 'break',
         },
+        axisLine: {
+          show: false,
+        },
+        axisTick: {
+          show: false, // Hide tick lines
+        },
       },
       yAxis: {
         type: 'value',
@@ -629,7 +656,10 @@ export class CreditComponent {
         max: 2.5,
         interval: 0.1,
         axisLine: {
-          show: true,
+          show: false,
+        },
+        axisTick: {
+          show: false, // Hide tick lines
         },
         splitLine: {
           show: false,
@@ -698,13 +728,25 @@ export class CreditComponent {
             rotate: 75,
             overflow: 'break',
           },
+          axisLine: {
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
         },
       ],
       yAxis: [
         {
           type: 'value',
           axisLine: {
-            show: true,
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
+          splitLine: {
+            show: false,
           },
           min: 60,
           max: 85,

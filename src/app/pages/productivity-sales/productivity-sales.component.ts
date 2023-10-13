@@ -557,7 +557,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           min: 10,
           max: 100,
           interval: 10,
-          name: 'PERCENTAGE ',
+          name: 'PERCENTAGE %',
           nameLocation: 'middle',
           nameGap: 43,
           axisLabel: {

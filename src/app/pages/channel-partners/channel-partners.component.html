@@ -24,7 +24,6 @@
             </div>
           </div>
         </div>
-
         <div class="sales w-100">
           <div class="card card-animate w-100 mt-3">
             <div class="card-body">
@@ -61,6 +60,9 @@
                   <div class="card box-s">
                     <div class="card-body text-center">
                       <span class="f-6"> CP details</span>
+                      <div class="pan-btn">
+                        <p>Pan India - 2000</p>
+                      </div>
                       <div class="state-chart" id="CP-Detail-Chart" style="width: 100%; height: 400px"></div>
                     </div>
                   </div>
@@ -77,7 +79,6 @@
               </div>
             </div>
           </div>
-
           <div class="card card-animate w-100 mt-3">
             <div class="card-body">
               <div class="row">
@@ -100,8 +101,6 @@
               </div>
             </div>
           </div>
-
-
         </div>
         <div class="sales-leaderborad w-100" *ngIf="isActiveButton === 'button2'">
           <div class="card card-animate w-100">
@@ -112,28 +111,26 @@
                     <thead>
                       <tr class="bg-lightblue">
                         <th class="border-bottom">S.no</th>
-                        <th class="border-bottom">RM NAME</th>
-                        <th class="border-bottom">EMP code</th>
+                        <th class="border-bottom">CP NAME</th>
+                        <th class="border-bottom">CP code</th>
                         <th class="border-bottom">Branch</th>
                         <th class="border-bottom">Area</th>
                         <th class="border-bottom">State</th>
                         <th class="border-bottom">Total Logins (in no.s)</th>
                         <th class="border-bottom">Total Disbursal (in amount lacs)</th>
-                        <th class="border-bottom">% Target achieved</th>
                         <th class="border-bottom">% Delinquency</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let item of data">
                         <td class="border-bottom">{{ item.SNo }}</td>
-                        <td class="border-bottom">{{ item.RmName }}</td>
-                        <td class="border-bottom">{{ item.EmpCode }}</td>
+                        <td class="border-bottom">{{ item.CpName }}</td>
+                        <td class="border-bottom">{{ item.CpCode }}</td>
                         <td class="border-bottom bg-yellow">{{ item.Branch }}</td>
-                        <td class="border-bottom">{{ item.Area }}</td>
-                        <td class="border-bottom">{{ item.TotalLogins }}</td>
+                          <td class="border-bottom">{{ item.Area }}</td>
+                          <td class="border-bottom">{{ item.State }}</td>
                         <td class="border-bottom bg-red">{{ item.TotalDisbursal }}</td>
-                        <td class="border-bottom">{{ item.State }}</td>
-                        <td class="border-bottom bg-green">{{ item.Target }}</td>
+                        <td class="border-bottom">{{ item.TotalLogins }}</td>
                         <td class="border-bottom">{{ item.Delinquency }}</td>
                       </tr>
                     </tbody>

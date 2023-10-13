@@ -98,12 +98,12 @@
                     </div>
                   </div>
                   <div class="col-md-4">
-                    <div class="card box-s">
+                    <div class="card box-s h-100">
                       <div class="card-body text-center">
                         <span class="f-6"> Avg no of files approved 
                             by different roles </span>
                             
-                            <table class="simple-table">
+                            <table class="simple-table w-100">
                               <thead>
                                 <tr>
                                   <th>Role</th>
@@ -114,55 +114,55 @@
                               <div class="border-bottom mt-3"></div>
                               <tbody>
                                 <tr>
-                                  <td>PDs</td>
+                                  <td>CM</td>
                                   <td>10</td>
                                   <td>
                                     <div class="progress">
                                       <div
                                         class="progress-bar"
                                         role="progressbar"
-                                        style="width: 1%"
-                                        aria-valuenow="1"
+                                        style="width: 20%"
+                                        aria-valuenow="20"
                                         aria-valuemin="0"
                                         aria-valuemax="100"
                                       > 
-                                      1%
+                                      20%
                                     </div>
                                     </div>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>Approvals</td>
+                                  <td>ACM</td>
                                   <td>30</td>
                                   <td>
                                     <div class="progress">
                                       <div
                                         class="progress-bar"
                                         role="progressbar"
-                                        style="width: 10%"
-                                        aria-valuenow="10"
+                                        style="width: 35%"
+                                        aria-valuenow="35"
                                         aria-valuemin="0"
                                         aria-valuemax="100"
                                       >
-                                    10%
+                                    35%
                                     </div>                                
                                     </div>
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>Disbursal</td>
+                                  <td>SCM</td>
                                   <td>300</td>
                                   <td>
                                     <div class="progress">
                                       <div
                                         class="progress-bar"
                                         role="progressbar"
-                                        style="width: 91%"
-                                        aria-valuenow="91"
+                                        style="width: 45%"
+                                        aria-valuenow="45"
                                         aria-valuemin="0"
                                         aria-valuemax="100"
                                       >
-                                       91%
+                                       45%
                                       </div>
                                     </div>
                                   </td>
@@ -268,7 +268,7 @@
                     <thead>
                       <tr class="bg-lightblue">
                         <th class="border-bottom">S.no</th>
-                        <th class="border-bottom">RM NAME</th>
+                        <th class="border-bottom">CM NAME</th>
                         <th class="border-bottom">EMP code</th>
                         <th class="border-bottom">Branch</th>
                         <th class="border-bottom">Area</th>
@@ -282,7 +282,7 @@
                     <tbody>
                       <tr *ngFor="let item of data">
                         <td class="border-bottom">{{ item.SNo }}</td>
-                        <td class="border-bottom">{{ item.RmName }}</td>
+                        <td class="border-bottom">{{ item.CmName }}</td>
                         <td class="border-bottom">{{ item.EmpCode }}</td>
                         <td class="border-bottom bg-yellow">{{ item.Branch }}</td>
                         <td class="border-bottom">{{ item.Area }}</td>

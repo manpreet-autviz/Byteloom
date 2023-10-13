@@ -109,6 +109,12 @@ export class LegalComponent {
             rotate: 75,
             overflow: 'break',
           },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
+          axisLine: {
+            show: false,
+          },
         },
       ],
       yAxis: [
@@ -117,14 +123,20 @@ export class LegalComponent {
           axisLine: {
             show: false,
           },
-          min: 5,
-          max: 30,
-          interval: 5,
+          min: 1,
+          max: 6,
+          interval: 1,
           name: 'DAYS',
           nameLocation: 'middle',
           nameGap: 43,
           axisLabel: {
             margin: 1,
+          },
+          splitLine: {
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
           },
         },
       ],
@@ -142,7 +154,7 @@ export class LegalComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [10, 13, 12.5, 14, 14.5, 15, 15.5, 16],
+          data: [4, 3.4, 3, 3.1, 3.7, 4, 4.7, 5],
           itemStyle: {
             color: '#333333',
           },
@@ -160,7 +172,7 @@ export class LegalComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [17, 15, 18.5, 19, 17.5, 20, 22, 25],
+          data: [2.1, 3.4, 3.9, 3, 2.1, 2.8, 3.5, 3],
           itemStyle: {
             color: '#FE5419',
           },
