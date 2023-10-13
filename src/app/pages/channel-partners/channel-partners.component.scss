@@ -49,9 +49,21 @@ td {
     border-radius: 0px 50px 50px 0px;
 }
 .productivity-tabs {
-    max-width: 433px;
-    width: 100%;
+    width: fit-content;
 }
+.pan-btn p {
+    margin: 0;
+    font-size: 12px;
+    background: #dfeaf0;
+    max-width: 110px;
+    width: 100%;
+    padding: 6px 8px;
+    position: absolute;
+    right: 40px;
+    top: 67px;
+    border-radius: 4px;
+}
+
 
 @media (max-width: 767px){
     .productivity-tabs ul.nav-pills {
@@ -60,8 +72,5 @@ td {
     .productivity-tabs ul li button {
         padding: 10px !important;
         font-size: 12px !important;
-    }
-    .productivity-tabs {
-        max-width: 422px !important;
     }
 }
