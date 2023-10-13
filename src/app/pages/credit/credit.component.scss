@@ -49,8 +49,7 @@ td {
     border-radius: 0px 50px 50px 0px;
 }
 .productivity-tabs {
-    max-width: 262px;
-    width: 100%;
+    width: fit-content;
 }
 
 @media (max-width: 767px){
@@ -60,9 +59,6 @@ td {
     .productivity-tabs ul li button {
         padding: 10px !important;
         font-size: 12px !important;
-    }
-    .productivity-tabs {
-        max-width: 422px !important;
     }
     }
 

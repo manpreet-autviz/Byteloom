@@ -130,6 +130,9 @@ export class TechnicalComponent {
           axisLabel: {
             margin: 1,
           },
+          splitLine: {
+            show: false,
+          },
         },
       ],
       series: [
@@ -320,6 +323,12 @@ export class TechnicalComponent {
           rotate: -45,
           overflow: 'break',
         },
+        axisLine: {
+          show: false,
+        },
+        axisTick: {
+          show: false, // Hide tick lines
+        },
       },
       yAxis: {
         type: 'value',
@@ -329,6 +338,12 @@ export class TechnicalComponent {
         name: 'Value',
         axisLine: {
           show: false,
+        },
+        splitLine: {
+          show: false,
+        },
+        axisTick: {
+          show: false, // Hide tick lines
         },
       },
       series: [

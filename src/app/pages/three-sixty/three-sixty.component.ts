@@ -293,9 +293,9 @@ export class ThreeSixtyComponent {
             },
           },
           data: [
-            { value: 60, name: 'Login', itemStyle: { color: '#F99B00'  } },
-            { value: 40, name: 'Approval', itemStyle: { color: '#342D2D' } },
-            { value: 20, name: 'Disbursal', itemStyle: { color: '#7460EE' } },
+            { value: 60, name: '2000Files', itemStyle: { color: '#F99B00'  } },
+            { value: 40, name: '300crs', itemStyle: { color: '#342D2D' } },
+            { value: 20, name: '250crs', itemStyle: { color: '#7460EE' } },
           ],
         },
       ],
@@ -603,9 +603,9 @@ export class ThreeSixtyComponent {
       },
       yAxis: {
         type: 'value',
-        min: 70,
-        max: 10,
-        interval: 10,
+        min: .5,
+        max: 3.5,
+        interval: .5,
         axisLine: {
           show: false,
         },
@@ -619,7 +619,7 @@ export class ThreeSixtyComponent {
       series: [
         {
           barWidth: 40,
-          data: [70, 50, 45,],
+          data: [2.1, 1.3, 1.1,],
           type: 'bar',
           itemStyle: {
             color: '#5D5BCC',
