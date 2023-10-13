@@ -233,21 +233,21 @@ export class BusinessRMComponent {
                 value: 20,
                 name: 'Power Partner',
                 itemStyle: {
-                  color: 'rgba(5, 83, 22, 0.65)',
+                  color: '#FF821C',
                 },
               },
               {
                 value: 10,
                 name: 'DSA',
                 itemStyle: {
-                  color: '#0B9DE8',
+                  color: 'rgba(5, 83, 22, 0.65)',
                 },
               },
               {
                 value: 20,
                 name: 'Other',
                 itemStyle: {
-                  color: '#FF821C',
+                  color: '#0B9DE8',
                 },
               },
             ],

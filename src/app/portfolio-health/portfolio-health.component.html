@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="breadcrumb">
         <div class="card card-animate w-100">
-          <div class="p-2 d-flex align-items-center justify-content-between">
+          <div class="card-body d-flex align-items-center justify-content-between">
             <div>
               <span class="f-7 fs-5"> Portfolio health </span>
             </div>
@@ -13,7 +13,7 @@
                 class="text-white filter-btn-trend btn bg-blue border me-2"
                 (click)="toggle()"
               >
-                {{ !isToggled ? "See Trend" : "Normal View" }}
+                {{ !isToggled ? "View Trend" : "Normal View" }}
                 <i class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
               </button>
               <select
@@ -59,7 +59,7 @@
           <div class="card card-animate w-100 mt-3">
             <div class="card-body">
               <div class="row">
-                <div class="col-lg-3 col-md-6 col-12">
+                <div class="col-lg-4 col-md-6">
                   <div class="card box-s">
                     <div class="card-body text-center">
                       <span class="f-6"> ED/GNPA/NPA </span>
@@ -71,7 +71,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-12">
+                <div class="col-lg-4 col-md-6">
                   <div class="card box-s">
                     <div class="card-body text-center">
                       <span class="f-6">CIBIL score wise delinquency </span>
@@ -83,7 +83,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-12">
+                <div class="col-lg-4 col-md-6">
                   <div class="card box-s">
                     <div class="card-body text-center">
                       <span class="f-6"> Product wise delinquency </span>
@@ -102,10 +102,16 @@
           <div class="card card-animate w-100 mt-3">
             <div class="card-body">
               <div class="row">
-                <div class="col-lg-6 col-md-6 col-12">
+                <div class="col-lg-6 col-md-6">
                   <div class="card box-s">
                     <div class="card-body text-center">
                       <span class="f-6"> Non started cases</span>
+                      <div class="pan-btn">
+                        <p>Pan India - 300</p>
+                      </div>
+                      <div class="pan-btn2">
+                        <p>Pan India - 320</p>
+                      </div>
                       <div
                         class="state-chart"
                         id="Non-started-cases"
@@ -114,7 +120,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-12">
+                <div class="col-lg-6 col-md-6">
                   <div class="card box-s">
                     <div class="card-body text-center">
                       <span class="f-6"> Bucket wise list </span>

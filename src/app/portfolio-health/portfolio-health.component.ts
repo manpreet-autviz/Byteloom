@@ -111,27 +111,28 @@ export class PortfolioHealthComponent {
         },
         yAxis: {
           type: 'value',
-          min: 70,
-          max: 10,
-          interval: 10,
+          min: 0.5,
+          max: 3.5,
+          interval: .5,
           axisLine: {
             show: false,
           },
           splitLine: {
             show: false,
           },
-          name: 'PERCENTAGE',
+          name: 'PERCENTAGE%',
           nameLocation: 'middle',
           nameGap: 25,
         },
         series: [
           {
-            barWidth: 40,
-            data: [70, 50, 45,],
+            barWidth: 30,
+            data: [
+              { value: 2.2, itemStyle: { color: '#3C7EBE' } },
+              { value: 1.2, itemStyle: { color: '#5BC8EF' } }, // Set a different color here
+              { value: 1, itemStyle: { color: '#E25E3E' } }, // Set a different color here
+            ],
             type: 'bar',
-            itemStyle: {
-              color: '#5D5BCC',
-            },
           },
         ],
       };
@@ -150,11 +151,6 @@ export class PortfolioHealthComponent {
         },
         legend: {
           data: ['ED', 'NPA'],
-        },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
         },
         grid: {
           left: '3%',
@@ -224,7 +220,7 @@ export class PortfolioHealthComponent {
             },
             data: [1.0, 0.75, 0.54],
             itemStyle: {
-              color: '#FF821C',
+              color: '#E25E3E',
             },
           },
          
@@ -286,13 +282,13 @@ export class PortfolioHealthComponent {
           {
             type: 'bar',
             itemStyle: {
-              color: '#4FC3F7', // Set the color for the first bar series (IRR)
+              color: '#3C7EBE', // Set the color for the first bar series (IRR)
             },
           },
           {
             type: 'bar',
             itemStyle: {
-              color: '#3ADA84', // Set the color for the first bar series (IRR)
+              color: '#E25E3E', // Set the color for the first bar series (IRR)
             },
           },
         
@@ -358,7 +354,8 @@ export class PortfolioHealthComponent {
               formatter: '{c}',
             },
             itemStyle: {
-              color: '#5281FF', // Set the color for the first bar series (IRR)
+              color: '#579BB1', // Set the color for the first bar series (IRR)
+              borderRadius: 10,
             },
           },
           {
@@ -371,7 +368,8 @@ export class PortfolioHealthComponent {
               formatter: '{c} ',
             },
             itemStyle: {
-              color: '#F49494', // Set the color for the first bar series (IRR)
+              color: '#E1D7C6', // Set the color for the first bar series (IRR)
+              borderRadius: 10,
             },
           },
         ],
@@ -435,6 +433,7 @@ export class PortfolioHealthComponent {
             },
             itemStyle: {
               color: '#3C7EBE', // Set the color for the first bar series (IRR)
+              borderRadius: 10,
             },
           },
           {
@@ -448,12 +447,13 @@ export class PortfolioHealthComponent {
             },
             itemStyle: {
               color: '#5BC8EF', // Set the color for the first bar series (IRR)
+              borderRadius: 10,
             },
           },
           {
             name: 'NPA',
             type: 'bar',
-            data: [55, 55, 55, 55],
+            data: [800, 777, 650, 1000],
             label: {
               show: true,
               position: 'right',
@@ -461,6 +461,7 @@ export class PortfolioHealthComponent {
             },
             itemStyle: {
               color: '#89BDEC', // Set the color for the first bar series (IRR)
+              borderRadius: 10,
             },
           },
         ],

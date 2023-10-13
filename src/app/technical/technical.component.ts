@@ -81,7 +81,7 @@ export class TechnicalComponent {
         },
       },
       legend: {
-        data: ['Report', 'Vetting'],
+        data: ['Vetting', 'Report'],
       },
       toolbox: {
         feature: {
@@ -100,13 +100,12 @@ export class TechnicalComponent {
           boundaryGap: false,
           data: [
             'Pan India',
-            'Punjab',
-            'Haryana',
+            'PCH',
             'NCR',
             'Rajasthan',
             'Gujarat',
             'MP',
-            'Maharashtra',
+            'Pan India',
           ],
           axisLabel: {
             interval: 0,
@@ -121,9 +120,9 @@ export class TechnicalComponent {
           axisLine: {
             show: false,
           },
-          min: 5,
-          max: 30,
-          interval: 5,
+          min: 1,
+          max: 6,
+          interval: 1,
           name: 'DAYS',
           nameLocation: 'middle',
           nameGap: 43,
@@ -137,24 +136,6 @@ export class TechnicalComponent {
       ],
       series: [
         {
-          name: 'Report',
-          type: 'line',
-
-          areaStyle: {
-            opacity: 0,
-          },
-          emphasis: {
-            focus: 'series',
-            areaStyle: {
-              opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-            },
-          },
-          data: [10, 13, 12.5, 14, 14.5, 15, 15.5, 16],
-          itemStyle: {
-            color: '#333333',
-          },
-        },
-        {
           name: 'Vetting',
           type: 'line',
 
@@ -167,9 +148,27 @@ export class TechnicalComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [17, 15, 18.5, 19, 17.5, 20, 22, 25],
+          data: [4.2, 4.5, 4.1, 5, 6, 5.5, 5],
           itemStyle: {
-            color: '#FE5419',
+            color: '#9D76C1',
+          },
+        },
+        {
+          name: 'Report',
+          type: 'line',
+
+          areaStyle: {
+            opacity: 0,
+          },
+          emphasis: {
+            focus: 'series',
+            areaStyle: {
+              opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+            },
+          },
+          data: [2.2, 2.5, 2.1, 3, 2.5, 2.1, 2.5],
+          itemStyle: {
+            color: '#DE8F5F',
           },
         },
       ],
@@ -310,13 +309,13 @@ export class TechnicalComponent {
         type: 'category',
         data: [
           'Maharashtra',
-          'MP',
-          'Gujarat',
-          'Rajasthan',
-          'NCR',
-          'Haryana',
-          'Punjab',
           'Pan India',
+          'PCH',
+          'NCR',
+          'Rajasthan',
+          'Gujarat',
+          'MP',
+          'Maharashtra',
         ],
         axisLabel: {
           interval: 0,
@@ -354,7 +353,7 @@ export class TechnicalComponent {
           barWidth: '25%', // Adjust the bar width as needed
           data: [320, 330, 430, 540, 630,960,1100,1400],
           itemStyle: {
-            color: '#00EB97', // Color for Category 1
+            color: '#F0B86E', // Color for Category 1
           },
         },
         {
@@ -364,7 +363,7 @@ export class TechnicalComponent {
           barWidth: '25%', // Adjust the bar width as needed
           data: [320, 700, 960, 1050, 1250,1400,1600,1780],
           itemStyle: {
-            color: '#7460EE', // Color for Category 2
+            color: '#F0997D', // Color for Category 2
           },
         },
       ],

@@ -254,7 +254,23 @@ ul.pending-cheque.ot-normal {
 .profile-info p{
   margin: 0;
 }
-
+.incentive {
+  border-radius: 4px;
+  padding: 22px 21px;
+}
+.incentive-list h6{
+  margin: 0;
+}
+.incentive-list {
+  margin-top: 20px;
+}
+.price h6 {
+  background: #dee7f4;
+  text-align: right;
+  padding: 6px 10px;
+  border-radius: 25px;
+  font-size: 12px;
+}
 
 
 @media (max-width: 991px) {

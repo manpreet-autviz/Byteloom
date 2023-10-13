@@ -380,7 +380,6 @@ export class CreditCmComponent {
         ],
       };
 
-
       this.PotentialLostBusinessChart.setOption(
         this.PotentialLostBusinessOption
       );

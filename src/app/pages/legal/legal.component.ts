@@ -96,8 +96,7 @@ export class LegalComponent {
           boundaryGap: false,
           data: [
             'Pan India',
-            'Punjab',
-            'Haryana',
+            'PCH',
             'NCR',
             'Rajasthan',
             'Gujarat',
@@ -123,6 +122,12 @@ export class LegalComponent {
           axisLine: {
             show: false,
           },
+          splitLine: {
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
           min: 1,
           max: 6,
           interval: 1,
@@ -132,12 +137,7 @@ export class LegalComponent {
           axisLabel: {
             margin: 1,
           },
-          splitLine: {
-            show: false,
-          },
-          axisTick: {
-            show: false, // Hide tick lines
-          },
+          
         },
       ],
       series: [
@@ -154,7 +154,7 @@ export class LegalComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [4, 3.4, 3, 3.1, 3.7, 4, 4.7, 5],
+          data: [4.2, 4.5, 4.1, 5, 6, 5.5, 5],
           itemStyle: {
             color: '#333333',
           },
@@ -172,7 +172,7 @@ export class LegalComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [2.1, 3.4, 3.9, 3, 2.1, 2.8, 3.5, 3],
+          data: [2.2, 2.5, 2.1, 3, 2.5, 2.1, 2.5],
           itemStyle: {
             color: '#FE5419',
           },

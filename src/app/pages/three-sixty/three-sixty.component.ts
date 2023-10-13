@@ -160,7 +160,7 @@ export class ThreeSixtyComponent {
         {
           name: 'All Products',
           type: 'line',
-          color:'#07A14E',
+          color:'#EF9595',
 
           areaStyle: {
             opacity: 0,
@@ -293,7 +293,7 @@ export class ThreeSixtyComponent {
             },
           },
           data: [
-            { value: 60, name: '2000Files', itemStyle: { color: '#F99B00'  } },
+            { value: 60, name: '2000Files', itemStyle: { color: '#F99B00' } },
             { value: 40, name: '300crs', itemStyle: { color: '#342D2D' } },
             { value: 20, name: '250crs', itemStyle: { color: '#7460EE' } },
           ],
@@ -622,7 +622,7 @@ export class ThreeSixtyComponent {
           data: [2.1, 1.3, 1.1,],
           type: 'bar',
           itemStyle: {
-            color: '#5D5BCC',
+            color: '#F0997D',
           },
         },
       ],

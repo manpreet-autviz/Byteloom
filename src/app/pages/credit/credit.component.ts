@@ -302,115 +302,115 @@ export class CreditComponent {
         {
           name: 'PD',
           type: 'bar',
-          data: [15, 28, 15, 14, 8, 18, 12],
+          data: [25, 28, 15, 14, 8, 18, 25],
           label: {
             show: true,
             position: 'right',
             formatter: '{c}',
           },
           itemStyle: {
-            color: '#F49494',
+            color: '#AD8B73',
+            borderRadius: 10,
           },
         },
         {
           name: 'Approval',
           type: 'bar',
-          data: [13,13,13,13, 10, 20, 14],
+          data: [14,13,13,13, 10, 20, 14],
           label: {
             show: true,
             position: 'right',
             formatter: '{c}',
           },
           itemStyle: {
-            color: '#3ADA84',
+            color: '#CEAB93',
+            borderRadius: 10,
           },
         },
         {
           name: 'Disbursal',
           type: 'bar',
-          data: [15, 26, 27, 27, 12, 11, 25],
+          data: [12, 26, 27, 27, 12, 11, 12],
           label: {
             show: true,
             position: 'right',
             formatter: '{c}',
           },
           itemStyle: {
-            color: '#5281FF',
+            color: '#EEE3CB',
+            borderRadius: 10,
           },
         },
       ],
     };
-
+    
     this.SCMWorkloadOption = {
+      tooltip: {
+        trigger: 'item',
+      },
+      legend: {
+        top: '3%',
+        left: 'center',
+      },
       series: [
         {
-          type: 'gauge',
-          center: ['50%', '60%'],
-          startAngle: 220,
-          endAngle: -40,
-          min: 0,
-          max: 15,
-          splitNumber: 12,
+          type: 'pie',
+          radius: ['25%', '70%'],
+          avoidLabelOverlap: false,
           itemStyle: {
-            color: '#3ADA84',
+            borderRadius: 0,
+            borderWidth: 2,
           },
-          progress: {
-            show: true,
-            width: 40,
-          },
-
-          pointer: {
+          label: {
             show: false,
+            position: 'center',
           },
-          axisLine: {
-            lineStyle: {
-              width: 15,
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: 40,
+              fontWeight: 'bold',
+              formatter: '{c}%',
             },
           },
-          axisTick: {
+          labelLine: {
             show: false,
-            distance: -45,
-            splitNumber: 5,
-            lineStyle: {
-              width: 2,
-              color: '#999',
-            },
-          },
-          splitLine: {
-            show: false,
-            distance: -52,
-            length: 14,
-            lineStyle: {
-              width: 3,
-              color: '#999',
-            },
-          },
-          axisLabel: {
-            show: false,
-            distance: -20,
-            color: '#999',
-            fontSize: 20,
-          },
-          anchor: {
-            show: false,
-          },
-          title: {
-            show: false,
-          },
-          detail: {
-            valueAnimation: true,
-            width: '60%',
-            lineHeight: 10,
-            borderRadius: 8,
-            offsetCenter: [0, '-15%'],
-            fontSize: 15,
-            fontWeight: 'bolder',
-            formatter: 'No of files {value}',
-            color: 'inherit',
           },
           data: [
             {
-              value: 200,
+              value: 40,
+              name: 'Manoj Rana',
+              itemStyle: {
+                color: '#7D6E83',
+              },
+            },
+            {
+              value: 10,
+              name: 'Vikram Singh',
+              itemStyle: {
+                color: '#636363',
+              },
+            },
+            {
+              value: 15,
+              name: 'Vivek Singh',
+              itemStyle: {
+                color: '#DBA39A',
+              },
+            },
+            {
+              value: 20,
+              name: 'Riya Sen',
+              itemStyle: {
+                color: '#DF7861',
+              },
+            },
+            {
+              value: 25,
+              name: 'Vishal Singh',
+              itemStyle: {
+                color: '#ECB390',
+              },
             },
           ],
         },
@@ -460,7 +460,7 @@ export class CreditComponent {
         splitLine: {
           show: false,
         },
-        name: 'PERCENTAGE',
+        name: 'PERCENTAGE%',
         nameLocation: 'middle',
         nameGap: 25,
         axisLabel: {
@@ -474,7 +474,7 @@ export class CreditComponent {
           data: [50, 36, 44, 40, 45],
           type: 'bar',
           itemStyle: {
-            color: '#5D5BCC',
+            color: '#7D6E83',
           },
         },
       ],
@@ -545,9 +545,9 @@ export class CreditComponent {
           splitLine: {
             show: false,
           },
-          min: 5,
-          max: 30,
-          interval: 5,
+          min: 1,
+          max: 6,
+          interval: 1,
           name: 'DAYS',
           nameLocation: 'middle',
           nameGap: 43,
@@ -570,9 +570,9 @@ export class CreditComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [10, 13, 12.5, 14, 14.5, 15, 15.5, 16],
+          data: [3, 2.8, 3.2, 3.1, 2.8, 2.8, 3],
           itemStyle: {
-            color: '#7460EE',
+            color: '#9D76C1',
           },
         },
         {
@@ -588,9 +588,9 @@ export class CreditComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [17, 15, 18.5, 19, 17.5, 20, 22, 25],
+          data: [2.3, 2.1, 2.2, 2, 2.3, 2.4, 2.1],
           itemStyle: {
-            color: '#333333',
+            color: '#A2D5F2',
           },
         },
         {
@@ -606,9 +606,9 @@ export class CreditComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [18, 19.5, 16.5, 24, 27, 26.5, 27.5, 28],
+          data: [1.8, 1.9, 1.7, 1.5, 1.9, 1.8, 1.7],
           itemStyle: {
-            color: '#FE5419',
+            color: '#07689F',
           },
         },
       ],
@@ -664,7 +664,7 @@ export class CreditComponent {
         splitLine: {
           show: false,
         },
-        name: 'PERCENTAGE',
+        name: 'PERCENTAGE%',
         nameLocation: 'middle',
         nameGap: 25,
         axisLabel: {
@@ -678,7 +678,7 @@ export class CreditComponent {
           data: [2.4, 2.2, 2.2, 2.2, 2.2,2.15,2.1,2.2],
           type: 'bar',
           itemStyle: {
-            color: '#FE5419',
+            color: '#DF7861',
           },
         },
       ],
@@ -715,8 +715,7 @@ export class CreditComponent {
           boundaryGap: false,
           data: [
             'Pan India',
-            'Punjab',
-            'Haryana',
+            'PCH',
             'NCR',
             'Rajasthan',
             'Gujarat',
@@ -773,9 +772,9 @@ export class CreditComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [75, 77, 76, 79, 83, 80, 82, 84],
+          data: [75, 77, 76, 79, 83, 80, 82],
           itemStyle: {
-            color: '#FE5419',
+            color: '#F0B86E',
           },
         },
         

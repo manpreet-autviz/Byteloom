@@ -172,6 +172,46 @@ ul.pending-cheque.ot-normal {
     padding: 10px 20px;
     border-radius: 10px;
 }
+.login-app-dis ul {
+    display: flex;
+    gap: 20px;
+}
+ .login-app-dis ul li:before{  
+    position: absolute;
+    background: red;
+    content: '';
+    top: 10px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+}
+.login-app-dis ul li:first-child:before{  
+    background: #F99B00;
+}
+.login-app-dis ul li:nth-child(2):before{  
+    background: #000;
+}
+.login-app-dis ul li:nth-child(3):before{  
+    background: #7460EE;
+}
+.login-app-dis ul  li{   
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.09);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 10px 5px 20px;
+    position: relative;
+    list-style: none;
+}
+.login-app-dis {
+    position: absolute;
+    left: 50px;
+    top: 55px;
+}
+
+
+
+
 
 @media (max-width: 767px){
     .otc-three-box:after, .otc-three-box:before{

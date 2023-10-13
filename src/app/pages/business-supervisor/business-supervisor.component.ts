@@ -118,8 +118,7 @@ export class BusinessSupervisorComponent {
             'Gujarat',
             'Rajasthan',
             'NCR',
-            'Haryana',
-            'Punjab',
+            'PCH',
             'Pan India',
           ],
         },
@@ -135,7 +134,8 @@ export class BusinessSupervisorComponent {
               formatter: '{c}%',
             },
             itemStyle: {
-              color: '#5281FF', // Set the color for the first bar series (IRR)
+              color: '#3C7EBE', // Set the color for the first bar series (IRR)
+              borderRadius: 10,
             },
           },
           {
@@ -148,7 +148,8 @@ export class BusinessSupervisorComponent {
               formatter: '{c} Cr',
             },
             itemStyle: {
-              color: '#F49494', // Set the color for the first bar series (IRR)
+              color: '#5BC8EF', // Set the color for the first bar series (IRR)
+              borderRadius: 10,
             },
           },
         ],
@@ -185,9 +186,9 @@ export class BusinessSupervisorComponent {
             },
             data: [
               { value: 45, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
-              { value: 20, name: 'LAP', itemStyle: { color: '#F99B00' } },
+              { value: 20, name: 'LAP', itemStyle: { color: '#07A14E' } },
               { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
-              { value: 25, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
+              { value: 25, name: 'SBL', itemStyle: { color: '#F99B00' } },
             ],
           },
         ],
@@ -207,7 +208,6 @@ export class BusinessSupervisorComponent {
             radius: ['40%', '70%'],
             avoidLabelOverlap: false,
             itemStyle: {
-              borderRadius: 10,
               borderColor: '#fff',
               borderWidth: 2,
             },
@@ -231,21 +231,21 @@ export class BusinessSupervisorComponent {
                 value: 35,
                 name: 'Direct ',
                 itemStyle: {
-                  color: '#3ADA84',
+                  color: '#7460EE',
                 },
               },
               {
                 value: 20,
                 name: 'Power Partner',
                 itemStyle: {
-                  color: 'rgba(5, 83, 22, 0.65)',
+                  color: '#5D8F68',
                 },
               },
               {
                 value: 10,
                 name: 'DSA',
                 itemStyle: {
-                  color: '#0B9DE8',
+                  color: '#3ADA84',
                 },
               },
               {
@@ -260,123 +260,72 @@ export class BusinessSupervisorComponent {
         ],
       };
 
+      
       this.IrrPfInsuranceOption = {
-        title: {},
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'cross',
-            label: {
-              backgroundColor: '#6a7985',
-            },
+        legend: {},
+        tooltip: {},
+        dataset: {
+          dimensions: ['product', 'IRR', 'PF', 'Insurance'],
+          source: [
+            { product: 'All Products', IRR: 13, PF: 3.5, Insurance: 3 },
+            { product: 'Home loan', IRR: 12.5, PF: 3, Insurance: 2.7 },
+            { product: 'LAP', IRR: 14, PF: 4, Insurance: 2.4 },
+            { product: 'BL', IRR: 12.9, PF: 3.7, Insurance: 2.4 },
+            { product: 'SBL', IRR: 16, PF: 3.7, Insurance: 3 },
+          ],
+        },
+        xAxis: {
+          axisLine: {
+            show: false,
+          },
+          axisTick: {
+            show: false, // Hide tick lines
+          },
+          type: 'category',
+          axisLabel: {
+            interval: 0,
+            rotate: -45,
+            overflow: 'break',
           },
         },
-        legend: {
-          data: ['IRR', 'PF', 'Insurance'],
-        },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
+        yAxis: {
+          min: 2,
+          max: 16,
+          interval: 2,
+          axisLine: {
+            show: false,
           },
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true,
-        },
-        xAxis: [
-          {
-            type: 'category',
-            axisLine: {
-              show: false,
-            },
-            splitLine: {
-              show: false,
-            },
-            boundaryGap: false,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec',
-              'Jan',
-              'Feb',
-              'Mar',
-            ],
+          splitLine: {
+            show: false,
           },
-        ],
-        yAxis: [
-          {
-            type: 'value',
-            axisLine: {
-              show: false,
-            },
-            splitLine: {
-              show: false,
-            },
-            min: 10,
-            max: 100,
-            interval: 10,
-            name: 'Percentage',
-            nameLocation: 'middle',
-            nameGap: 43,
-            axisLabel: {
-              formatter: '{value}%',
-              margin: 1,
-            },
+          axisLabel: {
+            formatter: '{value}',
+            margin: 1,
           },
-        ],
+          name: 'Percentage %',
+          nameLocation: 'middle',
+          nameGap: 25,
+        },
+        // Declare several bar series, each will be mapped
+        // to a column of dataset.source by default.
         series: [
           {
-            name: 'IRR',
-            type: 'line',
-
-            areaStyle: {
-              opacity: 0,
+            type: 'bar',
+            itemStyle: {
+              color: '#636363', // Set the color for the first bar series (IRR)
             },
-            emphasis: {
-              focus: 'series',
-              areaStyle: {
-                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-              },
-            },
-            data: [30, 34, 37, 40, 42, 45],
           },
           {
-            name: 'PF',
-            type: 'line',
-
-            areaStyle: {
-              opacity: 0,
+            type: 'bar',
+            itemStyle: {
+              color: '#F99B00', // Set the color for the first bar series (IRR)
             },
-            emphasis: {
-              focus: 'series',
-              areaStyle: {
-                opacity: 1, // Reduce opacity on hover to make it semi-transparent
-              },
-            },
-            data: [45, 47, 49, 47,50, 53],
           },
           {
-            name: 'Insurance',
-            type: 'line',
-
-            areaStyle: {
-              opacity: 0,
+            type: 'bar',
+            itemStyle: {
+              color: '#4FC3F7', // Set the color for the first bar series (IRR)
             },
-            emphasis: {
-              focus: 'series',
-              areaStyle: {
-                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-              },
-            },
-            data: [60, 65, 63, 67, 69, 68],
           },
         ],
       };

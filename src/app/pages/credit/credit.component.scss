@@ -51,6 +51,12 @@ td {
 .productivity-tabs {
     width: fit-content;
 }
+.simple-table thead {
+    border-bottom: 1px solid #ccc;
+}
+.progress-bar{
+    background-color: #0747A6;
+}
 
 @media (max-width: 767px){
     .productivity-tabs ul.nav-pills {
