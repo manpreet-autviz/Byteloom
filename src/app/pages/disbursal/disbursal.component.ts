@@ -167,7 +167,7 @@ export class DisbursalComponent {
               valueAnimation: true,
               formatter: '{value} %',
               color: 'inherit',
-              fontSize: 15,
+              fontSize: 22,
             },
             data: [
               {
@@ -248,7 +248,7 @@ export class DisbursalComponent {
           {
             barWidth: 20,
             type: 'bar',
-            data: [25, 39, 27, 50, 32, 22, 25, 180],
+            data: [55, 45, 75, 50, 70, 57],
             itemStyle: {
               color: '#F8913D',
             },

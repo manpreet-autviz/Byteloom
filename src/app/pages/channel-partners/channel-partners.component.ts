@@ -164,11 +164,11 @@ export class ChannelPartnersComponent {
     private elementRef: ElementRef,
     private zone: NgZone,
     private cdRef: ChangeDetectorRef
-  ) {}
+  ) { }
 
-  onFilterChange(selectedValue: string) {}
+  onFilterChange(selectedValue: string) { }
 
-  onStateChange(selectedValue: string) {}
+  onStateChange(selectedValue: string) { }
 
   setActiveButton(button: string) {
     setTimeout(() => {
@@ -224,19 +224,29 @@ export class ChannelPartnersComponent {
     );
 
     this.CPDetailsOption = {
-      legend: {},
+      legend: {
+
+        textStyle: {
+          color: '#333',
+        },
+        itemWidth: 20, // Adjust the width of legend items
+        itemHeight: 20,
+        borderRadius: 10, 
+        
+    
+      },
       tooltip: {},
       dataset: {
-        dimensions: ['state', 'Total Number of CP’s', 'Active CP’s', ],
-       
+        dimensions: ['state', 'Total Number of CP’s', 'Active CP’s',],
+
         source: [
-          { state: 'Pan India', 'Total Number of CP’s': 1410,  'Active CP’s': 1250  },
-          { state: 'Punjab', 'Total Number of CP’s': 1400, 'Active CP’s': 1230  },
-          { state: 'Haryana', 'Total Number of CP’s': 1450, 'Active CP’s': 1370  },
+          { state: 'Pan India', 'Total Number of CP’s': 1410, 'Active CP’s': 1250 },
+          { state: 'Punjab', 'Total Number of CP’s': 1400, 'Active CP’s': 1230 },
+          { state: 'Haryana', 'Total Number of CP’s': 1450, 'Active CP’s': 1370 },
           { state: 'NCR', 'Total Number of CP’s': 1400, 'Active CP’s': 1190 },
           { state: 'Rajasthan', 'Total Number of CP’s': 1480, 'Active CP’s': 1350 },
           { state: 'Gujarat', 'Total Number of CP’s': 1400, 'Active CP’s': 1190 },
-          { state: 'MP', 'Total Number of CP’s': 1430, 'Active CP’s': 1340},
+          { state: 'MP', 'Total Number of CP’s': 1430, 'Active CP’s': 1340 },
           { state: 'Maharashtra', 'Total Number of CP’s': 1400, 'Active CP’s': 1260 },
         ],
       },
@@ -248,10 +258,10 @@ export class ChannelPartnersComponent {
           overflow: 'break',
         },
         axisTick: {
-          show: false, 
+          show: false,
         },
-        axisLine:{
-          show: false, 
+        axisLine: {
+          show: false,
         },
       },
       yAxis: {
@@ -261,8 +271,8 @@ export class ChannelPartnersComponent {
         axisLine: {
           show: false,
         },
-        splitLine:{
-          show: false, 
+        splitLine: {
+          show: false,
         },
         axisLabel: {
           formatter: '{value}',
@@ -287,7 +297,7 @@ export class ChannelPartnersComponent {
             color: '#3FC1C9', // Set the color for the first bar series (IRR)
           },
         },
-      
+
       ],
     };
 
@@ -322,10 +332,10 @@ export class ChannelPartnersComponent {
           overflow: 'break',
         },
         axisTick: {
-          show: false, 
+          show: false,
         },
-        axisLine:{
-          show: false, 
+        axisLine: {
+          show: false,
         },
       },
       yAxis: {
@@ -377,7 +387,7 @@ export class ChannelPartnersComponent {
 
         data: [
           'Pan India',
-           'PCH',
+          'PCH',
           'NCR',
           'Rajasthan',
           'Gujarat',
@@ -390,10 +400,10 @@ export class ChannelPartnersComponent {
           overflow: 'break',
         },
         axisTick: {
-          show: false, 
+          show: false,
         },
-        axisLine:{
-          show: false, 
+        axisLine: {
+          show: false,
         },
       },
       yAxis: {
@@ -459,10 +469,10 @@ export class ChannelPartnersComponent {
           overflow: 'break',
         },
         axisTick: {
-          show: false, 
+          show: false,
         },
-        axisLine:{
-          show: false, 
+        axisLine: {
+          show: false,
         },
       },
       yAxis: {
@@ -476,7 +486,7 @@ export class ChannelPartnersComponent {
         splitLine: {
           show: false,
         },
-        name:  'Delinquency in %',
+        name: 'Delinquency in %',
         nameLocation: 'middle',
         nameGap: 40,
         axisLabel: {

@@ -84,13 +84,87 @@ export class InsightsComponent {
     this.files = [
       {
         data: {
-          StateName: 'PCH',
+          StateName: 'Pan India',
           loginFiles: '1655',
           loginAmount: '2000',
-          financialFiles: '1741',
-          financialAmount: '1685',
+         
+          financialAmount: '2000',
           target: '1549',
-          actual: '86',
+          actual: '1050',
+          percentage: '50',
+        },
+        children: [
+          {
+            data: {
+              StateName: 'Chandigarh',
+              loginFiles: '1655',
+              loginAmount: '110',
+              financialFiles: '1741',
+              financialAmount: '1685',
+              target: '1549',
+              actual: '86',
+              percentage: '50',
+            },
+          },
+          {
+            data: {
+              StateName: 'Ambala',
+              loginFiles: '1655',
+              loginAmount: '105',
+              financialFiles: '1741',
+              financialAmount: '1685',
+              target: '1549',
+              actual: '86',
+              percentage: '50',
+            },
+          },
+          {
+            data: {
+              StateName: 'Patiala',
+              loginFiles: '1655',
+              loginAmount: '11',
+              financialFiles: '1741',
+              financialAmount: '1685',
+              target: '1549',
+              actual: '86',
+              percentage: '50',
+            },
+          },
+          {
+            data: {
+              StateName: 'Chandigarh',
+              loginFiles: '1655',
+              loginAmount: '120',
+              financialFiles: '1741',
+              financialAmount: '1685',
+              target: '1549',
+              actual: '86',
+              percentage: '50',
+            },
+          },
+          {
+            data: {
+              StateName: 'Chandigarh',
+              loginFiles: '1655',
+              loginAmount: '114',
+              financialFiles: '1741',
+              financialAmount: '1685',
+              target: '1549',
+              actual: '86',
+              percentage: '50',
+            },
+          },
+        ],
+      },
+      {
+        data: {
+          StateName: 'PCH',
+          loginFiles: '1655',
+          loginAmount: '150',
+         
+          financialAmount: '145',
+          target: '1549',
+          actual: '105',
           percentage: '50',
         },
         children: [
@@ -160,11 +234,10 @@ export class InsightsComponent {
         data: {
           StateName: 'NCR',
           loginFiles: '1655',
-          loginAmount: '125',
-          financialFiles: '1741',
-          financialAmount: '1685',
+          loginAmount: '110',
+          financialAmount: '110',
           target: '1549',
-          actual: '86',
+          actual: '125',
           percentage: '50',
         },
         children: [
@@ -246,11 +319,10 @@ export class InsightsComponent {
         data: {
           StateName: 'Rajasthan',
           loginFiles: '1655',
-          loginAmount: '110',
-          financialFiles: '1741',
-          financialAmount: '1685',
+          loginAmount: '11',
+          financialAmount: '111',
           target: '1549',
-          actual: '86',
+          actual: '110',
           percentage: '50',
         },
         children: [
@@ -320,11 +392,10 @@ export class InsightsComponent {
         data: {
           StateName: 'Gujarat',
           loginFiles: '1655',
-          loginAmount: '105',
-          financialFiles: '1741',
-          financialAmount: '1685',
+          loginAmount: '120',
+          financialAmount: '120',
           target: '1549',
-          actual: '86',
+          actual: '108',
           percentage: '50',
         },
         children: [
@@ -394,11 +465,10 @@ export class InsightsComponent {
         data: {
           StateName: 'MP',
           loginFiles: '1655',
-          loginAmount: '111',
-          financialFiles: '1741',
-          financialAmount: '1685',
+          loginAmount: '114',
+          financialAmount: '114',
           target: '1549',
-          actual: '86',
+          actual: '134',
           percentage: '50',
         },
         children: [
@@ -468,11 +538,10 @@ export class InsightsComponent {
         data: {
           StateName: 'Maharashtra',
           loginFiles: '1655',
-          loginAmount: '120',
-          financialFiles: '1741',
-          financialAmount: '1685',
+          loginAmount: '125',
+          financialAmount: '125',
           target: '1549',
-          actual: '86',
+          actual: '102',
           percentage: '50',
         },
         children: [
@@ -552,137 +621,12 @@ export class InsightsComponent {
       },
       {
         data: {
-          StateName: 'Ludhiana',
-          loginFiles: '1655',
-          loginAmount: '86',
-          financialFiles: '1741',
-          financialAmount: '1685',
-          target: '1549',
-          actual: '86',
-          percentage: '50',
-        },
-        children: [
-          {
-            data: {
-              StateName: 'Jalandhar',
-              loginFiles: '1655',
-              loginAmount: '86',
-              financialFiles: '1741',
-              financialAmount: '1685',
-              target: '1549',
-              actual: '86',
-              percentage: '50',
-            },
-          },
-          {
-            data: {
-              StateName: 'Moga',
-              loginFiles: '1655',
-              loginAmount: '86',
-              financialFiles: '1741',
-              financialAmount: '1685',
-              target: '1549',
-              actual: '86',
-              percentage: '50',
-            },
-          },
-          {
-            data: {
-              StateName: 'Chandigarh',
-              loginFiles: '1655',
-              loginAmount: '86',
-              financialFiles: '1741',
-              financialAmount: '1685',
-              target: '1549',
-              actual: '86',
-              percentage: '50',
-            },
-          },
-          {
-            data: {
-              StateName: 'Chandigarh',
-              loginFiles: '1655',
-              loginAmount: '86',
-              financialFiles: '1741',
-              financialAmount: '1685',
-              target: '1549',
-              actual: '86',
-              percentage: '50',
-            },
-          },
-        ],
-      },
-      {
-        data: {
-          StateName: 'Gurgaon',
-          loginFiles: '1655',
-          loginAmount: '86',
-          financialFiles: '1741',
-          financialAmount: '1685',
-          target: '1549',
-          actual: '86',
-          percentage: '50',
-        },
-        children: [
-          {
-            data: {
-              StateName: 'Faridabad',
-              loginFiles: '1655',
-              loginAmount: '86',
-              financialFiles: '1741',
-              financialAmount: '1685',
-              target: '1549',
-              actual: '86',
-              percentage: '50',
-            },
-          },
-          {
-            data: {
-              StateName: 'Meerut',
-              loginFiles: '1655',
-              loginAmount: '86',
-              financialFiles: '1741',
-              financialAmount: '1685',
-              target: '1549',
-              actual: '86',
-              percentage: '50',
-            },
-          },
-          {
-            data: {
-              StateName: 'Chandigarh',
-              loginFiles: '1655',
-              loginAmount: '86',
-              financialFiles: '1741',
-              financialAmount: '1685',
-              target: '1549',
-              actual: '86',
-              percentage: '50',
-            },
-          },
-          {
-            data: {
-              StateName: 'Chandigarh',
-              loginFiles: '1655',
-              loginAmount: '86',
-              financialFiles: '1741',
-              financialAmount: '1685',
-              target: '1549',
-              actual: '86',
-              percentage: '50',
-            },
-          },
-        ],
-      },
-      {
-        data: {
           StateName: 'Ajmer',
           loginFiles: '1655',
-          loginAmount: '86',
-          financialFiles: '1741',
-          financialAmount: '1685',
+          loginAmount: '127',
+          financialAmount: '127',
           target: '1549',
-          actual: '86',
+          actual: '109',
           percentage: '50',
         },
         children: [
@@ -740,11 +684,10 @@ export class InsightsComponent {
         data: {
           StateName: 'Surat',
           loginFiles: '1655',
-          loginAmount: '86',
-          financialFiles: '1741',
-          financialAmount: '1685',
+          loginAmount: '119',
+          financialAmount: '119',
           target: '1549',
-          actual: '86',
+          actual: '123',
           percentage: '50',
         },
         children: [
@@ -803,11 +746,10 @@ export class InsightsComponent {
         data: {
           StateName: 'Gwalior',
           loginFiles: '1655',
-          loginAmount: '86',
-          financialFiles: '1741',
-          financialAmount: '1685',
+          loginAmount: '135',
+          financialAmount: '135',
           target: '1549',
-          actual: '86',
+          actual: '104',
           percentage: '50',
         },
         children: [
