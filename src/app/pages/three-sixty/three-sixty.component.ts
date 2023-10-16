@@ -18,7 +18,7 @@ export class ThreeSixtyComponent {
     'MP',
     'Maharashtra',
   ];
-  
+
   progressValue1: number = 60;
   progressValue2: number = 15;
   progressValue3: number = 25;
@@ -45,7 +45,7 @@ export class ThreeSixtyComponent {
   DistributionMixOption: any;
   ConversionRatioOption: any;
   irrPFInsOption: any;
-  EDGNPANPAOption:any;
+  EDGNPANPAOption: any;
 
   ProductWiseOption: any;
   LoginApprovalsDisbursalOption: any;
@@ -53,11 +53,10 @@ export class ThreeSixtyComponent {
   showprogressChart: boolean = false;
 
   onFilterChange(selectedValue: string) {
-    
-    if(selectedValue==='Last Month'){
-     this.showprogressChart = true;
-    }else{
-      this.showprogressChart = false; 
+    if (selectedValue === 'Last Month') {
+      this.showprogressChart = true;
+    } else {
+      this.showprogressChart = false;
     }
   }
 
@@ -100,7 +99,7 @@ export class ThreeSixtyComponent {
     this.EDGNPANPAChart = echarts.init(
       document.getElementById('ED-GNPA-NPA-chart') as HTMLDivElement
     );
-    
+
     this.ProductWiseOption = {
       title: {},
       tooltip: {
@@ -111,6 +110,15 @@ export class ThreeSixtyComponent {
             backgroundColor: '#07A14E',
           },
         },
+        formatter: (params: any) => {
+          const barValue = params[0].value;
+          const dataIndex = params[0].dataIndex;
+          const files = [1340, 745, 670,770,890];
+          const randomFiles = files[dataIndex];
+          // Create the tooltip content with the actual value and random amount
+          return `No of Files:${randomFiles} <br> Days: ${barValue}`;
+        },
+
       },
       responsive: true,
 
@@ -121,7 +129,6 @@ export class ThreeSixtyComponent {
         containLabel: true,
       },
       xAxis: [
-        
         {
           axisLine: {
             show: false,
@@ -152,15 +159,15 @@ export class ThreeSixtyComponent {
           max: 30,
           interval: 5,
           name: 'Days ',
-        nameLocation: 'middle',
-        nameGap: 25,
+          nameLocation: 'middle',
+          nameGap: 25,
         },
       ],
       series: [
         {
           name: 'All Products',
           type: 'line',
-          color:'#EF9595',
+          color: '#EF9595',
 
           areaStyle: {
             opacity: 0,
@@ -173,89 +180,32 @@ export class ThreeSixtyComponent {
           },
           data: [14, 17, 15, 17, 13],
         },
-        // {
-        //   name: 'Home Loan',
-        //   type: 'line',
 
-        //   areaStyle: {
-        //     opacity: 0,
-        //   },
-        //   emphasis: {
-        //     focus: 'series',
-        //     areaStyle: {
-        //       opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-        //     },
-        //   },
-        //   data: [13.1, 13.5, 13.9, 14, 14.3, 15.5, 15.9],
-        // },
-        // {
-        //   name: 'LAP',
-        //   type: 'line',
-
-        //   areaStyle: {
-        //     opacity: 0,
-        //   },
-        //   emphasis: {
-        //     focus: 'series',
-        //     areaStyle: {
-        //       opacity: 1, // Reduce opacity on hover to make it semi-transparent
-        //     },
-        //   },
-        //   data: [15.3, 15.6, 16, 17.4, 18.6, 19.9, 20],
-        // },
-        // {
-        //   name: 'BL',
-        //   type: 'line',
-
-        //   areaStyle: {
-        //     opacity: 0,
-        //   },
-        //   emphasis: {
-        //     focus: 'series',
-        //     areaStyle: {
-        //       opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-        //     },
-        //   },
-        //   data: [20.5, 20.9, 21.4, 23.9, 24, 24.2, 24.6],
-        // },
-        // {
-        //   name: 'SBL',
-        //   type: 'line',
-
-        //   areaStyle: {
-        //     opacity: 0,
-        //   },
-        //   emphasis: {
-        //     focus: 'series',
-        //     areaStyle: {
-        //       opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-        //     },
-        //   },
-        //   data: [25.7, 26, 26.5, 27, 27.3, 27.9, 29.9],
-        // },
       ],
     };
 
     this.LoginApprovalsDisbursalOption = {
       tooltip: {
         trigger: 'item',
-        formatter: '{a} <br/>{b} : {c}%',
+        formatter: (params: any) => {
+          let tooltipText = '';
+          if (params.name === '2000Files') {
+            tooltipText = 'Amount in Cr: 345';
+          } else if (params.name === '300Crs') {
+            tooltipText = 'No. of files: 1400 ';
+          } else if (params.name === '250Crs') {
+            tooltipText = 'No. of files: 2300';
+          }
+          return tooltipText;
+        },
       },
-    
-      // toolbox: {
-      //   feature: {
-      //     dataView: { readOnly: false },
-      //     restore: {},
-      //     saveAsImage: {},
-      //   },
-      // },
+
       legend: {
         top: 25,
         data: ['Login', 'Approval', 'Disbursal'],
       },
       series: [
         {
-         
           name: '',
           type: 'funnel',
           left: '-25%',
@@ -271,7 +221,6 @@ export class ThreeSixtyComponent {
           label: {
             show: true,
             position: 'inside',
-            
           },
           labelLine: {
             length: 10,
@@ -294,8 +243,8 @@ export class ThreeSixtyComponent {
           },
           data: [
             { value: 60, name: '2000Files', itemStyle: { color: '#F99B00' } },
-            { value: 40, name: '300crs', itemStyle: { color: '#342D2D' } },
-            { value: 20, name: '250crs', itemStyle: { color: '#7460EE' } },
+            { value: 40, name: '300Crs', itemStyle: { color: '#342D2D' } },
+            { value: 20, name: '250Crs', itemStyle: { color: '#7460EE' } },
           ],
         },
       ],
@@ -311,7 +260,7 @@ export class ThreeSixtyComponent {
           const barValue = params[0].value;
 
           // Create the tooltip content with the actual value and random amount
-          return `Days: ${barValue}`;
+          return `Amount: ${barValue}`;
         },
       },
       xAxis: {
@@ -360,6 +309,25 @@ export class ThreeSixtyComponent {
     this.DistributionMixOption = {
       tooltip: {
         trigger: 'item',
+        formatter: (params: any) => {
+          console.log(params);
+
+          let tooltipText = '';
+
+          if (params.name === 'Home Loan') {
+            tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 450';
+          } else if (params.name === 'LAP') {
+            tooltipText = 'No. of files: 700 <br/> Amount in Cr: 270';
+          } else if (params.name === 'BL') {
+            tooltipText = 'No. of files: 800 <br/> Amount in Cr: 269';
+          } else if (params.name === 'SBL') {
+            tooltipText = 'No. of files: 1600 <br/> Amount in Cr: 268';
+          } else if (params.name === 'All Products') {
+            tooltipText = 'No. of files: 2300 <br/> Amount in Cr: 367';
+          }
+
+          return tooltipText;
+        },
       },
       legend: {
         top: '5%',
@@ -409,16 +377,21 @@ export class ThreeSixtyComponent {
         },
         formatter: (params: any) => {
           const barValue = params[0].value;
+          const dataIndex = params[0].dataIndex;
 
-          // Create the tooltip content with the actual value and random amount
-          return `Days: ${barValue}`;
+          const randomAmounts = [350, 145, 167,345,234];
+          const randomAmount = randomAmounts[dataIndex];
+
+          const files = [1340, 745, 670,770,890];
+          const randomFiles = files[dataIndex];
+          return `No.of Files:${randomFiles}<br> Amount in Cr:${randomAmount}<br> ${barValue}% <br>  `;
         },
       },
       xAxis: {
         axisLine: {
           show: false,
         },
-      
+
         axisTick: {
           show: false, // Hide tick lines
         },
@@ -460,7 +433,17 @@ export class ThreeSixtyComponent {
 
     this.irrPFInsOption = {
       legend: {},
-      tooltip: {},
+      tooltip: {
+        formatter: function (params:any) {
+          return `
+          
+            Product: ${params.data.product}<br/>
+            IRR: ${params.data.IRR}%<br/>
+            PF: ${params.data.PF}%<br/>
+            Insurance: ${params.data.Insurance}%
+          `;
+        },
+      },
       dataset: {
         dimensions: ['product', 'IRR', 'PF', 'Insurance'],
         source: [
@@ -530,7 +513,7 @@ export class ThreeSixtyComponent {
     this.IMDOption = {
       tooltip: {
         trigger: 'item',
-        formatter: '{a} <br/>{b}: {c} ({d}%)' 
+        formatter: 'No of files: {c} <br>({d}%)',
       },
       legend: {
         top: '5%',
@@ -540,13 +523,18 @@ export class ThreeSixtyComponent {
       },
       series: [
         {
-          name: 'Access From',
+          
           type: 'pie',
           radius: ['40%', '70%'],
           center: ['50%', '70%'],
           // adjust the start angle
           startAngle: 180,
-         
+          labelLine:{
+            show:false,
+          },
+          label:{
+            show:false,
+          },
           data: [
             { value: 1048, name: 'Online', itemStyle: { color: '#7C41DA' } },
             { value: 735, name: 'Cheque', itemStyle: { color: '#FB8C00' } },
@@ -580,9 +568,14 @@ export class ThreeSixtyComponent {
         },
         formatter: (params: any) => {
           const barValue = params[0].value;
+          const dataIndex = params[0].dataIndex;
 
-          // Create the tooltip content with the actual value and random amount
-          return `Days: ${barValue}`;
+          const randomAmounts = [350, 145, 167];
+          const randomAmount = randomAmounts[dataIndex];
+
+          const customers = [34, 45, 67];
+          const randomCustomers = customers[dataIndex];
+          return `No.of Customer:${randomCustomers}<br> Amount in Cr:${randomAmount}<br> ${barValue}% <br>  `;
         },
       },
       xAxis: {
@@ -594,7 +587,7 @@ export class ThreeSixtyComponent {
         },
         type: 'category',
 
-        data: ['ED','GNPA','NPA'],
+        data: ['ED', 'GNPA', 'NPA'],
         axisLabel: {
           interval: 0,
           rotate: -45,
@@ -603,9 +596,9 @@ export class ThreeSixtyComponent {
       },
       yAxis: {
         type: 'value',
-        min: .5,
+        min: 0.5,
         max: 3.5,
-        interval: .5,
+        interval: 0.5,
         axisLine: {
           show: false,
         },
@@ -619,7 +612,7 @@ export class ThreeSixtyComponent {
       series: [
         {
           barWidth: 40,
-          data: [2.1, 1.3, 1.1,],
+          data: [2.1, 1.3, 1.1],
           type: 'bar',
           itemStyle: {
             color: '#F0997D',

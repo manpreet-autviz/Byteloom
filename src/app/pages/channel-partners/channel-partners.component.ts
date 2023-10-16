@@ -309,9 +309,12 @@ export class ChannelPartnersComponent {
         },
         formatter: (params: any) => {
           const barValue = params[0].value;
-
+          const totalLogin = 340
+          const dataIndex = params[0].dataIndex;
+          const percentage = [40, 45, 70,77,89,67,45];
+          const randomPerc = percentage[dataIndex];
           // Create the tooltip content with the actual value and random amount
-          return ` ${barValue}`;
+          return `CP login: ${barValue} <br>Total Login:${totalLogin} <br>  ${randomPerc}% `;
         },
       },
       xAxis: {
@@ -377,9 +380,12 @@ export class ChannelPartnersComponent {
         },
         formatter: (params: any) => {
           const barValue = params[0].value;
-
+          const total = 340
+          const dataIndex = params[0].dataIndex;
+          const amount = [140, 145, 170,177,189,167,245];
+          const disbursalAmount = amount[dataIndex];
           // Create the tooltip content with the actual value and random amount
-          return ` ${barValue}%`;
+          return `Total disbursal (amount in Cr): ${total} <br>CP disbursal (amount in Cr) :${disbursalAmount} <br>  ${barValue}% `;
         },
       },
       xAxis: {

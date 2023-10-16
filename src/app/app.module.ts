@@ -24,7 +24,7 @@ import { CreditComponent } from './pages/credit/credit.component';
 
 import { WorkInProgressComponent } from './pages/work-in-progress/work-in-progress.component';
 
-import { TechnicalComponent } from './technical/technical.component';
+import { TechnicalComponent } from './pages/technical/technical.component';
 import { LegalComponent } from './pages/legal/legal.component';
 import { BusinessRMComponent } from './pages/business-rm/business-rm.component';
 import { ChequesSummaryComponent } from './pages/cheques-summary/cheques-summary.component';
@@ -35,6 +35,7 @@ import { CreditSupervisorComponent } from './pages/credit-supervisor/credit-supe
 import { WorkInProgressTablesComponent } from './pages/work-in-progress-tables/work-in-progress-tables.component';
 import { OutOfTatComponent } from './pages/out-of-tat/out-of-tat.component';
 import { PortfolioHealthComponent } from './portfolio-health/portfolio-health.component';
+import { FinalApprovalComponent } from './pages/final-approval/final-approval.component';
 
 
 
@@ -70,6 +71,7 @@ import { PortfolioHealthComponent } from './portfolio-health/portfolio-health.co
     WorkInProgressTablesComponent,
     OutOfTatComponent,
     PortfolioHealthComponent,
+    FinalApprovalComponent,
 
   ],
   imports: [

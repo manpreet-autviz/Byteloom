@@ -75,6 +75,15 @@ export class LegalComponent {
             backgroundColor: '#6a7985',
           },
         },
+        formatter: (params: any) => {
+          const barValue = params[0].value;
+          const dataIndex = params[0].dataIndex;
+          const files = [4050, 4560, 7070,7700,8900,6750,4590];
+          const randomFiles = files[dataIndex];
+          
+          // Create the tooltip content with the actual value and random amount
+          return `No. of files:${randomFiles}<br>Days:${barValue} `;
+        },
       },
       legend: {
         data: ['Report', 'Vetting'],
@@ -184,6 +193,7 @@ export class LegalComponent {
       title: {},
       tooltip: {
         trigger: 'item',
+        formatter: 'No. of Files: {c}',
       },
 
       series: [
@@ -197,14 +207,14 @@ export class LegalComponent {
               value: 16,
               name: 'K Rahul',
               itemStyle: {
-                color: '#33B27D',
+                color: '#9D76C1',
               },
             },
             {
               value: 29,
               name: 'Harpreet kaur',
               itemStyle: {
-                color: '#518AFE',
+                color: '#7D6E83',
               },
             },
 
@@ -212,65 +222,38 @@ export class LegalComponent {
               value: 13,
               name: 'Manoj Tiwary',
               itemStyle: {
-                color: '#0067FF',
+                color: '#A75D5D',
               },
             },
             {
               value: 8,
               name: 'Ankit Sharma',
               itemStyle: {
-                color: '#5D6C83',
+                color: 'rgba(5, 83, 22, 0.65)',
               },
             },
             {
               value: 9,
               name: 'Rahul Thakur',
               itemStyle: {
-                color: '#A294F9',
+                color: '#DF7861',
               },
             },
             {
               value: 6,
               name: 'Vikram Saini',
               itemStyle: {
-                color: '#00B8DA',
+                color: '#ECB390',
               },
             },
             {
               value: 5,
               name: 'Saurabh Kumar',
               itemStyle: {
-                color: '#33B27D',
+                color: '#AD8B73',
               },
             },
-            {
-              value: 10,
-              name: 'Vivek Singh',
-              itemStyle: {
-                color: '#FFAB00',
-              },
-            },
-            {
-              value: 12,
-              name: 'Aniket Sharma',
-              itemStyle: {
-                color: '#FF5531',
-              },
-            },
-            {
-              value: 14,
-              name: 'Rohani Sharma',
-              itemStyle: {
-                color: '#FFA155',
-              },
-            },
-            {
-              value: 11,
-              name: 'Priynka Negi',
-              itemStyle: {
-                color: '#FF5531',
-              },
-            },
+           
           ],
           emphasis: {
             itemStyle: {

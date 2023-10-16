@@ -16,7 +16,7 @@ import { CreditComponent } from './pages/credit/credit.component';
 
 import { WorkInProgressComponent } from './pages/work-in-progress/work-in-progress.component';
 
-import { TechnicalComponent } from './technical/technical.component';
+import { TechnicalComponent } from './pages/technical/technical.component';
 import { LegalComponent } from './pages/legal/legal.component';
 import { ChequesSummaryComponent } from './pages/cheques-summary/cheques-summary.component';
 import { OtcPddComponent } from './pages/otc-pdd/otc-pdd.component';
@@ -27,6 +27,7 @@ import { CreditSupervisorComponent } from './pages/credit-supervisor/credit-supe
 import { OutOfTatComponent } from './pages/out-of-tat/out-of-tat.component';
 import { WorkInProgressTablesComponent } from './pages/work-in-progress-tables/work-in-progress-tables.component';
 import { PortfolioHealthComponent } from './portfolio-health/portfolio-health.component';
+import { FinalApprovalComponent } from './pages/final-approval/final-approval.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'financial-approvals', component: FinancialApprovalsComponent },
+  { path: 'final-approvals', component: FinalApprovalComponent },
   { path: 'disbursal', component: DisbursalComponent },
   { path: 'tat-analysis', component: TatAnalysisComponent },
   { path: 'tat-table/:data', component: TatAnalysisTablesComponent },

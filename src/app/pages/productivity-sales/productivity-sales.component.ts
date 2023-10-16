@@ -286,10 +286,10 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
             show: false,
           },
           axisTick: {
-            show: false, 
+            show: false,
           },
-          splitLine:{
-            show: false, 
+          splitLine: {
+            show: false,
           },
           boundaryGap: false,
           data: [
@@ -314,8 +314,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           axisLine: {
             show: false,
           },
-          splitLine:{
-            show: false, 
+          splitLine: {
+            show: false,
           },
           min: 2,
           max: 8,
@@ -370,6 +370,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       series: [
         {
           type: 'gauge',
+
           responsive: true,
           axisLine: {
             lineStyle: {
@@ -432,6 +433,20 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
     this.SourceLoginFilesOption = {
       tooltip: {
         trigger: 'item',
+        formatter: (params: any) => {
+          let tooltipText = '';
+          console.log(params);
+          if (params.name === 'Direct') {
+            tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 450';
+          } else if (params.name === 'Power Partner') {
+            tooltipText = 'No. of files: 700 <br/> Amount in Cr: 270';
+          } else if (params.name === 'DSA') {
+            tooltipText = 'No. of files: 800 <br/> Amount in Cr: 269';
+          } else if (params.name === 'Other') {
+            tooltipText = 'No. of files: 1600 <br/> Amount in Cr: 268';
+          }
+          return tooltipText;
+        },
       },
       legend: {
         top: '1%',
@@ -506,6 +521,16 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
             backgroundColor: '#6a7985',
           },
         },
+        formatter: (params: any) => {
+          const barValue = params[0].value;
+          const dataIndex = params[0].dataIndex;
+          const files = [1340, 745, 670,770,890];
+          const randomFiles = files[dataIndex];
+          const totalFiles = 25000
+          // Create the tooltip content with the actual value and random amount
+          return `No of Files:${randomFiles} <br> Total Files:${totalFiles} <br>${barValue}`;
+        },
+        
       },
       legend: {},
       toolbox: {
@@ -525,7 +550,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           boundaryGap: false,
           data: [
             'Pan India',
-           'PCH',
+            'PCH',
             'NCR',
             'Rajasthan',
             'Gujarat',
@@ -537,11 +562,11 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
             rotate: 45,
             overflow: 'break',
           },
-          axisLine:{
-            show: false, 
+          axisLine: {
+            show: false,
           },
-         axisTick: {
-            show: false, 
+          axisTick: {
+            show: false,
           },
         },
       ],
@@ -551,8 +576,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           axisLine: {
             show: false,
           },
-          splitLine:{
-            show: false, 
+          splitLine: {
+            show: false,
           },
           min: 10,
           max: 100,
@@ -592,6 +617,25 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
         axisPointer: {
           type: 'shadow',
         },
+        formatter: (params: any) => {
+          console.log(params.seriesName,params)
+          let barValue;
+          let randomDisbursal;
+          if (params[0].seriesName === "CNI") {
+            
+            barValue = params[0].value;
+            const dataIndex = params[0].dataIndex;
+            const disbursal = [40, 45, 67, 77, 89, 56, 67];
+            randomDisbursal = disbursal[dataIndex];
+          } else {
+           
+            barValue = params[1].value;
+            const dataIndex = params[1].dataIndex;
+            const disbursal = [45, 40, 67, 72, 86, 56, 60];
+            randomDisbursal = disbursal[dataIndex];
+          }
+          return `% of Disbursal:${randomDisbursal} <br> Amount in Cr: ${barValue}`;
+        },
       },
       legend: {
         data: ['CNI', 'Cancellation'],
@@ -622,7 +666,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           show: false,
         },
         axisTick: {
-          show: false, 
+          show: false,
         },
         data: [
           'Maharashtra',
@@ -639,7 +683,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
         {
           name: 'CNI',
           type: 'bar',
-          data: [10, 10, 11.5, 11.2, 10.25, 10.50, 12],
+          data: [10, 10, 11.5, 11.2, 10.25, 10.5, 12],
           label: {
             show: true,
             position: 'right',
@@ -647,13 +691,13 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           },
           itemStyle: {
             color: '#3C7EBE',
-            borderRadius:50
+            borderRadius: 50,
           },
         },
         {
           name: 'Cancellation',
           type: 'bar',
-          data: [10.02, 10.11, 10.58, 10, 10.10, 10.2, 11],
+          data: [10.02, 10.11, 10.58, 10, 10.1, 10.2, 11],
           label: {
             show: true,
             position: 'right',
@@ -661,7 +705,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           },
           itemStyle: {
             color: '#5BC8EF',
-            borderRadius:50
+            borderRadius: 50,
           },
         },
       ],
@@ -674,10 +718,13 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           type: 'shadow',
         },
         formatter: (params: any) => {
+          const dataIndex = params[0].dataIndex;
           const barValue = params[0].value;
-
-          // Create the tooltip content with the actual value and random amount
-          return ` ${barValue}%`;
+          const files = [1340, 745, 670, 770, 890];
+          const randomFiles = files[dataIndex];
+          const active = [1340, 745, 670, 770, 890];
+          const randomActive = active[dataIndex];
+          return `No of Files : ${randomFiles} <br>Amount In Cr: ${randomActive} <br>${barValue}`;
         },
       },
       legend: {
@@ -741,6 +788,15 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
             backgroundColor: '#6a7985',
           },
         },
+        formatter: (params: any) => {
+          const dataIndex = params[0].dataIndex;
+          const barValue = params[0].value;
+          const budget = [1340, 745, 670, 770, 890, 1290, 340, 908];
+          const randomBudget = budget[dataIndex];
+          const active = [240, 545, 470, 670, 890, 456, 789, 340];
+          const randomActive = active[dataIndex];
+          return `Budgeted : ${randomBudget} <br>Active: ${randomActive} <br>${barValue}`;
+        },
       },
       legend: {},
       toolbox: {
@@ -758,11 +814,11 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
         {
           type: 'category',
           boundaryGap: false,
-          axisLine:{
-            show: false, 
+          axisLine: {
+            show: false,
           },
           axisTick: {
-            show: false, 
+            show: false,
           },
           data: [
             'Pan India',
@@ -776,10 +832,9 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           ],
           axisLabel: {
             interval: 0,
-            rotate: 45,
+            rotate: 75,
             overflow: 'break',
           },
-          
         },
       ],
       yAxis: [
@@ -788,8 +843,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           axisLine: {
             show: false,
           },
-          splitLine:{
-            show: false, 
+          splitLine: {
+            show: false,
           },
           min: 10,
           max: 100,

@@ -84,6 +84,7 @@ export class OtcPddComponent {
       },
       tooltip: {
         trigger: 'axis',
+        formatter: '{c}',
       },
       legend: {
         data: [

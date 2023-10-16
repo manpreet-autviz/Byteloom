@@ -65,6 +65,20 @@
             <span data-key="t-apps">Financial Approvals </span>
           </a>
         </li>
+        <li class="nav-item">
+          <a
+            (click)="navigateToPage('/final-approvals')"
+            [class.active]="activeItem === '/final-approvals'"
+            class="nav-link menu-link"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="sidebarApps"
+          >
+            <img src="../../../assets/icons/financial-approval-icon.svg" />
+            <span data-key="t-apps">Final Approvals </span>
+          </a>
+        </li>
         <li class="nav-item" (click)="toggleSubmenu('submenu1')">
           <a
             (click)="navigateToPage('/work-in-progress')"

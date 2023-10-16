@@ -10,7 +10,7 @@ declare var $: any;
 @Component({
   selector: 'app-credit',
   templateUrl: './credit.component.html',
-  styleUrls: ['./credit.component.scss']
+  styleUrls: ['./credit.component.scss'],
 })
 export class CreditComponent {
   states: string[] = [
@@ -44,12 +44,12 @@ export class CreditComponent {
   EDChart!: echarts.ECharts;
   FTRFilesChart!: echarts.ECharts;
 
-  AvgCMFilesOption:any;
-  SCMWorkloadOption:any
-  ConversionRatioOption:any;
-  ActicityTatReportOption:any;
-  EDOption:any;
-  FTRFilesOption:any;
+  AvgCMFilesOption: any;
+  SCMWorkloadOption: any;
+  ConversionRatioOption: any;
+  ActicityTatReportOption: any;
+  EDOption: any;
+  FTRFilesOption: any;
 
   data = [
     {
@@ -194,7 +194,7 @@ export class CreditComponent {
         $(this.elementRef.nativeElement.querySelector('#table')).DataTable({
           lengthChange: false,
           searching: false,
-          ordering: false
+          ordering: false,
         });
       }, 0);
     });
@@ -246,21 +246,9 @@ export class CreditComponent {
       document.getElementById('FTR-Files-Chart') as HTMLDivElement
     );
 
-    
-
     this.AvgCMFilesOption = {
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow',
-        },
-      },
       legend: {
-        data: [
-          'PD',
-          'Approval',
-          'Disbursal',
-        ],
+        data: ['PD', 'Approval', 'Disbursal'],
       },
       grid: {
         left: '3%',
@@ -294,7 +282,7 @@ export class CreditComponent {
           'Rajasthan',
           'NCR',
           'PCH',
-          'Pan India'
+          'Pan India',
         ],
       },
 
@@ -316,7 +304,7 @@ export class CreditComponent {
         {
           name: 'Approval',
           type: 'bar',
-          data: [14,13,13,13, 10, 20, 14],
+          data: [14, 13, 13, 13, 10, 20, 14],
           label: {
             show: true,
             position: 'right',
@@ -343,10 +331,11 @@ export class CreditComponent {
         },
       ],
     };
-    
+
     this.SCMWorkloadOption = {
       tooltip: {
         trigger: 'item',
+        formatter: '{b}: {c}%',
       },
       legend: {
         top: '3%',
@@ -425,9 +414,13 @@ export class CreditComponent {
         },
         formatter: (params: any) => {
           const barValue = params[0].value;
-
+          const dataIndex = params[0].dataIndex;
+          const login = [405, 456, 707, 770, 489, 675, 459];
+          const randomLogin = login[dataIndex];
+          const approved = [205, 256, 307, 370, 389, 475, 459];
+          const randomapproved = approved[dataIndex];
           // Create the tooltip content with the actual value and random amount
-          return ` ${barValue}`;
+          return `Login: ${randomLogin}<br>Approved: ${randomapproved}<br>${barValue}%`;
         },
       },
       xAxis: {
@@ -480,7 +473,6 @@ export class CreditComponent {
       ],
     };
 
-    
     this.ActicityTatReportOption = {
       title: {},
       tooltip: {
@@ -491,9 +483,17 @@ export class CreditComponent {
             backgroundColor: '#6a7985',
           },
         },
+        formatter: (params: any) => {
+          const barValue = params[0].value;
+          const dataIndex = params[0].dataIndex;
+          const files = [405, 456, 707, 770, 89, 675, 459];
+          const randomFiles = files[dataIndex];
+          // Create the tooltip content with the actual value and random amount
+          return `No of Files: ${randomFiles} <br>Days:${barValue}  `;
+        },
       },
       legend: {
-        data: ['PD','Approval', 'Disbursal'],
+        data: ['PD', 'Approval', 'Disbursal'],
       },
       toolbox: {
         feature: {
@@ -550,7 +550,7 @@ export class CreditComponent {
           interval: 1,
           name: 'DAYS',
           nameLocation: 'middle',
-          nameGap: 43,
+          nameGap: 8,
           axisLabel: {
             margin: 1,
           },
@@ -560,7 +560,7 @@ export class CreditComponent {
         {
           name: 'PD',
           type: 'line',
-         
+
           areaStyle: {
             opacity: 0,
           },
@@ -578,7 +578,7 @@ export class CreditComponent {
         {
           name: 'Approval',
           type: 'line',
-         
+
           areaStyle: {
             opacity: 0,
           },
@@ -596,7 +596,7 @@ export class CreditComponent {
         {
           name: 'Disbursal',
           type: 'line',
-         
+
           areaStyle: {
             opacity: 0,
           },
@@ -622,22 +622,26 @@ export class CreditComponent {
         },
         formatter: (params: any) => {
           const barValue = params[0].value;
-
+          const dataIndex = params[0].dataIndex;
+          const amount = [405, 456, 707, 770, 89, 675, 459];
+          const randomAmount = amount[dataIndex];
           // Create the tooltip content with the actual value and random amount
-          return ` ${barValue}`;
+          return `Amount in Crs: ${randomAmount} <br>${barValue}%  `;
         },
       },
       xAxis: {
         type: 'category',
 
-        data: ['Pan India',
-        'Punjab',
-        'Haryana',
-        'NCR',
-        'Rajasthan',
-        'Gujarat',
-        'MP',
-        'Maharashtra',],
+        data: [
+          'Pan India',
+          'Punjab',
+          'Haryana',
+          'NCR',
+          'Rajasthan',
+          'Gujarat',
+          'MP',
+          'Maharashtra',
+        ],
         axisLabel: {
           interval: 0,
           rotate: 45,
@@ -666,7 +670,7 @@ export class CreditComponent {
         },
         name: 'PERCENTAGE%',
         nameLocation: 'middle',
-        nameGap: 25,
+        nameGap: 15,
         axisLabel: {
           formatter: '{value}',
           margin: 1,
@@ -675,7 +679,7 @@ export class CreditComponent {
       series: [
         {
           barWidth: 20,
-          data: [2.4, 2.2, 2.2, 2.2, 2.2,2.15,2.1,2.2],
+          data: [2.4, 2.2, 2.2, 2.2, 2.2, 2.15, 2.1, 2.2],
           type: 'bar',
           itemStyle: {
             color: '#DF7861',
@@ -693,6 +697,12 @@ export class CreditComponent {
           label: {
             backgroundColor: '#6a7985',
           },
+        },
+        formatter: (params: any) => {
+          const barValue = params[0].value;
+         
+          // Create the tooltip content with the actual value and random amount
+          return `${barValue} % `;
         },
       },
       legend: {
@@ -752,7 +762,7 @@ export class CreditComponent {
           interval: 5,
           name: 'DAYS',
           nameLocation: 'middle',
-          nameGap: 43,
+          nameGap: 20,
           axisLabel: {
             margin: 1,
           },
@@ -760,9 +770,8 @@ export class CreditComponent {
       ],
       series: [
         {
-          
           type: 'line',
-         
+
           areaStyle: {
             opacity: 0,
           },
@@ -777,7 +786,6 @@ export class CreditComponent {
             color: '#F0B86E',
           },
         },
-        
       ],
     };
 
@@ -788,5 +796,4 @@ export class CreditComponent {
     this.EDChart.setOption(this.EDOption);
     this.FTRFilesChart.setOption(this.FTRFilesOption);
   }
-
 }

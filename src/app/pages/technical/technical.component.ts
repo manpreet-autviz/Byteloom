@@ -79,6 +79,15 @@ export class TechnicalComponent {
             backgroundColor: '#6a7985',
           },
         },
+        formatter: (params: any) => {
+          const barValue = params[0].value;
+          const dataIndex = params[0].dataIndex;
+          const files = [4050, 4560, 7070,7700,8900,6750,4590];
+          const randomFiles = files[dataIndex];
+          
+          // Create the tooltip content with the actual value and random amount
+          return `No. of files:${randomFiles}<br>Days:${barValue} `;
+        },
       },
       legend: {
         data: ['Vetting', 'Report'],
@@ -125,7 +134,7 @@ export class TechnicalComponent {
           interval: 1,
           name: 'DAYS',
           nameLocation: 'middle',
-          nameGap: 43,
+          nameGap: 10,
           axisLabel: {
             margin: 1,
           },
@@ -178,11 +187,12 @@ export class TechnicalComponent {
       title: {},
       tooltip: {
         trigger: 'item',
+        formatter: 'No. of Files: {c}',
       },
 
       series: [
         {
-          name: 'Access From',
+        
           type: 'pie',
           radius: [50, 130],
 
@@ -300,6 +310,7 @@ export class TechnicalComponent {
       },
       tooltip: {
         trigger: 'axis',
+        formatter: 'No. of Reports: {c}',
       },
       legend: {
         data: [],
