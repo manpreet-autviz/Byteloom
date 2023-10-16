@@ -87,12 +87,15 @@ export class PortfolioHealthComponent {
           axisPointer: {
             type: 'shadow',
           },
-          formatter: (params: any) => {
-            const barValue = params[0].value;
+          formatter: (params: any) => { 
+            const dataIndex = params[0].dataIndex;
+            const amount = [100, 800, 600][dataIndex];
+            const percent = [2.2, 1.2, 1];
+            const percentage = percent[dataIndex];
   
             // Create the tooltip content with the actual value and random amount
-            return `Days: ${barValue}`;
-          },
+            return `Amount in Cr: ${amount}<br> Percentage: ${percentage}`;
+           },
         },
         xAxis: {
           type: 'category',
@@ -148,6 +151,15 @@ export class PortfolioHealthComponent {
               backgroundColor: '#6a7985',
             },
           },
+          formatter: (params: any) => { 
+            const dataIndex = params[0].dataIndex;
+            const amount = [100, 800, 600][dataIndex];
+            const percent = [2.5, 1.8, 1.2];
+            const percentage = percent[dataIndex];
+  
+            // Create the tooltip content with the actual value and random amount
+            return `Amount in Cr: ${amount}<br> Percentage: ${percentage}`;
+           },
         },
         legend: {
           data: ['ED', 'NPA'],

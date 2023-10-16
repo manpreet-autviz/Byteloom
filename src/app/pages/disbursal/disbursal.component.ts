@@ -191,7 +191,7 @@ export class DisbursalComponent {
             const randomAmount = randomAmounts[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return `No of Files: ${barValue}<br> Amount(Cr): ${randomAmount}`;
+            return `No of Files: ${barValue}<br> Amount in cr: ${randomAmount}`;
           },
         },
         responsive: true,
@@ -261,13 +261,15 @@ export class DisbursalComponent {
           trigger: 'axis',
           
           formatter: (params: any) => {
-           
-            const barValue = params[0].value;
-           
-       
+            
+            const dataIndex = params[0].dataIndex;
+            const avgNoOfFile = [100, 80, 70, 50, 90][dataIndex];
+            const amountInCr = [13.5, 11.5, 12.5, 10][dataIndex];
+            const avgTicketSize = [11, 8, 6, 12, 10, 7, 9];
+            const avgTicket = avgTicketSize[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return `Amount in (Lacs): ${barValue}`;
+            return `Avg no. of files : ${avgNoOfFile}<br> Amount in Cr: ${amountInCr}<br> Active RMs: ${avgTicket}`;
           },
         },
         responsive: true,
@@ -324,6 +326,27 @@ export class DisbursalComponent {
       this.schemeDisbursalOption = {
         tooltip: {
           trigger: 'item',
+          formatter: (params: any) => {
+
+            let tooltipText = '';
+  
+            if (params.name === 'BT') {
+  
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
+  
+            } else if (params.name === 'Top-Up') {
+  
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 27' ;
+  
+            } else if (params.name === 'Fresh') {
+  
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 26' ;
+  
+            }
+  
+            return tooltipText;
+  
+          },
         },
         legend: {
           top: '1%',
@@ -361,6 +384,31 @@ export class DisbursalComponent {
       this.productDisbursalOption = {
         tooltip: {
           trigger: 'item',
+          formatter: (params: any) => {
+
+            let tooltipText = '';
+  
+            if (params.name === 'Home Loan') {
+  
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
+  
+            } else if (params.name === 'LAP') {
+  
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 20' ;
+  
+            } else if (params.name === 'BL') {
+  
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 10' ;
+  
+            } else if (params.name === 'SBL') {
+  
+              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 25' ;
+  
+            }
+  
+            return tooltipText;
+  
+          },
         },
         legend: {
           top: '1%',
@@ -398,7 +446,23 @@ export class DisbursalComponent {
 
       this.irrPFInsOption = {
         legend: {},
-        tooltip: {},
+        tooltip: {
+          formatter: function (params:any) {
+
+            return `
+  
+              Product: ${params.data.product}<br/>
+  
+              IRR: ${params.data.IRR}%<br/>
+  
+              PF: ${params.data.PF}%<br/>
+  
+              Insurance: ${params.data.Insurance}%
+  
+            `;
+  
+          },
+        },
         dataset: {
           dimensions: ['product', 'IRR', 'PF', 'Insurance'],
           source: [
@@ -479,13 +543,14 @@ export class DisbursalComponent {
             type: 'shadow',
           },
           formatter: (params: any) => {
-           
-            const barValue = params[0].value;
-           
-       
+            
+            const dataIndex = params[0].dataIndex;
+            const avgNoOfFile = [100, 80, 70, 50, 90][dataIndex];
+            const days = [15, 13, 10, 9, 7];
+            const Days = days[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return `Days: ${barValue}`;
+            return `No. of files : ${avgNoOfFile}<br> Days: ${Days}`;
           },
         },
         xAxis: {
@@ -545,13 +610,14 @@ export class DisbursalComponent {
             type: 'shadow',
           },
           formatter: (params: any) => {
-           
-            const barValue = params[0].value;
-           
-       
+            const dataIndex = params[0].dataIndex;
+            const noOfFiles = [350, 145, 167, 370, 290][dataIndex];
+            const percent = [70, 54, 43, 40, 50][dataIndex];
+            const randomAmounts = [350, 145, 167, 370, 290];
+            const randomAmount = randomAmounts[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return ` ${barValue}%`;
+            return `No of Files: ${noOfFiles}<br> Amount in cr: ${randomAmount}<br/>%: ${percent}`;
           },
         },
         xAxis: {

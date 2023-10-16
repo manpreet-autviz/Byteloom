@@ -113,7 +113,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             const randomAmount = randomAmounts[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return `No of Files: ${barValue}<br> Amount(Cr): ${randomAmount}`;
+            return `No of Files: ${barValue}<br> Amount in cr: ${randomAmount}`;
           },
         },
         legend: {},
@@ -184,10 +184,14 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           },
           formatter: (params: any) => {
             
-            const barValue = params[0].value;
-            
+            const dataIndex = params[0].dataIndex;
+            const avgNoOfFile = [100, 80, 70, 50, 90][dataIndex];
+            const amountInCr = [12, 16, 10.3, 8.6, 5.7][dataIndex];
+            const avgTicketSize = [11, 8, 6, 12, 10, 7, 9];
+            const avgTicket = avgTicketSize[dataIndex];
+
             // Create the tooltip content with the actual value and random amount
-            return `Amount In  (Lacs): ${barValue}`;
+            return `Avg no. of files : ${avgNoOfFile}<br> Amount in Cr: ${amountInCr}<br> Active RMs: ${avgTicket}`;
           },
         },
         xAxis: {
@@ -239,6 +243,27 @@ export class FinancialApprovalsComponent implements AfterViewInit {
       this.schemeApprovalOption = {
         tooltip: {
           trigger: 'item',
+          formatter: (params: any) => {
+
+            let tooltipText = '';
+  
+            if (params.name === 'BT') {
+  
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
+  
+            } else if (params.name === 'Top-Up') {
+  
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 27' ;
+  
+            } else if (params.name === 'Fresh') {
+  
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 26' ;
+  
+            }
+  
+            return tooltipText;
+  
+          },
         },
         legend: {
           top: '5%',
@@ -276,6 +301,31 @@ export class FinancialApprovalsComponent implements AfterViewInit {
       this.productApprovalOption = {
         tooltip: {
           trigger: 'item',
+          formatter: (params: any) => {
+
+            let tooltipText = '';
+  
+            if (params.name === 'Home Loan') {
+  
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
+  
+            } else if (params.name === 'LAP') {
+  
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 20' ;
+  
+            } else if (params.name === 'BL') {
+  
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 10' ;
+  
+            } else if (params.name === 'SBL') {
+  
+              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 25' ;
+  
+            }
+  
+            return tooltipText;
+  
+          },
         },
         legend: {
           top: '5%',
@@ -319,10 +369,14 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           },
           formatter: (params: any) => {
             
-            const barValue = params[0].value;
-            
+            const dataIndex = params[0].dataIndex;
+            const Login = [100, 80, 70, 50, 90][dataIndex];
+            const Approved = [50, 30, 35, 55, 90][dataIndex];
+            const percent = [50, 36, 44, 40, 45];
+            const percentage = percent [dataIndex];
+
             // Create the tooltip content with the actual value and random amount
-            return ` ${barValue}%`;
+            return `Login: ${Login} <br/> Approved : ${Approved}<br> %: ${percentage}`;
           },
         },
         xAxis: {
@@ -384,10 +438,13 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           },
           formatter: (params: any) => {
             
-            const barValue = params[0].value;
-            
+            const dataIndex = params[0].dataIndex;
+            const avgNoOfFile = [100, 80, 70, 50, 90][dataIndex];
+            const days  = [9, 6, 7, 8, 6];
+            const Days = days [dataIndex];
+
             // Create the tooltip content with the actual value and random amount
-            return `Days: ${barValue}`;
+            return `Avg no. of files : ${avgNoOfFile}<br> Days: ${Days}`;
           },
         },
         xAxis: {
