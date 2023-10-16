@@ -168,6 +168,7 @@ export class OtcPddComponent {
         axisPointer: {
           type: 'shadow',
         },
+        
       },
       legend: {
         data: [
