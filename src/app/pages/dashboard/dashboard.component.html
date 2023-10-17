@@ -3,19 +3,13 @@
     <div class="container-fluid">
       <div class="breadcrumb">
         <div class="card card-animate w-100">
-          <div
-            class="card-body breadcraumb-align align-items-center justify-content-between "
-          >
+          <div class="card-body breadcraumb-align align-items-center justify-content-between ">
             <div>
               <span class="f-7 fs-5"> Dashboard </span>
             </div>
             <div class="dropdown">
-              <select
-                id="dropdown"
-                class="form-select filter-dropdown"
-                [(ngModel)]="selectedState"
-                (ngModelChange)="onStateChange($event)"
-              >
+              <select id="dropdown" class="form-select filter-dropdown" [(ngModel)]="selectedState"
+                (ngModelChange)="onStateChange($event)">
                 <option *ngFor="let state of states" [value]="state">
                   {{ state }}
                 </option>
@@ -28,12 +22,8 @@
         <div class="card-body">
           <div class="row justify-content-end mb-2">
             <div class="col-md-3">
-              <select
-                id="dropdown"
-                class="form-select "
-                [(ngModel)]="selectedFilter"
-                (ngModelChange)="onFilterChange($event)"
-              >
+              <select id="dropdown" class="form-select " [(ngModel)]="selectedFilter"
+                (ngModelChange)="onFilterChange($event)">
                 <option *ngFor="let filter of filters" [value]="filter">
                   {{ filter }}
                 </option>
@@ -45,11 +35,9 @@
               <div class="card">
                 <div class="card-body text-white bg-blue rounded five-card-min-h">
                   <div class="d-flex ">
-                      <p class="f-7 mb-0">Total Logins</p>
+                    <p class="f-7 mb-0">Total Logins</p>
                   </div>
-                  <div
-                    class="d-flex align-items-end justify-content-between"
-                  >
+                  <div class="d-flex align-items-end justify-content-between">
                     <div class="">
                       <span class=" fs-3">
                         <img src="../../../assets/icons/user-logo.png" />
@@ -70,11 +58,9 @@
               <div class="card">
                 <div class="card-body text-white bg-orange rounded five-card-min-h">
                   <div class="d-flex ">
-                      <p class="f-7 mb-0">Financial Approval</p>
+                    <p class="f-7 mb-0">Financial Approval</p>
                   </div>
-                  <div
-                    class="d-flex align-items-end justify-content-between"
-                  >
+                  <div class="d-flex align-items-end justify-content-between">
                     <div class="">
                       <span class=" fs-3">
                         <img src="../../../assets/icons/financial.png" />
@@ -95,11 +81,9 @@
               <div class="card">
                 <div class="card-body text-white bg-yellow rounded five-card-min-h">
                   <div class="d-flex ">
-                      <p class="f-7 mb-0">Final Approvals</p>
+                    <p class="f-7 mb-0">Final Approvals</p>
                   </div>
-                  <div
-                    class="d-flex align-items-end justify-content-between"
-                  >
+                  <div class="d-flex align-items-end justify-content-between">
                     <div class="">
                       <span class=" fs-3">
                         <img src="../../../assets/icons/financial.png" />
@@ -120,20 +104,16 @@
               <div class="card">
                 <div class="card-body text-white bg-purple rounded five-card-min-h">
                   <div class="d-flex ">
-                      <p class="f-7 mb-0">Disbursals</p>
+                    <p class="f-7 mb-0">Disbursals</p>
                   </div>
-                  <div
-                    class="d-flex align-items-end justify-content-between"
-                  >
+                  <div class="d-flex align-items-end justify-content-between">
                     <div class="">
                       <span class=" fs-3">
-                        <img
-                          src="../../../assets/icons/solar_wallet-bold.png"
-                        />
+                        <img src="../../../assets/icons/solar_wallet-bold.png" />
                       </span>
                     </div>
                     <div class="text-part">
-                       <span class="f-6 small-text">Total Files</span><br />
+                      <span class="f-6 small-text">Total Files</span><br />
                       <span class="f-7 fs-6 py-2">{{disbursalTotalFiles}}</span><br />
                       <span class="f-4 small-text">Total Amount</span><br />
                       <span class="f-7 fs-4">{{disbursalTotalAmount}}Cr</span>
@@ -149,61 +129,138 @@
                   <div class="col-6 text-center">
                     <p class="f-7 text-truncate mb-0 ">IRR Value</p>
                     <div class="align-items-center chart-pie">
-                      <div class="tile-chart"
-                        id="IrrChartValue"
-                        style="width: 90px; height:90px; "
-                      ></div>
+                      <div class="tile-chart" id="IrrChartValue" style="width: 90px; height:90px; "></div>
                     </div>
                   </div>
                   <div class="col-6 text-center">
                     <p class="f-7 text-truncate mb-0">PF Value</p>
                     <div class="align-items-center  chart-pie">
-                      <div class="tile-chart "
-                        id="PfChartValue"
-                        style="width: 90px; height: 90px; "
-                      ></div>
+                      <div class="tile-chart " id="PfChartValue" style="width: 90px; height: 90px; "></div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card box-s">
-                <div class="card-body text-center position-relative">
-                  <span class="f-6 title"> Disbursal achievement </span>
-                  <div
-                    class="state-chart"
-                    id="Disbursal-Achievement-Chart"
-                    style="width: 100%; height: 400px"
-                  ></div>
-                  <div class="graphn-bottom-text">
-                    <p>Target - 100 Cr</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-8">
-
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card box-s">
-                <div class="card-body text-center">
-                  <span class="f-6 title"> Disbursal achievement </span>
-                  <div
-                    class="state-chart"
-                    id="trendDisbursalAchievement"
-                    style="width: 100%; height: 400px"
-                  ></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+          <div class="row mt-4">
+            <div class="col-md-4">
+              <div class="card box-s">
+                <div class="card-body text-center position-relative">
+                  <span class="f-6 title"> Disbursal achievement </span>
+                  <div class="state-chart" id="Disbursal-Achievement-Chart" style="width: 100%; height: 400px"></div>
+                  <div class="graphn-bottom-text">
+                    <p class="mb-0">Target - 100 Cr</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card box-s h-100">
+                <div class="card-body">
+              <div classs="business-table">
+                <span class="f-6 title">Business Status</span>
+                <div class="table-responsive text-center mt-4">
+                  <table class="table no-wrap">
+                    <thead>
+                      <tr class="bg-lightblue">
+                        <th></th>
+                        <th class="text-center border-right" colspan="2">Today’s Status</th>
+                        <th class="border-top-0 text-center" colspan="2">MTD</th>
+                      </tr>
+                      <tr class="bg-blue mid-head">
+                        <th class="border-top-0"></th>
+                        <th class="border-top-0">No.</th>
+                        <th class="border-top-0 border-right">Amount(in Lacs)</th>
+                        <th class="border-top-0">No.</th>
+                        <th class="border-top-0">Amount(in Lacs)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="bg-lightblue"> 
+                          <div class="d-flex align-items-center">
+                            <div>
+                              <h6 class="mb-0">Login</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>100</td>
+                        <td class="border-right">20</td>
+                        <td>2000</td>
+                        <td>250</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-lightblue">
+                          <div class="d-flex align-items-center">
+                            <div>
+                              <h6 class="mb-0">PD</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>80</td>
+                        <td class="border-right">18</td>
+                        <td>1850</td>
+                        <td>200</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-lightblue">
+                          <div class="d-flex align-items-center">
+                            <div>
+                              <h6 class="mb-0">Financial Approvals</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>30</td>
+                        <td class="border-right">5</td>
+                        <td>1100</td>
+                        <td>120</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-lightblue">
+                          <div class="d-flex align-items-center">
+                            <div>
+                              <h6 class="mb-0">Final Approvals</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>25</td>
+                        <td class="border-right">4</td>
+                        <td>800</td>
+                        <td>90</td>
+                      </tr>
+                      <tr>
+                        <td class="bg-lightblue">
+                          <div class="d-flex align-items-center">
+                            <div>
+                              <h6 class="mb-0">Disbursal</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>20</td>
+                        <td class="border-right">4</td>
+                        <td>600</td>
+                        <td>75</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card box-s mt-4">
+                  <div class="card-body text-center">
+                    <span class="f-6 title"> Disbursal achievement </span>
+                    <div class="state-chart" id="trendDisbursalAchievement" style="width: 100%; height: 400px"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
   </div>
-</div>
