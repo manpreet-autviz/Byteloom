@@ -19,3 +19,4 @@ describe('TatAnalysisComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
