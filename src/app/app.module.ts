@@ -40,6 +40,7 @@ import { WorkInProgressTablesComponent } from './pages/work-in-progress-tables/w
 import { OutOfTatComponent } from './pages/out-of-tat/out-of-tat.component';
 import { PortfolioHealthComponent } from './portfolio-health/portfolio-health.component';
 import { FinalApprovalComponent } from './pages/final-approval/final-approval.component';
+import { TeamHierarchyComponent } from './pages/team-hierarchy/team-hierarchy.component';
 
 
 
@@ -76,6 +77,7 @@ import { FinalApprovalComponent } from './pages/final-approval/final-approval.co
     OutOfTatComponent,
     PortfolioHealthComponent,
     FinalApprovalComponent,
+    TeamHierarchyComponent,
 
   ],
   imports: [

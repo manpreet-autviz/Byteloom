@@ -1,0 +1,100 @@
+// collapse table css
+::ng-deep {
+    .p-organizationchart .p-organizationchart-node-content.p-organizationchart-selectable-node:not(.p-highlight):hover {
+        background: #e9ecef;
+        color: #495057;
+    }
+
+    .p-organizationchart .p-organizationchart-node-content.p-highlight {
+        background: #EFF6FF;
+        color: #1D4ED8;
+    }
+
+    .p-organizationchart .p-organizationchart-node-content.p-highlight .p-node-toggler i {
+        color: #70aeff;
+    }
+
+    .p-organizationchart .p-organizationchart-line-down {
+        background: #dee2e6;
+    }
+
+    .p-organizationchart .p-organizationchart-line-left {
+        border-right: 1px solid #dee2e6;
+        border-color: #dee2e6;
+    }
+
+    .p-organizationchart .p-organizationchart-line-top {
+        border-top: 1px solid #dee2e6;
+        border-color: #dee2e6;
+    }
+
+    .p-organizationchart .p-organizationchart-node-content {
+        border: 1px solid #dee2e6;
+        background: #ffffff;
+        color: #495057;
+        max-width: 150px;
+        width: 100%;
+    }
+
+    .p-organizationchart .p-organizationchart-node-content .p-node-toggler {
+        background: inherit;
+        color: inherit;
+        border-radius: 50%;
+    }
+
+    .p-organizationchart .p-organizationchart-node-content .p-node-toggler:focus-visible {
+        outline: 0 none;
+        outline-offset: 0;
+        box-shadow: 0 0 0 0.2rem #BFDBFE;
+    }
+
+    .financial-drop svg {
+        z-index: 9;
+        color: #000;
+    }
+
+    .financial-drop table {
+        margin: 0 auto;
+        overflow-x: auto;
+    }
+
+    .p-organizationchart-line-down {
+        margin: 0 auto;
+        height: 20px;
+        width: 1px;
+    }
+
+    .p-organizationchart-table>tbody>tr>td {
+        text-align: center;
+        vertical-align: top;
+        padding: 0 0.75rem;
+    }
+
+    .p-organizationchart-preservespace .p-organizationchart-node-hidden {
+        visibility: hidden;
+        display: inherit;
+    }
+
+    .p-organizationchart .p-organizationchart-node-hidden {
+        display: none;
+    }
+
+    .p-organizationchart-node-content .p-node-toggler {
+        position: absolute;
+        bottom: -0.75rem;
+        margin-left: -0.75rem;
+        z-index: 2;
+        left: 50%;
+        -webkit-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .financial-drop {
+        overflow-x: auto;
+        padding: 0 0 100px;
+    }
+}
+
+// collapse table css ends

@@ -28,6 +28,7 @@ import { OutOfTatComponent } from './pages/out-of-tat/out-of-tat.component';
 import { WorkInProgressTablesComponent } from './pages/work-in-progress-tables/work-in-progress-tables.component';
 import { PortfolioHealthComponent } from './portfolio-health/portfolio-health.component';
 import { FinalApprovalComponent } from './pages/final-approval/final-approval.component';
+import { TeamHierarchyComponent } from './pages/team-hierarchy/team-hierarchy.component';
 
 
 const routes: Routes = [
@@ -60,6 +61,7 @@ const routes: Routes = [
   { path: 'out-of-tat', component: OutOfTatComponent },
   { path: 'work-in-progress-table/:data', component: WorkInProgressTablesComponent },
   { path: 'portfolio-health', component: PortfolioHealthComponent },
+  { path: 'team-hierarchy', component: TeamHierarchyComponent },
 ];
 
 @NgModule({
