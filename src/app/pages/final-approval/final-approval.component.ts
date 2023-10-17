@@ -77,27 +77,27 @@ export class FinalApprovalComponent {
   initializeChart() {
     if (!this.isToggled) {
       this.StateApprovalChart = echarts.init(
-        document.getElementById('StateWiseApprovalChart') as HTMLDivElement
+        document.getElementById('FinalStateWiseApprovalChart') as HTMLDivElement
       );
 
       this.SchemeApprovalChart = echarts.init(
-        document.getElementById('SchemeApproval') as HTMLDivElement
+        document.getElementById('FinalSchemeApproval') as HTMLDivElement
       );
 
       this.ProductApprovalChart = echarts.init(
-        document.getElementById('ProductApproval') as HTMLDivElement
+        document.getElementById('FinalProductApproval') as HTMLDivElement
       );
 
       this.AverageTicketChart = echarts.init(
-        document.getElementById('Average-Ticket-size') as HTMLDivElement
+        document.getElementById('Final-Average-Ticket-size') as HTMLDivElement
       );
 
       this.FinancialApprovalTATChart = echarts.init(
-        document.getElementById('Financial-approval-TAT') as HTMLDivElement
+        document.getElementById('Final-Financial-approval-TAT') as HTMLDivElement
       );
 
       this.ConversionChart = echarts.init(
-        document.getElementById('Conversion') as HTMLDivElement
+        document.getElementById('FinalConversion') as HTMLDivElement
       );
 
       this.stateApprovalOption = {

@@ -159,7 +159,7 @@
           >
             <img src="../../../assets/icons/Rejection-icon.svg" /><span
               data-key="t-apps"
-              >Conversion Analysis</span
+              >Conversion/Rejection Analysis</span
             >
           </a>
         </li>
@@ -268,8 +268,8 @@
         </li>
         <li class="nav-item" (click)="toggleSubmenu('submenu3')">
           <a
-            (click)="navigateToPage('/business-rm')"
-            [class.active]="activeItem === '/business-rm'"
+            (click)="navigateToPage('/team-hierarchy')"
+            [class.active]="activeItem === '/team-hierarchy'"
             class="nav-link menu-link dropdown-toggle"
             data-bs-toggle="collapse"
             role="button"
@@ -277,9 +277,17 @@
             aria-controls="sidebarApps"
           >
             <img src="../../../assets/icons/OTC-icon.svg" />
-            <span data-key="t-apps">Business RM</span>
+            <span data-key="t-apps">Team Hierarchy</span>
           </a>
           <ul class="submenu" *ngIf="submenus.submenu3">
+            <li classs="nav-item">
+              <a
+                (click)="navigateToPage('/business-rm')"
+                [class.active]="activeItem === '/business-rm'"
+                class="nav-link menu-link"
+                >Business RM</a
+              >
+            </li>
             <li classs="nav-item">
               <a
                 (click)="navigateToPage('/business-supervisor')"

@@ -144,7 +144,7 @@ export class OtcPddComponent {
           barWidth: '25%', // Adjust the bar width as needed
           data: [1400,1100,960,630,540,430,320],
           itemStyle: {
-            color: '#00EB97',
+            color: '#EE9322',
              // Color for Category 1
           },
         },
@@ -155,7 +155,7 @@ export class OtcPddComponent {
           barWidth: '25%', // Adjust the bar width as needed
           data: [1780,1600,1400,1250,1050,960,320],
           itemStyle: {
-            color: '#7460EE',
+            color: '#3C7EBE',
             borderRadius: 4,// Color for Category 2
           },
         },
@@ -220,11 +220,11 @@ export class OtcPddComponent {
         {
           name: 'Critical',
           type: 'bar',
-          data: [65, 65, 65, 65, 65, 65, 225],
+          data: [52, 49, 59, 50, 48, 58, 68],
           label: {
             show: true,
             position: 'right',
-            formatter: '{c} Cr',
+            formatter: '{c}%',
           },
           itemStyle: {
             color: '#3C7EBE',
@@ -234,14 +234,14 @@ export class OtcPddComponent {
         {
           name: 'Non-Critical',
           type: 'bar',
-          data: [40, 40, 40, 40, 40, 40, 80],
+          data: [43, 42, 40, 35, 45, 45, 63],
           label: {
             show: true,
             position: 'right',
             formatter: '{c}%',
           },
           itemStyle: {
-            color: '#5BC8EF',
+            color: '#DAC0A3',
             borderRadius: 15,  // Set the color for the first bar series (IRR)
           },
         },
@@ -307,28 +307,28 @@ export class OtcPddComponent {
         {
           name: 'Credit',
           type: 'bar',
-          data: [65, 65, 65, 65, 65, 65, 225],
-          label: {
-            show: true,
-            position: 'right',
-            formatter: '{c} Cr',
-          },
-          itemStyle: {
-            color: '#3C7EBE',
-            borderRadius: 15,  // Set the color for the first bar series (IRR)
-          },
-        },
-        {
-          name: 'Sales',
-          type: 'bar',
-          data: [40, 40, 40, 40, 40, 40, 80],
+          data: [55, 70, 61, 57, 60, 50, 65],
           label: {
             show: true,
             position: 'right',
             formatter: '{c}%',
           },
           itemStyle: {
-            color: '#5BC8EF',
+            color: '#DAC0A3',
+            borderRadius: 15,  // Set the color for the first bar series (IRR)
+          },
+        },
+        {
+          name: 'Sales',
+          type: 'bar',
+          data: [57, 60, 59, 45, 57, 55, 60],
+          label: {
+            show: true,
+            position: 'right',
+            formatter: '{c}%',
+          },
+          itemStyle: {
+            color: '#3C7EBE',
             borderRadius: 15,  // Set the color for the first bar series (IRR)
           },
         },
@@ -393,19 +393,19 @@ export class OtcPddComponent {
         {
           type: 'bar',
           itemStyle: {
-            color: '#7460EE', // Set the color for the first bar series (IRR)
+            color: '#DAC0A3', // Set the color for the first bar series (IRR)
           },
         },
         {
           type: 'bar',
           itemStyle: {
-            color: '#00EB97', // Set the color for the first bar series (IRR)
+            color: '#EE9322', // Set the color for the first bar series (IRR)
           },
         },
         {
           type: 'bar',
           itemStyle: {
-            color: '#F85656', // Set the color for the first bar series (IRR)
+            color: '#EF6262', // Set the color for the first bar series (IRR)
           },
         },
       ],
