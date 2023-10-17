@@ -161,7 +161,7 @@ export class LoginComponent implements AfterViewInit {
             const randomAmount = randomAmounts[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return `No of Files: ${barValue}<br> Amount(Cr): ${randomAmount}`;
+            return `No of Files: ${barValue}<br> Amount in Cr: ${randomAmount}`;
           },
         },
         responsive: true, 
@@ -229,6 +229,16 @@ export class LoginComponent implements AfterViewInit {
           axisPointer: {
             type: 'shadow',
           },
+          formatter: (params: any) => {
+            const avgNoOfFile = 100;
+            const amountInCr = 10;
+            const dataIndex = params[0].dataIndex;
+            const randomAmount = [11, 8, 6, 12, 10, 7, 9];
+            const activeRMs = randomAmount[dataIndex];
+
+            // Create the tooltip content with the actual value and random amount
+            return `Avg no. of files : ${avgNoOfFile}<br> Amount in Cr: ${amountInCr}<br> Active RMs: ${activeRMs}`;
+          },
         },
         responsive: true, 
         legend: {},
@@ -292,6 +302,27 @@ export class LoginComponent implements AfterViewInit {
       this.schemeloginsOption = {
         tooltip: {
           trigger: 'item',
+          formatter: (params: any) => {
+
+            let tooltipText = '';
+  
+            if (params.name === 'BT') {
+  
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
+  
+            } else if (params.name === 'Top-Up') {
+  
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 27' ;
+  
+            } else if (params.name === 'Fresh') {
+  
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 26' ;
+  
+            }
+  
+            return tooltipText;
+  
+          },
         },
         responsive: true, 
         legend: {
@@ -331,6 +362,31 @@ export class LoginComponent implements AfterViewInit {
       this.productloginsOption = {
         tooltip: {
           trigger: 'item',
+          formatter: (params: any) => {
+
+            let tooltipText = '';
+  
+            if (params.name === 'Home Loan') {
+  
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
+  
+            } else if (params.name === 'LAP') {
+  
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 20' ;
+  
+            } else if (params.name === 'BL') {
+  
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 10' ;
+  
+            } else if (params.name === 'SBL') {
+  
+              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 25' ;
+  
+            }
+  
+            return tooltipText;
+  
+          },
         },
         responsive: true, 
         legend: {
@@ -370,7 +426,31 @@ export class LoginComponent implements AfterViewInit {
       this.IMDOption = {
         tooltip: {
           trigger: 'item',
-          formatter: '{a} <br/>{b}: {c} ({d}%)' 
+          formatter: (params: any) => {
+
+            let tooltipText = '';
+  
+            if (params.name === 'Online') {
+  
+              tooltipText = 'No. of files: 1000 <br/> Percentage : 16.65'  ;
+  
+            } else if (params.name === 'Cheque') {
+  
+              tooltipText = 'No. of files: 700 <br/> Percentage : 11.68' ;
+  
+            } else if (params.name === 'Cash') {
+  
+              tooltipText = 'No. of files: 800 <br/> Percentage : 9.21' ;
+  
+            } else if (params.name === 'UPI') {
+  
+              tooltipText = 'No. of files: 900 <br/> Percentage : 12.46' ;
+  
+            }
+  
+            return tooltipText;
+  
+          }, 
         },
         legend: {
           top: '5%',
@@ -419,6 +499,21 @@ export class LoginComponent implements AfterViewInit {
       };
 
       this.sourceOption = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow',
+          },
+          formatter: (params: any) => {
+            const dataIndex = params[0].dataIndex;
+            const barValue = [37, 20, 16, 16, 15][dataIndex];
+            const randomAmounts = [2000, 700, 800, 2100, 1000, 1500];
+            const randomAmount = randomAmounts[dataIndex];
+
+            // Create the tooltip content with the actual value and random amount
+            return `No of Files: ${barValue}<br> Amount: ${randomAmount}`;
+          },
+        },
         responsive: true, 
         xAxis: {
           type: 'category',

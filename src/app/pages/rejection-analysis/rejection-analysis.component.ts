@@ -96,6 +96,30 @@ export class RejectionAnalysisComponent {
     );
 
     this.StateOption = {
+      tooltip: {
+        trigger: 'item',
+        formatter: (params: any) => {
+
+          let tooltipText = '';
+
+          if (params.name === 'Login to disbursal') {
+
+            tooltipText = 'Login: 100 <br/> Approved:30 Percentage : 70'  ;
+
+          } else if (params.name === 'Financial approval to disbursal') {
+
+            tooltipText = 'Login: 100 <br/> Approved:70 Percentage : 30' ;
+
+          } else if (params.name === 'Login to financial approval') {
+
+            tooltipText = 'Login: 100 <br/> Approved:25 Percentage : 75' ;
+
+          }
+
+          return tooltipText;
+
+        }, 
+      },
       xAxis: {
         type: 'category',
         nameGap: 25,
@@ -155,6 +179,17 @@ export class RejectionAnalysisComponent {
         axisPointer: {
           type: 'shadow',
         },
+        formatter: (params: any) => { 
+          const dataIndex = params[0].dataIndex;
+          const login = [100, 800, 600, 450][dataIndex];
+          const rejection =[290, 350, 300, 450][dataIndex];
+          const percent = [60, 50, 48, 45];
+          const percentage = percent[dataIndex];
+
+          // Create the tooltip content with the actual value and random amount
+          return `Login: ${login}<br> Rejection: ${rejection} <br/> %: ${percentage}`;
+         },
+        
       },
       legend: {
         data: [
@@ -259,6 +294,16 @@ export class RejectionAnalysisComponent {
             backgroundColor: '#DBA39A',
            
           },
+        },
+        formatter: (params: any) => {
+          const dataIndex = params[0].dataIndex;
+          const login = [100, 800, 600, 450][dataIndex];
+          const rejection =[290, 350, 300, 450][dataIndex];
+          const percent = [60, 50, 48, 45];
+          const percentage = percent[dataIndex];
+
+          // Create the tooltip content with the actual value and random amount
+          return `Login: ${login}<br> Rejection: ${rejection} <br/> %: ${percentage}`;
         },
       },
       // legend: {
@@ -376,6 +421,15 @@ export class RejectionAnalysisComponent {
         axisPointer: {
           type: 'shadow',
         },
+        formatter: (params: any) => {
+          const dataIndex = params[0].dataIndex;
+          const login = [55, 50, 65, 60, 60, 59, 59][dataIndex];
+          const approval =[45, 50, 35, 40, 42, 41, 41][dataIndex];
+          
+
+          // Create the tooltip content with the actual value and random amount
+          return `Login: ${login}<br> Approval: ${approval}`;
+        },
       },
       legend: {
         data: [],
@@ -450,6 +504,16 @@ export class RejectionAnalysisComponent {
             backgroundColor: '#6a7985',
           },
           
+        },
+        formatter: (params: any) => {
+          const dataIndex = params[0].dataIndex;
+          const login = [100, 800, 600, 450][dataIndex];
+          const rejection =[290, 350, 300, 450][dataIndex];
+          const percent = [29, 35, 30, 45];
+          const percentage = percent[dataIndex];
+
+          // Create the tooltip content with the actual value and random amount
+          return `Login: ${login}<br> Rejection: ${rejection} <br/> %: ${percentage}`;
         },
       },
       legend: {
