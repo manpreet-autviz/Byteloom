@@ -367,10 +367,15 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
     };
 
     this.TargetAchievementOption = {
+      tooltip: {
+        formatter: function (params:any) {
+          return `Number of Files: 2000<br/>Percentage: ${params.value}%`;
+        },
+      },
       series: [
         {
           type: 'gauge',
-
+          
           responsive: true,
           axisLine: {
             lineStyle: {

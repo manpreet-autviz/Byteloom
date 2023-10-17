@@ -158,6 +158,22 @@ export class BusinessSupervisorComponent {
       this.DistributionMixOption = {
         tooltip: {
           trigger: 'item',
+          formatter: (params: any) => {
+  
+            let tooltipText = '';
+  
+            if (params.name === 'Home Loan') {
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 450';
+            } else if (params.name === 'LAP') {
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 270';
+            } else if (params.name === 'BL') {
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 269';
+            } else if (params.name === 'SBL') {
+              tooltipText = 'No. of files: 1600 <br/> Amount in Cr: 268';
+            }
+  
+            return tooltipText;
+          },
         },
         responsive: true, 
         legend: {
@@ -197,6 +213,22 @@ export class BusinessSupervisorComponent {
       this.SourceLoginOption = {
         tooltip: {
           trigger: 'item',
+          formatter: (params: any) => {
+  
+            let tooltipText = '';
+  
+            if (params.name === 'Direct') {
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 450';
+            } else if (params.name === 'Power Partner') {
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 270';
+            } else if (params.name === 'DSA') {
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 269';
+            } else if (params.name === 'Other') {
+              tooltipText = 'No. of files: 1600 <br/> Amount in Cr: 268';
+            }
+  
+            return tooltipText;
+          },
         },
         legend: {
           top: '5%',
@@ -229,7 +261,7 @@ export class BusinessSupervisorComponent {
             data: [
               {
                 value: 35,
-                name: 'Direct ',
+                name: 'Direct',
                 itemStyle: {
                   color: '#7460EE',
                 },

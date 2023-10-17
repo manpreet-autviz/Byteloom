@@ -4,6 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { TreeTableModule } from 'primeng/treetable';
+import { OrganizationChartModule } from 'primeng/organizationchart';
 
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
@@ -13,7 +17,7 @@ import { FinancialApprovalsComponent } from './pages/financial-approvals/financi
 import { DisbursalComponent } from './pages/disbursal/disbursal.component';
 import { TatAnalysisComponent } from './pages/tat-analysis/tat-analysis.component';
 import { TatAnalysisTablesComponent } from './pages/tat-analysis-tables/tat-analysis-tables.component';
-import { TreeTableModule } from 'primeng/treetable';
+
 import { RejectionAnalysisComponent } from './pages/rejection-analysis/rejection-analysis.component';
 import { InsightsComponent } from './pages/insights/insights.component';
 import { BusinessInsightsComponent } from './pages/business-insights/business-insights.component';
@@ -79,7 +83,9 @@ import { FinalApprovalComponent } from './pages/final-approval/final-approval.co
     FullCalendarModule,
     AppRoutingModule,
     FormsModule,
-    TreeTableModule
+    BrowserAnimationsModule,
+    TreeTableModule,
+    OrganizationChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

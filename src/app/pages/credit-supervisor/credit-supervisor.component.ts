@@ -67,6 +67,7 @@ export class CreditSupervisorComponent {
             label: {
               backgroundColor: '#6a7985',
             },
+          
           },
         },
         legend: {
