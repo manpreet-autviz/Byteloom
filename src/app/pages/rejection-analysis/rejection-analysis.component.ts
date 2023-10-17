@@ -101,18 +101,19 @@ export class RejectionAnalysisComponent {
         formatter: (params: any) => {
 
           let tooltipText = '';
+          console.log(params , "params")
 
           if (params.name === 'Login to disbursal') {
 
-            tooltipText = 'Login: 100 <br/> Approved:30 Percentage : 70'  ;
+            tooltipText = 'Login: 100 <br/> Approved:30 Percentage : 70%'  ;
 
           } else if (params.name === 'Financial approval to disbursal') {
 
-            tooltipText = 'Login: 100 <br/> Approved:70 Percentage : 30' ;
+            tooltipText = 'Login: 100 <br/> Approved:70 Percentage : 30%' ;
 
           } else if (params.name === 'Login to financial approval') {
 
-            tooltipText = 'Login: 100 <br/> Approved:25 Percentage : 75' ;
+            tooltipText = 'Login: 100 <br/> Approved:25 Percentage : 75%' ;
 
           }
 
@@ -130,8 +131,8 @@ export class RejectionAnalysisComponent {
           show: false, // Hide tick lines
         },
         data: [
-          'Login to disbursal ',
-          'Financial approval to disbursal ',
+          'Login to disbursal',
+          'Financial approval to disbursal',
           'Login to financial approval',
         ],
         axisLabel: {
@@ -175,20 +176,30 @@ export class RejectionAnalysisComponent {
 
     this.StateLoginOption = {
       tooltip: {
-        trigger: 'axis',
+        trigger: 'item',
         axisPointer: {
           type: 'shadow',
         },
-        formatter: (params: any) => { 
-          const dataIndex = params[0].dataIndex;
-          const login = [100, 800, 600, 450][dataIndex];
-          const rejection =[290, 350, 300, 450][dataIndex];
-          const percent = [60, 50, 48, 45];
-          const percentage = percent[dataIndex];
+        formatter: (params: any) => {
 
-          // Create the tooltip content with the actual value and random amount
-          return `Login: ${login}<br> Rejection: ${rejection} <br/> %: ${percentage}`;
-         },
+          let tooltipText = '';
+          if (params.seriesName === 'Login to financial approval') {
+
+            tooltipText = 'Login: 1000 <br/> Approval : 60%'  ;
+
+          } else if (params.seriesName === 'Financial approval to disbursal') {
+
+            tooltipText = 'Login: 600 <br/> Approval : 70%' ;
+
+          } else if (params.seriesName === 'Login to disbursal') {
+
+            tooltipText = 'Login: 400 <br/> Percentage : 55%' ;
+
+          }
+
+          return tooltipText;
+
+        },
         
       },
       legend: {
@@ -417,18 +428,9 @@ export class RejectionAnalysisComponent {
 
     this.StateRejectionOption = {
       tooltip: {
-        trigger: 'axis',
+        trigger: 'item',
         axisPointer: {
           type: 'shadow',
-        },
-        formatter: (params: any) => {
-          const dataIndex = params[0].dataIndex;
-          const login = [55, 50, 65, 60, 60, 59, 59][dataIndex];
-          const approval =[45, 50, 35, 40, 42, 41, 41][dataIndex];
-          
-
-          // Create the tooltip content with the actual value and random amount
-          return `Login: ${login}<br> Approval: ${approval}`;
         },
       },
       legend: {

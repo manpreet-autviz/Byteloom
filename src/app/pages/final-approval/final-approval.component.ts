@@ -501,6 +501,18 @@ export class FinalApprovalComponent {
         xAxis: [
           {
             type: 'category',
+            axisLine: {
+              show: false,
+            },
+            labelLine:{
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+            splitLine:{
+              show: false,
+            },
             boundaryGap: false,
             data: [
               'Apr',
@@ -510,11 +522,6 @@ export class FinalApprovalComponent {
               'Aug',
               'Sep',
               'Oct',
-              'Nov',
-              'Dec',
-              'Jan',
-              'Feb',
-              'Mar',
             ],
           },
         ],
@@ -522,7 +529,10 @@ export class FinalApprovalComponent {
           {
             type: 'value',
             axisLine: {
-              show: true,
+              show: false,
+            },
+            splitLine:{
+              show: false,
             },
             min: 10,
             max: 120,
@@ -550,7 +560,7 @@ export class FinalApprovalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [12, 15, 25, 30, 35, 45],
+            data: [12, 15, 25, 30, 35, 45, 55],
           },
           {
             name: 'Haryana',
@@ -565,7 +575,7 @@ export class FinalApprovalComponent {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [30, 35, 45, 50, 58, 65],
+            data: [30, 35, 45, 50, 58, 65, 75],
           },
           {
             name: 'NCR',
@@ -580,7 +590,7 @@ export class FinalApprovalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [35, 45, 47, 50, 55, 67],
+            data: [35, 45, 47, 50, 55, 67, 70],
           },
           {
             name: 'Rajasthan',
@@ -595,7 +605,7 @@ export class FinalApprovalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [37, 46, 48, 52, 57, 69],
+            data: [37, 46, 48, 52, 57, 69, 76],
           },
           {
             name: 'Gujarat',
@@ -610,7 +620,7 @@ export class FinalApprovalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [39, 48, 50, 55, 60, 70],
+            data: [39, 48, 50, 55, 60, 70, 75],
           },
           {
             name: 'MP',
@@ -625,7 +635,7 @@ export class FinalApprovalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [40, 50, 53, 58, 63, 73],
+            data: [40, 50, 53, 58, 63, 73, 80],
           },
           {
             name: 'Maharashtra',
@@ -640,7 +650,7 @@ export class FinalApprovalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [43, 54, 59, 62, 67, 85],
+            data: [43, 54, 59, 62, 67, 85, 95],
           },
         ],
       };
@@ -671,6 +681,18 @@ export class FinalApprovalComponent {
         xAxis: [
           {
             type: 'category',
+            axisLine: {
+              show: false,
+            },
+            labelLine:{
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+            splitLine:{
+              show: false,
+            },
             boundaryGap: false,
             data: [
               'Apr',
@@ -680,11 +702,6 @@ export class FinalApprovalComponent {
               'Aug',
               'Sep',
               'Oct',
-              'Nov',
-              'Dec',
-              'Jan',
-              'Feb',
-              'Mar',
             ],
           },
         ],
@@ -692,7 +709,10 @@ export class FinalApprovalComponent {
           {
             type: 'value',
             axisLine: {
-              show: true,
+              show: false,
+            },
+            splitLine:{
+              show: false,
             },
             min: 10,
             max: 120,
@@ -720,7 +740,7 @@ export class FinalApprovalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [12, 15, 25, 30, 35, 45],
+            data: [12, 15, 25, 30, 35, 45, 55],
           },
           {
             name: 'LAP',
@@ -735,7 +755,7 @@ export class FinalApprovalComponent {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [30, 35, 45, 50, 58, 65],
+            data: [30, 35, 45, 50, 58, 65, 75],
           },
           {
             name: 'BL',
@@ -750,7 +770,7 @@ export class FinalApprovalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [37, 46, 48, 52, 57, 69],
+            data: [37, 46, 48, 52, 57, 69, 75],
           },
           {
             name: 'SBL',
@@ -765,7 +785,7 @@ export class FinalApprovalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [39, 48, 50, 55, 60, 70],
+            data: [39, 48, 50, 55, 60, 70, 80],
           },
         ],
       };
@@ -795,6 +815,18 @@ export class FinalApprovalComponent {
         xAxis: [
           {
             type: 'category',
+            axisLine: {
+              show: false,
+            },
+            labelLine:{
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+            splitLine:{
+              show: false,
+            },
             boundaryGap: false,
             data: [
               'Apr',
@@ -804,11 +836,6 @@ export class FinalApprovalComponent {
               'Aug',
               'Sep',
               'Oct',
-              'Nov',
-              'Dec',
-              'Jan',
-              'Feb',
-              'Mar',
             ],
           },
         ],
@@ -816,7 +843,10 @@ export class FinalApprovalComponent {
           {
             type: 'value',
             axisLine: {
-              show: true,
+              show: false,
+            },
+            splitLine:{
+              show: false,
             },
             min: 10,
             max: 100,
@@ -908,6 +938,18 @@ export class FinalApprovalComponent {
         xAxis: [
           {
             type: 'category',
+            axisLine: {
+              show: false,
+            },
+            labelLine:{
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+            splitLine:{
+              show: false,
+            },
             boundaryGap: false,
             data: [
               'Apr',
@@ -917,11 +959,6 @@ export class FinalApprovalComponent {
               'Aug',
               'Sep',
               'Oct',
-              'Nov',
-              'Dec',
-              'Jan',
-              'Feb',
-              'Mar',
             ],
           },
         ],
@@ -929,7 +966,10 @@ export class FinalApprovalComponent {
           {
             type: 'value',
             axisLine: {
-              show: true,
+              show: false,
+            },
+            splitLine:{
+              show: false,
             },
             min: 10,
             max: 15,
@@ -1025,6 +1065,18 @@ export class FinalApprovalComponent {
         xAxis: [
           {
             type: 'category',
+            axisLine: {
+              show: false,
+            },
+            labelLine:{
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+            splitLine:{
+              show: false,
+            },
             boundaryGap: false,
             data: [
               'Apr',
@@ -1034,11 +1086,6 @@ export class FinalApprovalComponent {
               'Aug',
               'Sep',
               'Oct',
-              'Nov',
-              'Dec',
-              'Jan',
-              'Feb',
-              'Mar',
             ],
           },
         ],
@@ -1046,7 +1093,10 @@ export class FinalApprovalComponent {
           {
             type: 'value',
             axisLine: {
-              show: true,
+              show: false,
+            },
+            splitLine:{
+              show: false,
             },
             min: 15,
             max: 1,
@@ -1149,6 +1199,18 @@ export class FinalApprovalComponent {
         xAxis: [
           {
             type: 'category',
+            axisLine: {
+              show: false,
+            },
+            labelLine:{
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+            splitLine:{
+              show: false,
+            },
             boundaryGap: false,
             data: [
               'Apr',
@@ -1158,11 +1220,6 @@ export class FinalApprovalComponent {
               'Aug',
               'Sep',
               'Oct',
-              'Nov',
-              'Dec',
-              'Jan',
-              'Feb',
-              'Mar',
             ],
           },
         ],
@@ -1170,7 +1227,10 @@ export class FinalApprovalComponent {
           {
             type: 'value',
             axisLine: {
-              show: true,
+              show: false,
+            },
+            splitLine:{
+              show: false,
             },
             min: 40,
             max: 50,
@@ -1417,10 +1477,10 @@ export class FinalApprovalComponent {
 
   TrendgenerateStateRandomData(selectedValue: string) {
     if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendStateApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64];
-      const StatemaxValues = [60, 67, 78];
+      const StateminValues = [55, 60, 64, 74];
+      const StatemaxValues = [60, 67, 78, 85];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1437,14 +1497,10 @@ export class FinalApprovalComponent {
       'Aug',
       'Sep',
       'Oct',
-      'Nov',
-      'Dec',
-      'Jan',
-      'Feb',
-      'Mar',];
+    ];
       this.trendStateApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64,68,75];
-      const StatemaxValues = [60, 67, 78,83,90];
+      const StateminValues = [55, 60, 64,68,75,80];
+      const StatemaxValues = [60, 67, 78,83,90,95];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1458,10 +1514,10 @@ export class FinalApprovalComponent {
   TrendgenerateAverageStateRandomData(selectedValue: string) {
     console.log("here",selectedValue)
     if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      const newAxisdata = ['Jul', 'Aug', 'Sep','Oct'];
       this.trendAverageApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [10.7, 12.5, 14];
-      const StatemaxValues = [11, 13, 15];
+      const StateminValues = [10.7, 12.5, 14, 24];
+      const StatemaxValues = [11, 13, 15, 16];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1478,14 +1534,10 @@ export class FinalApprovalComponent {
       'Aug',
       'Sep',
       'Oct',
-      'Nov',
-      'Dec',
-      'Jan',
-      'Feb',
-      'Mar',];
+    ];
       this.trendAverageApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [10.7, 11.5,12.2,13.4, 14];
-      const StatemaxValues = [11,12, 13,14, 15];
+      const StateminValues = [10.7, 11.5,12.2,13.4, 14, 24];
+      const StatemaxValues = [11,12, 13,14, 15, 20];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1497,10 +1549,10 @@ export class FinalApprovalComponent {
   }
   TrendgenerateSchemeRandomData(selectedValue: string) {
     if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendSchemeApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64];
-      const StatemaxValues = [60, 67, 78];
+      const StateminValues = [55, 60, 64, 70];
+      const StatemaxValues = [60, 67, 78, 84];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1517,14 +1569,10 @@ export class FinalApprovalComponent {
       'Aug',
       'Sep',
       'Oct',
-      'Nov',
-      'Dec',
-      'Jan',
-      'Feb',
-      'Mar',];
+    ];
       this.trendSchemeApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64,68,75];
-      const StatemaxValues = [60, 67, 78,83,90];
+      const StateminValues = [55, 60, 64,68,75,80];
+      const StatemaxValues = [60, 67, 78,83,90,95];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1537,10 +1585,10 @@ export class FinalApprovalComponent {
 
   TrendgenerateProductRandomData(selectedValue: string) {
     if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      const newAxisdata = ['Jul', 'Aug', 'Sep','Oct'];
       this.trendProductApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64];
-      const StatemaxValues = [60, 67, 78];
+      const StateminValues = [55, 60, 64, 70];
+      const StatemaxValues = [60, 67, 78, 84];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1557,14 +1605,10 @@ export class FinalApprovalComponent {
       'Aug',
       'Sep',
       'Oct',
-      'Nov',
-      'Dec',
-      'Jan',
-      'Feb',
-      'Mar',];
+    ];
       this.trendProductApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64,68,75];
-      const StatemaxValues = [60, 67, 78,83,90];
+      const StateminValues = [55, 60, 64,68,75,80];
+      const StatemaxValues = [60, 67, 78,83,90,95];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1576,10 +1620,10 @@ export class FinalApprovalComponent {
   }
   TrendgenerateConversionRandomData(selectedValue: string) {
     if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      const newAxisdata = ['Jul', 'Aug', 'Sep','Oct'];
       this.trendConversionOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [40.6, 45, 49];
-      const StatemaxValues = [46, 47, 50];
+      const StateminValues = [40.6, 45, 49, 55];
+      const StatemaxValues = [46, 47, 50, 60];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1596,14 +1640,10 @@ export class FinalApprovalComponent {
       'Aug',
       'Sep',
       'Oct',
-      'Nov',
-      'Dec',
-      'Jan',
-      'Feb',
-      'Mar',];
+    ];
       this.trendConversionOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [40.5, 43, 45.5,46,48];
-      const StatemaxValues = [43, 45, 47,47.5,50];
+      const StateminValues = [40.5, 43, 45.5,46,48,55];
+      const StatemaxValues = [43, 45, 47,47.5,50,60];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1616,10 +1656,10 @@ export class FinalApprovalComponent {
 
   TrendgenerateFinancialTatRandomdata(selectedValue: string) {
     if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      const newAxisdata = ['Jul', 'Aug', 'Sep','Oct'];
       this.trendFinancialTatOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64];
-      const StatemaxValues = [60, 67, 78];
+      const StateminValues = [55, 60, 64, 70];
+      const StatemaxValues = [60, 67, 78, 85];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1636,14 +1676,10 @@ export class FinalApprovalComponent {
       'Aug',
       'Sep',
       'Oct',
-      'Nov',
-      'Dec',
-      'Jan',
-      'Feb',
-      'Mar',];
+    ];
       this.trendFinancialTatOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64,68,75];
-      const StatemaxValues = [60, 67, 78,83,90];
+      const StateminValues = [55, 60, 64,68,75,80];
+      const StatemaxValues = [60, 67, 78,83,90,95];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];

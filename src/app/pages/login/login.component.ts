@@ -624,6 +624,16 @@ export class LoginComponent implements AfterViewInit {
         xAxis: [
           {
             type: 'category',
+            axisLine: {
+              show: false,
+            },
+            labelLine:{
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+         
             boundaryGap: false,
             data: [
               'Apr',
@@ -633,11 +643,6 @@ export class LoginComponent implements AfterViewInit {
               'Aug',
               'Sep',
               'Oct',
-              'Nov',
-              'Dec',
-              'Jan',
-              'Feb',
-              'Mar',
             ],
           },
         ],
@@ -645,7 +650,10 @@ export class LoginComponent implements AfterViewInit {
           {
             type: 'value',
             axisLine: {
-              show: true,
+              show: false,
+            },
+            splitLine:{
+              show: false,
             },
             min: 500,
             max: 4000,
@@ -673,7 +681,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [500, 800, 1000, 1300, 1600, 1800],
+            data: [500, 800, 1000, 1300, 1600, 1800, 1900],
           },
           {
             name: 'Haryana',
@@ -688,7 +696,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [600, 1000, 1200, 1500, 1700, 1900],
+            data: [600, 1000, 1200, 1500, 1700, 1900, 2000],
           },
           {
             name: 'NCR',
@@ -703,7 +711,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [800, 1300, 1500, 1900, 2100, 2300],
+            data: [800, 1300, 1500, 1900, 2100, 2300, 2400],
           },
           {
             name: 'Rajasthan',
@@ -718,7 +726,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [950, 1500, 1650, 1980, 2200, 2500],
+            data: [950, 1500, 1650, 1980, 2200, 2500, 2600],
           },
           {
             name: 'Gujarat',
@@ -733,7 +741,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [1000, 1500, 1800, 2100, 2500, 3000],
+            data: [1000, 1500, 1800, 2100, 2500, 3000, 3100],
           },
           {
             name: 'MP',
@@ -748,7 +756,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [1100, 1600, 1900, 2300, 2700, 3200],
+            data: [1100, 1600, 1900, 2300, 2700, 3200, 3300],
           },
           {
             name: 'Maharashtra',
@@ -763,7 +771,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [1400, 1900, 2100, 2700, 3000, 3800],
+            data: [1400, 1900, 2100, 2700, 3000, 3800, 3900],
           },
         ],
       };
@@ -799,6 +807,13 @@ export class LoginComponent implements AfterViewInit {
         xAxis: [
           {
             type: 'category',
+            axisLine: {
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+          
             boundaryGap: false,
             data: [
               'Apr',
@@ -808,11 +823,6 @@ export class LoginComponent implements AfterViewInit {
               'Aug',
               'Sep',
               'Oct',
-              'Nov',
-              'Dec',
-              'Jan',
-              'Feb',
-              'Mar',
             ],
           },
         ],
@@ -820,7 +830,10 @@ export class LoginComponent implements AfterViewInit {
           {
             type: 'value',
             axisLine: {
-              show: true,
+              show: false,
+            },
+            splitLine:{
+              show: false,
             },
             min: 2,
             max: 20,
@@ -848,7 +861,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [2, 3, 3.9, 4, 4.2, 4.5],
+            data: [2, 3, 3.9, 4, 4.2, 4.5, 5.5],
           },
           {
             name: 'Haryana',
@@ -863,7 +876,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [3, 3.5, 4, 4.5, 4.9, 5],
+            data: [3, 3.5, 4, 4.5, 4.9, 5, 6],
           },
           {
             name: 'NCR',
@@ -878,7 +891,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [4, 4.5, 5, 5.5, 5.9, 6],
+            data: [4, 4.5, 5, 5.5, 5.9, 6, 7],
           },
           {
             name: 'Rajasthan',
@@ -893,7 +906,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [5, 5.5, 6, 6.5, 6.9, 7],
+            data: [5, 5.5, 6, 6.5, 6.9, 7, 8],
           },
           {
             name: 'Gujarat',
@@ -908,7 +921,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [6, 6.5, 7, 7.5, 7.9, 8],
+            data: [6, 6.5, 7, 7.5, 7.9, 8, 9],
           },
           {
             name: 'MP',
@@ -923,7 +936,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [7, 7.5, 8, 8.5, 8.9, 9],
+            data: [7, 7.5, 8, 8.5, 8.9, 9, 10],
           },
           {
             name: 'Maharashtra',
@@ -938,7 +951,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [8, 8.5, 9, 9.5, 9.9, 10],
+            data: [8, 8.5, 9, 9.5, 9.9, 10, 11],
           },
         ],
       };
@@ -966,6 +979,19 @@ export class LoginComponent implements AfterViewInit {
         xAxis: [
           {
             type: 'category',
+            axisLine: {
+              show: false,
+            },
+            labelLine:{
+              show: false,
+            },
+
+            axisTick: {
+              show: false,
+            },
+            splitLine:{
+              show: false,
+            },
             boundaryGap: false,
             data: [
               'Apr',
@@ -975,11 +1001,6 @@ export class LoginComponent implements AfterViewInit {
               'Aug',
               'Sep',
               'Oct',
-              'Nov',
-              'Dec',
-              'Jan',
-              'Feb',
-              'Mar',
             ],
           },
         ],
@@ -987,7 +1008,10 @@ export class LoginComponent implements AfterViewInit {
           {
             type: 'value',
             axisLine: {
-              show: true,
+              show: false,
+            },
+            splitLine:{
+              show: false,
             },
             min: 500,
             max: 4000,
@@ -1015,7 +1039,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [300, 332, 401, 454, 490, 530, 610],
+            data: [300, 332, 401, 454, 490, 530, 610, 710],
           },
           {
             name: 'LAP',
@@ -1030,7 +1054,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [420, 432, 501, 534, 590, 630, 720],
+            data: [420, 432, 501, 534, 590, 630, 720, 820],
           },
           {
             name: 'BL',
@@ -1045,7 +1069,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [500, 532, 601, 654, 690, 730, 810],
+            data: [500, 532, 601, 654, 690, 730, 810, 900],
           },
           {
             name: 'SBL',
@@ -1060,7 +1084,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [620, 632, 701, 734, 890, 930, 1020],
+            data: [620, 632, 701, 734, 890, 930, 1020, 2020],
           },
         ],
       };
@@ -1088,6 +1112,18 @@ export class LoginComponent implements AfterViewInit {
         xAxis: [
           {
             type: 'category',
+            axisLine: {
+              show: false,
+            },
+            labelLine:{
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+            splitLine:{
+              show: false,
+            },
             boundaryGap: false,
             data: [
               'Apr',
@@ -1097,11 +1133,6 @@ export class LoginComponent implements AfterViewInit {
               'Aug',
               'Sep',
               'Oct',
-              'Nov',
-              'Dec',
-              'Jan',
-              'Feb',
-              'Mar',
             ],
           },
         ],
@@ -1109,7 +1140,10 @@ export class LoginComponent implements AfterViewInit {
           {
             type: 'value',
             axisLine: {
-              show: true,
+              show: false,
+            },
+            splitLine:{
+              show: false,
             },
             min: 500,
             max: 4000,
@@ -1195,6 +1229,18 @@ export class LoginComponent implements AfterViewInit {
         xAxis: [
           {
             type: 'category',
+            axisLine: {
+              show: false,
+            },
+            labelLine:{
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+            splitLine:{
+              show: false,
+            },
             boundaryGap: false,
             data: [
               'Apr',
@@ -1204,11 +1250,6 @@ export class LoginComponent implements AfterViewInit {
               'Aug',
               'Sep',
               'Oct',
-              'Nov',
-              'Dec',
-              'Jan',
-              'Feb',
-              'Mar',
             ],
           },
         ],
@@ -1216,7 +1257,10 @@ export class LoginComponent implements AfterViewInit {
           {
             type: 'value',
             axisLine: {
-              show: true,
+              show: false,
+            },
+            splitLine:{
+              show: false,
             },
             min: 10,
             max: 110,
@@ -1453,10 +1497,10 @@ export class LoginComponent implements AfterViewInit {
 
   TrendgenerateStateRandomData(selectedValue: string) {
     if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500];
-      const StatemaxValues = [1000, 2000, 3500];
+      const StateminValues = [550, 1000, 2500, 2600];
+      const StatemaxValues = [1000, 2000, 3500, 3000];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1473,15 +1517,10 @@ export class LoginComponent implements AfterViewInit {
         'Aug',
         'Sep',
         'Oct',
-        'Nov',
-        'Dec',
-        'Jan',
-        'Feb',
-        'Mar',
       ];
       this.trendStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500, 3000, 3500];
-      const StatemaxValues = [1000, 2000, 3500, 4000, 4000];
+      const StateminValues = [550, 1000, 2500, 3000, 3500, 4000];
+      const StatemaxValues = [1000, 2000, 3500, 4000, 4000, 4500];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1494,10 +1533,10 @@ export class LoginComponent implements AfterViewInit {
 
   TrendgenerateAverageStateRandomData(selectedValue: string) {
     if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      const newAxisdata = ['Jul', 'Aug', 'Sep' , 'Oct'];
       this.trendAverageStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [10.7, 12.5, 14];
-      const StatemaxValues = [11, 13, 15];
+      const StateminValues = [10.7, 12.5, 14, 15];
+      const StatemaxValues = [11, 13, 15, 16];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1514,15 +1553,10 @@ export class LoginComponent implements AfterViewInit {
         'Aug',
         'Sep',
         'Oct',
-        'Nov',
-        'Dec',
-        'Jan',
-        'Feb',
-        'Mar',
       ];
       this.trendAverageStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [10.7, 11.5, 12.2, 13.4, 14];
-      const StatemaxValues = [11, 12, 13, 14, 15];
+      const StateminValues = [10.7, 11.5, 12.2, 13.4, 14, 15];
+      const StatemaxValues = [11, 12, 13, 14, 15, 16];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1535,10 +1569,10 @@ export class LoginComponent implements AfterViewInit {
 
   TrendgenerateSchemeRandomData(selectedValue: string) {
     if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendSchemeloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500];
-      const StatemaxValues = [1000, 2000, 3500];
+      const StateminValues = [550, 1000, 2500, 3000];
+      const StatemaxValues = [1000, 2000, 3500, 4000];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1555,15 +1589,10 @@ export class LoginComponent implements AfterViewInit {
         'Aug',
         'Sep',
         'Oct',
-        'Nov',
-        'Dec',
-        'Jan',
-        'Feb',
-        'Mar',
       ];
       this.trendSchemeloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500, 3000, 3500];
-      const StatemaxValues = [1000, 2000, 3500, 4000, 4000];
+      const StateminValues = [550, 1000, 2500, 3000, 3500, 4000];
+      const StatemaxValues = [1000, 2000, 3500, 4000, 4000, 4500];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1576,10 +1605,10 @@ export class LoginComponent implements AfterViewInit {
 
   TrendgenerateProductRandomData(selectedValue: string) {
     if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendProductloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500];
-      const StatemaxValues = [1000, 2000, 3500];
+      const StateminValues = [550, 1000, 2500, 3000];
+      const StatemaxValues = [1000, 2000, 3500, 4000];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1596,15 +1625,10 @@ export class LoginComponent implements AfterViewInit {
         'Aug',
         'Sep',
         'Oct',
-        'Nov',
-        'Dec',
-        'Jan',
-        'Feb',
-        'Mar',
       ];
       this.trendProductloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500, 3000, 3500];
-      const StatemaxValues = [1000, 2000, 3500, 4000, 4000];
+      const StateminValues = [550, 1000, 2500, 3000, 3500, 4000];
+      const StatemaxValues = [1000, 2000, 3500, 4000, 4000, 4500];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1616,10 +1640,10 @@ export class LoginComponent implements AfterViewInit {
   }
   TrendgenerateSourceRandomData(selectedValue: string) {
     if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep'];
+      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendSourceOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [40.6, 45, 49];
-      const StatemaxValues = [46, 47, 50];
+      const StateminValues = [40.6, 45, 49, 50];
+      const StatemaxValues = [46, 47, 50, 60];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
@@ -1636,15 +1660,10 @@ export class LoginComponent implements AfterViewInit {
         'Aug',
         'Sep',
         'Oct',
-        'Nov',
-        'Dec',
-        'Jan',
-        'Feb',
-        'Mar',
       ];
       this.trendSourceOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [40.5, 43, 45.5, 46, 48];
-      const StatemaxValues = [43, 45, 47, 47.5, 50];
+      const StateminValues = [40.5, 43, 45.5, 46, 48, 50];
+      const StatemaxValues = [43, 45, 47, 47.5, 50, 60];
 
       const newData = StateminValues.map((min, index) => {
         const max = StatemaxValues[index];
