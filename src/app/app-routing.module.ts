@@ -51,7 +51,7 @@ const routes: Routes = [
 
   { path: 'productivity/technical', component: TechnicalComponent },
   { path: 'productivity/legal', component: LegalComponent },
-  { path: 'summary', component: ChequesSummaryComponent },
+  { path: 'sanctioned-undisbursed-cases', component: ChequesSummaryComponent },
   { path: 'otc-pdd', component: OtcPddComponent },
   { path: 'business-rm', component: BusinessRMComponent },
   { path: 'business-supervisor', component: BusinessSupervisorComponent },
