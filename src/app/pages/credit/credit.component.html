@@ -275,10 +275,10 @@
                         <th class="border-bottom">Branch</th>
                         <th class="border-bottom">Area</th>
                         <th class="border-bottom">State</th>
-                        <th class="border-bottom">Total Logins (in no.s)</th>
-                        <th class="border-bottom">Total Disbursal (in amount lacs)</th>
-                        <th class="border-bottom">% Target achieved</th>
-                        <th class="border-bottom">% Delinquency</th>
+                        <th class="border-bottom">Total PD (in no.s)</th>
+                        <th class="border-bottom">Total Approvals (in no.s)</th>
+                        <th class="border-bottom">Total Disbursal</th>
+                        <th class="border-bottom">% ED</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -288,11 +288,11 @@
                         <td class="border-bottom">{{ item.EmpCode }}</td>
                         <td class="border-bottom bg-yellow">{{ item.Branch }}</td>
                         <td class="border-bottom">{{ item.Area }}</td>
-                        <td class="border-bottom">{{ item.TotalLogins }}</td>
-                        <td class="border-bottom bg-red">{{ item.TotalDisbursal }}</td>
                         <td class="border-bottom">{{ item.State }}</td>
-                        <td class="border-bottom bg-green">{{ item.Target }}</td>
-                        <td class="border-bottom">{{ item.Delinquency }}</td>
+                        <td class="border-bottom">{{ item.TotalPd }}</td>
+                        <td class="border-bottom bg-red">{{ item.TotalApproval }}</td>
+                        <td class="border-bottom bg-green">{{ item.Disbursal }}</td>
+                        <td class="border-bottom">{{ item.ED }}</td>
                       </tr>
                     </tbody>
                   </table>
