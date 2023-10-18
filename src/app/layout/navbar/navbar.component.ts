@@ -35,6 +35,8 @@ export class NavbarComponent {
       this.router.navigate(['/credit-cm']);
     }else if(this.searchQuery.trim() == 'Mark Anderson'){
       this.router.navigate(['/credit-supervisor']);
+    }else if(this.searchQuery.trim() == 'Punjab'){
+      this.router.navigate(['/branch-search']);
     }
     else{
       this.router.navigate(['/dashboard']);

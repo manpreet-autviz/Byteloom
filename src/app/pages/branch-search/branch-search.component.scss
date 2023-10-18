@@ -1,0 +1,235 @@
+.customer-btn{
+    border: 1px solid;
+    background: rgba(255, 255, 255, 0.29);
+    padding: 5px;
+    border-radius: 20px;
+}
+.cheque-polygon{
+	width: 110px;
+	height: 110px;
+    transform: rotateZ(45deg);
+    border-top: 10px solid #C5BDF5;
+    border-left: 10px solid #c5bdf5;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 15px auto;
+    position: relative;
+}
+.pending-cheque li {
+    list-style: none;
+    position: relative;
+    font-size: 12px;
+}
+.pending-cheque {
+    transform: rotate(316deg);
+}
+.pending-cheque li:before {
+    position: absolute;
+    content: '';
+    background: #000;
+    width: 10px;
+    height: 10px;
+    top: 3px;
+    left: 13px;
+    border-radius: 50px;
+}
+.pending-cheque li:nth-child(1):before {
+     background: #3ADA84;
+}
+.pending-cheque li:nth-child(2):before {
+    background: #FF821C;
+}
+ul.pending-cheque {
+    padding: 20px 12px;
+}
+// .cheque-polygon.first-cheque:after {
+//     position: absolute;
+//     content: "";
+//     background: #E3E3E3;
+//     height: 127px;
+//     width: 2px;
+//     top: -138px;
+//     left: 45px;
+// }
+// .cheque-polygon.second-cheque:after {
+//     position: absolute;
+//     content: "";
+//     background: #E3E3E3;
+//     height: 135px;
+//     width: 2px;
+//     top: -29px;
+//     left: -80px;
+//     transform: rotateZ(91deg);
+// }
+.otc-three-box:after {
+    position: absolute;
+    content: "";
+    background: #E3E3E3;
+    height: 50%;
+    width: 2px;
+    top: 100px;
+    left: 38%;
+    display: inline-block;
+    transform: rotate(40deg);
+    z-index: -1;
+}
+.otc-three-box:before {
+    position: absolute;
+    content: "";
+    background: #E3E3E3;
+    height: 50%;
+    width: 2px;
+    top: 100px;
+    right: 38%;
+    display: inline-block;
+    transform: rotate(-40deg);
+    z-index: -1;
+}
+.otc-three-box p{
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+.ot-normal{
+    transform: rotate(0);
+}
+.pending-cheque.ot-normal li:before {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    top: 2px;
+    left: -20px;
+    border-radius: 50px;
+}
+.pending-cheque.ot-normal li{
+    text-align: left;
+    font-size: 12px;
+}
+ul.pending-cheque.ot-normal {
+    position: absolute;
+    left: calc(50% - 60px);
+    bottom: -20px;
+}
+.otc-three-box {
+    margin-top: 20px;
+    position: relative;
+    z-index: 9;
+}
+
+.progress{
+    height: 52px;
+}
+.disbursal-dots{
+    background-color: #000;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.dot-purple{
+    background-color: #7460EE;
+}
+.dot-gray{
+    background-color: #636363;
+}
+.dot-blue {
+    background-color: #00E1EF;
+}
+.purple-bar{
+    background-color: #7460EE;
+}
+.gray-bar{
+    background-color: #636363;
+}
+.blue-bar{
+    background-color: #00E1EF;
+}
+.dot-orange{
+    background-color: #FF821C;
+}
+.dot-red{
+    background-color: #F00;
+}
+.dot-green{
+    background-color: #07A14E;
+}
+.orange-bar{
+    background-color: #FF821C;
+}
+.green-bar{
+    background-color: #07A14E;
+}
+.red-bar{
+    background-color: #F00;
+}
+.progres-line-bg{
+    box-shadow: 0px 0px 3px 2px #e4e4e4 inset;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 4px;
+}
+.bg-gray {
+    background: #0747a60f;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.login-app-dis ul {
+    display: flex;
+    gap: 20px;
+}
+ .login-app-dis ul li:before{  
+    position: absolute;
+    background: red;
+    content: '';
+    top: 10px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+}
+.login-app-dis ul li:first-child:before{  
+    background: #F99B00;
+}
+.login-app-dis ul li:nth-child(2):before{  
+    background: #000;
+}
+.login-app-dis ul li:nth-child(3):before{  
+    background: #7460EE;
+}
+.login-app-dis ul  li{   
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.09);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 10px 5px 20px;
+    position: relative;
+    list-style: none;
+}
+.login-app-dis {
+    position: absolute;
+    left: 50px;
+    top: 55px;
+}
+
+
+
+
+
+@media (max-width: 767px){
+    .otc-three-box:after, .otc-three-box:before{
+        display: none;
+    }
+    .divider-line {
+        display: block !important;
+    }
+    ul.pending-cheque.ot-normal {
+        position: static !important;
+        max-width: 190px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .box-2-ot {
+        margin-top: 50px;
+    }
+    .pending-cheque.ot-normal li {
+        text-align: center !important;
+    }
+}
