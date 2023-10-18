@@ -26,10 +26,14 @@ import { CreditCmComponent } from './pages/credit-cm/credit-cm.component';
 import { CreditSupervisorComponent } from './pages/credit-supervisor/credit-supervisor.component';
 import { OutOfTatComponent } from './pages/out-of-tat/out-of-tat.component';
 import { WorkInProgressTablesComponent } from './pages/work-in-progress-tables/work-in-progress-tables.component';
-import { PortfolioHealthComponent } from './portfolio-health/portfolio-health.component';
+import { PortfolioHealthComponent } from './pages/portfolio-health/portfolio-health.component';
 import { FinalApprovalComponent } from './pages/final-approval/final-approval.component';
 import { TeamHierarchyComponent } from './pages/team-hierarchy/team-hierarchy.component';
+
 import { SearchingBasisComponent } from './pages/searching-basis/searching-basis.component';
+
+import { BranchSearchComponent } from './pages/branch-search/branch-search.component';
+
 
 
 const routes: Routes = [
@@ -63,7 +67,11 @@ const routes: Routes = [
   { path: 'work-in-progress-table/:data', component: WorkInProgressTablesComponent },
   { path: 'portfolio-health', component: PortfolioHealthComponent },
   { path: 'team-hierarchy', component: TeamHierarchyComponent },
+
   { path: 'search', component: SearchingBasisComponent },
+
+  { path: 'branch-search', component: BranchSearchComponent },
+
 ];
 
 @NgModule({

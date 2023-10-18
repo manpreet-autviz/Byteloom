@@ -32,9 +32,9 @@ export class TechnicalComponent {
   TatChart!: echarts.ECharts;
   TotalReportChart!: echarts.ECharts;
   TMChart!: echarts.ECharts;
- 
+
   TMOption: any;
-  TotalReportOption:any;
+  TotalReportOption: any;
   TatOption: any;
 
   constructor(
@@ -82,9 +82,9 @@ export class TechnicalComponent {
         formatter: (params: any) => {
           const barValue = params[0].value;
           const dataIndex = params[0].dataIndex;
-          const files = [4050, 4560, 7070,7700,8900,6750,4590];
+          const files = [4050, 4560, 7070, 7700, 8900, 6750, 4590];
           const randomFiles = files[dataIndex];
-          
+
           // Create the tooltip content with the actual value and random amount
           return `No. of files:${randomFiles}<br>Days:${barValue} `;
         },
@@ -132,9 +132,13 @@ export class TechnicalComponent {
           min: 1,
           max: 6,
           interval: 1,
-          name: 'DAYS',
+          name: 'Days',
           nameLocation: 'middle',
           nameGap: 10,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize: 14,
+          },
           axisLabel: {
             margin: 1,
           },
@@ -192,7 +196,6 @@ export class TechnicalComponent {
 
       series: [
         {
-        
           type: 'pie',
           radius: [50, 130],
 
@@ -201,14 +204,14 @@ export class TechnicalComponent {
               value: 16,
               name: 'K Rahul',
               itemStyle: {
-                color: '#33B27D',
+                color: '#9D76C1',
               },
             },
             {
               value: 29,
               name: 'Harpreet kaur',
               itemStyle: {
-                color: '#518AFE',
+                color: '#7D6E83',
               },
             },
 
@@ -216,65 +219,38 @@ export class TechnicalComponent {
               value: 13,
               name: 'Manoj Tiwary',
               itemStyle: {
-                color: '#0067FF',
+                color: '#A75D5D',
               },
             },
             {
               value: 8,
               name: 'Ankit Sharma',
               itemStyle: {
-                color: '#5D6C83',
+                color: 'rgba(5, 83, 22, 0.65)',
               },
             },
             {
               value: 9,
               name: 'Rahul Thakur',
               itemStyle: {
-                color: '#A294F9',
+                color: '#DF7861',
               },
             },
             {
               value: 6,
               name: 'Vikram Saini',
               itemStyle: {
-                color: '#00B8DA',
+                color: '#ECB390',
               },
             },
             {
               value: 5,
               name: 'Saurabh Kumar',
               itemStyle: {
-                color: '#33B27D',
+                color: '#AD8B73',
               },
             },
-            {
-              value: 10,
-              name: 'Vivek Singh',
-              itemStyle: {
-                color: '#FFAB00',
-              },
-            },
-            {
-              value: 12,
-              name: 'Aniket Sharma',
-              itemStyle: {
-                color: '#FF5531',
-              },
-            },
-            {
-              value: 14,
-              name: 'Rohani Sharma',
-              itemStyle: {
-                color: '#FFA155',
-              },
-            },
-            {
-              value: 11,
-              name: 'Priynka Negi',
-              itemStyle: {
-                color: '#FF5531',
-              },
-            },
+           
           ],
           emphasis: {
             itemStyle: {
@@ -319,7 +295,6 @@ export class TechnicalComponent {
       xAxis: {
         type: 'category',
         data: [
-          'Maharashtra',
           'Pan India',
           'PCH',
           'NCR',
@@ -345,7 +320,14 @@ export class TechnicalComponent {
         min: 200,
         max: 1800,
         interval: 200,
-        name: 'Value',
+
+        name: 'Number Of Reports',
+        nameLocation: 'middle',
+        nameGap: 40,
+        nameTextStyle: {
+          fontWeight: 600,
+          fontSize: 14,
+        },
         axisLine: {
           show: false,
         },
@@ -362,7 +344,7 @@ export class TechnicalComponent {
           type: 'bar',
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [320, 330, 430, 540, 630,960,1100,1400],
+          data: [1400,1100,960,630,540,430,330],
           itemStyle: {
             color: '#F0B86E', // Color for Category 1
           },
@@ -372,7 +354,7 @@ export class TechnicalComponent {
           type: 'bar',
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [320, 700, 960, 1050, 1250,1400,1600,1780],
+          data: [1780,1600,1400,1250,1050,960,700],
           itemStyle: {
             color: '#F0997D', // Color for Category 2
           },

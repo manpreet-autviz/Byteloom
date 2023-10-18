@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import * as echarts from 'echarts';
 @Component({
-  selector: 'app-three-sixty',
-  templateUrl: './three-sixty.component.html',
-  styleUrls: ['./three-sixty.component.scss'],
+  selector: 'app-branch-search',
+  templateUrl: './branch-search.component.html',
+  styleUrls: ['./branch-search.component.scss']
 })
-export class ThreeSixtyComponent {
+export class BranchSearchComponent {
   filters: string[] = ['Month To Date', 'Last Month'];
 
   states: string[] = [
@@ -113,7 +113,7 @@ export class ThreeSixtyComponent {
         formatter: (params: any) => {
           const barValue = params[0].value;
           const dataIndex = params[0].dataIndex;
-          const files = [1340, 745, 670,770,890];
+          const files = [34, 45, 60,70,80];
           const randomFiles = files[dataIndex];
           // Create the tooltip content with the actual value and random amount
           return `No of Files:${randomFiles} <br> Days: ${barValue}`;
@@ -161,10 +161,6 @@ export class ThreeSixtyComponent {
           name: 'Days ',
           nameLocation: 'middle',
           nameGap: 25,
-          nameTextStyle: {
-            fontWeight: 600,
-            fontSize:14,
-          },
         },
       ],
       series: [
@@ -182,7 +178,7 @@ export class ThreeSixtyComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [14, 17, 15, 17, 13],
+          data: [14, 17, 15, 16, 13],
         },
 
       ],
@@ -193,12 +189,12 @@ export class ThreeSixtyComponent {
         trigger: 'item',
         formatter: (params: any) => {
           let tooltipText = '';
-          if (params.name === '2000Files') {
-            tooltipText = 'Amount in Cr: 345';
-          } else if (params.name === '300Crs') {
-            tooltipText = 'No. of files: 1400 ';
-          } else if (params.name === '250Crs') {
-            tooltipText = 'No. of files: 2300';
+          if (params.name === '500Files') {
+            tooltipText = 'Amount in Cr: 34';
+          } else if (params.name === '30Crs') {
+            tooltipText = 'No. of files: 400 ';
+          } else if (params.name === '25Crs') {
+            tooltipText = 'No. of files: 300';
           }
           return tooltipText;
         },
@@ -246,9 +242,9 @@ export class ThreeSixtyComponent {
             },
           },
           data: [
-            { value: 60, name: '2000Files', itemStyle: { color: '#F99B00' } },
-            { value: 40, name: '300Crs', itemStyle: { color: '#342D2D' } },
-            { value: 20, name: '250Crs', itemStyle: { color: '#7460EE' } },
+            { value: 60, name: '500Files', itemStyle: { color: '#F99B00' } },
+            { value: 40, name: '30Crs', itemStyle: { color: '#342D2D' } },
+            { value: 20, name: '25Crs', itemStyle: { color: '#7460EE' } },
           ],
         },
       ],
@@ -297,15 +293,11 @@ export class ThreeSixtyComponent {
         name: 'Amount ( in Rs. Lacs ) ',
         nameLocation: 'middle',
         nameGap: 25,
-        nameTextStyle: {
-          fontWeight: 600,
-          fontSize:14,
-        },
       },
       series: [
         {
           barWidth: 20,
-          data: [13.5, 11, 12.5, 9.5, 9.5],
+          data: [10.5, 9, 8.5, 7.5, 5],
           type: 'bar',
           itemStyle: {
             color: '#0747A6',
@@ -323,15 +315,15 @@ export class ThreeSixtyComponent {
           let tooltipText = '';
 
           if (params.name === 'Home Loan') {
-            tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 450';
+            tooltipText = 'No. of files: 500 <br/> Amount in Cr: 45';
           } else if (params.name === 'LAP') {
-            tooltipText = 'No. of files: 700 <br/> Amount in Cr: 270';
+            tooltipText = 'No. of files: 300 <br/> Amount in Cr: 27';
           } else if (params.name === 'BL') {
-            tooltipText = 'No. of files: 800 <br/> Amount in Cr: 269';
+            tooltipText = 'No. of files: 200 <br/> Amount in Cr: 26';
           } else if (params.name === 'SBL') {
-            tooltipText = 'No. of files: 1600 <br/> Amount in Cr: 268';
+            tooltipText = 'No. of files: 600 <br/> Amount in Cr: 28';
           } else if (params.name === 'All Products') {
-            tooltipText = 'No. of files: 2300 <br/> Amount in Cr: 367';
+            tooltipText = 'No. of files: 300 <br/> Amount in Cr: 36';
           }
 
           return tooltipText;
@@ -364,14 +356,14 @@ export class ThreeSixtyComponent {
           },
           data: [
             {
-              value: 45,
+              value: 25,
               name: 'All Products',
               itemStyle: { color: '#7C41DA' },
             },
-            { value: 45, name: 'Home Loan', itemStyle: { color: '#F99B00' } },
+            { value: 34, name: 'Home Loan', itemStyle: { color: '#F99B00' } },
             { value: 20, name: 'LAP', itemStyle: { color: '#07A14E' } },
             { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
-            { value: 25, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
+            { value: 15, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
           ],
         },
       ],
@@ -387,10 +379,10 @@ export class ThreeSixtyComponent {
           const barValue = params[0].value;
           const dataIndex = params[0].dataIndex;
 
-          const randomAmounts = [350, 145, 167,345,234];
+          const randomAmounts = [35, 14, 16,34,23];
           const randomAmount = randomAmounts[dataIndex];
 
-          const files = [1340, 745, 670,770,890];
+          const files = [34, 45, 67,77,89];
           const randomFiles = files[dataIndex];
           return `No.of Files:${randomFiles}<br> Amount in Cr:${randomAmount}<br> ${barValue}% <br>  `;
         },
@@ -426,15 +418,11 @@ export class ThreeSixtyComponent {
         name: 'Percentage %',
         nameLocation: 'middle',
         nameGap: 25,
-        nameTextStyle: {
-          fontWeight: 600,
-          fontSize:14,
-        },
       },
       series: [
         {
           barWidth: 20,
-          data: [70, 55, 45, 40, 53],
+          data: [50, 35, 25, 20, 33],
           type: 'bar',
           itemStyle: {
             color: '#5D5BCC',
@@ -459,11 +447,11 @@ export class ThreeSixtyComponent {
       dataset: {
         dimensions: ['product', 'IRR', 'PF', 'Insurance'],
         source: [
-          { product: 'All Products', IRR: 13, PF: 3.5, Insurance: 3 },
-          { product: 'Home loan', IRR: 12.5, PF: 3, Insurance: 2.7 },
-          { product: 'LAP', IRR: 14, PF: 4, Insurance: 2.4 },
-          { product: 'BL', IRR: 12.9, PF: 3.7, Insurance: 2.4 },
-          { product: 'SBL', IRR: 16, PF: 3.7, Insurance: 3 },
+          { product: 'All Products', IRR: 8, PF: 3.5, Insurance: 3 },
+          { product: 'Home loan', IRR: 10.5, PF: 3, Insurance: 2.7 },
+          { product: 'LAP', IRR: 7, PF: 4, Insurance: 2.4 },
+          { product: 'BL', IRR: 8.9, PF: 3.7, Insurance: 2.4 },
+          { product: 'SBL', IRR: 6, PF: 3.7, Insurance: 3 },
         ],
       },
       xAxis: {
@@ -497,10 +485,6 @@ export class ThreeSixtyComponent {
         name: 'Percentage %',
         nameLocation: 'middle',
         nameGap: 25,
-        nameTextStyle: {
-          fontWeight: 600,
-          fontSize:14,
-        },
       },
       // Declare several bar series, each will be mapped
       // to a column of dataset.source by default.
@@ -552,14 +536,14 @@ export class ThreeSixtyComponent {
             show:false,
           },
           data: [
-            { value: 1048, name: 'Online', itemStyle: { color: '#7C41DA' } },
-            { value: 735, name: 'Cheque', itemStyle: { color: '#FB8C00' } },
-            { value: 580, name: 'Cash', itemStyle: { color: '#07A14E' } },
-            { value: 784, name: 'UPI', itemStyle: { color: '#636363' } },
+            { value: 104, name: 'Online', itemStyle: { color: '#7C41DA' } },
+            { value: 235, name: 'Cheque', itemStyle: { color: '#FB8C00' } },
+            { value: 380, name: 'Cash', itemStyle: { color: '#07A14E' } },
+            { value: 484, name: 'UPI', itemStyle: { color: '#636363' } },
 
             {
               // make an record to fill the bottom 50%
-              value: 1048 + 735 + 580 + 484 + 300,
+              value: 104 + 235 + 380 + 484 + 300,
               itemStyle: {
                 // stop the chart from rendering this piece
                 color: 'none',
@@ -586,7 +570,7 @@ export class ThreeSixtyComponent {
           const barValue = params[0].value;
           const dataIndex = params[0].dataIndex;
 
-          const randomAmounts = [350, 145, 167];
+          const randomAmounts = [35, 14, 16];
           const randomAmount = randomAmounts[dataIndex];
 
           const customers = [34, 45, 67];
@@ -624,15 +608,11 @@ export class ThreeSixtyComponent {
         name: 'Percentage %',
         nameLocation: 'middle',
         nameGap: 25,
-        nameTextStyle: {
-          fontWeight: 600,
-          fontSize:14,
-        },
       },
       series: [
         {
           barWidth: 40,
-          data: [2.1, 1.3, 1.1],
+          data: [1.2, 1.3, 1],
           type: 'bar',
           itemStyle: {
             color: '#F0997D',

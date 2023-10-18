@@ -15,6 +15,16 @@ export class BusinessRMComponent {
   DistributionMixOption:any;
   SourceLoginOption:any;
 
+  progressValue1: number = 50;
+  progressValue2: number = 5;
+  progressValue3: number = 45;
+  minValue1: number = 80;
+  maxValue1: number = 75;
+  minValue2: number = 10;
+  maxValue2: number = 12;
+  minValue3: number = 6;
+  maxValue3: number = 8;
+
   states: string[] = [
     'Pan India',
     'Punjab',
@@ -59,9 +69,9 @@ export class BusinessRMComponent {
 
   initializeChart() {
     if (!this.isToggled) {
-      this.PotentialLostBusinessChart = echarts.init(
-        document.getElementById('Potential-lost-business') as HTMLDivElement
-      );
+      // this.PotentialLostBusinessChart = echarts.init(
+      //   document.getElementById('Potential-lost-business') as HTMLDivElement
+      // );
       this.DistributionMixChart = echarts.init(
         document.getElementById('Distribution-mix') as HTMLDivElement
       );
@@ -71,84 +81,84 @@ export class BusinessRMComponent {
       );
       
 
-      this.PotentialLostBusinessOption = {
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'shadow',
-          },
-        },
-        legend: {
-          data: ['CNI', 'Cancellation'],
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true,
-        },
-        xAxis: {
-          type: 'value',
-          splitLine: {
-            show: false,
-          },
+      // this.PotentialLostBusinessOption = {
+      //   tooltip: {
+      //     trigger: 'axis',
+      //     axisPointer: {
+      //       type: 'shadow',
+      //     },
+      //   },
+      //   legend: {
+      //     data: ['CNI', 'Cancellation'],
+      //   },
+      //   grid: {
+      //     left: '3%',
+      //     right: '4%',
+      //     bottom: '3%',
+      //     containLabel: true,
+      //   },
+      //   xAxis: {
+      //     type: 'value',
+      //     splitLine: {
+      //       show: false,
+      //     },
 
-          boundaryGap: [0, 0.01],
-          axisLabel: {
-            show: false, // Set this to false to hide x-axis labels
-          },
-        },
-        yAxis: {
-          type: 'category',
-          axisLine: {
-            show: false,
-          },
-          splitLine: {
-            show: false,
-          },
-          data: [
-            'Maharashtra',
-            'MP',
-            'Gujarat',
-            'Rajasthan',
-            'NCR',
-            'Haryana',
-            'Punjab',
-            'Pan India',
-          ],
-        },
+      //     boundaryGap: [0, 0.01],
+      //     axisLabel: {
+      //       show: false, // Set this to false to hide x-axis labels
+      //     },
+      //   },
+      //   yAxis: {
+      //     type: 'category',
+      //     axisLine: {
+      //       show: false,
+      //     },
+      //     splitLine: {
+      //       show: false,
+      //     },
+      //     data: [
+      //       'Maharashtra',
+      //       'MP',
+      //       'Gujarat',
+      //       'Rajasthan',
+      //       'NCR',
+      //       'Haryana',
+      //       'Punjab',
+      //       'Pan India',
+      //     ],
+      //   },
 
-        series: [
-          {
-            name: 'CNI',
-            type: 'bar',
-            data: [40, 40, 40, 40, 40, 40, 40, 80],
-            label: {
-              show: true,
-              position: 'right',
-              formatter: '{c}%',
-            },
-            itemStyle: {
-              color: '#3C7EBE', // Set the color for the first bar series (IRR)
-              borderRadius: 10,
-            },
-          },
-          {
-            name: 'Cancellation',
-            type: 'bar',
-            data: [65, 65, 65, 65, 65, 65, 65, 225],
-            label: {
-              show: true,
-              position: 'right',
-              formatter: '{c} Cr',
-            },
-            itemStyle: {
-              color: '#5BC8EF', // Set the color for the first bar series (IRR)
-              borderRadius: 10,
-            },
-          },
-        ],
-      };
+      //   series: [
+      //     {
+      //       name: 'CNI',
+      //       type: 'bar',
+      //       data: [40, 40, 40, 40, 40, 40, 40, 80],
+      //       label: {
+      //         show: true,
+      //         position: 'right',
+      //         formatter: '{c}%',
+      //       },
+      //       itemStyle: {
+      //         color: '#3C7EBE', // Set the color for the first bar series (IRR)
+      //         borderRadius: 10,
+      //       },
+      //     },
+      //     {
+      //       name: 'Cancellation',
+      //       type: 'bar',
+      //       data: [65, 65, 65, 65, 65, 65, 65, 75],
+      //       label: {
+      //         show: true,
+      //         position: 'right',
+      //         formatter: '{c} Cr',
+      //       },
+      //       itemStyle: {
+      //         color: '#5BC8EF', // Set the color for the first bar series (IRR)
+      //         borderRadius: 10,
+      //       },
+      //     },
+      //   ],
+      // };
 
       this.DistributionMixOption = {
         tooltip: {
@@ -196,10 +206,10 @@ export class BusinessRMComponent {
               show: false,
             },
             data: [
-              { value: 45, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
-              { value: 20, name: 'LAP', itemStyle: { color: '#07A14E' } },
-              { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
-              { value: 25, name: 'SBL', itemStyle: { color: '#F99B00' } },
+              { value: 45, name: 'Home Loan', itemStyle: { color: '#146C94' } },
+              { value: 20, name: 'LAP', itemStyle: { color: '#AFD3E2' } },
+              { value: 10, name: 'BL', itemStyle: { color: '#91C8E4' } },
+              { value: 25, name: 'SBL', itemStyle: { color: '#19A7CE' } },
             ],
           },
         ],
@@ -226,18 +236,15 @@ export class BusinessRMComponent {
           },
         },
         legend: {
-          top: '5%',
+          top: '2%',
           left: 'center',
         },
         series: [
           {
             type: 'pie',
-            radius: ['40%', '70%'],
+            radius: ['30%', '80%'],
             avoidLabelOverlap: false,
-            itemStyle: {
-              borderColor: '#fff',
-              borderWidth: 2,
-            },
+           
             label: {
               show: false,
               position: 'center',
@@ -258,28 +265,28 @@ export class BusinessRMComponent {
                 value: 35,
                 name: 'Direct',
                 itemStyle: {
-                  color: '#3ADA84',
+                  color: '#7D6E83',
                 },
               },
               {
                 value: 20,
                 name: 'Power Partner',
                 itemStyle: {
-                  color: '#FF821C',
+                  color: '#DBA39A',
                 },
               },
               {
                 value: 10,
                 name: 'DSA',
                 itemStyle: {
-                  color: 'rgba(5, 83, 22, 0.65)',
+                  color: '#ECB390',
                 },
               },
               {
                 value: 20,
                 name: 'Other',
                 itemStyle: {
-                  color: '#0B9DE8',
+                  color: '#DF7861',
                 },
               },
             ],
@@ -287,9 +294,9 @@ export class BusinessRMComponent {
         ],
       };
 
-      this.PotentialLostBusinessChart.setOption(
-        this.PotentialLostBusinessOption
-      );
+      // this.PotentialLostBusinessChart.setOption(
+      //   this.PotentialLostBusinessOption
+      // );
 
       this.DistributionMixChart.setOption(
         this.DistributionMixOption

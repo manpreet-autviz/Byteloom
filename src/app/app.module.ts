@@ -38,10 +38,14 @@ import { CreditCmComponent } from './pages/credit-cm/credit-cm.component';
 import { CreditSupervisorComponent } from './pages/credit-supervisor/credit-supervisor.component';
 import { WorkInProgressTablesComponent } from './pages/work-in-progress-tables/work-in-progress-tables.component';
 import { OutOfTatComponent } from './pages/out-of-tat/out-of-tat.component';
-import { PortfolioHealthComponent } from './portfolio-health/portfolio-health.component';
+import { PortfolioHealthComponent } from './pages/portfolio-health/portfolio-health.component';
 import { FinalApprovalComponent } from './pages/final-approval/final-approval.component';
 import { TeamHierarchyComponent } from './pages/team-hierarchy/team-hierarchy.component';
+
 import { SearchingBasisComponent } from './pages/searching-basis/searching-basis.component';
+
+import { BranchSearchComponent } from './pages/branch-search/branch-search.component';
+
 
 
 
@@ -79,7 +83,11 @@ import { SearchingBasisComponent } from './pages/searching-basis/searching-basis
     PortfolioHealthComponent,
     FinalApprovalComponent,
     TeamHierarchyComponent,
+
     SearchingBasisComponent,
+
+    BranchSearchComponent,
+
 
   ],
   imports: [
@@ -91,7 +99,7 @@ import { SearchingBasisComponent } from './pages/searching-basis/searching-basis
     TreeTableModule,
     OrganizationChartModule
   ],
-  providers: [],
+  providers: [SidebarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

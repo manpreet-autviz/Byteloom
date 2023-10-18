@@ -1,0 +1,318 @@
+<div class="main-content">
+    <div class="page-content">
+      <div class="container-fluid">
+        <div class="breadcrumb">
+          <div class="card card-animate w-100">
+            <div class="card-body d-flex align-items-center justify-content-between">
+              <div>
+                <span class="f-7 fs-5">Branch Search</span>
+              </div>
+              <div class="d-flex">
+                <select id="dropdown" class="form-select me-2" [(ngModel)]="selectedFilter"
+                  (ngModelChange)="onFilterChange($event)">
+                  <option *ngFor="let filter of filters" [value]="filter">
+                    {{ filter }}
+                  </option>
+                </select>
+  
+                <select id="dropdown" class="form-select" [(ngModel)]="selectedState"
+                  (ngModelChange)="onStateChange($event)">
+                  <option *ngFor="let state of states" [value]="state">
+                    {{ state }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="card card-animate w-100 mt-2">
+            <div class="card-body align-items-center justify-content-between">
+              <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                  <div class="card box-s h-100">
+                    <div class="card-body rounded">
+                      <div class="text-center">
+                      <span class="f-6 text-center title">Overview</span>
+                      </div>
+  
+                        <div class="d-flex align-items-center justify-content-between bg-gray mb-2 mt-5">
+                          <span class="f-9">AUM</span>
+                          <h6 class="m-0">100CR</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between bg-gray mb-2">
+                          <span class="f-9">No. of customers</span>
+                          <h6 class="m-0">1000</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between bg-gray mb-2">
+                          <span class="f-9">BT out in last month</span>
+                          <h6 class="m-0">12CR</h6>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between bg-gray mb-2">
+                          <span class="f-9">BT out YTD</span>
+                          <h6 class="m-0">15CR</h6>
+                        </div>
+  
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"> Login / Approvals /Disbursal </span>
+                      <div class="login-app-dis">
+                        <ul>
+                          <li>Login</li>
+                          <li>Approvals</li>
+                          <li>Disbursal</li>
+                        </ul>
+                      </div>
+                      <div class="state-chart" id="Login-Approvals-Disbursal-Chart" style="width: 100%; height: 400px">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">
+                        ED/GNPA/NPA
+                      </span>
+                      <div class="state-chart" id="ED-GNPA-NPA-chart" style="width: 100%; height: 400px"></div>
+                    </div>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="card card-animate w-100 mt-2" *ngIf="showprogressChart">
+            <div class="card-body align-items-center justify-content-between">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"> Disbursal </span>
+  
+                      <span class="f-6 title"> Login to PD TAT  </span>
+                      <div class="mt-3 cursor-pointer">
+                        <div class="box-s rounded d-inline-block justify-content-center py-2 ">
+                          <div class=" d-flex mx-3">
+                            <div class="indicators align-items-center d-flex mx-3 fs-12">
+                              <div class="disbursal-dots dot-purple mx-1"></div>Gross
+                            </div>
+                            <div class="indicators align-items-center d-flex mx-3 fs-12">
+                              <div class="disbursal-dots dot-blue mx-1"></div>Cancellation
+                            </div>
+                            <div class="indicators align-items-center d-flex mx-3 fs-12">
+                              <div class="disbursal-dots  dot-gray mx-1"></div>Net
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="progres-line-bg cursor-pointer ">
+                        <div class="progress">
+                          <div class="progress-bar purple-bar" role="progressbar" [style.width]="progressValue1 + '%'"
+                            [attr.aria-valuenow]="progressValue1" [attr.aria-valuemin]="minValue1"
+                            [attr.aria-valuemax]="maxValue1">
+                            {{progressValue1 }}%
+                          </div>
+                          <div class="progress-bar blue-bar" role="progressbar" [style.width]="progressValue2 + '%'"
+                            [attr.aria-valuenow]="progressValue2" [attr.aria-valuemin]="minValue2"
+                            [attr.aria-valuemax]="maxValue2">
+                            {{progressValue2}}%
+                          </div>
+                          <div class="progress-bar gray-bar" role="progressbar" [style.width]="progressValue3 + '%'"
+                            [attr.aria-valuenow]="progressValue3" [attr.aria-valuemin]="minValue3"
+                            [attr.aria-valuemax]="maxValue3">
+                            {{progressValue3}}%
+                          </div>
+                        </div>
+                        <div class="progress-number d-flex justify-content-around">
+                          <p>100%</p>
+                          <p>33%</p>
+                          <p>67%</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">
+                        Branch Performance
+                      </span>
+                      <div class="mt-3 cursor-pointer">
+                        <div class="box-s rounded d-inline-block justify-content-center py-2 ">
+                          <div class=" d-flex mx-3">
+                            <div class="indicators align-items-center d-flex mx-3 fs-12">
+                              <div class="disbursal-dots dot-green mx-1"></div>Disbursement
+                            </div>
+                            <div class="indicators align-items-center d-flex mx-3 fs-12">
+                              <div class="disbursal-dots dot-orange mx-1"></div>Disbursement
+                            </div>
+                            <div class="indicators align-items-center d-flex mx-3 fs-12">
+                              <div class="disbursal-dots  dot-red mx-1"></div>Disbursement
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="progres-line-bg cursor-pointer ">
+                        <div class="progress">
+                          <div class="progress-bar green-bar" role="progressbar" [style.width]="progressValue1 + '%'"
+                            [attr.aria-valuenow]="progressValue1" [attr.aria-valuemin]="minValue1"
+                            [attr.aria-valuemax]="maxValue1">
+                            {{progressValue1 }}%
+                          </div>
+                          <div class="progress-bar orange-bar" role="progressbar" [style.width]="progressValue2 + '%'"
+                            [attr.aria-valuenow]="progressValue2" [attr.aria-valuemin]="minValue2"
+                            [attr.aria-valuemax]="maxValue2">
+                            {{progressValue2}}%
+                          </div>
+                          <div class="progress-bar red-bar" role="progressbar" [style.width]="progressValue3 + '%'"
+                            [attr.aria-valuenow]="progressValue3" [attr.aria-valuemin]="minValue3"
+                            [attr.aria-valuemax]="maxValue3">
+                            {{progressValue3}}%
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="card card-animate w-100 mt-2">
+            <div class="card-body align-items-center justify-content-between">
+              <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"> Distribution mix </span>
+                      <div class="state-chart" id="distribution-mix" style="width: 100%; height: 400px"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"> IRR/PF/Insurance </span>
+                      <div class="state-chart" id="Irr-pf-insurance" style="width: 100%; height: 400px"></div>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+  
+          <div class="card card-animate w-100 mt-2">
+            <div class="card-body align-items-center justify-content-between">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">Login to disbursal ratio</span>
+                      
+                      <div class="state-chart" id="conversion-ratio" style="width: 100%; height: 400px"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                  <div class="card box-s h-100">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">
+                        OTC/PDD & Cheque handover pending
+                      </span>
+  
+                      <div class="otc-three-box">
+                        <p>OTC</p>
+                        <div class="cheque-polygon box-s mt-3">
+                          <ul class="pending-cheque">
+                            <li>34</li>
+                            <li>34</li>
+                          </ul>
+                        </div>
+  
+                        <div class="d-flex justify-content-around align-items-center divider-line">
+                          <div class="box-2-ot">
+                            <p>PDD</p>
+                            <div class="cheque-polygon first-cheque box-s mt-3">
+                              <ul class="pending-cheque">
+                                <li>34</li>
+                                <li>34</li>
+                              </ul>
+                            </div>
+                          </div>
+  
+                          <div class="box-2-ot">
+                            <p>Cheque handover</p>
+                            <div class="cheque-polygon second-cheque box-s mt-3">
+                              <ul class="pending-cheque">
+                                <li>34</li>
+                                <li>34</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="color-info ">
+                          <ul class="pending-cheque ot-normal ">
+                            <li>
+                              Total
+                            </li>
+                            <li>
+                              More than 45 days
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="card card-animate w-100 mt-2">
+            <div class="card-body align-items-center justify-content-between">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"> Product Wise TAT </span>
+                      <div class="state-chart" id="product-wise-Chart" style="width: 100%; height: 400px"></div>
+                    </div>
+                  </div>
+                 
+                </div>
+                <div class="col-md-4">
+                  <div class="card box-s">
+                    <div class="card box-s">
+                      <div class="card-body text-center">
+                        <span class="f-6 title"> Avg ticked size product wise </span>
+                        <div class="state-chart" id="Avg-ticked-size" style="width: 100%; height: 400px"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card box-s">
+                    <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"> IMD </span>
+                      <div class="state-chart" id="IMD-chart" style="width: 100%; height: 400px"></div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+  
+        </div>
+      </div>
+    </div>
+  </div>

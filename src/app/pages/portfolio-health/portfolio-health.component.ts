@@ -77,9 +77,9 @@ export class PortfolioHealthComponent {
         document.getElementById('Non-started-cases') as HTMLDivElement
       );
 
-      this.BucketWiseListChart = echarts.init(
-        document.getElementById('Bucket-wise-list') as HTMLDivElement
-      );
+      // this.BucketWiseListChart = echarts.init(
+      //   document.getElementById('Bucket-wise-list') as HTMLDivElement
+      // );
 
       this.EDGNPANPAOption = {
         tooltip: {
@@ -387,97 +387,97 @@ export class PortfolioHealthComponent {
         ],
       };
 
-      this.BucketWiseListOption = {
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'shadow',
-          },
-        },
-        legend: {
-          data: ['ED', 'GNPA','  NPA'],
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true,
-        },
-        xAxis: {
-          type: 'value',
-          splitLine: {
-            show: false,
-          },
+      // this.BucketWiseListOption = {
+      //   tooltip: {
+      //     trigger: 'axis',
+      //     axisPointer: {
+      //       type: 'shadow',
+      //     },
+      //   },
+      //   legend: {
+      //     data: ['ED', 'GNPA','  NPA'],
+      //   },
+      //   grid: {
+      //     left: '3%',
+      //     right: '4%',
+      //     bottom: '3%',
+      //     containLabel: true,
+      //   },
+      //   xAxis: {
+      //     type: 'value',
+      //     splitLine: {
+      //       show: false,
+      //     },
 
-          boundaryGap: [0, 0.01],
-          axisLabel: {
-            show: false, // Set this to false to hide x-axis labels
-          },
-        },
-        yAxis: {
-          type: 'category',
-          axisLine: {
-            show: false,
-          },
-          splitLine: {
-            show: false,
-          },
-          axisTick: {
-            show: false, 
-          },
-          data: [
-            '0-30',
-            '31-60',
-            '61-90',
-            '90+',
-          ],
-        },
+      //     boundaryGap: [0, 0.01],
+      //     axisLabel: {
+      //       show: false, // Set this to false to hide x-axis labels
+      //     },
+      //   },
+      //   yAxis: {
+      //     type: 'category',
+      //     axisLine: {
+      //       show: false,
+      //     },
+      //     splitLine: {
+      //       show: false,
+      //     },
+      //     axisTick: {
+      //       show: false, 
+      //     },
+      //     data: [
+      //       '0-30',
+      //       '31-60',
+      //       '61-90',
+      //       '90+',
+      //     ],
+      //   },
 
-        series: [
-          {
-            name: 'ED',
-            type: 'bar',
-            data: [860, 850, 750, 100],
-            label: {
-              show: true,
-              position: 'right',
-              formatter: '{c}Cr',
-            },
-            itemStyle: {
-              color: '#3C7EBE', // Set the color for the first bar series (IRR)
-              borderRadius: 10,
-            },
-          },
-          {
-            name: 'GNPA',
-            type: 'bar',
-            data: [800, 777, 650, 1000],
-            label: {
-              show: true,
-              position: 'right',
-              formatter: '{c} ',
-            },
-            itemStyle: {
-              color: '#5BC8EF', // Set the color for the first bar series (IRR)
-              borderRadius: 10,
-            },
-          },
-          {
-            name: 'NPA',
-            type: 'bar',
-            data: [800, 777, 650, 1000],
-            label: {
-              show: true,
-              position: 'right',
-              formatter: '{c}% ',
-            },
-            itemStyle: {
-              color: '#89BDEC', // Set the color for the first bar series (IRR)
-              borderRadius: 10,
-            },
-          },
-        ],
-      };
+      //   series: [
+      //     {
+      //       name: 'ED',
+      //       type: 'bar',
+      //       data: [860, 850, 750, 100],
+      //       label: {
+      //         show: true,
+      //         position: 'right',
+      //         formatter: '{c}Cr',
+      //       },
+      //       itemStyle: {
+      //         color: '#3C7EBE', // Set the color for the first bar series (IRR)
+      //         borderRadius: 10,
+      //       },
+      //     },
+      //     {
+      //       name: 'GNPA',
+      //       type: 'bar',
+      //       data: [800, 777, 650, 1000],
+      //       label: {
+      //         show: true,
+      //         position: 'right',
+      //         formatter: '{c} ',
+      //       },
+      //       itemStyle: {
+      //         color: '#5BC8EF', // Set the color for the first bar series (IRR)
+      //         borderRadius: 10,
+      //       },
+      //     },
+      //     {
+      //       name: 'NPA',
+      //       type: 'bar',
+      //       data: [800, 777, 650, 1000],
+      //       label: {
+      //         show: true,
+      //         position: 'right',
+      //         formatter: '{c}% ',
+      //       },
+      //       itemStyle: {
+      //         color: '#89BDEC', // Set the color for the first bar series (IRR)
+      //         borderRadius: 10,
+      //       },
+      //     },
+      //   ],
+      // };
 
       this.EDGNPANPAChart.setOption(this.EDGNPANPAOption);
       this.CIBILScoreChart.setOption(this.CIBILScoreOption);

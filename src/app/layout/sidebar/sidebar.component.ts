@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
 
@@ -11,17 +11,22 @@ export class SidebarComponent {
   activeItem: string | null = '/dashboard';
   showSubmenu:boolean = false;
   submenus: any = {};
-  constructor(private router : Router,private menuService: MenuService){
-
+  constructor(private router : Router,private menuService: MenuService,private cdr:ChangeDetectorRef){
+    this.menuService.searchTerm$.subscribe(term => {
+      this.activeItem = term;
+     
+    });
   }
   ngOnInit(): void {
     this.activeItem = this.menuService.getActiveMenuItem();
   }
 
   navigateToPage(path:string){
+    this.cdr.detectChanges();
     this.router.navigate([path]);
     this.activeItem = path;
     this.menuService.setActiveMenuItem(path);
+  
   }
 
   toggleSubmenu(submenuName: string){

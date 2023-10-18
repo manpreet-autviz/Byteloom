@@ -140,9 +140,13 @@ export class LegalComponent {
           min: 1,
           max: 6,
           interval: 1,
-          name: 'DAYS',
+          name: 'Days',
           nameLocation: 'middle',
-          nameGap: 43,
+          nameGap: 15,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
           axisLabel: {
             margin: 1,
           },
@@ -165,7 +169,7 @@ export class LegalComponent {
           },
           data: [4.2, 4.5, 4.1, 5, 6, 5.5, 5],
           itemStyle: {
-            color: '#333333',
+            color: '#B0578D',
           },
         },
         {
@@ -183,7 +187,7 @@ export class LegalComponent {
           },
           data: [2.2, 2.5, 2.1, 3, 2.5, 2.1, 2.5],
           itemStyle: {
-            color: '#FE5419',
+            color: '#EF9595',
           },
         },
       ],
