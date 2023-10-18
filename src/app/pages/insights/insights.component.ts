@@ -18,15 +18,12 @@ export class InsightsComponent {
     'Maharashtra',
   ];
   statesFilter: string[] = [
-    'Select State',
-    'Pan India',
-    'Punjab',
-    'Haryana',
-    'NCR',
-    'Rajasthan',
-    'Gujarat',
-    'MP',
-    'Maharashtra',
+    'Select Product',
+    'Home Loan',
+    'LAP',
+    'BL',
+    'SBL',
+    
   ];
   filters: string[] = [
     'April',
@@ -37,12 +34,14 @@ export class InsightsComponent {
     'September',
     // 'Select custom'
   ];
-  loginTotalAmount: number = 3.95;
+  loginTotalAmount: number = 550;
   loginTotalFiles: number = 3050;
-  financialTotalAmount: number = 3.2;
-  financialTotalFiles: number = 2080;
-  disbursalTotalAmount: number = 3.05;
-  disbursalTotalFiles: number = 2080;
+  financialTotalAmount: number = 550;
+  financialTotalFiles: number = 3050;
+  finalTotalAmount: number = 550;
+  finalTotalFiles: number = 3050;
+  disbursalTotalAmount: number = 500;
+  disbursalTotalFiles: number = 2650;
 
   minLoginAmountValue = 350;
   maxLoginAmountValue = 500;
@@ -65,11 +64,11 @@ export class InsightsComponent {
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
 
-  tats: string[] = ['Select TAT', '>2days ', '<2days'];
+  tats: string[] = ['Stage of Files', 'Login ', 'Final Approval',"Financial Approval","Disbursal"];
   statuss: string[] = ['Select Status', 'pending', 'approved'];
-  selectedTat: string = 'Select TAT';
+  selectedTat: string = 'Stage of Files';
   selectedStatus: string = 'Select Status';
-  selectedFilterState: string = 'Select State';
+  selectedFilterState: string = 'Select Product';
   files!: TreeNode[];
   routeName!: string | null;
   constructor(
@@ -829,7 +828,8 @@ export class InsightsComponent {
     this.financialTotalFiles = +(Math.random() * 15).toFixed(1);
     this.disbursalTotalAmount = +(Math.random() * 15).toFixed(2);
     this.disbursalTotalFiles = +(Math.random() * 15).toFixed(1);
-
+    this.finalTotalAmount = +(Math.random() * 15).toFixed(2);
+    this.finalTotalFiles = +(Math.random() * 15).toFixed(1);
     this.loginTotalAmount = +(
       Math.random() * (this.maxLoginAmountValue - this.minLoginAmountValue) +
       this.minLoginAmountValue
@@ -856,6 +856,17 @@ export class InsightsComponent {
       this.minDisbursalAmountValue
     ).toFixed(2);
     this.disbursalTotalFiles = +(
+      Math.random() *
+        (this.maxDisbursalFileValue - this.minDisbursalFileValue) +
+      this.minDisbursalFileValue
+    ).toFixed(0);
+
+    this.finalTotalAmount = +(
+      Math.random() *
+        (this.maxDisbursalAmountValue - this.minDisbursalAmountValue) +
+      this.minDisbursalAmountValue
+    ).toFixed(2);
+    this.finalTotalFiles = +(
       Math.random() *
         (this.maxDisbursalFileValue - this.minDisbursalFileValue) +
       this.minDisbursalFileValue
