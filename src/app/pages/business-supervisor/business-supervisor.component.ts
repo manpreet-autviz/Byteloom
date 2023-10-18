@@ -45,6 +45,17 @@ export class BusinessSupervisorComponent {
 
   stateApprovalOption: any;
 
+
+  progressValue1: number = 60;
+  progressValue2: number = 15;
+  progressValue3: number = 25;
+  minValue1: number = 80;
+  maxValue1: number = 75;
+  minValue2: number = 10;
+  maxValue2: number = 12;
+  minValue3: number = 6;
+  maxValue3: number = 8;
+
   public isToggled = false;
   constructor(private cdRef: ChangeDetectorRef) {}
 
@@ -297,13 +308,13 @@ export class BusinessSupervisorComponent {
         legend: {},
         tooltip: {},
         dataset: {
-          dimensions: ['product', 'IRR', 'PF', 'Insurance'],
+          dimensions: ['product', 'Branch target', 'Achievement'],
           source: [
-            { product: 'All Products', IRR: 13, PF: 3.5, Insurance: 3 },
-            { product: 'Home loan', IRR: 12.5, PF: 3, Insurance: 2.7 },
-            { product: 'LAP', IRR: 14, PF: 4, Insurance: 2.4 },
-            { product: 'BL', IRR: 12.9, PF: 3.7, Insurance: 2.4 },
-            { product: 'SBL', IRR: 16, PF: 3.7, Insurance: 3 },
+            { product: 'Chandigarh', 'Branch target': 100, Achievement: 82 },
+            { product: 'Rohtak', 'Branch target': 95, Achievement: 90},
+            { product: 'Karnal', 'Branch target': 85, Achievement: 110 },
+            { product: 'Sonipat', 'Branch target':85, Achievement: 100 },
+            { product: 'Ambala', 'Branch target': 70, Achievement: 70},
           ],
         },
         xAxis: {
@@ -316,14 +327,14 @@ export class BusinessSupervisorComponent {
           type: 'category',
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            
             overflow: 'break',
           },
         },
         yAxis: {
-          min: 2,
-          max: 16,
-          interval: 2,
+          min: 20,
+          max: 120,
+          interval: 20,
           axisLine: {
             show: false,
           },
@@ -337,28 +348,30 @@ export class BusinessSupervisorComponent {
           name: 'Percentage %',
           nameLocation: 'middle',
           nameGap: 25,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
+
         },
         // Declare several bar series, each will be mapped
         // to a column of dataset.source by default.
         series: [
           {
             type: 'bar',
+            barWidth:20,
             itemStyle: {
-              color: '#636363', // Set the color for the first bar series (IRR)
+              color: '#F0997D', // Set the color for the first bar series (IRR)
             },
           },
           {
             type: 'bar',
+            barWidth:20,
             itemStyle: {
-              color: '#F99B00', // Set the color for the first bar series (IRR)
+              color: '#F0B86E', // Set the color for the first bar series (IRR)
             },
           },
-          {
-            type: 'bar',
-            itemStyle: {
-              color: '#4FC3F7', // Set the color for the first bar series (IRR)
-            },
-          },
+          
         ],
       };
 

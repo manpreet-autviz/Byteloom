@@ -311,7 +311,7 @@ export class ChequesSummaryComponent {
         {
           name:"Financial approval amount",
           type: 'line',
-          smooth: true,
+         
           yAxisIndex: 1,
           tooltip: {
             valueFormatter: function (value: any) {
@@ -418,7 +418,6 @@ export class ChequesSummaryComponent {
         {
           name:"Financial approval amount",
           type: 'line',
-          smooth: true,
           yAxisIndex: 1,
           tooltip: {
             valueFormatter: function (value: any) {

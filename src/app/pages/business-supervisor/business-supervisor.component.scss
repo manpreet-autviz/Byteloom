@@ -92,3 +92,68 @@
     min-height: 135px;
     height: 100%;
     }
+
+
+
+    .progress{
+      height: 52px;
+  }
+  .disbursal-dots{
+      background-color: #000;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+  }
+  .dot-purple{
+    background-color: #19A7CE;
+  }
+  .dot-gray{
+    background-color: #6C757D;
+  }
+  .dot-blue {
+    background-color:#64CCC5;
+  }
+  .purple-bar{
+    background-color: #19A7CE;
+  }
+  .gray-bar{
+    background-color: #6C757D;
+  }
+  .blue-bar{
+    background-color: #64CCC5;
+  }
+  .dot-orange{
+      background-color: #FF821C;
+  }
+  .dot-red{
+      background-color: #F00;
+  }
+  .dot-green{
+      background-color: #07A14E;
+  }
+  .orange-bar{
+      background-color: #FF821C;
+  }
+  .green-bar{
+      background-color: #07A14E;
+  }
+  .red-bar{
+      background-color: #F00;
+  }
+  .progres-line-bg{
+      box-shadow: 0px 0px 3px 2px #e4e4e4 inset;
+      padding: 8px;
+      margin: 10px;
+      border-radius: 4px;
+  }
+  .bg-gray {
+      background: #0747a60f;
+      padding: 10px 20px;
+      border-radius: 10px;
+  }
+  button.branch-number {
+    background: rgba(7, 161, 78, 0.2);
+    border: none;
+    padding: 10px;
+    margin-top: 13px;
+}

@@ -105,7 +105,7 @@ export class OtcPddComponent {
           'Rajasthan',
           'NCR',
           'PCH',
-          'Pan India',
+        
         ],
         axisLabel: {
           interval: 0,
@@ -146,7 +146,7 @@ export class OtcPddComponent {
           
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [1400,1100,960,630,540,430,320],
+          data: [1400,1100,960,630,540,430],
           itemStyle: {
             color: '#EE9322',
              // Color for Category 1
@@ -157,7 +157,7 @@ export class OtcPddComponent {
           type: 'bar',
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [1780,1600,1400,1250,1050,960,320],
+          data: [1780,1600,1400,1250,1050,960],
           itemStyle: {
             color: '#3C7EBE',
             borderRadius: 4,// Color for Category 2

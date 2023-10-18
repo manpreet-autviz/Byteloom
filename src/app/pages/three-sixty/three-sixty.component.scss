@@ -233,3 +233,15 @@ ul.pending-cheque.ot-normal {
         text-align: center !important;
     }
 }
+.aum-box{
+    min-height: 228px;
+}
+.aum-box .card-body{
+    padding-top: 47px;
+}
+.aum-box .card-body .amount{
+    padding-top: 20px;
+}
+.amount h6{
+    font-size: 20px;
+}

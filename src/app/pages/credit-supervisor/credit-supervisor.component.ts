@@ -125,6 +125,10 @@ export class CreditSupervisorComponent {
             name: 'Percentage',
             nameLocation: 'middle',
             nameGap: 43,
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
+            },
             axisLabel: {
               formatter: '{value}%',
               margin: 1,
