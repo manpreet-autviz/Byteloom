@@ -40,6 +40,9 @@ export class NavbarComponent {
     }else if(this.searchQuery.trim() == 'Punjab'){
       this.router.navigate(['/branch-search']);
     }
+    else if(this.searchQuery.trim() == '56565'){
+      this.router.navigate(['/search']);
+    }
    else {
       this.menu.setSearchTerm('/dashboard');
       this.router.navigate(['/dashboard']);
