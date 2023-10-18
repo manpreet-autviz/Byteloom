@@ -1,0 +1,35 @@
+<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="24" height="25" fill="#B3B3B3"/>
+<g id="Global Search">
+<rect width="1728" height="1582" transform="translate(-1557 -217)" fill="white"/>
+<g id="app-root &#226;&#134;&#146; app-full-layout">
+<rect width="1459" height="1579" transform="translate(-1289 -214)" fill="#F4F4F4"/>
+<g id="ng-component">
+<g id="ng-component_2">
+<g clip-path="url(#clip0_1_959)">
+<rect x="-1190" y="-131" width="1261" height="1361" rx="4" fill="white"/>
+<g id="app-rpb">
+<rect width="1238" height="1458" transform="translate(-1172 -115)" fill="white"/>
+<g id="app-breadcrumb">
+<rect width="1224" height="59" transform="translate(-1165 -17)" fill="#C19C9C" fill-opacity="0.06"/>
+<g id="Frame 183">
+<g id="Frame 183_2">
+<g id="bxs:share">
+<path id="Vector" d="M13.2758 10.666V8L16.1753 10.8994L18.5 13.2242L16.134 15.1959L13.2758 17.5779V14.9693C8.25802 14.591 6.5 17.4948 6.5 17.4948C6.5 15.6856 6.64907 13.8081 8.07138 12.3864C9.72468 10.7325 12.119 10.6155 13.2758 10.666Z" fill="#0747A6"/>
+<rect x="-0.25" y="0.25" width="23.5" height="23.5" rx="1.75" transform="matrix(-1 0 0 1 23.5 0.5)" stroke="#989898" stroke-width="0.5"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_1_959">
+<rect x="-1190" y="-131" width="1261" height="1361" rx="4" fill="white"/>
+</clipPath>
+</defs>
+</svg>
