@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SidebarComponent } from '../sidebar/sidebar.component';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,33 +11,34 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 export class NavbarComponent {
   searchQuery: string = '';
   isMenuVisible: boolean = true;
-  
 
-  constructor(private router: Router , private sidebar : SidebarComponent) {}
+  constructor(private router: Router, private menu: MenuService) {}
 
   toggleMenuDisplay() {
     const menu = document.querySelector('.wrapper') as HTMLElement;
-
     if (this.isMenuVisible) {
       menu.classList.remove('collapse-content');
     } else {
       menu.classList.add('collapse-content');
     }
-
     this.isMenuVisible = !this.isMenuVisible;
   }
+
   search() {
     if (this.searchQuery.trim() == 'Mathew Anderson') {
-      this.sidebar.navigateToPage('/business-rm')
+      this.menu.setSearchTerm('/business-rm');
       this.router.navigate(['/business-rm']);
-    }else if(this.searchQuery.trim() == 'Jems Anderson'){
+    } else if (this.searchQuery.trim() == 'Jems Anderson') {
+      this.menu.setSearchTerm('/business-supervisor');
       this.router.navigate(['/business-supervisor']);
-    }else if(this.searchQuery.trim() == 'Corey Anderson'){
+    } else if (this.searchQuery.trim() == 'Corey Anderson') {
+      this.menu.setSearchTerm('/credit-cm');
       this.router.navigate(['/credit-cm']);
-    }else if(this.searchQuery.trim() == 'Mark Anderson'){
+    } else if (this.searchQuery.trim() == 'Mark Anderson') {
+      this.menu.setSearchTerm('/credit-supervisor');
       this.router.navigate(['/credit-supervisor']);
-    }
-    else{
+    } else {
+      this.menu.setSearchTerm('/dashboard');
       this.router.navigate(['/dashboard']);
     }
   }

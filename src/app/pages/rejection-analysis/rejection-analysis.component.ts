@@ -378,51 +378,7 @@ export class RejectionAnalysisComponent {
           },
           data: [60, 50, 48, 45],
         },
-        // {
-        //   name: 'BL',
-        //   type: 'line',
 
-        //   areaStyle: {
-        //     opacity: 0,
-        //   },
-        //   emphasis: {
-        //     focus: 'series',
-        //     areaStyle: {
-        //       opacity: 1, // Reduce opacity on hover to make it semi-transparent
-        //     },
-        //   },
-        //   data: [30, 35, 45, 50, 58, 65],
-        // },
-        // {
-        //   name: 'LAP',
-        //   type: 'line',
-
-        //   areaStyle: {
-        //     opacity: 0,
-        //   },
-        //   emphasis: {
-        //     focus: 'series',
-        //     areaStyle: {
-        //       opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-        //     },
-        //   },
-        //   data: [35, 45, 47, 50, 55, 67],
-        // },
-        // {
-        //   name: 'SBL',
-        //   type: 'line',
-
-        //   areaStyle: {
-        //     opacity: 0,
-        //   },
-        //   emphasis: {
-        //     focus: 'series',
-        //     areaStyle: {
-        //       opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-        //     },
-        //   },
-        //   data: [37, 46, 48, 52, 57, 69],
-        // },
       ],
     };
 

@@ -161,6 +161,10 @@ export class ThreeSixtyComponent {
           name: 'Days ',
           nameLocation: 'middle',
           nameGap: 25,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
         },
       ],
       series: [
@@ -293,6 +297,10 @@ export class ThreeSixtyComponent {
         name: 'Amount ( in Rs. Lacs ) ',
         nameLocation: 'middle',
         nameGap: 25,
+        nameTextStyle: {
+          fontWeight: 600,
+          fontSize:14,
+        },
       },
       series: [
         {
@@ -418,6 +426,10 @@ export class ThreeSixtyComponent {
         name: 'Percentage %',
         nameLocation: 'middle',
         nameGap: 25,
+        nameTextStyle: {
+          fontWeight: 600,
+          fontSize:14,
+        },
       },
       series: [
         {
@@ -485,6 +497,10 @@ export class ThreeSixtyComponent {
         name: 'Percentage %',
         nameLocation: 'middle',
         nameGap: 25,
+        nameTextStyle: {
+          fontWeight: 600,
+          fontSize:14,
+        },
       },
       // Declare several bar series, each will be mapped
       // to a column of dataset.source by default.
@@ -608,6 +624,10 @@ export class ThreeSixtyComponent {
         name: 'Percentage %',
         nameLocation: 'middle',
         nameGap: 25,
+        nameTextStyle: {
+          fontWeight: 600,
+          fontSize:14,
+        },
       },
       series: [
         {

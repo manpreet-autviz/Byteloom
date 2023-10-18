@@ -62,235 +62,235 @@ export class BusinessSupervisorComponent {
 
   initializeChart() {
     if (!this.isToggled) {
-      this.PotentialLostBusinessChart = echarts.init(
-        document.getElementById('Potential-lost-business') as HTMLDivElement
-      );
-      this.DistributionMixChart = echarts.init(
-        document.getElementById('Distribution-mix') as HTMLDivElement
-      );
+      // this.PotentialLostBusinessChart = echarts.init(
+      //   document.getElementById('Potential-lost-business') as HTMLDivElement
+      // );
+      // this.DistributionMixChart = echarts.init(
+      //   document.getElementById('Distribution-mix') as HTMLDivElement
+      // );
 
-      this.SourceLoginChart = echarts.init(
-        document.getElementById('source-login-chart') as HTMLDivElement
-      );
+      // this.SourceLoginChart = echarts.init(
+      //   document.getElementById('source-login-chart') as HTMLDivElement
+      // );
       
       this.IrrPfInsuranceChart = echarts.init(
         document.getElementById('Irr-pf-Insurance') as HTMLDivElement
       );
 
-      this.PotentialLostBusinessOption = {
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'shadow',
-          },
-        },
-        legend: {
-          data: ['CNI', 'Cancellation'],
-        },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true,
-        },
-        xAxis: {
-          type: 'value',
-          splitLine: {
-            show: false,
-          },
+      // this.PotentialLostBusinessOption = {
+      //   tooltip: {
+      //     trigger: 'axis',
+      //     axisPointer: {
+      //       type: 'shadow',
+      //     },
+      //   },
+      //   legend: {
+      //     data: ['CNI', 'Cancellation'],
+      //   },
+      //   grid: {
+      //     left: '3%',
+      //     right: '4%',
+      //     bottom: '3%',
+      //     containLabel: true,
+      //   },
+      //   xAxis: {
+      //     type: 'value',
+      //     splitLine: {
+      //       show: false,
+      //     },
 
-          boundaryGap: [0, 0.01],
-          axisLabel: {
-            show: false, // Set this to false to hide x-axis labels
-          },
-        },
-        yAxis: {
-          type: 'category',
-          axisLine: {
-            show: false,
-          },
-          splitLine: {
-            show: false,
-          },
-          data: [
-            'Maharashtra',
-            'MP',
-            'Gujarat',
-            'Rajasthan',
-            'NCR',
-            'PCH',
-            'Pan India',
-          ],
-        },
+      //     boundaryGap: [0, 0.01],
+      //     axisLabel: {
+      //       show: false, // Set this to false to hide x-axis labels
+      //     },
+      //   },
+      //   yAxis: {
+      //     type: 'category',
+      //     axisLine: {
+      //       show: false,
+      //     },
+      //     splitLine: {
+      //       show: false,
+      //     },
+      //     data: [
+      //       'Maharashtra',
+      //       'MP',
+      //       'Gujarat',
+      //       'Rajasthan',
+      //       'NCR',
+      //       'PCH',
+      //       'Pan India',
+      //     ],
+      //   },
 
-        series: [
-          {
-            name: 'CNI',
-            type: 'bar',
-            data: [40, 40, 40, 40, 40, 40, 40, 80],
-            label: {
-              show: true,
-              position: 'right',
-              formatter: '{c}%',
-            },
-            itemStyle: {
-              color: '#3C7EBE', // Set the color for the first bar series (IRR)
-              borderRadius: 10,
-            },
-          },
-          {
-            name: 'Cancellation',
-            type: 'bar',
-            data: [65, 65, 65, 65, 65, 65, 65, 225],
-            label: {
-              show: true,
-              position: 'right',
-              formatter: '{c} Cr',
-            },
-            itemStyle: {
-              color: '#5BC8EF', // Set the color for the first bar series (IRR)
-              borderRadius: 10,
-            },
-          },
-        ],
-      };
+      //   series: [
+      //     {
+      //       name: 'CNI',
+      //       type: 'bar',
+      //       data: [40, 40, 40, 40, 40, 40, 40, 80],
+      //       label: {
+      //         show: true,
+      //         position: 'right',
+      //         formatter: '{c}%',
+      //       },
+      //       itemStyle: {
+      //         color: '#3C7EBE', // Set the color for the first bar series (IRR)
+      //         borderRadius: 10,
+      //       },
+      //     },
+      //     {
+      //       name: 'Cancellation',
+      //       type: 'bar',
+      //       data: [65, 65, 65, 65, 65, 65, 65, 225],
+      //       label: {
+      //         show: true,
+      //         position: 'right',
+      //         formatter: '{c} Cr',
+      //       },
+      //       itemStyle: {
+      //         color: '#5BC8EF', // Set the color for the first bar series (IRR)
+      //         borderRadius: 10,
+      //       },
+      //     },
+      //   ],
+      // };
 
-      this.DistributionMixOption = {
-        tooltip: {
-          trigger: 'item',
-          formatter: (params: any) => {
+      // this.DistributionMixOption = {
+      //   tooltip: {
+      //     trigger: 'item',
+      //     formatter: (params: any) => {
   
-            let tooltipText = '';
+      //       let tooltipText = '';
   
-            if (params.name === 'Home Loan') {
-              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 450';
-            } else if (params.name === 'LAP') {
-              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 270';
-            } else if (params.name === 'BL') {
-              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 269';
-            } else if (params.name === 'SBL') {
-              tooltipText = 'No. of files: 1600 <br/> Amount in Cr: 268';
-            }
+      //       if (params.name === 'Home Loan') {
+      //         tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 450';
+      //       } else if (params.name === 'LAP') {
+      //         tooltipText = 'No. of files: 700 <br/> Amount in Cr: 270';
+      //       } else if (params.name === 'BL') {
+      //         tooltipText = 'No. of files: 800 <br/> Amount in Cr: 269';
+      //       } else if (params.name === 'SBL') {
+      //         tooltipText = 'No. of files: 1600 <br/> Amount in Cr: 268';
+      //       }
   
-            return tooltipText;
-          },
-        },
-        responsive: true, 
-        legend: {
-          top: '2%',
-          left: 'center',
-        },
-        series: [
-          {
-            type: 'pie',
-            radius: ['30%', '80%'],
-            avoidLabelOverlap: false,
-            label: {
-              show: false,
-              position: 'center',
-            },
-            emphasis: {
-              label: {
-                show: true,
-                formatter: '{c}%',
-                fontSize: 16,
-                fontWeight: 'bold',
-              },
-            },
-            labelLine: {
-              show: false,
-            },
-            data: [
-              { value: 45, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
-              { value: 20, name: 'LAP', itemStyle: { color: '#07A14E' } },
-              { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
-              { value: 25, name: 'SBL', itemStyle: { color: '#F99B00' } },
-            ],
-          },
-        ],
-      };
+      //       return tooltipText;
+      //     },
+      //   },
+      //   responsive: true, 
+      //   legend: {
+      //     top: '2%',
+      //     left: 'center',
+      //   },
+      //   series: [
+      //     {
+      //       type: 'pie',
+      //       radius: ['30%', '80%'],
+      //       avoidLabelOverlap: false,
+      //       label: {
+      //         show: false,
+      //         position: 'center',
+      //       },
+      //       emphasis: {
+      //         label: {
+      //           show: true,
+      //           formatter: '{c}%',
+      //           fontSize: 16,
+      //           fontWeight: 'bold',
+      //         },
+      //       },
+      //       labelLine: {
+      //         show: false,
+      //       },
+      //       data: [
+      //         { value: 45, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
+      //         { value: 20, name: 'LAP', itemStyle: { color: '#07A14E' } },
+      //         { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
+      //         { value: 25, name: 'SBL', itemStyle: { color: '#F99B00' } },
+      //       ],
+      //     },
+      //   ],
+      // };
 
-      this.SourceLoginOption = {
-        tooltip: {
-          trigger: 'item',
-          formatter: (params: any) => {
+      // this.SourceLoginOption = {
+      //   tooltip: {
+      //     trigger: 'item',
+      //     formatter: (params: any) => {
   
-            let tooltipText = '';
+      //       let tooltipText = '';
   
-            if (params.name === 'Direct') {
-              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 450';
-            } else if (params.name === 'Power Partner') {
-              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 270';
-            } else if (params.name === 'DSA') {
-              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 269';
-            } else if (params.name === 'Other') {
-              tooltipText = 'No. of files: 1600 <br/> Amount in Cr: 268';
-            }
+      //       if (params.name === 'Direct') {
+      //         tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 450';
+      //       } else if (params.name === 'Power Partner') {
+      //         tooltipText = 'No. of files: 700 <br/> Amount in Cr: 270';
+      //       } else if (params.name === 'DSA') {
+      //         tooltipText = 'No. of files: 800 <br/> Amount in Cr: 269';
+      //       } else if (params.name === 'Other') {
+      //         tooltipText = 'No. of files: 1600 <br/> Amount in Cr: 268';
+      //       }
   
-            return tooltipText;
-          },
-        },
-        legend: {
-          top: '5%',
-          left: 'center',
-        },
-        series: [
-          {
-            type: 'pie',
-            radius: ['40%', '70%'],
-            avoidLabelOverlap: false,
-            itemStyle: {
-              borderColor: '#fff',
-              borderWidth: 2,
-            },
-            label: {
-              show: false,
-              position: 'center',
-            },
-            emphasis: {
-              label: {
-                show: true,
-                fontSize: 40,
-                fontWeight: 'bold',
-                formatter: '{c}%',
-              },
-            },
-            labelLine: {
-              show: false,
-            },
-            data: [
-              {
-                value: 35,
-                name: 'Direct',
-                itemStyle: {
-                  color: '#7460EE',
-                },
-              },
-              {
-                value: 20,
-                name: 'Power Partner',
-                itemStyle: {
-                  color: '#5D8F68',
-                },
-              },
-              {
-                value: 10,
-                name: 'DSA',
-                itemStyle: {
-                  color: '#3ADA84',
-                },
-              },
-              {
-                value: 20,
-                name: 'Other',
-                itemStyle: {
-                  color: '#FF821C',
-                },
-              },
-            ],
-          },
-        ],
-      };
+      //       return tooltipText;
+      //     },
+      //   },
+      //   legend: {
+      //     top: '5%',
+      //     left: 'center',
+      //   },
+      //   series: [
+      //     {
+      //       type: 'pie',
+      //       radius: ['40%', '70%'],
+      //       avoidLabelOverlap: false,
+      //       itemStyle: {
+      //         borderColor: '#fff',
+      //         borderWidth: 2,
+      //       },
+      //       label: {
+      //         show: false,
+      //         position: 'center',
+      //       },
+      //       emphasis: {
+      //         label: {
+      //           show: true,
+      //           fontSize: 40,
+      //           fontWeight: 'bold',
+      //           formatter: '{c}%',
+      //         },
+      //       },
+      //       labelLine: {
+      //         show: false,
+      //       },
+      //       data: [
+      //         {
+      //           value: 35,
+      //           name: 'Direct',
+      //           itemStyle: {
+      //             color: '#7460EE',
+      //           },
+      //         },
+      //         {
+      //           value: 20,
+      //           name: 'Power Partner',
+      //           itemStyle: {
+      //             color: '#5D8F68',
+      //           },
+      //         },
+      //         {
+      //           value: 10,
+      //           name: 'DSA',
+      //           itemStyle: {
+      //             color: '#3ADA84',
+      //           },
+      //         },
+      //         {
+      //           value: 20,
+      //           name: 'Other',
+      //           itemStyle: {
+      //             color: '#FF821C',
+      //           },
+      //         },
+      //       ],
+      //     },
+      //   ],
+      // };
 
       
       this.IrrPfInsuranceOption = {
@@ -363,16 +363,16 @@ export class BusinessSupervisorComponent {
       };
 
 
-      this.PotentialLostBusinessChart.setOption(
-        this.PotentialLostBusinessOption
-      );
+      // this.PotentialLostBusinessChart.setOption(
+      //   this.PotentialLostBusinessOption
+      // );
 
-      this.DistributionMixChart.setOption(
-        this.DistributionMixOption
-      );
-      this.SourceLoginChart.setOption(
-        this.SourceLoginOption
-      );
+      // this.DistributionMixChart.setOption(
+      //   this.DistributionMixOption
+      // );
+      // this.SourceLoginChart.setOption(
+      //   this.SourceLoginOption
+      // );
       this.IrrPfInsuranceChart.setOption(
         this.IrrPfInsuranceOption
       );
