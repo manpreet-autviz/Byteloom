@@ -89,7 +89,7 @@ import { TeamHierarchyComponent } from './pages/team-hierarchy/team-hierarchy.co
     TreeTableModule,
     OrganizationChartModule
   ],
-  providers: [],
+  providers: [SidebarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

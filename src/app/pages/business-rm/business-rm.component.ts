@@ -136,7 +136,7 @@ export class BusinessRMComponent {
           {
             name: 'Cancellation',
             type: 'bar',
-            data: [65, 65, 65, 65, 65, 65, 65, 225],
+            data: [65, 65, 65, 65, 65, 65, 65, 75],
             label: {
               show: true,
               position: 'right',
