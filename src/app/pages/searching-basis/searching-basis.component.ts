@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./searching-basis.component.scss']
 })
 export class SearchingBasisComponent {
-
+  statusList :string[] = [
+    'Financial Approved',
+    'Final Approved',
+  ];
+  selectedStatus:string = 'Financial Approved'
+  onStatusChange(selectedValue: string) {
+    // this.generateRandomData();
+  }
 }
+
