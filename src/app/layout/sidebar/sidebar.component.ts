@@ -12,7 +12,10 @@ export class SidebarComponent {
   showSubmenu:boolean = false;
   submenus: any = {};
   constructor(private router : Router,private menuService: MenuService,private cdr:ChangeDetectorRef){
-
+    this.menuService.searchTerm$.subscribe(term => {
+      this.activeItem = term;
+     
+    });
   }
   ngOnInit(): void {
     this.activeItem = this.menuService.getActiveMenuItem();

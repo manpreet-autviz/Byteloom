@@ -281,6 +281,10 @@ export class ChannelPartnersComponent {
         name: 'Number of CPs',
         nameLocation: 'middle',
         nameGap: 40,
+        nameTextStyle: {
+          fontWeight: 600,
+          fontSize:14,
+        },
       },
       // Declare several bar series, each will be mapped
       // to a column of dataset.source by default.
@@ -355,6 +359,10 @@ export class ChannelPartnersComponent {
         name: 'Number of CPs',
         nameLocation: 'middle',
         nameGap: 40,
+        nameTextStyle: {
+          fontWeight: 600,
+          fontSize:14,
+        },
         axisLabel: {
           formatter: '{value}',
           margin: 1,
@@ -426,6 +434,10 @@ export class ChannelPartnersComponent {
         name: '% of Total Disbursal',
         nameLocation: 'middle',
         nameGap: 40,
+        nameTextStyle: {
+          fontWeight: 600,
+          fontSize:14,
+        },
         axisLabel: {
           formatter: '{value}',
           margin: 1,
@@ -495,6 +507,10 @@ export class ChannelPartnersComponent {
         name: 'Delinquency in %',
         nameLocation: 'middle',
         nameGap: 40,
+        nameTextStyle: {
+          fontWeight: 600,
+          fontSize:14,
+        },
         axisLabel: {
           formatter: '{value}',
           margin: 1,

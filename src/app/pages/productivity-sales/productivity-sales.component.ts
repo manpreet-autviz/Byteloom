@@ -320,9 +320,13 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           min: 2,
           max: 8,
           interval: 2,
-          name: 'NO OF FILES ',
+          name: 'No of Files ',
           nameLocation: 'middle',
-          nameGap: 43,
+          nameGap: 20,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
           axisLabel: {
             margin: 15,
           },
@@ -587,9 +591,13 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           min: 10,
           max: 100,
           interval: 10,
-          name: 'PERCENTAGE %',
+          name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 43,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
+          nameGap: 20,
           axisLabel: {
             margin: 1,
           },
@@ -763,9 +771,13 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
         splitLine: {
           show: false,
         },
-        name: 'PERCENTAGE',
+        name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 25,
+        nameGap: 20,
+        nameTextStyle: {
+          fontWeight: 600,
+          fontSize:14,
+        },
         axisLabel: {
           formatter: '{value}',
           margin: 1,
@@ -854,9 +866,13 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           min: 10,
           max: 100,
           interval: 10,
-          name: 'PERCENTAGE ',
+          name: 'Percentage % ',
           nameLocation: 'middle',
-          nameGap: 43,
+          nameGap: 20,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
           axisLabel: {
             margin: 1,
           },
