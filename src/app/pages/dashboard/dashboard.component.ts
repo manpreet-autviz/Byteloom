@@ -34,12 +34,14 @@ export class DashboardComponent {
   selectedFilter: string = 'September';
   IrrChart!: echarts.ECharts;
   pfChart!: echarts.ECharts;
-  loginTotalAmount: number = 3.95;
+  loginTotalAmount: number = 550;
   loginTotalFiles: number = 3050;
-  financialTotalAmount: number = 3.2;
-  financialTotalFiles: number = 2080;
-  disbursalTotalAmount: number = 3.05;
-  disbursalTotalFiles: number = 2080;
+  financialTotalAmount: number = 175;
+  financialTotalFiles: number = 1500;
+  disbursalTotalAmount: number = 150;
+  disbursalTotalFiles: number = 1200;
+  finalTotalFiles:number = 1000;
+  finalTotalAmount:number = 150
 
   minLoginAmountValue = 350; 
   maxLoginAmountValue = 500; 
@@ -463,6 +465,8 @@ export class DashboardComponent {
     this.financialTotalFiles = +(Math.random() * 15).toFixed(1);
     this.disbursalTotalAmount = +(Math.random() * 15).toFixed(2);
     this.disbursalTotalFiles = +(Math.random() * 15).toFixed(1);
+    this.finalTotalAmount = +(Math.random() * 15).toFixed(2);
+    this.finalTotalFiles = +(Math.random() * 15).toFixed(1);
 
     this.loginTotalAmount = +(
       Math.random() * (this.maxLoginAmountValue - this.minLoginAmountValue) +
@@ -487,6 +491,14 @@ export class DashboardComponent {
       this.minDisbursalAmountValue
     ).toFixed(2);
     this.disbursalTotalFiles =  +(
+      Math.random() * (this.maxDisbursalFileValue - this.minDisbursalFileValue) +
+      this.minDisbursalFileValue
+    ).toFixed(0);
+    this.finalTotalAmount =  +(
+      Math.random() * (this.maxDisbursalAmountValue - this.minDisbursalAmountValue) +
+      this.minDisbursalAmountValue
+    ).toFixed(2);
+    this.finalTotalFiles =  +(
       Math.random() * (this.maxDisbursalFileValue - this.minDisbursalFileValue) +
       this.minDisbursalFileValue
     ).toFixed(0);
