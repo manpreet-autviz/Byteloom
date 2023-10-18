@@ -87,7 +87,7 @@ import { FinalApprovalComponent } from './pages/final-approval/final-approval.co
     TreeTableModule,
     OrganizationChartModule
   ],
-  providers: [],
+  providers: [SidebarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
