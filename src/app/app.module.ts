@@ -41,6 +41,7 @@ import { OutOfTatComponent } from './pages/out-of-tat/out-of-tat.component';
 import { PortfolioHealthComponent } from './pages/portfolio-health/portfolio-health.component';
 import { FinalApprovalComponent } from './pages/final-approval/final-approval.component';
 import { TeamHierarchyComponent } from './pages/team-hierarchy/team-hierarchy.component';
+import { BranchSearchComponent } from './pages/branch-search/branch-search.component';
 
 
 
@@ -78,6 +79,7 @@ import { TeamHierarchyComponent } from './pages/team-hierarchy/team-hierarchy.co
     PortfolioHealthComponent,
     FinalApprovalComponent,
     TeamHierarchyComponent,
+    BranchSearchComponent,
 
   ],
   imports: [

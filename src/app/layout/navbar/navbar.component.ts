@@ -37,7 +37,10 @@ export class NavbarComponent {
     } else if (this.searchQuery.trim() == 'Mark Anderson') {
       this.menu.setSearchTerm('/credit-supervisor');
       this.router.navigate(['/credit-supervisor']);
-    } else {
+    }else if(this.searchQuery.trim() == 'Punjab'){
+      this.router.navigate(['/branch-search']);
+    }
+   else {
       this.menu.setSearchTerm('/dashboard');
       this.router.navigate(['/dashboard']);
     }
