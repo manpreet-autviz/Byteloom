@@ -29,6 +29,7 @@ import { WorkInProgressTablesComponent } from './pages/work-in-progress-tables/w
 import { PortfolioHealthComponent } from './portfolio-health/portfolio-health.component';
 import { FinalApprovalComponent } from './pages/final-approval/final-approval.component';
 import { TeamHierarchyComponent } from './pages/team-hierarchy/team-hierarchy.component';
+import { SearchingBasisComponent } from './pages/searching-basis/searching-basis.component';
 
 
 const routes: Routes = [
@@ -62,6 +63,7 @@ const routes: Routes = [
   { path: 'work-in-progress-table/:data', component: WorkInProgressTablesComponent },
   { path: 'portfolio-health', component: PortfolioHealthComponent },
   { path: 'team-hierarchy', component: TeamHierarchyComponent },
+  { path: 'search', component: SearchingBasisComponent },
 ];
 
 @NgModule({
