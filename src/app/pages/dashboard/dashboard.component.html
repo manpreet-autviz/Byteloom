@@ -3,19 +3,13 @@
     <div class="container-fluid">
       <div class="breadcrumb">
         <div class="card card-animate w-100">
-          <div
-            class="card-body breadcraumb-align align-items-center justify-content-between"
-          >
+          <div class="card-body breadcraumb-align align-items-center justify-content-between">
             <div>
               <span class="f-7 fs-5"> Dashboard </span>
             </div>
             <div class="dropdown">
-              <select
-                id="dropdown"
-                class="form-select filter-dropdown"
-                [(ngModel)]="selectedState"
-                (ngModelChange)="onStateChange($event)"
-              >
+              <select id="dropdown" class="form-select filter-dropdown" [(ngModel)]="selectedState"
+                (ngModelChange)="onStateChange($event)">
                 <option *ngFor="let state of states" [value]="state">
                   {{ state }}
                 </option>
@@ -28,12 +22,8 @@
         <div class="card-body">
           <div class="row justify-content-end mb-2">
             <div class="col-md-3">
-              <select
-                id="dropdown"
-                class="form-select"
-                [(ngModel)]="selectedFilter"
-                (ngModelChange)="onFilterChange($event)"
-              >
+              <select id="dropdown" class="form-select" [(ngModel)]="selectedFilter"
+                (ngModelChange)="onFilterChange($event)">
                 <option *ngFor="let filter of filters" [value]="filter">
                   {{ filter }}
                 </option>
@@ -43,9 +33,7 @@
           <div class="row gy-3 four-tile-card">
             <div class="col-xl col-md-4">
               <div class="card">
-                <div
-                  class="card-body text-white bg-dblue rounded five-card-min-h"
-                >
+                <div class="card-body text-white bg-dblue rounded five-card-min-h">
                   <div class="d-flex">
                     <p class="f-7 mb-0">Total Logins</p>
                   </div>
@@ -57,9 +45,7 @@
                     </div>
                     <div class="text-part">
                       <span class="f-6 small-text">Total Amount</span><br />
-                      <span class="f-7 fs-6 py-2"
-                        >{{ loginTotalAmount }} Cr</span
-                      ><br />
+                      <span class="f-7 fs-6 py-2">{{ loginTotalAmount }} Cr</span><br />
                       <span class="f-4 small-text">Total Files</span><br />
                       <span class="f-7 fs-4">{{ loginTotalFiles }}</span>
                     </div>
@@ -70,9 +56,7 @@
 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card">
-                <div
-                  class="card-body text-white bg-orange rounded five-card-min-h"
-                >
+                <div class="card-body text-white bg-orange rounded five-card-min-h">
                   <div class="d-flex">
                     <p class="f-7 mb-0">Financial Approval</p>
                   </div>
@@ -86,8 +70,7 @@
                       <span class="f-6 small-text">Total Files</span><br />
                       <span class="f-7 fs-6 py-2">{{
                         financialTotalFiles
-                      }}</span
-                      ><br />
+                        }}</span><br />
                       <span class="f-4 small-text">Total Amount</span><br />
                       <span class="f-7 fs-4">{{ financialTotalAmount }}Cr</span>
                     </div>
@@ -98,9 +81,7 @@
 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card">
-                <div
-                  class="card-body text-white bg-yellow rounded five-card-min-h"
-                >
+                <div class="card-body text-white bg-yellow rounded five-card-min-h">
                   <div class="d-flex">
                     <p class="f-7 mb-0">Final Approvals</p>
                   </div>
@@ -112,8 +93,7 @@
                     </div>
                     <div class="text-part">
                       <span class="f-6 small-text">Total Files</span><br />
-                      <span class="f-7 fs-6 py-2">{{ finalTotalFiles }}</span
-                      ><br />
+                      <span class="f-7 fs-6 py-2">{{ finalTotalFiles }}</span><br />
                       <span class="f-4 small-text">Total Amount</span><br />
                       <span class="f-7 fs-4">{{ finalTotalAmount }}Cr</span>
                     </div>
@@ -124,9 +104,7 @@
 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card">
-                <div
-                  class="card-body text-white bg-purple rounded five-card-min-h"
-                >
+                <div class="card-body text-white bg-purple rounded five-card-min-h">
                   <div class="d-flex">
                     <p class="f-7 mb-0">Disbursals</p>
                   </div>
@@ -140,8 +118,7 @@
                       <span class="f-6 small-text">Total Files</span><br />
                       <span class="f-7 fs-6 py-2">{{
                         disbursalTotalFiles
-                      }}</span
-                      ><br />
+                        }}</span><br />
                       <span class="f-4 small-text">Total Amount</span><br />
                       <span class="f-7 fs-4">{{ disbursalTotalAmount }}Cr</span>
                     </div>
@@ -152,27 +129,17 @@
 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card">
-                <div
-                  class="d-flex card-body text-white bg-light-blue rounded five-card-min-h"
-                >
+                <div class="d-flex card-body text-white bg-light-blue rounded five-card-min-h">
                   <div class="col-6 text-center">
                     <p class="f-7 text-truncate mb-0">IRR Value</p>
                     <div class="align-items-center chart-pie">
-                      <div
-                        class="tile-chart"
-                        id="IrrChartValue"
-                        style="width: 90px; height: 90px"
-                      ></div>
+                      <div class="tile-chart" id="IrrChartValue" style="width: 90px; height: 90px"></div>
                     </div>
                   </div>
                   <div class="col-6 text-center">
                     <p class="f-7 text-truncate mb-0">PF Value</p>
                     <div class="align-items-center chart-pie">
-                      <div
-                        class="tile-chart"
-                        id="PfChartValue"
-                        style="width: 90px; height: 90px"
-                      ></div>
+                      <div class="tile-chart" id="PfChartValue" style="width: 90px; height: 90px"></div>
                     </div>
                   </div>
                 </div>
@@ -192,88 +159,83 @@
                     <span class="f-6 title">Business Status</span>
                   </div>
                   <div class="col-6 d-flex justify-content-end">
-                    <span class="f-6 title"
-                      ><i
-                        class="fas fa-pencil"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                      ></i
-                    ></span>
+                    <span class="f-6 title"><i class="fas fa-pencil" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"></i></span>
                   </div>
                 </div>
                 <div class="table-responsive text-center mt-4">
                   <table class="table no-wrap">
                     <thead>
-                      <tr class="bg-lightblue">
+                      <tr class="bg-lightgray">
                         <th></th>
-                        <th class="text-center border-right" colspan="2">
+                        <th class="text-center" colspan="1">
                           <i class="fas fa-angle-left"></i>&nbsp; 18-10-2023
                           &nbsp; <i class="fas fa-angle-right"></i>
                         </th>
                       </tr>
-                      <tr class="bg-blue mid-head">
+                      <tr class="bg-gray mid-head">
                         <th class="border-top-0"></th>
-                        <th class="border-top-0 border-right">
-                          Amount(in Lacs)
+                        <th class="border-top-0">
+                          Number of files
                         </th>
-                        <th class="border-top-0">Number of files</th>
+                        <th class="border-top-0">Amount(in Lacs)</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="bg-lightblue">
-                          <div class="d-flex align-items-center">
+                        <td>
+                          <div class="d-flex align-items-center table-data">
                             <div>
-                              <h6 class="mb-0">Login</h6>
+                              <h6 class="mb-0 bg-lightred">Login</h6>
                             </div>
                           </div>
                         </td>
                         <td>100</td>
-                        <td class="border-right">20</td>
+                        <td class="">20</td>
                       </tr>
                       <tr>
-                        <td class="bg-lightblue">
-                          <div class="d-flex align-items-center">
+                        <td>
+                          <div class="d-flex align-items-center table-data">
                             <div>
-                              <h6 class="mb-0">PD</h6>
+                              <h6 class="mb-0 bg-lightpurple">PD</h6>
                             </div>
                           </div>
                         </td>
                         <td>80</td>
-                        <td class="border-right">18</td>
+                        <td>18</td>
                       </tr>
                       <tr>
-                        <td class="bg-lightblue">
-                          <div class="d-flex align-items-center">
+                        <td>
+                          <div class="d-flex align-items-center table-data">
                             <div>
-                              <h6 class="mb-0">Financial Approvals</h6>
+                              <h6 class="mb-0 bg-lightyellow">Financial Approvals</h6>
                             </div>
                           </div>
                         </td>
                         <td>30</td>
-                        <td class="border-right">5</td>
+                        <td>5</td>
                       </tr>
                       <tr>
-                        <td class="bg-lightblue">
-                          <div class="d-flex align-items-center">
+                        <td>
+                          <div class="d-flex align-items-center table-data">
                             <div>
-                              <h6 class="mb-0">Final Approvals</h6>
+                              <h6 class="mb-0 bg-lightyellow">Final Approvals</h6>
                             </div>
                           </div>
                         </td>
                         <td>25</td>
-                        <td class="border-right">4</td>
+                        <td>4</td>
                       </tr>
                       <tr>
-                        <td class="bg-lightblue">
-                          <div class="d-flex align-items-center">
+                        <td>
+                          <div class="d-flex align-items-center table-data">
                             <div>
-                              <h6 class="mb-0">Disbursal</h6>
+                              <h6 class="mb-0 bg-lightgreen">Disbursal</h6>
                             </div>
                           </div>
                         </td>
                         <td>20</td>
-                        <td class="border-right">4</td>
+                        <td>4</td>
                       </tr>
                     </tbody>
                   </table>
@@ -291,123 +253,169 @@
                     <span class="f-6 title">Working Queue</span>
                   </div>
                   <div class="col-6 d-flex justify-content-end">
-                    <span class="f-6 title"
-                      ><i
-                        class="fas fa-pencil"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                      ></i
-                    ></span>
+                    <span class="f-6 title">
+                      <i class="fas fa-pencil" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                    </span>
                   </div>
                 </div>
-                <div class="table-responsive text-center mt-4">
-                  <table class="table no-wrap">
-                    <thead>
-                      <tr class="bg-lightblue">
-                        <th></th>
-                        <th class="text-center border-right" colspan="2">
-                          <i class="fas fa-angle-left"></i>&nbsp; 18-10-2023
-                          &nbsp; <i class="fas fa-angle-right"></i>
-                        </th>
-                        <th class="border-top-0 text-center" colspan="2">
-                          MTD
-                        </th>
-                      </tr>
-                      <tr class="bg-blue mid-head">
-                        <th class="border-top-0"></th>
-                        <th class="border-top-0">No.</th>
-                        <th class="border-top-0 border-right">
-                          Amount(in Lacs)
-                        </th>
-                        <th class="border-top-0">No.</th>
-                        <th class="border-top-0">Amount(in Lacs)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="bg-lightblue">
-                          <div class="d-flex align-items-center">
+                <div class="row mt-3">
+                  <div class="col-md-4">
+                    <div class="tat-box">
+                      <div class="color-box bg-lightorange">
+                        <img src="../../../assets/icons/w-pd.svg">
+                      </div>
+                      <h4 class="text-center">PD </h4>
+                      <div class="number-list">
+                        <ul class="p-0">
+                          <li>
                             <div>
-                              <h6 class="mb-0">Login</h6>
+                              <h6>12</h6>
+                              <p>Files</p>
                             </div>
-                          </div>
-                        </td>
-                        <td>100</td>
-                        <td class="border-right">20</td>
-                        <td>2000</td>
-                        <td>250</td>
-                      </tr>
-                      <tr>
-                        <td class="bg-lightblue">
-                          <div class="d-flex align-items-center">
+                          </li>
+                          <li>
                             <div>
-                              <h6 class="mb-0">PD</h6>
+                              <h6>25</h6>
+                              <p>Amount</p>
                             </div>
-                          </div>
-                        </td>
-                        <td>80</td>
-                        <td class="border-right">18</td>
-                        <td>1850</td>
-                        <td>200</td>
-                      </tr>
-                      <tr>
-                        <td class="bg-lightblue">
-                          <div class="d-flex align-items-center">
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="tat-box">
+                      <div class="color-box bg-lightorange">
+                        <img src="../../../assets/icons/w-financial.svg">
+                      </div>
+                      <h4 class="text-center">Financial Approval</h4>
+                      <div class="number-list">
+                        <ul class="p-0">
+                          <li>
                             <div>
-                              <h6 class="mb-0">Financial Approvals</h6>
+                              <h6>12</h6>
+                              <p>Files</p>
                             </div>
-                          </div>
-                        </td>
-                        <td>30</td>
-                        <td class="border-right">5</td>
-                        <td>1100</td>
-                        <td>120</td>
-                      </tr>
-                      <tr>
-                        <td class="bg-lightblue">
-                          <div class="d-flex align-items-center">
+                          </li>
+                          <li>
                             <div>
-                              <h6 class="mb-0">Final Approvals</h6>
+                              <h6>25</h6>
+                              <p>Amount</p>
                             </div>
-                          </div>
-                        </td>
-                        <td>25</td>
-                        <td class="border-right">4</td>
-                        <td>800</td>
-                        <td>90</td>
-                      </tr>
-                      <tr>
-                        <td class="bg-lightblue">
-                          <div class="d-flex align-items-center">
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="tat-box">
+                      <div class="color-box bg-lightorange">
+                        <img src="../../../assets/icons/w-financial.svg">
+                      </div>
+                      <h4 class="text-center">Financial Approval</h4>
+                      <div class="number-list">
+                        <ul class="p-0">
+                          <li>
                             <div>
-                              <h6 class="mb-0">Disbursal</h6>
+                              <h6>12</h6>
+                              <p>Files</p>
                             </div>
-                          </div>
-                        </td>
-                        <td>20</td>
-                        <td class="border-right">4</td>
-                        <td>600</td>
-                        <td>75</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                          </li>
+                          <li>
+                            <div>
+                              <h6>25</h6>
+                              <p>Amount</p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="col-md-4 mt-3">
+                      <div class="tat-box">
+                        <div class="color-box bg-lightgreen">
+                          <img src="../../../assets/icons/w-technical.svg">
+                        </div>
+                        <h4 class="text-center">Technical </h4>
+                        <div class="number-list">
+                          <ul class="p-0">
+                            <li>
+                              <div>
+                                <h6>12</h6>
+                                <p>Files</p>
+                              </div>
+                            </li>
+                            <li>
+                              <div>
+                                <h6>25</h6>
+                                <p>Amount</p>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                      <div class="tat-box">
+                        <div class="color-box bg-aceblue">
+                          <img src="../../../assets/icons/auction.svg">
+                        </div>
+                        <h4 class="text-center">Legal</h4>
+                        <div class="number-list">
+                          <ul class="p-0">
+                            <li>
+                              <div>
+                                <h6>12</h6>
+                                <p>Files</p>
+                              </div>
+                            </li>
+                            <li>
+                              <div>
+                                <h6>25</h6>
+                                <p>Amount</p>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                      <div class="tat-box">
+                        <div class="color-box bg-lightgreen">
+                          <img src="../../../assets/icons/w-disbursal.svg">
+                        </div>
+                        <h4 class="text-center">Disbursal</h4>
+                        <div class="number-list">
+                          <ul class="p-0">
+                            <li>
+                              <div>
+                                <h6>12</h6>
+                                <p>Files</p>
+                              </div>
+                            </li>
+                            <li>
+                              <div>
+                                <h6>25</h6>
+                                <p>Amount</p>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-       
+
       </div>
-      <div class="row mt-4" >
+      <div class="row mt-4">
         <div class="col-md-4">
           <div class="card box-s">
             <div class="card-body text-center position-relative">
               <span class="f-6 title"> Disbursal MTD </span>
-              <div
-                class="state-chart"
-                id="Disbursal-Achievement-Chart"
-                style="width: 100%; height: 360px"
-              ></div>
+              <div class="state-chart" id="Disbursal-Achievement-Chart" style="width: 100%; height: 360px"></div>
               <div class="graphn-bottom-text">
                 <p class="mb-0"><b>Target - 100 Cr</b></p>
               </div>
@@ -418,11 +426,7 @@
           <div class="card box-s ">
             <div class="card-body text-center">
               <span class="f-6 title"> Disbursal achievement </span>
-              <div
-                class="state-chart"
-                id="trendDisbursalAchievement"
-                style="width: 100%; height: 400px"
-              ></div>
+              <div class="state-chart" id="trendDisbursalAchievement" style="width: 100%; height: 400px"></div>
             </div>
           </div>
         </div>
@@ -431,13 +435,7 @@
   </div>
 
   <!-- Modal -->
-  <div
-    class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog custom-width">
       <div class="modal-content">
         <div class="modal-header">
@@ -448,70 +446,37 @@
               </h5>
             </div>
             <div class="close-icon">
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
           </div>
         </div>
         <div class="popup-tabs">
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
-              <button
-                class="nav-link active text-uppercase"
-                id="pills-financial-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-financial"
-                type="button"
-                role="tab"
-                aria-controls="pills-home"
-                aria-selected="true"
-              >
+              <button class="nav-link active text-uppercase" id="pills-financial-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-financial" type="button" role="tab" aria-controls="pills-home"
+                aria-selected="true">
                 Login
               </button>
             </li>
             <li class="nav-item" role="presentation">
-              <button
-                class="nav-link text-uppercase right-tab-border"
-                id="pills-status-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-status"
-                type="button"
-                role="tab"
-                aria-controls="pills-status"
-                aria-selected="false"
-              >
+              <button class="nav-link text-uppercase right-tab-border" id="pills-status-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-status" type="button" role="tab" aria-controls="pills-status"
+                aria-selected="false">
                 PD
               </button>
             </li>
             <li class="nav-item" role="presentation">
-              <button
-                class="nav-link text-uppercase right-tab-border"
-                id="pills-approval-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-status"
-                type="button"
-                role="tab"
-                aria-controls="pills-status"
-                aria-selected="false"
-              >
+              <button class="nav-link text-uppercase right-tab-border" id="pills-approval-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-status" type="button" role="tab" aria-controls="pills-status"
+                aria-selected="false">
                 Financial Approvals
               </button>
             </li>
             <li class="nav-item" role="presentation">
-              <button
-                class="nav-link text-uppercase right-tab-border"
-                id="pills-disbursal-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-status"
-                type="button"
-                role="tab"
-                aria-controls="pills-status"
-                aria-selected="false"
-              >
+              <button class="nav-link text-uppercase right-tab-border" id="pills-disbursal-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-status" type="button" role="tab" aria-controls="pills-status"
+                aria-selected="false">
                 Disbursal
               </button>
             </li>
@@ -519,41 +484,24 @@
         </div>
 
         <div class="tab-content" id="pills-tabContent">
-          <div
-            class="tab-pane fade show active"
-            id="pills-financial"
-            role="tabpanel"
-            aria-labelledby="pills-financial-tab"
-          >
+          <div class="tab-pane fade show active" id="pills-financial" role="tabpanel"
+            aria-labelledby="pills-financial-tab">
             <div class="head mt-4">
               <h5>Plan</h5>
               <div class="input-boxes">
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"
-                      >No. of files</span
-                    >
+                    <span class="input-group-text" id="basic-addon1">No. of files</span>
                   </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                  />
+                  <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" />
                 </div>
 
                 <div class="input-group mb-3">
                   <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2"
-                      >Amount in Lacs</span
-                    >
+                    <span class="input-group-text" id="basic-addon2">Amount in Lacs</span>
                   </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                  />
+                  <input type="text" class="form-control" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" />
                 </div>
               </div>
             </div>
@@ -563,30 +511,17 @@
               <div class="input-boxes">
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"
-                      >No. of files</span
-                    >
+                    <span class="input-group-text" id="basic-addon1">No. of files</span>
                   </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                  />
+                  <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" />
                 </div>
 
                 <div class="input-group mb-3">
                   <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2"
-                      >Amount in Lacs</span
-                    >
+                    <span class="input-group-text" id="basic-addon2">Amount in Lacs</span>
                   </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                  />
+                  <input type="text" class="form-control" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" />
                 </div>
               </div>
             </div>
@@ -594,12 +529,7 @@
               <a href="" class="bottom-close">Close</a>
               <a href="" class="add">Add</a>
             </div>
-            <div
-              class="tab-pane fade mt-5"
-              id="pills-status"
-              role="tabpanel"
-              aria-labelledby="pills-status-tab"
-            >
+            <div class="tab-pane fade mt-5" id="pills-status" role="tabpanel" aria-labelledby="pills-status-tab">
               fdgfgfgfg
             </div>
           </div>
