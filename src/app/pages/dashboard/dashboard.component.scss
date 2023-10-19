@@ -54,3 +54,56 @@
 .graphn-bottom-text p {
   font-size: 17px;
 }
+.custom-width {
+  max-width: 700px;
+  width: 100%;
+}
+.popup-tabs ul li button.active {
+  background-color: #0747A6 !important;
+  color: #fff !important;
+}
+.popup-tabs ul li button {
+  background: #F6FCFF;
+  font-size: 12px;
+  padding: 4px 15px !important;
+  color: #000 !important;
+}
+.popup-tabs  ul#pills-tab {
+  background: #CAEDFF;
+  padding: 10px;
+  max-width: 450px;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.tab-content {
+  padding: 0 30px;
+}
+a.bottom-close {
+  background: #E1E1E1;
+  color: #000;
+}
+.two-btn a{
+  border-radius: 2px;
+  padding: 6px 24px;
+  color: #000;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+a.add {
+  background: #07A14E;
+  color: #fff !important;
+} 
+.modal-header {
+  border-bottom: 0;
+}
+
+.close-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
