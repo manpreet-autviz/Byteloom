@@ -110,3 +110,82 @@ a.add {
 .bg-gray{
   background-color: #E8E8E8;
 }
+.bg-lightgray{
+  background-color: rgba(206, 209, 217, 0.10);
+}
+.bg-lightred{
+  background-color: rgba(254, 84, 25, 0.24);
+}
+.table-data h6{
+  padding: 5px;
+  min-width: 160px;
+  width: 100%;
+  font-size: 15px;
+  border-radius: 4px;
+}
+.bg-lightpurple{
+  background-color: rgba(41, 98, 255, 0.10);
+}
+.bg-lightyellow{
+  background-color: rgba(249, 155, 0, 0.20);
+}
+.bg-lightgreen{
+  background-color: rgba(58, 218, 132, 0.21);
+}
+
+.tat-box {
+  border-radius: 4px;
+  border: 0.5px solid #dddddd;
+  background: #FFF;
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.08);
+}
+.tat-box h4{
+  padding: 10px 0 0px;
+  font-size: 18px;
+}
+.number-list ul li {
+  list-style: none;
+  position: relative;
+  text-align: center;
+}
+.number-list ul {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0 0;
+}
+.number-list ul li:not(:last-child):after {
+  position: absolute;
+  content: '';
+  background: #BFBFBF;
+  height: 60px;
+  width: 1px;
+  top: -5px;
+  right: -40px;
+}
+.number-list {
+  margin: 0px 20px 0px;
+}
+.number-list h6 {
+  font-size: 17px;
+  color: #4F5467;
+  font-weight: 700;
+}
+.number-list p {
+  font-size: 12px;
+}
+.color-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+}
+
+.bg-aceblue{
+  background-color: #ECF2FE;
+}
+.bg-lightgreen{
+  background-color: #DDF5DF;
+}
+.bg-lightorange{
+  background-color: #FCF4E7;
+}
