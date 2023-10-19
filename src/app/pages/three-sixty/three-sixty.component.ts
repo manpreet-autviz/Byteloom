@@ -241,7 +241,7 @@ export class ThreeSixtyComponent {
           },
           emphasis: {
             label: {
-              fontSize: 10,
+              fontSize: 13,
               color: 'white',
             },
           },
