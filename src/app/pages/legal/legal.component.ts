@@ -233,7 +233,7 @@ export class LegalComponent {
               value: 8,
               name: 'Ankit Sharma',
               itemStyle: {
-                color: 'rgba(5, 83, 22, 0.65)',
+                color: '#DBA39A',
               },
             },
             {

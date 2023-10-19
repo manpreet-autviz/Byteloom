@@ -392,6 +392,9 @@ export class DashboardComponent {
               },
             },
             data: [90, 93, 94, 92, 99, 100, 110],
+            itemStyle: {
+              color: '#07A14E',
+            }
           },
         ],
       };
