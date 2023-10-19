@@ -31,13 +31,13 @@ export class TeamHierarchyComponent {
           children: [
             {
               expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-            name: 'Preeti',
-            title: 'Area Business Manager'
-          },
+              type: 'person',
+              styleClass: 'bg-purple',
+              data: {
+                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                name: 'Preeti',
+                title: 'Area Business Manager'
+              },
               children: [
                 {
                   expanded: true,
@@ -48,6 +48,38 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
                 {
                   expanded: true,
@@ -58,6 +90,38 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
                 {
                   expanded: true,
@@ -68,28 +132,275 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
               ]
             },
             {
               expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-            name: 'Anna Fali',
-            title: 'Area Business Manager'
-          },
-          children: [
-            {
-              expanded: true,
               type: 'person',
               styleClass: 'bg-purple',
               data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
                 name: 'Anna Fali',
-                title: 'Branch Business Manager'
+                title: 'Area Business Manager'
               },
+              children: [
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                      children: [
+                        {
+                          expanded: true,
+                          type: 'person',
+                          styleClass: 'bg-purple',
+                          data: {
+                            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                            name: 'Anna Fali',
+                            title: 'Branch Business Manager'
+                          },
+                        },
+                        {
+                          expanded: true,
+                          type: 'person',
+                          styleClass: 'bg-purple',
+                          data: {
+                            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                            name: 'Anna Fali',
+                            title: 'Branch Business Manager'
+                          },
+                        },
+                        {
+                          expanded: true,
+                          type: 'person',
+                          styleClass: 'bg-purple',
+                          data: {
+                            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                            name: 'Anna Fali',
+                            title: 'Branch Business Manager'
+                          },
+                        },
+                      ]
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                      children: [
+                        {
+                          expanded: true,
+                          type: 'person',
+                          styleClass: 'bg-purple',
+                          data: {
+                            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                            name: 'Anna Fali',
+                            title: 'Branch Business Manager'
+                          },
+                        },
+                        {
+                          expanded: true,
+                          type: 'person',
+                          styleClass: 'bg-purple',
+                          data: {
+                            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                            name: 'Anna Fali',
+                            title: 'Branch Business Manager'
+                          },
+                        },
+                        {
+                          expanded: true,
+                          type: 'person',
+                          styleClass: 'bg-purple',
+                          data: {
+                            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                            name: 'Anna Fali',
+                            title: 'Branch Business Manager'
+                          },
+                        },
+                      ]
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                      children: [
+                        {
+                          expanded: true,
+                          type: 'person',
+                          styleClass: 'bg-purple',
+                          data: {
+                            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                            name: 'Anna Fali',
+                            title: 'Branch Business Manager'
+                          },
+                        },
+                        {
+                          expanded: true,
+                          type: 'person',
+                          styleClass: 'bg-purple',
+                          data: {
+                            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                            name: 'Anna Fali',
+                            title: 'Branch Business Manager'
+                          },
+                        },
+                        {
+                          expanded: true,
+                          type: 'person',
+                          styleClass: 'bg-purple',
+                          data: {
+                            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                            name: 'Anna Fali',
+                            title: 'Branch Business Manager'
+                          },
+                        },
+                      ]
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                
+              ]
             },
             {
               expanded: true,
@@ -97,63 +408,137 @@ export class TeamHierarchyComponent {
               styleClass: 'bg-purple',
               data: {
                 image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
+                name: 'Ash',
+                title: 'Area Business Manager'
               },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-          ]
-            },
-            {
-              expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-            name: 'Ash',
-            title: 'Area Business Manager'
-          },
-          children: [
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-          ]
+              children: [
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+              ]
             }
           ]
         },
@@ -169,13 +554,13 @@ export class TeamHierarchyComponent {
           children: [
             {
               expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-            name: 'Preeti',
-            title: 'Area Business Manager'
-          },
+              type: 'person',
+              styleClass: 'bg-purple',
+              data: {
+                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                name: 'Preeti',
+                title: 'Area Business Manager'
+              },
               children: [
                 {
                   expanded: true,
@@ -186,6 +571,38 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
                 {
                   expanded: true,
@@ -196,6 +613,38 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
                 {
                   expanded: true,
@@ -206,28 +655,178 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
               ]
             },
             {
               expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-            name: 'Anna Fali',
-            title: 'Area Business Manager'
-          },
-          children: [
-            {
-              expanded: true,
               type: 'person',
               styleClass: 'bg-purple',
               data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
                 name: 'Anna Fali',
-                title: 'Branch Business Manager'
+                title: 'Area Business Manager'
               },
+              children: [
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+              ]
             },
             {
               expanded: true,
@@ -235,63 +834,137 @@ export class TeamHierarchyComponent {
               styleClass: 'bg-purple',
               data: {
                 image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
+                name: 'Ash',
+                title: 'Area Business Manager'
               },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-          ]
-            },
-            {
-              expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-            name: 'Ash',
-            title: 'Area Business Manager'
-          },
-          children: [
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-          ]
+              children: [
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+              ]
             }
           ]
         },
@@ -307,13 +980,13 @@ export class TeamHierarchyComponent {
           children: [
             {
               expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-            name: 'Preeti',
-            title: 'Area Business Manager'
-          },
+              type: 'person',
+              styleClass: 'bg-purple',
+              data: {
+                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                name: 'Preeti',
+                title: 'Area Business Manager'
+              },
               children: [
                 {
                   expanded: true,
@@ -324,6 +997,38 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
                 {
                   expanded: true,
@@ -334,6 +1039,38 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
                 {
                   expanded: true,
@@ -344,28 +1081,178 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
               ]
             },
             {
               expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-            name: 'Anna Fali',
-            title: 'Area Business Manager'
-          },
-          children: [
-            {
-              expanded: true,
               type: 'person',
               styleClass: 'bg-purple',
               data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
                 name: 'Anna Fali',
-                title: 'Branch Business Manager'
+                title: 'Area Business Manager'
               },
+              children: [
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+              ]
             },
             {
               expanded: true,
@@ -373,63 +1260,137 @@ export class TeamHierarchyComponent {
               styleClass: 'bg-purple',
               data: {
                 image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
+                name: 'Ash',
+                title: 'Area Business Manager'
               },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-          ]
-            },
-            {
-              expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-            name: 'Ash',
-            title: 'Area Business Manager'
-          },
-          children: [
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-          ]
+              children: [
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+              ]
             }
           ]
         },
@@ -445,13 +1406,13 @@ export class TeamHierarchyComponent {
           children: [
             {
               expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-            name: 'Preeti',
-            title: 'Area Business Manager'
-          },
+              type: 'person',
+              styleClass: 'bg-purple',
+              data: {
+                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                name: 'Preeti',
+                title: 'Area Business Manager'
+              },
               children: [
                 {
                   expanded: true,
@@ -462,6 +1423,38 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
                 {
                   expanded: true,
@@ -472,6 +1465,38 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
                 {
                   expanded: true,
@@ -482,28 +1507,178 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
               ]
             },
             {
               expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-            name: 'Anna Fali',
-            title: 'Area Business Manager'
-          },
-          children: [
-            {
-              expanded: true,
               type: 'person',
               styleClass: 'bg-purple',
               data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
                 name: 'Anna Fali',
-                title: 'Branch Business Manager'
+                title: 'Area Business Manager'
               },
+              children: [
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+              ]
             },
             {
               expanded: true,
@@ -511,63 +1686,137 @@ export class TeamHierarchyComponent {
               styleClass: 'bg-purple',
               data: {
                 image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
+                name: 'Ash',
+                title: 'Area Business Manager'
               },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-          ]
-            },
-            {
-              expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-            name: 'Ash',
-            title: 'Area Business Manager'
-          },
-          children: [
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-          ]
+              children: [
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+              ]
             }
           ]
         },
@@ -583,13 +1832,13 @@ export class TeamHierarchyComponent {
           children: [
             {
               expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-            name: 'Preeti',
-            title: 'Area Business Manager'
-          },
+              type: 'person',
+              styleClass: 'bg-purple',
+              data: {
+                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                name: 'Preeti',
+                title: 'Area Business Manager'
+              },
               children: [
                 {
                   expanded: true,
@@ -600,6 +1849,38 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
                 {
                   expanded: true,
@@ -610,6 +1891,38 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
                 {
                   expanded: true,
@@ -620,92 +1933,317 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                
+              ]
+            },
+            {
+              expanded: true,
+              type: 'person',
+              styleClass: 'bg-purple',
+              data: {
+                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                name: 'Anna Fali',
+                title: 'Area Business Manager'
+              },
+              children: [
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
               ]
             },
             {
               expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-            name: 'Anna Fali',
-            title: 'Area Business Manager'
-          },
-          children: [
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-            {
-              expanded: true,
               type: 'person',
               styleClass: 'bg-purple',
               data: {
                 image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
+                name: 'Ash',
+                title: 'Area Business Manager'
               },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-          ]
-            },
-            {
-              expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-            name: 'Ash',
-            title: 'Area Business Manager'
-          },
-          children: [
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-          ]
+              children: [
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+              ]
             }
           ]
         },
@@ -721,13 +2259,13 @@ export class TeamHierarchyComponent {
           children: [
             {
               expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-            name: 'Preeti',
-            title: 'Area Business Manager'
-          },
+              type: 'person',
+              styleClass: 'bg-purple',
+              data: {
+                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                name: 'Preeti',
+                title: 'Area Business Manager'
+              },
               children: [
                 {
                   expanded: true,
@@ -738,6 +2276,38 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
                 {
                   expanded: true,
@@ -748,6 +2318,38 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
                 {
                   expanded: true,
@@ -758,28 +2360,178 @@ export class TeamHierarchyComponent {
                     name: 'Anna Fali',
                     title: 'Branch Business Manager'
                   },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
                 },
               ]
             },
             {
               expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-            name: 'Anna Fali',
-            title: 'Area Business Manager'
-          },
-          children: [
-            {
-              expanded: true,
               type: 'person',
               styleClass: 'bg-purple',
               data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
                 name: 'Anna Fali',
-                title: 'Branch Business Manager'
+                title: 'Area Business Manager'
               },
+              children: [
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+              ]
             },
             {
               expanded: true,
@@ -787,63 +2539,137 @@ export class TeamHierarchyComponent {
               styleClass: 'bg-purple',
               data: {
                 image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
+                name: 'Ash',
+                title: 'Area Business Manager'
               },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-          ]
-            },
-            {
-              expanded: true,
-          type: 'person',
-          styleClass: 'bg-purple',
-          data: {
-            image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-            name: 'Ash',
-            title: 'Area Business Manager'
-          },
-          children: [
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-            {
-              expanded: true,
-              type: 'person',
-              styleClass: 'bg-purple',
-              data: {
-                image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
-                name: 'Anna Fali',
-                title: 'Branch Business Manager'
-              },
-            },
-          ]
+              children: [
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+                {
+                  expanded: true,
+                  type: 'person',
+                  styleClass: 'bg-purple',
+                  data: {
+                    image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                    name: 'Anna Fali',
+                    title: 'Branch Business Manager'
+                  },
+                  children: [
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/stephenshaw.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                    {
+                      expanded: true,
+                      type: 'person',
+                      styleClass: 'bg-purple',
+                      data: {
+                        image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/annafali.png',
+                        name: 'Anna Fali',
+                        title: 'Branch Business Manager'
+                      },
+                    },
+                  ]
+                },
+              ]
             }
           ]
         }
