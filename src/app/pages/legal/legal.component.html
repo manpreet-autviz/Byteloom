@@ -1,162 +1,138 @@
 <div class="main-content">
-    <div class="page-content">
-      <div class="container-fluid">
-        <div class="breadcrumb">
-          <div class="card card-animate w-100">
-            <div
-              class="card-body d-flex align-items-center justify-content-between"
-            >
-              <div>
-                <span class="f-7 fs-5">Legal</span>
-              </div>
-              <div class="d-flex">
-                <select
-                  id="dropdown"
-                  class="form-select me-2"
-                  [(ngModel)]="selectedFilter"
-                  (ngModelChange)="onFilterChange($event)"
-                >
-                  <option *ngFor="let filter of filters" [value]="filter">
-                    {{ filter }}
-                  </option>
-                </select>
-  
-                <select
-                  id="dropdown"
-                  class="form-select"
-                  [(ngModel)]="selectedState"
-                  (ngModelChange)="onStateChange($event)"
-                >
-                  <option *ngFor="let state of states" [value]="state">
-                    {{ state }}
-                  </option>
-                </select>
-              </div>
+  <div class="page-content">
+    <div class="container-fluid">
+      <div class="breadcrumb">
+        <div class="card card-animate w-100">
+          <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+              <span class="f-7 fs-5">Legal</span>
+            </div>
+            <div class="d-flex">
+              <select id="dropdown" class="form-select me-2" [(ngModel)]="selectedFilter"
+                (ngModelChange)="onFilterChange($event)">
+                <option *ngFor="let filter of filters" [value]="filter">
+                  {{ filter }}
+                </option>
+              </select>
+
+              <select id="dropdown" class="form-select" [(ngModel)]="selectedState"
+                (ngModelChange)="onStateChange($event)">
+                <option *ngFor="let state of states" [value]="state">
+                  {{ state }}
+                </option>
+              </select>
             </div>
           </div>
-  
-          <div class="sales w-100">
-            <div class="card card-animate w-100 mt-3">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-7">
-                    <div class="card box-s h-100">
-                      <div class="card-body text-center">
-                        <span class="f-6">TAT </span>
-                        <div
-                          class="state-chart"
-                          id="tat-Chart"
-                          style="width: 100%; height: 400px"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-5">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6"> TM wise vetting </span>
-                        <div
-                          class="state-chart"
-                          id="TM-wise-vetting"
-                          style="width: 100%; height: 400px"
-                        ></div>
-  
-                        <div class="row">
-                          <div class="col-md-12">
-                            <div class="text-left">
-                            <h5>Assignee</h5>
-                            <span>Total issues :1006</span>
-                            </div>
-                            <hr />
-                            <div class="assignee-list">
-                              <ul>
-                                <li class="kl-rahul">
-                                  <div class="name-clr-no">
-                                    <div class="name">
-                                      <h6>K Rahul</h6>
-                                    </div>
-                                    <div class="number">
-                                      <h6>30</h6>
-                                    </div>
-                                  </div>
-                                </li>
-                                <li class="harpreet-kaur">
-                                  <div class="name-clr-no">
-                                    <div class="name">
-                                      <h6>Harpreet Kaur</h6>
-                                    </div>
-                                    <div class="number">
-                                      <h6>38</h6>
-                                    </div>
-                                  </div>
-                                </li>
-                                <li class="manoj">
-                                  <div class="name-clr-no">
-                                    <div class="name">
-                                      <h6>Manoj Tiwary</h6>
-                                    </div>
-                                    <div class="number">
-                                      <h6>28</h6>
-                                    </div>
-                                  </div>
-                                </li>
-                                <li class="ankit">
-                                  <div class="name-clr-no">
-                                    <div class="name">
-                                      <h6>Ankit Sharma</h6>
-                                    </div>
-                                    <div class="number">
-                                      <h6>35</h6>
-                                    </div>
-                                  </div>
-                                </li>
-                                <li class="rahul">
-                                  <div class="name-clr-no">
-                                    <div class="name">
-                                      <h6>Rahul Thakur</h6>
-                                    </div>
-                                    <div class="number">
-                                      <h6>24</h6>
-                                    </div>
-                                  </div>
-                                </li>
-                                
-                                <li class="vikram">
-                                  <div class="name-clr-no">
-                                    <div class="name">
-                                      <h6>Vikram Saini</h6>
-                                    </div>
-                                    <div class="number">
-                                      <h6>20</h6>
-                                    </div>
-                                  </div>
-                                </li>
-                                <li class="saurab">
-                                  <div class="name-clr-no">
-                                    <div class="name">
-                                      <h6>Saurab Kumar</h6>
-                                    </div>
-                                    <div class="number">
-                                      <h6>20</h6>
-                                    </div>
-                                  </div>
-                                </li>
+        </div>
 
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+        <div class="sales w-100">
+          <div class="card card-animate w-100 mt-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card box-s h-100">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">TAT </span>
+                      <div class="state-chart" id="tat-Chart" style="width: 100%; height: 400px"></div>
                     </div>
                   </div>
                 </div>
+                <div class="col-md-3">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"> TM wise vetting </span>
+                      <div class="state-chart" id="TM-wise-vetting" style="width: 100%; height: 400px"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                      <div class="text-left">
+                        <h5>Assignee</h5>
+                        <span>Total issues :1006</span>
+                      </div>
+                      <hr />
+                      <div class="assignee-list">
+                        <ul>
+                          <li class="kl-rahul">
+                            <div class="name-clr-no">
+                              <div class="name">
+                                <h6>K Rahul</h6>
+                              </div>
+                              <div class="number">
+                                <h6>30</h6>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="harpreet-kaur">
+                            <div class="name-clr-no">
+                              <div class="name">
+                                <h6>Harpreet Kaur</h6>
+                              </div>
+                              <div class="number">
+                                <h6>38</h6>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="manoj">
+                            <div class="name-clr-no">
+                              <div class="name">
+                                <h6>Manoj Tiwary</h6>
+                              </div>
+                              <div class="number">
+                                <h6>28</h6>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="ankit">
+                            <div class="name-clr-no">
+                              <div class="name">
+                                <h6>Ankit Sharma</h6>
+                              </div>
+                              <div class="number">
+                                <h6>35</h6>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="rahul">
+                            <div class="name-clr-no">
+                              <div class="name">
+                                <h6>Rahul Thakur</h6>
+                              </div>
+                              <div class="number">
+                                <h6>24</h6>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li class="vikram">
+                            <div class="name-clr-no">
+                              <div class="name">
+                                <h6>Vikram Saini</h6>
+                              </div>
+                              <div class="number">
+                                <h6>20</h6>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="saurab">
+                            <div class="name-clr-no">
+                              <div class="name">
+                                <h6>Saurab Kumar</h6>
+                              </div>
+                              <div class="number">
+                                <h6>20</h6>
+                              </div>
+                            </div>
+                          </li>
+
+                        </ul>
+                      </div>
+                </div> 
               </div>
             </div>
           </div>
-
-          
         </div>
       </div>
     </div>
   </div>
-  
+</div>
