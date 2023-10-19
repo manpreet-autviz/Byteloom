@@ -262,6 +262,12 @@ export class ChequesSummaryComponent {
         {
           type: 'value',
           name: 'No of Files',
+          nameLocation: 'middle',
+          nameGap: 40,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
           min: 10,
           max: 100,
           interval: 10,
@@ -278,6 +284,12 @@ export class ChequesSummaryComponent {
         {
           type: 'value',
           name: 'Amount ( in Rs.. Lacs)',
+          nameLocation: 'middle',
+          nameGap: 40,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
           min: 10,
           max: 90,
           interval: 10,
@@ -320,7 +332,7 @@ export class ChequesSummaryComponent {
           },
           data: [50, 55, 40, 55, 60, 40],
           itemStyle: {
-            color: '#F0997D',
+            color: '#10C563',
           },
         },
       ],
@@ -369,6 +381,12 @@ export class ChequesSummaryComponent {
         {
           type: 'value',
           name: 'No of Files',
+          nameLocation: 'middle',
+          nameGap: 40,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
           min: 10,
           max: 100,
           interval: 10,
@@ -385,6 +403,12 @@ export class ChequesSummaryComponent {
         {
           type: 'value',
           name: 'Amount ( in Rs.. Lacs)',
+          nameLocation: 'middle',
+          nameGap: 40,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
           min: 10,
           max: 90,
           interval: 10,
@@ -411,7 +435,7 @@ export class ChequesSummaryComponent {
           },
           data: [50, 55, 40, 55, 60, 40],
           itemStyle: {
-            color: '#0747A6',
+            color: '#F0997D',
           },
         },
 
@@ -426,7 +450,7 @@ export class ChequesSummaryComponent {
           },
           data: [50, 55, 40, 55, 60, 40],
           itemStyle: {
-            color: '#FF821C',
+            color: '#7460EE',
           },
         },
       ],

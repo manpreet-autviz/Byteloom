@@ -63,6 +63,18 @@ td {
     top: 67px;
     border-radius: 4px;
 }
+.pan-btn2 p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    background: rgba(63, 193, 201, 0.13);
+    width: fit-content;
+    padding: 6px 8px;
+    position: absolute;
+    right: 40px;
+    top: 105px;
+    border-radius: 4px;
+}
 
 @media (max-width: 767px){
     .productivity-tabs ul.nav-pills {

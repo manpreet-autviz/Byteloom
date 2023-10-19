@@ -69,9 +69,7 @@ export class BusinessRMComponent {
 
   initializeChart() {
     if (!this.isToggled) {
-      // this.PotentialLostBusinessChart = echarts.init(
-      //   document.getElementById('Potential-lost-business') as HTMLDivElement
-      // );
+
       this.DistributionMixChart = echarts.init(
         document.getElementById('Distribution-mix') as HTMLDivElement
       );
@@ -81,84 +79,7 @@ export class BusinessRMComponent {
       );
       
 
-      // this.PotentialLostBusinessOption = {
-      //   tooltip: {
-      //     trigger: 'axis',
-      //     axisPointer: {
-      //       type: 'shadow',
-      //     },
-      //   },
-      //   legend: {
-      //     data: ['CNI', 'Cancellation'],
-      //   },
-      //   grid: {
-      //     left: '3%',
-      //     right: '4%',
-      //     bottom: '3%',
-      //     containLabel: true,
-      //   },
-      //   xAxis: {
-      //     type: 'value',
-      //     splitLine: {
-      //       show: false,
-      //     },
 
-      //     boundaryGap: [0, 0.01],
-      //     axisLabel: {
-      //       show: false, // Set this to false to hide x-axis labels
-      //     },
-      //   },
-      //   yAxis: {
-      //     type: 'category',
-      //     axisLine: {
-      //       show: false,
-      //     },
-      //     splitLine: {
-      //       show: false,
-      //     },
-      //     data: [
-      //       'Maharashtra',
-      //       'MP',
-      //       'Gujarat',
-      //       'Rajasthan',
-      //       'NCR',
-      //       'Haryana',
-      //       'Punjab',
-      //       'Pan India',
-      //     ],
-      //   },
-
-      //   series: [
-      //     {
-      //       name: 'CNI',
-      //       type: 'bar',
-      //       data: [40, 40, 40, 40, 40, 40, 40, 80],
-      //       label: {
-      //         show: true,
-      //         position: 'right',
-      //         formatter: '{c}%',
-      //       },
-      //       itemStyle: {
-      //         color: '#3C7EBE', // Set the color for the first bar series (IRR)
-      //         borderRadius: 10,
-      //       },
-      //     },
-      //     {
-      //       name: 'Cancellation',
-      //       type: 'bar',
-      //       data: [65, 65, 65, 65, 65, 65, 65, 75],
-      //       label: {
-      //         show: true,
-      //         position: 'right',
-      //         formatter: '{c} Cr',
-      //       },
-      //       itemStyle: {
-      //         color: '#5BC8EF', // Set the color for the first bar series (IRR)
-      //         borderRadius: 10,
-      //       },
-      //     },
-      //   ],
-      // };
 
       this.DistributionMixOption = {
         tooltip: {
@@ -294,9 +215,7 @@ export class BusinessRMComponent {
         ],
       };
 
-      // this.PotentialLostBusinessChart.setOption(
-      //   this.PotentialLostBusinessOption
-      // );
+
 
       this.DistributionMixChart.setOption(
         this.DistributionMixOption

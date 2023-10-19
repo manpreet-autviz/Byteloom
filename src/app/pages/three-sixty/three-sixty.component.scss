@@ -208,8 +208,21 @@ ul.pending-cheque.ot-normal {
     left: 50px;
     top: 55px;
 }
-
-
+.aum-orange{
+    background: linear-gradient(180deg, #FB8C00 0%, rgba(251, 140, 0, 0.72) 100%);
+}
+.total-btn p {
+    margin: 0;
+    font-size: 20px;
+   width: fit-content;
+    border: 1px solid #000;
+    padding: 6px 8px;
+    position: absolute;
+    right: 41%;
+    top: 25%;
+    font-weight: 700;
+     border-radius: 4px;
+}
 
 
 

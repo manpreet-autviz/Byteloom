@@ -468,13 +468,23 @@ export class ChannelPartnersComponent {
           return ` ${barValue}%`;
         },
       },
+      legend: {
+       data:['Overall','CP'],
+        textStyle: {
+          color: '#333',
+        },
+        itemWidth: 20, // Adjust the width of legend items
+        itemHeight: 20,
+        borderRadius: 10, 
+        
+    
+      },
       xAxis: {
         type: 'category',
 
         data: [
           'Pan India',
-          'Punjab',
-          'Haryana',
+          'PCH',
           'NCR',
           'Rajasthan',
           'Gujarat',
@@ -518,11 +528,21 @@ export class ChannelPartnersComponent {
       },
       series: [
         {
+          name:'Overall',
           barWidth: 20,
-          data: [0.95, 1.15, 1.05, 1.15, 1.03, 1.15, 1.03, 1.15],
+          data: [0.95, 1.15, 1.05, 1.15, 1.03, 1.15, 1.03],
           type: 'bar',
           itemStyle: {
             color: '#8675A9',
+          },
+        },
+        {
+          name:'CP',
+          barWidth: 20,
+          data: [0.90, 1.17, 1.01, 1.18, 1.00, 1.17, 1.00],
+          type: 'bar',
+          itemStyle: {
+            color: '#D2BEFB',
           },
         },
       ],

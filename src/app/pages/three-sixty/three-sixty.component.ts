@@ -330,9 +330,7 @@ export class ThreeSixtyComponent {
             tooltipText = 'No. of files: 800 <br/> Amount in Cr: 269';
           } else if (params.name === 'SBL') {
             tooltipText = 'No. of files: 1600 <br/> Amount in Cr: 268';
-          } else if (params.name === 'All Products') {
-            tooltipText = 'No. of files: 2300 <br/> Amount in Cr: 367';
-          }
+          } 
 
           return tooltipText;
         },
@@ -363,15 +361,11 @@ export class ThreeSixtyComponent {
             show: false,
           },
           data: [
-            {
-              value: 45,
-              name: 'All Products',
-              itemStyle: { color: '#7C41DA' },
-            },
-            { value: 45, name: 'Home Loan', itemStyle: { color: '#F99B00' } },
+            
+            { value: 45, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
             { value: 20, name: 'LAP', itemStyle: { color: '#07A14E' } },
             { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
-            { value: 25, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
+            { value: 25, name: 'SBL', itemStyle: { color: '#F99B00' } },
           ],
         },
       ],
@@ -437,7 +431,7 @@ export class ThreeSixtyComponent {
           data: [70, 55, 45, 40, 53],
           type: 'bar',
           itemStyle: {
-            color: '#5D5BCC',
+            color: '#7460EE',
           },
         },
       ],

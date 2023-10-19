@@ -88,8 +88,8 @@ export class OtcPddComponent {
       },
       legend: {
         data: [
-          'Critical',
-          'Non-Critical',],
+          'No of OTCs',
+          'No. of customers',],
         top: '10',
       },
 
@@ -141,7 +141,7 @@ export class OtcPddComponent {
       },
       series: [
         {
-          name: 'Category 1',
+          name: 'No of OTCs',
           type: 'bar',
           
           stack: 'barStack',
@@ -153,7 +153,7 @@ export class OtcPddComponent {
           },
         },
         {
-          name: 'Category 2',
+          name: 'No. of customers',
           type: 'bar',
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed

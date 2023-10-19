@@ -41,7 +41,7 @@
               <div class="col-md-6">
                 <div class="card box-s">
                   <div class="card-body text-center">
-                    <span class="f-6"> Financial Approved</span>
+                    <span class="f-6 title"> Financial Approved</span>
                     <div
                       class="state-chart"
                       id="fianancial-approval-chart"
@@ -53,7 +53,7 @@
               <div class="col-md-6">
                 <div class="card box-s">
                   <div class="card-body text-center">
-                    <span class="f-6"> Final Approved</span>
+                    <span class="f-6 title"> Final Approved</span>
                     <div
                       class="state-chart"
                       id="final-approval-chart"
@@ -82,7 +82,7 @@
             </div>
 
             <div class="box-s p-2 mt-4">
-              <div class="container mt-5">
+              <div class="container mt-2">
                 <table
                   id="table"
                   class="table border rounded business-insights-table"
@@ -110,7 +110,7 @@
                       <td class="border-bottom bg-yellow">
                         {{ item.product }}
                       </td>
-                      <td class="border-bottom">{{ item.scheme }}</td>
+                      <td class="border-bottom bg-lightblue">{{ item.scheme }}</td>
                       <td class="border-bottom">{{ item.loanAmount }}</td>
                       <td class="border-bottom bg-red">
                         {{ item.technicalRecieved }}

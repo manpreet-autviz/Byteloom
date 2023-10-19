@@ -377,7 +377,7 @@ export class CreditComponent {
               value: 10,
               name: 'Vikram Singh',
               itemStyle: {
-                color: '#636363',
+                color: '#A75D5D',
               },
             },
             {

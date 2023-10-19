@@ -548,7 +548,7 @@ export class RejectionAnalysisComponent {
       series: [
         {
           type: 'pie',
-          radius: ['40%', '70%'],
+          radius: ['30%', '80%'],
           avoidLabelOverlap: false,
           top: '6%',
           itemStyle: {
