@@ -33,6 +33,7 @@ import { TeamHierarchyComponent } from './pages/team-hierarchy/team-hierarchy.co
 import { SearchingBasisComponent } from './pages/searching-basis/searching-basis.component';
 
 import { BranchSearchComponent } from './pages/branch-search/branch-search.component';
+import { TatLoginTableComponent } from './pages/tat-login-table/tat-login-table.component';
 
 
 
@@ -65,13 +66,14 @@ const routes: Routes = [
   { path: 'credit-supervisor', component: CreditSupervisorComponent },
   { path: 'out-of-tat', component: OutOfTatComponent },
   { path: 'work-in-progress-table/:data', component: WorkInProgressTablesComponent },
+
   { path: 'portfolio-health', component: PortfolioHealthComponent },
   { path: 'team-hierarchy', component: TeamHierarchyComponent },
 
   { path: 'search', component: SearchingBasisComponent },
 
   { path: 'branch-search', component: BranchSearchComponent },
-
+  { path: 'login-tat-table/:data', component: TatLoginTableComponent },
 ];
 
 @NgModule({

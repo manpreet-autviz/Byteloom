@@ -1,3 +1,15 @@
+.export-btn a {
+    background: #0747a6;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 12px;
+    display: inline-block;
+}
+.export-btn {
+    text-align: right;
+}
 span.bg-light-green {
     background: #3ada842b !important;
     border-radius: 10px;
@@ -15,16 +27,4 @@ th.border-bottom.sorting_disabled {
 }
 td, th {
     padding: 15px 0 !important;
-}
-.export-btn a {
-    background: #0747a6;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 12px;
-    display: inline-block;
-}
-.export-btn {
-    text-align: right;
 }

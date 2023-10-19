@@ -22,14 +22,7 @@ export class DashboardComponent {
     'MP',
     'Maharashtra',
   ];
-  filters: string[] = [
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September'
-  ];
+  filters: string[] = ['April', 'May', 'June', 'July', 'August', 'September'];
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
   IrrChart!: echarts.ECharts;
@@ -40,25 +33,25 @@ export class DashboardComponent {
   financialTotalFiles: number = 1500;
   disbursalTotalAmount: number = 150;
   disbursalTotalFiles: number = 1200;
-  finalTotalFiles:number = 1000;
-  finalTotalAmount:number = 150
+  finalTotalFiles: number = 1000;
+  finalTotalAmount: number = 150;
 
-  minLoginAmountValue = 350; 
-  maxLoginAmountValue = 500; 
+  minLoginAmountValue = 350;
+  maxLoginAmountValue = 500;
 
-  minLoginFileValue = 3000; 
-  maxLoginFileValue = 4000; 
+  minLoginFileValue = 3000;
+  maxLoginFileValue = 4000;
 
-  minFinancialAmountValue = 110; 
-  maxFinancialAmountValue = 145; 
+  minFinancialAmountValue = 110;
+  maxFinancialAmountValue = 145;
 
-  minFinancialFileValue = 1350; 
+  minFinancialFileValue = 1350;
   maxFinancialFileValue = 1800;
 
-  minDisbursalAmountValue = 90; 
+  minDisbursalAmountValue = 90;
   maxDisbursalAmountValue = 120;
 
-  minDisbursalFileValue = 1100; 
+  minDisbursalFileValue = 1100;
   maxDisbursalFileValue = 1400;
 
   constructor(private el: ElementRef) {}
@@ -228,19 +221,15 @@ export class DashboardComponent {
     this.pfChart.setOption(pfOption);
   }
 
-  initializeChart(){
+  initializeChart() {
     this.DisbursalAchievementChart = echarts.init(
       document.getElementById('Disbursal-Achievement-Chart') as HTMLDivElement
     );
     this.disbursalAchievementOption = {
       tooltip: {
-
-        formatter: function (params:any) {
-
+        formatter: function (params: any) {
           return `Number of Files: 2000<br/>Amount in Cr: 234 <br/>${params.value}%`;
-
         },
-
       },
       series: [
         {
@@ -306,101 +295,93 @@ export class DashboardComponent {
     this.DisbursalAchievementChart.setOption(this.disbursalAchievementOption);
     this.trendDisbursalAchievementChart = echarts.init(
       document.getElementById('trendDisbursalAchievement') as HTMLDivElement
-      );
-      this.trendDisbursalAchievementOption = {
-        title: {},
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'cross',
-            label: {
-              backgroundColor: '#6a7985',
-            },
+    );
+    this.trendDisbursalAchievementOption = {
+      title: {},
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#6a7985',
           },
         },
-        legend: {},
-   
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true,
-        },
-        xAxis: [
-          {
-            type: 'category',
-            axisLine: {
-              show: false,
-            },
-            labelLine:{
-              show: false,
-            },
-            axisTick: {
-              show: false,
-            },
-            splitLine:{
-              show: false,
-            },
-            boundaryGap: false,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
-          },
-        ],
-        yAxis: [
-          {
-            type: 'value',
-            axisLine: {
-              show: false,
-            },
-            splitLine:{
-              show: false,
-            },
-            min: 10,
-            max: 100,
-            interval: 10,
-            name: 'Percentage %',
-            nameLocation: 'middle',
-            nameGap: 30,
-            axisLabel: {
-              formatter: '{value}%',
-              margin: 1,
-            },
-            nameTextStyle: {
-              fontWeight: 600,
-              fontSize:14,
-            },
-          },
-        ],
-        series: [
-          {
-            type: 'line',
+      },
+      legend: {},
 
-            areaStyle: {
-              opacity: 0,
-            },
-            emphasis: {
-              focus: 'series',
-              areaStyle: {
-                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-              },
-            },
-            data: [90, 93, 94, 92, 99, 100, 110],
-            itemStyle: {
-              color: '#07A14E',
-            }
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true,
+      },
+      xAxis: [
+        {
+          type: 'category',
+          axisLine: {
+            show: false,
           },
-        ],
-      };
-      this.trendDisbursalAchievementChart.setOption(
-        this.trendDisbursalAchievementOption
-      );
+          labelLine: {
+            show: false,
+          },
+          axisTick: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+          boundaryGap: false,
+          data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+        },
+      ],
+      yAxis: [
+        {
+          type: 'value',
+          axisLine: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+          min: 10,
+          max: 100,
+          interval: 10,
+          name: 'Percentage %',
+          nameLocation: 'middle',
+          nameGap: 30,
+          axisLabel: {
+            formatter: '{value}%',
+            margin: 1,
+          },
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize: 14,
+          },
+        },
+      ],
+      series: [
+        {
+          type: 'line',
+
+          areaStyle: {
+            opacity: 0,
+          },
+          emphasis: {
+            focus: 'series',
+            areaStyle: {
+              opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+            },
+          },
+          data: [90, 93, 94, 92, 97, 99, 100],
+          itemStyle: {
+            color: '#07A14E',
+          },
+        },
+      ],
+    };
+    this.trendDisbursalAchievementChart.setOption(
+      this.trendDisbursalAchievementOption
+    );
   }
   generateDisbursalAchievement() {
     const minValue = 10;
@@ -475,34 +456,40 @@ export class DashboardComponent {
       Math.random() * (this.maxLoginAmountValue - this.minLoginAmountValue) +
       this.minLoginAmountValue
     ).toFixed(2);
-    this.loginTotalFiles =  +(
+    this.loginTotalFiles = +(
       Math.random() * (this.maxLoginFileValue - this.minLoginFileValue) +
       this.minLoginFileValue
     ).toFixed(0);
-  
-    this.financialTotalAmount =  +(
-      Math.random() * (this.maxFinancialAmountValue - this.minFinancialAmountValue) +
+
+    this.financialTotalAmount = +(
+      Math.random() *
+        (this.maxFinancialAmountValue - this.minFinancialAmountValue) +
       this.minFinancialAmountValue
     ).toFixed(2);
-    this.financialTotalFiles =  +(
-      Math.random() * (this.maxFinancialFileValue - this.minFinancialFileValue) +
+    this.financialTotalFiles = +(
+      Math.random() *
+        (this.maxFinancialFileValue - this.minFinancialFileValue) +
       this.minFinancialFileValue
     ).toFixed(0);
 
-    this.disbursalTotalAmount =  +(
-      Math.random() * (this.maxDisbursalAmountValue - this.minDisbursalAmountValue) +
+    this.disbursalTotalAmount = +(
+      Math.random() *
+        (this.maxDisbursalAmountValue - this.minDisbursalAmountValue) +
       this.minDisbursalAmountValue
     ).toFixed(2);
-    this.disbursalTotalFiles =  +(
-      Math.random() * (this.maxDisbursalFileValue - this.minDisbursalFileValue) +
+    this.disbursalTotalFiles = +(
+      Math.random() *
+        (this.maxDisbursalFileValue - this.minDisbursalFileValue) +
       this.minDisbursalFileValue
     ).toFixed(0);
-    this.finalTotalAmount =  +(
-      Math.random() * (this.maxDisbursalAmountValue - this.minDisbursalAmountValue) +
+    this.finalTotalAmount = +(
+      Math.random() *
+        (this.maxDisbursalAmountValue - this.minDisbursalAmountValue) +
       this.minDisbursalAmountValue
     ).toFixed(2);
-    this.finalTotalFiles =  +(
-      Math.random() * (this.maxDisbursalFileValue - this.minDisbursalFileValue) +
+    this.finalTotalFiles = +(
+      Math.random() *
+        (this.maxDisbursalFileValue - this.minDisbursalFileValue) +
       this.minDisbursalFileValue
     ).toFixed(0);
   }
@@ -551,26 +538,30 @@ export class DashboardComponent {
       Math.random() * (this.maxLoginAmountValue - this.minLoginAmountValue) +
       this.minLoginAmountValue
     ).toFixed(2);
-    this.loginTotalFiles =  +(
+    this.loginTotalFiles = +(
       Math.random() * (this.maxLoginFileValue - this.minLoginFileValue) +
       this.minLoginFileValue
     ).toFixed(0);
-  
-    this.financialTotalAmount =  +(
-      Math.random() * (this.maxFinancialAmountValue - this.minFinancialAmountValue) +
+
+    this.financialTotalAmount = +(
+      Math.random() *
+        (this.maxFinancialAmountValue - this.minFinancialAmountValue) +
       this.minFinancialAmountValue
     ).toFixed(2);
-    this.financialTotalFiles =  +(
-      Math.random() * (this.maxFinancialFileValue - this.minFinancialFileValue) +
+    this.financialTotalFiles = +(
+      Math.random() *
+        (this.maxFinancialFileValue - this.minFinancialFileValue) +
       this.minFinancialFileValue
     ).toFixed(0);
 
-    this.disbursalTotalAmount =  +(
-      Math.random() * (this.maxDisbursalAmountValue - this.minDisbursalAmountValue) +
+    this.disbursalTotalAmount = +(
+      Math.random() *
+        (this.maxDisbursalAmountValue - this.minDisbursalAmountValue) +
       this.minDisbursalAmountValue
     ).toFixed(2);
-    this.disbursalTotalFiles =  +(
-      Math.random() * (this.maxDisbursalFileValue - this.minDisbursalFileValue) +
+    this.disbursalTotalFiles = +(
+      Math.random() *
+        (this.maxDisbursalFileValue - this.minDisbursalFileValue) +
       this.minDisbursalFileValue
     ).toFixed(0);
   }

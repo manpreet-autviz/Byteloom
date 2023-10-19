@@ -1,12 +1,13 @@
 import { ChangeDetectorRef, Component, ElementRef, NgZone } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 declare var $: any;
+
 @Component({
-  selector: 'app-work-in-progress-tables',
-  templateUrl: './work-in-progress-tables.component.html',
-  styleUrls: ['./work-in-progress-tables.component.scss']
+  selector: 'app-tat-login-table',
+  templateUrl: './tat-login-table.component.html',
+  styleUrls: ['./tat-login-table.component.scss']
 })
-export class WorkInProgressTablesComponent {
+export class TatLoginTableComponent {
 
   filters: string[] = ['Month To Date', 'Last Month'];
 
@@ -20,6 +21,7 @@ export class WorkInProgressTablesComponent {
     'MP',
     'Maharashtra',
   ];
+
   statesFilter: string[] = [
     'Pan India',
     'Punjab',
@@ -42,6 +44,7 @@ export class WorkInProgressTablesComponent {
   selectedFilter: string = 'Month To Date';
   selectedFilterState: string = 'Pan India';
   selectedFilterBranch: string = 'Chandigarh';
+
 
   data = [
     {
@@ -186,8 +189,9 @@ export class WorkInProgressTablesComponent {
   }
 
   onBranchFilterChange(selectedValue: string) {
-   
+  
   }
+  
   onFilterChange(selectedValue: string) {}
 
   onStateChange(selectedValue: string) {}

@@ -45,7 +45,7 @@ import { TeamHierarchyComponent } from './pages/team-hierarchy/team-hierarchy.co
 import { SearchingBasisComponent } from './pages/searching-basis/searching-basis.component';
 
 import { BranchSearchComponent } from './pages/branch-search/branch-search.component';
-
+import { TatLoginTableComponent } from './pages/tat-login-table/tat-login-table.component';
 
 
 
@@ -87,6 +87,8 @@ import { BranchSearchComponent } from './pages/branch-search/branch-search.compo
     SearchingBasisComponent,
 
     BranchSearchComponent,
+      TatLoginTableComponent,
+
 
 
   ],

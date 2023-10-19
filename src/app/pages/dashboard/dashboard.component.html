@@ -3,13 +3,19 @@
     <div class="container-fluid">
       <div class="breadcrumb">
         <div class="card card-animate w-100">
-          <div class="card-body breadcraumb-align align-items-center justify-content-between ">
+          <div
+            class="card-body breadcraumb-align align-items-center justify-content-between"
+          >
             <div>
               <span class="f-7 fs-5"> Dashboard </span>
             </div>
             <div class="dropdown">
-              <select id="dropdown" class="form-select filter-dropdown" [(ngModel)]="selectedState"
-                (ngModelChange)="onStateChange($event)">
+              <select
+                id="dropdown"
+                class="form-select filter-dropdown"
+                [(ngModel)]="selectedState"
+                (ngModelChange)="onStateChange($event)"
+              >
                 <option *ngFor="let state of states" [value]="state">
                   {{ state }}
                 </option>
@@ -22,8 +28,12 @@
         <div class="card-body">
           <div class="row justify-content-end mb-2">
             <div class="col-md-3">
-              <select id="dropdown" class="form-select " [(ngModel)]="selectedFilter"
-                (ngModelChange)="onFilterChange($event)">
+              <select
+                id="dropdown"
+                class="form-select"
+                [(ngModel)]="selectedFilter"
+                (ngModelChange)="onFilterChange($event)"
+              >
                 <option *ngFor="let filter of filters" [value]="filter">
                   {{ filter }}
                 </option>
@@ -33,21 +43,25 @@
           <div class="row gy-3 four-tile-card">
             <div class="col-xl col-md-4">
               <div class="card">
-                <div class="card-body text-white bg-dblue rounded five-card-min-h">
-                  <div class="d-flex ">
+                <div
+                  class="card-body text-white bg-dblue rounded five-card-min-h"
+                >
+                  <div class="d-flex">
                     <p class="f-7 mb-0">Total Logins</p>
                   </div>
                   <div class="d-flex align-items-end justify-content-between">
                     <div class="">
-                      <span class=" fs-3">
+                      <span class="fs-3">
                         <img src="../../../assets/icons/user-logo1.svg" />
                       </span>
                     </div>
                     <div class="text-part">
                       <span class="f-6 small-text">Total Amount</span><br />
-                      <span class="f-7 fs-6 py-2">{{loginTotalAmount}} Cr</span><br />
+                      <span class="f-7 fs-6 py-2"
+                        >{{ loginTotalAmount }} Cr</span
+                      ><br />
                       <span class="f-4 small-text">Total Files</span><br />
-                      <span class="f-7 fs-4">{{loginTotalFiles}}</span>
+                      <span class="f-7 fs-4">{{ loginTotalFiles }}</span>
                     </div>
                   </div>
                 </div>
@@ -56,21 +70,26 @@
 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card">
-                <div class="card-body text-white bg-orange rounded five-card-min-h">
-                  <div class="d-flex ">
+                <div
+                  class="card-body text-white bg-orange rounded five-card-min-h"
+                >
+                  <div class="d-flex">
                     <p class="f-7 mb-0">Financial Approval</p>
                   </div>
                   <div class="d-flex align-items-end justify-content-between">
                     <div class="">
-                      <span class=" fs-3">
+                      <span class="fs-3">
                         <img src="../../../assets/icons/financial1.svg" />
                       </span>
                     </div>
                     <div class="text-part">
                       <span class="f-6 small-text">Total Files</span><br />
-                      <span class="f-7 fs-6 py-2">{{financialTotalFiles}}</span><br />
+                      <span class="f-7 fs-6 py-2">{{
+                        financialTotalFiles
+                      }}</span
+                      ><br />
                       <span class="f-4 small-text">Total Amount</span><br />
-                      <span class="f-7 fs-4">{{financialTotalAmount}}Cr</span>
+                      <span class="f-7 fs-4">{{ financialTotalAmount }}Cr</span>
                     </div>
                   </div>
                 </div>
@@ -79,21 +98,24 @@
 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card">
-                <div class="card-body text-white bg-yellow rounded five-card-min-h">
-                  <div class="d-flex ">
+                <div
+                  class="card-body text-white bg-yellow rounded five-card-min-h"
+                >
+                  <div class="d-flex">
                     <p class="f-7 mb-0">Final Approvals</p>
                   </div>
                   <div class="d-flex align-items-end justify-content-between">
                     <div class="">
-                      <span class=" fs-3">
+                      <span class="fs-3">
                         <img src="../../../assets/icons/final.svg" />
                       </span>
                     </div>
                     <div class="text-part">
                       <span class="f-6 small-text">Total Files</span><br />
-                      <span class="f-7 fs-6 py-2">{{finalTotalFiles}}</span><br />
+                      <span class="f-7 fs-6 py-2">{{ finalTotalFiles }}</span
+                      ><br />
                       <span class="f-4 small-text">Total Amount</span><br />
-                      <span class="f-7 fs-4">{{finalTotalAmount}}Cr</span>
+                      <span class="f-7 fs-4">{{ finalTotalAmount }}Cr</span>
                     </div>
                   </div>
                 </div>
@@ -102,21 +124,26 @@
 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card">
-                <div class="card-body text-white bg-purple rounded five-card-min-h">
-                  <div class="d-flex ">
+                <div
+                  class="card-body text-white bg-purple rounded five-card-min-h"
+                >
+                  <div class="d-flex">
                     <p class="f-7 mb-0">Disbursals</p>
                   </div>
                   <div class="d-flex align-items-end justify-content-between">
                     <div class="">
-                      <span class=" fs-3">
+                      <span class="fs-3">
                         <img src="../../../assets/icons/disbursal.svg" />
                       </span>
                     </div>
                     <div class="text-part">
                       <span class="f-6 small-text">Total Files</span><br />
-                      <span class="f-7 fs-6 py-2">{{disbursalTotalFiles}}</span><br />
+                      <span class="f-7 fs-6 py-2">{{
+                        disbursalTotalFiles
+                      }}</span
+                      ><br />
                       <span class="f-4 small-text">Total Amount</span><br />
-                      <span class="f-7 fs-4">{{disbursalTotalAmount}}Cr</span>
+                      <span class="f-7 fs-4">{{ disbursalTotalAmount }}Cr</span>
                     </div>
                   </div>
                 </div>
@@ -125,17 +152,27 @@
 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card">
-                <div class="d-flex card-body text-white bg-light-blue rounded five-card-min-h">
+                <div
+                  class="d-flex card-body text-white bg-light-blue rounded five-card-min-h"
+                >
                   <div class="col-6 text-center">
-                    <p class="f-7 text-truncate mb-0 ">IRR Value</p>
+                    <p class="f-7 text-truncate mb-0">IRR Value</p>
                     <div class="align-items-center chart-pie">
-                      <div class="tile-chart" id="IrrChartValue" style="width: 90px; height:90px; "></div>
+                      <div
+                        class="tile-chart"
+                        id="IrrChartValue"
+                        style="width: 90px; height: 90px"
+                      ></div>
                     </div>
                   </div>
                   <div class="col-6 text-center">
                     <p class="f-7 text-truncate mb-0">PF Value</p>
-                    <div class="align-items-center  chart-pie">
-                      <div class="tile-chart " id="PfChartValue" style="width: 90px; height: 90px; "></div>
+                    <div class="align-items-center chart-pie">
+                      <div
+                        class="tile-chart"
+                        id="PfChartValue"
+                        style="width: 90px; height: 90px"
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -145,28 +182,38 @@
         </div>
       </div>
 
-          <div class="row mt-4">
-            <div class="col-md-4">
-              <div class="card box-s">
-                <div class="card-body text-center position-relative">
-                  <span class="f-6 title"> Disbursal achievement </span>
-                  <div class="state-chart" id="Disbursal-Achievement-Chart" style="width: 100%; height: 360px"></div>
-                  <div class="graphn-bottom-text">
-                    <p class="mb-0"><b>Target - 100 Cr</b></p>
-                  </div>
-                </div>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="card box-s">
+            <div class="card-body text-center position-relative">
+              <span class="f-6 title"> Disbursal achievement </span>
+              <div
+                class="state-chart"
+                id="Disbursal-Achievement-Chart"
+                style="width: 100%; height: 360px"
+              ></div>
+              <div class="graphn-bottom-text">
+                <p class="mb-0"><b>Target - 100 Cr</b></p>
               </div>
             </div>
-            <div class="col-md-8">
-              <div class="card box-s h-100">
-                <div class="card-body">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card box-s h-100">
+            <div class="card-body">
               <div classs="business-table">
                 <div class="row">
                   <div class="col-6">
                     <span class="f-6 title">Business Status</span>
                   </div>
                   <div class="col-6 d-flex justify-content-end">
-                    <span class="f-6 title"><i class="fas fa-pencil" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></span>
+                    <span class="f-6 title"
+                      ><i
+                        class="fas fa-pencil"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                      ></i
+                    ></span>
                   </div>
                 </div>
                 <div class="table-responsive text-center mt-4">
@@ -174,20 +221,27 @@
                     <thead>
                       <tr class="bg-lightblue">
                         <th></th>
-                        <th class="text-center border-right" colspan="2"><i class="fas fa-angle-left"></i>&nbsp; 18-10-2023 &nbsp; <i class="fas fa-angle-right"></i></th>
-                        <th class="border-top-0 text-center" colspan="2">MTD</th>
+                        <th class="text-center border-right" colspan="2">
+                          <i class="fas fa-angle-left"></i>&nbsp; 18-10-2023
+                          &nbsp; <i class="fas fa-angle-right"></i>
+                        </th>
+                        <th class="border-top-0 text-center" colspan="2">
+                          MTD
+                        </th>
                       </tr>
                       <tr class="bg-blue mid-head">
                         <th class="border-top-0"></th>
                         <th class="border-top-0">No.</th>
-                        <th class="border-top-0 border-right">Amount(in Lacs)</th>
+                        <th class="border-top-0 border-right">
+                          Amount(in Lacs)
+                        </th>
                         <th class="border-top-0">No.</th>
                         <th class="border-top-0">Amount(in Lacs)</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="bg-lightblue"> 
+                        <td class="bg-lightblue">
                           <div class="d-flex align-items-center">
                             <div>
                               <h6 class="mb-0">Login</h6>
@@ -256,24 +310,28 @@
                 </div>
               </div>
             </div>
-            </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card box-s mt-4">
-                  <div class="card-body text-center">
-                    <span class="f-6 title"> Disbursal achievement </span>
-                    <div class="state-chart" id="trendDisbursalAchievement" style="width: 100%; height: 400px"></div>
-                  </div>
-                </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card box-s mt-4">
+              <div class="card-body text-center">
+                <span class="f-6 title"> Disbursal achievement </span>
+                <div
+                  class="state-chart"
+                  id="trendDisbursalAchievement"
+                  style="width: 100%; height: 400px"
+                ></div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
     </div>
   </div>
 
-    <!-- Modal -->
-    <div
+  <!-- Modal -->
+  <div
     class="modal fade"
     id="exampleModal"
     tabindex="-1"
@@ -286,122 +344,149 @@
           <div class="w-100 position-relative">
             <div>
               <h5 class="modal-title text-center" id="exampleModalLabel">
-            Today's Plan vs. Achievement 
-          </h5>
+                Today's Plan vs. Achievement
+              </h5>
             </div>
-          <div class="close-icon">
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <div class="close-icon">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
           </div>
-          </div>
-          </div>
-          <div class="popup-tabs">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link active text-uppercase"
-                  id="pills-financial-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#pills-financial"
-                  type="button"
-                  role="tab"
-                  aria-controls="pills-home"
-                  aria-selected="true"
-                >
-                  Login
-                </button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link text-uppercase right-tab-border"
-                  id="pills-status-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#pills-status"
-                  type="button"
-                  role="tab"
-                  aria-controls="pills-status"
-                  aria-selected="false"
-                >
-                  PD
-                </button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link text-uppercase right-tab-border"
-                  id="pills-approval-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#pills-status"
-                  type="button"
-                  role="tab"
-                  aria-controls="pills-status"
-                  aria-selected="false"
-                >
+        </div>
+        <div class="popup-tabs">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active text-uppercase"
+                id="pills-financial-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-financial"
+                type="button"
+                role="tab"
+                aria-controls="pills-home"
+                aria-selected="true"
+              >
+                Login
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link text-uppercase right-tab-border"
+                id="pills-status-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-status"
+                type="button"
+                role="tab"
+                aria-controls="pills-status"
+                aria-selected="false"
+              >
+                PD
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link text-uppercase right-tab-border"
+                id="pills-approval-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-status"
+                type="button"
+                role="tab"
+                aria-controls="pills-status"
+                aria-selected="false"
+              >
                 Financial Approvals
-                </button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button
-                  class="nav-link text-uppercase right-tab-border"
-                  id="pills-disbursal-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#pills-status"
-                  type="button"
-                  role="tab"
-                  aria-controls="pills-status"
-                  aria-selected="false"
-                >
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link text-uppercase right-tab-border"
+                id="pills-disbursal-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-status"
+                type="button"
+                role="tab"
+                aria-controls="pills-status"
+                aria-selected="false"
+              >
                 Disbursal
-                </button>
-              </li>
-            </ul>
-          </div>
+              </button>
+            </li>
+          </ul>
+        </div>
 
-
-          <div class="tab-content" id="pills-tabContent">
-            <div
-              class="tab-pane fade show active"
-              id="pills-financial"
-              role="tabpanel"
-              aria-labelledby="pills-financial-tab"
-            >
-            <div class="head mt-4">    
-              <h5>Plan</h5>  
+        <div class="tab-content" id="pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="pills-financial"
+            role="tabpanel"
+            aria-labelledby="pills-financial-tab"
+          >
+            <div class="head mt-4">
+              <h5>Plan</h5>
               <div class="input-boxes">
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">No. of files</span>
+                    <span class="input-group-text" id="basic-addon1"
+                      >No. of files</span
+                    >
                   </div>
-                  <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                  />
                 </div>
-                
+
                 <div class="input-group mb-3">
                   <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2">Amount in Lacs</span>
+                    <span class="input-group-text" id="basic-addon2"
+                      >Amount in Lacs</span
+                    >
                   </div>
-                  <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Recipient's username"
+                    aria-describedby="basic-addon2"
+                  />
                 </div>
               </div>
             </div>
 
-            <div class="head">    
-              <h5>Achievement</h5>  
+            <div class="head">
+              <h5>Achievement</h5>
               <div class="input-boxes">
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">No. of files</span>
+                    <span class="input-group-text" id="basic-addon1"
+                      >No. of files</span
+                    >
                   </div>
-                  <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                  />
                 </div>
-                
+
                 <div class="input-group mb-3">
                   <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2">Amount in Lacs</span>
+                    <span class="input-group-text" id="basic-addon2"
+                      >Amount in Lacs</span
+                    >
                   </div>
-                  <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Recipient's username"
+                    aria-describedby="basic-addon2"
+                  />
                 </div>
               </div>
             </div>
@@ -415,95 +500,11 @@
               role="tabpanel"
               aria-labelledby="pills-status-tab"
             >
-            fdgfgfgfg
+              fdgfgfgfg
             </div>
           </div>
-
-
-
-
-
-
-         
-        </div>
-        <div class="modal-body">
-          
-           <div class="issue-popup">
-            <div class="main-head">
-              <h5>Detailed reason</h5>
-              <h5>Files</h5>
-            </div>
-            <div class="listing">
-              <ul class="p-0 m-0">
-                <li>
-                  <div class="d-flex justify-content-between">
-                    <h6>Irregular track in other loans of same CIF</h6>
-                    <h6>3</h6>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex justify-content-between">
-                    <h6>
-                      Delinquency in loan s from other MLIs metioning the
-                      exact DPDs
-                    </h6>
-                    <h6>2</h6>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex justify-content-between">
-                    <h6>Past write off/NPA detailing</h6>
-                    <h6>7</h6>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex justify-content-between">
-                    <h6>Excessive inquiries</h6>
-                    <h6>4</h6>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex justify-content-between">
-                    <h6>Willful defaulter</h6>
-                    <h6>5</h6>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex justify-content-between">
-                    <h6>Fixed obligation income ratio beyond norms</h6>
-                    <h6>4</h6>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex justify-content-between">
-                    <h6>Irregular BT track</h6>
-                    <h6>3</h6>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex justify-content-between">
-                    <h6>
-                      Negative feedback of customer from other vertical
-                    </h6>
-                    <h6>2</h6>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex justify-content-between">
-                    <h6>Customer is NRI</h6>
-                    <h6>1</h6>
-                  </div>
-                </li>
-                <li>
-                  <div class="d-flex justify-content-between">
-                    <h6>Other</h6>
-                    <h6>1</h6>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div> 
         </div>
       </div>
     </div>
   </div>
+</div>
