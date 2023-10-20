@@ -186,7 +186,7 @@ export class ChequesSummaryComponent {
     this.data.forEach(item => {
       item.SNo = Math.floor(Math.random() * 1000) + 1;
       item.leadNo = '0109';
-      item.custName = 'Anita'; // You can generate random names if you have a list of names
+      item.custName = 'Anita'; 
       item.product = 'BL';
       item.scheme = 'BT';
       item.loanAmount = 12.5;
@@ -316,7 +316,7 @@ export class ChequesSummaryComponent {
           },
           data: [50, 55, 40, 55, 60, 40],
           itemStyle: {
-            color: '#FB8C00',
+            color: '#55BBCC',
           },
         },
 
@@ -332,7 +332,7 @@ export class ChequesSummaryComponent {
           },
           data: [50, 55, 40, 55, 60, 40],
           itemStyle: {
-            color: '#10C563',
+            color: '#F0B86E',
           },
         },
       ],
@@ -435,7 +435,7 @@ export class ChequesSummaryComponent {
           },
           data: [50, 55, 40, 55, 60, 40],
           itemStyle: {
-            color: '#F0997D',
+            color: '#8294C4',
           },
         },
 
@@ -450,7 +450,7 @@ export class ChequesSummaryComponent {
           },
           data: [50, 55, 40, 55, 60, 40],
           itemStyle: {
-            color: '#7460EE',
+            color: 'rgba(239, 149, 149, 0.6)',
           },
         },
       ],

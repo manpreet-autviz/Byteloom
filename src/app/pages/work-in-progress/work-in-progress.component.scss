@@ -1,3 +1,8 @@
+.single-top-border .box-s.custom-top,
+.tree li,
+.tree ul {
+  position: relative;
+}
 .tree {
   padding: 0;
 }
@@ -13,7 +18,6 @@
 }
 .tree li,
 .tree ul {
-  position: relative;
   margin: 0;
   padding: 0;
 }
@@ -331,9 +335,6 @@ ul.tree.vertical ul li div p {
   top: -54px;
   right: 413px;
 }
-.single-top-border .box-s.custom-top {
-  position: relative;
-}
 .single-top-border .box-s.custom-top:before {
   position: absolute;
   content: "";
@@ -399,4 +400,4 @@ ul.tree.vertical ul li div p {
 .wip-binery-tree {
   display: flex;
   flex-direction: row;
-} // collapse table css ::ng-deep{color:#1d4ed8}.p-organizationchart .p-organizationchart-node-content.p-highlight .p-node-toggler i{color:#70aeff}.p-organizationchart .p-organizationchart-line-down{background:#dee2e6}.p-organizationchart .p-organizationchart-line-left{border-right:1px solid #dee2e6;border-color:#dee2e6}.p-organizationchart .p-organizationchart-line-top{border-top:1px solid #dee2e6;border-color:#dee2e6}.p-organizationchart .p-organizationchart-node-content{border:1px solid #dee2e6;background:#fff;color:#495057;padding:1.25rem}.p-organizationchart .p-organizationchart-node-content .p-node-toggler{background:inherit;color:inherit;border-radius:50%}.p-organizationchart .p-organizationchart-node-content .p-node-toggler:focus-visible{outline:0;outline-offset:0;box-shadow:0 0 0 .2rem #bfdbfe}.financial-drop svg{z-index:9;color:#000}.p-organizationchart-line-down{margin:0 auto;height:20px;width:1px}.p-organizationchart-table>tbody>tr>td{text-align:center;vertical-align:top;padding:0 .75rem}.p-organizationchart-preservespace .p-organizationchart-node-hidden{visibility:hidden;display:inherit}.p-organizationchart .p-organizationchart-node-hidden{display:none}.p-organizationchart-node-content .p-node-toggler{position:absolute;bottom:-.75rem;margin-left:-.75rem;z-index:2;left:50%;-webkit-user-select:none;user-select:none;cursor:pointer;width:1.5rem;height:1.5rem}@media (max-width:767px){.work-tabs ul li{margin:0 auto}.number-crore .indicators{margin:0!important}.work-tabs ul.nav-pills{padding:0}.work-tabs ul li button{padding:10px!important;font-size:12px!important}ul#pills-tab{display:block;border-radius:30px;padding:5px}.work-tabs{max-width:100%;border-radius:10px}button#pills-financial-tab{border-radius:50px;width:100%}button#pills-status-tab{width:100%;border-radius:30px}}@media (max-width:567px){.nav-pills .show>.nav-link button#pills-financial-tab,.work-tabs .nav-pills .nav-link.active,.work-tabs .nav-pills .nav-link.right-tab-border.active{border-radius:50px!important}.work-tabs .nav-pills{border:none!important}.work-tabs .nav-pills .nav-link{border-radius:50px!important;border:1px solid #ccc;margin:5px 0}}
+} 
