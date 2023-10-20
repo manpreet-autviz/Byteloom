@@ -322,7 +322,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           interval: 2,
           name: 'No of Files ',
           nameLocation: 'middle',
-          nameGap: 20,
+          nameGap: 19,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -868,7 +868,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           interval: 10,
           name: 'Percentage % ',
           nameLocation: 'middle',
-          nameGap: 20,
+          nameGap: 19,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,

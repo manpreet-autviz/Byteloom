@@ -154,7 +154,7 @@ export class RejectionAnalysisComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 25,
+        nameGap: 24,
         nameTextStyle: {
           fontWeight: 600,
           fontSize:14,
@@ -542,13 +542,13 @@ export class RejectionAnalysisComponent {
         trigger: 'item',
       },
       legend: {
-        top: '2%',
+        top: '-1%',
         left: 'center',
       },
       series: [
         {
           type: 'pie',
-          radius: ['30%', '80%'],
+          radius: ['30%', '70%'],
           avoidLabelOverlap: false,
           top: '6%',
           itemStyle: {

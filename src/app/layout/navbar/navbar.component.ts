@@ -25,27 +25,27 @@ export class NavbarComponent {
   }
 
   search() {
-    if (this.searchQuery.trim() == 'Mathew Anderson') {
-      this.menu.setSearchTerm('/business-rm');
-      this.router.navigate(['/business-rm']);
-    } else if (this.searchQuery.trim() == 'Jems Anderson') {
-      this.menu.setSearchTerm('/business-supervisor');
-      this.router.navigate(['/business-supervisor']);
-    } else if (this.searchQuery.trim() == 'Corey Anderson') {
-      this.menu.setSearchTerm('/credit-cm');
-      this.router.navigate(['/credit-cm']);
-    } else if (this.searchQuery.trim() == 'Mark Anderson') {
-      this.menu.setSearchTerm('/credit-supervisor');
-      this.router.navigate(['/credit-supervisor']);
-    }else if(this.searchQuery.trim() == 'Punjab'){
-      this.router.navigate(['/branch-search']);
-    }
-    else if(this.searchQuery.trim() == '56565'){
-      this.router.navigate(['/search']);
-    }
-   else {
-      this.menu.setSearchTerm('/dashboard');
-      this.router.navigate(['/dashboard']);
-    }
+    const trimmedQuery = this.searchQuery.trim().toLowerCase(); // Convert query to lowercase
+
+  if (trimmedQuery.startsWith('mathew')) { // Case-insensitive comparison
+    this.menu.setSearchTerm('/business-rm');
+    this.router.navigate(['/business-rm']);
+  } else if (trimmedQuery.startsWith('jems')) { // Case-insensitive comparison
+    this.menu.setSearchTerm('/business-supervisor');
+    this.router.navigate(['/business-supervisor']);
+  } else if (trimmedQuery.startsWith('corey')) { // Case-insensitive comparison
+    this.menu.setSearchTerm('/credit-cm');
+    this.router.navigate(['/credit-cm']);
+  } else if (trimmedQuery.startsWith('mark')) { // Case-insensitive comparison
+    this.menu.setSearchTerm('/credit-supervisor');
+    this.router.navigate(['/credit-supervisor']);
+  } else if (trimmedQuery.startsWith('punjab')) { // Case-insensitive comparison
+    this.router.navigate(['/branch-search']);
+  } else if (trimmedQuery.startsWith('56565')) { // Case-insensitive comparison
+    this.router.navigate(['/search']);
+  } else {
+    this.menu.setSearchTerm('/dashboard');
+    this.router.navigate(['/dashboard']);
   }
+}
 }

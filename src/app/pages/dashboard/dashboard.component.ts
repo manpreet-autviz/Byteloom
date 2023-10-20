@@ -1,5 +1,6 @@
 import { Component, ElementRef } from '@angular/core';
 import * as echarts from 'echarts';
+declare var $: any;
 
 @Component({
   selector: 'app-dashboard',
@@ -59,6 +60,7 @@ export class DashboardComponent {
     this.initializeChart();
   }
   ngOnInit(): void {
+  
     this.IrrChart = echarts.init(
       document.getElementById('IrrChartValue') as HTMLDivElement
     );
@@ -350,8 +352,8 @@ export class DashboardComponent {
           nameLocation: 'middle',
           nameGap: 30,
           axisLabel: {
-            formatter: '{value}%',
-            margin: 1,
+            formatter: '{value}',
+            margin: 7,
           },
           nameTextStyle: {
             fontWeight: 600,

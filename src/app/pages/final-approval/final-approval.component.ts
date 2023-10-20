@@ -407,7 +407,7 @@ export class FinalApprovalComponent {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 15,
           axisLabel: {
             formatter: '{value}',
             margin: 1,
@@ -475,7 +475,7 @@ export class FinalApprovalComponent {
           },
           name: 'Days',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 15,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -596,7 +596,7 @@ export class FinalApprovalComponent {
             interval: 10,
             name: 'Amount  ( in  Rs. Crore )',
             nameLocation: 'middle',
-            nameGap: 30,
+            nameGap: 25,
             nameTextStyle: {
               fontWeight: 600,
               fontSize:14,

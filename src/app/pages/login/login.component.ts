@@ -17,6 +17,7 @@ const customValidRange = {
 
 
 export class LoginComponent implements AfterViewInit {
+  
   calendarOptions: CalendarOptions = {
     plugins: [dayGridPlugin],
     initialView: 'dayGridMonth',
@@ -24,7 +25,6 @@ export class LoginComponent implements AfterViewInit {
       start: new Date(), // Start from the current date
       end: new Date(new Date().getFullYear(), new Date().getMonth(), 1), // End at the first day of the current month
     },
-    
     // weekends: true,
     
     events: this.generateRandomEvents(),
@@ -86,9 +86,20 @@ export class LoginComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.initializeChart();
+    this.customizeDateCells();
   }
 
-  
+  customizeDateCells() {
+    const dateCells = document.querySelectorAll('.fc-day');
+    dateCells.forEach((cell) => {
+      const date = cell.getAttribute('data-date');
+      if (date && date >= '2023-10-16' && date <= '2023-10-20') {
+        const element = cell as HTMLElement; // Cast to HTMLElement
+        element.style.backgroundColor = '#D6F7E5';
+      }
+    });
+  }
+
   generateRandomEvents() {
     const today = new Date();
     const startDate = new Date(today.getFullYear(), today.getMonth(), 1); // 1st day of the current month
@@ -112,7 +123,7 @@ export class LoginComponent implements AfterViewInit {
       startDate.setDate(startDate.getDate() + 1); // Move to the next day
     }
 
-    return events;
+    return events
   }
 
   toggle(): void {
@@ -533,8 +544,11 @@ export class LoginComponent implements AfterViewInit {
         yAxis: {
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 30,
-
+          nameGap: 25,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
          
           type: 'value',
           axisLine: {
@@ -840,7 +854,7 @@ export class LoginComponent implements AfterViewInit {
             interval: 2,
             name: 'Number of files',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 20,
             nameTextStyle: {
               fontWeight: 600,
               fontSize:14,

@@ -275,6 +275,9 @@ export class CreditComponent {
         splitLine: {
           show: false,
         },
+        axisTick: {
+          show: false, // Hide tick lines
+        },
         data: [
           'Maharashtra',
           'MP',
@@ -516,8 +519,7 @@ export class CreditComponent {
           boundaryGap: false,
           data: [
             'Pan India',
-            'Punjab',
-            'Haryana',
+            'PCH',
             'NCR',
             'Rajasthan',
             'Gujarat',
@@ -558,7 +560,7 @@ export class CreditComponent {
             fontWeight: 600,
             fontSize: 14,
           },
-          nameGap: 7,
+          nameGap: 6,
           axisLabel: {
             margin: 1,
           },
@@ -641,8 +643,7 @@ export class CreditComponent {
 
         data: [
           'Pan India',
-          'Punjab',
-          'Haryana',
+          'PCH',
           'NCR',
           'Rajasthan',
           'Gujarat',
@@ -677,7 +678,7 @@ export class CreditComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 15,
+        nameGap: 17,
         nameTextStyle: {
           fontWeight: 600,
           fontSize: 14,
@@ -690,7 +691,7 @@ export class CreditComponent {
       series: [
         {
           barWidth: 20,
-          data: [2.4, 2.2, 2.2, 2.2, 2.2, 2.15, 2.1, 2.2],
+          data: [2.4, 2.2, 2.2, 2.2, 2.15, 2.1, 2.2],
           type: 'bar',
           itemStyle: {
             color: '#DF7861',
@@ -773,7 +774,7 @@ export class CreditComponent {
           interval: 5,
           name: 'Days',
           nameLocation: 'middle',
-          nameGap: 20,
+          nameGap: 15,
           nameTextStyle: {
             fontWeight: 600,
             fontSize: 14,

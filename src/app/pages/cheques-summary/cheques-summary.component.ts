@@ -283,7 +283,7 @@ export class ChequesSummaryComponent {
         },
         {
           type: 'value',
-          name: 'Amount ( in Rs.. Lacs)',
+          name: 'Amount ( in Rs. Lacs)',
           nameLocation: 'middle',
           nameGap: 40,
           nameTextStyle: {
@@ -402,7 +402,7 @@ export class ChequesSummaryComponent {
         },
         {
           type: 'value',
-          name: 'Amount ( in Rs.. Lacs)',
+          name: 'Amount ( in Rs. Lacs)',
           nameLocation: 'middle',
           nameGap: 40,
           nameTextStyle: {

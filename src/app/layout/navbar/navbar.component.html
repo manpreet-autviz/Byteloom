@@ -21,7 +21,7 @@
             autocomplete="off"
             [(ngModel)]="searchQuery"
             name="searchQuery"
-            (keyup.enter)="search()"
+            (input)="search()"
           />
             <span class="mdi mdi-magnify search-widget-icon"></span>
             <span
@@ -65,7 +65,7 @@
             </form>
           </div>
         </div>
-        <div class="ms-1 header-item d-none d-sm-flex top-icon m-2 cursor-pointer">
+        <!-- <div class="ms-1 header-item d-none d-sm-flex top-icon m-2 cursor-pointer">
             <img src="../../../assets/icons/mdi_information-variant.svg"  width="30"/>
         </div>
         <div class="ms-1 header-item d-none d-sm-flex top-icon  m-2 cursor-pointer">
@@ -76,7 +76,7 @@
         </div>
         <div class="ms-1 header-item d-none d-sm-flex top-icon m-2 cursor-pointer">
             <img src="../../../assets/icons/Vector-2.svg" width="30"/>
-        </div>
+        </div> -->
         <div class="dropdown ms-sm-3 header-item topbar-user">
           <div
            

@@ -160,7 +160,7 @@ export class ThreeSixtyComponent {
           interval: 5,
           name: 'Days ',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 20,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -617,7 +617,7 @@ export class ThreeSixtyComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 25,
+        nameGap: 24,
         nameTextStyle: {
           fontWeight: 600,
           fontSize:14,

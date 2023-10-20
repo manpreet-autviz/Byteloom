@@ -7,10 +7,16 @@ import { Component } from '@angular/core';
 })
 export class SearchingBasisComponent {
   statusList :string[] = [
+    'All',
+    'Move to Disbursal',
+    'Legal Report vetted',
     'Financial Approved',
     'Final Approved',
+    'Technical vetted',
+    'Technical Report Submitted',
+    'Appraisal Submitted',
   ];
-  selectedStatus:string = 'Financial Approved'
+  selectedStatus:string = 'All'
   onStatusChange(selectedValue: string) {
     // this.generateRandomData();
   }

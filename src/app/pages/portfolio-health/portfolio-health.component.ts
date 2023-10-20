@@ -121,9 +121,13 @@ export class PortfolioHealthComponent {
           splitLine: {
             show: false,
           },
-          name: 'PERCENTAGE%',
+          name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 22,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
         },
         series: [
           {
@@ -282,9 +286,13 @@ export class PortfolioHealthComponent {
             formatter: '{value}',
             margin: 1,
           },
-          name: 'PERCENTAGE %',
+          name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 22,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize:14,
+          },
         },
         // Declare several bar series, each will be mapped
         // to a column of dataset.source by default.

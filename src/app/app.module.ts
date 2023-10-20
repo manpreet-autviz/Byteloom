@@ -46,7 +46,6 @@ import { SearchingBasisComponent } from './pages/searching-basis/searching-basis
 
 import { BranchSearchComponent } from './pages/branch-search/branch-search.component';
 import { TatLoginTableComponent } from './pages/tat-login-table/tat-login-table.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -93,7 +92,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     TreeTableModule,
     OrganizationChartModule,
   ],
-  providers: [SidebarComponent,{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [SidebarComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

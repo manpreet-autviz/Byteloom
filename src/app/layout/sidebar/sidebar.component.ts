@@ -9,12 +9,13 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class SidebarComponent {
   activeItem: string | null = '/dashboard';
+  activeSubItem: string | null = '';
   showSubmenu:boolean = false;
   submenus: any = {};
   constructor(private router : Router,private menuService: MenuService,private cdr:ChangeDetectorRef){
     this.menuService.searchTerm$.subscribe(term => {
-      this.activeItem = term;
-     
+      //this.activeItem = term;
+      this.activeSubItem = term;
     });
   }
   ngOnInit(): void {
@@ -25,6 +26,14 @@ export class SidebarComponent {
     this.cdr.detectChanges();
     this.router.navigate([path]);
     this.activeItem = path;
+    this.menuService.setActiveMenuItem(path);
+  
+  }
+
+  navigateToSubPage(path:string){
+    this.cdr.detectChanges();
+    this.router.navigate([path]);
+    this.activeSubItem = path;
     this.menuService.setActiveMenuItem(path);
   
   }
