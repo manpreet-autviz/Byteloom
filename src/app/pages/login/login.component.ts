@@ -196,10 +196,12 @@ export class LoginComponent implements AfterViewInit {
           axisLine: {
             show: false,
           },
+
           min: 0.5,
           max: 4.0,
           interval: 0.5,
           name: 'Number of files (in thousand)',
+
           nameLocation: 'middle',
           nameGap: 30,
           nameTextStyle: {
@@ -510,7 +512,7 @@ export class LoginComponent implements AfterViewInit {
         yAxis: {
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 20,
           nameTextStyle: {
             fontWeight: 600,
             fontSize: 14,

@@ -273,6 +273,26 @@ ul.pending-cheque.ot-normal {
 .credit-cards{
   margin-bottom: 20px;
 }
+.bg-gray{
+  background-color: #E8E8E8;
+}
+.bg-lightpurple{
+  background-color: rgba(41, 98, 255, 0.10);
+}
+.bg-lightred{
+  background-color: rgba(254, 84, 25, 0.24);
+}
+.table-data h6{
+  padding: 5px;
+  min-width: 160px;
+  width: 100%;
+  font-size: 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+.credit-cm-cards{
+  margin-bottom: 20px;
+}
 
 
 @media (max-width: 991px) {

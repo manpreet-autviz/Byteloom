@@ -155,7 +155,7 @@ export class RejectionAnalysisComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 24,
+        nameGap: 20,
         nameTextStyle: {
           fontWeight: 600,
           fontSize:14,

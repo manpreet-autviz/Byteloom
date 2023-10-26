@@ -295,10 +295,10 @@ export class ThreeSixtyComponent {
         },
         name: 'Amount ( in Rs. Lacs ) ',
         nameLocation: 'middle',
-        nameGap: 25,
+        nameGap: 20,
         nameTextStyle: {
           fontWeight: 600,
-          fontSize:14,
+          fontSize:12,
         },
       },
       series: [
@@ -489,7 +489,7 @@ export class ThreeSixtyComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 25,
+        nameGap: 20,
         nameTextStyle: {
           fontWeight: 600,
           fontSize:14,
@@ -625,7 +625,7 @@ export class ThreeSixtyComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 24,
+        nameGap: 20,
         nameTextStyle: {
           fontWeight: 600,
           fontSize:14,

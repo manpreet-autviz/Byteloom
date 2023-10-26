@@ -223,7 +223,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           },
           name: 'Amount (in Rs. Lacs)',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 17,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -408,7 +408,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 17,
           axisLabel: {
             formatter: '{value}',
             margin: 1,
@@ -476,7 +476,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           },
           name: 'Days',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 17,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,

@@ -84,8 +84,8 @@
           </div>
           <div class="row gy-3 four-tile-card">
             <div class="col-xl col-md-4">
-              <div class="card">
-                <div class="card-body text-white bg-dblue rounded five-card-min-h cursor-arrow">
+              <div class="card" routerLink="/login">
+                <div class="card-body text-white bg-dblue rounded five-card-min-h cursor-pointer">
                   <div class="d-flex">
                     <p class="f-7 mb-0">Total Logins</p>
                   </div>
@@ -107,8 +107,8 @@
             </div>
 
             <div class="col-xl col-lg-4 col-md-4">
-              <div class="card">
-                <div class="card-body text-white bg-orange rounded five-card-min-h cursor-arrow">
+              <div class="card"  routerLink="/financial-approvals">
+                <div class="card-body text-white bg-orange rounded five-card-min-h cursor-pointer">
                   <div class="d-flex">
                     <p class="f-7 mb-0">Financial Approvals</p>
                   </div>
@@ -132,8 +132,8 @@
             </div>
 
             <div class="col-xl col-lg-4 col-md-4">
-              <div class="card">
-                <div class="card-body text-white bg-yellow rounded five-card-min-h cursor-arrow">
+              <div class="card"  routerLink="/final-approvals">
+                <div class="card-body text-white bg-yellow rounded five-card-min-h cursor-pointer">
                   <div class="d-flex">
                     <p class="f-7 mb-0">Final Approvals</p>
                   </div>
@@ -155,8 +155,8 @@
             </div>
 
             <div class="col-xl col-lg-4 col-md-4">
-              <div class="card"> 
-                <div class="card-body text-white bg-purple rounded five-card-min-h cursor-arrow">
+              <div class="card"  routerLink="/disbursal"> 
+                <div class="card-body text-white bg-purple rounded five-card-min-h cursor-pointer">
                   <div class="d-flex">
                     <p class="f-7 mb-0">Disbursals</p>
                   </div>
@@ -180,8 +180,8 @@
             </div>
 
             <div class="col-xl col-lg-4 col-md-4">
-              <div class="card">
-                <div class="d-flex gap-2 card-body text-white bg-light-blue rounded five-card-min-h cursor-arrow">
+              <div class="card"  routerLink="/insights">
+                <div class="d-flex gap-2 card-body text-white bg-light-blue rounded five-card-min-h cursor-pointer">
                   <div class="col-6 text-center">
                     <p class="f-7 text-truncate mb-0">IRR Value</p>
                     <div class="align-items-center chart-pie">
@@ -265,8 +265,8 @@
                               workInprogressTable('/PD Pending / Login')
                             ">
                             <div>
-                              <h6>{{financialAmount}}</h6>
-                              <p>Amount Cr</p>
+                              <h6>{{financialAmount}} Cr</h6>
+                              <p>Amount</p>
                             </div>
                           </a>
                         </li>
@@ -287,7 +287,7 @@
                               workInprogressTable('/PD Pending / Login')
                             ">
                             <div>
-                              <h6>{{finalFile}}</h6>
+                              <h6>{{finalFile}} </h6>
                               <p>Files</p>
                             </div>
                           </a>
@@ -297,8 +297,8 @@
                               workInprogressTable('/PD Pending / Login')
                             ">
                             <div>
-                              <h6>{{finalAmount}}</h6>
-                              <p>Amount Cr</p>
+                              <h6>{{finalAmount}} Cr</h6>
+                              <p>Amount</p>
                             </div>
                           </a>
                         </li>
@@ -329,8 +329,8 @@
                               workInprogressTable('/PD Pending / Login')
                             ">
                             <div>
-                              <h6>{{technicalAmount}}</h6>
-                              <p>Amount Cr</p>
+                              <h6>{{technicalAmount}} Cr</h6>
+                              <p>Amount</p>
                             </div>
                           </a>
                         </li>
@@ -361,8 +361,8 @@
                               workInprogressTable('/PD Pending / Login')
                             ">
                             <div>
-                              <h6>{{legalAmount}}</h6>
-                              <p>Amount Cr</p>
+                              <h6>{{legalAmount}} Cr</h6>
+                              <p>Amount</p>
                             </div>
                           </a>
                         </li>
@@ -393,8 +393,8 @@
                               workInprogressTable('/PD Pending / Login')
                             ">
                             <div>
-                              <h6>{{disbursalAmount}}</h6>
-                              <p>Amount Cr</p>
+                              <h6>{{disbursalAmount}} Cr</h6>
+                              <p>Amount</p>
                             </div>
                           </a>
                         </li>
@@ -420,7 +420,7 @@
           </div>
         </div>
         <div class="col-xl-5 col-md-6">
-          <div class="card box-s">
+          <div class="card box-s h-100">
             <div class="card-body text-center">
               <span class="f-6 title"> Disbursal achievement </span>
               <p class="fs-8 m-0">(Previous month)</p>

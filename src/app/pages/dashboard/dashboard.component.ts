@@ -505,7 +505,7 @@ export class DashboardComponent {
             valueAnimation: true,
             formatter: '{value}%',
             color: 'inherit',
-            fontSize: 15,
+            fontSize: 12,
           },
           data: [
             {
@@ -572,7 +572,7 @@ export class DashboardComponent {
           interval: 10,
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 30,
+          nameGap: 23,
           axisLabel: {
             formatter: '{value}',
             margin: 7,
