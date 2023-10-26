@@ -2,22 +2,24 @@
   <div class="page-content">
     <div class="container-fluid">
       <div class="breadcrumb">
-        <div class="card card-animate w-100">
+        <!-- <div class="card card-animate w-100">
           <div
             class="card-body breadcraumb-align align-items-center justify-content-between"
           >
             <div>
               <span class="f-7 fs-5"> Login </span>
             </div>
-            <div class="breadcrumb-right-btn ">
+            <div class="breadcrumb-right-btn">
               <button
                 type="button "
                 class="text-white filter-btn-trend btn bg-blue border me-2"
-               (click)="toggle()" 
+                (click)="toggle()"
               >
-                {{!isToggled ?'View Trend' : 'Normal View'}} <i  class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
+                {{ !isToggled ? "View Trend" : "Normal View" }}
+                <i class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
               </button>
-              <select *ngIf="!isToggled" 
+              <select
+                *ngIf="!isToggled"
                 id="dropdown"
                 class="form-select me-2"
                 [(ngModel)]="selectedFilter"
@@ -27,36 +29,140 @@
                   {{ filter }}
                 </option>
               </select>
-              <select *ngIf="isToggled" 
-              id="dropdown"
-              class="form-select me-2"
-              [(ngModel)]="selectedTrendFilter"
-              (ngModelChange)=" onTrendFilterChange($event) "
-            >
-              <option *ngFor="let filter of monthFilters" [value]="filter">
-                {{ filter }}
-              </option>
-              
-            </select>
+              <select
+                *ngIf="isToggled"
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedTrendFilter"
+                (ngModelChange)="onTrendFilterChange($event)"
+              >
+                <option *ngFor="let filter of monthFilters" [value]="filter">
+                  {{ filter }}
+                </option>
+              </select>
 
               <select
                 id="dropdown"
-                class="form-select"
+                class="form-select me-2"
                 [(ngModel)]="selectedState"
-                (ngModelChange)="!isToggled ?onStateChange($event) : ontrendStateChange($event)"
+                (ngModelChange)="
+                  !isToggled
+                    ? onStateChange($event)
+                    : ontrendStateChange($event)
+                "
               >
                 <option *ngFor="let state of states" [value]="state">
                   {{ state }}
                 </option>
               </select>
+              <select
+              *ngIf="clusters.length > 0"
+              id="dropdown"
+              class="form-select me-2"
+              [(ngModel)]="selectedCluster"
+              (ngModelChange)="onClusterChange($event)"
+            >
+              <option *ngFor="let cluster of clusters" [value]="cluster">
+                {{ cluster }}
+              </option>
+            </select>
+            <select
+              *ngIf="branches.length > 0"
+              id="dropdown"
+              class="form-select me-2"
+              [(ngModel)]="selectedBranch"
+              (ngModelChange)="onBranchChange($event,selectedCluster)"
+            >
+              <option *ngFor="let branch of branches" [value]="branch">
+                {{ branch }}
+              </option>
+            </select>
             </div>
           </div>
-        </div>
+        </div> -->
         <div id="normal-view" *ngIf="!isToggled" class="normal-view w-100">
           <div class="card card-animate w-100 mt-3">
             <div class="card-body">
+              <div
+                class="d-flex justify-content-between align-items-center w-100 mb-3"
+              >
+                <div>
+                  <span class="f-7 fs-5"> Login </span>
+                </div>
+                <div class="breadcrumb-right-btn">
+                  <button
+                    type="button "
+                    class="text-white filter-btn-trend btn bg-blue border me-2"
+                    (click)="toggle()"
+                  >
+                    {{ !isToggled ? "View Trend" : "Normal View" }}
+                    <i class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
+                  </button>
+                  <select
+                    *ngIf="!isToggled"
+                    id="dropdown"
+                    class="form-select me-2"
+                    [(ngModel)]="selectedFilter"
+                    (ngModelChange)="onFilterChange($event)"
+                  >
+                    <option *ngFor="let filter of filters" [value]="filter">
+                      {{ filter }}
+                    </option>
+                  </select>
+                  <select
+                    *ngIf="isToggled"
+                    id="dropdown"
+                    class="form-select me-2"
+                    [(ngModel)]="selectedTrendFilter"
+                    (ngModelChange)="onTrendFilterChange($event)"
+                  >
+                    <option
+                      *ngFor="let filter of monthFilters"
+                      [value]="filter"
+                    >
+                      {{ filter }}
+                    </option>
+                  </select>
+
+                  <select
+                    id="dropdown"
+                    class="form-select me-2"
+                    [(ngModel)]="selectedState"
+                    (ngModelChange)="
+                      !isToggled
+                        ? onStateChange($event)
+                        : ontrendStateChange($event)
+                    "
+                  >
+                    <option *ngFor="let state of states" [value]="state">
+                      {{ state }}
+                    </option>
+                  </select>
+                  <select
+                    *ngIf="clusters.length > 0"
+                    id="dropdown"
+                    class="form-select me-2"
+                    [(ngModel)]="selectedCluster"
+                    (ngModelChange)="onClusterChange($event)"
+                  >
+                    <option *ngFor="let cluster of clusters" [value]="cluster">
+                      {{ cluster }}
+                    </option>
+                  </select>
+                  <!-- <select
+                *ngIf="branches.length > 0"
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedBranch"
+                (ngModelChange)="onBranchChange($event,selectedCluster)"
+              >
+                <option *ngFor="let branch of branches" [value]="branch">
+                  {{ branch }}
+                </option>
+              </select> -->
+                </div>
+              </div>
               <div class="row">
-            
                 <div class="col-lg-4 col-md-6 g-2">
                   <div class="card box-s">
                     <div class="card-body text-center position-relative">
@@ -67,12 +173,12 @@
                       <div
                         class="state-chart"
                         id="StateWiseChart"
-                        style="width: 100%; height: 400px"
+                        style="width: 100%; height: 250px"
                       ></div>
                     </div>
                   </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 g-2">
                   <div class="card box-s">
                     <div class="card-body text-center">
@@ -82,7 +188,7 @@
                       <div
                         class="state-chart"
                         id="AverageStateWiseChart"
-                        style="width: 100%; height: 400px"
+                        style="width: 100%; height: 250px"
                       ></div>
                     </div>
                   </div>
@@ -94,7 +200,7 @@
                       <div
                         class="state-chart"
                         id="Source"
-                        style="width: 100%; height: 400px"
+                        style="width: 100%; height: 250px"
                       ></div>
                     </div>
                   </div>
@@ -106,40 +212,44 @@
           <div class="card card-animate w-100 mt-3">
             <div class="card-body">
               <div class="row">
-                <div class="col-lg-3 col-md-6 g-2">
+                <div class="col-lg-4 col-md-6 g-2">
                   <div class="card box-s">
-                      <div class="card box-s">
+                    <div class="card box-s">
+                      <div class="card-body text-center">
+                        <span class="f-6 title"> Product wise logins </span>
+                        <div
+                          class="state-chart"
+                          id="ProductLogins"
+                          style="width: 100%; height: 350px"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 g-2">
+                  <div class="card box-s">
                     <div class="card-body text-center">
-                      <span class="f-6 title"> Product wise logins </span>
+                      <span class="f-6 title">Scheme wise logins </span>
                       <div
                         class="state-chart"
-                        id="ProductLogins"
-                        style="width: 100%; height: 400px"
+                        id="SchemeLogins"
+                        style="width: 100%; height: 350px"
                       ></div>
                     </div>
                   </div>
-                  </div>
                 </div>
-                <div class="col-lg-3 col-md-6 g-2">
-                  <div class="card box-s">
-                  <div class="card-body text-center">
-                    <span class="f-6 title">Scheme wise logins </span>
-                    <div
-                      class="state-chart"
-                      id="SchemeLogins"
-                      style="width: 100%; height: 400px"
-                    ></div>
-                  </div>
-                  </div>
-                </div>
-                <div class="col-md-6 g-2">
+                <div class="col-md-4 g-2">
                   <div class="card box-s">
                     <div class="card-body text-center">
                       <span class="f-6 title"> IMD </span>
                       <div class="total-btn">
                         <p>Total - 90%</p>
                       </div>
-                      <div class="state-chart" id="IMD-chart" style="width: 100%; height: 400px"></div>
+                      <div
+                        class="state-chart"
+                        id="IMD-chart"
+                        style="width: 100%; height: 350px"
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -153,15 +263,16 @@
                 <div class="col-md-12 g-2">
                   <div class="card box-s">
                     <div class="card-body text-center calender-widget">
-                      <span class="f-6 title">Days wise logins </span>
+                      <span class="f-6 title">Day wise logins </span>
                       <div class="campaign-btn">
                         <p>Campaign <span class="campaign-dot"></span></p>
                       </div>
-                      <full-calendar [options]="calendarOptions"></full-calendar>
+                      <full-calendar
+                        [options]="calendarOptions"
+                      ></full-calendar>
                     </div>
                   </div>
                 </div>
-               
               </div>
             </div>
           </div>
@@ -169,6 +280,90 @@
         <div id="trend-view" *ngIf="isToggled" class="trend-view w-100">
           <div class="card card-animate w-100 mt-3">
             <div class="card-body">
+              <div
+                class="d-flex justify-content-between align-items-center w-100 mb-3"
+              >
+                <div>
+                  <span class="f-7 fs-5"> Login </span>
+                </div>
+                <div class="breadcrumb-right-btn">
+                  <button
+                    type="button "
+                    class="text-white filter-btn-trend btn bg-blue border me-2"
+                    (click)="toggle()"
+                  >
+                    {{ !isToggled ? "View Trend" : "Normal View" }}
+                    <i class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
+                  </button>
+                  <select
+                    *ngIf="!isToggled"
+                    id="dropdown"
+                    class="form-select me-2"
+                    [(ngModel)]="selectedFilter"
+                    (ngModelChange)="onFilterChange($event)"
+                  >
+                    <option *ngFor="let filter of filters" [value]="filter">
+                      {{ filter }}
+                    </option>
+                  </select>
+                  <select
+                    *ngIf="isToggled"
+                    id="dropdown"
+                    class="form-select me-2"
+                    [(ngModel)]="selectedTrendFilter"
+                    (ngModelChange)="onTrendFilterChange($event)"
+                  >
+                    <option
+                      *ngFor="let filter of monthFilters"
+                      [value]="filter"
+                    >
+                      {{ filter }}
+                    </option>
+                  </select>
+
+                  <select
+                    id="dropdown"
+                    class="form-select me-2"
+                    [(ngModel)]="selectedState"
+                    (ngModelChange)="
+                      !isToggled
+                        ? onStateChange($event)
+                        : ontrendStateChange($event)
+                    "
+                  >
+                    <option *ngFor="let state of states" [value]="state">
+                      {{ state }}
+                    </option>
+                  </select>
+                  
+                  <select
+                    *ngIf="clusters.length > 0"
+                    id="dropdown"
+                    class="form-select me-2"
+                    [(ngModel)]="selectedCluster"
+                    (ngModelChange)="
+                      !isToggled
+                        ? onClusterChange($event)
+                        : ontrendClusterChange($event)
+                    "
+                  >
+                    <option *ngFor="let cluster of clusters" [value]="cluster">
+                      {{ cluster }}
+                    </option>
+                  </select>
+                  <!-- <select
+                  *ngIf="branches.length > 0 !isToggled"
+                  id="dropdown"
+                  class="form-select me-2"
+                  [(ngModel)]="selectedBranch"
+                  (ngModelChange)="onBranchChange($event,selectedCluster)"
+                >
+                  <option *ngFor="let branch of branches" [value]="branch">
+                    {{ branch }}
+                  </option>
+                </select> -->
+                </div>
+              </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="card box-s">
@@ -217,9 +412,7 @@
                 <div class="col-md-6">
                   <div class="card box-s">
                     <div class="card-body text-center">
-                      <span class="f-6 title">
-                        Scheme wise logins
-                      </span>
+                      <span class="f-6 title"> Scheme wise logins </span>
                       <div
                         class="state-chart"
                         id="trendSchemeLogins"

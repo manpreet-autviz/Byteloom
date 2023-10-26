@@ -9,8 +9,7 @@ declare var $: any;
 export class TechnicalComponent {
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -24,6 +23,8 @@ export class TechnicalComponent {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
   selectedState: string = 'Pan India';
@@ -106,7 +107,7 @@ export class TechnicalComponent {
       xAxis: [
         {
           type: 'category',
-          boundaryGap: false,
+          boundaryGap: true,
           data: [
             'Pan India',
             'PCH',

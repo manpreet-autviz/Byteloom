@@ -17,6 +17,7 @@ input[type=date]::-webkit-datetime-edit-year-field {
 }
 input[type=date]{
   border:none;
+  width: 20px;
 }
 
 input[type=date]:focus-visible {
@@ -43,9 +44,6 @@ input[type=date]:focus-visible {
 .text-part{
   text-align: right;
 }
-.five-card-min-h{
-  min-height: 188px;
-}
 .bg-dblue{
   background-color: #0747A6;
 }
@@ -66,9 +64,8 @@ input[type=date]:focus-visible {
 }
 .graphn-bottom-text {
   position: absolute;
-  left: calc(50% - 60px);
-  bottom: 70px;
-  border: 1px solid #000;
+  left: calc(50% - 70px);
+  bottom: 60px;
   padding: 5px;
   font-size: 20px;
   border-radius: 4px;
@@ -144,6 +141,7 @@ a.add {
   width: 100%;
   font-size: 15px;
   border-radius: 4px;
+  font-weight: 600;
 }
 .bg-lightpurple{
   background-color: rgba(41, 98, 255, 0.10);
@@ -154,12 +152,20 @@ a.add {
 .bg-lightgreen{
   background-color: rgba(58, 218, 132, 0.21);
 }
-
+.tat-box  a{
+  text-decoration: none;
+  color: inherit;
+}
+.number-list li a{
+  cursor: pointer;  
+}
 .tat-box {
   border-radius: 4px;
   border: 0.5px solid #dddddd;
   background: #FFF;
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.08);
+  min-height: 210px;
+  margin-bottom: 20px;
 }
 .tat-box h4{
   padding: 10px 0 0px;
@@ -175,17 +181,17 @@ a.add {
   justify-content: space-around;
   margin: 20px 0 0;
 }
-.number-list ul li:not(:last-child):after {
+.number-list:after {
   position: absolute;
   content: '';
   background: #BFBFBF;
   height: 60px;
   width: 1px;
   top: -5px;
-  right: -40px;
+  right: calc(50% + 10px);
 }
 .number-list {
-  margin: 0px 20px 0px;
+  position: relative;
 }
 .number-list h6 {
   font-size: 17px;
@@ -218,5 +224,22 @@ a.add {
 }
 .c-head {
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+}
+.five-card-min-h p {
+  font-size: 15px;
+}
+
+// new css
+
+.table>:not(caption)>*>* {
+  padding: 0.2rem .2rem;
+  color: #3E5569;
+}
+
+@media (max-width: 1280px) and (min-width: 1238px){
+  .five-card-min-h img {
+    width: 60px;
+    height: 60px;
+  }
 }

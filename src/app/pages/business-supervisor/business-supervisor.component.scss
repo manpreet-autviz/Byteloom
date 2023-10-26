@@ -1,162 +1,207 @@
-
 .user-img {
-    width: 89px;
-    height: 89px;
-    border-radius: 89px;
-  }
-  .bg-pink {
-    background: rgba(254, 84, 25, 0.22);
-    border-radius: 4px;
-    border: 1px solid #fe5419;
-  }
-  
-  
-  .rm-blue {
-    background: rgba(7, 71, 166, 0.22);
-    border-radius: 4px;
-    border: 1px solid #0747a6;
-  }
-  
-  .rm-sky-blue {
-    border-radius: 4px;
-    border: 1px solid #a7e1fb;
-    background: rgba(167, 225, 251, 0.25);
-  }
-  .rm-light-green {
-    border-radius: 4px;
-    border: 1px solid #07a14e;
-    background: rgba(58, 218, 132, 0.22);
-  }
-  .rm-light-violet {
-    border-radius: 4px;
-    border: 1px solid #7460ee;
-    background: rgba(116, 96, 238, 0.22);
-  }
-  .rm-light-orange {
-    border-radius: 4px;
-    border: 1px solid #ff821c;
-    background: rgba(251, 140, 0, 0.22);
-  }
-  .bg-icons{
-    padding: 7px;
-    border-radius: 5px;
-    background: #FFF;
-  }
-  .header-data {
-    border-radius: 25px;
-    background: rgba(7, 71, 166, 0.13);
-    padding: 6px 10px;
-    font-size: 12px;
-  }
-  .profile-info{
-    padding: 26px 10px;
-    margin-top: 27px; 
-  }
-  .profile-box{
-    height: 100%;
-  }
-  .profile-info h6{
-    font-size: 14px;
-    margin-bottom: 0;
-  }
-  .profile-info p{
-    margin: 0;
-  }
-  .incentive {
-    border-radius: 4px;
-    padding: 22px 21px;
-  }
-  .incentive-list h6{
-    margin: 0;
-  }
-  .incentive-list {
-    margin-top: 20px;
-  }
-  .price h6 {
-    background: #dee7f4;
-    text-align: right;
-    padding: 6px 10px;
-    border-radius: 25px;
-    font-size: 12px;
-  }
-  .business-box  {
-    text-align: right;
-  }
-  .business-box h2 {
-    font-size: 30px;
-  }
-  .business-box p {
-    font-size: 12px;
-  }
-
-.pro-no{
-  position: absolute;
-    right: 33%;
+  width: 89px;
+  height: 89px;
+  border-radius: 89px;
 }
-.pro-no2{
+
+.bg-pink {
+  background: rgba(254, 84, 25, 0.22);
+  border-radius: 4px;
+  border: 1px solid #fe5419;
+}
+
+
+.rm-blue {
+  background: rgba(7, 71, 166, 0.22);
+  border-radius: 4px;
+  border: 1px solid #0747a6;
+}
+
+.rm-sky-blue {
+  border-radius: 4px;
+  border: 1px solid #a7e1fb;
+  background: rgba(167, 225, 251, 0.25);
+}
+
+.rm-light-green {
+  border-radius: 4px;
+  border: 1px solid #07a14e;
+  background: rgba(58, 218, 132, 0.22);
+}
+
+.rm-light-violet {
+  border-radius: 4px;
+  border: 1px solid #7460ee;
+  background: rgba(116, 96, 238, 0.22);
+}
+
+.rm-light-orange {
+  border-radius: 4px;
+  border: 1px solid #ff821c;
+  background: rgba(251, 140, 0, 0.22);
+}
+
+.bg-icons {
+  padding: 7px;
+  border-radius: 5px;
+  background: #FFF;
+}
+
+.header-data {
+  border-radius: 25px;
+  background: rgba(7, 71, 166, 0.13);
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.profile-info {
+  padding: 26px 10px;
+  margin-top: 27px;
+}
+
+.profile-box {
+  height: 100%;
+}
+
+.profile-info h6 {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.profile-info p {
+  margin: 0;
+}
+
+.incentive {
+  border-radius: 4px;
+  padding: 22px 21px;
+}
+
+.incentive-list h6 {
+  margin: 0;
+}
+
+.incentive-list {
+  margin-top: 20px;
+}
+
+.price h6 {
+  background: #dee7f4;
+  text-align: right;
+  padding: 6px 10px;
+  border-radius: 25px;
+  font-size: 12px;
+}
+
+.business-box {
+  text-align: right;
+}
+
+.business-box h2 {
+  font-size: 30px;
+}
+
+.business-box p {
+  font-size: 12px;
+}
+
+.pro-no {
+  position: absolute;
+  right: 33%;
+}
+
+.pro-no2 {
   position: absolute;
   right: 12%;
 }
 
-    .progress{
-      height: 52px;
+.progress {
+  height: 52px;
+}
+
+.disbursal-dots {
+  background-color: #000;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-purple {
+  background-color: #19A7CE;
+}
+
+.dot-gray {
+  background-color: #6C757D;
+}
+
+.dot-blue {
+  background-color: #64CCC5;
+}
+
+.purple-bar {
+  background-color: #19A7CE;
+}
+
+.gray-bar {
+  background-color: #6C757D;
+}
+
+.blue-bar {
+  background-color: #64CCC5;
+}
+
+.dot-orange {
+  background-color: #FF821C;
+}
+
+.dot-red {
+  background-color: #F00;
+}
+
+.dot-green {
+  background-color: #07A14E;
+}
+
+.orange-bar {
+  background-color: #FF821C;
+}
+
+.green-bar {
+  background-color: #07A14E;
+}
+
+.red-bar {
+  background-color: #F00;
+}
+
+.progres-line-bg {
+  box-shadow: 0px 0px 3px 2px #e4e4e4 inset;
+  padding: 8px;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+.bg-gray {
+  background: #0747a60f;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+button.branch-number {
+  background: rgba(7, 161, 78, 0.2);
+  border: none;
+  padding: 10px;
+  margin-top: 13px;
+}
+
+.space {
+  height: 70px;
+}
+.business-rm-boxes {
+  margin-bottom: 20px;
+}
+@media (max-width: 1199px) {
+  .space {
+    height: 0;
   }
-  .disbursal-dots{
-      background-color: #000;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-  }
-  .dot-purple{
-    background-color: #19A7CE;
-  }
-  .dot-gray{
-    background-color: #6C757D;
-  }
-  .dot-blue {
-    background-color:#64CCC5;
-  }
-  .purple-bar{
-    background-color: #19A7CE;
-  }
-  .gray-bar{
-    background-color: #6C757D;
-  }
-  .blue-bar{
-    background-color: #64CCC5;
-  }
-  .dot-orange{
-      background-color: #FF821C;
-  }
-  .dot-red{
-      background-color: #F00;
-  }
-  .dot-green{
-      background-color: #07A14E;
-  }
-  .orange-bar{
-      background-color: #FF821C;
-  }
-  .green-bar{
-      background-color: #07A14E;
-  }
-  .red-bar{
-      background-color: #F00;
-  }
-  .progres-line-bg{
-      box-shadow: 0px 0px 3px 2px #e4e4e4 inset;
-      padding: 8px;
-      margin: 10px;
-      border-radius: 4px;
-  }
-  .bg-gray {
-      background: #0747a60f;
-      padding: 10px 20px;
-      border-radius: 10px;
-  }
-  button.branch-number {
-    background: rgba(7, 161, 78, 0.2);
-    border: none;
-    padding: 10px;
-    margin-top: 13px;
 }

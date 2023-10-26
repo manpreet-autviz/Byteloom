@@ -9,8 +9,7 @@ declare var $: any;
 export class LegalComponent {
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -24,6 +23,8 @@ export class LegalComponent {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
   selectedState: string = 'Pan India';
@@ -102,7 +103,7 @@ export class LegalComponent {
       xAxis: [
         {
           type: 'category',
-          boundaryGap: false,
+          boundaryGap: true,
           data: [
             'Pan India',
             'PCH',

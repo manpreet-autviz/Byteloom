@@ -19,8 +19,7 @@ export class BusinessSupervisorComponent {
 
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -34,6 +33,8 @@ export class BusinessSupervisorComponent {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
   monthFilters: string[] = ['Month to Date', 'Three month'];

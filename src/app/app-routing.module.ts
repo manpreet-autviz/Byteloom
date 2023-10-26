@@ -33,7 +33,7 @@ import { TatLoginTableComponent } from './pages/tat-login-table/tat-login-table.
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'home', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'financial-approvals', component: FinancialApprovalsComponent },
   { path: 'final-approvals', component: FinalApprovalComponent },

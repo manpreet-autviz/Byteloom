@@ -14,8 +14,7 @@ declare var $: any;
 export class ChannelPartnersComponent {
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -29,6 +28,8 @@ export class ChannelPartnersComponent {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
 

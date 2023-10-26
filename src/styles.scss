@@ -185,8 +185,8 @@ display: flex;
 }
 }
 
-.chart-pie {
-  margin-left: 17%;
+.cursor-arrow{
+  cursor: context-menu;
 }
 
 .btn:hover {
@@ -332,6 +332,25 @@ button.fc-prev-button.fc-button.fc-button-primary,button.fc-today-button.fc-butt
   font-size: 16px;
 }
 
+
+@media (max-width: 991px){
+  .calender-widget .fc-daygrid-event-harness .fc-h-event {
+    width: 40px!important;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4f709c;
+    border: none;
+    line-height: 40px;
+    text-align: center;
+    left: 16px;
+    bottom: 13px;
+  }
+}
+@media only screen and (max-width: 767px){
+  .fc .fc-daygrid-day-frame {
+    padding: 0px;
+  }
+}
 @media only screen and (max-width: 520px){ 
 .breadcraumb-align ,
 .breadcrumb-right-btn{

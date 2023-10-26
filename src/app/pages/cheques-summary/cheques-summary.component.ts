@@ -10,8 +10,7 @@ declare var $: any;
 export class ChequesSummaryComponent {
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -25,6 +24,8 @@ export class ChequesSummaryComponent {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
   statusList :string[] = [
@@ -235,7 +236,7 @@ export class ChequesSummaryComponent {
         },
       },
       legend: {
-       data: ['Financial approval no.', 'Financial approval amount'],
+       data: ['Financial approvals no.', 'Financial approvals amount'],
       },
       xAxis: [
         {
@@ -306,7 +307,7 @@ export class ChequesSummaryComponent {
       ],
       series: [
         {
-          name:"Financial approval no.",
+          name:"Financial approvals no.",
           barWidth: 20,
           type: 'bar',
           tooltip: {
@@ -321,7 +322,7 @@ export class ChequesSummaryComponent {
         },
 
         {
-          name:"Financial approval amount",
+          name:"Financial approvals amount",
           type: 'line',
          
           yAxisIndex: 1,
@@ -354,7 +355,7 @@ export class ChequesSummaryComponent {
         },
       },
       legend: {
-       data: ['Financial approval no.', 'Financial approval amount'],
+       data: ['Financial approvals no.', 'Financial approvals amount'],
       },
       xAxis: [
         {
@@ -425,7 +426,7 @@ export class ChequesSummaryComponent {
       ],
       series: [
         {
-          name:"Financial approval no.",
+          name:"Financial approvals no.",
           barWidth: 20,
           type: 'bar',
           tooltip: {
@@ -440,7 +441,7 @@ export class ChequesSummaryComponent {
         },
 
         {
-          name:"Financial approval amount",
+          name:"Financial approvals amount",
           type: 'line',
           yAxisIndex: 1,
           tooltip: {

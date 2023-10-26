@@ -10,8 +10,7 @@ export class ThreeSixtyComponent {
 
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujrat',
@@ -142,7 +141,7 @@ export class ThreeSixtyComponent {
             overflow: 'break',
           },
           type: 'category',
-          boundaryGap: false,
+          boundaryGap: true,
           data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
         },
       ],
@@ -531,6 +530,7 @@ export class ThreeSixtyComponent {
         // doesn't perfectly work with our tricks, disable it
         selectedMode: false,
       },
+  
       series: [
         {
           
@@ -544,6 +544,14 @@ export class ThreeSixtyComponent {
           },
           label:{
             show:false,
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: 12,
+              fontWeight: 'bold',
+              formatter: '({d}%)',
+            }
           },
           data: [
             { value: 1048, name: 'Online', itemStyle: { color: '#7C41DA' } },

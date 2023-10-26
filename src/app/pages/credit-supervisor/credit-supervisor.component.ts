@@ -13,8 +13,7 @@ export class CreditSupervisorComponent {
 
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -28,6 +27,8 @@ export class CreditSupervisorComponent {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
   monthFilters: string[] = ['Month to Date', 'Three month'];
@@ -93,7 +94,7 @@ export class CreditSupervisorComponent {
             splitLine: {
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',

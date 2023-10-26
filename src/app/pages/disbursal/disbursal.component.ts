@@ -26,8 +26,7 @@ export class DisbursalComponent {
 
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -41,6 +40,8 @@ export class DisbursalComponent {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
   monthFilters: string[] = ['Month to Date', 'Three month'];
@@ -755,7 +756,7 @@ export class DisbursalComponent {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',
@@ -765,6 +766,10 @@ export class DisbursalComponent {
               'Sep',
               'Oct',
             ],
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
           },
         ],
         yAxis: [
@@ -854,7 +859,7 @@ export class DisbursalComponent {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',
@@ -864,6 +869,10 @@ export class DisbursalComponent {
               'Sep',
               'Oct',
             ],
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
           },
         ],
         yAxis: [
@@ -1029,7 +1038,7 @@ export class DisbursalComponent {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',
@@ -1039,6 +1048,10 @@ export class DisbursalComponent {
               'Sep',
               'Oct',
             ],
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
           },
         ],
         yAxis: [
@@ -1166,7 +1179,7 @@ export class DisbursalComponent {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',
@@ -1176,6 +1189,10 @@ export class DisbursalComponent {
               'Sep',
               'Oct',
             ],
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
           },
         ],
         yAxis: [
@@ -1288,7 +1305,7 @@ export class DisbursalComponent {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',
@@ -1298,6 +1315,10 @@ export class DisbursalComponent {
               'Sep',
               'Oct',
             ],
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
           },
         ],
         yAxis: [
@@ -1414,7 +1435,7 @@ export class DisbursalComponent {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',
@@ -1424,6 +1445,10 @@ export class DisbursalComponent {
               'Sep',
               'Oct',
             ],
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
           },
         ],
         yAxis: [
@@ -1551,7 +1576,7 @@ export class DisbursalComponent {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',
@@ -1561,6 +1586,10 @@ export class DisbursalComponent {
               'Sep',
               'Oct',
             ],
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
           },
         ],
         yAxis: [
@@ -1688,7 +1717,7 @@ export class DisbursalComponent {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',
@@ -1698,6 +1727,10 @@ export class DisbursalComponent {
               'Sep',
               'Oct',
             ],
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
           },
         ],
         yAxis: [

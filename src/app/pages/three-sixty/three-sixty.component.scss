@@ -218,7 +218,7 @@ ul.pending-cheque.ot-normal {
     border: 1px solid #000;
     padding: 6px 8px;
     position: absolute;
-    right: 41%;
+    right: calc(50% - 65px);
     top: 25%;
     font-weight: 700;
      border-radius: 4px;

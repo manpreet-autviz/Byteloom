@@ -22,8 +22,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
 
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -37,6 +36,8 @@ export class FinancialApprovalsComponent implements AfterViewInit {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
   monthFilters: string[] = ['Month to Date', 'Three month'];
@@ -570,7 +571,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',
@@ -580,6 +581,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               'Sep',
               'Oct',
             ],
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
           },
         ],
         yAxis: [
@@ -750,7 +755,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',
@@ -760,6 +765,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               'Sep',
               'Oct',
             ],
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
           },
         ],
         yAxis: [
@@ -884,7 +893,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',
@@ -894,6 +903,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               'Sep',
               'Oct',
             ],
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
           },
         ],
         yAxis: [
@@ -1007,7 +1020,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',
@@ -1017,6 +1030,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               'Sep',
               'Oct',
             ],
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
           },
         ],
         yAxis: [
@@ -1134,7 +1151,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',
@@ -1144,6 +1161,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               'Sep',
               'Oct',
             ],
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
           },
         ],
         yAxis: [
@@ -1259,6 +1280,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             axisLine: {
               show: false,
             },
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
+            },
             labelLine:{
               show: false,
             },
@@ -1268,7 +1293,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             splitLine:{
               show: false,
             },
-            boundaryGap: false,
+            boundaryGap: true,
             data: [
               'Apr',
               'May',

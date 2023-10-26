@@ -15,8 +15,7 @@ declare var $: any;
 export class CreditComponent {
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -30,6 +29,8 @@ export class CreditComponent {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
 
@@ -516,7 +517,7 @@ export class CreditComponent {
       xAxis: [
         {
           type: 'category',
-          boundaryGap: false,
+          boundaryGap: true,
           data: [
             'Pan India',
             'PCH',
@@ -734,7 +735,7 @@ export class CreditComponent {
       xAxis: [
         {
           type: 'category',
-          boundaryGap: false,
+          boundaryGap: true,
           data: [
             'Pan India',
             'PCH',

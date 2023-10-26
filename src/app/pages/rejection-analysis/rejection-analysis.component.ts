@@ -8,8 +8,7 @@ import * as echarts from 'echarts';
 export class RejectionAnalysisComponent {
   ConversionStates: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -23,6 +22,8 @@ export class RejectionAnalysisComponent {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
 
@@ -105,15 +106,15 @@ export class RejectionAnalysisComponent {
 
           if (params.name === 'Login to disbursal') {
 
-            tooltipText = 'Login: 100 <br/> Approved:30 Percentage : 70%'  ;
+            tooltipText = 'Login: 100 <br/> Disbursed:30 <br/> Percentage : 70%'  ;
 
-          } else if (params.name === 'Financial approval to disbursal') {
+          } else if (params.name === 'Financial approvals to disbursal') {
 
-            tooltipText = 'Login: 100 <br/> Approved:70 Percentage : 30%' ;
+            tooltipText = 'Approved: 100 <br/> Disbursed:70 <br/> Percentage : 30%' ;
 
-          } else if (params.name === 'Login to financial approval') {
+          } else if (params.name === 'Login to financial approvals') {
 
-            tooltipText = 'Login: 100 <br/> Approved:25 Percentage : 75%' ;
+            tooltipText = 'Login: 100 <br/> Approval:25 <br/> Percentage : 75%' ;
 
           }
 
@@ -132,12 +133,12 @@ export class RejectionAnalysisComponent {
         },
         data: [
           'Login to disbursal',
-          'Financial approval to disbursal',
-          'Login to financial approval',
+          'Financial approvals to disbursal',
+          'Login to financial approvals',
         ],
         axisLabel: {
           interval: 0,
-          rotate: -18,
+          rotate: 12,
           overflow: 'break',
         },
       },
@@ -183,17 +184,17 @@ export class RejectionAnalysisComponent {
         formatter: (params: any) => {
 
           let tooltipText = '';
-          if (params.seriesName === 'Login to financial approval') {
+          if (params.seriesName === 'Login to financial approvals') {
 
-            tooltipText = 'Login: 1000 <br/> Approval : 60%'  ;
+            tooltipText = 'Login: 1000 <br/> Approval : 60'  ;
 
-          } else if (params.seriesName === 'Financial approval to disbursal') {
+          } else if (params.seriesName === 'Financial approvals to disbursal') {
 
-            tooltipText = 'Login: 600 <br/> Approval : 70%' ;
+            tooltipText = 'Approved: 600 <br/> Disbursed : 70' ;
 
           } else if (params.seriesName === 'Login to disbursal') {
 
-            tooltipText = 'Login: 400 <br/> Percentage : 55%' ;
+            tooltipText = 'Login: 400 <br/> Approval : 55' ;
 
           }
 
@@ -204,8 +205,8 @@ export class RejectionAnalysisComponent {
       },
       legend: {
         data: [
-          'Login to financial approval',
-          'Financial approval to disbursal',
+          'Login to financial approvals',
+          'Financial approvals to disbursal',
           'Login to disbursal',
         ],
       },
@@ -250,7 +251,7 @@ export class RejectionAnalysisComponent {
 
       series: [
         {
-          name: 'Login to financial approval',
+          name: 'Login to financial approvals',
           type: 'bar',
           data: [41, 40, 40, 35, 50, 40, 60],
           itemStyle: {
@@ -264,7 +265,7 @@ export class RejectionAnalysisComponent {
           },
         },
         {
-          name: 'Financial approval to disbursal',
+          name: 'Financial approvals to disbursal',
           type: 'bar',
           data: [29, 30, 28, 45, 32, 45, 70],
           itemStyle: {
@@ -299,13 +300,7 @@ export class RejectionAnalysisComponent {
       responsive: true,
       tooltip: {
         trigger: 'axis',
-        axisPointer: {
-          type: 'cross',
-          label: {
-            backgroundColor: '#DBA39A',
-           
-          },
-        },
+        
         formatter: (params: any) => {
           const dataIndex = params[0].dataIndex;
           const login = [100, 800, 600, 450][dataIndex];
@@ -336,7 +331,11 @@ export class RejectionAnalysisComponent {
           axisTick: {
             show: false, // Hide tick lines
           },
-          boundaryGap: false,
+          axisLabel: {
+            formatter: '{value}',
+            margin: 30, // Add a margin of 15 pixels above the labels
+          },
+          boundaryGap: true,
           data: ['HL', 'BL', 'LAP', 'SBL'],
         },
       ],
@@ -385,8 +384,16 @@ export class RejectionAnalysisComponent {
     this.StateRejectionOption = {
       tooltip: {
         trigger: 'item',
+        
         axisPointer: {
           type: 'shadow',
+        },
+        formatter: function (params: any) {
+          const dataIndex = params.dataIndex;
+          const barValue = params.value;
+          const randomAmounts = [350, 145, 167, 370, 290, 300, 320, 550];
+          const randomAmount = randomAmounts[dataIndex];
+          return `Approval:${barValue}</br> Login:${randomAmount}`; 
         },
       },
       legend: {
@@ -434,7 +441,7 @@ export class RejectionAnalysisComponent {
 
       series: [
         {
-          name: 'Login to financial approval (%) ',
+         
           type: 'bar',
           barWidth: '25%',
           data: [41, 41, 42, 40, 35, 50, 45],
@@ -456,13 +463,7 @@ export class RejectionAnalysisComponent {
       responsive: true,
       tooltip: {
         trigger: 'axis',
-        axisPointer: {
-          type: 'cross',
-          label: {
-            backgroundColor: '#6a7985',
-          },
-          
-        },
+       
         formatter: (params: any) => {
           const dataIndex = params[0].dataIndex;
           const login = [100, 800, 600, 450][dataIndex];
@@ -492,8 +493,12 @@ export class RejectionAnalysisComponent {
           axisTick: {
             show: false, // Hide tick lines
           },
+          axisLabel: {
+            formatter: '{value}',
+            margin: 30, // Add a margin of 15 pixels above the labels
+          },
           type: 'category',
-          boundaryGap: false,
+          boundaryGap: true,
           data: ['HL', 'BL', 'LAP', 'SBL'],
         },
       ],

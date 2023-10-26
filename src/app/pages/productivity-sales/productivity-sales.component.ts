@@ -16,8 +16,7 @@ declare var $: any;
 export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -31,6 +30,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
     'July',
     'August',
     'September',
+    'October',
+    'November', 
     // 'Select custom'
   ];
 
@@ -291,7 +292,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           splitLine: {
             show: false,
           },
-          boundaryGap: false,
+          boundaryGap: true,
           data: [
             'Pan India',
             'PCH',
@@ -556,7 +557,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       xAxis: [
         {
           type: 'category',
-          boundaryGap: false,
+          boundaryGap: true,
           data: [
             'Pan India',
             'PCH',
@@ -830,7 +831,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       xAxis: [
         {
           type: 'category',
-          boundaryGap: false,
+          boundaryGap: true,
           axisLine: {
             show: false,
           },

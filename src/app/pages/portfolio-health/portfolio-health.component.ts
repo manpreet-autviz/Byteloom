@@ -11,8 +11,7 @@ export class PortfolioHealthComponent {
 
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -26,6 +25,8 @@ export class PortfolioHealthComponent {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
   monthFilters: string[] = ['Month to Date', 'Three month'];
@@ -182,7 +183,7 @@ export class PortfolioHealthComponent {
               show: false, 
             },
            
-            boundaryGap: false,
+            boundaryGap: true,
             data: ['<650', '-1', '>650'],
           },
         ],

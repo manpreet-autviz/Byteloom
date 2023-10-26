@@ -7,17 +7,14 @@ const currentMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
 const currentMonthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0);
 const customValidRange = {
   start: '2023-09-01', // Define the start date you want to display
-  end: '2023-09-30',   // Define the end date you want to display
+  end: '2023-09-30', // Define the end date you want to display
 };
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-
-
 export class LoginComponent implements AfterViewInit {
-  
   calendarOptions: CalendarOptions = {
     plugins: [dayGridPlugin],
     initialView: 'dayGridMonth',
@@ -26,10 +23,8 @@ export class LoginComponent implements AfterViewInit {
       end: new Date(new Date().getFullYear(), new Date().getMonth(), 1), // End at the first day of the current month
     },
     // weekends: true,
-    
+
     events: this.generateRandomEvents(),
-    
-    
   };
 
   StateChart!: echarts.ECharts;
@@ -46,8 +41,7 @@ export class LoginComponent implements AfterViewInit {
   monthFilters: string[] = ['Month to Date', 'Three month'];
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -61,11 +55,16 @@ export class LoginComponent implements AfterViewInit {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
+  branches: string[] = [];
+  clusters: string[] = [];
   selectedTrendFilter: string = 'Month to Date';
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
+
   showContent!: boolean;
   stateOption: any;
   averageStateOption: any;
@@ -80,6 +79,9 @@ export class LoginComponent implements AfterViewInit {
   IMDChart!: echarts.ECharts;
 
   IMDOption: any;
+
+  selectedCluster: string = '';
+  selectedBranch: string = '';
 
   public isToggled = false;
   constructor(private cdRef: ChangeDetectorRef) {}
@@ -123,7 +125,7 @@ export class LoginComponent implements AfterViewInit {
       startDate.setDate(startDate.getDate() + 1); // Move to the next day
     }
 
-    return events
+    return events;
   }
 
   toggle(): void {
@@ -175,7 +177,7 @@ export class LoginComponent implements AfterViewInit {
             return `No of Files: ${barValue}<br> Amount in Cr: ${randomAmount}`;
           },
         },
-        responsive: true, 
+        responsive: true,
         legend: {},
         grid: {
           top: '3%',
@@ -187,22 +189,22 @@ export class LoginComponent implements AfterViewInit {
         xAxis: {
           type: 'value',
           boundaryGap: [0, 0.01],
-          
+
           splitLine: {
             show: false,
           },
           axisLine: {
             show: false,
           },
-          min: 0,
-          max: 4000,
-          interval: 500,
-          name: 'Number of files',
+          min: 0.5,
+          max: 4.0,
+          interval: 0.5,
+          name: 'Number of files (in thousand)',
           nameLocation: 'middle',
           nameGap: 30,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
         },
         yAxis: {
@@ -213,20 +215,13 @@ export class LoginComponent implements AfterViewInit {
           axisTick: {
             show: false, // Hide tick lines
           },
-          data: [
-            'Maharashtra',
-            'MP',
-            'Gujarat',
-            'Rajasthan',
-            'NCR',
-            'PCH'
-          ],
+          data: ['Maharashtra', 'MP', 'Gujarat', 'Rajasthan', 'NCR', 'PCH'],
         },
         series: [
           {
-            barWidth: 20,
+            barWidth: 15,
             type: 'bar',
-            data: [2000, 700, 800, 2100, 1000, 1500],
+            data: [2.0, 0.7, 0.8, 2.1, 1.0, 1.5],
             itemStyle: {
               color: '#5BC8EF',
             },
@@ -251,7 +246,7 @@ export class LoginComponent implements AfterViewInit {
             return `Avg no. of files : ${avgNoOfFile}<br> Amount in Cr: ${amountInCr}<br> Active RMs: ${activeRMs}`;
           },
         },
-        responsive: true, 
+        responsive: true,
         legend: {},
         grid: {
           top: '3%',
@@ -277,7 +272,7 @@ export class LoginComponent implements AfterViewInit {
           nameGap: 30,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
         },
         yAxis: {
@@ -300,7 +295,7 @@ export class LoginComponent implements AfterViewInit {
         },
         series: [
           {
-            barWidth: 20,
+            barWidth: 15,
             type: 'bar',
             data: [11, 8, 6, 12, 10, 7, 9],
             itemStyle: {
@@ -314,35 +309,26 @@ export class LoginComponent implements AfterViewInit {
         tooltip: {
           trigger: 'item',
           formatter: (params: any) => {
-
             let tooltipText = '';
-  
+
             if (params.name === 'BT') {
-  
-              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
-  
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45';
             } else if (params.name === 'Top-Up') {
-  
-              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 27' ;
-  
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 27';
             } else if (params.name === 'Fresh') {
-  
-              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 26' ;
-  
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 26';
             }
-  
+
             return tooltipText;
-  
           },
         },
-        responsive: true, 
+        responsive: true,
         legend: {
-          top: '5%',
+          top: '2%',
           left: 'center',
         },
         series: [
           {
-           
             type: 'pie',
             radius: ['30%', '80%'],
             avoidLabelOverlap: false,
@@ -374,34 +360,24 @@ export class LoginComponent implements AfterViewInit {
         tooltip: {
           trigger: 'item',
           formatter: (params: any) => {
-
             let tooltipText = '';
-  
+
             if (params.name === 'Home Loan') {
-  
-              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
-  
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45';
             } else if (params.name === 'LAP') {
-  
-              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 20' ;
-  
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 20';
             } else if (params.name === 'BL') {
-  
-              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 10' ;
-  
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 10';
             } else if (params.name === 'SBL') {
-  
-              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 25' ;
-  
+              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 25';
             }
-  
+
             return tooltipText;
-  
           },
         },
-        responsive: true, 
+        responsive: true,
         legend: {
-          top: '5%',
+          top: '2%',
           left: 'center',
         },
         series: [
@@ -438,37 +414,27 @@ export class LoginComponent implements AfterViewInit {
         tooltip: {
           trigger: 'item',
           formatter: (params: any) => {
-
             let tooltipText = '';
-  
+
             if (params.name === 'Online') {
-  
-              tooltipText = 'No. of files: 1000 <br/> Percentage : 16.65'  ;
-  
+              tooltipText = 'No. of files: 1000 <br/> Percentage : 16.65';
             } else if (params.name === 'Cheque') {
-  
-              tooltipText = 'No. of files: 700 <br/> Percentage : 11.68' ;
-  
+              tooltipText = 'No. of files: 700 <br/> Percentage : 11.68';
             } else if (params.name === 'Cash') {
-  
-              tooltipText = 'No. of files: 800 <br/> Percentage : 9.21' ;
-  
+              tooltipText = 'No. of files: 800 <br/> Percentage : 9.21';
             } else if (params.name === 'UPI') {
-  
-              tooltipText = 'No. of files: 900 <br/> Percentage : 12.46' ;
-  
+              tooltipText = 'No. of files: 900 <br/> Percentage : 12.46';
             }
-  
+
             return tooltipText;
-  
-          }, 
+          },
         },
         legend: {
           top: '5%',
           left: 'center',
           // doesn't perfectly work with our tricks, disable it
           selectedMode: false,
-          borderRadius:50,
+          borderRadius: 50,
         },
         series: [
           {
@@ -489,7 +455,7 @@ export class LoginComponent implements AfterViewInit {
               { value: 735, name: 'Cheque', itemStyle: { color: '#FB8C00' } },
               { value: 580, name: 'Cash', itemStyle: { color: '#07A14E' } },
               { value: 784, name: 'UPI', itemStyle: { color: '#636363' } },
-  
+
               {
                 // make an record to fill the bottom 50%
                 value: 1048 + 735 + 580 + 484 + 300,
@@ -525,7 +491,7 @@ export class LoginComponent implements AfterViewInit {
             return `No of Files: ${barValue}<br> Amount: ${randomAmount}`;
           },
         },
-        responsive: true, 
+        responsive: true,
         xAxis: {
           type: 'category',
           axisTick: {
@@ -547,9 +513,9 @@ export class LoginComponent implements AfterViewInit {
           nameGap: 25,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
-         
+
           type: 'value',
           axisLine: {
             show: false,
@@ -574,7 +540,7 @@ export class LoginComponent implements AfterViewInit {
               { value: 16, itemStyle: { color: 'rgba(41, 98, 255, 0.42)' } },
               { value: 15, itemStyle: { color: '#CAEDFF' } },
             ],
-            barWidth: 40,
+            barWidth: 30,
             type: 'bar',
           },
         ],
@@ -619,8 +585,7 @@ export class LoginComponent implements AfterViewInit {
         },
         legend: {
           data: [
-            'Punjab',
-            'Haryana',
+            'PCH',
             'NCR',
             'Rajasthan',
             'Gujarat',
@@ -628,7 +593,7 @@ export class LoginComponent implements AfterViewInit {
             'Maharashtra',
           ],
         },
-    
+
         grid: {
           left: '3%',
           right: '4%',
@@ -641,23 +606,15 @@ export class LoginComponent implements AfterViewInit {
             axisLine: {
               show: false,
             },
-            labelLine:{
+            labelLine: {
               show: false,
             },
             axisTick: {
               show: false,
             },
-         
-            boundaryGap: false,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
+
+            boundaryGap: true,
+            data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
           },
         ],
         yAxis: [
@@ -666,39 +623,25 @@ export class LoginComponent implements AfterViewInit {
             axisLine: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
-            min: 500,
-            max: 4000,
-            interval: 500,
-            name: 'Number of files',
+            min: 0.5,
+            max: 4.0,
+            interval: 0.5,
+            name: 'Number of files (In Thousands)',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 25,
             nameTextStyle: {
               fontWeight: 600,
-              fontSize:14,
+              fontSize: 14,
             },
           },
         ],
         series: [
+         
           {
-            name: 'Punjab',
-            type: 'line',
-
-            areaStyle: {
-              opacity: 0,
-            },
-            emphasis: {
-              focus: 'series',
-              areaStyle: {
-                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-              },
-            },
-            data: [500, 800, 1000, 1300, 1600, 1800, 1900],
-          },
-          {
-            name: 'Haryana',
+            name: 'PCH',
             type: 'line',
 
             areaStyle: {
@@ -710,7 +653,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [600, 1000, 1200, 1500, 1700, 1900, 2000],
+            data: [0.6, 1.0, 1.2, 1.5, 1.7, 1.9, 2.0, 2.3],
           },
           {
             name: 'NCR',
@@ -725,7 +668,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [800, 1300, 1500, 1900, 2100, 2300, 2400],
+            data: [0.8, 1.3, 1.5, 1.9, 2.1, 2.3, 2.4, 3],
           },
           {
             name: 'Rajasthan',
@@ -740,7 +683,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [950, 1500, 1650, 1980, 2200, 2500, 2600],
+            data: [0.95, 1.5, 1.65, 1.98, 2.2, 2.5, 2.6, 3.1],
           },
           {
             name: 'Gujarat',
@@ -755,7 +698,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [1000, 1500, 1800, 2100, 2500, 3000, 3100],
+            data: [1.0, 1.5, 1.8, 2.1, 2.5, 3.0, 3.1, 3.5],
           },
           {
             name: 'MP',
@@ -770,7 +713,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [1100, 1600, 1900, 2300, 2700, 3200, 3300],
+            data: [1.1, 1.6, 1.9, 2.3, 2.7, 3.2, 3.3, 3.9],
           },
           {
             name: 'Maharashtra',
@@ -785,7 +728,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [1400, 1900, 2100, 2700, 3000, 3800, 3900],
+            data: [1.4, 1.9, 2.1, 2.7, 3.0, 3.8, 3.9, 4.0],
           },
         ],
       };
@@ -802,8 +745,7 @@ export class LoginComponent implements AfterViewInit {
         },
         legend: {
           data: [
-            'Punjab',
-            'Haryana',
+           'PCH',
             'NCR',
             'Rajasthan',
             'Gujarat',
@@ -811,7 +753,7 @@ export class LoginComponent implements AfterViewInit {
             'Maharashtra',
           ],
         },
-     
+
         grid: {
           left: '3%',
           right: '4%',
@@ -827,17 +769,9 @@ export class LoginComponent implements AfterViewInit {
             axisTick: {
               show: false,
             },
-          
-            boundaryGap: false,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
+
+            boundaryGap: true,
+            data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
           },
         ],
         yAxis: [
@@ -846,7 +780,7 @@ export class LoginComponent implements AfterViewInit {
             axisLine: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             min: 2,
@@ -857,28 +791,14 @@ export class LoginComponent implements AfterViewInit {
             nameGap: 20,
             nameTextStyle: {
               fontWeight: 600,
-              fontSize:14,
+              fontSize: 14,
             },
           },
         ],
         series: [
+         
           {
-            name: 'Punjab',
-            type: 'line',
-
-            areaStyle: {
-              opacity: 0,
-            },
-            emphasis: {
-              focus: 'series',
-              areaStyle: {
-                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-              },
-            },
-            data: [2, 3, 3.9, 4, 4.2, 4.5, 5.5],
-          },
-          {
-            name: 'Haryana',
+            name: 'PCH',
             type: 'line',
 
             areaStyle: {
@@ -890,7 +810,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [3, 3.5, 4, 4.5, 4.9, 5, 6],
+            data: [3, 3.5, 4, 4.5, 4.9, 5, 6, 6.5],
           },
           {
             name: 'NCR',
@@ -905,7 +825,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [4, 4.5, 5, 5.5, 5.9, 6, 7],
+            data: [4, 4.5, 5, 5.5, 5.9, 6, 7, 6.9],
           },
           {
             name: 'Rajasthan',
@@ -920,7 +840,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [5, 5.5, 6, 6.5, 6.9, 7, 8],
+            data: [5, 5.5, 6, 6.5, 6.9, 7, 8, 8.5],
           },
           {
             name: 'Gujarat',
@@ -935,7 +855,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [6, 6.5, 7, 7.5, 7.9, 8, 9],
+            data: [6, 6.5, 7, 7.5, 7.9, 8, 9, 9.9],
           },
           {
             name: 'MP',
@@ -950,7 +870,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [7, 7.5, 8, 8.5, 8.9, 9, 10],
+            data: [7, 7.5, 8, 8.5, 8.9, 9, 10, 10.6],
           },
           {
             name: 'Maharashtra',
@@ -965,7 +885,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [8, 8.5, 9, 9.5, 9.9, 10, 11],
+            data: [8, 8.5, 9, 9.5, 9.9, 10, 11, 12],
           },
         ],
       };
@@ -983,7 +903,7 @@ export class LoginComponent implements AfterViewInit {
         legend: {
           data: ['Home Loan', 'LAP', 'BL', 'SBL'],
         },
-   
+
         grid: {
           left: '3%',
           right: '4%',
@@ -996,26 +916,18 @@ export class LoginComponent implements AfterViewInit {
             axisLine: {
               show: false,
             },
-            labelLine:{
+            labelLine: {
               show: false,
             },
 
             axisTick: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
-            boundaryGap: false,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
+            boundaryGap: true,
+            data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
           },
         ],
         yAxis: [
@@ -1024,18 +936,18 @@ export class LoginComponent implements AfterViewInit {
             axisLine: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
-            min: 500,
-            max: 4000,
-            interval: 500,
-            name: 'Number of files',
+            min: 0.5,
+            max: 4.0,
+            interval: 0.5,
+            name: 'Number of files (In Thousands)',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 25,
             nameTextStyle: {
               fontWeight: 600,
-              fontSize:14,
+              fontSize: 14,
             },
           },
         ],
@@ -1053,7 +965,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [300, 332, 401, 454, 490, 530, 610, 710],
+            data: [0.7, 0.9, 1.5, 1.7, 1.4, 2, 1.9, 2.4],
           },
           {
             name: 'LAP',
@@ -1068,7 +980,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [420, 432, 501, 534, 590, 630, 720, 820],
+            data: [0.9, 1.9, 2.5, 1.7, 2.4, 3, 2.9, 3.4],
           },
           {
             name: 'BL',
@@ -1083,7 +995,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [500, 532, 601, 654, 690, 730, 810, 900],
+            data: [0.8, 1.5, 2.2, 2.7, 2.4, 3.3, 2.9, 3.4],
           },
           {
             name: 'SBL',
@@ -1098,7 +1010,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [620, 632, 701, 734, 890, 930, 1020, 2020],
+            data: [1, 1.5, 2.5, 2.9, 2.4, 3.6, 2.8, 3.7],
           },
         ],
       };
@@ -1114,9 +1026,9 @@ export class LoginComponent implements AfterViewInit {
           },
         },
         legend: {
-          data: ['Fresh' , 'Top Up','BT'],
+          data: ['Fresh', 'Top Up', 'BT'],
         },
-    
+
         grid: {
           left: '3%',
           right: '4%',
@@ -1129,25 +1041,17 @@ export class LoginComponent implements AfterViewInit {
             axisLine: {
               show: false,
             },
-            labelLine:{
+            labelLine: {
               show: false,
             },
             axisTick: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
-            boundaryGap: false,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
+            boundaryGap: true,
+            data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
           },
         ],
         yAxis: [
@@ -1156,18 +1060,18 @@ export class LoginComponent implements AfterViewInit {
             axisLine: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
-            min: 500,
-            max: 4000,
-            interval: 500,
-            name: 'Number of files',
+            min: 0.5,
+            max: 4.0,
+            interval: 0.5,
+            name: 'Number of files (In Thousands)',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 25,
             nameTextStyle: {
               fontWeight: 600,
-              fontSize:14,
+              fontSize: 14,
             },
           },
         ],
@@ -1185,7 +1089,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [520, 732, 901, 1134, 1490, 2130, 3210],
+            data: [0.7, 0.9, 1.5, 1.7, 1.4, 2, 1.9, 2.4],
           },
           {
             name: 'Fresh',
@@ -1200,7 +1104,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [720, 1382, 1791, 2534, 2990, 3230, 3810],
+            data: [0.9, 1.9, 2.5, 1.7, 2.4, 3, 2.9, 3.4],
           },
           {
             name: 'BT',
@@ -1215,7 +1119,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [750, 1232, 2101, 2854, 3190, 3730, 3910],
+            data: [1, 1.5, 2.5, 2.9, 2.4, 3.6, 2.8, 3.7],
           },
         ],
       };
@@ -1233,7 +1137,7 @@ export class LoginComponent implements AfterViewInit {
         legend: {
           data: ['Direct', 'DSA', 'Power Partner', 'Saathi', 'Online Partner'],
         },
-  
+
         grid: {
           left: '3%',
           right: '4%',
@@ -1246,25 +1150,17 @@ export class LoginComponent implements AfterViewInit {
             axisLine: {
               show: false,
             },
-            labelLine:{
+            labelLine: {
               show: false,
             },
             axisTick: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
-            boundaryGap: false,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
+            boundaryGap: true,
+            data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
           },
         ],
         yAxis: [
@@ -1273,7 +1169,7 @@ export class LoginComponent implements AfterViewInit {
             axisLine: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             min: 10,
@@ -1284,7 +1180,7 @@ export class LoginComponent implements AfterViewInit {
             nameGap: 43,
             nameTextStyle: {
               fontWeight: 600,
-              fontSize:14,
+              fontSize: 14,
             },
           },
         ],
@@ -1302,7 +1198,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [31, 45, 56, 76, 89, 96, 105],
+            data: [31, 45, 56, 76, 89, 96, 105, 107],
           },
           {
             name: 'DSA',
@@ -1317,7 +1213,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [41, 47, 59, 78, 91, 97, 106],
+            data: [41, 47, 59, 78, 91, 97, 106, 108],
           },
           {
             name: 'Power Partner',
@@ -1332,7 +1228,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [42, 48, 60, 79, 92, 98, 107],
+            data: [42, 48, 60, 79, 92, 98, 107, 109],
           },
           {
             name: 'Saathi',
@@ -1347,7 +1243,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [43, 49, 62, 81, 94, 100, 108],
+            data: [43, 49, 62, 81, 94, 100, 108, 110],
           },
           {
             name: 'Online Partner',
@@ -1362,7 +1258,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [49, 55, 65, 85, 96, 103, 109],
+            data: [49, 55, 65, 85, 96, 103, 109, 110],
           },
         ],
       };
@@ -1377,8 +1273,8 @@ export class LoginComponent implements AfterViewInit {
 
   onFilterChange(selectedValue: string) {
     console.log(selectedValue);
-    this.generateStateRandomData();
-    this.generateAverageStateRandomData();
+    this.generateStateFilterRandomData();
+    this.generateAverageStateFilterRandomData();
     this.generateSchemeRandomData();
     this.generateProductRandomData();
     this.generateSourceRandomData();
@@ -1387,22 +1283,447 @@ export class LoginComponent implements AfterViewInit {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  onStateChange(selectedValue: string) {
-    console.log(selectedValue);
-    this.generateStateRandomData();
-    this.generateAverageStateRandomData();
+  onRegionChange(region: string) {
+    this.selectedState = region;
+    this.clusters = this.getClusters(region);
+    this.selectedCluster = this.clusters[0] || '';
+    this.branches = [];
+    this.generateStateRandomData(region);
+    this.generateAverageStateRandomData(region);
     this.generateSchemeRandomData();
     this.generateProductRandomData();
     this.generateSourceRandomData();
+  }
+  getClusters(region: string): string[] {
+    if (region === 'PCH') {
+      return ['Chandigarh', 'Ludhiana', 'Karnal'];
+    } else if (region === 'NCR') {
+      return ['Delhi', 'Gurgaon'];
+    } else if (region === 'Rajasthan') {
+      return ['Jaipur', 'Udaipur', 'Ajmer', 'Kota'];
+    } else if (region === 'Gujarat') {
+      return ['Ahmedabad', 'Surat', 'Rajkot', 'Vadodara'];
+    } else if (region === 'MP') {
+      return ['Indore', 'Bhopal', 'Gwalior', 'Jabalpur'];
+    } else if (region === 'Maharashtra') {
+      return ['Mumbai', 'Pune', 'Nashik', 'Nagpur'];
+    } else {
+      return [];
+    }
+  }
+
+  onClusterChange(cluster: string) {
+    this.selectedCluster = cluster;
+    this.branches = this.getBranches(this.selectedState, cluster);
+    this.generateClusterRandomData(this.selectedState, cluster);
+    this.generateAverageClusterRandomData(this.selectedState, cluster);
+    this.generateSchemeRandomData();
+    this.generateProductRandomData();
+    this.generateSourceRandomData();
+  }
+
+  ontrendClusterChange(cluster: string) {
+    this.TrendgenerateStateRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
+    this.TrendgenerateAverageStateRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
+    this.TrendgenerateSchemeRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
+    this.TrendgenerateProductRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
+    this.TrendgenerateSourceRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
+  }
+
+  getBranches(region: string, cluster: string): string[] {
+    if (region === 'PCH') {
+      if (cluster === 'Chandigarh') {
+        return ['Chandigarh', 'Ambala', 'Patiala'];
+      } else if (cluster === 'Ludhiana') {
+        return ['Ludhiana', 'Jalandhar', 'Moga'];
+      } else if (cluster === 'Karnal') {
+        return ['Karnal', 'Rohtak', 'Panipat'];
+      }
+    } else if (region === 'NCR') {
+      if (cluster === 'Delhi') {
+        return ['Janakpuri', 'Laxmi Nagar', 'Sahibabad'];
+      } else if (cluster === 'Gurgaon') {
+        return ['Gurgoan', 'Faridabad', 'Meerut'];
+      }
+    } else if (region === 'Rajasthan') {
+      if (cluster === 'Jaipur') {
+        return ['Jaipur', 'Sikar Road', 'Behror'];
+      } else if (cluster === 'Ajmer') {
+        return ['Ajmer', 'Kekri', 'Merta'];
+      } else if (cluster === 'Udaipur') {
+        return ['Rajsamand', 'Banswara', 'Udaipur'];
+      } else if (cluster === 'Kota') {
+        return [];
+      }
+    } else if (region === 'Gujarat') {
+      if (cluster === 'Ahmedabad') {
+        return ['Ahmedabad', 'Gandhinagar', 'Sanand'];
+      } else if (cluster === 'Surat') {
+        return ['Surat', 'Kadodara', 'Rundh'];
+      } else if (cluster === 'Rajkot') {
+        return ['Rajkot', 'Jamnagar', 'Junagadh'];
+      } else if (cluster === 'Vadodara') {
+        return ['Vadodara', 'Anand', 'Dabhoi'];
+      }
+    } else if (region === 'Maharashtra') {
+      if (cluster === 'Mumbai') {
+        return ['Navi Mumbai', 'Thane', 'Kalyan'];
+      } else if (cluster === 'Nashik') {
+        return ['Nashik', 'Malegaon', 'Sinnar'];
+      } else if (cluster === 'Pune') {
+        return ['Pune', 'Bhor', 'Shikrapur'];
+      } else if (cluster === 'Nagpur') {
+        return ['Nagpur', 'Amravati', 'Gondia'];
+      }
+    } else if (region === 'MP') {
+      if (cluster === 'Indore') {
+        return ['Indore', 'Ujjain', 'Dewas'];
+      } else if (cluster === 'Gwalior') {
+        return ['Gwalior', 'Morena', 'Bhind'];
+      } else if (cluster === 'Bhopal') {
+        return ['Bhopal', 'Vidisha', 'Sehore'];
+      } else if (cluster === 'Jabalpur') {
+        return ['Jabalpur', 'Sihora', 'Mandla'];
+      }
+    }
+
+    return []; // Default case: return an empty array if no match is found
+  }
+
+  onBranchChange(branch: string, cluster: string) {
+    this.selectedCluster = cluster;
+  }
+
+  onStateChange(selectedValue: string) {
+    console.log(selectedValue);
+    this.onRegionChange(selectedValue);
   }
 
   toggleContent() {
     this.showContent = !this.showContent;
   }
 
-  generateStateRandomData() {
-    const minValues = [1900, 600, 700, 2000, 900, 1400];
-    const maxValues = [2000, 700, 800, 2100, 1000, 1500];
+  generateStateRandomData(region: string) {
+    let yAxisLabels: string[] = [];
+    let minValues: any[] = [];
+    let maxValues: any[] = [];
+    if (region === 'PCH') {
+      yAxisLabels = ['Chandigarh', 'Ludhiana', 'Karnal'];
+      minValues = [1.9, 0.6, 0.7];
+      maxValues = [2.0, 0.7, 0.8];
+    } else if (region === 'NCR') {
+      yAxisLabels = ['Delhi', 'Gurgaon'];
+      minValues = [1.9, 0.6];
+      maxValues = [2.0, 0.7];
+    } else if (region === 'Rajasthan') {
+      yAxisLabels = ['Jaipur', 'Udaipur', 'Ajmer', 'Kota'];
+      minValues = [1.9, 0.6, 0.7, 2.0];
+      maxValues = [2.0, 0.7, 0.8, 2.1];
+    } else if (region === 'Gujarat') {
+      yAxisLabels = ['Ahmedabad', 'Surat', 'Rajkot', 'Vadodara'];
+      minValues = [1.9, 0.6, 0.7, 2.0];
+      maxValues = [2.0, 0.7, 0.8, 2.1];
+    } else if (region === 'MP') {
+      yAxisLabels = ['Indore', 'Bhopal', 'Gwalior', 'Jabalpur'];
+      minValues = [1.9, 0.6, 0.7, 2.0];
+      maxValues = [2.0, 0.7, 0.8, 2.1];
+    } else if (region === 'Maharashtra') {
+      yAxisLabels = ['Mumbai', 'Pune', 'Nashik', 'Nagpur'];
+      minValues = [1.9, 0.6, 0.7, 2.0];
+      maxValues = [2.0, 0.7, 0.8, 2.1];
+    }
+
+    const newData = minValues.map((min, index) => {
+      const max = maxValues[index];
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    });
+    this.stateOption.yAxis.data = yAxisLabels;
+    this.stateOption.series[0].data = newData;
+    this.StateChart.setOption(this.stateOption);
+  }
+
+  generateClusterRandomData(region: string, cluster: string) {
+    let yAxisLabels: string[] = [];
+    let minValues: any[] = [];
+    let maxValues: any[] = [];
+    if (region === 'PCH') {
+      if (cluster === 'Chandigarh') {
+        yAxisLabels = ['Chandigarh', 'Ambala', 'Patiala'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Ludhiana') {
+        yAxisLabels = ['Ludhiana', 'Jalandhar', 'Moga'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Karnal') {
+        yAxisLabels = ['Karnal', 'Rohtak', 'Panipat'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      }
+    } else if (region === 'NCR') {
+      if (cluster === 'Delhi') {
+        yAxisLabels = ['Janakpuri', 'Laxmi Nagar', 'Sahibabad'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Gurgaon') {
+        yAxisLabels = ['Gurgoan', 'Faridabad', 'Meerut'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      }
+    } else if (region === 'Rajasthan') {
+      if (cluster === 'Jaipur') {
+        yAxisLabels = ['Jaipur', 'Sikar Road', 'Behror'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Ajmer') {
+        yAxisLabels = ['Ajmer', 'Kekri', 'Merta'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Udaipur') {
+        yAxisLabels = ['Rajsamand', 'Banswara', 'Udaipur'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Kota') {
+        yAxisLabels = [];
+      }
+    } else if (region === 'Gujarat') {
+      if (cluster === 'Ahmedabad') {
+        yAxisLabels = ['Ahmedabad', 'Gandhinagar', 'Sanand'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Surat') {
+        yAxisLabels = ['Surat', 'Kadodara', 'Rundh'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Rajkot') {
+        yAxisLabels = ['Rajkot', 'Jamnagar', 'Junagadh'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Vadodara') {
+        yAxisLabels = ['Vadodara', 'Anand', 'Dabhoi'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      }
+    } else if (region === 'Maharashtra') {
+      if (cluster === 'Mumbai') {
+        yAxisLabels = ['Navi Mumbai', 'Thane', 'Kalyan'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Nashik') {
+        yAxisLabels = ['Nashik', 'Malegaon', 'Sinnar'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Pune') {
+        yAxisLabels = ['Pune', 'Bhor', 'Shikrapur'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Nagpur') {
+        yAxisLabels = ['Nagpur', 'Amravati', 'Gondia'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      }
+    } else if (region === 'MP') {
+      if (cluster === 'Indore') {
+        yAxisLabels = ['Indore', 'Ujjain', 'Dewas'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Gwalior') {
+        yAxisLabels = ['Gwalior', 'Morena', 'Bhind'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Bhopal') {
+        yAxisLabels = ['Bhopal', 'Vidisha', 'Sehore'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      } else if (cluster === 'Jabalpur') {
+        yAxisLabels = ['Jabalpur', 'Sihora', 'Mandla'];
+        minValues = [1.9, 0.6, 0.7];
+        maxValues = [2.0, 0.7, 0.8];
+      }
+    }
+
+    const newClusterData = minValues.map((min, index) => {
+      const max = maxValues[index];
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    });
+
+    this.stateOption.yAxis.data = yAxisLabels;
+    this.stateOption.series[0].data = newClusterData;
+
+    this.StateChart.setOption(this.stateOption);
+    console.log(this.StateChart.setOption(this.stateOption));
+  }
+
+  generateAverageStateRandomData(region: string) {
+    // const minValues = [7, 5, 3, 11, 7, 4, 5];
+    // const maxValues = [11, 8, 6, 12, 10, 7, 9];
+    let yAxisLabels: string[] = [];
+    let minValues: any[] = [];
+    let maxValues: any[] = [];
+    if (region === 'PCH') {
+      yAxisLabels = ['Chandigarh', 'Ludhiana', 'Karnal'];
+      minValues = [7, 5, 3];
+      maxValues = [11, 8, 6];
+    } else if (region === 'NCR') {
+      yAxisLabels = ['Delhi', 'Gurgaon'];
+      minValues = [7, 5];
+      maxValues = [11, 8];
+    } else if (region === 'Rajasthan') {
+      yAxisLabels = ['Jaipur', 'Udaipur', 'Ajmer', 'Kota'];
+      minValues = [7, 5, 3, 11];
+      maxValues = [11, 8, 6, 12];
+    } else if (region === 'Gujarat') {
+      yAxisLabels = ['Ahmedabad', 'Surat', 'Rajkot', 'Vadodara'];
+      minValues = [7, 5, 3, 11];
+      maxValues = [11, 8, 6, 12];
+    } else if (region === 'MP') {
+      yAxisLabels = ['Indore', 'Bhopal', 'Gwalior', 'Jabalpur'];
+      minValues = [7, 5, 3, 11];
+      maxValues = [11, 8, 6, 12];
+    } else if (region === 'Maharashtra') {
+      yAxisLabels = ['Mumbai', 'Pune', 'Nashik', 'Nagpur'];
+      minValues = [7, 5, 3, 11];
+      maxValues = [11, 8, 6, 12];
+    }
+
+    const newData = minValues.map((min, index) => {
+      const max = maxValues[index];
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    });
+    this.averageStateOption.yAxis.data = yAxisLabels;
+    this.averageStateOption.series[0].data = newData;
+    this.AverageStateChart.setOption(this.averageStateOption);
+  }
+
+  generateAverageClusterRandomData(region: string, cluster: string) {
+    let yAxisLabels: string[] = [];
+    let minValues: any[] = [];
+    let maxValues: any[] = [];
+    if (region === 'PCH') {
+      if (cluster === 'Chandigarh') {
+        yAxisLabels = ['Chandigarh', 'Ambala', 'Patiala'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Ludhiana') {
+        yAxisLabels = ['Ludhiana', 'Jalandhar', 'Moga'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Karnal') {
+        yAxisLabels = ['Karnal', 'Rohtak', 'Panipat'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      }
+    } else if (region === 'NCR') {
+      if (cluster === 'Delhi') {
+        yAxisLabels = ['Janakpuri', 'Laxmi Nagar', 'Sahibabad'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Gurgaon') {
+        yAxisLabels = ['Gurgoan', 'Faridabad', 'Meerut'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      }
+    } else if (region === 'Rajasthan') {
+      if (cluster === 'Jaipur') {
+        yAxisLabels = ['Jaipur', 'Sikar Road', 'Behror'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Ajmer') {
+        yAxisLabels = ['Ajmer', 'Kekri', 'Merta'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Udaipur') {
+        yAxisLabels = ['Rajsamand', 'Banswara', 'Udaipur'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Kota') {
+        yAxisLabels = [];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      }
+    } else if (region === 'Gujarat') {
+      if (cluster === 'Ahmedabad') {
+        yAxisLabels = ['Ahmedabad', 'Gandhinagar', 'Sanand'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Surat') {
+        yAxisLabels = ['Surat', 'Kadodara', 'Rundh'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Rajkot') {
+        yAxisLabels = ['Rajkot', 'Jamnagar', 'Junagadh'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Vadodara') {
+        yAxisLabels = ['Vadodara', 'Anand', 'Dabhoi'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      }
+    } else if (region === 'Maharashtra') {
+      if (cluster === 'Mumbai') {
+        yAxisLabels = ['Navi Mumbai', 'Thane', 'Kalyan'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Nashik') {
+        yAxisLabels = ['Nashik', 'Malegaon', 'Sinnar'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Pune') {
+        yAxisLabels = ['Pune', 'Bhor', 'Shikrapur'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Nagpur') {
+        yAxisLabels = ['Nagpur', 'Amravati', 'Gondia'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      }
+    } else if (region === 'MP') {
+      if (cluster === 'Indore') {
+        yAxisLabels = ['Indore', 'Ujjain', 'Dewas'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Gwalior') {
+        yAxisLabels = ['Gwalior', 'Morena', 'Bhind'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Bhopal') {
+        yAxisLabels = ['Bhopal', 'Vidisha', 'Sehore'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      } else if (cluster === 'Jabalpur') {
+        yAxisLabels = ['Jabalpur', 'Sihora', 'Mandla'];
+        minValues = [7, 5, 3];
+        maxValues = [11, 8, 6];
+      }
+    }
+
+    const newData = minValues.map((min, index) => {
+      const max = maxValues[index];
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    });
+    this.averageStateOption.yAxis.data = yAxisLabels;
+    this.averageStateOption.series[0].data = newData;
+    this.AverageStateChart.setOption(this.averageStateOption);
+  }
+
+  generateStateFilterRandomData() {
+    const minValues = [1.9, 0.6, 0.7, 2.0, 0.9, 1.4];
+    const maxValues = [2.0, 0.7, 0.8, 2.1, 1.0, 1.5];
 
     const newData = minValues.map((min, index) => {
       const max = maxValues[index];
@@ -1411,8 +1732,7 @@ export class LoginComponent implements AfterViewInit {
     this.stateOption.series[0].data = newData;
     this.StateChart.setOption(this.stateOption);
   }
-
-  generateAverageStateRandomData() {
+  generateAverageStateFilterRandomData() {
     const minValues = [7, 5, 3, 11, 7, 4, 5];
     const maxValues = [11, 8, 6, 12, 10, 7, 9];
 
@@ -1423,6 +1743,7 @@ export class LoginComponent implements AfterViewInit {
     this.averageStateOption.series[0].data = newData;
     this.AverageStateChart.setOption(this.averageStateOption);
   }
+
   generateSchemeRandomData() {
     const newData = [
       {
@@ -1493,34 +1814,72 @@ export class LoginComponent implements AfterViewInit {
   }
 
   ontrendStateChange(selectedValue: string) {
-    console.log(selectedValue);
-    this.TrendgenerateStateRandomData(selectedValue);
-    this.TrendgenerateAverageStateRandomData(selectedValue);
-    this.TrendgenerateSchemeRandomData(selectedValue);
-    this.TrendgenerateProductRandomData(selectedValue);
-    this.TrendgenerateSourceRandomData(selectedValue);
+    this.selectedState = selectedValue;
+    this.clusters = this.getClusters(selectedValue);
+    this.selectedCluster = this.clusters[0] || '';
+    this.branches = [];
+    this.TrendgenerateStateRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
+    this.TrendgenerateAverageStateRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
+    this.TrendgenerateSchemeRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
+    this.TrendgenerateProductRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
+    this.TrendgenerateSourceRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
   }
 
   onTrendFilterChange(selectedValue: string) {
-    this.TrendgenerateStateRandomData(selectedValue);
-    this.TrendgenerateAverageStateRandomData(selectedValue);
-    this.TrendgenerateSchemeRandomData(selectedValue);
-    this.TrendgenerateProductRandomData(selectedValue);
-    this.TrendgenerateSourceRandomData(selectedValue);
+    this.selectedTrendFilter = selectedValue;
+    this.TrendgenerateStateRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
+    this.TrendgenerateAverageStateRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
+    this.TrendgenerateSchemeRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
+    this.TrendgenerateProductRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
+    this.TrendgenerateSourceRandomData(
+      this.selectedState,
+      this.selectedTrendFilter
+    );
   }
 
-  TrendgenerateStateRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+  TrendgenerateStateRandomData(
+    selectedState: string,
+    selectedTrendFilter: string
+  ) {
+    if (selectedTrendFilter === 'Three month') {
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500, 2600];
-      const StatemaxValues = [1000, 2000, 3500, 3000];
+      const StateminValues = [0.55, 1.0, 2.5];
+      const StatemaxValues = [1.0, 2.0, 3.5];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendStateOption.series.forEach((series: any, index: any) => {
+        series.data = StateminValues.map((min, i) => {
+          const max = StatemaxValues[i];
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        });
       });
-      this.trendStateOption.series[0].data = newData;
       this.trendStateChart.setOption(this.trendStateOption);
     } else {
       const newAxisdata = [
@@ -1531,32 +1890,38 @@ export class LoginComponent implements AfterViewInit {
         'Aug',
         'Sep',
         'Oct',
+        'Nov',
       ];
       this.trendStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500, 3000, 3500, 4000];
-      const StatemaxValues = [1000, 2000, 3500, 4000, 4000, 4500];
+      const StateminValues = [0.55, 1.0, 2.0, 2.5, 3.1, 3.5, 3.7, 3.9];
+      const StatemaxValues = [1.0, 1.5, 3.5, 3.0, 3.3, 3.7, 3.9, 4.0];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendStateOption.series.forEach((series: any, index: any) => {
+        series.data = StateminValues.map((min, i) => {
+          const max = StatemaxValues[i];
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        });
       });
-      this.trendStateOption.series[0].data = newData;
       this.trendStateChart.setOption(this.trendStateOption);
     }
   }
 
-  TrendgenerateAverageStateRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep' , 'Oct'];
+  TrendgenerateAverageStateRandomData(
+    selectedState: string,
+    selectedTrendFilter: string
+  ) {
+    if (selectedTrendFilter === 'Three month') {
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendAverageStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [10.7, 12.5, 14, 15];
-      const StatemaxValues = [11, 13, 15, 16];
+      const StateminValues = [12.5, 14, 15];
+      const StatemaxValues = [13, 15, 16];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendAverageStateOption.series.forEach((series: any, index: any) => {
+        series.data = StateminValues.map((min, i) => {
+          const max = StatemaxValues[i];
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        });
       });
-      this.trendAverageStateOption.series[0].data = newData;
       this.trendAverageStateChart.setOption(this.trendAverageStateOption);
     } else {
       const newAxisdata = [
@@ -1567,127 +1932,121 @@ export class LoginComponent implements AfterViewInit {
         'Aug',
         'Sep',
         'Oct',
+        'Nov',
       ];
       this.trendAverageStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [10.7, 11.5, 12.2, 13.4, 14, 15];
-      const StatemaxValues = [11, 12, 13, 14, 15, 16];
+      const StateminValues = [10.7, 11.5, 12.2, 13.4, 14, 15, 15.5, 17];
+      const StatemaxValues = [11, 12, 13, 14, 15, 16, 16.7, 17, 4];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendAverageStateOption.series.forEach((series: any, index: any) => {
+        series.data = StateminValues.map((min, i) => {
+          const max = StatemaxValues[i];
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        });
       });
-      this.trendAverageStateOption.series[0].data = newData;
       this.trendAverageStateChart.setOption(this.trendAverageStateOption);
     }
   }
 
-  TrendgenerateSchemeRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+  TrendgenerateSchemeRandomData(
+    selectedState: string,
+    selectedTrendFilter: string
+  ) {
+    if (selectedTrendFilter === 'Three month') {
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendSchemeloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500, 3000];
-      const StatemaxValues = [1000, 2000, 3500, 4000];
+      const StateminValues = [0.55, 1.0, 2.5];
+      const StatemaxValues = [1.0, 2.0, 3.5];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendSchemeloginsOption.series.forEach((series: any, index: any) => {
+        series.data = StateminValues.map((min, i) => {
+          const max = StatemaxValues[i];
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        });
       });
-      this.trendSchemeloginsOption.series[0].data = newData;
       this.trendSchemeLoginsChart.setOption(this.trendSchemeloginsOption);
     } else {
-      const newAxisdata = [
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-      ];
+      const newAxisdata = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'];
       this.trendSchemeloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500, 3000, 3500, 4000];
-      const StatemaxValues = [1000, 2000, 3500, 4000, 4000, 4500];
+      const StateminValues = [0.55, 1.0, 2.0, 2.5, 3.1, 3.5, 3.7, 3.9];
+      const StatemaxValues = [1.0, 1.5, 3.5, 3.0, 3.3, 3.7, 3.9, 4.0];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendSchemeloginsOption.series.forEach((series: any, index: any) => {
+        series.data = StateminValues.map((min, i) => {
+          const max = StatemaxValues[i];
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        });
       });
-      this.trendSchemeloginsOption.series[0].data = newData;
       this.trendSchemeLoginsChart.setOption(this.trendSchemeloginsOption);
     }
   }
 
-  TrendgenerateProductRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+  TrendgenerateProductRandomData(
+    selectedState: string,
+    selectedTrendFilter: string
+  ) {
+    if (selectedTrendFilter === 'Three month') {
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendProductloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500, 3000];
-      const StatemaxValues = [1000, 2000, 3500, 4000];
+      const StateminValues = [0.55, 1.0, 2.5];
+      const StatemaxValues = [1.0, 2.0, 3.5];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendProductloginsOption.series[0].data = newData;
+      this.trendProductloginsOption.series.forEach(
+        (series: any, index: any) => {
+          series.data = StateminValues.map((min, i) => {
+            const max = StatemaxValues[i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        }
+      );
       this.trendProductLoginsChart.setOption(this.trendProductloginsOption);
     } else {
-      const newAxisdata = [
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-      ];
+      const newAxisdata = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'];
       this.trendProductloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [550, 1000, 2500, 3000, 3500, 4000];
-      const StatemaxValues = [1000, 2000, 3500, 4000, 4000, 4500];
+      const StateminValues = [0.55, 1.0, 2.0, 2.5, 3.1, 3.5, 3.7, 3.9];
+      const StatemaxValues = [1.0, 1.5, 3.5, 3.0, 3.3, 3.7, 3.9, 4.0];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendProductloginsOption.series[0].data = newData;
+      this.trendProductloginsOption.series.forEach(
+        (series: any, index: any) => {
+          series.data = StateminValues.map((min, i) => {
+            const max = StatemaxValues[i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        }
+      );
       this.trendProductLoginsChart.setOption(this.trendProductloginsOption);
     }
   }
-  TrendgenerateSourceRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+  TrendgenerateSourceRandomData(
+    selectedState: string,
+    selectedTrendFilter: string
+  ) {
+    if (selectedTrendFilter === 'Three month') {
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendSourceOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [40.6, 45, 49, 50];
-      const StatemaxValues = [46, 47, 50, 60];
+      const StateminValues = [45, 49, 50];
+      const StatemaxValues = [47, 50, 60];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendSourceOption.series.forEach((series: any, index: any) => {
+        series.data = StateminValues.map((min, i) => {
+          const max = StatemaxValues[i];
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        });
       });
-      this.trendSourceOption.series[0].data = newData;
       this.trendSourceChart.setOption(this.trendSourceOption);
     } else {
-      const newAxisdata = [
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-      ];
+      const newAxisdata = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'];
       this.trendSourceOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [40.5, 43, 45.5, 46, 48, 50];
-      const StatemaxValues = [43, 45, 47, 47.5, 50, 60];
+      const StateminValues = [40.5, 43, 45.5, 46, 48, 50, 55, 56];
+      const StatemaxValues = [43, 45, 47, 47.5, 50, 60, 67, 75];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendSourceOption.series.forEach((series: any, index: any) => {
+        series.data = StateminValues.map((min, i) => {
+          const max = StatemaxValues[i];
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        });
       });
-      this.trendSourceOption.series[0].data = newData;
       this.trendSourceChart.setOption(this.trendSourceOption);
-   
     }
   }
 }
-
-

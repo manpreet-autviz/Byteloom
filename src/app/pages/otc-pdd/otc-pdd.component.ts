@@ -10,8 +10,7 @@ declare var $: any;
 export class OtcPddComponent {
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -25,6 +24,8 @@ export class OtcPddComponent {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
   selectedState: string = 'Pan India';

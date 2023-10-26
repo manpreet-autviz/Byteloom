@@ -9,8 +9,7 @@ import { Router } from '@angular/router';
 export class TatAnalysisComponent {
   states: string[] = [
     'Pan India',
-    'Punjab',
-    'Haryana',
+    'PCH',
     'NCR',
     'Rajasthan',
     'Gujarat',
@@ -24,6 +23,8 @@ export class TatAnalysisComponent {
     'July',
     'August',
     'September',
+    'October',
+    'November',
     // 'Select custom'
   ];
 
@@ -99,13 +100,13 @@ export class TatAnalysisComponent {
     this.router.navigate(['/tat-table', 'Login to PD TAT ']);
   }
   navigateToLoginToFinancial(){
-    this.router.navigate(['/tat-table', 'Login to financial approval TAT  ']);
+    this.router.navigate(['/tat-table', 'Login to financial approvals TAT  ']);
   }
   navigateToQuerycompletionTAT(){
     this.router.navigate(['/tat-table', 'Query completion TAT   ']);
   }
   navigateToFinalapprovalTAT(){
-    this.router.navigate(['/tat-table', 'Final approval TAT  ']);
+    this.router.navigate(['/tat-table', 'Final approvals TAT  ']);
   }
 
   navigateToDisbursalTAT (){

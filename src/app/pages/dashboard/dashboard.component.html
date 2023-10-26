@@ -2,17 +2,17 @@
   <div class="page-content">
     <div class="container-fluid mb-4">
       <div class="breadcrumb">
-        <div class="card card-animate w-100">
+        <!-- <div class="card card-animate w-100">
           <div
             class="card-body breadcraumb-align align-items-center justify-content-between"
           >
             <div>
-              <span class="f-7 fs-5"> Dashboard </span>
+              <span class="f-7 fs-5"> Home </span>
             </div>
-            <div class="dropdown">
+            <div class="dropdown d-flex">
               <select
                 id="dropdown"
-                class="form-select filter-dropdown"
+                class="form-select me-2"
                 [(ngModel)]="selectedState"
                 (ngModelChange)="onStateChange($event)"
               >
@@ -20,20 +20,62 @@
                   {{ state }}
                 </option>
               </select>
+
+              <select
+                *ngIf="clusters.length > 0"
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedCluster"
+                (ngModelChange)="onClusterChange($event)"
+              >
+                <option *ngFor="let cluster of clusters" [value]="cluster">
+                  {{ cluster }}
+                </option>
+              </select>
+              <select
+                *ngIf="branches.length > 0"
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedBranch"
+                (ngModelChange)="onBranchChange($event,selectedCluster)"
+              >
+                <option *ngFor="let branch of branches" [value]="branch">
+                  {{ branch }}
+                </option>
+              </select>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
+
       <div class="card card-animate">
         <div class="card-body">
-          <div class="row justify-content-end mb-2">
-            <div class="col-md-2">
-              <select
-                id="dropdown"
-                class="form-select"
-                [(ngModel)]="selectedFilter"
-                (ngModelChange)="onFilterChange($event)"
-              >
+          <div class="d-flex justify-content-between align-items-center w-100 mb-3">
+            <div>
+              <span class="f-7 fs-5"> Home </span>
+            </div>
+            <div class="dropdown d-flex">
+              <select id="dropdown" class="cursor-pointer form-select me-2" [(ngModel)]="selectedState"
+                (ngModelChange)="onStateChange($event)">
+                <option *ngFor="let state of states" [value]="state">
+                  {{ state }}
+                </option>
+              </select>
+
+              <select *ngIf="clusters.length > 0" id="dropdown" class="cursor-pointer form-select me-2" [(ngModel)]="selectedCluster"
+                (ngModelChange)="onClusterChange($event)">
+                <option *ngFor="let cluster of clusters" [value]="cluster">
+                  {{ cluster }}
+                </option>
+              </select>
+              <select *ngIf="branches.length > 0" id="dropdown" class="cursor-pointer form-select me-2" [(ngModel)]="selectedBranch"
+                (ngModelChange)="onBranchChange($event,selectedCluster)">
+                <option *ngFor="let branch of branches" [value]="branch">
+                  {{ branch }}
+                </option>
+              </select>
+              <select id="dropdown" class="cursor-pointerout form-select" [(ngModel)]="selectedFilter"
+                (ngModelChange)="onFilterChange($event)">
                 <option *ngFor="let filter of filters" [value]="filter">
                   {{ filter }}
                 </option>
@@ -43,9 +85,7 @@
           <div class="row gy-3 four-tile-card">
             <div class="col-xl col-md-4">
               <div class="card">
-                <div
-                  class="card-body text-white bg-dblue rounded five-card-min-h"
-                >
+                <div class="card-body text-white bg-dblue rounded five-card-min-h cursor-arrow">
                   <div class="d-flex">
                     <p class="f-7 mb-0">Total Logins</p>
                   </div>
@@ -56,12 +96,10 @@
                       </span>
                     </div>
                     <div class="text-part">
-                      <span class="f-6 small-text">Total Amount</span><br />
-                      <span class="f-7 fs-6 py-2"
-                        >{{ loginTotalAmount }} Cr</span
-                      ><br />
-                      <span class="f-4 small-text">Total Files</span><br />
-                      <span class="f-7 fs-4">{{ loginTotalFiles }}</span>
+                      <span class="f-6 small-text"> Amount</span><br />
+                      <span class="f-7 fs-6 py-2">{{ loginTotalAmount }} Cr</span><br />
+                      <span class="f-4 small-text">No of Files</span><br />
+                      <span class="f-7">{{ loginTotalFiles }}</span>
                     </div>
                   </div>
                 </div>
@@ -70,11 +108,9 @@
 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card">
-                <div
-                  class="card-body text-white bg-orange rounded five-card-min-h"
-                >
+                <div class="card-body text-white bg-orange rounded five-card-min-h cursor-arrow">
                   <div class="d-flex">
-                    <p class="f-7 mb-0">Financial Approval</p>
+                    <p class="f-7 mb-0">Financial Approvals</p>
                   </div>
                   <div class="d-flex align-items-end justify-content-between">
                     <div class="">
@@ -83,13 +119,12 @@
                       </span>
                     </div>
                     <div class="text-part">
-                      <span class="f-6 small-text">Total Files</span><br />
+                      <span class="f-6 small-text">No of Files</span><br />
                       <span class="f-7 fs-6 py-2">{{
                         financialTotalFiles
-                      }}</span
-                      ><br />
-                      <span class="f-4 small-text">Total Amount</span><br />
-                      <span class="f-7 fs-4">{{ financialTotalAmount }}Cr</span>
+                        }}</span><br />
+                      <span class="f-4 small-text">Amount</span><br />
+                      <span class="f-7">{{ financialTotalAmount }} Cr</span>
                     </div>
                   </div>
                 </div>
@@ -98,9 +133,7 @@
 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card">
-                <div
-                  class="card-body text-white bg-yellow rounded five-card-min-h"
-                >
+                <div class="card-body text-white bg-yellow rounded five-card-min-h cursor-arrow">
                   <div class="d-flex">
                     <p class="f-7 mb-0">Final Approvals</p>
                   </div>
@@ -111,11 +144,10 @@
                       </span>
                     </div>
                     <div class="text-part">
-                      <span class="f-6 small-text">Total Files</span><br />
-                      <span class="f-7 fs-6 py-2">{{ finalTotalFiles }}</span
-                      ><br />
-                      <span class="f-4 small-text">Total Amount</span><br />
-                      <span class="f-7 fs-4">{{ finalTotalAmount }}Cr</span>
+                      <span class="f-6 small-text">No of Files</span><br />
+                      <span class="f-7 fs-6 py-2">{{ finalTotalFiles }}</span><br />
+                      <span class="f-4 small-text"> Amount</span><br />
+                      <span class="f-7">{{ finalTotalAmount }} Cr</span>
                     </div>
                   </div>
                 </div>
@@ -123,10 +155,8 @@
             </div>
 
             <div class="col-xl col-lg-4 col-md-4">
-              <div class="card">
-                <div
-                  class="card-body text-white bg-purple rounded five-card-min-h"
-                >
+              <div class="card"> 
+                <div class="card-body text-white bg-purple rounded five-card-min-h cursor-arrow">
                   <div class="d-flex">
                     <p class="f-7 mb-0">Disbursals</p>
                   </div>
@@ -137,13 +167,12 @@
                       </span>
                     </div>
                     <div class="text-part">
-                      <span class="f-6 small-text">Total Files</span><br />
+                      <span class="f-6 small-text">No of Files</span><br />
                       <span class="f-7 fs-6 py-2">{{
                         disbursalTotalFiles
-                      }}</span
-                      ><br />
-                      <span class="f-4 small-text">Total Amount</span><br />
-                      <span class="f-7 fs-4">{{ disbursalTotalAmount }}Cr</span>
+                        }}</span><br />
+                      <span class="f-4 small-text">Amount</span><br />
+                      <span class="f-7">{{ disbursalTotalAmount }} Cr</span>
                     </div>
                   </div>
                 </div>
@@ -152,27 +181,17 @@
 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card">
-                <div
-                  class="d-flex card-body text-white bg-light-blue rounded five-card-min-h"
-                >
+                <div class="d-flex gap-2 card-body text-white bg-light-blue rounded five-card-min-h cursor-arrow">
                   <div class="col-6 text-center">
                     <p class="f-7 text-truncate mb-0">IRR Value</p>
                     <div class="align-items-center chart-pie">
-                      <div
-                        class="tile-chart"
-                        id="IrrChartValue"
-                        style="width: 90px; height: 90px"
-                      ></div>
+                      <div class="tile-chart" id="IrrChartValue" style="width: 90px; height: 90px"></div>
                     </div>
                   </div>
                   <div class="col-6 text-center">
                     <p class="f-7 text-truncate mb-0">PF Value</p>
                     <div class="align-items-center chart-pie">
-                      <div
-                        class="tile-chart"
-                        id="PfChartValue"
-                        style="width: 90px; height: 90px"
-                      ></div>
+                      <div class="tile-chart" id="PfChartValue" style="width: 90px; height: 90px"></div>
                     </div>
                   </div>
                 </div>
@@ -181,39 +200,235 @@
           </div>
         </div>
       </div>
-
-      <div class="row mt-4">
-        <div class="col-md-4">
+      <div class="col-md-12 mt-4">
+        <div class="card box-s h-100">
+          <div class="card-body">
+            <div classs="business-table">
+              <div class="row">
+                <div class="text-center">
+                  <span class="f-6 title">Work in Queue</span>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-xl col-md-4">
+                  <div class="tat-box cursor-arrow">
+                    <div class="color-box bg-lightorange">
+                      <img src="../../../assets/icons/pd-icon.svg" />
+                    </div>
+                    <h4 class="text-center f-7">PD</h4>
+                    <div class="number-list">
+                      <ul class="p-0">
+                        <li>
+                          <a (click)="
+                              workInprogressTable('/PD Pending / Login')
+                            ">
+                            <div>
+                              <h6>{{PDFile}}</h6>
+                              <p>Files</p>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a (click)="
+                              workInprogressTable('/PD Pending / Login')
+                            ">
+                            <div>
+                              <h6>{{PDAmount}} Cr</h6>
+                              <p>Amount</p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl col-md-4">
+                  <div class="tat-box cursor-arrow">
+                    <div class="color-box bg-lightorange">
+                      <img src="../../../assets/icons/w-financial.svg" />
+                    </div>
+                    <h4 class="text-center f-7">Financial Approvals</h4>
+                    <div class="number-list">
+                      <ul class="p-0">
+                        <li>
+                          <a (click)="
+                              workInprogressTable('/PD Pending / Login')
+                            ">
+                            <div>
+                              <h6>{{financialFile}}</h6>
+                              <p>Files</p>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a (click)="
+                              workInprogressTable('/PD Pending / Login')
+                            ">
+                            <div>
+                              <h6>{{financialAmount}}</h6>
+                              <p>Amount Cr</p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl col-md-4">
+                  <div class="tat-box cursor-arrow">
+                    <div class="color-box bg-lightorange">
+                      <img src="../../../assets/icons/w-financial.svg" />
+                    </div>
+                    <h4 class="text-center f-7">Final Approvals</h4>
+                    <div class="number-list">
+                      <ul class="p-0">
+                        <li>
+                          <a (click)="
+                              workInprogressTable('/PD Pending / Login')
+                            ">
+                            <div>
+                              <h6>{{finalFile}}</h6>
+                              <p>Files</p>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a (click)="
+                              workInprogressTable('/PD Pending / Login')
+                            ">
+                            <div>
+                              <h6>{{finalAmount}}</h6>
+                              <p>Amount Cr</p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl col-md-4">
+                  <div class="tat-box cursor-arrow">
+                    <div class="color-box bg-lightgreen">
+                      <img src="../../../assets/icons/w-technical.svg" />
+                    </div>
+                    <h4 class="text-center f-7">Technical</h4>
+                    <div class="number-list">
+                      <ul class="p-0">
+                        <li>
+                          <a (click)="
+                              workInprogressTable('/PD Pending / Login')
+                            ">
+                            <div>
+                              <h6>{{technicalFile}}</h6>
+                              <p>Files</p>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a (click)="
+                              workInprogressTable('/PD Pending / Login')
+                            ">
+                            <div>
+                              <h6>{{technicalAmount}}</h6>
+                              <p>Amount Cr</p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl col-md-4">
+                  <div class="tat-box cursor-arrow">
+                    <div class="color-box bg-aceblue">
+                      <img src="../../../assets/icons/auction.svg" />
+                    </div>
+                    <h4 class="text-center f-7">Legal</h4>
+                    <div class="number-list">
+                      <ul class="p-0">
+                        <li>
+                          <a (click)="
+                              workInprogressTable('/PD Pending / Login')
+                            ">
+                            <div>
+                              <h6>{{legalFile}}</h6>
+                              <p>Files</p>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a (click)="
+                              workInprogressTable('/PD Pending / Login')
+                            ">
+                            <div>
+                              <h6>{{legalAmount}}</h6>
+                              <p>Amount Cr</p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl col-md-4">
+                  <div class="tat-box cursor-arrow">
+                    <div class="color-box bg-lightgreen">
+                      <img src="../../../assets/icons/w-disbursal.svg" />
+                    </div>
+                    <h4 class="text-center f-7">Disbursal</h4>
+                    <div class="number-list">
+                      <ul class="p-0">
+                        <li>
+                          <a (click)="
+                              workInprogressTable('/PD Pending / Login')
+                            ">
+                            <div>
+                              <h6>{{disbursalFile}}</h6>
+                              <p>Files</p>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a (click)="
+                              workInprogressTable('/PD Pending / Login')
+                            ">
+                            <div>
+                              <h6>{{disbursalAmount}}</h6>
+                              <p>Amount Cr</p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3 gy-3">
+        <div class="col-xl-3 col-md-6">
           <div class="card box-s h-100">
             <div class="card-body text-center position-relative">
-              <span class="f-6 title"> Disbursal MTD </span>
-              <div
-                class="state-chart"
-                id="Disbursal-Achievement-Chart"
-                style="width: 100%; height: 360px"
-              ></div>
+              <span class="f-6 title"> Disbursal meter</span>
+              <div class="state-chart" id="Disbursal-Achievement-Chart" style="width: 100%; height: 250px"></div>
               <div class="graphn-bottom-text">
                 <p class="mb-0"><b>Target - 100 Cr</b></p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-xl-5 col-md-6">
           <div class="card box-s">
             <div class="card-body text-center">
               <span class="f-6 title"> Disbursal achievement </span>
-              <div
-                class="state-chart"
-                id="trendDisbursalAchievement"
-                style="width: 100%; height: 400px"
-              ></div>
+              <p class="fs-8 m-0">(Previous month)</p>
+              <div class="state-chart" id="trendDisbursalAchievement" style="width: 100%; height: 250px"></div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="row mt-4">
-        <div class="col-md-5">
+        <div class="col-xl-4 col-md-12">
           <div class="card box-s h-100">
             <div class="card-body">
               <div classs="business-table">
@@ -221,15 +436,124 @@
                   <div class="text-center position-relative">
                     <span class="f-6 title">Business Status</span>
                   </div>
-                 <div class="d-flex justify-content-end calendar-icon">
-                    <input type="date" id="birthday" name="birthday">
+                  <div class="d-flex justify-content-end calendar-icon">
+                    <input type="date" id="birthday" name="birthday" />
                   </div>
-                  
                 </div>
                 <div class="table-responsive text-center mt-4">
                   <div class="bg-lightgray c-head">
-                      <i class="fas fa-angle-left"></i>&nbsp; 18-10-2023
-                      &nbsp; <i class="fas fa-angle-right"></i>
+                    <i class="fas fa-angle-left" (click)="onPreviousDayClick()"
+                      [ngClass]="{ disabled: isPreviousDisabled }"></i>&nbsp;
+                    {{ currentDate | date : "dd-MM-yyyy" }}
+                    &nbsp;
+                    <i class="fas fa-angle-right" (click)="onNextDayClick()"
+                      [ngClass]="{ disabled: isNextDisabled }"></i>
+                  </div>
+                  <table class="table no-wrap">
+                    <thead>
+                      <tr class="bg-gray mid-head">
+                        <th class="border-top-0"></th>
+                        <th class="border-top-0">Number of files</th>
+                        <th class="border-top-0">Amount (in Rs. Cr)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center table-data">
+                            <div>
+                              <h6 class="mb-0 bg-lightred">Login</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>{{ loginData }}</td>
+                        <td class="">{{ loginDataAmount }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center table-data">
+                            <div>
+                              <h6 class="mb-0 bg-lightpurple">PD</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>{{ pdData }}</td>
+                        <td>{{ pdDataAmount }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center table-data">
+                            <div>
+                              <h6 class="mb-0 bg-lightyellow">
+                                Financial Approvals
+                              </h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>{{ financialApprovalsData }}</td>
+                        <td>{{ financialApprovalsDataAmount }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center table-data">
+                            <div>
+                              <h6 class="mb-0 bg-lightyellow">
+                                Final Approvals
+                              </h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>{{ finalApprovalsData }}</td>
+                        <td>{{ finalApprovalsDataAmount }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center table-data">
+                            <div>
+                              <h6 class="mb-0 bg-lightgreen">Disbursal</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>{{ disbursalData }}</td>
+                        <td>{{ disbursalDataAmount }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <!-- <div class="col-md-5">
+          <div class="card box-s h-100">
+            <div class="card-body">
+              <div classs="business-table">
+                <div class="row">
+                  <div class="text-center position-relative">
+                    <span class="f-6 title">Business Status</span>
+                  </div>
+                  <div class="d-flex justify-content-end calendar-icon">
+                    <input type="date" id="birthday" name="birthday" />
+                  </div>
+                </div>
+                <div class="table-responsive text-center mt-4">
+                  <div class="bg-lightgray c-head">
+                    <i
+                      class="fas fa-angle-left"
+                      (click)="onPreviousDayClick()"
+                      [ngClass]="{ disabled: isPreviousDisabled }"
+                    ></i
+                    >&nbsp;
+                    {{ currentDate | date : "dd-MM-yyyy" }}
+                    &nbsp;
+                    <i
+                      class="fas fa-angle-right"
+                      (click)="onNextDayClick()"
+                      [ngClass]="{ disabled: isNextDisabled }"
+                    ></i>
                   </div>
                   <table class="table no-wrap">
                     <thead>
@@ -248,8 +572,8 @@
                             </div>
                           </div>
                         </td>
-                        <td>100</td>
-                        <td class="">20</td>
+                        <td>{{ loginData }}</td>
+                        <td class="">{{ loginDataAmount }}</td>
                       </tr>
                       <tr>
                         <td>
@@ -259,8 +583,8 @@
                             </div>
                           </div>
                         </td>
-                        <td>80</td>
-                        <td>18</td>
+                        <td>{{ pdData }}</td>
+                        <td>{{ pdDataAmount }}</td>
                       </tr>
                       <tr>
                         <td>
@@ -272,8 +596,8 @@
                             </div>
                           </div>
                         </td>
-                        <td>30</td>
-                        <td>5</td>
+                        <td>{{ financialApprovalsData }}</td>
+                        <td>{{ financialApprovalsDataAmount }}</td>
                       </tr>
                       <tr>
                         <td>
@@ -285,8 +609,8 @@
                             </div>
                           </div>
                         </td>
-                        <td>25</td>
-                        <td>4</td>
+                        <td>{{ finalApprovalsData }}</td>
+                        <td>{{ finalApprovalsDataAmount }}</td>
                       </tr>
                       <tr>
                         <td>
@@ -296,8 +620,8 @@
                             </div>
                           </div>
                         </td>
-                        <td>20</td>
-                        <td>4</td>
+                        <td>{{ disbursalData }}</td>
+                        <td>{{ disbursalDataAmount }}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -305,178 +629,14 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-7">
-          <div class="card box-s h-100">
-            <div class="card-body">
-              <div classs="business-table">
-                <div class="row">
-                  <div class="text-center">
-                    <span class="f-6 title">Work in Queue</span>
-                  </div>
-                </div>
-                <div class="row mt-3">
-                  <div class="col-md-4">
-                    <div class="tat-box">
-                      <div class="color-box bg-lightorange">
-                        <img src="../../../assets/icons/w-pd.svg" />
-                      </div>
-                      <h4 class="text-center f-7">PD</h4>
-                      <div class="number-list">
-                        <ul class="p-0">
-                          <li>
-                            <div>
-                              <h6>120</h6>
-                              <p>Files</p>
-                            </div>
-                          </li>
-                          <li>
-                            <div>
-                              <h6>20 Cr</h6>
-                              <p>Amount</p>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="tat-box">
-                      <div class="color-box bg-lightorange">
-                        <img src="../../../assets/icons/w-financial.svg" />
-                      </div>
-                      <h4 class="text-center f-7">Financial Approval</h4>
-                      <div class="number-list">
-                        <ul class="p-0">
-                          <li>
-                            <div>
-                              <h6>50</h6>
-                              <p>Files</p>
-                            </div>
-                          </li>
-                          <li>
-                            <div>
-                              <h6>7.5 Cr</h6>
-                              <p>Amount</p>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="tat-box">
-                      <div class="color-box bg-lightorange">
-                        <img src="../../../assets/icons/w-financial.svg" />
-                      </div>
-                      <h4 class="text-center f-7">Final Approval</h4>
-                      <div class="number-list">
-                        <ul class="p-0">
-                          <li>
-                            <div>
-                              <h6>40</h6>
-                              <p>Files</p>
-                            </div>
-                          </li>
-                          <li>
-                            <div>
-                              <h6>6.5 Cr</h6>
-                              <p>Amount</p>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mt-3">
-                    <div class="tat-box">
-                      <div class="color-box bg-lightgreen">
-                        <img src="../../../assets/icons/w-technical.svg" />
-                      </div>
-                      <h4 class="text-center f-7">Technical</h4>
-                      <div class="number-list">
-                        <ul class="p-0">
-                          <li>
-                            <div>
-                              <h6>60</h6>
-                              <p>Files</p>
-                            </div>
-                          </li>
-                          <li>
-                            <div>
-                              <h6>8 Cr</h6>
-                              <p>Amount</p>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mt-3">
-                    <div class="tat-box">
-                      <div class="color-box bg-aceblue">
-                        <img src="../../../assets/icons/auction.svg" />
-                      </div>
-                      <h4 class="text-center f-7">Legal</h4>
-                      <div class="number-list">
-                        <ul class="p-0">
-                          <li>
-                            <div>
-                              <h6>65</h6>
-                              <p>Files</p>
-                            </div>
-                          </li>
-                          <li>
-                            <div>
-                              <h6>8.5 Cr</h6>
-                              <p>Amount</p>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mt-3">
-                    <div class="tat-box">
-                      <div class="color-box bg-lightgreen">
-                        <img src="../../../assets/icons/w-disbursal.svg" />
-                      </div>
-                      <h4 class="text-center f-7">Disbursal</h4>
-                      <div class="number-list">
-                        <ul class="p-0">
-                          <li>
-                            <div>
-                              <h6>45</h6>
-                              <p>Files</p>
-                            </div>
-                          </li>
-                          <li>
-                            <div>
-                              <h6>5.5 Cr</h6>
-                              <p>Amount</p>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div> -->
+
       </div>
     </div>
   </div>
 
   <!-- Modal -->
-  <div
-    class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog custom-width">
       <div class="modal-content">
         <div class="modal-header">
@@ -487,70 +647,37 @@
               </h5>
             </div>
             <div class="close-icon">
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
           </div>
         </div>
         <div class="popup-tabs">
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
-              <button
-                class="nav-link active text-uppercase"
-                id="pills-financial-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-financial"
-                type="button"
-                role="tab"
-                aria-controls="pills-home"
-                aria-selected="true"
-              >
+              <button class="nav-link active text-uppercase" id="pills-financial-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-financial" type="button" role="tab" aria-controls="pills-home"
+                aria-selected="true">
                 Login
               </button>
             </li>
             <li class="nav-item" role="presentation">
-              <button
-                class="nav-link text-uppercase right-tab-border"
-                id="pills-status-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-status"
-                type="button"
-                role="tab"
-                aria-controls="pills-status"
-                aria-selected="false"
-              >
+              <button class="nav-link text-uppercase right-tab-border" id="pills-status-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-status" type="button" role="tab" aria-controls="pills-status"
+                aria-selected="false">
                 PD
               </button>
             </li>
             <li class="nav-item" role="presentation">
-              <button
-                class="nav-link text-uppercase right-tab-border"
-                id="pills-approval-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-status"
-                type="button"
-                role="tab"
-                aria-controls="pills-status"
-                aria-selected="false"
-              >
+              <button class="nav-link text-uppercase right-tab-border" id="pills-approval-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-status" type="button" role="tab" aria-controls="pills-status"
+                aria-selected="false">
                 Financial Approvals
               </button>
             </li>
             <li class="nav-item" role="presentation">
-              <button
-                class="nav-link text-uppercase right-tab-border"
-                id="pills-disbursal-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-status"
-                type="button"
-                role="tab"
-                aria-controls="pills-status"
-                aria-selected="false"
-              >
+              <button class="nav-link text-uppercase right-tab-border" id="pills-disbursal-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-status" type="button" role="tab" aria-controls="pills-status"
+                aria-selected="false">
                 Disbursal
               </button>
             </li>
@@ -558,41 +685,24 @@
         </div>
 
         <div class="tab-content" id="pills-tabContent">
-          <div
-            class="tab-pane fade show active"
-            id="pills-financial"
-            role="tabpanel"
-            aria-labelledby="pills-financial-tab"
-          >
+          <div class="tab-pane fade show active" id="pills-financial" role="tabpanel"
+            aria-labelledby="pills-financial-tab">
             <div class="head mt-4">
               <h5>Plan</h5>
               <div class="input-boxes">
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"
-                      >No. of files</span
-                    >
+                    <span class="input-group-text" id="basic-addon1">No. of files</span>
                   </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                  />
+                  <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" />
                 </div>
 
                 <div class="input-group mb-3">
                   <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2"
-                      >Amount in Lacs</span
-                    >
+                    <span class="input-group-text" id="basic-addon2">Amount in Lacs</span>
                   </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                  />
+                  <input type="text" class="form-control" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" />
                 </div>
               </div>
             </div>
@@ -602,30 +712,17 @@
               <div class="input-boxes">
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"
-                      >No. of files</span
-                    >
+                    <span class="input-group-text" id="basic-addon1">No. of files</span>
                   </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    aria-label="Username"
-                    aria-describedby="basic-addon1"
-                  />
+                  <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" />
                 </div>
 
                 <div class="input-group mb-3">
                   <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2"
-                      >Amount in Lacs</span
-                    >
+                    <span class="input-group-text" id="basic-addon2">Amount in Lacs</span>
                   </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                  />
+                  <input type="text" class="form-control" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" />
                 </div>
               </div>
             </div>
@@ -633,12 +730,7 @@
               <a href="" class="bottom-close">Close</a>
               <a href="" class="add">Add</a>
             </div>
-            <div
-              class="tab-pane fade mt-5"
-              id="pills-status"
-              role="tabpanel"
-              aria-labelledby="pills-status-tab"
-            >
+            <div class="tab-pane fade mt-5" id="pills-status" role="tabpanel" aria-labelledby="pills-status-tab">
               fdgfgfgfg
             </div>
           </div>

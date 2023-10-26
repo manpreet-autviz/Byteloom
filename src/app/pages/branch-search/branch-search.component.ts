@@ -142,7 +142,7 @@ export class BranchSearchComponent {
             overflow: 'break',
           },
           type: 'category',
-          boundaryGap: false,
+          boundaryGap: true,
           data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
         },
       ],
