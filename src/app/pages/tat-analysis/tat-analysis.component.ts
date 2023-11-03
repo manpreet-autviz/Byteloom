@@ -98,6 +98,9 @@ export class TatAnalysisComponent {
       this.progressValue2 += distribution;
       this.progressValue3 += distribution;
     }
+    this.progressValue1 = parseInt(this.progressValue1.toFixed(0), 10);
+    this.progressValue2 = parseInt(this.progressValue2.toFixed(0), 10);
+    this.progressValue3 = parseInt(this.progressValue3.toFixed(0), 10);
   }
 
   navigateToLoginToPD(){
