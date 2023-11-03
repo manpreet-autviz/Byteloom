@@ -68,36 +68,36 @@ export class BranchSearchComponent {
 
   initializeChart() {
     this.ProductWiseChart = echarts.init(
-      document.getElementById('product-wise-Chart') as HTMLDivElement
+      document.getElementById('branch-product-wise-Chart') as HTMLDivElement
     );
     this.LoginApprovalsDisbursalChart = echarts.init(
       document.getElementById(
-        'Login-Approvals-Disbursal-Chart'
+        'branch-Login-Approvals-Disbursal-Chart'
       ) as HTMLDivElement
     );
 
     this.AvgTickedSizeChart = echarts.init(
-      document.getElementById('Avg-ticked-size') as HTMLDivElement
+      document.getElementById('branch-Avg-ticked-size') as HTMLDivElement
     );
 
     this.DistributionMixChart = echarts.init(
-      document.getElementById('distribution-mix') as HTMLDivElement
+      document.getElementById('branch-distribution-mix') as HTMLDivElement
     );
 
     this.ConversionRatioChart = echarts.init(
-      document.getElementById('conversion-ratio') as HTMLDivElement
+      document.getElementById('branch-conversion-ratio') as HTMLDivElement
     );
 
     this.irrPFInsChart = echarts.init(
-      document.getElementById('Irr-pf-insurance') as HTMLDivElement
+      document.getElementById('branch-Irr-pf-insurance') as HTMLDivElement
     );
 
     this.IMDChart = echarts.init(
-      document.getElementById('IMD-chart') as HTMLDivElement
+      document.getElementById('branch-IMD-chart') as HTMLDivElement
     );
 
     this.EDGNPANPAChart = echarts.init(
-      document.getElementById('ED-GNPA-NPA-chart') as HTMLDivElement
+      document.getElementById('branch-ED-GNPA-NPA-chart') as HTMLDivElement
     );
 
     this.ProductWiseOption = {
@@ -105,7 +105,7 @@ export class BranchSearchComponent {
       tooltip: {
         trigger: 'axis',
         axisPointer: {
-          type: 'cross',
+          
           label: {
             backgroundColor: '#07A14E',
           },

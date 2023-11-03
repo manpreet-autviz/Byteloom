@@ -79,30 +79,6 @@
             <span data-key="t-apps">Final Approvals </span>
           </a>
         </li>
-        <li class="nav-item" (click)="toggleSubmenu('submenu1')">
-          <a
-            (click)="navigateToPage('/work-in-progress')"
-            [class.active]="activeItem === '/work-in-progress'"
-            class="nav-link menu-link dropdown-toggle"
-            href="#"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="sidebarApps"
-          >
-            <img src="../../../assets/icons/work-in-progress.svg" /><span
-              data-key="t-apps"
-              >Work in Progress</span
-            >
-          </a>
-
-          <ul class="submenu" *ngIf="submenus.submenu1">
-            <li classs="nav-item">
-              <a (click)="navigateToSubPage('/out-of-tat')" [class.active]="activeSubItem === '/out-of-tat'" class="nav-link menu-link cursor-pointer">Out of TAT</a>
-            </li>
-          </ul>
-        </li>
-
         <li class="nav-item">
           <a
             (click)="navigateToPage('/disbursal')"
@@ -131,6 +107,32 @@
             <span data-key="t-apps">Insights</span>
           </a>
         </li>
+        <li class="nav-item" (click)="toggleSubmenu('submenu1')">
+          <a
+            (click)="navigateToPage('/work-in-progress')"
+            [class.active]="activeItem === '/work-in-progress'"
+            class="nav-link menu-link dropdown-toggle"
+            href="#"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="sidebarApps"
+          >
+            <img src="../../../assets/icons/work-in-progress.svg" /><span
+              data-key="t-apps"
+              >Work in Progress</span
+            >
+          </a>
+
+          <ul class="submenu" *ngIf="submenus.submenu1">
+            <li classs="nav-item">
+              <a (click)="navigateToSubPage('/out-of-tat')" [class.active]="activeSubItem === '/out-of-tat'" class="nav-link menu-link cursor-pointer">Out of TAT</a>
+            </li>
+          </ul>
+        </li>
+
+
+
         <li class="nav-item">
           <a
             (click)="navigateToPage('/tat-analysis')"
@@ -165,6 +167,51 @@
         </li>
         <li class="nav-item">
           <a
+            (click)="navigateToPage('/otc-pdd')"
+            [class.active]="activeItem === '/otc-pdd'"
+            class="nav-link menu-link"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="sidebarApps"
+          >
+            <img src="../../../assets/icons/OTC-icon.svg" />
+            <span data-key="t-apps">OTC/PDD & Cheque handover</span>
+          </a>
+        </li>
+       
+
+        <li class="nav-item">
+          <a
+          (click)="navigateToPage('/portfolio-health')"
+          [class.active]="activeItem === '/portfolio-health'"
+            class="nav-link menu-link"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="sidebarApps"
+          >
+            <img src="../../../assets/icons/portfolio.svg" />
+            <span data-key="t-apps">Portfolio Health</span>
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a
+            (click)="navigateToPage('/sanctioned-undisbursed-cases')"
+            [class.active]="activeItem === '/sanctioned-undisbursed-cases'"
+            class="nav-link menu-link cursor-pointer"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="sidebarApps"
+          >
+            <img src="../../../assets/icons/sactioned-cases.svg" />
+            <span data-key="t-apps">Sanctioned undisbursed cases</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
           (click)="navigateToPage('/360')"
             [class.active]="activeItem === '/360'"
             class="nav-link menu-link"
@@ -179,20 +226,7 @@
             >
           </a>
         </li>
-        <li class="nav-item">
-          <a
-            (click)="navigateToPage('/otc-pdd')"
-            [class.active]="activeItem === '/otc-pdd'"
-            class="nav-link menu-link"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="sidebarApps"
-          >
-            <img src="../../../assets/icons/OTC-icon.svg" />
-            <span data-key="t-apps">OTC/PDD & Cheque handover</span>
-          </a>
-        </li>
+
 
         <li class="nav-item" (click)="toggleSubmenu('submenu2')">
           <a
@@ -251,25 +285,10 @@
             </li>
           </ul>
         </li>
-
-        <li class="nav-item">
-          <a
-          (click)="navigateToPage('/portfolio-health')"
-          [class.active]="activeItem === '/portfolio-health'"
-            class="nav-link menu-link"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="sidebarApps"
-          >
-            <img src="../../../assets/icons/portfolio.svg" />
-            <span data-key="t-apps">Portfolio Health</span>
-          </a>
-        </li>
         <li class="nav-item" (click)="toggleSubmenu('submenu3')">
           <a
-            (click)="navigateToPage('/team-hierarchy')"
-            [class.active]="activeItem === '/team-hierarchy'"
+            (click)="navigateToPage('/business-rm')"
+            [class.active]="activeItem === '/business-rm'"
             class="nav-link menu-link dropdown-toggle"
             data-bs-toggle="collapse"
             role="button"
@@ -277,7 +296,7 @@
             aria-controls="sidebarApps"
           >
             <img src="../../../assets/icons/team.svg" />
-            <span data-key="t-apps">Team Hierarchy</span>
+            <span data-key="t-apps">My Team </span>
           </a>
           <ul class="submenu" *ngIf="submenus.submenu3">
             <li classs="nav-item">
@@ -313,20 +332,6 @@
               >
             </li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a
-            (click)="navigateToPage('/sanctioned-undisbursed-cases')"
-            [class.active]="activeItem === '/sanctioned-undisbursed-cases'"
-            class="nav-link menu-link cursor-pointer"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="sidebarApps"
-          >
-            <img src="../../../assets/icons/sactioned-cases.svg" />
-            <span data-key="t-apps">Sanctioned undisbursed cases</span>
-          </a>
         </li>
       </ul>
     </div>

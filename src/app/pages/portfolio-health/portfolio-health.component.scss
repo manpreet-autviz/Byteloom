@@ -26,9 +26,35 @@
 }
 .bucket-list tbody, td, tfoot, th, thead, tr{
     border-style: none !important;
-    padding-top: 40px;
+    padding-top: 10px;
 }
 .border-bottom{
     border-bottom:  1px solid #ccc !important;
 }
+.bg-gray{
+    background-color: #E8E8E8;
+}
+.bucket-list tr {
+    border-bottom: 1px solid #cbcbcb !important;
+}
 
+.table-data h6 {
+    padding: 5px;
+    min-width: 100px;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+.bg-lightpurple {
+    background-color: rgba(41, 98, 255, 0.1);
+}
+.bg-lightred {
+    background-color: rgba(254, 84, 25, 0.24);
+}
+.bg-lightyellow{
+    background-color: rgba(249, 155, 0, 0.2);
+}
+.bg-lightgreen {
+    background-color: #DDF5DF;
+}

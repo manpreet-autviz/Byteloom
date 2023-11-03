@@ -65,13 +65,13 @@ export class PortfolioHealthComponent {
   initializeChart() {
     if (!this.isToggled) {
       this.EDGNPANPAChart = echarts.init(
-        document.getElementById('ED-GNPA-NPA-chart') as HTMLDivElement
+        document.getElementById('Portfolio-ED-GNPA-NPA-chart') as HTMLDivElement
       );
       this.CIBILScoreChart = echarts.init(
         document.getElementById('CIBIL-score-chart') as HTMLDivElement
       );
       this.ProductWiseChart = echarts.init(
-        document.getElementById('Product-wise-chart') as HTMLDivElement
+        document.getElementById('Portfolio-Product-wise-chart') as HTMLDivElement
       );
 
       this.NonStartedCasesChart = echarts.init(
@@ -107,7 +107,7 @@ export class PortfolioHealthComponent {
           data: ['ED','GNPA','NPA'],
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            rotate: 0,
             overflow: 'break',
           },
         },
@@ -124,7 +124,7 @@ export class PortfolioHealthComponent {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 22,
+          nameGap: 25,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -201,7 +201,11 @@ export class PortfolioHealthComponent {
             interval: 0.5,
             name: 'Percentage ',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 25,
+            nameTextStyle: {
+              fontWeight: 600,
+              fontSize:14,
+            },
           },
         ],
         series: [
@@ -260,7 +264,7 @@ export class PortfolioHealthComponent {
           type: 'category',
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            rotate: 0,
             overflow: 'break',
           },
           axisLine: {

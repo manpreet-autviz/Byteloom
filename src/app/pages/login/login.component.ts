@@ -80,8 +80,8 @@ export class LoginComponent implements AfterViewInit {
 
   IMDOption: any;
 
-  selectedCluster: string = '';
-  selectedBranch: string = '';
+  selectedCluster: string = 'Select Area';
+  selectedBranch: string = 'Select Branch';
 
   public isToggled = false;
   constructor(private cdRef: ChangeDetectorRef) {}
@@ -158,7 +158,7 @@ export class LoginComponent implements AfterViewInit {
       );
 
       this.IMDChart = echarts.init(
-        document.getElementById('IMD-chart') as HTMLDivElement
+        document.getElementById('login-IMD-chart') as HTMLDivElement
       );
 
       this.stateOption = {
@@ -197,16 +197,19 @@ export class LoginComponent implements AfterViewInit {
             show: false,
           },
 
-          min: 0.5,
+          min: 0,
           max: 4.0,
           interval: 0.5,
           name: 'Number of files (in thousand)',
 
-          nameLocation: 'middle',
-          nameGap: 30,
+          nameLocation: 'start',
+          nameGap: -200,
           nameTextStyle: {
             fontWeight: 600,
             fontSize: 14,
+            align: 'right',
+            verticalAlign: 'top',          
+            padding: [30, 0, 0, 0],
           },
         },
         yAxis: {
@@ -223,7 +226,7 @@ export class LoginComponent implements AfterViewInit {
           {
             barWidth: 15,
             type: 'bar',
-            data: [2.0, 0.7, 0.8, 2.1, 1.0, 1.5],
+            data: [0.397, 0.7, 0.8, 0.915,0.458, 0.244],
             itemStyle: {
               color: '#5BC8EF',
             },
@@ -238,10 +241,16 @@ export class LoginComponent implements AfterViewInit {
             type: 'shadow',
           },
           formatter: (params: any) => {
-            const avgNoOfFile = 100;
-            const amountInCr = 10;
+
+           
+          
             const dataIndex = params[0].dataIndex;
-            const randomAmount = [11, 8, 6, 12, 10, 7, 9];
+            const files = [11, 8, 6, 12, 10, 7, 9];
+            const avgNoOfFile = files[dataIndex];
+            const amount = [35,20,24,67,32,21,23];
+            const amountInCr = amount[dataIndex];
+            const randomAmount = [77, 75.5, 76, 79.5, 80, 77, 89];
+
             const activeRMs = randomAmount[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
@@ -270,11 +279,17 @@ export class LoginComponent implements AfterViewInit {
           max: 15,
           interval: 1,
           name: 'Number of files',
-          nameLocation: 'middle',
-          nameGap: 30,
+          nameLocation: 'start',
+          nameGap: -110,
           nameTextStyle: {
             fontWeight: 600,
             fontSize: 14,
+            align: 'right',
+            verticalAlign: 'top',          
+            padding: [30, 0, 0, 0],
+          },
+          axisLabel: {
+            //margin: 45,  Add top margin to the x-axis label
           },
         },
         yAxis: {
@@ -326,7 +341,7 @@ export class LoginComponent implements AfterViewInit {
         },
         responsive: true,
         legend: {
-          top: '2%',
+          top: '-1%',
           left: 'center',
         },
         series: [
@@ -350,7 +365,7 @@ export class LoginComponent implements AfterViewInit {
               show: false,
             },
             data: [
-              { value: 45, name: 'Fresh', itemStyle: { color: '#f6c342' } },
+              { value: 65, name: 'Fresh', itemStyle: { color: '#f6c342' } },
               { value: 27, name: 'Top-Up', itemStyle: { color: '#6c757d' } },
               { value: 26, name: 'BT', itemStyle: { color: '#198754' } },
             ],
@@ -365,13 +380,13 @@ export class LoginComponent implements AfterViewInit {
             let tooltipText = '';
 
             if (params.name === 'Home Loan') {
-              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45';
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 150';
             } else if (params.name === 'LAP') {
-              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 20';
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 100';
             } else if (params.name === 'BL') {
-              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 10';
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 120';
             } else if (params.name === 'SBL') {
-              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 25';
+              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 135';
             }
 
             return tooltipText;
@@ -379,7 +394,7 @@ export class LoginComponent implements AfterViewInit {
         },
         responsive: true,
         legend: {
-          top: '2%',
+          top: '-1%',
           left: 'center',
         },
         series: [
@@ -403,10 +418,10 @@ export class LoginComponent implements AfterViewInit {
               show: false,
             },
             data: [
-              { value: 45, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
-              { value: 20, name: 'LAP', itemStyle: { color: '#F99B00' } },
+              { value: 55, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
+              { value: 15, name: 'LAP', itemStyle: { color: '#F99B00' } },
               { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
-              { value: 25, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
+              { value: 20, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
             ],
           },
         ],
@@ -419,60 +434,53 @@ export class LoginComponent implements AfterViewInit {
             let tooltipText = '';
 
             if (params.name === 'Online') {
-              tooltipText = 'No. of files: 1000 <br/> Percentage : 16.65';
+              tooltipText = 'No. of files: 1000 <br/> Percentage : 25';
             } else if (params.name === 'Cheque') {
-              tooltipText = 'No. of files: 700 <br/> Percentage : 11.68';
+              tooltipText = 'No. of files: 700 <br/> Percentage : 35';
             } else if (params.name === 'Cash') {
-              tooltipText = 'No. of files: 800 <br/> Percentage : 9.21';
+              tooltipText = 'No. of files: 800 <br/> Percentage : 10';
             } else if (params.name === 'UPI') {
-              tooltipText = 'No. of files: 900 <br/> Percentage : 12.46';
+              tooltipText = 'No. of files: 900 <br/> Percentage : 30';
             }
 
             return tooltipText;
           },
         },
+        responsive: true,
         legend: {
-          top: '5%',
+          top: '-1%',
           left: 'center',
           // doesn't perfectly work with our tricks, disable it
-          selectedMode: false,
-          borderRadius: 50,
+          // selectedMode: false,
+          // borderRadius: 50,
         },
         series: [
           {
-            name: 'Access From',
             type: 'pie',
-            radius: ['40%', '70%'],
-            center: ['50%', '70%'],
-            // adjust the start angle
-            startAngle: 180,
-            labelLine: {
-              show: false, // Set this property to false to hide label lines
-            },
+            radius: ['30%', '80%'],
+            avoidLabelOverlap: false,
             label: {
-              show: false, // Set this property to false to hide labels
+              show: false,
+              position: 'center',
+            },
+            emphasis: {
+              label: {
+                show: true,
+                formatter: '{c}%',
+                fontSize: 16,
+                fontWeight: 'bold',
+              },
+            },
+            labelLine: {
+              show: false,
             },
             data: [
-              { value: 1048, name: 'Online', itemStyle: { color: '#7C41DA' } },
-              { value: 735, name: 'Cheque', itemStyle: { color: '#FB8C00' } },
-              { value: 580, name: 'Cash', itemStyle: { color: '#07A14E' } },
-              { value: 784, name: 'UPI', itemStyle: { color: '#636363' } },
-
-              {
-                // make an record to fill the bottom 50%
-                value: 1048 + 735 + 580 + 484 + 300,
-                itemStyle: {
-                  // stop the chart from rendering this piece
-                  color: 'none',
-                  decal: {
-                    symbol: 'none',
-                  },
-                },
-                label: {
-                  show: false,
-                },
-              },
+              { value: 25, name: 'Online', itemStyle: { color: '#7C41DA' } },
+              { value: 35, name: 'Cheque', itemStyle: { color: '#FB8C00' } },
+              { value: 10, name: 'Cash', itemStyle: { color: '#07A14E' } },
+              { value: 30, name: 'UPI', itemStyle: { color: '#636363' } },
             ],
+            value: 1048 + 735 + 580 + 484 + 300,
           },
         ],
       };
@@ -485,12 +493,12 @@ export class LoginComponent implements AfterViewInit {
           },
           formatter: (params: any) => {
             const dataIndex = params[0].dataIndex;
-            const barValue = [37, 20, 16, 16, 15][dataIndex];
-            const randomAmounts = [2000, 700, 800, 2100, 1000, 1500];
-            const randomAmount = randomAmounts[dataIndex];
+            const barValue = [310, 320, 316, 350, 315][dataIndex];
+            // const randomAmounts = [2000, 700, 800, 2100, 1000, 1500];
+            // const randomAmount = randomAmounts[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return `No of Files: ${barValue}<br> Amount: ${randomAmount}`;
+            return `No of Files: ${barValue}`;
           },
         },
         responsive: true,
@@ -502,17 +510,17 @@ export class LoginComponent implements AfterViewInit {
           axisLine: {
             show: false,
           },
-          data: ['Direct', 'DSA', 'Power Partner', 'Saathi', 'Online Partner'],
+          data: ['Direct', 'DSA', 'P.P.', 'Saathi', 'Online/Tele'],
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            rotate: 0,
             overflow: 'break',
           },
         },
         yAxis: {
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 20,
+          nameGap: 25,
           nameTextStyle: {
             fontWeight: 600,
             fontSize: 14,
@@ -790,7 +798,7 @@ export class LoginComponent implements AfterViewInit {
             interval: 2,
             name: 'Number of files',
             nameLocation: 'middle',
-            nameGap: 20,
+            nameGap: 25,
             nameTextStyle: {
               fontWeight: 600,
               fontSize: 14,
@@ -967,7 +975,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [0.7, 0.9, 1.5, 1.7, 1.4, 2, 1.9, 2.4],
+            data: [2, 2.5, 1.8, 2.8, 3, 3.2, 2.9, 3.4],
           },
           {
             name: 'LAP',
@@ -1091,8 +1099,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [0.7, 0.9, 1.5, 1.7, 1.4, 2, 1.9, 2.4],
-          },
+            data: [0.9, 1.9, 2.5, 1.7, 2.4, 3, 2.9, 3.4],          },
           {
             name: 'Fresh',
             type: 'line',
@@ -1106,7 +1113,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [0.9, 1.9, 2.5, 1.7, 2.4, 3, 2.9, 3.4],
+            data: [2.2, 2.9, 2.5, 3.1, 2.4, 2.5, 1.9, 2.4],
           },
           {
             name: 'BT',
@@ -1137,7 +1144,7 @@ export class LoginComponent implements AfterViewInit {
           },
         },
         legend: {
-          data: ['Direct', 'DSA', 'Power Partner', 'Saathi', 'Online Partner'],
+          data: ['Direct', 'DSA', 'P.P.', 'Saathi', 'Online/Tele'],
         },
 
         grid: {
@@ -1179,7 +1186,7 @@ export class LoginComponent implements AfterViewInit {
             interval: 10,
             name: 'Number of files',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 25,
             nameTextStyle: {
               fontWeight: 600,
               fontSize: 14,
@@ -1200,7 +1207,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [31, 45, 56, 76, 89, 96, 105, 107],
+            data: [55, 65, 70, 76, 100, 89, 95, 107],
           },
           {
             name: 'DSA',
@@ -1316,6 +1323,7 @@ export class LoginComponent implements AfterViewInit {
 
   onClusterChange(cluster: string) {
     this.selectedCluster = cluster;
+    // this.selectedBranch = this.branches[0] || '';
     this.branches = this.getBranches(this.selectedState, cluster);
     this.generateClusterRandomData(this.selectedState, cluster);
     this.generateAverageClusterRandomData(this.selectedState, cluster);
@@ -1409,6 +1417,7 @@ export class LoginComponent implements AfterViewInit {
 
   onBranchChange(branch: string, cluster: string) {
     this.selectedCluster = cluster;
+    this.selectedBranch = branch;
   }
 
   onStateChange(selectedValue: string) {
@@ -1424,18 +1433,16 @@ export class LoginComponent implements AfterViewInit {
     let yAxisLabels: string[] = [];
     let minValues: any[] = [];
     let maxValues: any[] = [];
+    let newData: number[] = [];
     if (region === 'PCH') {
       yAxisLabels = ['Chandigarh', 'Ludhiana', 'Karnal'];
-      minValues = [1.9, 0.6, 0.7];
-      maxValues = [2.0, 0.7, 0.8];
+      newData = [0.85, 0.63, 0.51];
     } else if (region === 'NCR') {
       yAxisLabels = ['Delhi', 'Gurgaon'];
-      minValues = [1.9, 0.6];
-      maxValues = [2.0, 0.7];
+      newData = [0.275, 0.183];
     } else if (region === 'Rajasthan') {
       yAxisLabels = ['Jaipur', 'Udaipur', 'Ajmer', 'Kota'];
-      minValues = [1.9, 0.6, 0.7, 2.0];
-      maxValues = [2.0, 0.7, 0.8, 2.1];
+      newData = [0.320, 0.192, 0.238,0.165];
     } else if (region === 'Gujarat') {
       yAxisLabels = ['Ahmedabad', 'Surat', 'Rajkot', 'Vadodara'];
       minValues = [1.9, 0.6, 0.7, 2.0];
@@ -1446,14 +1453,18 @@ export class LoginComponent implements AfterViewInit {
       maxValues = [2.0, 0.7, 0.8, 2.1];
     } else if (region === 'Maharashtra') {
       yAxisLabels = ['Mumbai', 'Pune', 'Nashik', 'Nagpur'];
-      minValues = [1.9, 0.6, 0.7, 2.0];
-      maxValues = [2.0, 0.7, 0.8, 2.1];
+      newData = [0.8, 0.83, 0.103,0.71];
     }
 
-    const newData = minValues.map((min, index) => {
-      const max = maxValues[index];
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    });
+    if (newData.length === 0) {
+      // Generate random data if newData array is empty
+      newData = minValues.map((min, index) => {
+        const max = maxValues[index];
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      });
+    }
+  
+   
     this.stateOption.yAxis.data = yAxisLabels;
     this.stateOption.series[0].data = newData;
     this.StateChart.setOption(this.stateOption);
@@ -1463,43 +1474,36 @@ export class LoginComponent implements AfterViewInit {
     let yAxisLabels: string[] = [];
     let minValues: any[] = [];
     let maxValues: any[] = [];
+    let newClusterData: number[] = [];
     if (region === 'PCH') {
       if (cluster === 'Chandigarh') {
         yAxisLabels = ['Chandigarh', 'Ambala', 'Patiala'];
-        minValues = [1.9, 0.6, 0.7];
-        maxValues = [2.0, 0.7, 0.8];
+        newClusterData = [0.34, 0.24, 0.27];
       } else if (cluster === 'Ludhiana') {
         yAxisLabels = ['Ludhiana', 'Jalandhar', 'Moga'];
-        minValues = [1.9, 0.6, 0.7];
-        maxValues = [2.0, 0.7, 0.8];
+        newClusterData = [0.25, 0.18, 0.20];
       } else if (cluster === 'Karnal') {
         yAxisLabels = ['Karnal', 'Rohtak', 'Panipat'];
-        minValues = [1.9, 0.6, 0.7];
-        maxValues = [2.0, 0.7, 0.8];
+        newClusterData = [0.21, 0.14, 0.16];
       }
     } else if (region === 'NCR') {
       if (cluster === 'Delhi') {
         yAxisLabels = ['Janakpuri', 'Laxmi Nagar', 'Sahibabad'];
-        minValues = [1.9, 0.6, 0.7];
-        maxValues = [2.0, 0.7, 0.8];
+        newClusterData = [0.110, 0.77, 0.88];
       } else if (cluster === 'Gurgaon') {
         yAxisLabels = ['Gurgoan', 'Faridabad', 'Meerut'];
-        minValues = [1.9, 0.6, 0.7];
-        maxValues = [2.0, 0.7, 0.8];
+        newClusterData = [0.73, 0.51, 0.59];
       }
     } else if (region === 'Rajasthan') {
       if (cluster === 'Jaipur') {
         yAxisLabels = ['Jaipur', 'Sikar Road', 'Behror'];
-        minValues = [1.9, 0.6, 0.7];
-        maxValues = [2.0, 0.7, 0.8];
+        newClusterData = [0.128, 0.90, 0.102];
       } else if (cluster === 'Ajmer') {
         yAxisLabels = ['Ajmer', 'Kekri', 'Merta'];
-        minValues = [1.9, 0.6, 0.7];
-        maxValues = [2.0, 0.7, 0.8];
+        newClusterData = [0.95, 0.67, 0.76];
       } else if (cluster === 'Udaipur') {
         yAxisLabels = ['Rajsamand', 'Banswara', 'Udaipur'];
-        minValues = [1.9, 0.6, 0.7];
-        maxValues = [2.0, 0.7, 0.8];
+        newClusterData = [0.77, 0.54, 0.61];
       } else if (cluster === 'Kota') {
         yAxisLabels = [];
       }
@@ -1524,20 +1528,16 @@ export class LoginComponent implements AfterViewInit {
     } else if (region === 'Maharashtra') {
       if (cluster === 'Mumbai') {
         yAxisLabels = ['Navi Mumbai', 'Thane', 'Kalyan'];
-        minValues = [1.9, 0.6, 0.7];
-        maxValues = [2.0, 0.7, 0.8];
+        newClusterData = [0.56, 0.39, 0.44];
       } else if (cluster === 'Nashik') {
         yAxisLabels = ['Nashik', 'Malegaon', 'Sinnar'];
-        minValues = [1.9, 0.6, 0.7];
-        maxValues = [2.0, 0.7, 0.8];
+        newClusterData = [0.41, 0.29, 0.33];
       } else if (cluster === 'Pune') {
         yAxisLabels = ['Pune', 'Bhor', 'Shikrapur'];
-        minValues = [1.9, 0.6, 0.7];
-        maxValues = [2.0, 0.7, 0.8];
+        newClusterData = [0.33, 0.23, 0.27];
       } else if (cluster === 'Nagpur') {
         yAxisLabels = ['Nagpur', 'Amravati', 'Gondia'];
-        minValues = [1.9, 0.6, 0.7];
-        maxValues = [2.0, 0.7, 0.8];
+        newClusterData = [0.29, 0.20, 0.23];
       }
     } else if (region === 'MP') {
       if (cluster === 'Indore') {
@@ -1559,10 +1559,14 @@ export class LoginComponent implements AfterViewInit {
       }
     }
 
-    const newClusterData = minValues.map((min, index) => {
-      const max = maxValues[index];
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    });
+    if (newClusterData.length === 0) {
+      // Generate random data if newData array is empty
+      newClusterData = minValues.map((min, index) => {
+        const max = maxValues[index];
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      });
+    }
+   
 
     this.stateOption.yAxis.data = yAxisLabels;
     this.stateOption.series[0].data = newClusterData;
@@ -1731,6 +1735,7 @@ export class LoginComponent implements AfterViewInit {
       const max = maxValues[index];
       return Math.floor(Math.random() * (max - min + 1)) + min;
     });
+    console.log(newData)
     this.stateOption.series[0].data = newData;
     this.StateChart.setOption(this.stateOption);
   }

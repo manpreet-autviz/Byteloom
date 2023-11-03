@@ -65,7 +65,7 @@ input[type=date]:focus-visible {
 .graphn-bottom-text {
   position: absolute;
   left: calc(50% - 70px);
-  bottom: 60px;
+  bottom: 30px;
   padding: 5px;
   font-size: 20px;
   border-radius: 4px;
@@ -221,6 +221,7 @@ a.add {
   position: absolute;
   right: 10px;
   top: 15px;
+  
 }
 .c-head {
   font-weight: bold;
@@ -231,7 +232,34 @@ a.add {
 }
 
 // new css
-
+.irr-circle, .pff-circle {
+  margin-top: 16px;
+}
+.irr-circle img, .pff-circle img {
+  background: #fff;
+  padding: 6px;
+  border-radius: 50px;
+  width: 85px;
+  height: 85px;
+}
+.irr-circle p, .pff-circle p {
+  position: absolute;
+  top: 36px;
+  color: rgba(251, 140, 0, 1);
+  font-size: 11px !important;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.irr-circle p{
+  left: 35px;
+}
+.pff-circle p{
+  left: 38px;
+  color: #7e74fb;
+}
+.pff-circle, .irr-circle {
+  position: relative;
+}
 .table>:not(caption)>*>* {
   padding: 0.2rem .2rem;
   color: #3E5569;

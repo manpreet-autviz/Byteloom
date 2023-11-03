@@ -8,14 +8,21 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  activeItem: string | null = '/dashboard';
+  activeItem: string | null = '/home';
   activeSubItem: string | null = '';
   showSubmenu:boolean = false;
-  submenus: any = {};
+  // submenus: any = {};
+  submenus: any = {
+    submenu1: false,
+    submenu2: false,
+    submenu3: false
+};
+activeSubItems: { [key: string]: string } = {};
+
   constructor(private router : Router,private menuService: MenuService,private cdr:ChangeDetectorRef){
     this.menuService.searchTerm$.subscribe(term => {
-      //this.activeItem = term;
-      this.activeSubItem = term;
+      this.activeItem = term;
+     
     });
   }
   ngOnInit(): void {
@@ -26,11 +33,14 @@ export class SidebarComponent {
     this.cdr.detectChanges();
     this.router.navigate([path]);
     this.activeItem = path;
+    this.activeSubItem = null; 
     this.menuService.setActiveMenuItem(path);
   
   }
 
   navigateToSubPage(path:string){
+  
+    console.log(path)
     this.cdr.detectChanges();
     this.router.navigate([path]);
     this.activeSubItem = path;
@@ -39,7 +49,16 @@ export class SidebarComponent {
   }
 
   toggleSubmenu(submenuName: string){
-    this.submenus[submenuName] = !this.submenus[submenuName];
+    
+    // this.submenus[submenuName] = !this.submenus[submenuName];
+    Object.keys(this.submenus).forEach(key => {
+      if (key !== submenuName) {
+          this.submenus[key] = false;
+      }
+  });
+  // Toggle the clicked submenu state
+  this.submenus[submenuName] = !this.submenus[submenuName];
+  this.activeSubItems[submenuName] = ''; 
   }
  
 }

@@ -65,7 +65,7 @@ export class OtcPddComponent {
   initializeChart() {
 
     this.TotalReportChart = echarts.init(
-      document.getElementById('Total-Report-Chart') as HTMLDivElement
+      document.getElementById('otc-Total-Report-Chart') as HTMLDivElement
     );
     this.CriticalNonCriticalChart = echarts.init(
       document.getElementById('Critical-NonCritical-Chart') as HTMLDivElement
@@ -122,15 +122,15 @@ export class OtcPddComponent {
       },
       yAxis: {
         type: 'value',
-        min: 200,
-        max: 1800,
-        interval: 200,
-        name: 'Number',
+        min: 2,
+        max: 18,
+        interval: 2,
+        name: 'Number (In Hundred)',
         nameLocation: 'middle',
-        nameGap: 40,
+        nameGap: 45,
         nameTextStyle: {
           fontWeight: 600,
-          fontSize:14,
+          fontSize:12,
         },
         
         axisLine: {
@@ -150,7 +150,7 @@ export class OtcPddComponent {
           data: [1400,1100,960,630,540,430],
           itemStyle: {
             color: '#EE9322',
-             // Color for Category 1
+            borderRadius: [0, 0, 4, 4],
           },
         },
         {
@@ -161,7 +161,7 @@ export class OtcPddComponent {
           data: [1780,1600,1400,1250,1050,960],
           itemStyle: {
             color: '#3C7EBE',
-            borderRadius: 4,// Color for Category 2
+            borderRadius: [4, 4, 0, 0],// Color for Category 2
           },
         },
       ],
@@ -230,6 +230,7 @@ export class OtcPddComponent {
             show: true,
             position: 'right',
             formatter: '{c}%',
+            fontSize:9,
           },
           itemStyle: {
             color: '#3C7EBE',
@@ -244,6 +245,8 @@ export class OtcPddComponent {
             show: true,
             position: 'right',
             formatter: '{c}%',
+            fontSize:9,
+
           },
           itemStyle: {
             color: '#DAC0A3',
@@ -317,6 +320,8 @@ export class OtcPddComponent {
             show: true,
             position: 'right',
             formatter: '{c}%',
+            fontSize:9,
+
           },
           itemStyle: {
             color: '#DAC0A3',
@@ -331,6 +336,8 @@ export class OtcPddComponent {
             show: true,
             position: 'right',
             formatter: '{c}%',
+            fontSize:9,
+
           },
           itemStyle: {
             color: '#3C7EBE',

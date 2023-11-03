@@ -18,8 +18,8 @@
                   {{!isToggled ?'View Trend' : 'Normal View'}} <i  class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
                 </button>
                 <select *ngIf="!isToggled"
-                  id="dropdown"
-                  class="form-select me-2"
+                 id="dropdown"
+                  class="cursor-pointer form-select me-2"
                   [(ngModel)]="selectedFilter"
                   (ngModelChange)="onFilterChange($event)  "
                 >
@@ -29,8 +29,8 @@
                   
                 </select>
                 <select *ngIf="isToggled" 
-                  id="dropdown"
-                  class="form-select me-2"
+                 id="dropdown"
+                  class="cursor-pointer form-select me-2"
                   [(ngModel)]="selectedTrendFilter"
                   (ngModelChange)=" onTrendFilterChange($event) "
                 >
@@ -41,7 +41,7 @@
                 </select>
                 <select
                   id="dropdown"
-                  class="form-select"
+                  class="cursor-pointer form-select"
                   [(ngModel)]="selectedState"
                   (ngModelChange)="!isToggled ?onStateChange($event) : ontrendStateChange($event)"
                 >
@@ -54,7 +54,7 @@
           </div>
 
           <div id="normal-view" *ngIf="!isToggled" class="normal-view w-100">
-            <div class="card card-animate w-100 mt-3">
+            <div class="card card-animate w-100 mt-2">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-4">
@@ -64,7 +64,7 @@
                         <div
                           class="state-chart"
                           id="Disbursal-Achievement-Chart"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                         <div class="graphn-bottom-text">
                           <p class="f-7">Target - 100 Cr</p>
@@ -82,7 +82,7 @@
                         <div
                         class="state-chart"
                         id="StateWisedisbursalChart"
-                        style="width: 100%; height: 400px"
+                        style="width: 100%; height: 250px"
                       ></div>
                       </div>
                     </div>
@@ -94,7 +94,7 @@
                         <div
                           class="state-chart"
                           id="Productdisbursal"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div> 
@@ -104,7 +104,7 @@
               </div>
             </div>
   
-            <div class="card card-animate w-100 mt-3">
+            <div class="card card-animate w-100 mt-2">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-4">
@@ -114,7 +114,7 @@
                         <div
                         class="state-chart"
                         id="Average-Ticket-size"
-                        style="width: 100%; height: 400px"
+                        style="width: 100%; height: 250px"
                       ></div>
                       </div>
                     </div>
@@ -125,8 +125,8 @@
                         <span class="f-6 title"> IRR/PF/Insurance </span>
                         <div
                         class="state-chart"
-                        id="Irr-pf-insurance"
-                        style="width: 100%; height: 400px"
+                        id="Disbursal-Irr-pf-insurance"
+                        style="width: 100%; height: 250px"
                       ></div>
                       </div>
                     </div>
@@ -138,7 +138,7 @@
                         <div
                         class="state-chart"
                         id="login-disbursal-ratio"
-                        style="width: 100%; height: 400px"
+                        style="width: 100%; height: 250px"
                       ></div>
                       </div>
                     </div>
@@ -147,7 +147,7 @@
               </div>
             </div>
 
-            <div class="card card-animate w-100 mt-3">
+            <div class="card card-animate w-100 mt-2">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-5">
@@ -157,7 +157,7 @@
                         <div
                           class="state-chart"
                           id="Disbursal-tat"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -169,7 +169,7 @@
                         <div
                           class="state-chart"
                           id="Schemedisbursal"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -180,7 +180,7 @@
             </div>
           </div>
           <div id="trend-view" *ngIf="isToggled" class="trend-view w-100">
-            <div class="card card-animate w-100 mt-3">
+            <div class="card card-animate w-100 mt-2">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
@@ -190,7 +190,7 @@
                         <div
                           class="state-chart"
                           id="trendDisbursalAchievement"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -202,7 +202,7 @@
                         <div
                           class="state-chart"
                           id="trendProductdisbursal"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -211,7 +211,7 @@
                 </div>
               </div>
             </div>
-            <div class="card card-animate w-100 mt-3">
+            <div class="card card-animate w-100 mt-2">
               <div class="card-body">
                 <div class="row">
                   
@@ -224,7 +224,7 @@
                         <div
                           class="state-chart"
                           id="trendSchemedisbursal"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -237,8 +237,8 @@
                         </span>
                         <div
                           class="state-chart"
-                          id="trend-Average-Ticket-size"
-                          style="width: 100%; height: 400px"
+                          id="Disbursal-trend-Average-Ticket-size"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -246,7 +246,7 @@
                 </div>
               </div>
             </div>
-            <div class="card card-animate w-100 mt-3">
+            <div class="card card-animate w-100 mt-2">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
@@ -256,7 +256,7 @@
                         <div
                           class="state-chart"
                           id="trendStateWiseDisbursal"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -268,7 +268,7 @@
                         <div
                           class="state-chart"
                           id="trendDisbursalTat"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -276,7 +276,7 @@
                 </div>
               </div>
             </div>
-            <div class="card card-animate w-100 mt-3">
+            <div class="card card-animate w-100 mt-2">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
@@ -286,7 +286,7 @@
                         <div
                           class="state-chart"
                           id="trendLoginDisbursalRatio"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -298,7 +298,7 @@
                         <div
                           class="state-chart"
                           id="trendIrPFIns"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>

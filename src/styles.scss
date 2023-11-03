@@ -86,10 +86,6 @@ display: flex;
   height: 106px !important;
   margin-left: 15%;
 }
-
-.breadcrumb {
-  padding-top: 62px;
-}
 .collapse-content .main-content {
   margin-left: 90px !important;
   transition: all 0.3s ease-out;
@@ -227,18 +223,18 @@ display: flex;
 }
 
   .calender-widget .fc-daygrid-event-harness .fc-h-event  {
-    width: 70px !important;
-    height: 70px;
+    width: 50px !important;
+    height: 50px;
     border-radius: 50%;
     background-color:#4F709C;
     border: none;
-    line-height: 70px;
+    line-height: 50px;
     text-align: center;
-    left: 47px;
+    left: 65px;
     bottom: 13px;
 }
 .fc .fc-daygrid-day-frame{
-padding: 10px;
+padding: 5px;
 }
 .form-select:focus{
   border-color:none !important;
@@ -263,7 +259,7 @@ button.fc-prev-button.fc-button.fc-button-primary,button.fc-today-button.fc-butt
   border-radius: 30px;
 }
 .fc-day-past.fc-daygrid-day {
-  height: 50px;
+  height: 40px;
 }
 .fc-view-harness  {
  height:630px !important;
@@ -331,6 +327,20 @@ button.fc-prev-button.fc-button.fc-button-primary,button.fc-today-button.fc-butt
   color: #6A6A6A;
   font-size: 16px;
 }
+.card-body {
+  padding: 6px 16px !important;
+}
+.breadcrumb {
+  margin-bottom: 7px;
+  padding-top: 55px;
+}
+.form-select{
+  width: auto !important;
+}
+
+
+
+
 
 
 @media (max-width: 991px){

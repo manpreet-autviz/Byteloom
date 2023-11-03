@@ -72,7 +72,7 @@ export class BusinessRMComponent {
     if (!this.isToggled) {
 
       this.DistributionMixChart = echarts.init(
-        document.getElementById('Distribution-mix') as HTMLDivElement
+        document.getElementById('buisness-Distribution-mix') as HTMLDivElement
       );
 
       this.SourceLoginChart = echarts.init(
@@ -104,7 +104,7 @@ export class BusinessRMComponent {
         },
         responsive: true, 
         legend: {
-          top: '2%',
+          top: '-2%',
           left: 'center',
         },
         series: [
@@ -158,7 +158,7 @@ export class BusinessRMComponent {
           },
         },
         legend: {
-          top: '2%',
+          top: '-2%',
           left: 'center',
         },
         series: [

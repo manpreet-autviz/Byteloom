@@ -35,8 +35,8 @@ export class TatAnalysisComponent {
   progressValue1: number = 85;
   progressValue2: number = 12;
   progressValue3: number = 8;
-  minValue1: number = 80;
-  maxValue1: number = 75;
+  minValue1: number = 75;
+  maxValue1: number = 80;
   minValue2: number = 10;
   maxValue2: number = 12;
   minValue3: number = 6;
@@ -69,10 +69,14 @@ export class TatAnalysisComponent {
       this.progressValue2 += distribution;
       this.progressValue3 += distribution;
     }
+    this.progressValue1 = parseInt(this.progressValue1.toFixed(0), 10);
+    this.progressValue2 = parseInt(this.progressValue2.toFixed(0), 10);
+    this.progressValue3 = parseInt(this.progressValue3.toFixed(0), 10);
+
   }
 
   private getRandomValue(min: number, max: number): number {
-    return Math.round(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
   onStateChange(selectedValue: string) {

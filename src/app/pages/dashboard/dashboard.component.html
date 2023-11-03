@@ -2,55 +2,10 @@
   <div class="page-content">
     <div class="container-fluid mb-4">
       <div class="breadcrumb">
-        <!-- <div class="card card-animate w-100">
+        <div class="card card-animate w-100">
           <div
             class="card-body breadcraumb-align align-items-center justify-content-between"
           >
-            <div>
-              <span class="f-7 fs-5"> Home </span>
-            </div>
-            <div class="dropdown d-flex">
-              <select
-                id="dropdown"
-                class="form-select me-2"
-                [(ngModel)]="selectedState"
-                (ngModelChange)="onStateChange($event)"
-              >
-                <option *ngFor="let state of states" [value]="state">
-                  {{ state }}
-                </option>
-              </select>
-
-              <select
-                *ngIf="clusters.length > 0"
-                id="dropdown"
-                class="form-select me-2"
-                [(ngModel)]="selectedCluster"
-                (ngModelChange)="onClusterChange($event)"
-              >
-                <option *ngFor="let cluster of clusters" [value]="cluster">
-                  {{ cluster }}
-                </option>
-              </select>
-              <select
-                *ngIf="branches.length > 0"
-                id="dropdown"
-                class="form-select me-2"
-                [(ngModel)]="selectedBranch"
-                (ngModelChange)="onBranchChange($event,selectedCluster)"
-              >
-                <option *ngFor="let branch of branches" [value]="branch">
-                  {{ branch }}
-                </option>
-              </select>
-            </div>
-          </div>
-        </div> -->
-      </div>
-
-      <div class="card card-animate">
-        <div class="card-body">
-          <div class="d-flex justify-content-between align-items-center w-100 mb-3">
             <div>
               <span class="f-7 fs-5"> Home </span>
             </div>
@@ -61,20 +16,22 @@
                   {{ state }}
                 </option>
               </select>
-
+ 
               <select *ngIf="clusters.length > 0" id="dropdown" class="cursor-pointer form-select me-2" [(ngModel)]="selectedCluster"
                 (ngModelChange)="onClusterChange($event)">
+                <option value="Select Area">Select Area</option>
                 <option *ngFor="let cluster of clusters" [value]="cluster">
                   {{ cluster }}
                 </option>
               </select>
               <select *ngIf="branches.length > 0" id="dropdown" class="cursor-pointer form-select me-2" [(ngModel)]="selectedBranch"
                 (ngModelChange)="onBranchChange($event,selectedCluster)">
+                <option value="Select Branch">Select Branch</option>
                 <option *ngFor="let branch of branches" [value]="branch">
                   {{ branch }}
                 </option>
               </select>
-              <select id="dropdown" class="cursor-pointerout form-select" [(ngModel)]="selectedFilter"
+              <select id="dropdown" class="cursor-pointer out form-select" [(ngModel)]="selectedFilter"
                 (ngModelChange)="onFilterChange($event)">
                 <option *ngFor="let filter of filters" [value]="filter">
                   {{ filter }}
@@ -82,6 +39,11 @@
               </select>
             </div>
           </div>
+        </div>
+      </div>
+ 
+      <div class="card card-animate">
+        <div class="card-body">
           <div class="row gy-3 four-tile-card">
             <div class="col-xl col-md-4">
               <div class="card" routerLink="/login">
@@ -105,7 +67,7 @@
                 </div>
               </div>
             </div>
-
+ 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card"  routerLink="/financial-approvals">
                 <div class="card-body text-white bg-orange rounded five-card-min-h cursor-pointer">
@@ -130,7 +92,7 @@
                 </div>
               </div>
             </div>
-
+ 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card"  routerLink="/final-approvals">
                 <div class="card-body text-white bg-yellow rounded five-card-min-h cursor-pointer">
@@ -153,9 +115,9 @@
                 </div>
               </div>
             </div>
-
+ 
             <div class="col-xl col-lg-4 col-md-4">
-              <div class="card"  routerLink="/disbursal"> 
+              <div class="card"  routerLink="/disbursal">
                 <div class="card-body text-white bg-purple rounded five-card-min-h cursor-pointer">
                   <div class="d-flex">
                     <p class="f-7 mb-0">Disbursals</p>
@@ -178,21 +140,29 @@
                 </div>
               </div>
             </div>
-
+ 
             <div class="col-xl col-lg-4 col-md-4">
               <div class="card"  routerLink="/insights">
                 <div class="d-flex gap-2 card-body text-white bg-light-blue rounded five-card-min-h cursor-pointer">
                   <div class="col-6 text-center">
                     <p class="f-7 text-truncate mb-0">IRR Value</p>
-                    <div class="align-items-center chart-pie">
-                      <div class="tile-chart" id="IrrChartValue" style="width: 90px; height: 90px"></div>
+                    <div class="irr-circle">
+                      <img src="../../../assets/icons/orange-bar.png">
+                      <p>{{IrrValue}}%</p>
                     </div>
+                    <!-- <div class="align-items-center chart-pie">
+                      <div class="tile-chart" id="IrrChartValue" style="width: 90px; height: 90px"></div>
+                    </div> -->
                   </div>
                   <div class="col-6 text-center">
                     <p class="f-7 text-truncate mb-0">PF Value</p>
-                    <div class="align-items-center chart-pie">
-                      <div class="tile-chart" id="PfChartValue" style="width: 90px; height: 90px"></div>
+                    <div class="pff-circle">
+                      <img src="../../../assets/icons/purple-bar.png">
+                      <p>{{PFValue}}%</p>
                     </div>
+                    <!-- <div class="align-items-center chart-pie">
+                      <div class="tile-chart" id="PfChartValue" style="width: 90px; height: 90px"></div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -200,19 +170,139 @@
           </div>
         </div>
       </div>
-      <div class="col-md-12 mt-4">
+      <div class="row mt-2">
+        <div class="col-xl-4 col-md-6">
+          <div class="card box-s h-100">
+            <div class="card-body text-center position-relative">
+              <span class="f-6 title"> Disbursal meter</span>
+              <p class="mb-0">(MTD)</p>
+              <div class="state-chart" id="DisbursalAchievementChart" style="width: 100%; height: 250px"></div>
+              <div class="graphn-bottom-text">
+                <p class="mb-0"><b>Target - 100 Cr</b></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="card box-s h-100">
+            <div class="card-body text-center">
+              <span class="f-6 title"> Disbursal achievement </span>
+              <p class="fs-8 m-0">(Previous month)</p>
+              <div class="state-chart" id="dashtrendDisbursalAchievement" style="width: 100%; height: 250px"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-12">
+          <div class="card box-s h-100">
+            <div class="card-body">
+              <div classs="business-table">
+                <div class="row">
+                  <div class="text-center position-relative">
+                    <span class="f-6 title">Business Status</span>
+                  </div>
+                  <div class="d-flex justify-content-end calendar-icon">
+                    <input type="date" class="cursor-pointer" id="birthday" name="birthday" [(ngModel)]="selectedDate" (change)="onDateSelected()"  />
+                  </div>
+                </div>
+                <div class="table-responsive text-center mt-4">
+                  <div class="bg-lightgray c-head">
+                    <i class="fas fa-angle-left cursor-pointer" (click)="onPreviousDayClick()"
+                      [ngClass]="{ disabled: isPreviousDisabled }"></i>&nbsp;
+                    {{ currentDate | date : "dd-MM-yyyy" }}
+                    &nbsp;
+                    <i class="fas fa-angle-right cursor-pointer" (click)="onNextDayClick()"
+                      [ngClass]="{ disabled: isNextDisabled }"></i>
+                  </div>
+                  <table class="table no-wrap">
+                    <thead>
+                      <tr class="bg-gray mid-head">
+                        <th class="border-top-0"></th>
+                        <th class="border-top-0">Number of files</th>
+                        <th class="border-top-0">Amount (in Rs. Cr)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center table-data">
+                            <div>
+                              <h6 class="mb-0 bg-lightred">Login</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>{{ loginData }}</td>
+                        <td class="">{{ loginDataAmount }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center table-data">
+                            <div>
+                              <h6 class="mb-0 bg-lightpurple">PD</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>{{ pdData }}</td>
+                        <td>{{ pdDataAmount }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center table-data">
+                            <div>
+                              <h6 class="mb-0 bg-lightyellow">
+                                Financial Approvals
+                              </h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>{{ financialApprovalsData }}</td>
+                        <td>{{ financialApprovalsDataAmount }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center table-data">
+                            <div>
+                              <h6 class="mb-0 bg-lightyellow">
+                                Final Approvals
+                              </h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>{{ finalApprovalsData }}</td>
+                        <td>{{ finalApprovalsDataAmount }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center table-data">
+                            <div>
+                              <h6 class="mb-0 bg-lightgreen">Disbursal</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>{{ disbursalData }}</td>
+                        <td>{{ disbursalDataAmount }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 mt-2">
         <div class="card box-s h-100">
           <div class="card-body">
             <div classs="business-table">
               <div class="row">
                 <div class="text-center">
                   <span class="f-6 title">Work in Queue</span>
+                  <p class="mb-0">(MTD)</p>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col-xl col-md-4">
                   <div class="tat-box cursor-arrow">
-                    <div class="color-box bg-lightorange">
+                    <div class="color-box bg-lightpurple">
                       <img src="../../../assets/icons/pd-icon.svg" />
                     </div>
                     <h4 class="text-center f-7">PD</h4>
@@ -308,7 +398,7 @@
                 </div>
                 <div class="col-xl col-md-4">
                   <div class="tat-box cursor-arrow">
-                    <div class="color-box bg-lightgreen">
+                    <div class="color-box bg-lightred">
                       <img src="../../../assets/icons/w-technical.svg" />
                     </div>
                     <h4 class="text-center f-7">Technical</h4>
@@ -340,7 +430,7 @@
                 </div>
                 <div class="col-xl col-md-4">
                   <div class="tat-box cursor-arrow">
-                    <div class="color-box bg-aceblue">
+                    <div class="color-box bg-lightred">
                       <img src="../../../assets/icons/auction.svg" />
                     </div>
                     <h4 class="text-center f-7">Legal</h4>
@@ -407,126 +497,7 @@
           </div>
         </div>
       </div>
-      <div class="row mt-3 gy-3">
-        <div class="col-xl-3 col-md-6">
-          <div class="card box-s h-100">
-            <div class="card-body text-center position-relative">
-              <span class="f-6 title"> Disbursal meter</span>
-              <div class="state-chart" id="Disbursal-Achievement-Chart" style="width: 100%; height: 250px"></div>
-              <div class="graphn-bottom-text">
-                <p class="mb-0"><b>Target - 100 Cr</b></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-5 col-md-6">
-          <div class="card box-s h-100">
-            <div class="card-body text-center">
-              <span class="f-6 title"> Disbursal achievement </span>
-              <p class="fs-8 m-0">(Previous month)</p>
-              <div class="state-chart" id="trendDisbursalAchievement" style="width: 100%; height: 250px"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-md-12">
-          <div class="card box-s h-100">
-            <div class="card-body">
-              <div classs="business-table">
-                <div class="row">
-                  <div class="text-center position-relative">
-                    <span class="f-6 title">Business Status</span>
-                  </div>
-                  <div class="d-flex justify-content-end calendar-icon">
-                    <input type="date" id="birthday" name="birthday" />
-                  </div>
-                </div>
-                <div class="table-responsive text-center mt-4">
-                  <div class="bg-lightgray c-head">
-                    <i class="fas fa-angle-left" (click)="onPreviousDayClick()"
-                      [ngClass]="{ disabled: isPreviousDisabled }"></i>&nbsp;
-                    {{ currentDate | date : "dd-MM-yyyy" }}
-                    &nbsp;
-                    <i class="fas fa-angle-right" (click)="onNextDayClick()"
-                      [ngClass]="{ disabled: isNextDisabled }"></i>
-                  </div>
-                  <table class="table no-wrap">
-                    <thead>
-                      <tr class="bg-gray mid-head">
-                        <th class="border-top-0"></th>
-                        <th class="border-top-0">Number of files</th>
-                        <th class="border-top-0">Amount (in Rs. Cr)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="d-flex align-items-center table-data">
-                            <div>
-                              <h6 class="mb-0 bg-lightred">Login</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>{{ loginData }}</td>
-                        <td class="">{{ loginDataAmount }}</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex align-items-center table-data">
-                            <div>
-                              <h6 class="mb-0 bg-lightpurple">PD</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>{{ pdData }}</td>
-                        <td>{{ pdDataAmount }}</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex align-items-center table-data">
-                            <div>
-                              <h6 class="mb-0 bg-lightyellow">
-                                Financial Approvals
-                              </h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>{{ financialApprovalsData }}</td>
-                        <td>{{ financialApprovalsDataAmount }}</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex align-items-center table-data">
-                            <div>
-                              <h6 class="mb-0 bg-lightyellow">
-                                Final Approvals
-                              </h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>{{ finalApprovalsData }}</td>
-                        <td>{{ finalApprovalsDataAmount }}</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="d-flex align-items-center table-data">
-                            <div>
-                              <h6 class="mb-0 bg-lightgreen">Disbursal</h6>
-                            </div>
-                          </div>
-                        </td>
-                        <td>{{ disbursalData }}</td>
-                        <td>{{ disbursalDataAmount }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-4">
+      <div class="row mt-2">
         <!-- <div class="col-md-5">
           <div class="card box-s h-100">
             <div class="card-body">
@@ -630,11 +601,11 @@
             </div>
           </div>
         </div> -->
-
+ 
       </div>
     </div>
   </div>
-
+ 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog custom-width">
@@ -683,7 +654,7 @@
             </li>
           </ul>
         </div>
-
+ 
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="pills-financial" role="tabpanel"
             aria-labelledby="pills-financial-tab">
@@ -696,7 +667,7 @@
                   </div>
                   <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" />
                 </div>
-
+ 
                 <div class="input-group mb-3">
                   <div class="input-group-append">
                     <span class="input-group-text" id="basic-addon2">Amount in Lacs</span>
@@ -706,7 +677,7 @@
                 </div>
               </div>
             </div>
-
+ 
             <div class="head">
               <h5>Achievement</h5>
               <div class="input-boxes">
@@ -716,7 +687,7 @@
                   </div>
                   <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" />
                 </div>
-
+ 
                 <div class="input-group mb-3">
                   <div class="input-group-append">
                     <span class="input-group-text" id="basic-addon2">Amount in Lacs</span>

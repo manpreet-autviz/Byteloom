@@ -46,3 +46,8 @@ button.btn-close {
     margin: 0;
     font-size: 14px;
 }
+.axis-label {
+    white-space: nowrap; /* Prevent line breaks in short labels */
+    word-wrap: break-word; /* Allow line breaks when the label is too long */
+    max-width: 100px; /* Adjust the max-width as needed to control when to break the text into a second line */
+  }

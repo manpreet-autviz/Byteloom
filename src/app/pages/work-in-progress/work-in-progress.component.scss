@@ -58,6 +58,22 @@
   display: flex;
   justify-content: center;
 }
+.wip-binery-tree  ul {
+  gap: 100px;
+}
+.wip-binery-tree ul.wip-tree-third-step {
+  margin-right: 110px !important;
+}
+
+.wip-binery-tree ul.wip-tree-fourth-step {
+  margin-right: 90px !important;
+}
+.wip-binery-tree ul.wip-tree-second-step {
+  margin-left: 90px !important;
+}
+
+
+
 .tree.vertical li {
   display: flex;
   flex-direction: column;
@@ -76,6 +92,12 @@
   border-top: 1px solid #ddd;
   height: 0;
   width: 100%;
+}
+.wip-binery-tree li:first-child:after {
+  width: 110% !important;
+}
+.wip-binery-tree li:last-child:after {
+  width: 110% !important;
 }
 .tree.vertical li:first-child:after {
   border-top: 1px solid #ddd;
@@ -315,10 +337,7 @@ ul.tree.vertical ul li div p {
   padding: 0 !important;
   margin: 0 !important;
 }
-.financial-drop table,
-.work-tabs {
-  margin: 0 auto;
-}
+
 .divider2:after,
 .divider2:before {
   position: absolute;

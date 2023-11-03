@@ -12,7 +12,7 @@
             <div class="d-flex">
               <select
                 id="dropdown"
-                class="form-select me-2"
+                class="cursor-pointer form-select me-2"
                 [(ngModel)]="selectedFilter"
                 (ngModelChange)="onFilterChange($event)"
               >
@@ -23,7 +23,7 @@
 
               <select
                 id="dropdown"
-                class="form-select"
+                class="cursor-pointer form-select"
                 [(ngModel)]="selectedState"
                 (ngModelChange)="onStateChange($event)"
               >
@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <div class="card card-animate w-100 mt-4">
+        <div class="card card-animate w-100 mt-2">
           <div class="card-body box-s">
             <div class="row">
               <div class="col-md-6">
@@ -45,7 +45,7 @@
                     <div
                       class="state-chart"
                       id="fianancial-approval-chart"
-                      style="width: 100%; height: 400px"
+                      style="width: 100%; height: 250px"
                     ></div>
                   </div>
                 </div>
@@ -57,19 +57,19 @@
                     <div
                       class="state-chart"
                       id="final-approval-chart"
-                      style="width: 100%; height: 400px"
+                      style="width: 100%; height: 250px"
                     ></div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="card card-grey w-100 mt-4">
-              <div class="row p-3">
+            <div class="card card-grey w-100 mt-3">
+              <div class="row p-1">
                 <div class="col-md-3">
                   <select
                   id="dropdown"
-                  class="form-select"
+                  class="cursor-pointer form-select"
                   [(ngModel)]="selectedStatus"
                   (ngModelChange)="onStatusChange($event)"
                 >
@@ -81,7 +81,7 @@
               </div>
             </div>
 
-            <div class="box-s p-2 mt-4">
+            <div class="box-s p-2 mt-3">
               <div >
                 <table
                   id="table"
@@ -107,16 +107,16 @@
                       <td class="border-bottom">{{ item.SNo }}</td>
                       <td class="border-bottom">{{ item.leadNo }}</td>
                       <td class="border-bottom">{{ item.custName }}</td>
-                      <td class="border-bottom bg-yellow">
+                      <td class="border-bottom ">
                         {{ item.product }}
                       </td>
-                      <td class="border-bottom bg-lightblue">{{ item.scheme }}</td>
+                      <td class="border-bottom ">{{ item.scheme }}</td>
                       <td class="border-bottom">{{ item.loanAmount }}</td>
-                      <td class="border-bottom bg-red">
+                      <td class="border-bottom ">
                         {{ item.technicalRecieved }}
                       </td>
                       <td class="border-bottom">{{ item.legalRecieved }}</td>
-                      <td class="border-bottom bg-green">
+                      <td class="border-bottom ">
                         {{ item.loginDate }}
                       </td>
                       <td class="border-bottom">{{ item.rmName }}</td>

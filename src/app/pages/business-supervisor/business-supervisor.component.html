@@ -8,18 +8,18 @@
               <span class="f-7 fs-5"> Business Supervisor </span>
             </div>
             <div class="d-flex">
-              <button
+<!--               <button
                 type="button "
                 class="text-white filter-btn-trend btn bg-blue border me-2"
                 (click)="toggle()"
               >
                 {{ !isToggled ? "View Trend" : "Normal View" }}
                 <i class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
-              </button>
+              </button> -->
               <select
-                *ngIf="!isToggled"
+                
                 id="dropdown"
-                class="form-select me-2"
+                class="cursor-pointer form-select me-2"
                 [(ngModel)]="selectedFilter"
                 (ngModelChange)="onFilterChange($event)"
               >
@@ -27,7 +27,7 @@
                   {{ filter }}
                 </option>
               </select>
-              <select
+<!--               <select
                 *ngIf="isToggled"
                 id="dropdown"
                 class="form-select me-2"
@@ -37,15 +37,14 @@
                 <option *ngFor="let filter of monthFilters" [value]="filter">
                   {{ filter }}
                 </option>
-              </select>
+              </select> -->
               <select
                 id="dropdown"
-                class="form-select"
+                class="cursor-pointer form-select"
                 [(ngModel)]="selectedState"
                 (ngModelChange)="
-                  !isToggled
-                    ? onStateChange($event)
-                    : ontrendStateChange($event)
+                  onStateChange($event)
+                  
                 "
               >
                 <option *ngFor="let state of states" [value]="state">
@@ -55,10 +54,10 @@
             </div>
           </div>
         </div>
-        <div id="normal-view" *ngIf="!isToggled" class="normal-view w-100">
-          <div class="row mt-3">
+        <div id="normal-view" class="normal-view w-100">
+          <div class="row mt-2">
             <div class="col-md-9">
-              <div class="card p-4 mt-3">
+              <div class="card p-4">
                 <div class="row">
                   <div class="col-md-4">
                     <div class="card business-rm-boxes">
@@ -99,10 +98,10 @@
                             <p class="f-7 mb-0">Disbursal</p>
                           </div>
                           <div class="business-box">
-                            
+                           
                               <p class="mb-0">Amount</p>
                               <h4 class="f-7 mb-0">45 Lacs</h4>
-                            
+                           
                          </div>
                         </div>
                       </div>
@@ -124,10 +123,10 @@
                             <p class="f-7 mb-0">%Achievement</p>
                           </div>
                           <div class="business-box">
-                            
+                           
                             <p class="mb-0">Disbursal</p>
                             <h4 class="f-7 mb-0">85%</h4>
-                          
+                         
                        </div>
                          
                         </div>
@@ -200,26 +199,26 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-12 mt-3">
+                  <div class="col-md-12 mt-2">
                     <div class="card box-s">
                       <div class="card-body text-center">
                         <span class="f-6 title"> Branch wise target and achievment </span>
-                      
+                     
                         <div
                         class="state-chart"
-                        id="Irr-pf-Insurance"
-                        style="width: 100%; height: 400px"
+                        id="supervisor-Irr-pf-Insurance"
+                        style="width: 100%; height: 250px"
                       ></div>
                       </div>
                     </div>
                   </div>
-
+ 
                  
-                    <div class="col-xl-6 col-md-12 mt-3">
+                    <div class="col-xl-6 col-md-12 mt-2">
                       <div class="card box-s h-100">
                         <div class="card-body text-center">
                           <span class="f-6 title"> Disbursal </span>
-      
+     
                           <div class="space"></div>
                           <div class="cursor-pointer">
                             <div class="box-s rounded d-inline-block justify-content-center py-2 ">
@@ -263,7 +262,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-xl-6 col-md-12 mt-3">
+                    <div class="col-xl-6 col-md-12 mt-2">
                       <div class="card box-s">
                         <div class="card-body text-center">
                           <span class="f-6 title">
@@ -312,7 +311,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-3 mt-3">
+            <div class="col-md-3">
               <div class="card box-s profile-box">
                 <div class="card-body">
                   <div class="text-center">
@@ -404,7 +403,7 @@
               </div>
             </div>
           </div>
-
+ 
         </div>
       </div>
     </div>

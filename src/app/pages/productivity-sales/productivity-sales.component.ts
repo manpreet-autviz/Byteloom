@@ -269,11 +269,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       legend: {
         data: ['Login', 'Disbursal'],
       },
-      toolbox: {
-        feature: {
-          saveAsImage: {},
-        },
-      },
+  
       grid: {
         left: '3%',
         right: '4%',
@@ -323,7 +319,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           interval: 2,
           name: 'No of Files ',
           nameLocation: 'middle',
-          nameGap: 19,
+          nameGap: 20,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -415,7 +411,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           },
           axisLabel: {
             color: 'inherit',
-            distance: 40,
+            distance: 30,
             fontSize: 8,
             formatter: function (value: any) {
               if (value % 20 === 0) {
@@ -479,7 +475,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           emphasis: {
             label: {
               show: true,
-              fontSize: 40,
+              fontSize: 18,
               fontWeight: 'bold',
               formatter: '{c}%',
             },
@@ -543,11 +539,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
         
       },
       legend: {},
-      toolbox: {
-        feature: {
-          saveAsImage: {},
-        },
-      },
+   
       grid: {
         left: '3%',
         right: '4%',
@@ -598,7 +590,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
             fontWeight: 600,
             fontSize:14,
           },
-          nameGap: 20,
+          nameGap: 25,
           axisLabel: {
             margin: 1,
           },
@@ -702,6 +694,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
             show: true,
             position: 'right',
             formatter: '{c}cr',
+            fontSize:9,
+
           },
           itemStyle: {
             color: '#3C7EBE',
@@ -716,6 +710,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
             show: true,
             position: 'right',
             formatter: '{c} Cr',
+            fontSize:9,
+
           },
           itemStyle: {
             color: '#5BC8EF',
@@ -774,7 +770,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 20,
+        nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
           fontSize:14,
@@ -817,11 +813,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
         },
       },
       legend: {},
-      toolbox: {
-        feature: {
-          saveAsImage: {},
-        },
-      },
+   
       grid: {
         left: '3%',
         right: '4%',

@@ -8,18 +8,18 @@
               <span class="f-7 fs-5"> Business RM </span>
             </div>
             <div class="d-flex">
-              <button
+              <!-- <button
                 type="button "
                 class="text-white filter-btn-trend btn bg-blue border me-2"
                 (click)="toggle()"
               >
                 {{ !isToggled ? "View Trend" : "Normal View" }}
                 <i class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
-              </button>
+              </button> -->
               <select
-                *ngIf="!isToggled"
+              
                 id="dropdown"
-                class="form-select me-2"
+                class="cursor-pointer form-select me-2"
                 [(ngModel)]="selectedFilter"
                 (ngModelChange)="onFilterChange($event)"
               >
@@ -27,7 +27,7 @@
                   {{ filter }}
                 </option>
               </select>
-              <select
+              <!-- <select
                 *ngIf="isToggled"
                 id="dropdown"
                 class="form-select me-2"
@@ -37,15 +37,15 @@
                 <option *ngFor="let filter of monthFilters" [value]="filter">
                   {{ filter }}
                 </option>
-              </select>
+              </select> -->
               <select
                 id="dropdown"
-                class="form-select"
+                class="cursor-pointer form-select"
                 [(ngModel)]="selectedState"
                 (ngModelChange)="
-                  !isToggled
-                    ? onStateChange($event)
-                    : ontrendStateChange($event)
+               
+                     onStateChange($event)
+                   
                 "
               >
                 <option *ngFor="let state of states" [value]="state">
@@ -55,11 +55,12 @@
             </div>
           </div>
         </div>
-        <div id="normal-view" *ngIf="!isToggled" class="normal-view w-100">
+
+        <div id="normal-view"  class="normal-view w-100">
           <div class="row mt-3">
             <div class="col-md-9">
-              <div class="card p-4 mt-3">
-                <div class="row gy-3 mt-3">
+              <div class="card p-4">
+                <div class="row gy-3">
                   <div class="col-lg-4 col-md-6">
                     <div class="card business-rm-boxes">
                       <div class="card-body bg-pink rounded">
@@ -201,17 +202,17 @@
                     </div>
                   </div>
                   <div class="col-md-12 mt-3">
-                    <div class="card card-animate w-100 mt-3">
-                      <div class="card-body">
+                   
+                     
                         <div class="row">
                           <div class="col-md-6">
                             <div class="card box-s">
                               <div class="card-body text-center">
                                 <span class="f-6 title">Source of login </span>
                                 <div
-                                  class="state-chart"
+                                  class="state-chart mt-2"
                                   id="source-login-chart"
-                                  style="width: 100%; height: 400px"
+                                  style="width: 100%; height: 250px"
                                 ></div>
                               </div>
                             </div>
@@ -221,15 +222,15 @@
                               <div class="card-body text-center">
                                 <span class="f-6 title">Distribution mix </span>
                                 <div
-                                  class="state-chart"
-                                  id="Distribution-mix"
-                                  style="width: 100%; height: 400px"
+                                  class="state-chart mt-2"
+                                  id="buisness-Distribution-mix"
+                                  style="width: 100%; height: 250px"
                                 ></div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </div>
+                    
+                  
                     </div>
                     <div class="col-md-12 mt-3">
                     <div class="card box-s">
@@ -281,7 +282,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-3 mt-3">
+            <div class="col-md-3">
               <div class="card box-s profile-box">
                 <div class="card-body">
                   <div class="text-center">

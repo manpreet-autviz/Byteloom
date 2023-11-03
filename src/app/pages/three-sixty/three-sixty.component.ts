@@ -88,7 +88,7 @@ export class ThreeSixtyComponent {
     );
 
     this.irrPFInsChart = echarts.init(
-      document.getElementById('Irr-pf-insurance') as HTMLDivElement
+      document.getElementById('three-Irr-pf-insurance') as HTMLDivElement
     );
 
     this.IMDChart = echarts.init(
@@ -104,7 +104,7 @@ export class ThreeSixtyComponent {
       tooltip: {
         trigger: 'axis',
         axisPointer: {
-          type: 'cross',
+         
           label: {
             backgroundColor: '#07A14E',
           },
@@ -159,7 +159,7 @@ export class ThreeSixtyComponent {
           interval: 5,
           name: 'Days ',
           nameLocation: 'middle',
-          nameGap: 20,
+          nameGap: 22,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -215,6 +215,7 @@ export class ThreeSixtyComponent {
           top: 60,
           bottom: 60,
           width: '150%',
+          height: '80%',
           min: 0,
           max: 100,
           minSize: '0%',
@@ -295,7 +296,7 @@ export class ThreeSixtyComponent {
         },
         name: 'Amount ( in Rs. Lacs ) ',
         nameLocation: 'middle',
-        nameGap: 20,
+        nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
           fontSize:12,
@@ -489,7 +490,7 @@ export class ThreeSixtyComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 20,
+        nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
           fontSize:14,
@@ -522,58 +523,57 @@ export class ThreeSixtyComponent {
     this.IMDOption = {
       tooltip: {
         trigger: 'item',
-        formatter: 'No of files: {c} <br>({d}%)',
+        formatter: (params: any) => {
+          let tooltipText = '';
+
+          if (params.name === 'Online') {
+            tooltipText = 'No. of files: 1000 <br/> Percentage : 16.65';
+          } else if (params.name === 'Cheque') {
+            tooltipText = 'No. of files: 700 <br/> Percentage : 11.68';
+          } else if (params.name === 'Cash') {
+            tooltipText = 'No. of files: 800 <br/> Percentage : 9.21';
+          } else if (params.name === 'UPI') {
+            tooltipText = 'No. of files: 900 <br/> Percentage : 12.46';
+          }
+
+          return tooltipText;
+        },
       },
+      responsive: true,
       legend: {
-        top: '5%',
+        top: '-1%',
         left: 'center',
         // doesn't perfectly work with our tricks, disable it
-        selectedMode: false,
+        // selectedMode: false,
+        // borderRadius: 50,
       },
-  
       series: [
         {
-          
           type: 'pie',
-          radius: ['40%', '70%'],
-          center: ['50%', '70%'],
-          // adjust the start angle
-          startAngle: 180,
-          labelLine:{
-            show:false,
-          },
-          label:{
-            show:false,
+          radius: ['30%', '80%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: false,
+            position: 'center',
           },
           emphasis: {
             label: {
               show: true,
-              fontSize: 12,
+              formatter: '{c}%',
+              fontSize: 16,
               fontWeight: 'bold',
-              formatter: '({d}%)',
-            }
+            },
+          },
+          labelLine: {
+            show: false,
           },
           data: [
-            { value: 1048, name: 'Online', itemStyle: { color: '#7C41DA' } },
-            { value: 735, name: 'Cheque', itemStyle: { color: '#FB8C00' } },
-            { value: 580, name: 'Cash', itemStyle: { color: '#07A14E' } },
-            { value: 784, name: 'UPI', itemStyle: { color: '#636363' } },
-
-            {
-              // make an record to fill the bottom 50%
-              value: 1048 + 735 + 580 + 484 + 300,
-              itemStyle: {
-                // stop the chart from rendering this piece
-                color: 'none',
-                decal: {
-                  symbol: 'none',
-                },
-              },
-              label: {
-                show: false,
-              },
-            },
+            { value: 25, name: 'Online', itemStyle: { color: '#7C41DA' } },
+            { value: 35, name: 'Cheque', itemStyle: { color: '#FB8C00' } },
+            { value: 10, name: 'Cash', itemStyle: { color: '#07A14E' } },
+            { value: 30, name: 'UPI', itemStyle: { color: '#636363' } },
           ],
+          value: 1048 + 735 + 580 + 484 + 300,
         },
       ],
     };
@@ -625,7 +625,7 @@ export class ThreeSixtyComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 20,
+        nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
           fontSize:14,

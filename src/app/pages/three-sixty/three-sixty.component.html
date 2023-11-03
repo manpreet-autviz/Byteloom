@@ -8,14 +8,14 @@
               <span class="f-7 fs-5">360</span>
             </div>
             <div class="d-flex">
-              <select id="dropdown" class="form-select me-2" [(ngModel)]="selectedFilter"
+              <select id="dropdown" class="cursor-pointer form-select me-2" [(ngModel)]="selectedFilter"
                 (ngModelChange)="onFilterChange($event)">
                 <option *ngFor="let filter of filters" [value]="filter">
                   {{ filter }}
                 </option>
               </select>
 
-              <select id="dropdown" class="form-select" [(ngModel)]="selectedState"
+              <select id="dropdown" class="cursor-pointer form-select" [(ngModel)]="selectedState"
                 (ngModelChange)="onStateChange($event)">
                 <option *ngFor="let state of states" [value]="state">
                   {{ state }}
@@ -67,7 +67,7 @@
                 </div>
               </div>
               <div class="col-lg-4 col-md-6 col-12">
-                <div class="card box-s">
+                <div class="card box-s h-100">
                   <div class="card-body text-center">
                     <span class="f-6 title"> Login / Approvals /Disbursal </span>
                     <div class="login-app-dis">
@@ -77,18 +77,18 @@
                         <li>Disbursal</li>
                       </ul>
                     </div>
-                    <div class="state-chart" id="Login-Approvals-Disbursal-Chart" style="width: 100%; height: 400px">
+                    <div class="state-chart" id="Login-Approvals-Disbursal-Chart" style="width: 100%; height: 285px">
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-lg-4 col-md-6 col-12">
-                <div class="card box-s">
+                <div class="card box-s h-100">
                   <div class="card-body text-center">
                     <span class="f-6 title">
                       ED/GNPA/NPA
                     </span>
-                    <div class="state-chart" id="ED-GNPA-NPA-chart" style="width: 100%; height: 400px"></div>
+                    <div class="state-chart" id="ED-GNPA-NPA-chart" style="width: 100%; height: 300px"></div>
                   </div>
                 </div>
                
@@ -202,7 +202,7 @@
                 <div class="card box-s">
                   <div class="card-body text-center">
                     <span class="f-6 title"> Distribution mix </span>
-                    <div class="state-chart" id="distribution-mix" style="width: 100%; height: 400px"></div>
+                    <div class="state-chart" id="distribution-mix" style="width: 100%; height: 250px"></div>
                   </div>
                 </div>
               </div>
@@ -210,7 +210,7 @@
                 <div class="card box-s">
                   <div class="card-body text-center">
                     <span class="f-6 title"> IRR/PF/Insurance </span>
-                    <div class="state-chart" id="Irr-pf-insurance" style="width: 100%; height: 400px"></div>
+                    <div class="state-chart" id="three-Irr-pf-insurance" style="width: 100%; height: 250px"></div>
                   </div>
                 </div>
               </div>
@@ -293,7 +293,7 @@
                 <div class="card box-s">
                   <div class="card-body text-center">
                     <span class="f-6 title"> Product Wise TAT </span>
-                    <div class="state-chart" id="product-wise-Chart" style="width: 100%; height: 400px"></div>
+                    <div class="state-chart" id="product-wise-Chart" style="width: 100%; height: 250px"></div>
                   </div>
                 </div>
                
@@ -303,7 +303,7 @@
                   <div class="card box-s">
                     <div class="card-body text-center">
                       <span class="f-6 title"> Avg ticket size product wise </span>
-                      <div class="state-chart" id="Avg-ticked-size" style="width: 100%; height: 400px"></div>
+                      <div class="state-chart" id="Avg-ticked-size" style="width: 100%; height: 250px"></div>
                     </div>
                   </div>
                 </div>
@@ -313,10 +313,10 @@
                   <div class="card box-s">
                   <div class="card-body text-center">
                     <span class="f-6 title"> IMD </span>
-                    <div class="total-btn">
+                    <!-- <div class="total-btn">
                       <p>Total - 90%</p>
-                    </div>
-                    <div class="state-chart" id="IMD-chart" style="width: 100%; height: 400px"></div>
+                    </div> -->
+                    <div class="state-chart" id="IMD-chart" style="width: 100%; height: 250px"></div>
                   </div>
                 </div>
                 </div>

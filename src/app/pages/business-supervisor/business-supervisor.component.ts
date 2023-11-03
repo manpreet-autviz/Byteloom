@@ -73,7 +73,7 @@ export class BusinessSupervisorComponent {
   initializeChart() {
     if (!this.isToggled) {
       this.IrrPfInsuranceChart = echarts.init(
-        document.getElementById('Irr-pf-Insurance') as HTMLDivElement
+        document.getElementById('supervisor-Irr-pf-Insurance') as HTMLDivElement
       );
 
       this.IrrPfInsuranceOption = {

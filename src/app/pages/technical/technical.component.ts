@@ -324,7 +324,7 @@ export class TechnicalComponent {
 
         name: 'Number Of Reports',
         nameLocation: 'middle',
-        nameGap: 40,
+        nameGap: 45,
         nameTextStyle: {
           fontWeight: 600,
           fontSize: 14,

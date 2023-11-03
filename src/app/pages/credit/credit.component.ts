@@ -299,6 +299,8 @@ export class CreditComponent {
             show: true,
             position: 'right',
             formatter: '{c}',
+            fontSize:9,
+
           },
           itemStyle: {
             color: '#AD8B73',
@@ -313,6 +315,8 @@ export class CreditComponent {
             show: true,
             position: 'right',
             formatter: '{c}',
+            fontSize:9,
+
           },
           itemStyle: {
             color: '#CEAB93',
@@ -327,6 +331,8 @@ export class CreditComponent {
             show: true,
             position: 'right',
             formatter: '{c}',
+            fontSize:9,
+
           },
           itemStyle: {
             color: '#EEE3CB',
@@ -459,7 +465,7 @@ export class CreditComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 20,
+        nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
           fontSize: 14,
@@ -679,7 +685,7 @@ export class CreditComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 17,
+        nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
           fontSize: 14,
@@ -775,7 +781,7 @@ export class CreditComponent {
           interval: 5,
           name: 'Days',
           nameLocation: 'middle',
-          nameGap: 15,
+          nameGap: 18,
           nameTextStyle: {
             fontWeight: 600,
             fontSize: 14,

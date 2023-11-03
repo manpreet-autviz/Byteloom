@@ -18,8 +18,8 @@
                   {{!isToggled ?'View Trend' : 'Normal View'}} <i  class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
                 </button>
                 <select *ngIf="!isToggled"
-                  id="dropdown"
-                  class="form-select me-2"
+                 id="dropdown"
+                  class="cursor-pointer form-select me-2"
                   [(ngModel)]="selectedFilter"
                   (ngModelChange)="onFilterChange($event)  "
                 >
@@ -29,8 +29,8 @@
                   
                 </select>
                 <select *ngIf="isToggled" 
-                  id="dropdown"
-                  class="form-select me-2"
+                 id="dropdown"
+                  class="cursor-pointer form-select me-2"
                   [(ngModel)]="selectedTrendFilter"
                   (ngModelChange)=" onTrendFilterChange($event) "
                 >
@@ -41,7 +41,7 @@
                 </select>
                 <select
                   id="dropdown"
-                  class="form-select"
+                  class="cursor-pointer form-select"
                   [(ngModel)]="selectedState"
                   (ngModelChange)="!isToggled ?onStateChange($event) : ontrendStateChange($event)"
                 >
@@ -49,16 +49,40 @@
                     {{ state }}
                   </option>
                 </select>
+                <select
+                *ngIf="clusters.length > 0 "
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedCluster"
+                (ngModelChange)="!isToggled?onClusterChange($event): trendonClusterChange($event)"
+              >
+              <option value="Select Area">Select Area</option>
+                <option *ngFor="let cluster of clusters" [value]="cluster">
+                  {{ cluster }}
+                </option>
+              </select>
+              <select
+                *ngIf="branches.length > 0"
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedBranch"
+                (ngModelChange)="onBranchChange($event, selectedCluster)"
+              >
+              <option value="Select Branch">Select Branch</option>
+                <option *ngFor="let branch of branches" [value]="branch">
+                  {{ branch }}
+                </option>
+              </select>
               </div>
             </div>
           </div>
           <div id="normal-view" *ngIf="!isToggled" class="normal-view w-100">
-            <div class="card card-animate w-100 mt-3">
+            <div class="card card-animate w-100 mt-2">
               <div class="card-body">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-12">
                     <div class="card box-s">
-                      <div class="card-body text-center">
+                      <div class="card-body">
                         <span class="f-6 title"> State wise approvals </span>
                         <div class="pan-btn">
                           <p>Pan India- 3500</p>
@@ -66,7 +90,7 @@
                         <div
                           class="state-chart"
                           id="FinalStateWiseApprovalChart"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -78,7 +102,7 @@
                         <div
                           class="state-chart"
                           id="FinalProductApproval"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -90,7 +114,7 @@
                         <div
                           class="state-chart"
                           id="FinalSchemeApproval"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -100,7 +124,7 @@
               </div>
             </div>
   
-            <div class="card card-animate w-100 mt-3">
+            <div class="card card-animate w-100 mt-2">
               <div class="card-body">
                 <div class="row">
                   <div class="col-lg-4 col-md-6 col-12">
@@ -110,7 +134,7 @@
                         <div
                         class="state-chart"
                         id="Final-Average-Ticket-size"
-                        style="width: 100%; height: 400px"
+                        style="width: 100%; height: 250px"
                       ></div>
                       </div>
                     </div>
@@ -122,7 +146,7 @@
                         <div
                         class="state-chart"
                         id="Final-Financial-approval-TAT"
-                        style="width: 100%; height: 400px"
+                        style="width: 100%; height: 250px"
                       ></div>
                       </div>
                     </div>
@@ -134,7 +158,7 @@
                         <div
                           class="state-chart"
                           id="FinalConversion"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -144,7 +168,7 @@
             </div>
           </div>
           <div id="trend-view" *ngIf="isToggled" class="trend-view w-100">
-            <div class="card card-animate w-100 mt-3">
+            <div class="card card-animate w-100 mt-2">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
@@ -154,7 +178,7 @@
                         <div
                           class="state-chart"
                           id="trendStateApprovalWiseChart"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -166,7 +190,7 @@
                         <div
                           class="state-chart"
                           id="trendProductApproval"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -175,7 +199,7 @@
                 </div>
               </div>
             </div>
-            <div class="card card-animate w-100 mt-3">
+            <div class="card card-animate w-100 mt-2">
               <div class="card-body">
                 <div class="row">
                   
@@ -188,7 +212,7 @@
                         <div
                           class="state-chart"
                           id="trendSchemeApproval"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -202,7 +226,7 @@
                         <div
                           class="state-chart"
                           id="trend-Average-Ticket-size"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -210,7 +234,7 @@
                 </div>
               </div>
             </div>
-            <div class="card card-animate w-100 mt-3">
+            <div class="card card-animate w-100 mt-2">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
@@ -220,7 +244,7 @@
                         <div
                           class="state-chart"
                           id="trend-Financial-approval-TAT"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>
@@ -232,7 +256,7 @@
                         <div
                           class="state-chart"
                           id="trendConversion"
-                          style="width: 100%; height: 400px"
+                          style="width: 100%; height: 250px"
                         ></div>
                       </div>
                     </div>

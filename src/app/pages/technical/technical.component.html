@@ -8,14 +8,14 @@
               <span class="f-7 fs-5">Technical</span>
             </div>
             <div class="d-flex">
-              <select id="dropdown" class="form-select me-2" [(ngModel)]="selectedFilter"
+              <select id="dropdown" class="cursor-pointer form-select me-2" [(ngModel)]="selectedFilter"
                 (ngModelChange)="onFilterChange($event)">
                 <option *ngFor="let filter of filters" [value]="filter">
                   {{ filter }}
                 </option>
               </select>
 
-              <select id="dropdown" class="form-select" [(ngModel)]="selectedState"
+              <select id="dropdown" class="cursor-pointer form-select" [(ngModel)]="selectedState"
                 (ngModelChange)="onStateChange($event)">
                 <option *ngFor="let state of states" [value]="state">
                   {{ state }}
@@ -26,7 +26,7 @@
         </div>
 
         <div class="sales w-100">
-          <div class="card card-animate w-100 mt-3">
+          <div class="card card-animate w-100 mt-2">
             <div class="card-body">
               <div class="row">
                 <div class="col-md-7">
@@ -35,7 +35,7 @@
                   <div class="card box-s">
                     <div class="card-body text-center">
                       <span class="f-6 title">TAT </span>
-                      <div class="state-chart" id="tat-Chart" style="width: 100%; height: 400px"></div>
+                      <div class="state-chart" id="tat-Chart" style="width: 100%; height: 250px"></div>
                     </div>
                   </div>
                   </div>
@@ -43,7 +43,7 @@
                     <div class="card box-s">
                       <div class="card-body text-center">
                         <span class="f-6 title">% of internal reports to total reports </span>
-                        <div class="state-chart" id="Total-Report-Chart" style="width: 100%; height: 400px"></div>
+                        <div class="state-chart" id="Total-Report-Chart" style="width: 100%; height: 250px"></div>
                       </div>
                     </div>
                   </div>
@@ -53,7 +53,7 @@
                   <div class="card box-s h-100">
                     <div class="card-body text-center">
                       <span class="f-6 title"> LM wise vetting </span>
-                      <div class="state-chart" id="TM-wise-vetting" style="width: 100%; height: 400px"></div>
+                      <div class="state-chart" id="TM-wise-vetting" style="width: 100%; height: 250px"></div>
 
                       <div class="row">
                         <div class="col-md-12">

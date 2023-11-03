@@ -57,11 +57,11 @@ export class LegalComponent {
   }
   initializeChart() {
     this.TatChart = echarts.init(
-      document.getElementById('tat-Chart') as HTMLDivElement
+      document.getElementById('legal-tat-Chart') as HTMLDivElement
     );
 
     this.TMChart = echarts.init(
-      document.getElementById('TM-wise-vetting') as HTMLDivElement
+      document.getElementById('legal-TM-wise-vetting') as HTMLDivElement
     );
 
    

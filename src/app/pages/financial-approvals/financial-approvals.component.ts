@@ -60,6 +60,11 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   trendConversionOption: any;
   trendFinancialTatOption: any;
 
+  selectedCluster: string = 'Select Area';
+  selectedBranch: string = 'Select Branch';
+  branches: string[] = [];
+  clusters: string[] = [];
+
   public isToggled = false;
   constructor(private cdRef: ChangeDetectorRef) {}
 
@@ -78,27 +83,27 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   initializeChart() {
     if (!this.isToggled) {
       this.StateApprovalChart = echarts.init(
-        document.getElementById('StateWiseApprovalChart') as HTMLDivElement
+        document.getElementById('financialStateWiseApprovalChart') as HTMLDivElement
       );
 
       this.SchemeApprovalChart = echarts.init(
-        document.getElementById('SchemeApproval') as HTMLDivElement
+        document.getElementById('financialSchemeApproval') as HTMLDivElement
       );
 
       this.ProductApprovalChart = echarts.init(
-        document.getElementById('ProductApproval') as HTMLDivElement
+        document.getElementById('financialProductApproval') as HTMLDivElement
       );
 
       this.AverageTicketChart = echarts.init(
-        document.getElementById('Average-Ticket-size') as HTMLDivElement
+        document.getElementById('financial-Average-Ticket-size') as HTMLDivElement
       );
 
       this.FinancialApprovalTATChart = echarts.init(
-        document.getElementById('Financial-approval-TAT') as HTMLDivElement
+        document.getElementById('financial-approval-TAT') as HTMLDivElement
       );
 
       this.ConversionChart = echarts.init(
-        document.getElementById('Conversion') as HTMLDivElement
+        document.getElementById('financialConversion') as HTMLDivElement
       );
 
       this.stateApprovalOption = {
@@ -138,11 +143,14 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           max: 90,
           interval: 10,
           name: 'Amount (in Rs. Crore)',
-          nameLocation: 'middle',
-          nameGap: 25,
+          nameLocation: 'start',
+          nameGap: -150,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
+            align: 'right',
+            verticalAlign: 'top',          
+            padding: [30, 0, 0, 0],
           },
         },
         yAxis: {
@@ -167,7 +175,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         series: [
           {
-            barWidth: 20,
+            barWidth: 15,
             type: 'bar',
             data: [70, 65, 50, 30, 40, 50],
             itemStyle: {
@@ -223,7 +231,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           },
           name: 'Amount (in Rs. Lacs)',
           nameLocation: 'middle',
-          nameGap: 17,
+          nameGap: 25,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -231,7 +239,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         series: [
           {
-            barWidth: 20,
+            barWidth: 15,
             data: [12, 16, 10.3, 8.6, 5.7],
             type: 'bar',
             itemStyle: {
@@ -267,7 +275,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           },
         },
         legend: {
-          top: '5%',
+          top: '-1%',
           left: 'center',
         },
         series: [
@@ -329,7 +337,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           },
         },
         legend: {
-          top: '5%',
+          top: '-1%',
           left: 'center',
         },
         series: [
@@ -408,7 +416,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 17,
+          nameGap: 25,
           axisLabel: {
             formatter: '{value}',
             margin: 1,
@@ -421,7 +429,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         series: [
           {
             
-            barWidth: 20,
+            barWidth: 15,
             data: [50, 36, 44, 40, 45],
             type: 'bar',
             itemStyle: {
@@ -467,7 +475,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           type: 'value',
           min: 1,
           max: 12,
-          interval: 1,
+          interval: 2,
           axisLine: {
             show: false,
           },
@@ -476,7 +484,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           },
           name: 'Days',
           nameLocation: 'middle',
-          nameGap: 17,
+          nameGap: 25,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -484,7 +492,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         series: [
           {
-            barWidth: 20,
+            barWidth: 15,
             data: [9, 6, 7, 8, 6],
             type: 'bar',
             itemStyle: {
@@ -502,28 +510,28 @@ export class FinancialApprovalsComponent implements AfterViewInit {
       this.FinancialApprovalTATChart.setOption(this.financialTatOption);
     } else {
       this.trendStateApprovalChart = echarts.init(
-        document.getElementById('trendStateApprovalWiseChart') as HTMLDivElement
+        document.getElementById('financialtrendStateApprovalWiseChart') as HTMLDivElement
       );
       this.trendAverageApprovalChart = echarts.init(
-        document.getElementById('trend-Average-Ticket-size') as HTMLDivElement
+        document.getElementById('financial-trend-Average-Ticket-size') as HTMLDivElement
       );
 
       this.trendFinancialTatApprovalChart = echarts.init(
         document.getElementById(
-          'trend-Financial-approval-TAT'
+          'financial-trend-Financial-approval-TAT'
         ) as HTMLDivElement
       );
 
       this.trendSchemeApprovalChart = echarts.init(
-        document.getElementById('trendSchemeApproval') as HTMLDivElement
+        document.getElementById('financialtrendSchemeApproval') as HTMLDivElement
       );
 
       this.trendProductApprovalChart = echarts.init(
-        document.getElementById('trendProductApproval') as HTMLDivElement
+        document.getElementById('financialtrendProductApproval') as HTMLDivElement
       );
 
       this.trendConversionApprovalChart = echarts.init(
-        document.getElementById('trendConversion') as HTMLDivElement
+        document.getElementById('financialtrendConversion') as HTMLDivElement
       );
 
       this.trendStateApprovalOption = {
@@ -601,7 +609,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             interval: 10,
             name: 'Amount  ( in  Rs. Crore )',
             nameLocation: 'middle',
-            nameGap: 30,
+            nameGap: 25,
             nameTextStyle: {
               fontWeight: 600,
               fontSize:14,
@@ -785,7 +793,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             interval: 10,
             name: 'Amount ( in Rs. Crore )',
             nameLocation: 'middle',
-            nameGap:  30,
+            nameGap:  25,
             nameTextStyle: {
               fontWeight: 600,
               fontSize:14,
@@ -1417,13 +1425,8 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   }
 
   onStateChange(selectedValue: string) {
-    console.log(selectedValue);
-    this.generateStateRandomData();
-    this.generateAverageStateRandomData();
-    this.generateSchemeRandomData();
-    this.generateProductRandomData();
-    this.generateConversionRandomData();
-    this.generateFinancialTatRandomdata();
+   this.onRegionChange(selectedValue);
+   
   }
 
   generateRandomAmount(min: number, max: number): number {
@@ -1540,12 +1543,8 @@ export class FinancialApprovalsComponent implements AfterViewInit {
 
   ontrendStateChange(selectedValue: string){
     console.log(selectedValue)
-    this.TrendgenerateStateRandomData(selectedValue);
-    this.TrendgenerateAverageStateRandomData(selectedValue);
-    this.TrendgenerateSchemeRandomData(selectedValue);
-    this.TrendgenerateProductRandomData(selectedValue);
-    this.TrendgenerateConversionRandomData(selectedValue);
-    this.TrendgenerateFinancialTatRandomdata(selectedValue);
+    this.trendStateregionchange(selectedValue);
+    
   }
 
   onTrendFilterChange(selectedValue: string) {
@@ -1767,4 +1766,137 @@ export class FinancialApprovalsComponent implements AfterViewInit {
       this.trendFinancialTatApprovalChart.setOption(this.trendFinancialTatOption);
     }
   }
+  onRegionChange(region: string) {
+    this.selectedState = region;
+    this.clusters = this.getClusters(region);
+    // this.selectedCluster = this.clusters[0] || '';
+    this.branches = [];
+    this.generateStateRandomData();
+    this.generateAverageStateRandomData();
+    this.generateSchemeRandomData();
+    this.generateProductRandomData();
+    this.generateConversionRandomData();
+    this.generateFinancialTatRandomdata();
+  }
+  getClusters(region: string): string[] {
+    if (region === 'PCH') {
+      return ['Chandigarh', 'Ludhiana', 'Karnal'];
+    } else if (region === 'NCR') {
+      return ['Delhi', 'Gurgaon'];
+    } else if (region === 'Rajasthan') {
+      return ['Jaipur', 'Udaipur', 'Ajmer', 'Kota'];
+    } else if (region === 'Gujarat') {
+      return ['Ahmedabad', 'Surat', 'Rajkot', 'Vadodara'];
+    } else if (region === 'MP') {
+      return ['Indore', 'Bhopal', 'Gwalior', 'Jabalpur'];
+    } else if (region === 'Maharashtra') {
+      return ['Mumbai', 'Pune', 'Nashik', 'Nagpur'];
+    } else {
+      return [];
+    }
+  }
+
+  onClusterChange(cluster: string) {
+    this.selectedCluster = cluster;
+   //  this.selectedBranch = this.branches[0] || '';
+    this.branches = this.getBranches(this.selectedState, cluster);
+    this.generateStateRandomData();
+    this.generateAverageStateRandomData();
+    this.generateSchemeRandomData();
+    this.generateProductRandomData();
+    this.generateConversionRandomData();
+    this.generateFinancialTatRandomdata();
+  }
+
+
+  
+  getBranches(region: string, cluster: string): string[] {
+    if (region === 'PCH') {
+      if (cluster === 'Chandigarh') {
+        return ['Chandigarh', 'Ambala', 'Patiala'];
+      } else if (cluster === 'Ludhiana') {
+        return ['Ludhiana', 'Jalandhar', 'Moga'];
+      } else if (cluster === 'Karnal') {
+        return ['Karnal', 'Rohtak', 'Panipat'];
+      }
+    } else if (region === 'NCR') {
+      if (cluster === 'Delhi') {
+        return ['Janakpuri', 'Laxmi Nagar', 'Sahibabad'];
+      } else if (cluster === 'Gurgaon') {
+        return ['Gurgoan', 'Faridabad', 'Meerut'];
+      }
+    } else if (region === 'Rajasthan') {
+      if (cluster === 'Jaipur') {
+        return ['Jaipur', 'Sikar Road', 'Behror'];
+      } else if (cluster === 'Ajmer') {
+        return ['Ajmer', 'Kekri', 'Merta'];
+      } else if (cluster === 'Udaipur') {
+        return ['Rajsamand', 'Banswara', 'Udaipur'];
+      } else if (cluster === 'Kota') {
+        return [];
+      }
+    } else if (region === 'Gujarat') {
+      if (cluster === 'Ahmedabad') {
+        return ['Ahmedabad', 'Gandhinagar', 'Sanand'];
+      } else if (cluster === 'Surat') {
+        return ['Surat', 'Kadodara', 'Rundh'];
+      } else if (cluster === 'Rajkot') {
+        return ['Rajkot', 'Jamnagar', 'Junagadh'];
+      } else if (cluster === 'Vadodara') {
+        return ['Vadodara', 'Anand', 'Dabhoi'];
+      }
+    } else if (region === 'Maharashtra') {
+      if (cluster === 'Mumbai') {
+        return ['Navi Mumbai', 'Thane', 'Kalyan'];
+      } else if (cluster === 'Nashik') {
+        return ['Nashik', 'Malegaon', 'Sinnar'];
+      } else if (cluster === 'Pune') {
+        return ['Pune', 'Bhor', 'Shikrapur'];
+      } else if (cluster === 'Nagpur') {
+        return ['Nagpur', 'Amravati', 'Gondia'];
+      }
+    } else if (region === 'MP') {
+      if (cluster === 'Indore') {
+        return ['Indore', 'Ujjain', 'Dewas'];
+      } else if (cluster === 'Gwalior') {
+        return ['Gwalior', 'Morena', 'Bhind'];
+      } else if (cluster === 'Bhopal') {
+        return ['Bhopal', 'Vidisha', 'Sehore'];
+      } else if (cluster === 'Jabalpur') {
+        return ['Jabalpur', 'Sihora', 'Mandla'];
+      }
+    }
+
+    return []; // Default case: return an empty array if no match is found
+  }
+
+  onBranchChange(branch: string, cluster: string) {
+    this.selectedCluster = cluster;
+  }
+
+  trendStateregionchange(region: string){
+    this.selectedState = region;
+    this.clusters = this.getClusters(region);
+   // this.selectedCluster = this.clusters[0] || '';
+    this.branches = [];
+    this.TrendgenerateStateRandomData(region);
+    this.TrendgenerateAverageStateRandomData(region);
+    this.TrendgenerateSchemeRandomData(region);
+    this.TrendgenerateProductRandomData(region);
+    this.TrendgenerateConversionRandomData(region);
+    this.TrendgenerateFinancialTatRandomdata(region);
+  }
+
+ trendonClusterChange(cluster: string) {
+    this.selectedCluster = cluster;
+    // this.selectedBranch = this.branches[0] || '';
+    this.branches = this.getBranches(this.selectedState, cluster);
+    this.generateStateRandomData();
+    this.generateAverageStateRandomData();
+    this.generateSchemeRandomData();
+    this.generateProductRandomData();
+    this.generateConversionRandomData();
+    this.generateFinancialTatRandomdata();
+  }
+
 }

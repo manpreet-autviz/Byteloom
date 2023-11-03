@@ -113,7 +113,7 @@ export class DisbursalComponent {
       );
 
       this.IRPFChart = echarts.init(
-        document.getElementById('Irr-pf-insurance') as HTMLDivElement
+        document.getElementById('Disbursal-Irr-pf-insurance') as HTMLDivElement
       );
 
       this.disbursalAchievementOption = {
@@ -163,7 +163,7 @@ export class DisbursalComponent {
             },
             axisLabel: {
               color: 'inherit',
-              distance: 40,
+              distance: 30,
               fontSize: 8,
               formatter: function (value: any) {
                 if (value % 20 === 0) {
@@ -175,9 +175,9 @@ export class DisbursalComponent {
             },
             detail: {
               valueAnimation: true,
-              formatter: '{value} %',
+              formatter: '{value}%',
               color: 'inherit',
-              fontSize: 22,
+              fontSize: 12,
             },
             data: [
               {
@@ -229,11 +229,14 @@ export class DisbursalComponent {
           max: 150,
           interval: 20,
           name: 'Amount (in Rs. Crore)',
-          nameLocation: 'middle',
-          nameGap: 30,
+          nameLocation: 'start',
+          nameGap: -150,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
+            align: 'right',
+            verticalAlign: 'top',          
+            padding: [30, 0, 0, 0],
           },
          
         },
@@ -256,7 +259,7 @@ export class DisbursalComponent {
         },
         series: [
           {
-            barWidth: 20,
+            barWidth: 15,
             type: 'bar',
             data: [55, 45, 75, 50, 70, 57],
             itemStyle: {
@@ -315,7 +318,7 @@ export class DisbursalComponent {
           },
           name: 'Amount (in Rs. Lacs)',
           nameLocation: 'middle',
-          nameGap: 19,
+          nameGap: 25,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -323,7 +326,7 @@ export class DisbursalComponent {
         },
         series: [
           {
-            barWidth: 20,
+            barWidth: 15,
             data: [13.5, 11.5, 12.5, 10],
             type: 'bar',
             itemStyle: {
@@ -359,7 +362,7 @@ export class DisbursalComponent {
           },
         },
         legend: {
-          top: '1%',
+          top: '-1%',
           left: 'center',
         },
         series: [
@@ -421,7 +424,7 @@ export class DisbursalComponent {
           },
         },
         legend: {
-          top: '1%',
+          top: '-1%',
           left: 'center',
         },
         series: [
@@ -516,7 +519,7 @@ export class DisbursalComponent {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 15,
+          nameGap: 25,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -603,7 +606,7 @@ export class DisbursalComponent {
         },
         series: [
           {
-            barWidth: 20,
+            barWidth: 15,
             data: [15, 13, 10, 9, 7],
             type: 'bar',
             itemStyle: {
@@ -662,7 +665,7 @@ export class DisbursalComponent {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 15,
+          nameGap: 25,
           axisLabel: {
             formatter: '{value}',
             margin: 1,
@@ -674,7 +677,7 @@ export class DisbursalComponent {
         },
         series: [
           {
-            barWidth: 20,
+            barWidth: 15,
             data: [70, 54, 43, 40, 50],
             type: 'bar',
             itemStyle: {
@@ -700,7 +703,7 @@ export class DisbursalComponent {
         document.getElementById('trendStateWiseDisbursal') as HTMLDivElement
       );
       this.trendAverageDisbursalChart = echarts.init(
-        document.getElementById('trend-Average-Ticket-size') as HTMLDivElement
+        document.getElementById('Disbursal-trend-Average-Ticket-size') as HTMLDivElement
       );
 
       this.trendLoginDisbursalRatioChart = echarts.init(
@@ -786,7 +789,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 20,
+            nameGap: 25,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -886,7 +889,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Amount ( in Rs. Crore)  ',
             nameLocation: 'middle',
-            nameGap: 20,
+            nameGap: 25,
             nameTextStyle: {
               fontWeight: 600,
               fontSize:14,
@@ -1068,7 +1071,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 20,
+            nameGap: 25,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1209,7 +1212,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 20,
+            nameGap: 25,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1465,7 +1468,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Percentage %' ,
             nameLocation: 'middle',
-            nameGap: 15,
+            nameGap: 25,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1606,7 +1609,7 @@ export class DisbursalComponent {
             interval: 2,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 15,
+            nameGap: 25,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1747,7 +1750,7 @@ export class DisbursalComponent {
             interval: 2,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 15,
+            nameGap: 25,
             axisLabel: {
               formatter: '{value}',
               margin: 1,

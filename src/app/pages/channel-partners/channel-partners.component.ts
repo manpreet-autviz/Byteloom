@@ -302,7 +302,7 @@ export class ChannelPartnersComponent {
         },
         name: 'Number of CPs',
         nameLocation: 'middle',
-        nameGap: 40,
+        nameGap: 35,
         nameTextStyle: {
           fontWeight: 600,
           fontSize: 14,
@@ -378,7 +378,7 @@ export class ChannelPartnersComponent {
         },
         name: 'Number of CPs',
         nameLocation: 'middle',
-        nameGap: 40,
+        nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
           fontSize: 14,
@@ -453,7 +453,7 @@ export class ChannelPartnersComponent {
         },
         name: '% of Total Disbursal',
         nameLocation: 'middle',
-        nameGap: 40,
+        nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
           fontSize: 14,
@@ -532,7 +532,7 @@ export class ChannelPartnersComponent {
         },
         name: 'Delinquency in %',
         nameLocation: 'middle',
-        nameGap: 40,
+        nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
           fontSize: 14,

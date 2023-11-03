@@ -1,240 +1,272 @@
 <div class="main-content">
-    <div class="page-content">
-      <div class="container-fluid">
-        <div class="breadcrumb">
-          <div class="card card-animate w-100">
-            <div
-              class="card-body breadcraumb-align align-items-center justify-content-between"
-            >
-              <div>
-                <span class="f-7 fs-5"> Financial Approvals </span>
-              </div>
-              <div class="breadcrumb-right-btn">
-                <button
-                  type="button "
-                  class="text-white filter-btn-trend btn bg-blue border me-2"
-                 (click)="toggle()" 
-                >
-                  {{!isToggled ?'View Trend' : 'Normal View'}} <i  class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
-                </button>
-                <select *ngIf="!isToggled"
-                  id="dropdown"
-                  class="form-select me-2"
-                  [(ngModel)]="selectedFilter"
-                  (ngModelChange)="onFilterChange($event)  "
-                >
-                  <option *ngFor="let filter of filters" [value]="filter">
-                    {{ filter }}
-                  </option>
-                  
-                </select>
-                <select *ngIf="isToggled" 
-                  id="dropdown"
-                  class="form-select me-2"
-                  [(ngModel)]="selectedTrendFilter"
-                  (ngModelChange)=" onTrendFilterChange($event) "
-                >
-                  <option *ngFor="let filter of monthFilters" [value]="filter">
-                    {{ filter }}
-                  </option>
-                  
-                </select>
-                <select
-                  id="dropdown"
-                  class="form-select"
-                  [(ngModel)]="selectedState"
-                  (ngModelChange)="!isToggled ?onStateChange($event) : ontrendStateChange($event)"
-                >
-                  <option *ngFor="let state of states" [value]="state">
-                    {{ state }}
-                  </option>
-                </select>
-              </div>
+
+  <div class="page-content">
+    <div class="container-fluid">
+      <div class="breadcrumb">
+        <div class="card card-animate w-100">
+          <div
+            class="card-body breadcraumb-align align-items-center justify-content-between"
+          >
+            <div>
+              <span class="f-7 fs-5"> Financial Approvals </span>
+            </div>
+            <div class="breadcrumb-right-btn">
+              <button
+                type="button "
+                class="text-white filter-btn-trend btn bg-blue border me-2"
+                (click)="toggle()"
+              >
+                {{ !isToggled ? "View Trend" : "Normal View" }}
+                <i class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
+              </button>
+              <select
+                *ngIf="!isToggled"
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedFilter"
+                (ngModelChange)="onFilterChange($event)"
+              >
+                <option *ngFor="let filter of filters" [value]="filter">
+                  {{ filter }}
+                </option>
+              </select>
+              <select
+                *ngIf="isToggled"
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedTrendFilter"
+                (ngModelChange)="onTrendFilterChange($event)"
+              >
+                <option *ngFor="let filter of monthFilters" [value]="filter">
+                  {{ filter }}
+                </option>
+              </select>
+
+              <select
+                id="dropdown"
+                class="form-select"
+                [(ngModel)]="selectedState"
+                (ngModelChange)="
+                  !isToggled
+                    ? onStateChange($event)
+                    : ontrendStateChange($event)
+                "
+              >
+                <option *ngFor="let state of states" [value]="state">
+                  {{ state }}
+                </option>
+              </select>
+              <select
+                *ngIf="clusters.length > 0 "
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedCluster"
+                (ngModelChange)="!isToggled?onClusterChange($event): trendonClusterChange($event)"
+              >
+              <option value="Select Area">Select Area</option>
+                <option *ngFor="let cluster of clusters" [value]="cluster">
+                  {{ cluster }}
+                </option>
+              </select>
+              <select
+                *ngIf="branches.length > 0"
+                id="dropdown"
+                class="form-select me-2"
+                [(ngModel)]="selectedBranch"
+                (ngModelChange)="onBranchChange($event, selectedCluster)"
+              >
+              <option value="Select Branch">Select Branch</option>
+                <option *ngFor="let branch of branches" [value]="branch">
+                  {{ branch }}
+                </option>
+              </select>
+
             </div>
           </div>
-          <div id="normal-view" *ngIf="!isToggled" class="normal-view w-100">
-            <div class="card card-animate w-100 mt-3">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title"> State wise approvals </span>
-                        <div class="pan-btn">
-                          <p>Pan India- 3500</p>
-                        </div>
-                        <div
-                          class="state-chart"
-                          id="StateWiseApprovalChart"
-                          style="width: 100%; height: 400px"
-                        ></div>
+        </div>
+        <div id="normal-view" *ngIf="!isToggled" class="normal-view w-100">
+          <div class="card card-animate w-100 mt-2">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body">
+                      <span class="f-6 title"> State wise approvals </span>
+                      <div class="pan-btn">
+                        <p>Pan India- 3500</p>
                       </div>
+                      <div
+                        class="state-chart"
+                        id="financialStateWiseApprovalChart"
+                        style="width: 100%; height: 250px"
+                      ></div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 col-12">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title"> Product wise Approvals </span>
-                        <div
-                          class="state-chart"
-                          id="ProductApproval"
-                          style="width: 100%; height: 400px"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6 col-12">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title">Scheme wise Approvals </span>
-                        <div
-                          class="state-chart"
-                          id="SchemeApproval"
-                          style="width: 100%; height: 400px"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                 
                 </div>
-              </div>
-            </div>
-  
-            <div class="card card-animate w-100 mt-3">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-lg-4 col-md-6 col-12">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title">Average Ticket size product wise </span>
-                        <div
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"> Product wise Approvals </span>
+                      <div
                         class="state-chart"
-                        id="Average-Ticket-size"
-                        style="width: 100%; height: 400px"
+                        id="financialProductApproval"
+                        style="width: 100%; height: 250px"
                       ></div>
-                      </div>
                     </div>
                   </div>
-                  <div class="col-lg-4 col-md-6 col-12">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title"> Financial approvals TAT </span>
-                        <div
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">Scheme wise Approvals </span>
+                      <div
                         class="state-chart"
-                        id="Financial-approval-TAT"
-                        style="width: 100%; height: 400px"
+                        id="financialSchemeApproval"
+                        style="width: 100%; height: 250px"
                       ></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6 col-12">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title"> Login to Financial approvals ratio </span>
-                        <div
-                          class="state-chart"
-                          id="Conversion"
-                          style="width: 100%; height: 400px"
-                        ></div>
-                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div id="trend-view" *ngIf="isToggled" class="trend-view w-100">
-            <div class="card card-animate w-100 mt-3">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title"> State wise Approval </span>
-                        <div
-                          class="state-chart"
-                          id="trendStateApprovalWiseChart"
-                          style="width: 100%; height: 400px"
-                        ></div>
-                      </div>
+
+          <div class="card card-animate w-100 mt-2">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"
+                        >Average Ticket size product wise
+                      </span>
+                      <div
+                        class="state-chart"
+                        id="financial-Average-Ticket-size"
+                        style="width: 100%; height: 250px"
+                      ></div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title"> Product wise Approval </span>
-                        <div
-                          class="state-chart"
-                          id="trendProductApproval"
-                          style="width: 100%; height: 400px"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                  
                 </div>
-              </div>
-            </div>
-            <div class="card card-animate w-100 mt-3">
-              <div class="card-body">
-                <div class="row">
-                  
-                  <div class="col-md-6">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title">
-                          Scheme wise Approval
-                        </span>
-                        <div
-                          class="state-chart"
-                          id="trendSchemeApproval"
-                          style="width: 100%; height: 400px"
-                        ></div>
-                      </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"> Financial approvals TAT </span>
+                      <div
+                        class="state-chart"
+                        id="financial-approval-TAT"
+                        style="width: 100%; height: 250px"
+                      ></div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title">
-                            Average ticket size product wise
-                        </span>
-                        <div
-                          class="state-chart"
-                          id="trend-Average-Ticket-size"
-                          style="width: 100%; height: 400px"
-                        ></div>
-                      </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">
+                        Login to Financial approvals ratio
+                      </span>
+                      <div
+                        class="state-chart"
+                        id="financialConversion"
+                        style="width: 100%; height: 250px"
+                      ></div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card card-animate w-100 mt-3">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title"> Financial approvals TAT </span>
-                        <div
-                          class="state-chart"
-                          id="trend-Financial-approval-TAT"
-                          style="width: 100%; height: 400px"
-                        ></div>
-                      </div>
+          </div>
+        </div>
+        <div id="trend-view" *ngIf="isToggled" class="trend-view w-100">
+          <div class="card card-animate w-100 mt-2">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"> State wise Approval </span>
+                      <div
+                        class="state-chart"
+                        id="financialtrendStateApprovalWiseChart"
+                        style="width: 100%; height: 250px"
+                      ></div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title"> Login to Financial approvals ratio</span>
-                        <div
-                          class="state-chart"
-                          id="trendConversion"
-                          style="width: 100%; height: 400px"
-                        ></div>
-                      </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"> Product wise Approval </span>
+                      <div
+                        class="state-chart"
+                        id="financialtrendProductApproval"
+                        style="width: 100%; height: 250px"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card-animate w-100 mt-2">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"> Scheme wise Approval </span>
+                      <div
+                        class="state-chart"
+                        id="financialtrendSchemeApproval"
+                        style="width: 100%; height: 250px"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">
+                        Average ticket size product wise
+                      </span>
+                      <div
+                        class="state-chart"
+                        id="financial-trend-Average-Ticket-size"
+                        style="width: 100%; height: 250px"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card-animate w-100 mt-2">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title"> Financial approvals TAT </span>
+                      <div
+                        class="state-chart"
+                        id="financial-trend-Financial-approval-TAT"
+                        style="width: 100%; height: 250px"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">
+                        Login to Financial approvals ratio</span
+                      >
+                      <div
+                        class="state-chart"
+                        id="financialtrendConversion"
+                        style="width: 100%; height: 250px"
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -245,4 +277,4 @@
       </div>
     </div>
   </div>
-  
+</div>

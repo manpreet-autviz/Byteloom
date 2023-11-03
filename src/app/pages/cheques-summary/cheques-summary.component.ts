@@ -230,11 +230,7 @@ export class ChequesSummaryComponent {
           },
         },
       },
-      toolbox: {
-        feature: {
-          saveAsImage: { show: true },
-        },
-      },
+
       legend: {
        data: ['Financial approvals no.', 'Financial approvals amount'],
       },
@@ -349,11 +345,7 @@ export class ChequesSummaryComponent {
           },
         },
       },
-      toolbox: {
-        feature: {
-          saveAsImage: { show: true },
-        },
-      },
+    
       legend: {
        data: ['Financial approvals no.', 'Financial approvals amount'],
       },

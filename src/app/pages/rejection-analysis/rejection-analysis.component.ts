@@ -102,25 +102,25 @@ export class RejectionAnalysisComponent {
         formatter: (params: any) => {
 
           let tooltipText = '';
-          console.log(params , "params")
+          console.log(params, "params")
 
-          if (params.name === 'Login to disbursal') {
+          if (params.name === 'Login to disb.') {
 
-            tooltipText = 'Login: 100 <br/> Disbursed:30 <br/> Percentage : 70%'  ;
+            tooltipText = 'Login: 100 <br/> Disbursed:30 <br/> Percentage : 70%';
 
-          } else if (params.name === 'Financial approvals to disbursal') {
+          } else if (params.name === 'FA to disb.') {
 
-            tooltipText = 'Approved: 100 <br/> Disbursed:70 <br/> Percentage : 30%' ;
+            tooltipText = 'Approved: 100 <br/> Disbursed:70 <br/> Percentage : 30%';
 
-          } else if (params.name === 'Login to financial approvals') {
+          } else if (params.name === 'Login to FA') {
 
-            tooltipText = 'Login: 100 <br/> Approval:25 <br/> Percentage : 75%' ;
+            tooltipText = 'Login: 100 <br/> Approval:25 <br/> Percentage : 75%';
 
           }
 
           return tooltipText;
 
-        }, 
+        },
       },
       xAxis: {
         type: 'category',
@@ -132,14 +132,27 @@ export class RejectionAnalysisComponent {
           show: false, // Hide tick lines
         },
         data: [
-          'Login to disbursal',
-          'Financial approvals to disbursal',
-          'Login to financial approvals',
+
+          'Login to disb.',
+          'FA to disb.',
+          'Login to FA',
         ],
         axisLabel: {
           interval: 0,
-          rotate: 12,
+          rotate: 0,
           overflow: 'break',
+          whiteSpace: 'pre-wrap',
+          formatter: function (value: any) {
+            // Set a maximum length for the label text
+            const maxLabelLength = 15; // Adjust this as needed
+
+            // If the label text is longer than the maximum length, split it into multiple lines
+            if (value.length > maxLabelLength) {
+              return value.match(new RegExp('.{1,' + maxLabelLength + '}', 'g')).join('\n');
+            } else {
+              return value;
+            }
+          },
         },
       },
       yAxis: {
@@ -155,13 +168,13 @@ export class RejectionAnalysisComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 20,
+        nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
-          fontSize:14,
-          
+          fontSize: 14,
+
         },
-   
+
       },
       series: [
         {
@@ -186,22 +199,22 @@ export class RejectionAnalysisComponent {
           let tooltipText = '';
           if (params.seriesName === 'Login to financial approvals') {
 
-            tooltipText = 'Login: 1000 <br/> Approval : 60'  ;
+            tooltipText = 'Login: 1000 <br/> Approval : 60';
 
           } else if (params.seriesName === 'Financial approvals to disbursal') {
 
-            tooltipText = 'Approved: 600 <br/> Disbursed : 70' ;
+            tooltipText = 'Approved: 600 <br/> Disbursed : 70';
 
           } else if (params.seriesName === 'Login to disbursal') {
 
-            tooltipText = 'Login: 400 <br/> Approval : 55' ;
+            tooltipText = 'Login: 400 <br/> Disbursal : 55';
 
           }
 
           return tooltipText;
 
         },
-        
+
       },
       legend: {
         data: [
@@ -262,6 +275,7 @@ export class RejectionAnalysisComponent {
             show: true,
             position: 'right',
             formatter: '{c}%',
+            fontSize:9,
           },
         },
         {
@@ -276,6 +290,7 @@ export class RejectionAnalysisComponent {
             show: true,
             position: 'right',
             formatter: '{c}%',
+            fontSize:9,
           },
         },
         {
@@ -290,6 +305,7 @@ export class RejectionAnalysisComponent {
             show: true,
             position: 'right',
             formatter: '{c}% ',
+            fontSize:9,
           },
         },
       ],
@@ -300,11 +316,11 @@ export class RejectionAnalysisComponent {
       responsive: true,
       tooltip: {
         trigger: 'axis',
-        
+
         formatter: (params: any) => {
           const dataIndex = params[0].dataIndex;
           const login = [100, 800, 600, 450][dataIndex];
-          const rejection =[290, 350, 300, 450][dataIndex];
+          const rejection = [290, 350, 300, 450][dataIndex];
           const percent = [60, 50, 48, 45];
           const percentage = percent[dataIndex];
 
@@ -315,7 +331,7 @@ export class RejectionAnalysisComponent {
       // legend: {
       //   data: ['HL', 'BL', 'LAP', 'SBL'],
       // },
-    
+
       grid: {
         left: '3%',
         right: '4%',
@@ -345,26 +361,26 @@ export class RejectionAnalysisComponent {
           axisLine: {
             show: false,
           },
-          splitLine:{
-            show:false
+          splitLine: {
+            show: false
           },
           min: 10,
           max: 100,
           interval: 10,
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 23,
+          nameGap: 25,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
         },
-            ],
+      ],
       series: [
         {
           name: 'HL',
           type: 'line',
-          color:'#DBA39A',
+          color: '#DBA39A',
 
           areaStyle: {
             opacity: 0,
@@ -384,7 +400,7 @@ export class RejectionAnalysisComponent {
     this.StateRejectionOption = {
       tooltip: {
         trigger: 'item',
-        
+
         axisPointer: {
           type: 'shadow',
         },
@@ -393,7 +409,7 @@ export class RejectionAnalysisComponent {
           const barValue = params.value;
           const randomAmounts = [350, 145, 167, 370, 290, 300, 320, 550];
           const randomAmount = randomAmounts[dataIndex];
-          return `Approval:${barValue}</br> Login:${randomAmount}`; 
+          return `Approval:${barValue}</br> Login:${randomAmount}`;
         },
       },
       legend: {
@@ -424,7 +440,7 @@ export class RejectionAnalysisComponent {
         axisTick: {
           show: false, // Hide tick lines
         },
-        
+
         splitLine: {
           show: false,
         },
@@ -441,7 +457,7 @@ export class RejectionAnalysisComponent {
 
       series: [
         {
-         
+
           type: 'bar',
           barWidth: '25%',
           data: [41, 41, 42, 40, 35, 50, 45],
@@ -463,11 +479,11 @@ export class RejectionAnalysisComponent {
       responsive: true,
       tooltip: {
         trigger: 'axis',
-       
+
         formatter: (params: any) => {
           const dataIndex = params[0].dataIndex;
           const login = [100, 800, 600, 450][dataIndex];
-          const rejection =[290, 350, 300, 450][dataIndex];
+          const rejection = [290, 350, 300, 450][dataIndex];
           const percent = [29, 35, 30, 45];
           const percentage = percent[dataIndex];
 
@@ -478,7 +494,7 @@ export class RejectionAnalysisComponent {
       legend: {
         data: [],
       },
-     
+
       grid: {
         left: '3%',
         right: '4%',
@@ -519,14 +535,14 @@ export class RejectionAnalysisComponent {
           },
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
         },
       ],
       series: [
         {
           type: 'line',
-          color:'#F0997D',
+          color: '#F0997D',
 
           areaStyle: {
             opacity: 0,
@@ -605,7 +621,7 @@ export class RejectionAnalysisComponent {
                 color: '#DF7861',
               },
             },
-           
+
             {
               value: 20,
               name: 'Legal / Technical',
@@ -627,8 +643,8 @@ export class RejectionAnalysisComponent {
                 color: '#9D76C1',
               },
             },
-            
-           
+
+
           ],
         },
       ],
