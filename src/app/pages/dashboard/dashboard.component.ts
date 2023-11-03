@@ -302,7 +302,7 @@ export class DashboardComponent {
   onRegionChange(region: string) {
     this.selectedState = region;
     this.clusters = this.getClusters(region);
-    //  this.selectedCluster = this.clusters[0] || '';
+     this.selectedCluster =  'Select Area';
     this.branches = [];
     this.generateDisbursalMeter();
     this.generateDisbursalAchievement();
@@ -332,7 +332,7 @@ export class DashboardComponent {
   onClusterChange(cluster: string) {
     this.selectedCluster = cluster;
     this.branches = this.getBranches(this.selectedState, cluster);
-    //this.selectedBranch = this.branches[0] || '';
+    this.selectedBranch = 'Select Branch';
     this.generateDisbursalMeter();
     this.generateCardsRandomData(this.selectedState, this.selectedCluster, '');
     this.generateDisbursalAchievement();
@@ -741,7 +741,7 @@ export class DashboardComponent {
       this.finalTotalFiles = selectedRegion?.FinalFiles;
 
       if (this.selectedCluster !== 'Select Area') {
-        console.log("here")
+       
         const selectedArea = selectedRegion.areas[this.selectedCluster];
         this.loginTotalAmount = selectedArea?.loginAmount;
         this.loginTotalFiles = selectedArea?.loginFiles;
@@ -753,7 +753,8 @@ export class DashboardComponent {
         this.finalTotalFiles = selectedArea?.FinalFiles;
 
         if (this.selectedBranch !== 'Select Branch') {
-          const selectedBranch = selectedArea.branches[this.selectedBranch];
+          console.log("here",this.selectedBranch)
+          const selectedBranch = selectedArea?.branches[this.selectedBranch];
           this.loginTotalAmount = selectedBranch?.loginAmount;
           this.loginTotalFiles = selectedBranch?.loginFiles;
           this.financialTotalAmount = selectedBranch?.FinancialAmount;
