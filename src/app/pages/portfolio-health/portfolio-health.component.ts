@@ -29,10 +29,10 @@ export class PortfolioHealthComponent {
     'November',
     // 'Select custom'
   ];
-  monthFilters: string[] = ['Month to Date', 'Three month'];
+  monthFilters: string[] = ['Year to Date', 'Three months'];
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
-  selectedTrendFilter: string = 'Month to Date';
+  selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
 
   EDGNPANPAOption: any;
@@ -124,7 +124,7 @@ export class PortfolioHealthComponent {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 23,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -201,7 +201,7 @@ export class PortfolioHealthComponent {
             interval: 0.5,
             name: 'Percentage ',
             nameLocation: 'middle',
-            nameGap: 25,
+            nameGap: 23,
             nameTextStyle: {
               fontWeight: 600,
               fontSize:14,
@@ -293,7 +293,7 @@ export class PortfolioHealthComponent {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 22,
+          nameGap: 20,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,

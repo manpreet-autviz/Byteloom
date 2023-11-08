@@ -8,7 +8,7 @@ declare var $: any;
 })
 export class WorkInProgressTablesComponent {
 
-  filters: string[] = ['Month To Date', 'Last Month'];
+  filters: string[] = ['Year to Date', 'Last Month'];
 
   states: string[] = [
     'Pan India',
@@ -39,7 +39,7 @@ export class WorkInProgressTablesComponent {
     'Rundh',
   ];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'Month To Date';
+  selectedFilter: string = 'Year to Date';
   selectedFilterState: string = 'Pan India';
   selectedFilterBranch: string = 'Chandigarh';
   data = [
@@ -50,7 +50,7 @@ export class WorkInProgressTablesComponent {
       branchName: 'Chandigarh',
       cluster: 'Chandigarh',
       customerName: 'Amit Verma',
-      productName: 'Home Loan',
+      productName: 'HL',
       Scheme: 'Top Up',
       LoginDate: '09/25/2023',
     },
@@ -83,7 +83,7 @@ export class WorkInProgressTablesComponent {
       branchName: 'Jaipur',
       cluster: 'Jaipur',
       customerName: 'Monica',
-      productName: 'Product Name',
+      productName: 'SBL',
       Scheme: 'SBL',
       LoginDate: '09/25/2023',
     },

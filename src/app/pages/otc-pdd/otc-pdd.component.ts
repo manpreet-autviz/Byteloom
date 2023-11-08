@@ -85,7 +85,13 @@ export class OtcPddComponent {
       },
       tooltip: {
         trigger: 'axis',
-        formatter: '{c}',
+        formatter: function(params: any[]) {
+          let tooltip = params[0].name + '<br>';
+          params.forEach(function (item) {
+            tooltip += item.seriesName + ': ' + item.value + '<br>';
+          });
+          return tooltip;
+        },
       },
       legend: {
         data: [
@@ -127,7 +133,7 @@ export class OtcPddComponent {
         interval: 2,
         name: 'Number (In Hundred)',
         nameLocation: 'middle',
-        nameGap: 45,
+        nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
           fontSize:12,
@@ -147,7 +153,7 @@ export class OtcPddComponent {
           
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [1400,1100,960,630,540,430],
+          data: [14,11,9.6,6.3,5.4,4.3],
           itemStyle: {
             color: '#EE9322',
             borderRadius: [0, 0, 4, 4],
@@ -158,7 +164,7 @@ export class OtcPddComponent {
           type: 'bar',
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [1780,1600,1400,1250,1050,960],
+          data: [17,16,14,12.5,10.5,9.6],
           itemStyle: {
             color: '#3C7EBE',
             borderRadius: [4, 4, 0, 0],// Color for Category 2
@@ -225,7 +231,7 @@ export class OtcPddComponent {
         {
           name: 'Critical',
           type: 'bar',
-          data: [52, 49, 59, 50, 48, 58, 68],
+          data: [52, 49, 59, 50, 48, 58, 55],
           label: {
             show: true,
             position: 'right',
@@ -240,7 +246,7 @@ export class OtcPddComponent {
         {
           name: 'Non-Critical',
           type: 'bar',
-          data: [43, 42, 40, 35, 45, 45, 63],
+          data: [48, 51, 41, 50, 52, 42, 45],
           label: {
             show: true,
             position: 'right',
@@ -315,7 +321,7 @@ export class OtcPddComponent {
         {
           name: 'Credit',
           type: 'bar',
-          data: [55, 70, 61, 57, 60, 50, 65],
+          data: [52, 49, 59, 50, 48, 58, 55],
           label: {
             show: true,
             position: 'right',
@@ -331,7 +337,7 @@ export class OtcPddComponent {
         {
           name: 'Sales',
           type: 'bar',
-          data: [57, 60, 59, 45, 57, 55, 60],
+          data: [48, 51, 41, 50, 52, 42, 45],
           label: {
             show: true,
             position: 'right',

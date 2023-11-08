@@ -56,7 +56,7 @@
                 [(ngModel)]="selectedCluster"
                 (ngModelChange)="!isToggled?onClusterChange($event): trendonClusterChange($event)"
               >
-              <option value="Select Area">Select Area</option>
+              <option value="All">All</option>
                 <option *ngFor="let cluster of clusters" [value]="cluster">
                   {{ cluster }}
                 </option>
@@ -68,7 +68,7 @@
                 [(ngModel)]="selectedBranch"
                 (ngModelChange)="onBranchChange($event, selectedCluster)"
               >
-              <option value="Select Branch">Select Branch</option>
+              <option value="All">All</option>
                 <option *ngFor="let branch of branches" [value]="branch">
                   {{ branch }}
                 </option>
@@ -83,12 +83,14 @@
                   <div class="col-lg-6 col-md-6 col-12">
                     <div class="card box-s">
                       <div class="card-body">
+                        <div class="text-center">
                         <span class="f-6 title"> State wise approvals </span>
-                        <div class="pan-btn">
-                          <p>Pan India- 3500</p>
+                        </div>
+                        <div class="pan-btn" *ngIf="selectedState === 'Pan India'"> 
+                          <p>Pan India- 160Cr</p>
                         </div>
                         <div
-                          class="state-chart"
+                          class="state-chart mt-5"
                           id="FinalStateWiseApprovalChart"
                           style="width: 100%; height: 250px"
                         ></div>
@@ -100,10 +102,11 @@
                       <div class="card-body text-center">
                         <span class="f-6 title"> Product wise Approvals </span>
                         <div
-                          class="state-chart"
+                          class="state-chart mt-3"
                           id="FinalProductApproval"
                           style="width: 100%; height: 250px"
                         ></div>
+                        <span class="lightgrey">Data is shown based on no. of files</span>
                       </div>
                     </div>
                   </div>
@@ -112,10 +115,11 @@
                       <div class="card-body text-center">
                         <span class="f-6 title">Scheme wise Approvals </span>
                         <div
-                          class="state-chart"
+                          class="state-chart mt-3"
                           id="FinalSchemeApproval"
                           style="width: 100%; height: 250px"
                         ></div>
+                        <span class="lightgrey">Data is shown based on no. of files</span>
                       </div>
                     </div>
                   </div>
@@ -130,7 +134,7 @@
                   <div class="col-lg-4 col-md-6 col-12">
                     <div class="card box-s">
                       <div class="card-body text-center">
-                        <span class="f-6 title">Average Ticket size product wise </span>
+                        <span class="f-6 title">Average ticket size product wise </span>
                         <div
                         class="state-chart"
                         id="Final-Average-Ticket-size"
@@ -142,7 +146,7 @@
                   <div class="col-lg-4 col-md-6 col-12">
                     <div class="card box-s">
                       <div class="card-body text-center">
-                        <span class="f-6 title"> Financial approvals TAT </span>
+                        <span class="f-6 title"> Final approvals TAT </span>
                         <div
                         class="state-chart"
                         id="Final-Financial-approval-TAT"
@@ -154,7 +158,7 @@
                   <div class="col-lg-4 col-md-6 col-12">
                     <div class="card box-s">
                       <div class="card-body text-center">
-                        <span class="f-6 title"> Login to Financial approvals ratio </span>
+                        <span class="f-6 title"> Login to Final approvals ratio </span>
                         <div
                           class="state-chart"
                           id="FinalConversion"

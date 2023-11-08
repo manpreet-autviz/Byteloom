@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./work-in-progress.component.scss'],
 })
 export class WorkInProgressComponent {
-  filters: string[] = ['Month To Date', 'Last Month'];
+  filters: string[] = ['Year to Date', 'Last Month'];
 
   states: string[] = [
     'Pan India',
@@ -19,7 +19,7 @@ export class WorkInProgressComponent {
     'Maharashtra',
   ];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'Month To Date';
+  selectedFilter: string = 'Year to Date';
 
 
  

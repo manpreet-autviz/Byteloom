@@ -45,10 +45,10 @@ export class BusinessRMComponent {
     'November',
     // 'Select custom'
   ];
-  monthFilters: string[] = ['Month to Date', 'Three month'];
+  monthFilters: string[] = ['Year to Date', 'Three months'];
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
-  selectedTrendFilter: string = 'Month to Date';
+  selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
 
   stateApprovalOption: any;
@@ -89,7 +89,7 @@ export class BusinessRMComponent {
   
             let tooltipText = '';
   
-            if (params.name === 'Home Loan') {
+            if (params.name === 'HL') {
               tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 450';
             } else if (params.name === 'LAP') {
               tooltipText = 'No. of files: 700 <br/> Amount in Cr: 270';
@@ -128,7 +128,7 @@ export class BusinessRMComponent {
               show: false,
             },
             data: [
-              { value: 45, name: 'Home Loan', itemStyle: { color: '#146C94' } },
+              { value: 45, name: 'HL', itemStyle: { color: '#146C94' } },
               { value: 20, name: 'LAP', itemStyle: { color: '#AFD3E2' } },
               { value: 10, name: 'BL', itemStyle: { color: '#91C8E4' } },
               { value: 25, name: 'SBL', itemStyle: { color: '#19A7CE' } },
@@ -174,7 +174,7 @@ export class BusinessRMComponent {
             emphasis: {
               label: {
                 show: true,
-                fontSize: 40,
+                fontSize: 20,
                 fontWeight: 'bold',
                 formatter: '{c}%',
               },

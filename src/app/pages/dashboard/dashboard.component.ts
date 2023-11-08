@@ -38,8 +38,8 @@ export class DashboardComponent {
   ];
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
-  selectedCluster: string = 'Select Area';
-  selectedBranch: string = 'Select Branch';
+  selectedCluster: string = 'All';
+  selectedBranch: string = 'All';
 
   IrrChart!: echarts.ECharts;
   pfChart!: echarts.ECharts;
@@ -52,29 +52,29 @@ export class DashboardComponent {
   finalTotalFiles: number = 1350;
   finalTotalAmount: number = 160;
 
-  minLoginAmountValue = 500;
-  maxLoginAmountValue = 550;
+  minLoginAmountValue = 40;
+  maxLoginAmountValue = 160;
 
-  minLoginFileValue = 3000;
-  maxLoginFileValue = 3050;
+  minLoginFileValue = 240;
+  maxLoginFileValue = 500;
 
-  minFinancialAmountValue = 170;
-  maxFinancialAmountValue = 175;
+  minFinancialAmountValue = 14;
+  maxFinancialAmountValue = 26;
 
-  minFinancialFileValue = 1450;
-  maxFinancialFileValue = 1500;
+  minFinancialFileValue = 120;
+  maxFinancialFileValue = 190;
 
-  minDisbursalAmountValue = 140;
-  maxDisbursalAmountValue = 150;
+  minDisbursalAmountValue = 12;
+  maxDisbursalAmountValue = 19;
 
-  minDisbursalFileValue = 1250;
-  maxDisbursalFileValue = 1300;
+  minDisbursalFileValue = 100;
+  maxDisbursalFileValue = 170;
 
-  minfinalTotalAmountValue = 140;
-  maxfinalTotalAmountValue = 150;
+  minfinalTotalAmountValue = 12;
+  maxfinalTotalAmountValue = 20;
 
-  minfinalTotalFilesValue = 1250;
-  maxfinalTotalFilesValue = 1300;
+  minfinalTotalFilesValue = 150;
+  maxfinalTotalFilesValue = 200;
 
   currentDate: Date = new Date(); // Initialize with the current date
   minDate: Date = new Date(); // Define the minimum allowed date
@@ -302,7 +302,7 @@ export class DashboardComponent {
   onRegionChange(region: string) {
     this.selectedState = region;
     this.clusters = this.getClusters(region);
-     this.selectedCluster =  'Select Area';
+     this.selectedCluster =  'All';
     this.branches = [];
     this.generateDisbursalMeter();
     this.generateDisbursalAchievement();
@@ -332,7 +332,7 @@ export class DashboardComponent {
   onClusterChange(cluster: string) {
     this.selectedCluster = cluster;
     this.branches = this.getBranches(this.selectedState, cluster);
-    this.selectedBranch = 'Select Branch';
+    this.selectedBranch = 'All';
     this.generateDisbursalMeter();
     this.generateCardsRandomData(this.selectedState, this.selectedCluster, '');
     this.generateDisbursalAchievement();
@@ -555,7 +555,7 @@ export class DashboardComponent {
             valueAnimation: true,
             formatter: '{value}%',
             color: 'inherit',
-            fontSize: 10,
+            fontSize: 13.5,
           },
           data: [
             {
@@ -570,11 +570,19 @@ export class DashboardComponent {
       title: {},
       tooltip: {
         trigger: 'axis',
-        axisPointer: {
-          type: 'cross',
-          label: {
-            backgroundColor: '#6a7985',
-          },
+        // axisPointer: {
+        //   type: 'cross',
+        //   label: {
+        //     backgroundColor: '#6a7985',
+        //   },
+        // },
+        formatter: (params: any) => {
+          const dataIndex = params[0].dataIndex;
+          const barValue = params[0].value;
+          
+
+          // Create the tooltip content with the actual value and random amount
+          return `${barValue}%`;
         },
       },
       legend: {},
@@ -646,7 +654,7 @@ export class DashboardComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [90, 93, 94, 92, 97, 99, 100],
+          data: [90, 93, 94, 82, 97, 99, 100],
           itemStyle: {
             color: '#07A14E',
           },
@@ -740,7 +748,7 @@ export class DashboardComponent {
       this.finalTotalAmount = selectedRegion?.FinalAmount;
       this.finalTotalFiles = selectedRegion?.FinalFiles;
 
-      if (this.selectedCluster !== 'Select Area') {
+      if (this.selectedCluster !== 'All') {
        
         const selectedArea = selectedRegion.areas[this.selectedCluster];
         this.loginTotalAmount = selectedArea?.loginAmount;
@@ -752,7 +760,7 @@ export class DashboardComponent {
         this.finalTotalAmount = selectedArea?.FinalAmount;
         this.finalTotalFiles = selectedArea?.FinalFiles;
 
-        if (this.selectedBranch !== 'Select Branch') {
+        if (this.selectedBranch !== 'All') {
           console.log("here",this.selectedBranch)
           const selectedBranch = selectedArea?.branches[this.selectedBranch];
           this.loginTotalAmount = selectedBranch?.loginAmount;
@@ -841,7 +849,7 @@ export class DashboardComponent {
       this.technicalFile = selectedRegion?.WIQTechnicalFiles;
       this.technicalAmount = selectedRegion?.WIQTechnicalAmount;
 
-      if (this.selectedCluster) {
+      if (this.selectedCluster !== 'All') {
         const selectedArea = selectedRegion.areas[this.selectedCluster];
         this.PDFile = selectedArea?.WIQPDFiles;
         this.PDAmount = selectedArea?.WIQPDAmount;
@@ -857,7 +865,7 @@ export class DashboardComponent {
         this.technicalFile = selectedArea?.WIQTechnicalFiles;
         this.technicalAmount = selectedArea?.WIQTechnicalAmount;
 
-        if (this.selectedBranch) {
+        if (this.selectedBranch !== 'All') {
           const selectedBranch = selectedArea?.branches[this.selectedBranch];
           this.PDFile = selectedBranch?.WIQPDFiles;
           this.PDAmount = selectedBranch?.WIQPDAmount;

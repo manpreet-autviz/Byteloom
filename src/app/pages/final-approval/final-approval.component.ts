@@ -40,10 +40,10 @@ export class FinalApprovalComponent {
     'November',
     // 'Select custom'
   ];
-  monthFilters: string[] = ['Month to Date', 'Three month'];
+  monthFilters: string[] = ['Year to Date', 'Three months'];
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
-  selectedTrendFilter: string = 'Month to Date';
+  selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
 
   stateApprovalOption: any;
@@ -60,8 +60,8 @@ export class FinalApprovalComponent {
   trendConversionOption: any;
   trendFinancialTatOption: any;
 
-  selectedCluster: string = 'Select Area';
-  selectedBranch: string = 'Select Branch';
+  selectedCluster: string = 'All';
+  selectedBranch: string = 'All';
   branches: string[] = [];
   clusters: string[] = [];
 
@@ -115,7 +115,7 @@ export class FinalApprovalComponent {
           formatter: (params: any) => {
             const dataIndex = params[0].dataIndex;
             const barValue = params[0].value;
-            const randomAmounts = [350, 145, 167, 370, 290, 300, 320, 550];
+            const randomAmounts = [315, 130, 150, 330, 265, 270];
             const randomAmount = randomAmounts[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
@@ -139,9 +139,9 @@ export class FinalApprovalComponent {
           axisLine: {
             show: false,
           },
-          min: 10,
-          max: 90,
-          interval: 10,
+          min: 5,
+          max: 45,
+          interval: 5,
           name: 'Amount (in Rs. Crore)',
           nameLocation: 'start',
           nameGap: -150,
@@ -177,7 +177,7 @@ export class FinalApprovalComponent {
           {
             barWidth: 15,
             type: 'bar',
-            data: [70, 65, 50, 30, 40, 50],
+            data: [20, 35, 22, 37, 18, 33],
             itemStyle: {
               color: '#6096B4',
             },
@@ -194,9 +194,9 @@ export class FinalApprovalComponent {
           formatter: (params: any) => {
             
             const dataIndex = params[0].dataIndex;
-            const avgNoOfFile = [100, 80, 70, 50, 90][dataIndex];
-            const amountInCr = [12, 16, 10.3, 8.6, 5.7][dataIndex];
-            const avgTicketSize = [11, 8, 6, 12, 10, 7, 9];
+            const avgNoOfFile = [90, 72, 63, 45, 81][dataIndex];
+            const amountInCr = [10, 14, 9.3, 7.8, 5.2][dataIndex];
+            const avgTicketSize = [10, 7, 5, 11, 9, 6, 8];
             const avgTicket = avgTicketSize[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
@@ -211,10 +211,10 @@ export class FinalApprovalComponent {
           axisLine: {
             show: false,
           },
-          data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            rotate: 0,
             overflow: 'break',
           },
         },
@@ -231,7 +231,7 @@ export class FinalApprovalComponent {
           },
           name: 'Amount (in Rs. Lacs)',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 23,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -258,15 +258,15 @@ export class FinalApprovalComponent {
   
             if (params.name === 'BT') {
   
-              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
+              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 41'  ;
   
             } else if (params.name === 'Top-Up') {
   
-              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 27' ;
+              tooltipText = 'No. of files: 630 <br/> Amount in Cr: 24' ;
   
             } else if (params.name === 'Fresh') {
   
-              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 26' ;
+              tooltipText = 'No. of files: 720 <br/> Amount in Cr: 23' ;
   
             }
   
@@ -275,7 +275,7 @@ export class FinalApprovalComponent {
           },
         },
         legend: {
-          top: '-1%',
+          top: '-2%',
           left: 'center',
         },
         series: [
@@ -314,21 +314,21 @@ export class FinalApprovalComponent {
 
             let tooltipText = '';
   
-            if (params.name === 'Home Loan') {
+            if (params.name === 'HL') {
   
-              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
+              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 40'  ;
   
             } else if (params.name === 'LAP') {
   
-              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 20' ;
+              tooltipText = 'No. of files: 630 <br/> Amount in Cr: 18' ;
   
             } else if (params.name === 'BL') {
   
-              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 10' ;
+              tooltipText = 'No. of files: 720 <br/> Amount in Cr: 9' ;
   
             } else if (params.name === 'SBL') {
   
-              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 25' ;
+              tooltipText = 'No. of files: 810 <br/> Amount in Cr: 22' ;
   
             }
   
@@ -337,7 +337,7 @@ export class FinalApprovalComponent {
           },
         },
         legend: {
-          top: '-1%',
+          top: '-2%',
           left: 'center',
         },
         series: [
@@ -361,7 +361,7 @@ export class FinalApprovalComponent {
               show: false,
             },
             data: [
-              { value: 45, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
+              { value: 45, name: 'HL', itemStyle: { color: '#7C41DA' } },
               { value: 20, name: 'LAP', itemStyle: { color: '#F99B00' } },
               { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
               { value: 25, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
@@ -379,8 +379,8 @@ export class FinalApprovalComponent {
           formatter: (params: any) => {
             
             const dataIndex = params[0].dataIndex;
-            const Login = [100, 80, 70, 50, 90][dataIndex];
-            const Approved = [50, 30, 35, 55, 90][dataIndex];
+            const Login = [90, 72, 63, 45, 81][dataIndex];
+            const Approved = [45, 27, 31, 49, 81][dataIndex];
             const percent = [50, 36, 44, 40, 45];
             const percentage = percent [dataIndex];
 
@@ -396,10 +396,10 @@ export class FinalApprovalComponent {
           axisLine: {
             show: false,
           },
-          data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            rotate: 0,
             overflow: 'break',
           },
         },
@@ -416,7 +416,7 @@ export class FinalApprovalComponent {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 23,
           axisLabel: {
             formatter: '{value}',
             margin: 1,
@@ -448,8 +448,8 @@ export class FinalApprovalComponent {
           formatter: (params: any) => {
             
             const dataIndex = params[0].dataIndex;
-            const avgNoOfFile = [100, 80, 70, 50, 90][dataIndex];
-            const days  = [9, 6, 7, 8, 6];
+            const avgNoOfFile = [90, 72, 63, 45, 81][dataIndex];
+            const days  = [8, 5, 6, 7, 5];
             const Days = days [dataIndex];
 
             // Create the tooltip content with the actual value and random amount
@@ -464,10 +464,10 @@ export class FinalApprovalComponent {
           axisLine: {
             show: false,
           },
-          data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            rotate: 0,
             overflow: 'break',
           },
         },
@@ -484,7 +484,7 @@ export class FinalApprovalComponent {
           },
           name: 'Days',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 23,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -738,7 +738,7 @@ export class FinalApprovalComponent {
         },
         responsive: true, 
         legend: {
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['HL', 'LAP', 'BL', 'SBL'],
           
         },
     
@@ -802,7 +802,7 @@ export class FinalApprovalComponent {
         ],
         series: [
           {
-            name: 'Home Loan',
+            name: 'HL',
             type: 'line',
 
             areaStyle: {
@@ -1004,7 +1004,7 @@ export class FinalApprovalComponent {
         },
         responsive: true, 
         legend: {
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All','HL', 'LAP', 'BL', 'SBL'],
         },
    
         grid: {
@@ -1060,7 +1060,22 @@ export class FinalApprovalComponent {
         ],
         series: [
           {
-            name: 'Home Loan',
+            name: 'All',
+            type: 'line',
+
+            areaStyle: {
+              opacity: 0,
+            },
+            emphasis: {
+              focus: 'series',
+              areaStyle: {
+                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+              },
+            },
+            data: [11.0, 11.2, 11.3, 12.3, 12.5, 12.7, 13],
+          },
+          {
+            name: 'HL',
             type: 'line',
 
             areaStyle: {
@@ -1135,7 +1150,7 @@ export class FinalApprovalComponent {
         },
         responsive: true, 
         legend: {
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All','HL', 'LAP', 'BL', 'SBL'],
         },
     
         grid: {
@@ -1198,7 +1213,22 @@ export class FinalApprovalComponent {
         ],
         series: [
           {
-            name: 'Home Loan',
+            name: 'All',
+            type: 'line',
+
+            areaStyle: {
+              opacity: 0,
+            },
+            emphasis: {
+              focus: 'series',
+              areaStyle: {
+                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+              },
+            },
+            data: [1.4, 2.4, 5.4, 7.1, 8.4, 8.5, 9],
+          },
+          {
+            name: 'HL',
             type: 'line',
 
             areaStyle: {
@@ -1273,7 +1303,7 @@ export class FinalApprovalComponent {
         },
         responsive: true, 
         legend: {
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All','HL', 'LAP', 'BL', 'SBL'],
         },
    
         grid: {
@@ -1287,6 +1317,10 @@ export class FinalApprovalComponent {
             type: 'category',
             axisLine: {
               show: false,
+            },
+            axisLabel: {
+              formatter: '{value}',
+              margin: 30, // Add a margin of 15 pixels above the labels
             },
             labelLine:{
               show: false,
@@ -1307,10 +1341,6 @@ export class FinalApprovalComponent {
               'Sep',
               'Oct',
             ],
-            axisLabel: {
-              formatter: '{value}',
-              margin: 30, // Add a margin of 15 pixels above the labels
-            },
           },
         ],
         yAxis: [
@@ -1327,7 +1357,7 @@ export class FinalApprovalComponent {
             interval: 2,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap:  25,
+            nameGap:  20,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1341,7 +1371,22 @@ export class FinalApprovalComponent {
         ],
         series: [
           {
-            name: 'Home Loan',
+            name: 'All',
+            type: 'line',
+
+            areaStyle: {
+              opacity: 0,
+            },
+            emphasis: {
+              focus: 'series',
+              areaStyle: {
+                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+              },
+            },
+            data: [41.5, 42, 42.9, 43, 43.5, 44, 44.5],
+          },
+          {
+            name: 'HL',
             type: 'line',
 
             areaStyle: {
@@ -1438,9 +1483,8 @@ export class FinalApprovalComponent {
   }
 
   generateStateRandomData() {
-    const minValues = [67, 62, 48, 27, 37, 46];
-    const maxValues = [70, 65, 50, 30, 40, 50];
-
+    const minValues = [15, 35, 30, 27, 37, 30];
+    const maxValues = [25, 40, 35, 30, 40, 37];
     const newData = minValues.map((min, index) => {
       const max = maxValues[index];
       return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -1488,7 +1532,7 @@ export class FinalApprovalComponent {
     const newData = [
       {
         value: this.getRandomValue(41, 45),
-        name: 'Home Loan',
+        name: 'HL',
         itemStyle: { color: '#7C41DA' },
       },
       {
@@ -1556,7 +1600,7 @@ export class FinalApprovalComponent {
   }
 
   TrendgenerateStateRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendStateApprovalOption.xAxis[0].data = newAxisdata;
       const StateminValues = [55, 60, 64, 74];
@@ -1593,7 +1637,7 @@ export class FinalApprovalComponent {
 
   TrendgenerateAverageStateRandomData(selectedValue: string) {
     console.log("here",selectedValue)
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep','Oct'];
       this.trendAverageApprovalOption.xAxis[0].data = newAxisdata;
       const StateminValues = [10.7, 12.5, 14, 24];
@@ -1628,7 +1672,7 @@ export class FinalApprovalComponent {
     }
   }
   TrendgenerateSchemeRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendSchemeApprovalOption.xAxis[0].data = newAxisdata;
       const StateminValues = [55, 60, 64, 70];
@@ -1664,7 +1708,7 @@ export class FinalApprovalComponent {
   }
 
   TrendgenerateProductRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep','Oct'];
       this.trendProductApprovalOption.xAxis[0].data = newAxisdata;
       const StateminValues = [55, 60, 64, 70];
@@ -1699,7 +1743,7 @@ export class FinalApprovalComponent {
     }
   }
   TrendgenerateConversionRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep','Oct'];
       this.trendConversionOption.xAxis[0].data = newAxisdata;
       const StateminValues = [40.6, 45, 49, 55];
@@ -1735,7 +1779,7 @@ export class FinalApprovalComponent {
   }
 
   TrendgenerateFinancialTatRandomdata(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep','Oct'];
       this.trendFinancialTatOption.xAxis[0].data = newAxisdata;
       const StateminValues = [55, 60, 64, 70];
@@ -1876,6 +1920,12 @@ export class FinalApprovalComponent {
 
   onBranchChange(branch: string, cluster: string) {
     this.selectedCluster = cluster;
+    this.TrendgenerateStateRandomData(cluster);
+    this.TrendgenerateAverageStateRandomData(cluster);
+    this.TrendgenerateSchemeRandomData(cluster);
+    this.TrendgenerateProductRandomData(cluster);
+    this.TrendgenerateConversionRandomData(cluster);
+    this.TrendgenerateFinancialTatRandomdata(cluster);
   }
 
   trendStateregionchange(region: string){

@@ -37,10 +37,10 @@ export class CreditCmComponent {
     'November',
     // 'Select custom'
   ];
-  monthFilters: string[] = ['Month to Date', 'Three month'];
+  monthFilters: string[] = ['Year to Date', 'Three months'];
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
-  selectedTrendFilter: string = 'Month to Date';
+  selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
 
   stateApprovalOption: any;
@@ -184,7 +184,7 @@ export class CreditCmComponent {
       //         show: false,
       //       },
       //       data: [
-      //         { value: 45, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
+      //         { value: 45, name: 'HL', itemStyle: { color: '#7C41DA' } },
       //         { value: 20, name: 'LAP', itemStyle: { color: '#F99B00' } },
       //         { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
       //         { value: 25, name: 'SBL', itemStyle: { color: '#0B9DE8' } },

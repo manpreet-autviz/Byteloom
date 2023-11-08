@@ -43,10 +43,6 @@ export class TechnicalComponent {
     private cdRef: ChangeDetectorRef
   ) {}
 
-  onFilterChange(selectedValue: string) {}
-
-  onStateChange(selectedValue: string) {}
-
   ngAfterViewInit(): void {
     this.initializeChart();
   }
@@ -106,6 +102,12 @@ export class TechnicalComponent {
       },
       xAxis: [
         {
+          axisLine: {
+            show: false,
+          },
+          axisTick: {
+            show: false,
+          },
           type: 'category',
           boundaryGap: true,
           data: [
@@ -115,7 +117,7 @@ export class TechnicalComponent {
             'Rajasthan',
             'Gujarat',
             'MP',
-            'Pan India',
+            'Maharashtra',
           ],
           axisLabel: {
             interval: 0,
@@ -162,7 +164,7 @@ export class TechnicalComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [4.2, 4.5, 4.1, 5, 6, 5.5, 5],
+          data: [2, 4, 3, 5, 6, 5, 6],
           itemStyle: {
             color: '#9D76C1',
           },
@@ -180,7 +182,7 @@ export class TechnicalComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [2.2, 2.5, 2.1, 3, 2.5, 2.1, 2.5],
+          data: [2, 2, 3, 3, 4, 3, 5],
           itemStyle: {
             color: '#DE8F5F',
           },
@@ -251,7 +253,6 @@ export class TechnicalComponent {
                 color: '#AD8B73',
               },
             },
-           
           ],
           emphasis: {
             itemStyle: {
@@ -345,7 +346,7 @@ export class TechnicalComponent {
           type: 'bar',
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [1400,1100,960,630,540,430,330],
+          data: [1400, 1100, 960, 630, 540, 430, 330],
           itemStyle: {
             color: '#F0B86E', // Color for Category 1
           },
@@ -355,7 +356,7 @@ export class TechnicalComponent {
           type: 'bar',
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [1780,1600,1400,1250,1050,960,700],
+          data: [1780, 1600, 1400, 1250, 1050, 960, 700],
           itemStyle: {
             color: '#F0997D', // Color for Category 2
           },
@@ -367,6 +368,106 @@ export class TechnicalComponent {
 
     this.TatChart.setOption(this.TatOption);
     this.TMChart.setOption(this.TMOption);
+    this.TotalReportChart.setOption(this.TotalReportOption);
+  }
+
+  generateActivityTat() {
+    // Generate random data within the specified range
+    const randomData1 = Array.from({ length: 7 }, () =>
+      this.getRandomValue(3, 5)
+    );
+    const randomData2 = Array.from({ length: 7 }, () =>
+      this.getRandomValue(2, 4.5)
+    );
+
+    // Update the series data with random data
+    this.TatOption.series[0].data = randomData1;
+    this.TatOption.series[1].data = randomData2;
+
+    // Set the chart option to update the chart
+    this.TatChart.setOption(this.TatOption);
+  }
+
+  getRandomValue(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  onFilterChange(selectedValue: string) {
+    this.generateActivityTat();
+    this.generateTimData();
+    this.generateReportData();
+  }
+
+  onStateChange(selectedValue: string) {
+    this.generateActivityTat();
+    this.generateTimData();
+    this.generateReportData();
+  }
+  generateTimData() {
+    // Generate random values for each data point within the specified range
+    const randomValue1 = this.getRandomValue(15, 16);
+    const randomValue2 = this.getRandomValue(28, 29);
+    const randomValue3 = this.getRandomValue(13, 14);
+    const randomValue4 = this.getRandomValue(8, 9);
+    const randomValue5 = this.getRandomValue(9, 10);
+    const randomValue6 = this.getRandomValue(6, 7);
+    const randomValue7 = this.getRandomValue(5, 6);
+
+    // Update the data values in the series with random values
+    this.TMOption.series[0].data = [
+      { value: randomValue1, name: 'K Rahul', itemStyle: { color: '#9D76C1' } },
+      {
+        value: randomValue2,
+        name: 'Harpreet kaur',
+        itemStyle: { color: '#7D6E83' },
+      },
+      {
+        value: randomValue3,
+        name: 'Manoj Tiwary',
+        itemStyle: { color: '#A75D5D' },
+      },
+      {
+        value: randomValue4,
+        name: 'Ankit Sharma',
+        itemStyle: { color: '#DBA39A' },
+      },
+      {
+        value: randomValue5,
+        name: 'Rahul Thakur',
+        itemStyle: { color: '#DF7861' },
+      },
+      {
+        value: randomValue6,
+        name: 'Vikram Saini',
+        itemStyle: { color: '#ECB390' },
+      },
+      {
+        value: randomValue7,
+        name: 'Saurabh Kumar',
+        itemStyle: { color: '#AD8B73' },
+      },
+    ];
+
+    // Set the chart option to update the chart
+    this.TMChart.setOption(this.TMOption);
+  }
+
+  generateReportData() {
+    const minRange = 200;
+    const maxRange = 1800;
+
+    // Generate random data for Category 1 and Category 2
+    const category1Data = Array.from({ length: 7 }, () =>
+      this.getRandomValue(minRange, maxRange)
+    );
+    const category2Data = Array.from({ length: 7 }, () =>
+      this.getRandomValue(minRange, maxRange)
+    );
+
+    // Update the series data with random values
+    this.TotalReportOption.series[0].data = category1Data;
+    this.TotalReportOption.series[1].data = category2Data;
+
+    // Set the chart option to update the chart
     this.TotalReportChart.setOption(this.TotalReportOption);
   }
 }

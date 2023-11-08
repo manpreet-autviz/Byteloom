@@ -76,7 +76,7 @@
                     <div class="card box-s">
                       <div class="card-body">
                         <span class="f-6 title"> State wise disbursal </span>
-                        <div class="pan-btn">
+                        <div class="pan-btn" *ngIf="selectedState === 'Pan India'">
                           <p>Pan India- 130Cr</p>
                         </div>
                         <div
@@ -94,8 +94,9 @@
                         <div
                           class="state-chart"
                           id="Productdisbursal"
-                          style="width: 100%; height: 250px"
+                          style="width: 100%; height: 230px"
                         ></div>
+                        <span class="lightgrey">Data is shown based on amount</span>
                       </div>
                     </div> 
                   </div>
@@ -169,8 +170,9 @@
                         <div
                           class="state-chart"
                           id="Schemedisbursal"
-                          style="width: 100%; height: 250px"
+                          style="width: 100%; height: 230px"
                         ></div>
+                        <span class="lightgrey">Data is shown based on amount</span>
                       </div>
                     </div>
                   </div>

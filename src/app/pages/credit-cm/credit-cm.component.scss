@@ -70,16 +70,18 @@
     font-weight: 700;
     text-align: center;
     font-size: 18px;
+    margin: 0;
 }
 .files-amount .amount h4 {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 700;
+    margin: 0;
 }
 .files-amount .amount {
     text-align: center;
 }
 .percent h3 {
-  font-size: 35px;
+  font-size: 24px;
   font-weight: 700;
   margin: 0;
 }
@@ -231,12 +233,34 @@ ul.pending-cheque.ot-normal {
   background-color: rgba(254, 84, 25, 0.24);
 }
 .table-data h6{
-  padding: 5px;
-  min-width: 160px;
+  padding: 5px 10px;
+  max-width: fit-content;
   width: 100%;
   font-size: 15px;
   border-radius: 4px;
+  text-align: center;
 }
 .credit-cm-cards{
   margin-bottom: 20px;
 }
+
+@media (max-width: 991px) {
+  .otc-three-box:after, .otc-three-box:before{
+   display: none;
+ }
+   .divider-line {
+     display: block !important;
+   }
+   ul.pending-cheque.ot-normal {
+     position: static !important;
+     max-width: 190px;
+     width: 100%;
+     margin: 0 auto;
+   }
+   .box-2-ot {
+     margin-top: 50px;
+   }
+   .pending-cheque.ot-normal li {
+     text-align: center !important;
+   }
+ }

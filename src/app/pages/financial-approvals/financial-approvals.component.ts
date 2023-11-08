@@ -40,10 +40,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
     'November',
     // 'Select custom'
   ];
-  monthFilters: string[] = ['Month to Date', 'Three month'];
+  monthFilters: string[] = ['Year to Date', 'Three months'];
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
-  selectedTrendFilter: string = 'Month to Date';
+  selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
 
   stateApprovalOption: any;
@@ -60,8 +60,8 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   trendConversionOption: any;
   trendFinancialTatOption: any;
 
-  selectedCluster: string = 'Select Area';
-  selectedBranch: string = 'Select Branch';
+  selectedCluster: string = 'All';
+  selectedBranch: string = 'All';
   branches: string[] = [];
   clusters: string[] = [];
 
@@ -139,9 +139,9 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           axisLine: {
             show: false,
           },
-          min: 10,
-          max: 90,
-          interval: 10,
+          min: 5,
+          max: 45,
+          interval: 5,
           name: 'Amount (in Rs. Crore)',
           nameLocation: 'start',
           nameGap: -150,
@@ -177,7 +177,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           {
             barWidth: 15,
             type: 'bar',
-            data: [70, 65, 50, 30, 40, 50],
+            data: [22, 37, 24, 39, 20, 33],
             itemStyle: {
               color: '#6096B4',
             },
@@ -211,10 +211,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           axisLine: {
             show: false,
           },
-          data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            rotate: 0,
             overflow: 'break',
           },
         },
@@ -314,7 +314,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
 
             let tooltipText = '';
   
-            if (params.name === 'Home Loan') {
+            if (params.name === 'HL') {
   
               tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
   
@@ -361,7 +361,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               show: false,
             },
             data: [
-              { value: 45, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
+              { value: 45, name: 'HL', itemStyle: { color: '#7C41DA' } },
               { value: 20, name: 'LAP', itemStyle: { color: '#F99B00' } },
               { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
               { value: 25, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
@@ -396,10 +396,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           axisLine: {
             show: false,
           },
-          data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            rotate: 0,
             overflow: 'break',
           },
         },
@@ -464,10 +464,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
           axisLine: {
             show: false,
           },
-          data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            rotate: 0,
             overflow: 'break',
           },
         },
@@ -738,7 +738,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         responsive: true, 
         legend: {
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['HL', 'LAP', 'BL', 'SBL'],
           
         },
     
@@ -802,7 +802,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         ],
         series: [
           {
-            name: 'Home Loan',
+            name: 'HL',
             type: 'line',
 
             areaStyle: {
@@ -1004,7 +1004,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         responsive: true, 
         legend: {
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All','HL', 'LAP', 'BL', 'SBL'],
         },
    
         grid: {
@@ -1060,7 +1060,22 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         ],
         series: [
           {
-            name: 'Home Loan',
+            name: 'All',
+            type: 'line',
+
+            areaStyle: {
+              opacity: 0,
+            },
+            emphasis: {
+              focus: 'series',
+              areaStyle: {
+                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+              },
+            },
+            data: [11.0, 11.2, 11.3, 12.3, 12.5, 12.7, 13],
+          },
+          {
+            name: 'HL',
             type: 'line',
 
             areaStyle: {
@@ -1135,7 +1150,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         responsive: true, 
         legend: {
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All','HL', 'LAP', 'BL', 'SBL'],
         },
     
         grid: {
@@ -1198,7 +1213,22 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         ],
         series: [
           {
-            name: 'Home Loan',
+            name: 'All',
+            type: 'line',
+
+            areaStyle: {
+              opacity: 0,
+            },
+            emphasis: {
+              focus: 'series',
+              areaStyle: {
+                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+              },
+            },
+            data: [1.4, 2.4, 5.4, 7.1, 8.4, 8.5, 9],
+          },
+          {
+            name: 'HL',
             type: 'line',
 
             areaStyle: {
@@ -1273,7 +1303,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         },
         responsive: true, 
         legend: {
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All','HL', 'LAP', 'BL', 'SBL'],
         },
    
         grid: {
@@ -1341,7 +1371,22 @@ export class FinancialApprovalsComponent implements AfterViewInit {
         ],
         series: [
           {
-            name: 'Home Loan',
+            name: 'All',
+            type: 'line',
+
+            areaStyle: {
+              opacity: 0,
+            },
+            emphasis: {
+              focus: 'series',
+              areaStyle: {
+                opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+              },
+            },
+            data: [41.5, 42, 42.9, 43, 43.5, 44, 44.5],
+          },
+          {
+            name: 'HL',
             type: 'line',
 
             areaStyle: {
@@ -1438,8 +1483,8 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   }
 
   generateStateRandomData() {
-    const minValues = [67, 62, 48, 27, 37, 46];
-    const maxValues = [70, 65, 50, 30, 40, 50];
+    const minValues = [15, 35, 30, 27, 37, 30];
+    const maxValues = [25, 40, 35, 30, 40, 37];
 
     const newData = minValues.map((min, index) => {
       const max = maxValues[index];
@@ -1488,7 +1533,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
     const newData = [
       {
         value: this.getRandomValue(41, 45),
-        name: 'Home Loan',
+        name: 'HL',
         itemStyle: { color: '#7C41DA' },
       },
       {
@@ -1557,7 +1602,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   }
 
   TrendgenerateStateRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendStateApprovalOption.xAxis[0].data = newAxisdata;
       const StateminValues = [55, 60, 64, 74];
@@ -1593,7 +1638,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
 
   TrendgenerateAverageStateRandomData(selectedValue: string) {
     console.log("here",selectedValue)
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendAverageApprovalOption.xAxis[0].data = newAxisdata;
       const StateminValues = [10.7, 12.5, 14, 24];
@@ -1627,7 +1672,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
     }
   }
   TrendgenerateSchemeRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendSchemeApprovalOption.xAxis[0].data = newAxisdata;
       const StateminValues = [55, 60, 64, 74];
@@ -1662,7 +1707,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   }
 
   TrendgenerateProductRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendProductApprovalOption.xAxis[0].data = newAxisdata;
       const StateminValues = [55, 60, 64, 74];
@@ -1696,7 +1741,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
     }
   }
   TrendgenerateConversionRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendConversionOption.xAxis[0].data = newAxisdata;
       const StateminValues = [40.6, 45, 49, 55];
@@ -1732,7 +1777,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   }
 
   TrendgenerateFinancialTatRandomdata(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendFinancialTatOption.xAxis[0].data = newAxisdata;
       const StateminValues = [55, 60, 64, 74];
@@ -1872,6 +1917,12 @@ export class FinancialApprovalsComponent implements AfterViewInit {
 
   onBranchChange(branch: string, cluster: string) {
     this.selectedCluster = cluster;
+    this.TrendgenerateStateRandomData(cluster);
+    this.TrendgenerateAverageStateRandomData(cluster);
+    this.TrendgenerateSchemeRandomData(cluster);
+    this.TrendgenerateProductRandomData(cluster);
+    this.TrendgenerateConversionRandomData(cluster);
+    this.TrendgenerateFinancialTatRandomdata(cluster);
   }
 
   trendStateregionchange(region: string){

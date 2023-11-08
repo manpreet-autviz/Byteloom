@@ -45,10 +45,10 @@
                       <span class="f-6 title"
                         >Total OTCs pending & no. of customers
                       </span>
-                      <div class="pan-btn">
+                      <div class="pan-btn" *ngIf="selectedState === 'Pan India'">
                         <p>Pan India - 1800</p>
                       </div>
-                      <div class="pan-btn2">
+                      <div class="pan-btn2" *ngIf="selectedState === 'Pan India'">
                         <p>Pan India - 1200</p>
                       </div>
                       <div

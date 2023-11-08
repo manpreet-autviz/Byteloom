@@ -19,30 +19,34 @@
  
               <select *ngIf="clusters.length > 0" id="dropdown" class="cursor-pointer form-select me-2" [(ngModel)]="selectedCluster"
                 (ngModelChange)="onClusterChange($event)">
-                <option value="Select Area">Select Area</option>
+                <option value="All">All</option>
                 <option *ngFor="let cluster of clusters" [value]="cluster">
                   {{ cluster }}
                 </option>
               </select>
               <select *ngIf="branches.length > 0" id="dropdown" class="cursor-pointer form-select me-2" [(ngModel)]="selectedBranch"
                 (ngModelChange)="onBranchChange($event,selectedCluster)">
-                <option value="Select Branch">Select Branch</option>
+                <option value="All">All</option>
                 <option *ngFor="let branch of branches" [value]="branch">
                   {{ branch }}
                 </option>
               </select>
-              <select id="dropdown" class="cursor-pointer out form-select" [(ngModel)]="selectedFilter"
-                (ngModelChange)="onFilterChange($event)">
-                <option *ngFor="let filter of filters" [value]="filter">
-                  {{ filter }}
-                </option>
-              </select>
+             
             </div>
           </div>
         </div>
       </div>
  
       <div class="card card-animate">
+        <div class="d-flex justify-content-end pe-4 pt-2">
+          <select id="dropdown" class="cursor-pointer out form-select" [(ngModel)]="selectedFilter"
+          (ngModelChange)="onFilterChange($event)">
+          <option *ngFor="let filter of filters" [value]="filter">
+            {{ filter }}
+          </option>
+        </select>
+        </div>
+       
         <div class="card-body">
           <div class="row gy-3 four-tile-card">
             <div class="col-xl col-md-4">
@@ -60,7 +64,7 @@
                     <div class="text-part">
                       <span class="f-6 small-text"> Amount</span><br />
                       <span class="f-7 fs-6 py-2">{{ loginTotalAmount }} Cr</span><br />
-                      <span class="f-4 small-text">No of Files</span><br />
+                      <span class="f-4 small-text">No. of Files</span><br />
                       <span class="f-7">{{ loginTotalFiles }}</span>
                     </div>
                   </div>
@@ -81,7 +85,7 @@
                       </span>
                     </div>
                     <div class="text-part">
-                      <span class="f-6 small-text">No of Files</span><br />
+                      <span class="f-6 small-text">No. of Files</span><br />
                       <span class="f-7 fs-6 py-2">{{
                         financialTotalFiles
                         }}</span><br />
@@ -106,7 +110,7 @@
                       </span>
                     </div>
                     <div class="text-part">
-                      <span class="f-6 small-text">No of Files</span><br />
+                      <span class="f-6 small-text">No. of Files</span><br />
                       <span class="f-7 fs-6 py-2">{{ finalTotalFiles }}</span><br />
                       <span class="f-4 small-text"> Amount</span><br />
                       <span class="f-7">{{ finalTotalAmount }} Cr</span>
@@ -129,7 +133,7 @@
                       </span>
                     </div>
                     <div class="text-part">
-                      <span class="f-6 small-text">No of Files</span><br />
+                      <span class="f-6 small-text">No. of Files</span><br />
                       <span class="f-7 fs-6 py-2">{{
                         disbursalTotalFiles
                         }}</span><br />
@@ -142,8 +146,8 @@
             </div>
  
             <div class="col-xl col-lg-4 col-md-4">
-              <div class="card"  routerLink="/insights">
-                <div class="d-flex gap-2 card-body text-white bg-light-blue rounded five-card-min-h cursor-pointer">
+              <div class="card"  >
+                <div class="d-flex gap-2 card-body text-white bg-light-blue rounded five-card-min-h ">
                   <div class="col-6 text-center">
                     <p class="f-7 text-truncate mb-0">IRR Value</p>
                     <div class="irr-circle">
@@ -175,7 +179,7 @@
           <div class="card box-s h-100">
             <div class="card-body text-center position-relative">
               <span class="f-6 title"> Disbursal meter</span>
-              <p class="mb-0">(MTD)</p>
+              <p class="mb-0 lightgrey" >(MTD)</p>
               <div class="state-chart" id="DisbursalAchievementChart" style="width: 100%; height: 250px"></div>
               <div class="graphn-bottom-text">
                 <p class="mb-0"><b>Target - 100 Cr</b></p>
@@ -187,7 +191,7 @@
           <div class="card box-s h-100">
             <div class="card-body text-center">
               <span class="f-6 title"> Disbursal achievement </span>
-              <p class="fs-8 m-0">(Previous month)</p>
+              <p class="fs-8 m-0 lightgrey">(Previous months)</p>
               <div class="state-chart" id="dashtrendDisbursalAchievement" style="width: 100%; height: 250px"></div>
             </div>
           </div>
@@ -296,12 +300,14 @@
               <div class="row">
                 <div class="text-center">
                   <span class="f-6 title">Work in Queue</span>
-                  <p class="mb-0">(MTD)</p>
+                  <p class="mb-0 lightgrey">(MTD)</p>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col-xl col-md-4">
-                  <div class="tat-box cursor-arrow">
+                  <div class="tat-box cursor-pointer" (click)="
+                  workInprogressTable('/PD Pending / Login')
+                ">
                     <div class="color-box bg-lightpurple">
                       <img src="../../../assets/icons/pd-icon.svg" />
                     </div>
@@ -309,9 +315,7 @@
                     <div class="number-list">
                       <ul class="p-0">
                         <li>
-                          <a (click)="
-                              workInprogressTable('/PD Pending / Login')
-                            ">
+                          <a >
                             <div>
                               <h6>{{PDFile}}</h6>
                               <p>Files</p>
@@ -319,9 +323,7 @@
                           </a>
                         </li>
                         <li>
-                          <a (click)="
-                              workInprogressTable('/PD Pending / Login')
-                            ">
+                          <a >
                             <div>
                               <h6>{{PDAmount}} Cr</h6>
                               <p>Amount</p>
@@ -333,7 +335,9 @@
                   </div>
                 </div>
                 <div class="col-xl col-md-4">
-                  <div class="tat-box cursor-arrow">
+                  <div class="tat-box cursor-pointer" (click)="
+                  workInprogressTable('/PD Pending / Login')
+                ">
                     <div class="color-box bg-lightorange">
                       <img src="../../../assets/icons/w-financial.svg" />
                     </div>
@@ -341,9 +345,7 @@
                     <div class="number-list">
                       <ul class="p-0">
                         <li>
-                          <a (click)="
-                              workInprogressTable('/PD Pending / Login')
-                            ">
+                          <a >
                             <div>
                               <h6>{{financialFile}}</h6>
                               <p>Files</p>
@@ -351,9 +353,7 @@
                           </a>
                         </li>
                         <li>
-                          <a (click)="
-                              workInprogressTable('/PD Pending / Login')
-                            ">
+                          <a >
                             <div>
                               <h6>{{financialAmount}} Cr</h6>
                               <p>Amount</p>
@@ -365,7 +365,9 @@
                   </div>
                 </div>
                 <div class="col-xl col-md-4">
-                  <div class="tat-box cursor-arrow">
+                  <div class="tat-box cursor-pointer" (click)="
+                  workInprogressTable('/PD Pending / Login')
+                ">
                     <div class="color-box bg-lightorange">
                       <img src="../../../assets/icons/w-financial.svg" />
                     </div>
@@ -373,9 +375,7 @@
                     <div class="number-list">
                       <ul class="p-0">
                         <li>
-                          <a (click)="
-                              workInprogressTable('/PD Pending / Login')
-                            ">
+                          <a >
                             <div>
                               <h6>{{finalFile}} </h6>
                               <p>Files</p>
@@ -383,9 +383,7 @@
                           </a>
                         </li>
                         <li>
-                          <a (click)="
-                              workInprogressTable('/PD Pending / Login')
-                            ">
+                          <a >
                             <div>
                               <h6>{{finalAmount}} Cr</h6>
                               <p>Amount</p>
@@ -397,7 +395,9 @@
                   </div>
                 </div>
                 <div class="col-xl col-md-4">
-                  <div class="tat-box cursor-arrow">
+                  <div class="tat-box cursor-pointer" (click)="
+                  workInprogressTable('/PD Pending / Login')
+                ">
                     <div class="color-box bg-lightred">
                       <img src="../../../assets/icons/w-technical.svg" />
                     </div>
@@ -405,9 +405,7 @@
                     <div class="number-list">
                       <ul class="p-0">
                         <li>
-                          <a (click)="
-                              workInprogressTable('/PD Pending / Login')
-                            ">
+                          <a >
                             <div>
                               <h6>{{technicalFile}}</h6>
                               <p>Files</p>
@@ -415,9 +413,7 @@
                           </a>
                         </li>
                         <li>
-                          <a (click)="
-                              workInprogressTable('/PD Pending / Login')
-                            ">
+                          <a >
                             <div>
                               <h6>{{technicalAmount}} Cr</h6>
                               <p>Amount</p>
@@ -429,7 +425,9 @@
                   </div>
                 </div>
                 <div class="col-xl col-md-4">
-                  <div class="tat-box cursor-arrow">
+                  <div class="tat-box cursor-pointer" (click)="
+                  workInprogressTable('/PD Pending / Login')
+                ">
                     <div class="color-box bg-lightred">
                       <img src="../../../assets/icons/auction.svg" />
                     </div>
@@ -437,9 +435,7 @@
                     <div class="number-list">
                       <ul class="p-0">
                         <li>
-                          <a (click)="
-                              workInprogressTable('/PD Pending / Login')
-                            ">
+                          <a >
                             <div>
                               <h6>{{legalFile}}</h6>
                               <p>Files</p>
@@ -447,9 +443,7 @@
                           </a>
                         </li>
                         <li>
-                          <a (click)="
-                              workInprogressTable('/PD Pending / Login')
-                            ">
+                          <a >
                             <div>
                               <h6>{{legalAmount}} Cr</h6>
                               <p>Amount</p>
@@ -461,7 +455,9 @@
                   </div>
                 </div>
                 <div class="col-xl col-md-4">
-                  <div class="tat-box cursor-arrow">
+                  <div class="tat-box cursor-pointer" (click)="
+                  workInprogressTable('/PD Pending / Login')
+                ">
                     <div class="color-box bg-lightgreen">
                       <img src="../../../assets/icons/w-disbursal.svg" />
                     </div>
@@ -469,9 +465,7 @@
                     <div class="number-list">
                       <ul class="p-0">
                         <li>
-                          <a (click)="
-                              workInprogressTable('/PD Pending / Login')
-                            ">
+                          <a >
                             <div>
                               <h6>{{disbursalFile}}</h6>
                               <p>Files</p>
@@ -479,9 +473,7 @@
                           </a>
                         </li>
                         <li>
-                          <a (click)="
-                              workInprogressTable('/PD Pending / Login')
-                            ">
+                          <a >
                             <div>
                               <h6>{{disbursalAmount}} Cr</h6>
                               <p>Amount</p>

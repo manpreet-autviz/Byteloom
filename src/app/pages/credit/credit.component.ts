@@ -57,11 +57,11 @@ export class CreditComponent {
       SNo: 1,
       CmName: 'Nikhil Rana',
       EmpCode: '0123',
-      Area: 'Nikhil Rana',
+      Area: 'Chandigarh',
       Branch: 'Chandigarh',
       TotalPd: '1200',
       TotalApproval: '120',
-      State: 'Nikhil Rana',
+      State: 'PCH',
       Disbursal: '45',
       ED: '68',
     },
@@ -69,11 +69,11 @@ export class CreditComponent {
       SNo: 2,
       CmName: 'Manjeet Kaur',
       EmpCode: '0124',
-      Area: 'Manjeet Kaur',
+      Area: 'Karnal',
       Branch: 'Rohtak',
       TotalPd: '1400',
       TotalApproval: '140',
-      State: 'Manjeet Kaur',
+      State: 'PCH',
       Disbursal: '56',
       ED: '40',
     },
@@ -81,11 +81,11 @@ export class CreditComponent {
       SNo: 3,
       CmName: 'Randeep hodda',
       EmpCode: '0124',
-      Area: 'Randeep hodda',
+      Area: 'Indore',
       Branch: 'Indore',
       TotalPd: '1450',
       TotalApproval: '95',
-      State: 'Randeep hodda',
+      State: 'Mp',
       Disbursal: '55',
       ED: '65',
     },
@@ -93,11 +93,11 @@ export class CreditComponent {
       SNo: 4,
       CmName: 'Kishor Kumar',
       EmpCode: '0125',
-      Area: 'Kishor Kumar',
+      Area: 'Mumbai',
       Branch: 'Mumbai',
       TotalPd: '1290',
       TotalApproval: '90',
-      State: 'Kishor Kumar',
+      State: 'Maharashtra',
       Disbursal: '65',
       ED: '55',
     },
@@ -105,11 +105,11 @@ export class CreditComponent {
       SNo: 5,
       CmName: 'Amarjeet',
       EmpCode: '0126',
-      Area: 'Amarjeet',
+      Area: 'Jaipur',
       Branch: 'Jaipur',
       TotalPd: '1000',
       TotalApproval: '100',
-      State: 'Amarjeet',
+      State: 'Rajasthan',
       Disbursal: '55',
       ED: '52',
     },
@@ -117,11 +117,11 @@ export class CreditComponent {
       SNo: 6,
       CmName: 'Vivek Gupta',
       EmpCode: '0127',
-      Area: 'Vivek Gupta',
+      Area: 'Chandigarh',
       Branch: 'Ambala',
       TotalPd: '1400',
       TotalApproval: '110',
-      State: 'Vivek Gupta',
+      State: 'PCH',
       Disbursal: '65',
       ED: '54',
     },
@@ -129,11 +129,11 @@ export class CreditComponent {
       SNo: 7,
       CmName: 'Rashmika Sen',
       EmpCode: '0128',
-      Area: 'Rashmika Sen',
+      Area: 'Chandigarh',
       Branch: 'Chandigarh',
       TotalPd: '1200',
       TotalApproval: '135',
-      State: 'Rashmika Sen',
+      State: 'PCH',
       Disbursal: '70',
       ED: '63',
     },
@@ -141,11 +141,11 @@ export class CreditComponent {
       SNo: 8,
       CmName: 'Rahul Saini',
       EmpCode: '0129',
-      Area: 'Rahul Saini',
+      Area: 'chandigarh',
       Branch: 'Ambala',
       TotalPd: '1400',
       TotalApproval: '150',
-      State: 'Rahul Saini',
+      State: 'PCH',
       Disbursal: '75',
       ED: '55',
     },
@@ -153,11 +153,11 @@ export class CreditComponent {
       SNo: 9,
       CmName: 'Kiran Sen',
       EmpCode: '0130',
-      Area: 'Kiran Sen',
+      Area: 'Jaipur',
       Branch: 'Jaipur',
       TotalPd: '1000',
       TotalApproval: '125',
-      State: 'Kiran Sen',
+      State: 'Rajasthan',
       Disbursal: '95',
       ED: '65',
     },
@@ -165,11 +165,11 @@ export class CreditComponent {
       SNo: 10,
       CmName: 'Anushaka Sen',
       EmpCode: '0131',
-      Area: 'Anushaka Sen',
+      Area: 'Indore',
       Branch: 'Indore',
       TotalPd: '1400',
       TotalApproval: '120',
-      State: 'Anushaka Sen',
+      State: 'MP',
       Disbursal: '44',
       ED: '25',
     },
@@ -181,10 +181,6 @@ export class CreditComponent {
     private zone: NgZone,
     private cdRef: ChangeDetectorRef
   ) {}
-
-  onFilterChange(selectedValue: string) {}
-
-  onStateChange(selectedValue: string) {}
 
   setActiveButton(button: string) {
     setTimeout(() => {
@@ -299,8 +295,7 @@ export class CreditComponent {
             show: true,
             position: 'right',
             formatter: '{c}',
-            fontSize:9,
-
+            fontSize: 9,
           },
           itemStyle: {
             color: '#AD8B73',
@@ -315,8 +310,7 @@ export class CreditComponent {
             show: true,
             position: 'right',
             formatter: '{c}',
-            fontSize:9,
-
+            fontSize: 9,
           },
           itemStyle: {
             color: '#CEAB93',
@@ -331,8 +325,7 @@ export class CreditComponent {
             show: true,
             position: 'right',
             formatter: '{c}',
-            fontSize:9,
-
+            fontSize: 9,
           },
           itemStyle: {
             color: '#EEE3CB',
@@ -367,7 +360,7 @@ export class CreditComponent {
           emphasis: {
             label: {
               show: true,
-              fontSize: 40,
+              fontSize: 20,
               fontWeight: 'bold',
               formatter: '{c}%',
             },
@@ -436,7 +429,7 @@ export class CreditComponent {
       xAxis: {
         type: 'category',
 
-        data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+        data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
         axisLabel: {
           interval: 0,
           rotate: 45,
@@ -465,7 +458,7 @@ export class CreditComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 25,
+        nameGap: 23,
         nameTextStyle: {
           fontWeight: 600,
           fontSize: 14,
@@ -491,12 +484,7 @@ export class CreditComponent {
       title: {},
       tooltip: {
         trigger: 'axis',
-        axisPointer: {
-          type: 'cross',
-          label: {
-            backgroundColor: '#6a7985',
-          },
-        },
+
         formatter: (params: any) => {
           const barValue = params[0].value;
           const dataIndex = params[0].dataIndex;
@@ -567,7 +555,7 @@ export class CreditComponent {
             fontWeight: 600,
             fontSize: 14,
           },
-          nameGap: 6,
+          nameGap: 5,
           axisLabel: {
             margin: 1,
           },
@@ -587,7 +575,7 @@ export class CreditComponent {
               opacity: 0.5,
             },
           },
-          data: [3, 2.8, 3.2, 3.1, 2.8, 2.8, 3],
+          data: [3, 2, 3, 3, 4, 2, 5],
           itemStyle: {
             color: '#9D76C1',
           },
@@ -685,7 +673,7 @@ export class CreditComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 25,
+        nameGap: 23,
         nameTextStyle: {
           fontWeight: 600,
           fontSize: 14,
@@ -727,11 +715,7 @@ export class CreditComponent {
       legend: {
         data: [],
       },
-      toolbox: {
-        feature: {
-          saveAsImage: {},
-        },
-      },
+
       grid: {
         left: '3%',
         right: '4%',
@@ -781,7 +765,7 @@ export class CreditComponent {
           interval: 5,
           name: 'Days',
           nameLocation: 'middle',
-          nameGap: 18,
+          nameGap: 17,
           nameTextStyle: {
             fontWeight: 600,
             fontSize: 14,
@@ -818,5 +802,111 @@ export class CreditComponent {
     this.ActicityTatReportChart.setOption(this.ActicityTatReportOption);
     this.EDChart.setOption(this.EDOption);
     this.FTRFilesChart.setOption(this.FTRFilesOption);
+  }
+
+  onFilterChange(selectedValue: string) {
+    this.generateConversionRandomData();
+    this.generatLoginRandomData();
+    this.generateFtr();
+    this.generateActivityTat();
+    this.AvgCMFilesRandomdata()
+  }
+
+  onStateChange(selectedValue: string) {
+    this.generateConversionRandomData();
+    this.generatLoginRandomData();
+    this.generateFtr();
+    this.generateActivityTat();
+    this.AvgCMFilesRandomdata()
+  }
+
+  generateConversionRandomData() {
+    const newData = [
+      { value: this.getRandomValue(2.1, 2.3), itemStyle: { color: '#DF7861' } },
+      { value: this.getRandomValue(2.1, 2.3), itemStyle: { color: '#DF7861' } },
+      { value: this.getRandomValue(2.1, 2.3), itemStyle: { color: '#DF7861' } },
+      { value: this.getRandomValue(2.1, 2.3), itemStyle: { color: '#DF7861' } },
+      { value: this.getRandomValue(2.1, 2.3), itemStyle: { color: '#DF7861' } },
+      { value: this.getRandomValue(2.1, 2.3), itemStyle: { color: '#DF7861' } },
+      { value: this.getRandomValue(2.1, 2.3), itemStyle: { color: '#DF7861' } },
+    ];
+    this.EDOption.series[0].data = newData;
+    this.EDChart.setOption(this.EDOption);
+  }
+
+  generatLoginRandomData() {
+    const newData = [
+      { value: this.getRandomValue(50, 60), itemStyle: { color: '#7D6E83' } },
+      { value: this.getRandomValue(50, 60), itemStyle: { color: '#7D6E83' } },
+      { value: this.getRandomValue(50, 60), itemStyle: { color: '#7D6E83' } },
+      { value: this.getRandomValue(50, 60), itemStyle: { color: '#7D6E83' } },
+      { value: this.getRandomValue(50, 60), itemStyle: { color: '#7D6E83' } },
+      { value: this.getRandomValue(50, 60), itemStyle: { color: '#7D6E83' } },
+      { value: this.getRandomValue(50, 60), itemStyle: { color: '#7D6E83' } },
+    ];
+    this.ConversionRatioOption.series[0].data = newData;
+    this.ConversionRatioChart.setOption(this.ConversionRatioOption);
+  }
+
+  generateFtr() {
+    const minValue = 75;
+    const maxValue = 80;
+
+    // Generate random data within the specified range
+    const randomData = Array.from({ length: 7 }, () =>
+      this.getRandomValue(minValue, maxValue)
+    );
+
+    // Update the series data with random data
+    this.FTRFilesOption.series[0].data = randomData;
+
+    // Set the chart option to update the chart
+    this.FTRFilesChart.setOption(this.FTRFilesOption);
+  }
+
+  generateActivityTat() {
+    // Generate random data within the specified range
+    const randomData1 = Array.from({ length: 7 }, () =>
+      this.getRandomValue(3, 5)
+    );
+    const randomData2 = Array.from({ length: 7 }, () =>
+      this.getRandomValue(2, 4.5)
+    );
+    const randomData3 = Array.from({ length: 7 }, () =>
+      this.getRandomValue(3, 5.4)
+    );
+    // Update the series data with random data
+    this.ActicityTatReportOption.series[0].data = randomData1;
+    this.ActicityTatReportOption.series[1].data = randomData2;
+    this.ActicityTatReportOption.series[2].data = randomData3;
+    // Set the chart option to update the chart
+    this.ActicityTatReportChart.setOption(this.ActicityTatReportOption);
+  }
+
+  AvgCMFilesRandomdata() {
+    // Specify min and max values for random data
+    const minPD = 25;
+    const maxPD = 28;
+    const minApproval = 10;
+    const maxApproval = 14;
+    const minDisbursal = 8;
+    const maxDisbursal = 14;
+  
+    // Generate random values for PD, Approval, and Disbursal within the specified range
+    const randomPD = this.getRandomValue(minPD, maxPD);
+    const randomApproval = this.getRandomValue(minApproval, maxApproval);
+    const randomDisbursal = this.getRandomValue(minDisbursal, maxDisbursal);
+  
+    // Update the series data with random values
+    this.AvgCMFilesOption.series[0].data = [randomPD, randomPD, randomPD, randomPD, randomPD, randomPD, randomPD];
+    this.AvgCMFilesOption.series[1].data = [randomApproval, randomApproval, randomApproval, randomApproval, randomApproval, randomApproval, randomApproval];
+    this.AvgCMFilesOption.series[2].data = [randomDisbursal, randomDisbursal, randomDisbursal, randomDisbursal, randomDisbursal, randomDisbursal, randomDisbursal];
+  
+    // Set the chart option to update the chart
+    this.AvgCMFilesChart.setOption(this.AvgCMFilesOption);
+  }
+
+  getRandomValue(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }

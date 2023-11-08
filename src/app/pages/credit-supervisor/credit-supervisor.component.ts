@@ -31,10 +31,10 @@ export class CreditSupervisorComponent {
     'November',
     // 'Select custom'
   ];
-  monthFilters: string[] = ['Month to Date', 'Three month'];
+  monthFilters: string[] = ['Year to Date', 'Three months'];
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
-  selectedTrendFilter: string = 'Month to Date';
+  selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
 
   stateApprovalOption: any;
@@ -63,12 +63,9 @@ export class CreditSupervisorComponent {
         title: {},
         tooltip: {
           trigger: 'axis',
-          axisPointer: {
-            type: 'cross',
-            label: {
-              backgroundColor: '#6a7985',
-            },
-          
+          formatter: (params: any) => {
+            const value = params[0].value;
+            return `${value}%`;
           },
         },
         legend: {

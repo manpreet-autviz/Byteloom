@@ -37,10 +37,10 @@ export class BusinessSupervisorComponent {
     'November',
     // 'Select custom'
   ];
-  monthFilters: string[] = ['Month to Date', 'Three month'];
+  monthFilters: string[] = ['Year to Date', 'Three months'];
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
-  selectedTrendFilter: string = 'Month to Date';
+  selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
 
   stateApprovalOption: any;
@@ -78,7 +78,19 @@ export class BusinessSupervisorComponent {
 
       this.IrrPfInsuranceOption = {
         legend: {},
-        tooltip: {},
+        tooltip: {
+          trigger: 'axis',
+          formatter: function (params: any) {
+            console.log(params)
+            const branchTarget = params[0].data['Branch target'];
+            const achievement = params[1].data['Achievement'];
+            const achievementPercentage = (
+              (achievement / branchTarget) *
+              100
+            ).toFixed(2);
+            return `Branch Target: ${branchTarget} Lacs<br>Achievement: ${achievement} Lacs<br>Achievement %: ${achievementPercentage}%`;
+          },
+        },
         dataset: {
           dimensions: ['product', 'Branch target', 'Achievement'],
           source: [
@@ -117,7 +129,7 @@ export class BusinessSupervisorComponent {
             formatter: '{value}',
             margin: 1,
           },
-          name: 'Percentage %',
+          name: 'Amount in Lacs',
           nameLocation: 'middle',
           nameGap: 25,
           nameTextStyle: {

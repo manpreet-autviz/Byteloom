@@ -84,7 +84,7 @@
                   <div class="card box-s">
                     <div class="card-body text-center">
                       <span class="f-6 title">Bucket wise list </span>
-                      <table id="table" class="bucket-list table mt-4" style="width: 100%">
+                      <table id="table" class="bucket-list table mt-1" style="width: 100%">
                         <thead>
                           <tr class="bg-gray mid-head">
                             <th class="border-top-0">Bucket</th>
@@ -101,7 +101,7 @@
                                 </div>
                               </div>
                             </td>
-                            <td>20.20</td>      
+                            <td>20.2</td>      
                             <td>2.2</td>                          
                           </tr>
                           <tr>
@@ -112,8 +112,8 @@
                                 </div>
                               </div>
                             </td>
-                            <td>6.00</td>
-                            <td>0.60</td>
+                            <td>6.0</td>
+                            <td>0.6</td>
                           </tr>
                           <tr>
                             <td>
@@ -123,8 +123,8 @@
                                 </div>
                               </div>
                             </td>
-                            <td>8.00</td>
-                            <td>0.80</td>
+                            <td>8.0</td>
+                            <td>0.8</td>
                           </tr>
                           <tr>
                             <td>
@@ -134,8 +134,8 @@
                                 </div>
                               </div>
                             </td>
-                            <td>5.00</td>
-                            <td>0.50</td>                      
+                            <td>5.0</td>
+                            <td>0.5</td>                      
                           </tr>
                         </tbody>
                       </table>
@@ -166,13 +166,13 @@
                 <div class="col-lg-6 col-md-6">
                   <div class="card box-s">
                     <div class="card-body text-center">
-                      <span class="f-6 title"> Non started cases</span>
+                      <span class="f-6 title"> Non starter  cases</span>
  
-                      <div class="pan-btn">
+                      <div class="pan-btn" *ngIf="selectedState === 'Pan India'">
                         <p>Pan India - 300</p>
                       </div>
  
-                      <div class="pan-btn2">
+                      <div class="pan-btn2" *ngIf="selectedState === 'Pan India'">
                         <p>Pan India - 320</p>
                       </div>
  

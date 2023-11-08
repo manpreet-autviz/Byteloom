@@ -52,7 +52,7 @@ export class BusinessInsightsComponent {
       branchName: 'Chandigarh',
       cluster: 'Chandigarh',
       customerName: 'Amit Verma',
-      productName: 'Home Loan',
+      productName: 'HL',
       Scheme: 'Top Up',
       LoginDate: '09/25/2023',
     },

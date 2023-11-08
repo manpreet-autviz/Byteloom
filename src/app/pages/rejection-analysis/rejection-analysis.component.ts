@@ -124,7 +124,7 @@ export class RejectionAnalysisComponent {
       },
       xAxis: {
         type: 'category',
-        nameGap: 25,
+        nameGap: 23,
         axisLine: {
           show: false,
         },
@@ -168,7 +168,7 @@ export class RejectionAnalysisComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 25,
+        nameGap: 23,
         nameTextStyle: {
           fontWeight: 600,
           fontSize: 14,
@@ -197,15 +197,15 @@ export class RejectionAnalysisComponent {
         formatter: (params: any) => {
 
           let tooltipText = '';
-          if (params.seriesName === 'Login to financial approvals') {
+          if (params.seriesName === 'Login to FA') {
 
             tooltipText = 'Login: 1000 <br/> Approval : 60';
 
-          } else if (params.seriesName === 'Financial approvals to disbursal') {
+          } else if (params.seriesName === 'FA to disb.') {
 
             tooltipText = 'Approved: 600 <br/> Disbursed : 70';
 
-          } else if (params.seriesName === 'Login to disbursal') {
+          } else if (params.seriesName === 'Login to disb.') {
 
             tooltipText = 'Login: 400 <br/> Disbursal : 55';
 
@@ -218,9 +218,9 @@ export class RejectionAnalysisComponent {
       },
       legend: {
         data: [
-          'Login to financial approvals',
-          'Financial approvals to disbursal',
-          'Login to disbursal',
+          'Login to FA',
+          'FA to disb.',
+          'Login to disb.',
         ],
       },
       grid: {
@@ -264,7 +264,7 @@ export class RejectionAnalysisComponent {
 
       series: [
         {
-          name: 'Login to financial approvals',
+          name: 'Login to FA',
           type: 'bar',
           data: [41, 40, 40, 35, 50, 40, 60],
           itemStyle: {
@@ -279,7 +279,7 @@ export class RejectionAnalysisComponent {
           },
         },
         {
-          name: 'Financial approvals to disbursal',
+          name: 'FA to disb.',
           type: 'bar',
           data: [29, 30, 28, 45, 32, 45, 70],
           itemStyle: {
@@ -294,7 +294,7 @@ export class RejectionAnalysisComponent {
           },
         },
         {
-          name: 'Login to disbursal',
+          name: 'Login to disb.',
           type: 'bar',
           data: [22, 20, 20, 20, 20, 30, 55],
           itemStyle: {
@@ -369,7 +369,7 @@ export class RejectionAnalysisComponent {
           interval: 10,
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 23,
           nameTextStyle: {
             fontWeight: 600,
             fontSize: 14,
@@ -529,7 +529,7 @@ export class RejectionAnalysisComponent {
           interval: 10,
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 23,
           splitLine: {
             show: false,
           },
@@ -563,7 +563,7 @@ export class RejectionAnalysisComponent {
         trigger: 'item',
       },
       legend: {
-        top: '-1%',
+        top: '-2%',
         left: 'center',
       },
       series: [
@@ -584,7 +584,7 @@ export class RejectionAnalysisComponent {
           emphasis: {
             label: {
               show: true,
-              fontSize: 40,
+              fontSize: 20,
               fontWeight: 'bold',
               formatter: '{c}%',
             },
@@ -638,7 +638,7 @@ export class RejectionAnalysisComponent {
             },
             {
               value: 10,
-              name: 'Customer not interested',
+              name: 'CIN',
               itemStyle: {
                 color: '#9D76C1',
               },
@@ -686,15 +686,15 @@ export class RejectionAnalysisComponent {
     this.StateChart.setOption(this.StateOption);
   }
   stateLoginRandomValues() {
-    const loginToFinancialApprovalMin = [39, 39, 39, 39, 39, 39, 39, 75];
-    const loginToFinancialApprovalMax = [40, 40, 40, 40, 40, 40, 40, 80];
-    const financialApprovalToDisbursalMin = [63, 63, 63, 63, 63, 63, 63, 222];
-    const financialApprovalToDisbursalMax = [65, 65, 65, 65, 65, 65, 65, 225];
+    const loginToFinancialApprovalMin = [55, 55, 55, 55, 55, 55, 55, 75];
+    const loginToFinancialApprovalMax = [60, 60, 60, 60, 60, 60, 60, 80];
+    const financialApprovalToDisbursalMin = [29, 29, 29, 29, 29, 29, 29, 70];
+    const financialApprovalToDisbursalMax = [32, 32, 32, 32, 32, 65, 32, 72];
     const loginToDisbursalMin = [
-      1900, 1900, 1900, 1900, 1900, 1900, 1900, 5900,
+      22, 22, 22, 22, 22, 22, 22, 55,
     ];
     const loginToDisbursalMax = [
-      2000, 2000, 2000, 2000, 2000, 2000, 2000, 6000,
+      25, 25, 25, 25, 25, 25, 25, 57,
     ];
 
     // Generate random values for each series

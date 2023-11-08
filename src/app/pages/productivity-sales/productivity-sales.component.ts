@@ -31,7 +31,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
     'August',
     'September',
     'October',
-    'November', 
+    'November',
     // 'Select custom'
   ];
 
@@ -60,11 +60,11 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       SNo: 1,
       RmName: 'Nikhil Rana',
       EmpCode: '0123',
-      Area: 'Nikhil Rana',
+      Area: 'Karnal',
       Branch: 'Rohtak',
       TotalLogins: '1200',
       TotalDisbursal: '120',
-      State: 'Nikhil Rana',
+      State: 'PCH',
       Target: '44',
       Delinquency: '68',
     },
@@ -72,11 +72,11 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       SNo: 2,
       RmName: 'Manjeet Kaur',
       EmpCode: '0124',
-      Area: 'Manjeet Kaur',
+      Area: 'Indore',
       Branch: 'Indore',
       TotalLogins: '1400',
       TotalDisbursal: '140',
-      State: 'Manjeet Kaur',
+      State: 'MP',
       Target: '25',
       Delinquency: '40',
     },
@@ -84,11 +84,11 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       SNo: 3,
       RmName: 'Randeep hodda',
       EmpCode: '0125',
-      Area: 'Randeep hodda',
-      Branch: 'Mumbai',
+      Area: 'Mumbai',
+      Branch: 'Navi Mumbai',
       TotalLogins: '1500',
       TotalDisbursal: '100',
-      State: 'Randeep hodda',
+      State: 'Maharashtra',
       Target: '65',
       Delinquency: '65',
     },
@@ -96,11 +96,11 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       SNo: 4,
       RmName: 'Kishor Kumar',
       EmpCode: '0126',
-      Area: 'Kishor Kumar',
-      Branch: 'Mumbai',
+      Area: 'Mumbai',
+      Branch: 'Navi Mumbai',
       TotalLogins: '1290',
       TotalDisbursal: '90',
-      State: 'Kishor Kumar',
+      State: 'Maharashtra',
       Target: '55',
       Delinquency: '55',
     },
@@ -108,11 +108,11 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       SNo: 5,
       RmName: 'Amarjeet',
       EmpCode: '0127',
-      Area: 'Amarjeet',
+      Area: 'Jaipur',
       Branch: 'Jaipur',
       TotalLogins: '1000',
       TotalDisbursal: '110',
-      State: 'Amarjeet',
+      State: 'Rajasthan',
       Target: '56',
       Delinquency: '52',
     },
@@ -120,11 +120,11 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       SNo: 6,
       RmName: 'Vivek Gupta',
       EmpCode: '0128',
-      Area: 'Vivek Gupta',
+      Area: 'Chandigarh',
       Branch: 'Ambala',
       TotalLogins: '1400',
       TotalDisbursal: '95',
-      State: 'Vivek Gupta',
+      State: 'PCH',
       Target: '46',
       Delinquency: '54',
     },
@@ -132,11 +132,11 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       SNo: 7,
       RmName: 'Rashmika Sen',
       EmpCode: '0129',
-      Area: 'Rashmika Sen',
+      Area: 'Chandigarh',
       Branch: 'Chandigarh',
       TotalLogins: '1200',
       TotalDisbursal: '150',
-      State: 'Rashmika Sen',
+      State: 'PCH',
       Target: '35',
       Delinquency: '63',
     },
@@ -144,11 +144,11 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       SNo: 8,
       RmName: 'Rahul Saini',
       EmpCode: '0130',
-      Area: 'Rahul Saini',
+      Area: 'Chandigarh',
       Branch: 'Ambala',
       TotalLogins: '1400',
       TotalDisbursal: '145',
-      State: 'Rahul Saini',
+      State: 'PCH',
       Target: '75',
       Delinquency: '55',
     },
@@ -156,11 +156,11 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       SNo: 9,
       RmName: 'Kiran Sen',
       EmpCode: '0131',
-      Area: 'Kiran Sen',
+      Area: 'Jaipur',
       Branch: 'Jaipur',
       TotalLogins: '1000',
       TotalDisbursal: '125',
-      State: 'Kiran Sen',
+      State: 'Rajasthan',
       Target: '66',
       Delinquency: '65',
     },
@@ -168,11 +168,11 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       SNo: 10,
       RmName: 'Anushaka Sen',
       EmpCode: '0132',
-      Area: 'Anushaka Sen',
+      Area: 'Indore',
       Branch: 'Indore',
       TotalLogins: '1250',
       TotalDisbursal: '120',
-      State: 'Anushaka Sen',
+      State: 'MP',
       Target: '95',
       Delinquency: '25',
     },
@@ -184,10 +184,6 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
     private zone: NgZone,
     private cdRef: ChangeDetectorRef
   ) {}
-
-  onFilterChange(selectedValue: string) {}
-
-  onStateChange(selectedValue: string) {}
 
   setActiveButton(button: string) {
     setTimeout(() => {
@@ -269,7 +265,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       legend: {
         data: ['Login', 'Disbursal'],
       },
-  
+
       grid: {
         left: '3%',
         right: '4%',
@@ -322,7 +318,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           nameGap: 20,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
           axisLabel: {
             margin: 15,
@@ -369,14 +365,14 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
 
     this.TargetAchievementOption = {
       tooltip: {
-        formatter: function (params:any) {
+        formatter: function (params: any) {
           return `Number of Files: 2000<br/>Percentage: ${params.value}%`;
         },
       },
       series: [
         {
           type: 'gauge',
-          
+
           responsive: true,
           axisLine: {
             lineStyle: {
@@ -530,16 +526,15 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
         formatter: (params: any) => {
           const barValue = params[0].value;
           const dataIndex = params[0].dataIndex;
-          const files = [1340, 745, 670,770,890];
+          const files = [1340, 1245, 1370, 1270, 1090, 1160, 1240];
           const randomFiles = files[dataIndex];
-          const totalFiles = 25000
+          const totalFiles = 1600;
           // Create the tooltip content with the actual value and random amount
           return `No of Files:${randomFiles} <br> Total Files:${totalFiles} <br>${barValue}`;
         },
-        
       },
       legend: {},
-   
+
       grid: {
         left: '3%',
         right: '4%',
@@ -588,7 +583,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           nameLocation: 'middle',
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
           nameGap: 25,
           axisLabel: {
@@ -622,25 +617,6 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
         trigger: 'axis',
         axisPointer: {
           type: 'shadow',
-        },
-        formatter: (params: any) => {
-          console.log(params.seriesName,params)
-          let barValue;
-          let randomDisbursal;
-          if (params[0].seriesName === "CNI") {
-            
-            barValue = params[0].value;
-            const dataIndex = params[0].dataIndex;
-            const disbursal = [40, 45, 67, 77, 89, 56, 67];
-            randomDisbursal = disbursal[dataIndex];
-          } else {
-           
-            barValue = params[1].value;
-            const dataIndex = params[1].dataIndex;
-            const disbursal = [45, 40, 67, 72, 86, 56, 60];
-            randomDisbursal = disbursal[dataIndex];
-          }
-          return `% of Disbursal:${randomDisbursal} <br> Amount in Cr: ${barValue}`;
         },
       },
       legend: {
@@ -694,12 +670,21 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
             show: true,
             position: 'right',
             formatter: '{c}cr',
-            fontSize:9,
-
+            fontSize: 9,
           },
           itemStyle: {
             color: '#3C7EBE',
             borderRadius: 50,
+          },
+          tooltip: {
+            trigger: 'axis',
+            formatter: function (params: any) {
+              let barValue = params[0].value;
+              const dataIndex = params[0].dataIndex;
+              const disbursal = [40, 45, 67, 77, 89, 56, 67];
+              let randomDisbursal = disbursal[dataIndex];
+              return `Series: CNI<br>% of Disbursal: ${randomDisbursal}<br>Amount in Cr: ${barValue}`;
+            },
           },
         },
         {
@@ -710,12 +695,21 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
             show: true,
             position: 'right',
             formatter: '{c} Cr',
-            fontSize:9,
-
+            fontSize: 9,
           },
           itemStyle: {
             color: '#5BC8EF',
             borderRadius: 50,
+          },
+          tooltip: {
+            trigger: 'axis',
+            formatter: function (params: any) {
+              let barValue = params[0].value;
+              const dataIndex = params[0].dataIndex;
+              const disbursal = [45, 40, 67, 72, 86, 56, 60];
+              let randomDisbursal = disbursal[dataIndex];
+              return `Series: Cancellation<br>% of Disbursal: ${randomDisbursal}<br>Amount in Cr: ${barValue}`;
+            },
           },
         },
       ],
@@ -744,7 +738,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       xAxis: {
         type: 'category',
 
-        data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+        data: ['All ', 'HL', 'LAP', 'BL', 'SBL'],
         axisLine: {
           show: false,
         },
@@ -753,7 +747,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
         },
         axisLabel: {
           interval: 0,
-          rotate: 45,
+          rotate: 0,
           overflow: 'break',
         },
       },
@@ -773,7 +767,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
         nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
-          fontSize:14,
+          fontSize: 14,
         },
         axisLabel: {
           formatter: '{value}',
@@ -813,7 +807,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
         },
       },
       legend: {},
-   
+
       grid: {
         left: '3%',
         right: '4%',
@@ -832,8 +826,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           },
           data: [
             'Pan India',
-            'Punjab',
-            'Haryana',
+            'PCH',
             'NCR',
             'Rajasthan',
             'Gujarat',
@@ -864,7 +857,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           nameGap: 17,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
           axisLabel: {
             margin: 1,
@@ -884,7 +877,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [85, 84, 86, 89, 93, 91, 95, 97],
+          data: [85, 84, 86, 93, 91, 95, 97],
         },
       ],
     };
@@ -902,5 +895,138 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
     this.ConversionChart.setOption(this.ConversionOption);
 
     this.RMChart.setOption(this.RMOption);
+  }
+
+  onFilterChange(selectedValue: string) {
+    this.generateConversionRandomData();
+    this.generateDistributionRandomData();
+    this.generateDisbursalAchievement();
+    this.generateRmData();
+    this.generateFtr();
+    this.generateAvgRm();
+  }
+
+  onStateChange(selectedValue: string) {
+    this.generateConversionRandomData();
+    this.generateDistributionRandomData();
+    this.generateDisbursalAchievement();
+    this.generateRmData();
+    this.generateFtr();
+    this.generateAvgRm();
+  }
+
+  generateConversionRandomData() {
+    const newData = [
+      { value: this.getRandomValue(45, 50), itemStyle: { color: '#5D5BCC' } },
+      { value: this.getRandomValue(35, 40), itemStyle: { color: '#5D5BCC' } },
+      { value: this.getRandomValue(45, 50), itemStyle: { color: '#5D5BCC' } },
+      { value: this.getRandomValue(45, 50), itemStyle: { color: '#5D5BCC' } },
+      { value: this.getRandomValue(60, 65), itemStyle: { color: '#5D5BCC' } },
+    ];
+    this.ConversionOption.series[0].data = newData;
+    this.ConversionChart.setOption(this.ConversionOption);
+  }
+
+  generateDistributionRandomData() {
+    const newData = [
+      {
+        value: this.getRandomValue(41, 45),
+        name: 'Direct ',
+        itemStyle: { color: '#7C41DA' },
+      },
+      {
+        value: this.getRandomValue(17, 20),
+        name: 'Power Partner',
+        itemStyle: { color: '#FB8C00' },
+      },
+      {
+        value: this.getRandomValue(7, 10),
+        name: 'DSA',
+        itemStyle: { color: '#07A14E' },
+      },
+      {
+        value: this.getRandomValue(22, 25),
+        name: 'Other',
+        itemStyle: { color: '#636363' },
+      },
+    ];
+
+    // Update the pie chart data with the new random values
+    this.SourceLoginFilesOption.series[0].data = newData;
+    this.SourceLoginFilesChart.setOption(this.SourceLoginFilesOption);
+  }
+
+  generateDisbursalAchievement() {
+    const minValue = 70;
+    const maxValue = 90;
+
+    const randomValue = +(
+      Math.random() * (maxValue - minValue) +
+      minValue
+    ).toFixed(2);
+
+    this.TargetAchievementCharts.setOption({
+      series: [
+        {
+          data: [
+            {
+              value: randomValue,
+            },
+          ],
+        },
+      ],
+    });
+  }
+  generateRmData() {
+    const minValue = 80;
+    const maxValue = 85;
+
+    // Generate random data within the specified range
+    const randomData = Array.from({ length: 7 }, () =>
+      this.getRandomValue(minValue, maxValue)
+    );
+
+    // Update the series data with random data
+    this.RMOption.series[0].data = randomData;
+
+    // Set the chart option to update the chart
+    this.RMChart.setOption(this.RMOption);
+  }
+
+  generateFtr(){
+    const minValue = 80;
+    const maxValue = 85;
+
+    // Generate random data within the specified range
+    const randomData = Array.from({ length: 7 }, () =>
+      this.getRandomValue(minValue, maxValue)
+    );
+
+    // Update the series data with random data
+    this.FTROption.series[0].data = randomData;
+
+    // Set the chart option to update the chart
+    this.FTRChart.setOption(this.FTROption);
+  }
+
+
+  generateAvgRm(){
+    const minValue = 4;
+    const maxValue = 6;
+
+    // Generate random data within the specified range
+    const randomData = Array.from({ length: 7 }, () =>
+      this.getRandomValue(minValue, maxValue)
+    );
+
+    // Update the series data with random data
+    this.AvgRMOption.series[0].data = randomData;
+
+    // Set the chart option to update the chart
+    this.AvgRMCharts.setOption(this.AvgRMOption);
+  }
+
+  getRandomValue(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }

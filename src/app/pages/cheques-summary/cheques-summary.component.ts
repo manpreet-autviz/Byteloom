@@ -48,7 +48,7 @@ export class ChequesSummaryComponent {
       SNo: 1,
       custName: 'Nikhil Rana',
       leadNo: '0123',
-      product: 'Home Loan',
+      product: 'HL',
       scheme: 'Top Up',
       loanAmount: '15',
       technicalRecieved: 'Y',
@@ -61,7 +61,7 @@ export class ChequesSummaryComponent {
       SNo: 2,
       custName: 'Manjeet Kaur',
       leadNo: '0124',
-      product: 'Home Loan',
+      product: 'HL',
       scheme: 'Top Up',
       loanAmount: '15',
       technicalRecieved: 'Y',
@@ -73,7 +73,7 @@ export class ChequesSummaryComponent {
       SNo: 3,
       custName: 'Randeep hodda',
       leadNo: '0125',
-      product: 'Home Loan',
+      product: 'HL',
       scheme: 'Top Up',
       loanAmount: '15',
       technicalRecieved: 'Y',
@@ -85,7 +85,7 @@ export class ChequesSummaryComponent {
       SNo: 4,
       custName: 'Kishor Kumar',
       leadNo: '0126',
-      product: 'Home Loan',
+      product: 'HL',
       scheme: 'Top Up',
       loanAmount: 15,
       technicalRecieved: 'Y',
@@ -121,7 +121,7 @@ export class ChequesSummaryComponent {
       SNo: 7,
       custName: 'Rashmika Sen',
       leadNo: '0129',
-      product: 'Home Loan',
+      product: 'HL',
       scheme: 'Top Up',
       loanAmount: '15',
       technicalRecieved: 'Y',
@@ -133,7 +133,7 @@ export class ChequesSummaryComponent {
       SNo: 8,
       custName: 'Rahul Saini',
       leadNo: '0130',
-      product: 'Home Loan',
+      product: 'HL',
       scheme: 'Top Up',
       loanAmount: '13',
       technicalRecieved: 'N',
@@ -157,7 +157,7 @@ export class ChequesSummaryComponent {
       SNo: 10,
       custName: 'Anushaka Sen',
       leadNo: '0132',
-      product: 'Home Loan',
+      product: 'HL',
       scheme: 'Fresh',
       loanAmount: '13',
       technicalRecieved: 'N',
@@ -223,11 +223,16 @@ export class ChequesSummaryComponent {
     this.FinancialApprovalOption = {
       tooltip: {
         trigger: 'axis',
-        axisPointer: {
-          type: 'cross',
-          crossStyle: {
-            color: '#999',
-          },
+        formatter: function(params: any[]) {
+          let tooltip = params[0].axisValue + '<br>';
+          params.forEach(function(item) {
+            if (item.seriesType === 'bar') {
+              tooltip += 'No. of Files' + ': ' + item.value + ' <br>';
+            } else if (item.seriesType === 'line') {
+              tooltip += 'Amount(in Lacs.)' + ': ' + item.value ;
+            }
+          });
+          return tooltip;
         },
       },
 
@@ -338,11 +343,17 @@ export class ChequesSummaryComponent {
     this.FinalApprovalOption = {
       tooltip: {
         trigger: 'axis',
-        axisPointer: {
-          type: 'cross',
-          crossStyle: {
-            color: '#999',
-          },
+      
+        formatter: function(params: any[]) {
+          let tooltip = params[0].axisValue + '<br>';
+          params.forEach(function(item) {
+            if (item.seriesType === 'bar') {
+              tooltip += 'No. of Files' + ': ' + item.value + ' <br>';
+            } else if (item.seriesType === 'line') {
+              tooltip += 'Amount(in Lacs.)' + ': ' + item.value ;
+            }
+          });
+          return tooltip;
         },
       },
     

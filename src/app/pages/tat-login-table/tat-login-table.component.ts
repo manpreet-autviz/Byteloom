@@ -9,7 +9,7 @@ declare var $: any;
 })
 export class TatLoginTableComponent {
 
-  filters: string[] = ['Month To Date', 'Last Month'];
+  filters: string[] = ['Year to Date', 'Last Month'];
 
   states: string[] = [
     'Pan India',
@@ -41,7 +41,7 @@ export class TatLoginTableComponent {
     'Rundh',
   ];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'Month To Date';
+  selectedFilter: string = 'Year to Date';
   selectedFilterState: string = 'Pan India';
   selectedFilterBranch: string = 'Chandigarh';
 
@@ -54,7 +54,7 @@ export class TatLoginTableComponent {
       branchName: 'Chandigarh',
       cluster: 'Chandigarh',
       customerName: 'Amit Verma',
-      productName: 'Home Loan',
+      productName: 'HL',
       Scheme: 'Top Up',
       LoginDate: '09/25/2023',
     },

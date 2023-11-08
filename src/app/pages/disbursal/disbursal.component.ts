@@ -44,10 +44,10 @@ export class DisbursalComponent {
     'November',
     // 'Select custom'
   ];
-  monthFilters: string[] = ['Month to Date', 'Three month'];
+  monthFilters: string[] = ['Year to Date', 'Three months'];
   selectedState: string = 'Pan India';
   selectedFilter: string = 'September';
-  selectedTrendFilter: string = 'Month to Date';
+  selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
 
   disbursalAchievementOption: any;
@@ -177,7 +177,7 @@ export class DisbursalComponent {
               valueAnimation: true,
               formatter: '{value}%',
               color: 'inherit',
-              fontSize: 12,
+              fontSize:  13.5,
             },
             data: [
               {
@@ -289,7 +289,7 @@ export class DisbursalComponent {
         xAxis: {
           type: 'category',
 
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['HL', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
             rotate: -45,
@@ -318,7 +318,7 @@ export class DisbursalComponent {
           },
           name: 'Amount (in Rs. Lacs)',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 23,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -401,7 +401,7 @@ export class DisbursalComponent {
 
             let tooltipText = '';
   
-            if (params.name === 'Home Loan') {
+            if (params.name === 'HL') {
   
               tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
   
@@ -448,7 +448,7 @@ export class DisbursalComponent {
               show: false,
             },
             data: [
-              { value: 45, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
+              { value: 45, name: 'HL', itemStyle: { color: '#7C41DA' } },
               { value: 20, name: 'LAP', itemStyle: { color: '#F99B00' } },
               { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
               { value: 25, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
@@ -480,7 +480,7 @@ export class DisbursalComponent {
           dimensions: ['product', 'IRR', 'PF', 'Insurance'],
           source: [
             { product: 'All Products', IRR: 13, PF: 3.5, Insurance: 3 },
-            { product: 'Home loan', IRR: 12.5, PF: 3, Insurance: 2.7 },
+            { product: 'HL', IRR: 12.5, PF: 3, Insurance: 2.7 },
             { product: 'LAP', IRR: 14, PF: 4, Insurance: 2.4 },
             { product: 'BL', IRR: 12.9, PF: 3.7, Insurance: 2.4 },
             { product: 'SBL', IRR: 16, PF: 3.7, Insurance: 3 },
@@ -519,7 +519,7 @@ export class DisbursalComponent {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 23,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -569,7 +569,7 @@ export class DisbursalComponent {
         xAxis: {
           type: 'category',
 
-          data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
             rotate: -45,
@@ -598,7 +598,7 @@ export class DisbursalComponent {
           },
           name: 'Days',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 23,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -636,7 +636,7 @@ export class DisbursalComponent {
         xAxis: {
           type: 'category',
 
-          data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
             rotate: -45,
@@ -665,7 +665,7 @@ export class DisbursalComponent {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 25,
+          nameGap: 23,
           axisLabel: {
             formatter: '{value}',
             margin: 1,
@@ -789,7 +789,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 25,
+            nameGap: 23,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -889,7 +889,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Amount ( in Rs. Crore)  ',
             nameLocation: 'middle',
-            nameGap: 25,
+            nameGap: 23,
             nameTextStyle: {
               fontWeight: 600,
               fontSize:14,
@@ -1017,7 +1017,7 @@ export class DisbursalComponent {
           },
         },
         legend: {
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['HL', 'LAP', 'BL', 'SBL'],
         },
       
         grid: {
@@ -1071,7 +1071,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 25,
+            nameGap: 23,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1084,7 +1084,7 @@ export class DisbursalComponent {
         ],
         series: [
           {
-            name: 'Home Loan',
+            name: 'HL',
             type: 'line',
 
             areaStyle: {
@@ -1212,7 +1212,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 25,
+            nameGap: 23,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1284,7 +1284,7 @@ export class DisbursalComponent {
           },
         },
         legend: {
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['HL', 'LAP', 'BL', 'SBL'],
         },
     
         grid: {
@@ -1340,7 +1340,7 @@ export class DisbursalComponent {
         ],
         series: [
           {
-            name: 'Home Loan',
+            name: 'HL',
             type: 'line',
 
             areaStyle: {
@@ -1414,7 +1414,7 @@ export class DisbursalComponent {
           },
         },
         legend: {
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['HL', 'LAP', 'BL', 'SBL'],
         },
   
         grid: {
@@ -1468,7 +1468,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Percentage %' ,
             nameLocation: 'middle',
-            nameGap: 25,
+            nameGap: 23,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1481,7 +1481,7 @@ export class DisbursalComponent {
         ],
         series: [
           {
-            name: 'Home Loan',
+            name: 'HL',
             type: 'line',
 
             areaStyle: {
@@ -1555,7 +1555,7 @@ export class DisbursalComponent {
           },
         },
         legend: {
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['HL', 'LAP', 'BL', 'SBL'],
         },
   
         grid: {
@@ -1609,7 +1609,7 @@ export class DisbursalComponent {
             interval: 2,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 25,
+            nameGap: 23,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1622,7 +1622,7 @@ export class DisbursalComponent {
         ],
         series: [
           {
-            name: 'Home Loan',
+            name: 'HL',
             type: 'line',
 
             areaStyle: {
@@ -1750,7 +1750,7 @@ export class DisbursalComponent {
             interval: 2,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 25,
+            nameGap: 23,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1855,7 +1855,7 @@ export class DisbursalComponent {
   }
 
   generateDisbursalAchievement() {
-    const minValue = 10;
+    const minValue = 70;
     const maxValue = 90;
 
     const randomValue = +(
@@ -1887,7 +1887,7 @@ export class DisbursalComponent {
         Insurance: this.getRandomValue(2.3, 3),
       },
       {
-        product: 'Home loan',
+        product: 'HL',
         IRR: this.getRandomValue(12, 16),
         PF: this.getRandomValue(2.3, 4),
         Insurance: this.getRandomValue(2.3, 3),
@@ -2000,7 +2000,7 @@ export class DisbursalComponent {
     const newData = [
       {
         value: this.getRandomValue(41, 45),
-        name: 'Home Loan',
+        name: 'HL',
         itemStyle: { color: '#7C41DA' },
       },
       {
@@ -2076,7 +2076,7 @@ export class DisbursalComponent {
   }
 
   TrendgenerateDisbursalAchievement(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendDisbursalAchievementOption.xAxis[0].data = newAxisdata;
       const StateminValues = [91, 94, 97,100];
@@ -2116,7 +2116,7 @@ export class DisbursalComponent {
   }
 
   TrendgenerateProductRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendProductDisbursalOption.xAxis[0].data = newAxisdata;
       const StateminValues = [55, 60, 64, 74];
@@ -2156,7 +2156,7 @@ export class DisbursalComponent {
   }
 
   TrendgenerateSchemeRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendSchemeDisbursalOption.xAxis[0].data = newAxisdata;
       const StateminValues = [55, 60, 64, 74];
@@ -2192,7 +2192,7 @@ export class DisbursalComponent {
   }
 
   TrendgenerateAverageStateRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendAverageDisbursalOption.xAxis[0].data = newAxisdata;
       const StateminValues = [12.7, 13.5, 15, 25];
@@ -2232,7 +2232,7 @@ export class DisbursalComponent {
   }
 
   TrendgenerateStateRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendStateDisbursalOption.xAxis[0].data = newAxisdata;
       const StateminValues = [55, 60, 64, 75];
@@ -2268,7 +2268,7 @@ export class DisbursalComponent {
   }
 
   TrendgenerateDisbursalTatRandomdata(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendDisbursalTatOption.xAxis[0].data = newAxisdata;
       const StateminValues = [6, 7, 12, 15];
@@ -2304,7 +2304,7 @@ export class DisbursalComponent {
   }
 
   TrendgenerateloginDisbursalRatioRandomData(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendLoginDisbursalRatioOption.xAxis[0].data = newAxisdata;
       const StateminValues = [55, 60, 64, 70];
@@ -2344,7 +2344,7 @@ export class DisbursalComponent {
   }
 
   TrendgenerateIRPFRandomdata(selectedValue: string) {
-    if (selectedValue === 'Three month') {
+    if (selectedValue === 'Three months') {
       const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
       this.trendIrPfOption.xAxis[0].data = newAxisdata;
       const StateminValues = [2.3, 2.5, 12, 15];

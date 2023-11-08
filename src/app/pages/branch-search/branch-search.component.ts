@@ -6,7 +6,7 @@ import * as echarts from 'echarts';
   styleUrls: ['./branch-search.component.scss']
 })
 export class BranchSearchComponent {
-  filters: string[] = ['Month To Date', 'Last Month'];
+  filters: string[] = ['Year to Date', 'Last Month'];
 
   states: string[] = [
     'Pan India',
@@ -30,7 +30,7 @@ export class BranchSearchComponent {
   maxValue3: number = 8;
 
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'Month To Date';
+  selectedFilter: string = 'Year to Date';
 
   ProductWiseChart!: echarts.ECharts;
   LoginApprovalsDisbursalChart!: echarts.ECharts;
@@ -143,7 +143,7 @@ export class BranchSearchComponent {
           },
           type: 'category',
           boundaryGap: true,
-          data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
         },
       ],
       yAxis: [
@@ -272,7 +272,7 @@ export class BranchSearchComponent {
         },
         type: 'category',
 
-        data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+        data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
         axisLabel: {
           interval: 0,
           rotate: -45,
@@ -314,7 +314,7 @@ export class BranchSearchComponent {
 
           let tooltipText = '';
 
-          if (params.name === 'Home Loan') {
+          if (params.name === 'HL') {
             tooltipText = 'No. of files: 500 <br/> Amount in Cr: 45';
           } else if (params.name === 'LAP') {
             tooltipText = 'No. of files: 300 <br/> Amount in Cr: 27';
@@ -360,7 +360,7 @@ export class BranchSearchComponent {
               name: 'All Products',
               itemStyle: { color: '#7C41DA' },
             },
-            { value: 34, name: 'Home Loan', itemStyle: { color: '#F99B00' } },
+            { value: 34, name: 'HL', itemStyle: { color: '#F99B00' } },
             { value: 20, name: 'LAP', itemStyle: { color: '#07A14E' } },
             { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
             { value: 15, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
@@ -397,7 +397,7 @@ export class BranchSearchComponent {
         },
         type: 'category',
 
-        data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+        data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
         axisLabel: {
           interval: 0,
           rotate: -45,
@@ -448,7 +448,7 @@ export class BranchSearchComponent {
         dimensions: ['product', 'IRR', 'PF', 'Insurance'],
         source: [
           { product: 'All Products', IRR: 8, PF: 3.5, Insurance: 3 },
-          { product: 'Home loan', IRR: 10.5, PF: 3, Insurance: 2.7 },
+          { product: 'HL', IRR: 10.5, PF: 3, Insurance: 2.7 },
           { product: 'LAP', IRR: 7, PF: 4, Insurance: 2.4 },
           { product: 'BL', IRR: 8.9, PF: 3.7, Insurance: 2.4 },
           { product: 'SBL', IRR: 6, PF: 3.7, Insurance: 3 },

@@ -6,7 +6,7 @@ import * as echarts from 'echarts';
   styleUrls: ['./three-sixty.component.scss'],
 })
 export class ThreeSixtyComponent {
-  filters: string[] = ['Month To Date', 'Last Month'];
+  filters: string[] = ['Year to Date', 'Last Month'];
 
   states: string[] = [
     'Pan India',
@@ -29,7 +29,7 @@ export class ThreeSixtyComponent {
   maxValue3: number = 8;
 
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'Month To Date';
+  selectedFilter: string = 'Year to Date';
 
   ProductWiseChart!: echarts.ECharts;
   LoginApprovalsDisbursalChart!: echarts.ECharts;
@@ -50,16 +50,10 @@ export class ThreeSixtyComponent {
   LoginApprovalsDisbursalOption: any;
   IMDOption: any;
   showprogressChart: boolean = false;
-
-  onFilterChange(selectedValue: string) {
-    if (selectedValue === 'Last Month') {
-      this.showprogressChart = true;
-    } else {
-      this.showprogressChart = false;
-    }
-  }
-
-  onStateChange(selectedValue: string) {}
+  amount = 1500;
+  noofCustomers = 15000;
+  lastMonth = 7;
+  YTD = 30;
 
   ngAfterViewInit(): void {
     this.initializeChart();
@@ -104,7 +98,6 @@ export class ThreeSixtyComponent {
       tooltip: {
         trigger: 'axis',
         axisPointer: {
-         
           label: {
             backgroundColor: '#07A14E',
           },
@@ -112,12 +105,11 @@ export class ThreeSixtyComponent {
         formatter: (params: any) => {
           const barValue = params[0].value;
           const dataIndex = params[0].dataIndex;
-          const files = [1340, 745, 670,770,890];
+          const files = [1340, 745, 670, 770, 890];
           const randomFiles = files[dataIndex];
           // Create the tooltip content with the actual value and random amount
           return `No of Files:${randomFiles} <br> Days: ${barValue}`;
         },
-
       },
       responsive: true,
 
@@ -142,7 +134,7 @@ export class ThreeSixtyComponent {
           },
           type: 'category',
           boundaryGap: true,
-          data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
         },
       ],
       yAxis: [
@@ -162,7 +154,7 @@ export class ThreeSixtyComponent {
           nameGap: 22,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
         },
       ],
@@ -183,7 +175,6 @@ export class ThreeSixtyComponent {
           },
           data: [14, 17, 15, 17, 13],
         },
-
       ],
     };
 
@@ -247,8 +238,8 @@ export class ThreeSixtyComponent {
           },
           data: [
             { value: 60, name: '2000Files', itemStyle: { color: '#F99B00' } },
-            { value: 40, name: '300Crs', itemStyle: { color: '#342D2D' } },
-            { value: 20, name: '250Crs', itemStyle: { color: '#7460EE' } },
+            { value: 40, name: '300Cr', itemStyle: { color: '#342D2D' } },
+            { value: 20, name: '250Cr', itemStyle: { color: '#7460EE' } },
           ],
         },
       ],
@@ -276,7 +267,7 @@ export class ThreeSixtyComponent {
         },
         type: 'category',
 
-        data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+        data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
         axisLabel: {
           interval: 0,
           rotate: -45,
@@ -296,10 +287,10 @@ export class ThreeSixtyComponent {
         },
         name: 'Amount ( in Rs. Lacs ) ',
         nameLocation: 'middle',
-        nameGap: 25,
+        nameGap: 23,
         nameTextStyle: {
           fontWeight: 600,
-          fontSize:12,
+          fontSize: 12,
         },
       },
       series: [
@@ -322,7 +313,7 @@ export class ThreeSixtyComponent {
 
           let tooltipText = '';
 
-          if (params.name === 'Home Loan') {
+          if (params.name === 'HL') {
             tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 450';
           } else if (params.name === 'LAP') {
             tooltipText = 'No. of files: 700 <br/> Amount in Cr: 270';
@@ -330,7 +321,7 @@ export class ThreeSixtyComponent {
             tooltipText = 'No. of files: 800 <br/> Amount in Cr: 269';
           } else if (params.name === 'SBL') {
             tooltipText = 'No. of files: 1600 <br/> Amount in Cr: 268';
-          } 
+          }
 
           return tooltipText;
         },
@@ -361,8 +352,7 @@ export class ThreeSixtyComponent {
             show: false,
           },
           data: [
-            
-            { value: 45, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
+            { value: 45, name: 'HL', itemStyle: { color: '#7C41DA' } },
             { value: 20, name: 'LAP', itemStyle: { color: '#07A14E' } },
             { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
             { value: 25, name: 'SBL', itemStyle: { color: '#F99B00' } },
@@ -381,10 +371,10 @@ export class ThreeSixtyComponent {
           const barValue = params[0].value;
           const dataIndex = params[0].dataIndex;
 
-          const randomAmounts = [350, 145, 167,345,234];
+          const randomAmounts = [350, 145, 167, 345, 234];
           const randomAmount = randomAmounts[dataIndex];
 
-          const files = [1340, 745, 670,770,890];
+          const files = [1340, 745, 670, 770, 890];
           const randomFiles = files[dataIndex];
           return `No.of Files:${randomFiles}<br> Amount in Cr:${randomAmount}<br> ${barValue}% <br>  `;
         },
@@ -399,7 +389,7 @@ export class ThreeSixtyComponent {
         },
         type: 'category',
 
-        data: ['All Products', 'Home Loan', 'LAP', 'BL', 'SBL'],
+        data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
         axisLabel: {
           interval: 0,
           rotate: -45,
@@ -422,7 +412,7 @@ export class ThreeSixtyComponent {
         nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
-          fontSize:14,
+          fontSize: 14,
         },
       },
       series: [
@@ -440,7 +430,7 @@ export class ThreeSixtyComponent {
     this.irrPFInsOption = {
       legend: {},
       tooltip: {
-        formatter: function (params:any) {
+        formatter: function (params: any) {
           return `
           
             Product: ${params.data.product}<br/>
@@ -454,7 +444,7 @@ export class ThreeSixtyComponent {
         dimensions: ['product', 'IRR', 'PF', 'Insurance'],
         source: [
           { product: 'All Products', IRR: 13, PF: 3.5, Insurance: 3 },
-          { product: 'Home loan', IRR: 12.5, PF: 3, Insurance: 2.7 },
+          { product: 'HL', IRR: 12.5, PF: 3, Insurance: 2.7 },
           { product: 'LAP', IRR: 14, PF: 4, Insurance: 2.4 },
           { product: 'BL', IRR: 12.9, PF: 3.7, Insurance: 2.4 },
           { product: 'SBL', IRR: 16, PF: 3.7, Insurance: 3 },
@@ -493,7 +483,7 @@ export class ThreeSixtyComponent {
         nameGap: 25,
         nameTextStyle: {
           fontWeight: 600,
-          fontSize:14,
+          fontSize: 14,
         },
       },
       // Declare several bar series, each will be mapped
@@ -625,10 +615,10 @@ export class ThreeSixtyComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 25,
+        nameGap: 23,
         nameTextStyle: {
           fontWeight: 600,
-          fontSize:14,
+          fontSize: 14,
         },
       },
       series: [
@@ -653,5 +643,224 @@ export class ThreeSixtyComponent {
     this.irrPFInsChart.setOption(this.irrPFInsOption);
     this.IMDChart.setOption(this.IMDOption);
     this.EDGNPANPAChart.setOption(this.EDGNPANPAOption);
+  }
+
+  onFilterChange(selectedValue: string) {
+    if (selectedValue === 'Last Month') {
+      this.showprogressChart = true;
+    } else {
+      this.showprogressChart = false;
+    }
+
+    this.generateProductRandomData();
+    this.generateDistributionRandomData();
+    this.generateEdRandomData();
+    this.generateAversizeRandomData();
+    this.generateIMDRandomData();
+    this.generateLoginRandomData();
+    this.randomloginApplrobvalDisbursal();
+    this.generateAumData();
+  }
+
+  onStateChange(selectedValue: string) {
+    console.log(selectedValue);
+    this.generateProductRandomData();
+    this.generateDistributionRandomData();
+    this.generateEdRandomData();
+    this.generateAversizeRandomData();
+    this.generateIMDRandomData();
+    this.generateLoginRandomData();
+    this.randomloginApplrobvalDisbursal();
+    this.generateAumData();
+  }
+
+  randomloginApplrobvalDisbursal() {
+    // Specify min and max values for random data
+    const minFiles = 57;
+    const maxFiles = 60;
+    const minCr1 = 38;
+    const maxCr1 = 40;
+    const minCr2 = 19;
+    const maxCr2 = 20;
+    // Generate random values for files and CRs within the specified range
+    const randomFiles = this.getRandomValue(minFiles, maxFiles);
+    const randomCr1 = this.getRandomValue(minCr1, maxCr1);
+    const randomCr2 = this.getRandomValue(minCr2, maxCr2);
+
+    // Update the tooltip formatter to display random values
+    this.LoginApprovalsDisbursalOption.tooltip.formatter = (params: any) => {
+      let tooltipText = '';
+      if (params.name === '2000Files') {
+        tooltipText = `Amount in Cr: ${randomCr1}`;
+      } else if (params.name === '300Cr') {
+        tooltipText = `No. of files: ${randomFiles}`;
+      } else if (params.name === '250Cr') {
+        tooltipText = `No. of files: ${randomCr2}`;
+      }
+      return tooltipText;
+    };
+
+    // Update the series data with random values
+    this.LoginApprovalsDisbursalOption.series[0].data = [
+      {
+        value: randomFiles,
+        name: '2000Files',
+        itemStyle: { color: '#F99B00' },
+      },
+      { value: randomCr1, name: '300Cr', itemStyle: { color: '#342D2D' } },
+      { value: randomCr2, name: '250Cr', itemStyle: { color: '#7460EE' } },
+    ];
+
+    // Set the chart option to update the chart
+    this.LoginApprovalsDisbursalChart.setOption(
+      this.LoginApprovalsDisbursalOption
+    );
+  }
+
+  generateProductRandomData() {
+    const newData = [
+      {
+        value: this.getRandomValue(41, 45),
+        name: 'Home Loan',
+        itemStyle: { color: '#7C41DA' },
+      },
+      {
+        value: this.getRandomValue(17, 20),
+        name: 'LAP',
+        itemStyle: { color: '#F99B00' },
+      },
+      {
+        value: this.getRandomValue(7, 10),
+        name: 'BL',
+        itemStyle: { color: '#636363' },
+      },
+      {
+        value: this.getRandomValue(22, 25),
+        name: 'SBL',
+        itemStyle: { color: '#0B9DE8' },
+      },
+    ];
+
+    // Update the pie chart data with the new random values
+    this.ProductWiseOption.series[0].data = newData;
+    this.ProductWiseChart.setOption(this.ProductWiseOption);
+  }
+
+  generateIMDRandomData() {
+    const newData = [
+      {
+        value: this.getRandomValue(41, 45),
+        name: 'Online',
+        itemStyle: { color: '#7C41DA' },
+      },
+      {
+        value: this.getRandomValue(17, 20),
+        name: 'Cheque',
+        itemStyle: { color: '#FB8C00' },
+      },
+      {
+        value: this.getRandomValue(7, 10),
+        name: 'Cash',
+        itemStyle: { color: '#07A14E' },
+      },
+      {
+        value: this.getRandomValue(22, 25),
+        name: 'UPI',
+        itemStyle: { color: '#636363' },
+      },
+    ];
+
+    // Update the pie chart data with the new random values
+    this.IMDOption.series[0].data = newData;
+    this.IMDChart.setOption(this.IMDOption);
+  }
+
+  generateDistributionRandomData() {
+    const newData = [
+      {
+        value: this.getRandomValue(41, 45),
+        name: 'HL',
+        itemStyle: { color: '#7C41DA' },
+      },
+      {
+        value: this.getRandomValue(17, 20),
+        name: 'LAP',
+        itemStyle: { color: '#FB8C00' },
+      },
+      {
+        value: this.getRandomValue(7, 10),
+        name: 'BL',
+        itemStyle: { color: '#07A14E' },
+      },
+      {
+        value: this.getRandomValue(22, 25),
+        name: 'SBL',
+        itemStyle: { color: '#636363' },
+      },
+    ];
+
+    // Update the pie chart data with the new random values
+    this.DistributionMixOption.series[0].data = newData;
+    this.DistributionMixChart.setOption(this.DistributionMixOption);
+  }
+
+  generateEdRandomData() {
+    const newData = [
+      { value: this.getRandomValue(2.2, 2.5), itemStyle: { color: '#F0997D' } },
+      { value: this.getRandomValue(1, 1.5), itemStyle: { color: '#F0997D' } },
+      { value: this.getRandomValue(0.8, 1), itemStyle: { color: '#F0997D' } },
+    ];
+    this.EDGNPANPAOption.series[0].data = newData;
+    this.EDGNPANPAChart.setOption(this.EDGNPANPAOption);
+  }
+
+  generateAversizeRandomData() {
+    const newData = [
+      {
+        value: this.getRandomValue(12.2, 13.5),
+        itemStyle: { color: '#0747A6' },
+      },
+      {
+        value: this.getRandomValue(111.5, 12),
+        itemStyle: { color: '#0747A6' },
+      },
+      { value: this.getRandomValue(11, 12.5), itemStyle: { color: '#0747A6' } },
+      { value: this.getRandomValue(9, 9.5), itemStyle: { color: '#0747A6' } },
+      { value: this.getRandomValue(9, 9.5), itemStyle: { color: '#0747A6' } },
+    ];
+    this.AvgTickedSizeOption.series[0].data = newData;
+    this.AvgTickedSizeChart.setOption(this.AvgTickedSizeOption);
+  }
+
+  generateLoginRandomData() {
+    const newData = [
+      { value: this.getRandomValue(65, 70), itemStyle: { color: '#7460EE' } },
+      { value: this.getRandomValue(55, 60), itemStyle: { color: '#7460EE' } },
+      { value: this.getRandomValue(40, 45), itemStyle: { color: '#7460EE' } },
+      { value: this.getRandomValue(40, 45), itemStyle: { color: '#7460EE' } },
+      { value: this.getRandomValue(55, 60), itemStyle: { color: '#7460EE' } },
+    ];
+    this.ConversionRatioOption.series[0].data = newData;
+    this.ConversionRatioChart.setOption(this.ConversionRatioOption);
+  }
+  getRandomValue(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  generateAumData() {
+    const minAmount = 1470;
+    const maxAmount = 1500;
+    const minCustomers = 14450;
+    const maxCustomers = 15000;
+    const minLastMonth = 6;
+    const maxLastMonth = 7;
+    const minYTD = 28;
+    const maxYTD = 30;
+
+    // Generate random data within specified ranges
+    this.amount = this.getRandomValue(minAmount, maxAmount);
+    this.noofCustomers = this.getRandomValue(minCustomers, maxCustomers);
+    this.lastMonth = this.getRandomValue(minLastMonth, maxLastMonth);
+    this.YTD = this.getRandomValue(minYTD, maxYTD);
   }
 }

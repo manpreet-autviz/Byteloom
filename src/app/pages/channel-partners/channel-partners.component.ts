@@ -51,112 +51,122 @@ export class ChannelPartnersComponent {
     {
       SNo: 1,
       CpName: 'Nikhil Rana',
-      CpCode: '0122',
-      Area: 'Nikhil Rana',
-      Branch: 'CHANDIGARH',
-      TotalLogins: '140',
-      TotalDisbursal: '1200',
-      State: 'Nikhil Rana',
-      Delinquency: '68',
+      CpCode: '0123',
+      Area: 'Karnal',
+      Branch: 'Rohtak',
+      TotalLogins: '1200',
+      TotalDisbursal: '120',
+      State: 'PCH',
+      Target: '90',
+      Delinquency: '0.65',
     },
     {
       SNo: 2,
       CpName: 'Manjeet Kaur',
-      CpCode: '0123',
-      Area: 'Manjeet Kaur',
-      Branch: 'Rohtak',
-      TotalLogins: '102',
-      TotalDisbursal: '1400',
-      State: 'Manjeet Kaur',
-      Delinquency: '40',
+      CpCode: '0124',
+      Area: 'Indore',
+      Branch: 'Indore',
+      TotalLogins: '1400',
+      TotalDisbursal: '140',
+      State: 'MP',
+      Target: '95',
+      Delinquency: '0.7',
     },
     {
       SNo: 3,
       CpName: 'Randeep hodda',
-      CpCode: '0124',
-      Area: 'Randeep hodda',
-      Branch: 'Indore',
-      TotalLogins: '140',
-      TotalDisbursal: '1200',
-      State: 'Randeep hodda',
-      Delinquency: '65',
+      CpCode: '0125',
+      Area: 'Mumbai',
+      Branch: 'Navi Mumbai',
+      TotalLogins: '1500',
+      TotalDisbursal: '100',
+      State: 'Maharashtra',
+      Target: '105',
+      Delinquency: '1.2',
     },
     {
       SNo: 4,
       CpName: 'Kishor Kumar',
-      CpCode: '0125',
-      Area: 'Kishor Kumar',
-      Branch: 'Mumbai',
-      TotalLogins: '114',
-      TotalDisbursal: '1400',
-      State: 'Kishor Kumar',
-      Delinquency: '55',
+      CpCode: '0126',
+      Area: 'Mumbai',
+      Branch: 'Navi Mumbai',
+      TotalLogins: '1290',
+      TotalDisbursal: '90',
+      State: 'Maharashtra',
+      Target: '85',
+      Delinquency: '0.3',
     },
     {
       SNo: 5,
       CpName: 'Amarjeet',
-      CpCode: '0126',
-      Area: 'Amarjeet',
+      CpCode: '0127',
+      Area: 'Jaipur',
       Branch: 'Jaipur',
-      TotalLogins: '110',
-      TotalDisbursal: '1100',
-      State: 'Amarjeet',
-      Delinquency: '52',
+      TotalLogins: '1000',
+      TotalDisbursal: '110',
+      State: 'Rajasthan',
+      Target: '110',
+      Delinquency: '0.5',
     },
     {
       SNo: 6,
       CpName: 'Vivek Gupta',
       CpCode: '0128',
-      Area: 'Vivek Gupta',
-      Branch: 'CLUSTER',
-      TotalLogins: '130',
-      TotalDisbursal: '1500',
-      State: 'Vivek Gupta',
-      Delinquency: '54',
+      Area: 'Chandigarh',
+      Branch: 'Ambala',
+      TotalLogins: '1400',
+      TotalDisbursal: '95',
+      State: 'PCH',
+      Target: '75',
+      Delinquency: '0.65',
     },
     {
       SNo: 7,
       CpName: 'Rashmika Sen',
       CpCode: '0129',
-      Area: 'Rashmika Sen',
+      Area: 'Chandigarh',
       Branch: 'Chandigarh',
-      TotalLogins: '100',
-      TotalDisbursal: '1500',
-      State: 'Rashmika Sen',
-      Delinquency: '63',
+      TotalLogins: '1200',
+      TotalDisbursal: '150',
+      State: 'PCH',
+      Target: '93',
+      Delinquency: '0.9',
     },
     {
       SNo: 8,
       CpName: 'Rahul Saini',
       CpCode: '0130',
-      Area: 'Rahul Saini',
+      Area: 'Chandigarh',
       Branch: 'Ambala',
-      TotalLogins: '125',
-      TotalDisbursal: '1600',
-      State: 'Rahul Saini',
-      Delinquency: '55',
+      TotalLogins: '1400',
+      TotalDisbursal: '145',
+      State: 'PCH',
+      Target: '66',
+      Delinquency: '1.1',
     },
     {
       SNo: 9,
       CpName: 'Kiran Sen',
       CpCode: '0131',
-      Area: 'Kiran Sen',
+      Area: 'Jaipur',
       Branch: 'Jaipur',
-      TotalLogins: '120',
-      TotalDisbursal: '1520',
-      State: 'Kiran Sen',
-      Delinquency: '65',
+      TotalLogins: '1000',
+      TotalDisbursal: '125',
+      State: 'Rajasthan',
+      Target: '115',
+      Delinquency: '0.35',
     },
     {
       SNo: 10,
       CpName: 'Anushaka Sen',
       CpCode: '0132',
-      Area: 'Anushaka Sen',
+      Area: 'Indore',
       Branch: 'Indore',
-      TotalLogins: '125',
-      TotalDisbursal: '1250',
-      State: 'Anushaka Sen',
-      Delinquency: '25',
+      TotalLogins: '1250',
+      TotalDisbursal: '120',
+      State: 'MP',
+      Target: '98',
+      Delinquency: '0.2',
     },
     // Add more data as needed
   ];
@@ -166,10 +176,6 @@ export class ChannelPartnersComponent {
     private zone: NgZone,
     private cdRef: ChangeDetectorRef
   ) {}
-
-  onFilterChange(selectedValue: string) {}
-
-  onStateChange(selectedValue: string) {}
 
   setActiveButton(button: string) {
     setTimeout(() => {
@@ -442,9 +448,9 @@ export class ChannelPartnersComponent {
       },
       yAxis: {
         type: 'value',
-        min: 15,
-        max: 22,
-        interval: 1,
+        min: 5,
+        max: 30,
+        interval: 5,
         axisLine: {
           show: false,
         },
@@ -482,8 +488,10 @@ export class ChannelPartnersComponent {
           type: 'shadow',
         },
         formatter: (params: any) => {
-          const barValue = params[0].value;
-          return ` ${barValue}%`;
+          const overallValue = params[0].value;
+          const cpValue = params[1].value;
+
+          return `Overall: ${overallValue}%<br>CP: ${cpValue}%`;
         },
       },
       legend: {
@@ -568,5 +576,84 @@ export class ChannelPartnersComponent {
     this.CPLoginsChart.setOption(this.CPLoginsOption);
     this.CPDisbursalChart.setOption(this.CPDisbursalOption);
     this.CPOfDelinquencyChart.setOption(this.CPOfDelinquencyOption);
+  }
+
+  onFilterChange(selectedValue: string) {
+    this.generateConversionRandomData();
+    this.generateCpLoginRandomData();
+    this.generateCpDeliRandomData();
+    this.generateCpDetailsRandomData();
+  }
+
+  onStateChange(selectedValue: string) {
+    this.generateConversionRandomData();
+    this.generateCpLoginRandomData();
+    this.generateCpDeliRandomData();
+    this.generateCpDetailsRandomData();
+  }
+
+  generateConversionRandomData() {
+    const newData = [
+      { value: this.getRandomValue(15, 20), itemStyle: { color: '#0747A6' } },
+      { value: this.getRandomValue(15, 20), itemStyle: { color: '#0747A6' } },
+      { value: this.getRandomValue(15, 20), itemStyle: { color: '#0747A6' } },
+      { value: this.getRandomValue(15, 20), itemStyle: { color: '#0747A6' } },
+      { value: this.getRandomValue(15, 20), itemStyle: { color: '#0747A6' } },
+      { value: this.getRandomValue(15, 20), itemStyle: { color: '#0747A6' } },
+      { value: this.getRandomValue(15, 20), itemStyle: { color: '#0747A6' } },
+    ];
+    this.CPDisbursalOption.series[0].data = newData;
+    this.CPDisbursalChart.setOption(this.CPDisbursalOption);
+  }
+  generateCpLoginRandomData() {
+    const newData = [
+      { value: this.getRandomValue(26, 30), itemStyle: { color: '#DBA39A' } },
+      { value: this.getRandomValue(26, 30), itemStyle: { color: '#DBA39A' } },
+      { value: this.getRandomValue(26, 30), itemStyle: { color: '#DBA39A' } },
+      { value: this.getRandomValue(26, 30), itemStyle: { color: '#DBA39A' } },
+      { value: this.getRandomValue(26, 30), itemStyle: { color: '#DBA39A' } },
+      { value: this.getRandomValue(26, 30), itemStyle: { color: '#DBA39A' } },
+      { value: this.getRandomValue(26, 30), itemStyle: { color: '#DBA39A' } },
+    ];
+    this.CPLoginsOption.series[0].data = newData;
+    this.CPLoginsChart.setOption(this.CPLoginsOption);
+  }
+
+  generateCpDeliRandomData() {
+    const minDelinquency = 0.95;
+    const maxDelinquency = 1.15;
+
+    // Generate random values for the series data within the specified range
+    const randomOverallData = Array.from({ length: 7 }, () =>
+      this.getRandomValue(minDelinquency, maxDelinquency)
+    );
+    const randomCPData = Array.from({ length: 7 }, () =>
+      this.getRandomValue(minDelinquency, maxDelinquency)
+    );
+
+    this.CPOfDelinquencyOption.series[0].data = randomOverallData;
+    this.CPOfDelinquencyOption.series[1].data = randomCPData;
+
+    this.CPOfDelinquencyChart.setOption(this.CPOfDelinquencyOption);
+  }
+  generateCpDetailsRandomData() {
+    const minDelinquency = 1300;
+    const maxDelinquency = 1400;
+
+    // Generate random values for the series data within the specified range
+    const randomOverallData = Array.from({ length: 7 }, () =>
+      this.getRandomValue(minDelinquency, maxDelinquency)
+    );
+    const randomCPData = Array.from({ length: 7 }, () =>
+      this.getRandomValue(minDelinquency, maxDelinquency)
+    );
+
+    this.CPDetailsOption.series[0].data = randomOverallData;
+    this.CPDetailsOption.series[1].data = randomCPData;
+
+    this.CPDetailsChart.setOption(this.CPDetailsOption);
+  }
+  getRandomValue(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }
