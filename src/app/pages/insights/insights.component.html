@@ -225,7 +225,7 @@
               </p-treeTable>
 
               <p-treeTable *ngIf="!tableShow"
-                [value]="loginData"
+                [value]="selectedTat === 'Final Approvals' ? finalData : selectedTat === 'Financial Approvals' ? financialData : loginData"
                 [scrollable]="true"
                 [tableStyle]="{ 'min-width': '50rem' }"
               >

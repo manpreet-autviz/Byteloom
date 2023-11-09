@@ -490,7 +490,7 @@ export class DashboardComponent {
       document.getElementById('DisbursalAchievementChart') as HTMLDivElement
     );
     this.trendDisbursalAchievementChart = echarts.init(
-      document.getElementById('dashtrendDisbursalAchievement') as HTMLDivElement
+      document.getElementById('dash-trend-Disbursal-Achievement') as HTMLDivElement
     );
 
     this.disbursalAchievementOption = {

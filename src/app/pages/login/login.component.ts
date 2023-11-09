@@ -518,7 +518,7 @@ export class LoginComponent implements AfterViewInit {
         yAxis: {
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 23,
+          nameGap: 20,
           nameTextStyle: {
             fontWeight: 600,
             fontSize: 14,

@@ -585,7 +585,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
             fontWeight: 600,
             fontSize: 14,
           },
-          nameGap: 25,
+          nameGap: 23,
           axisLabel: {
             margin: 1,
           },

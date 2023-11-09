@@ -318,7 +318,7 @@ export class DisbursalComponent {
           },
           name: 'Amount (in Rs. Lacs)',
           nameLocation: 'middle',
-          nameGap: 23,
+          nameGap: 20,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -519,7 +519,7 @@ export class DisbursalComponent {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 23,
+          nameGap: 20,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -598,7 +598,7 @@ export class DisbursalComponent {
           },
           name: 'Days',
           nameLocation: 'middle',
-          nameGap: 23,
+          nameGap: 20,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -665,7 +665,7 @@ export class DisbursalComponent {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 23,
+          nameGap: 20,
           axisLabel: {
             formatter: '{value}',
             margin: 1,
@@ -789,7 +789,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 23,
+            nameGap: 20,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -889,7 +889,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Amount ( in Rs. Crore)  ',
             nameLocation: 'middle',
-            nameGap: 23,
+            nameGap: 20,
             nameTextStyle: {
               fontWeight: 600,
               fontSize:14,
@@ -1071,7 +1071,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 23,
+            nameGap: 20,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1212,7 +1212,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 23,
+            nameGap: 20,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1468,7 +1468,7 @@ export class DisbursalComponent {
             interval: 10,
             name: 'Percentage %' ,
             nameLocation: 'middle',
-            nameGap: 23,
+            nameGap: 20,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1609,7 +1609,7 @@ export class DisbursalComponent {
             interval: 2,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 23,
+            nameGap: 20,
             axisLabel: {
               formatter: '{value}',
               margin: 1,
@@ -1750,7 +1750,7 @@ export class DisbursalComponent {
             interval: 2,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 23,
+            nameGap: 20,
             axisLabel: {
               formatter: '{value}',
               margin: 1,

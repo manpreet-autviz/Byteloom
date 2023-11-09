@@ -141,7 +141,7 @@ export class LegalComponent {
           interval: 1,
           name: 'Days',
           nameLocation: 'middle',
-          nameGap: 12,
+          nameGap: 10,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
