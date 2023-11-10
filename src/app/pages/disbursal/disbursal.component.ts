@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import * as echarts from 'echarts';
 @Component({
@@ -23,7 +24,7 @@ export class DisbursalComponent {
   trendLoginDisbursalRatioChart!: echarts.ECharts;
   trendDisbursalTatChart!: echarts.ECharts;
   trendIrPfChart!: echarts.ECharts;
-
+  DisbursalNumber: number = 100;
   states: string[] = [
     'Pan India',
     'PCH',
@@ -49,7 +50,7 @@ export class DisbursalComponent {
   selectedFilter: string = 'September';
   selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
-
+  DisbursalJsonData:any;
   disbursalAchievementOption: any;
   irrPFInsOption: any;
   stateDisbursalOption: any;
@@ -69,10 +70,14 @@ export class DisbursalComponent {
   trendIrPfOption: any;
 
   public isToggled = false;
-  constructor(private cdRef: ChangeDetectorRef) {}
+  constructor(private cdRef: ChangeDetectorRef, private http: HttpClient,) {}
   ngAfterViewInit(): void {
     this.initializeChart();
   }
+  ngOnInit(): void {
+    this.getjsonData();
+  }
+
 
   toggle(): void {
     this.isToggled = !this.isToggled;
@@ -81,6 +86,7 @@ export class DisbursalComponent {
     }, 0);
     this.cdRef.detectChanges();
   }
+
 
   initializeChart() {
     if (!this.isToggled) {
@@ -292,7 +298,7 @@ export class DisbursalComponent {
           data: ['HL', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            rotate: 0,
             overflow: 'break',
           },
           axisLine: {
@@ -479,7 +485,7 @@ export class DisbursalComponent {
         dataset: {
           dimensions: ['product', 'IRR', 'PF', 'Insurance'],
           source: [
-            { product: 'All Products', IRR: 13, PF: 3.5, Insurance: 3 },
+            { product: 'All', IRR: 13, PF: 3.5, Insurance: 3 },
             { product: 'HL', IRR: 12.5, PF: 3, Insurance: 2.7 },
             { product: 'LAP', IRR: 14, PF: 4, Insurance: 2.4 },
             { product: 'BL', IRR: 12.9, PF: 3.7, Insurance: 2.4 },
@@ -490,7 +496,7 @@ export class DisbursalComponent {
           type: 'category',
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            rotate: 0,
             overflow: 'break',
           },
           axisLine: {
@@ -569,10 +575,10 @@ export class DisbursalComponent {
         xAxis: {
           type: 'category',
 
-          data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
+          data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            rotate: 0,
             overflow: 'break',
           },
           axisLine: {
@@ -636,10 +642,10 @@ export class DisbursalComponent {
         xAxis: {
           type: 'category',
 
-          data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
+          data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
           axisLabel: {
             interval: 0,
-            rotate: -45,
+            rotate: 0,
             overflow: 'break',
           },
           axisLine: {
@@ -1837,6 +1843,7 @@ export class DisbursalComponent {
     this.generateProductRandomData();
     this.generateloginDisbursalRatioRandomData();
     this.generateDisbursalTatRandomdata();
+    this.generateDisbursalRandomData(selectedValue)
   }
 
   onStateChange(selectedValue: string) {
@@ -1848,6 +1855,7 @@ export class DisbursalComponent {
     this.generateProductRandomData();
     this.generateloginDisbursalRatioRandomData();
     this.generateDisbursalTatRandomdata();
+    this.generateDisbursalRandomData(selectedValue)
   }
 
   toggleContent() {
@@ -1881,7 +1889,7 @@ export class DisbursalComponent {
 
     const randomData = [
       {
-        product: 'All Products',
+        product: 'All',
         IRR: this.getRandomValue(12, 16),
         PF: this.getRandomValue(2.3, 4),
         Insurance: this.getRandomValue(2.3, 3),
@@ -1977,17 +1985,17 @@ export class DisbursalComponent {
       {
         value: this.getRandomValue(22, 27),
         name: 'Top-Up',
-        itemStyle: { color: '#FF7629' },
+        itemStyle: { color: '#F6C342' },
       },
       {
         value: this.getRandomValue(40, 45),
         name: 'Fresh',
-        itemStyle: { color: '#00E1EF' },
+        itemStyle: { color: '#6C757D' },
       },
       {
         value: this.getRandomValue(23, 26),
         name: 'BT',
-        itemStyle: { color: '#94DD1D' },
+        itemStyle: { color: '#198754' },
       },
     ];
 
@@ -2376,6 +2384,31 @@ export class DisbursalComponent {
       });
       this.trendIrPfOption.series[0].data = newData;
       this.trendIrPfChart.setOption(this.trendIrPfOption);
+    }
+  }
+  getjsonData() {
+   
+    this.http.get('assets/disbursal-meter.json').subscribe((data: any) => {
+      this.DisbursalJsonData = data;
+      
+    });
+  }
+
+  generateDisbursalRandomData(region: any) {
+    if (region === 'Pan India') {
+      this.DisbursalNumber = 100;
+    } else if (
+      region === 'PCH' ||
+      region === 'NCR' ||
+      region === 'Rajasthan' ||
+      region === 'Maharashtra'
+    ) {
+      const selectedRegion = this.DisbursalJsonData.states[region];
+      this.DisbursalNumber = selectedRegion?.disbursalMeter;
+
+      
+    } else {
+      this.DisbursalNumber = +(Math.random() * (20 - 10) + 10).toFixed(2);
     }
   }
 }

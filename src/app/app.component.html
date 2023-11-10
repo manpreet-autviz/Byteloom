@@ -1,7 +1,7 @@
 <div class="wrapper">
-  <app-navbar></app-navbar>
+  <app-navbar *ngIf="!(router.url === '/authentication')"></app-navbar>
 
-  <app-sidebar></app-sidebar>
+  <app-sidebar *ngIf="!(router.url === '/authentication')"></app-sidebar>
 
   <div class="content-wrapper">
     <router-outlet></router-outlet>

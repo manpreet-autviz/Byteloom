@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import {
   AfterViewInit,
   ElementRef,
@@ -54,7 +55,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
   PotentialLostOptions: any;
   ConversionOption: any;
   RMOption: any;
-
+  DisbursalNumber: number = 100;
+  DisbursalJsonData:any;
   data = [
     {
       SNo: 1,
@@ -182,7 +184,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
   constructor(
     private elementRef: ElementRef,
     private zone: NgZone,
-    private cdRef: ChangeDetectorRef
+    private cdRef: ChangeDetectorRef,
+    private http: HttpClient,
   ) {}
 
   setActiveButton(button: string) {
@@ -216,6 +219,9 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
     this.initializeChart();
   }
 
+  ngOnInit(): void {
+    this.getjsonData();
+  }
   ngOnDestroy() {
     const table = $(
       this.elementRef.nativeElement.querySelector('#table')
@@ -904,6 +910,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
     this.generateRmData();
     this.generateFtr();
     this.generateAvgRm();
+    this.generateDisbursalRandomData(selectedValue)
   }
 
   onStateChange(selectedValue: string) {
@@ -913,6 +920,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
     this.generateRmData();
     this.generateFtr();
     this.generateAvgRm();
+    this.generateDisbursalRandomData(selectedValue)
   }
 
   generateConversionRandomData() {
@@ -1028,5 +1036,31 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
 
   getRandomValue(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  getjsonData() {
+   
+    this.http.get('assets/disbursal-meter.json').subscribe((data: any) => {
+      this.DisbursalJsonData = data;
+      
+    });
+  }
+
+  generateDisbursalRandomData(region: any) {
+    if (region === 'Pan India') {
+      this.DisbursalNumber = 100;
+    } else if (
+      region === 'PCH' ||
+      region === 'NCR' ||
+      region === 'Rajasthan' ||
+      region === 'Maharashtra'
+    ) {
+      const selectedRegion = this.DisbursalJsonData.states[region];
+      this.DisbursalNumber = selectedRegion?.disbursalMeter;
+
+      
+    } else {
+      this.DisbursalNumber = +(Math.random() * (20 - 10) + 10).toFixed(2);
+    }
   }
 }

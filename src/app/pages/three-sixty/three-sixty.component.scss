@@ -223,6 +223,26 @@ ul.pending-cheque.ot-normal {
     font-weight: 700;
      border-radius: 4px;
 }
+.card.aum-box h3 {
+    font-size: 18px;
+}
+.card.aum-box h5 {
+    font-size: 25px !important;
+    font-weight: 600;
+}
+.aum-dblue {
+    background: #ceeaf6 !important;
+}
+.aum-yellow {
+    background: #fef1d1;
+}
+.aum-gray {
+    background: #d2d2d2;
+}
+.aum-purple {
+    background: #ead7ea;
+}
+
 
 
 
@@ -246,11 +266,8 @@ ul.pending-cheque.ot-normal {
         text-align: center !important;
     }
 }
-.aum-box{
-    min-height: 170px;
-}
 .aum-box .card-body{
-    padding-top: 20px;
+    padding: 20px !important;
 }
 .aum-box .card-body .amount{
     padding-top: 10px;

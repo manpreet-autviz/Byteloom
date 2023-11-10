@@ -47,6 +47,7 @@ import { SearchingBasisComponent } from './pages/searching-basis/searching-basis
 
 import { BranchSearchComponent } from './pages/branch-search/branch-search.component';
 import { TatLoginTableComponent } from './pages/tat-login-table/tat-login-table.component';
+import { LoginAuthComponent } from './pages/login-auth/login-auth.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { TatLoginTableComponent } from './pages/tat-login-table/tat-login-table.
     SearchingBasisComponent,
     BranchSearchComponent,
     TatLoginTableComponent,
+    LoginAuthComponent,
   ],
   imports: [
     BrowserModule,

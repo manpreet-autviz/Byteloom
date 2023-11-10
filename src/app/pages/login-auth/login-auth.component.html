@@ -1,0 +1,75 @@
+<div class="h-100">
+  <section class="h-100 gradient-form p-4">
+    <div class="container-fluid h-100">
+      <div class="row justify-content-center align-items-center p-1 h-100">
+        <div class="col-lg-5 col-12 h-lg-100">
+          <div class="login p-5 mb-3">
+            <form
+              novalidate
+              autocomplete="off"
+              #loginForm="ngForm"
+              class="login-form"
+              (ngSubmit)="login()"
+            >
+              <div class="text-center">
+                <img
+                  src="../../../assets/icons/byteloom.png"
+                  class="logo-tendency mb-4"
+                  alt="logo"
+                />
+              </div>
+              <div class="w-100">
+                <h4 class="text-left mt-1 mt-5 pb-3">
+                  <b>{{ "Welcome to Log in" }}</b>
+                </h4>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="mb-1"
+                  >Enter User Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control border bg-transparent px-3 fix-height"
+                  name="userNameOrEmailAddress"
+                  [(ngModel)]="userNameOrEmailAddress"
+                  [placeholder]="'Email'"
+                  required
+                  maxlength="256"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="mb-1">Password</label>
+                <input
+                  type="password"
+                  class="form-control border bg-transparent px-3 fix-height"
+                  name="password"
+                  [(ngModel)]="password"
+                  [placeholder]="'Password'"
+                  required
+                  maxlength="32"
+                />
+              </div>
+
+              <div class="form-group">
+                <button
+                  type="submit"
+                  class="btn btn-primary-custom btn-block py-2 px-4 border-0 mt-4"
+                >
+                  LogIn <i class="fal fa-arrow-right ms-3"></i>
+                </button>
+                <div class="d-flex justify-content-center">
+                  <span class="error-message"> {{ ErrorMessage }}</span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <footer id="footer" class="w-100 text-center">
+            <p class="mb-0 w-100">
+              © 2023 <strong>byteloom.io</strong>. All rights reserved.
+            </p>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

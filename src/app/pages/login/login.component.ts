@@ -198,8 +198,8 @@ export class LoginComponent implements AfterViewInit {
           },
 
           min: 0,
-          max: 4.0,
-          interval: 0.5,
+          max: 1.0,
+          interval: 0.2,
           name: 'Number of files (in thousand)',
 
           nameLocation: 'start',

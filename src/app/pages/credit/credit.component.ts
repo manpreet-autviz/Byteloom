@@ -429,10 +429,10 @@ export class CreditComponent {
       xAxis: {
         type: 'category',
 
-        data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
+        data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
         axisLabel: {
           interval: 0,
-          rotate: 45,
+          rotate: 0,
           overflow: 'break',
         },
         axisLine: {

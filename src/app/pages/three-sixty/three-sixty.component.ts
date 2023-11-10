@@ -129,12 +129,12 @@ export class ThreeSixtyComponent {
           },
           axisLabel: {
             interval: 0,
-            rotate: -70,
+            rotate: 0,
             overflow: 'break',
           },
           type: 'category',
           boundaryGap: true,
-          data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
+          data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
         },
       ],
       yAxis: [
@@ -160,7 +160,7 @@ export class ThreeSixtyComponent {
       ],
       series: [
         {
-          name: 'All Products',
+          name: 'All',
           type: 'line',
           color: '#EF9595',
 
@@ -267,10 +267,10 @@ export class ThreeSixtyComponent {
         },
         type: 'category',
 
-        data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
+        data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
         axisLabel: {
           interval: 0,
-          rotate: -45,
+          rotate: 0,
           overflow: 'break',
         },
       },
@@ -389,10 +389,10 @@ export class ThreeSixtyComponent {
         },
         type: 'category',
 
-        data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
+        data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
         axisLabel: {
           interval: 0,
-          rotate: -45,
+          rotate: 0,
           overflow: 'break',
         },
       },
@@ -443,7 +443,7 @@ export class ThreeSixtyComponent {
       dataset: {
         dimensions: ['product', 'IRR', 'PF', 'Insurance'],
         source: [
-          { product: 'All Products', IRR: 13, PF: 3.5, Insurance: 3 },
+          { product: 'All', IRR: 13, PF: 3.5, Insurance: 3 },
           { product: 'HL', IRR: 12.5, PF: 3, Insurance: 2.7 },
           { product: 'LAP', IRR: 14, PF: 4, Insurance: 2.4 },
           { product: 'BL', IRR: 12.9, PF: 3.7, Insurance: 2.4 },
@@ -460,7 +460,7 @@ export class ThreeSixtyComponent {
         type: 'category',
         axisLabel: {
           interval: 0,
-          rotate: -45,
+          rotate: 0,
           overflow: 'break',
         },
       },
@@ -598,7 +598,7 @@ export class ThreeSixtyComponent {
         data: ['ED', 'GNPA', 'NPA'],
         axisLabel: {
           interval: 0,
-          rotate: -45,
+          rotate: 0,
           overflow: 'break',
         },
       },

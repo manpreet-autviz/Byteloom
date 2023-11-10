@@ -126,7 +126,7 @@
 
           <ul class="submenu" *ngIf="submenus.submenu1">
             <li classs="nav-item">
-              <a (click)="navigateToSubPage('/out-of-tat')" [class.active]="activeSubItem === '/out-of-tat'" class="nav-link menu-link cursor-pointer">Out of TAT</a>
+              <a (click)="navigateToSubPage('/out-of-tat','submenu1')" [class.active]="activeItem === '/out-of-tat'" class="nav-link menu-link cursor-pointer">Out of TAT</a>
             </li>
           </ul>
         </li>
@@ -231,7 +231,7 @@
         <li class="nav-item" (click)="toggleSubmenu('submenu2')">
           <a
             (click)="navigateToPage('/productivity/sales')"
-            [class.active]="activeItem === '/productivity/sales'"
+           
             class="nav-link menu-link dropdown-toggle"
             data-bs-toggle="collapse"
             role="button"
@@ -245,40 +245,40 @@
           <ul class="submenu" *ngIf="submenus.submenu2">
             <li classs="nav-item">
               <a
-                (click)="navigateToSubPage('/productivity/sales')"
-                [class.active]="activeSubItem === '/productivity/sales'"
+                (click)="navigateToSubPage('/productivity/sales','submenu2')"
+                [class.active]="activeItem === '/productivity/sales'"
                 class="nav-link menu-link cursor-pointer"
                 >Sales</a
               >
             </li>
             <li classs="nav-item">
               <a
-                (click)="navigateToSubPage('/productivity/channel-partner')"
-                [class.active]="activeSubItem === '/productivity/channel-partner'"
+                (click)="navigateToSubPage('/productivity/channel-partner','submenu2')"
+                [class.active]="activeItem === '/productivity/channel-partner'"
                 class="nav-link menu-link cursor-pointer"
                 >Channel Partners</a
               >
             </li>
             <li classs="nav-item">
               <a
-                (click)="navigateToSubPage('/productivity/credit')"
-                [class.active]="activeSubItem === '/productivity/credit'"
+                (click)="navigateToSubPage('/productivity/credit','submenu2')"
+                [class.active]="activeItem === '/productivity/credit'"
                 class="nav-link menu-link cursor-pointer"
                 >Credit</a
               >
             </li>
             <li classs="nav-item">
               <a
-                (click)="navigateToSubPage('/productivity/technical')"
-                [class.active]="activeSubItem === '/productivity/technical'"
+                (click)="navigateToSubPage('/productivity/technical','submenu2')"
+                [class.active]="activeItem === '/productivity/technical'"
                 class="nav-link menu-link cursor-pointer"
                 >Technical</a
               >
             </li>
             <li classs="nav-item">
               <a
-                (click)="navigateToSubPage('/productivity/legal')"
-                [class.active]="activeSubItem === '/productivity/legal'"
+                (click)="navigateToSubPage('/productivity/legal','submenu2')"
+                [class.active]="activeItem === '/productivity/legal'"
                 class="nav-link menu-link cursor-pointer"
                 >Legal</a
               >
@@ -288,7 +288,6 @@
         <li class="nav-item" (click)="toggleSubmenu('submenu3')">
           <a
             (click)="navigateToPage('/business-rm')"
-            [class.active]="activeItem === '/business-rm'"
             class="nav-link menu-link dropdown-toggle"
             data-bs-toggle="collapse"
             role="button"
@@ -301,32 +300,32 @@
           <ul class="submenu" *ngIf="submenus.submenu3">
             <li classs="nav-item">
               <a
-                (click)="navigateToSubPage('/business-rm')"
-                [class.active]="activeSubItem === '/business-rm'"
+                (click)="navigateToSubPage('/business-rm','submenu3')"
+                [class.active]="activeItem === '/business-rm'"
                 class="nav-link menu-link cursor-pointer"
                 >Business RM</a
               >
             </li>
             <li classs="nav-item">
               <a
-                (click)="navigateToSubPage('/business-supervisor')"
-                [class.active]="activeSubItem === '/business-supervisor'"
+                (click)="navigateToSubPage('/business-supervisor','submenu3')"
+                [class.active]="activeItem === '/business-supervisor'"
                 class="nav-link menu-link cursor-pointer"
                 >Business Supervisor</a
               >
             </li>
             <li classs="nav-item">
               <a
-                (click)="navigateToSubPage('/credit-cm')"
-                [class.active]="activeSubItem === '/credit-cm'"
+                (click)="navigateToSubPage('/credit-cm','submenu3')"
+                [class.active]="activeItem === '/credit-cm'"
                 class="nav-link menu-link cursor-pointer"
                 >Credit CM</a
               >
             </li>
             <li classs="nav-item">
               <a
-                (click)="navigateToSubPage('/credit-supervisor')"
-                [class.active]="activeSubItem === '/credit-supervisor'"
+                (click)="navigateToSubPage('/credit-supervisor','submenu3')"
+                [class.active]="activeItem === '/credit-supervisor'"
                 class="nav-link menu-link cursor-pointer"
                 >Credit supervisor</a
               >

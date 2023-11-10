@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { MenuService } from 'src/app/services/menu.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +14,7 @@ export class NavbarComponent {
   searchQuery: string = '';
   isMenuVisible: boolean = true;
 
-  constructor(private router: Router, private menu: MenuService) {}
+  constructor(private router: Router, private menu: MenuService,private loginService:LoginService) {}
 
   toggleMenuDisplay() {
     const menu = document.querySelector('.wrapper') as HTMLElement;
@@ -47,5 +49,10 @@ export class NavbarComponent {
     this.menu.setSearchTerm('/dashboard');
     this.router.navigate(['/dashboard']);
   }
+}
+logout(){
+  this.loginService.logout();
+  localStorage.clear();
+  this.router.navigate(['/authentication']);
 }
 }

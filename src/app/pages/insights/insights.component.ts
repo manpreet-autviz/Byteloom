@@ -61,8 +61,8 @@ export class InsightsComponent {
   tats: string[] = [
     'Stage of Files',
     'Login ',
-    'Final Approvals',
     'Financial Approvals',
+    'Final Approvals',
     'Disbursal',
   ];
   statuss: string[] = ['Select Status', 'pending', 'approved'];
@@ -72,9 +72,10 @@ export class InsightsComponent {
   files!: TreeNode[];
   loginData!: TreeNode[];
   finalData!: TreeNode[];
-  financialData!:TreeNode[];
+  financialData!: TreeNode[];
   routeName!: string | null;
   tableShow: boolean = true;
+  originalData: any;
   constructor(
     private cdRef: ChangeDetectorRef,
     private route: ActivatedRoute
@@ -1108,6 +1109,7 @@ export class InsightsComponent {
         ],
       },
     ];
+    this.originalData = JSON.parse(JSON.stringify(this.files)); 
     this.loginData = [
       {
         data: {
@@ -3684,1295 +3686,1294 @@ export class InsightsComponent {
         ],
       },
     ];
-    this.finalData= [
+    this.finalData = [
       {
-        "data": {
-          "StateName": "Pan India",
-          "AllProductFiles": "160.0",
-          "HLFiles": "96.0",
-          "HLPercentage": "60",
-          "LapFiles": "19.2",
-          "LapPercentage": "12",
-          "BLFiles": "12.8",
-          "BlPercentage": "8",
-          "SBLFiles": "32.0",
-          "SBLPercentage": "20"
+        data: {
+          StateName: 'Pan India',
+          AllProductFiles: '160.0',
+          HLFiles: '96.0',
+          HLPercentage: '60',
+          LapFiles: '19.2',
+          LapPercentage: '12',
+          BLFiles: '12.8',
+          BlPercentage: '8',
+          SBLFiles: '32.0',
+          SBLPercentage: '20',
         },
-        "children": [
+        children: [
           {
-            "data": {
-              "StateName": "PCH",
-              "AllProductFiles": 12.8,
-              "HLFiles": "7.7",
-              "HLPercentage": "60",
-              "LapFiles": "1.5",
-              "LapPercentage": "12",
-              "BLFiles": "1.0",
-              "BlPercentage": "8",
-              "SBLFiles": "2.6",
-              "SBLPercentage": "20"
+            data: {
+              StateName: 'PCH',
+              AllProductFiles: 12.8,
+              HLFiles: '7.7',
+              HLPercentage: '60',
+              LapFiles: '1.5',
+              LapPercentage: '12',
+              BLFiles: '1.0',
+              BlPercentage: '8',
+              SBLFiles: '2.6',
+              SBLPercentage: '20',
             },
-            "children": [
+            children: [
               {
-                "data": {
-                  "StateName": "Chandigarh",
-                  "AllProductFiles": "4.5",
-                  "HLFiles": "2.7",
-                  "financialAmount": "60",
-                  "finalAmount": "0.5",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.4",
-                  "BlPercentage": "8",
-                  "SBLFiles": "0.9",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Chandigarh',
+                  AllProductFiles: '4.5',
+                  HLFiles: '2.7',
+                  financialAmount: '60',
+                  finalAmount: '0.5',
+                  LapPercentage: '12',
+                  BLFiles: '0.4',
+                  BlPercentage: '8',
+                  SBLFiles: '0.9',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Chandigarh",
-                      "AllProductFiles": "1.8",
-                      "HLFiles": "1.1",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.4",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Chandigarh',
+                      AllProductFiles: '1.8',
+                      HLFiles: '1.1',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.4',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Ambala",
-                      "AllProductFiles": "1.3",
-                      "HLFiles": "0.8",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": 0.1,
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.3",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Ambala',
+                      AllProductFiles: '1.3',
+                      HLFiles: '0.8',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: 0.1,
+                      BlPercentage: '8',
+                      SBLFiles: '0.3',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Patiala",
-                      "AllProductFiles": "1.4",
-                      "HLFiles": "0.9",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.3",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Patiala',
+                      AllProductFiles: '1.4',
+                      HLFiles: '0.9',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.3',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Ludhiana",
-                  "AllProductFiles": "3.3",
-                  "HLFiles": "2.0",
-                  "financialAmount": "60",
-                  "finalAmount": "0.4",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.3",
-                  "BlPercentage": "8",
-                  "SBLFiles": "0.7",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Ludhiana',
+                  AllProductFiles: '3.3',
+                  HLFiles: '2.0',
+                  financialAmount: '60',
+                  finalAmount: '0.4',
+                  LapPercentage: '12',
+                  BLFiles: '0.3',
+                  BlPercentage: '8',
+                  SBLFiles: '0.7',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Ludhiana",
-                      "AllProductFiles": "1.3",
-                      "HLFiles": "0.8",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.3",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Ludhiana',
+                      AllProductFiles: '1.3',
+                      HLFiles: '0.8',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.3',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Jalandhar",
-                      "AllProductFiles": "0.9",
-                      "HLFiles": "0.6",
-                      "financialAmount": "60",
-                      "finalAmount": "0.1",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.2",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Jalandhar',
+                      AllProductFiles: '0.9',
+                      HLFiles: '0.6',
+                      financialAmount: '60',
+                      finalAmount: '0.1',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.2',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Moga",
-                      "AllProductFiles": "1.1",
-                      "HLFiles": "0.6",
-                      "financialAmount": "60",
-                      "finalAmount": "0.1",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.2",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Moga',
+                      AllProductFiles: '1.1',
+                      HLFiles: '0.6',
+                      financialAmount: '60',
+                      finalAmount: '0.1',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.2',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Karnal",
-                  "AllProductFiles": "2.7",
-                  "HLFiles": "1.6",
-                  "financialAmount": "60",
-                  "finalAmount": "0.3",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.2",
-                  "BlPercentage": "8",
-                  "SBLFiles": "0.5",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Karnal',
+                  AllProductFiles: '2.7',
+                  HLFiles: '1.6',
+                  financialAmount: '60',
+                  finalAmount: '0.3',
+                  LapPercentage: '12',
+                  BLFiles: '0.2',
+                  BlPercentage: '8',
+                  SBLFiles: '0.5',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Karnal",
-                      "AllProductFiles": "1.1",
-                      "HLFiles": "0.6",
-                      "financialAmount": "60",
-                      "finalAmount": "0.1",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.2",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Karnal',
+                      AllProductFiles: '1.1',
+                      HLFiles: '0.6',
+                      financialAmount: '60',
+                      finalAmount: '0.1',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.2',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Rohtak",
-                      "AllProductFiles": "0.8",
-                      "HLFiles": "0.5",
-                      "financialAmount": "60",
-                      "finalAmount": "0.1",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.2",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Rohtak',
+                      AllProductFiles: '0.8',
+                      HLFiles: '0.5',
+                      financialAmount: '60',
+                      finalAmount: '0.1',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.2',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Panipat",
-                      "AllProductFiles": "0.9",
-                      "HLFiles": "0.5",
-                      "financialAmount": "60",
-                      "finalAmount": "0.1",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.2",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
-              }
-            ]
+                    data: {
+                      StateName: 'Panipat',
+                      AllProductFiles: '0.9',
+                      HLFiles: '0.5',
+                      financialAmount: '60',
+                      finalAmount: '0.1',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.2',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
+              },
+            ],
           },
           {
-            "data": {
-              "StateName": "NCR",
-              "AllProductFiles": "24",
-              "HLFiles": "14.4",
-              "financialAmount": "60",
-              "finalAmount": "2.9",
-              "LapPercentage": "12",
-              "BLFiles": "1.9",
-              "BlPercentage": "8",
-              "SBLFiles": "4.8",
-              "SBLPercentage": "20"
+            data: {
+              StateName: 'NCR',
+              AllProductFiles: '24',
+              HLFiles: '14.4',
+              financialAmount: '60',
+              finalAmount: '2.9',
+              LapPercentage: '12',
+              BLFiles: '1.9',
+              BlPercentage: '8',
+              SBLFiles: '4.8',
+              SBLPercentage: '20',
             },
-            "children": [
+            children: [
               {
-                "data": {
-                  "StateName": "Delhi",
-                  "AllProductFiles": "14.4",
-                  "HLFiles": "8.6",
-                  "financialAmount": "60",
-                  "finalAmount": "1.7",
-                  "LapPercentage": "12",
-                  "BLFiles": "1.2",
-                  "BlPercentage": "8",
-                  "SBLFiles": "2.9",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Delhi',
+                  AllProductFiles: '14.4',
+                  HLFiles: '8.6',
+                  financialAmount: '60',
+                  finalAmount: '1.7',
+                  LapPercentage: '12',
+                  BLFiles: '1.2',
+                  BlPercentage: '8',
+                  SBLFiles: '2.9',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "JanakPuri",
-                      "AllProductFiles": "6.3",
-                      "HLFiles": "3.8",
-                      "financialAmount": "60",
-                      "finalAmount": "0.8",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.5",
-                      "BlPercentage": "8",
-                      "SBLFiles": "1.3",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'JanakPuri',
+                      AllProductFiles: '6.3',
+                      HLFiles: '3.8',
+                      financialAmount: '60',
+                      finalAmount: '0.8',
+                      LapPercentage: '12',
+                      BLFiles: '0.5',
+                      BlPercentage: '8',
+                      SBLFiles: '1.3',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Laxmi Nagar",
-                      "AllProductFiles": "4.4",
-                      "HLFiles": "2.6",
-                      "financialAmount": "60",
-                      "finalAmount": "0.5",
-                      "LapPercentage": "12",
-                      "BLFiles": 0.4,
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.9",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Laxmi Nagar',
+                      AllProductFiles: '4.4',
+                      HLFiles: '2.6',
+                      financialAmount: '60',
+                      finalAmount: '0.5',
+                      LapPercentage: '12',
+                      BLFiles: 0.4,
+                      BlPercentage: '8',
+                      SBLFiles: '0.9',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Sahibad",
-                      "AllProductFiles": "5.0",
-                      "HLFiles": "3.0",
-                      "financialAmount": "60",
-                      "finalAmount": "0.6",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.4",
-                      "BlPercentage": "8",
-                      "SBLFiles": "1.0",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Sahibad',
+                      AllProductFiles: '5.0',
+                      HLFiles: '3.0',
+                      financialAmount: '60',
+                      finalAmount: '0.6',
+                      LapPercentage: '12',
+                      BLFiles: '0.4',
+                      BlPercentage: '8',
+                      SBLFiles: '1.0',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Gurgoan",
-                  "AllProductFiles": "10.5",
-                  "HLFiles": "6.3",
-                  "financialAmount": "60",
-                  "finalAmount": "1.3",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.8",
-                  "BlPercentage": "8",
-                  "SBLFiles": "2.1",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Gurgoan',
+                  AllProductFiles: '10.5',
+                  HLFiles: '6.3',
+                  financialAmount: '60',
+                  finalAmount: '1.3',
+                  LapPercentage: '12',
+                  BLFiles: '0.8',
+                  BlPercentage: '8',
+                  SBLFiles: '2.1',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Gurgoan",
-                      "AllProductFiles": "4.2",
-                      "HLFiles": "2.5",
-                      "financialAmount": "60",
-                      "finalAmount": "0.5",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.3",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.8",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Gurgoan',
+                      AllProductFiles: '4.2',
+                      HLFiles: '2.5',
+                      financialAmount: '60',
+                      finalAmount: '0.5',
+                      LapPercentage: '12',
+                      BLFiles: '0.3',
+                      BlPercentage: '8',
+                      SBLFiles: '0.8',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Faridabad",
-                      "AllProductFiles": "2.9",
-                      "HLFiles": "1.8",
-                      "financialAmount": "60",
-                      "finalAmount": "0.4",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.6",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Faridabad',
+                      AllProductFiles: '2.9',
+                      HLFiles: '1.8',
+                      financialAmount: '60',
+                      finalAmount: '0.4',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.6',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Meerut",
-                      "AllProductFiles": "3.4",
-                      "HLFiles": "2.0",
-                      "financialAmount": "60",
-                      "finalAmount": "0.4",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.3",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.7",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
-              }
-            ]
+                    data: {
+                      StateName: 'Meerut',
+                      AllProductFiles: '3.4',
+                      HLFiles: '2.0',
+                      financialAmount: '60',
+                      finalAmount: '0.4',
+                      LapPercentage: '12',
+                      BLFiles: '0.3',
+                      BlPercentage: '8',
+                      SBLFiles: '0.7',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
+              },
+            ],
           },
           {
-            "data": {
-              "StateName": "Rajasthan",
-              "AllProductFiles": "52.5",
-              "HLFiles": "31.5",
-              "financialAmount": "60",
-              "finalAmount": "6.3",
-              "LapPercentage": "12",
-              "BLFiles": "4.2",
-              "BlPercentage": "8",
-              "SBLFiles": "10.53",
-              "SBLPercentage": "20"
+            data: {
+              StateName: 'Rajasthan',
+              AllProductFiles: '52.5',
+              HLFiles: '31.5',
+              financialAmount: '60',
+              finalAmount: '6.3',
+              LapPercentage: '12',
+              BLFiles: '4.2',
+              BlPercentage: '8',
+              SBLFiles: '10.53',
+              SBLPercentage: '20',
             },
-            "children": [
+            children: [
               {
-                "data": {
-                  "StateName": "Jaipur",
-                  "AllProductFiles": "18.4",
-                  "HLFiles": "11.0",
-                  "financialAmount": "60",
-                  "finalAmount": "2.2",
-                  "LapPercentage": "12",
-                  "BLFiles": "1.5",
-                  "BlPercentage": "8",
-                  "SBLFiles": "3.7",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Jaipur',
+                  AllProductFiles: '18.4',
+                  HLFiles: '11.0',
+                  financialAmount: '60',
+                  finalAmount: '2.2',
+                  LapPercentage: '12',
+                  BLFiles: '1.5',
+                  BlPercentage: '8',
+                  SBLFiles: '3.7',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Jaipur",
-                      "AllProductFiles": "7.4",
-                      "HLFiles": "4.4",
-                      "financialAmount": "60",
-                      "finalAmount": "0.9",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.6",
-                      "BlPercentage": "8",
-                      "SBLFiles": "1.5",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Jaipur',
+                      AllProductFiles: '7.4',
+                      HLFiles: '4.4',
+                      financialAmount: '60',
+                      finalAmount: '0.9',
+                      LapPercentage: '12',
+                      BLFiles: '0.6',
+                      BlPercentage: '8',
+                      SBLFiles: '1.5',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Sikar Road",
-                      "AllProductFiles": "5.1",
-                      "HLFiles": "3.1",
-                      "financialAmount": "60",
-                      "finalAmount": "0.6",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.4",
-                      "BlPercentage": "8",
-                      "SBLFiles": "1.0",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Sikar Road',
+                      AllProductFiles: '5.1',
+                      HLFiles: '3.1',
+                      financialAmount: '60',
+                      finalAmount: '0.6',
+                      LapPercentage: '12',
+                      BLFiles: '0.4',
+                      BlPercentage: '8',
+                      SBLFiles: '1.0',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Behror",
-                      "AllProductFiles": "5.9",
-                      "HLFiles": "3.5",
-                      "financialAmount": "60",
-                      "finalAmount": "0.7",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.5",
-                      "BlPercentage": "8",
-                      "SBLFiles": "1.2",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Behror',
+                      AllProductFiles: '5.9',
+                      HLFiles: '3.5',
+                      financialAmount: '60',
+                      finalAmount: '0.7',
+                      LapPercentage: '12',
+                      BLFiles: '0.5',
+                      BlPercentage: '8',
+                      SBLFiles: '1.2',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Ajmer",
-                  "AllProductFiles": "13.7",
-                  "HLFiles": "8.2",
-                  "financialAmount": "60",
-                  "finalAmount": "1.6",
-                  "LapPercentage": "12",
-                  "BLFiles": "1.1",
-                  "BlPercentage": "8",
-                  "SBLFiles": "2.7",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Ajmer',
+                  AllProductFiles: '13.7',
+                  HLFiles: '8.2',
+                  financialAmount: '60',
+                  finalAmount: '1.6',
+                  LapPercentage: '12',
+                  BLFiles: '1.1',
+                  BlPercentage: '8',
+                  SBLFiles: '2.7',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Ajmer",
-                      "AllProductFiles": "5.5",
-                      "HLFiles": "3.3",
-                      "financialAmount": "60",
-                      "finalAmount": "0.7",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.4",
-                      "BlPercentage": "8",
-                      "SBLFiles": "1.1",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Ajmer',
+                      AllProductFiles: '5.5',
+                      HLFiles: '3.3',
+                      financialAmount: '60',
+                      finalAmount: '0.7',
+                      LapPercentage: '12',
+                      BLFiles: '0.4',
+                      BlPercentage: '8',
+                      SBLFiles: '1.1',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Kekri",
-                      "AllProductFiles": "3.8",
-                      "HLFiles": "2.3",
-                      "financialAmount": "60",
-                      "finalAmount": "0.5",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.3",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.8",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Kekri',
+                      AllProductFiles: '3.8',
+                      HLFiles: '2.3',
+                      financialAmount: '60',
+                      finalAmount: '0.5',
+                      LapPercentage: '12',
+                      BLFiles: '0.3',
+                      BlPercentage: '8',
+                      SBLFiles: '0.8',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Merta",
-                      "AllProductFiles": "4.4",
-                      "HLFiles": "2.6",
-                      "financialAmount": "60",
-                      "finalAmount": "0.5",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.3",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.9",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Merta',
+                      AllProductFiles: '4.4',
+                      HLFiles: '2.6',
+                      financialAmount: '60',
+                      finalAmount: '0.5',
+                      LapPercentage: '12',
+                      BLFiles: '0.3',
+                      BlPercentage: '8',
+                      SBLFiles: '0.9',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Udaipur",
-                  "AllProductFiles": "11.0",
-                  "HLFiles": "6.6",
-                  "financialAmount": "60",
-                  "finalAmount": "1.3",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.9",
-                  "BlPercentage": "8",
-                  "SBLFiles": "2.2",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Udaipur',
+                  AllProductFiles: '11.0',
+                  HLFiles: '6.6',
+                  financialAmount: '60',
+                  finalAmount: '1.3',
+                  LapPercentage: '12',
+                  BLFiles: '0.9',
+                  BlPercentage: '8',
+                  SBLFiles: '2.2',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Rajsamand",
-                      "AllProductFiles": "4.4",
-                      "HLFiles": "2.6",
-                      "financialAmount": "60",
-                      "finalAmount": "0.5",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.4",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.9",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Rajsamand',
+                      AllProductFiles: '4.4',
+                      HLFiles: '2.6',
+                      financialAmount: '60',
+                      finalAmount: '0.5',
+                      LapPercentage: '12',
+                      BLFiles: '0.4',
+                      BlPercentage: '8',
+                      SBLFiles: '0.9',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Banswara",
-                      "AllProductFiles": "3.1",
-                      "HLFiles": "1.9",
-                      "financialAmount": "60",
-                      "finalAmount": "0.4",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.6",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Banswara',
+                      AllProductFiles: '3.1',
+                      HLFiles: '1.9',
+                      financialAmount: '60',
+                      finalAmount: '0.4',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.6',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Udaipur",
-                      "AllProductFiles": "3.5",
-                      "HLFiles": "2.1",
-                      "financialAmount": "60",
-                      "finalAmount": "0.4",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.3",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.7",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Udaipur',
+                      AllProductFiles: '3.5',
+                      HLFiles: '2.1',
+                      financialAmount: '60',
+                      finalAmount: '0.4',
+                      LapPercentage: '12',
+                      BLFiles: '0.3',
+                      BlPercentage: '8',
+                      SBLFiles: '0.7',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Kota",
-                  "AllProductFiles": "9.5",
-                  "HLFiles": "5.7",
-                  "financialAmount": "60",
-                  "finalAmount": "1.1",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.8",
-                  "BlPercentage": "8",
-                  "SBLFiles": "1.9",
-                  "SBLPercentage": "20"
-                }
-              }
-            ]
+                data: {
+                  StateName: 'Kota',
+                  AllProductFiles: '9.5',
+                  HLFiles: '5.7',
+                  financialAmount: '60',
+                  finalAmount: '1.1',
+                  LapPercentage: '12',
+                  BLFiles: '0.8',
+                  BlPercentage: '8',
+                  SBLFiles: '1.9',
+                  SBLPercentage: '20',
+                },
+              },
+            ],
           },
           {
-            "data": {
-              "StateName": "Gujarat",
-              "AllProductFiles": "21.0",
-              "HLFiles": "12.6",
-              "financialAmount": "60",
-              "finalAmount": "2.5",
-              "LapPercentage": "12",
-              "BLFiles": "1.7",
-              "BlPercentage": "8",
-              "SBLFiles": "4.2",
-              "SBLPercentage": "20"
+            data: {
+              StateName: 'Gujarat',
+              AllProductFiles: '21.0',
+              HLFiles: '12.6',
+              financialAmount: '60',
+              finalAmount: '2.5',
+              LapPercentage: '12',
+              BLFiles: '1.7',
+              BlPercentage: '8',
+              SBLFiles: '4.2',
+              SBLPercentage: '20',
             },
-            "children": [
+            children: [
               {
-                "data": {
-                  "StateName": "Ahmedabad",
-                  "AllProductFiles": "7.4",
-                  "HLFiles": "4.4",
-                  "financialAmount": "60",
-                  "finalAmount": "0.9",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.6",
-                  "BlPercentage": "8",
-                  "SBLFiles": "1.5",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Ahmedabad',
+                  AllProductFiles: '7.4',
+                  HLFiles: '4.4',
+                  financialAmount: '60',
+                  finalAmount: '0.9',
+                  LapPercentage: '12',
+                  BLFiles: '0.6',
+                  BlPercentage: '8',
+                  SBLFiles: '1.5',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Ahmedabad",
-                      "AllProductFiles": "2.9",
-                      "HLFiles": "1.8",
-                      "financialAmount": "60",
-                      "finalAmount": "0.4",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.6",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Ahmedabad',
+                      AllProductFiles: '2.9',
+                      HLFiles: '1.8',
+                      financialAmount: '60',
+                      finalAmount: '0.4',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.6',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Gandhinagar",
-                      "AllProductFiles": "2.1",
-                      "HLFiles": "1.2",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.4",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Gandhinagar',
+                      AllProductFiles: '2.1',
+                      HLFiles: '1.2',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.4',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Sanand",
-                      "AllProductFiles": "2.4",
-                      "HLFiles": "1.4",
-                      "financialAmount": "60",
-                      "finalAmount": "0.3",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.5",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Sanand',
+                      AllProductFiles: '2.4',
+                      HLFiles: '1.4',
+                      financialAmount: '60',
+                      finalAmount: '0.3',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.5',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Surat",
-                  "AllProductFiles": "5.5",
-                  "HLFiles": "3.3",
-                  "financialAmount": "60",
-                  "finalAmount": "0.7",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.4",
-                  "BlPercentage": "8",
-                  "SBLFiles": "1.1",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Surat',
+                  AllProductFiles: '5.5',
+                  HLFiles: '3.3',
+                  financialAmount: '60',
+                  finalAmount: '0.7',
+                  LapPercentage: '12',
+                  BLFiles: '0.4',
+                  BlPercentage: '8',
+                  SBLFiles: '1.1',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Surat",
-                      "AllProductFiles": "2.2",
-                      "HLFiles": "1.3",
-                      "financialAmount": "60",
-                      "finalAmount": "0.3",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.4",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Surat',
+                      AllProductFiles: '2.2',
+                      HLFiles: '1.3',
+                      financialAmount: '60',
+                      finalAmount: '0.3',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.4',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Kadodara",
-                      "AllProductFiles": "1.5",
-                      "HLFiles": "0.9",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": 0.3,
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Kadodara',
+                      AllProductFiles: '1.5',
+                      HLFiles: '0.9',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: 0.3,
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Rundh",
-                      "AllProductFiles": "1.7",
-                      "HLFiles": "1.0",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.3",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Rundh',
+                      AllProductFiles: '1.7',
+                      HLFiles: '1.0',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.3',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Rajkot",
-                  "AllProductFiles": "4.4",
-                  "HLFiles": "2.6",
-                  "financialAmount": "60",
-                  "finalAmount": "0.5",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.4",
-                  "BlPercentage": "8",
-                  "SBLFiles": "0.9",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Rajkot',
+                  AllProductFiles: '4.4',
+                  HLFiles: '2.6',
+                  financialAmount: '60',
+                  finalAmount: '0.5',
+                  LapPercentage: '12',
+                  BLFiles: '0.4',
+                  BlPercentage: '8',
+                  SBLFiles: '0.9',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Rajkot",
-                      "AllProductFiles": "1.8",
-                      "HLFiles": "1.1",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.4",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Rajkot',
+                      AllProductFiles: '1.8',
+                      HLFiles: '1.1',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.4',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Jamnagar",
-                      "AllProductFiles": "1.2",
-                      "HLFiles": "0.7",
-                      "financialAmount": "60",
-                      "finalAmount": "0.1",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.2",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Jamnagar',
+                      AllProductFiles: '1.2',
+                      HLFiles: '0.7',
+                      financialAmount: '60',
+                      finalAmount: '0.1',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.2',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Junagadh",
-                      "AllProductFiles": "1.4",
-                      "HLFiles": "0.8",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.3",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Junagadh',
+                      AllProductFiles: '1.4',
+                      HLFiles: '0.8',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.3',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Vadodara",
-                  "AllProductFiles": "3.8",
-                  "HLFiles": "2.3",
-                  "financialAmount": "60",
-                  "finalAmount": "0.5",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.3",
-                  "BlPercentage": "8",
-                  "SBLFiles": "0.8",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Vadodara',
+                  AllProductFiles: '3.8',
+                  HLFiles: '2.3',
+                  financialAmount: '60',
+                  finalAmount: '0.5',
+                  LapPercentage: '12',
+                  BLFiles: '0.3',
+                  BlPercentage: '8',
+                  SBLFiles: '0.8',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Vadodara",
-                      "AllProductFiles": "1.5",
-                      "HLFiles": "0.9",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.3",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Vadodara',
+                      AllProductFiles: '1.5',
+                      HLFiles: '0.9',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.3',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Anand",
-                      "AllProductFiles": "1.1",
-                      "HLFiles": "0.6",
-                      "financialAmount": "60",
-                      "finalAmount": "0.1",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.2",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Anand',
+                      AllProductFiles: '1.1',
+                      HLFiles: '0.6',
+                      financialAmount: '60',
+                      finalAmount: '0.1',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.2',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Dabhoi",
-                      "AllProductFiles": "1.2",
-                      "HLFiles": "0.7",
-                      "financialAmount": "60",
-                      "finalAmount": "0.1",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.2",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
-              }
-            ]
+                    data: {
+                      StateName: 'Dabhoi',
+                      AllProductFiles: '1.2',
+                      HLFiles: '0.7',
+                      financialAmount: '60',
+                      finalAmount: '0.1',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.2',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
+              },
+            ],
           },
           {
-            "data": {
-              "StateName": "MP",
-              "AllProductFiles": "38.5",
-              "HLFiles": "23.1",
-              "financialAmount": "60",
-              "finalAmount": "4.6",
-              "LapPercentage": "12",
-              "BLFiles": "3.1",
-              "BlPercentage": "8",
-              "SBLFiles": "7.7",
-              "SBLPercentage": "20"
+            data: {
+              StateName: 'MP',
+              AllProductFiles: '38.5',
+              HLFiles: '23.1',
+              financialAmount: '60',
+              finalAmount: '4.6',
+              LapPercentage: '12',
+              BLFiles: '3.1',
+              BlPercentage: '8',
+              SBLFiles: '7.7',
+              SBLPercentage: '20',
             },
-            "children": [
+            children: [
               {
-                "data": {
-                  "StateName": "Indore",
-                  "AllProductFiles": "13.5",
-                  "HLFiles": "8.1",
-                  "financialAmount": "60",
-                  "finalAmount": "1.6",
-                  "LapPercentage": "12",
-                  "BLFiles": "1.1",
-                  "BlPercentage": "8",
-                  "SBLFiles": "2.7",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Indore',
+                  AllProductFiles: '13.5',
+                  HLFiles: '8.1',
+                  financialAmount: '60',
+                  finalAmount: '1.6',
+                  LapPercentage: '12',
+                  BLFiles: '1.1',
+                  BlPercentage: '8',
+                  SBLFiles: '2.7',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Indore",
-                      "AllProductFiles": "5.4",
-                      "HLFiles": "3.2",
-                      "financialAmount": "60",
-                      "finalAmount": "0.6",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.4",
-                      "BlPercentage": "8",
-                      "SBLFiles": "1.1",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Indore',
+                      AllProductFiles: '5.4',
+                      HLFiles: '3.2',
+                      financialAmount: '60',
+                      finalAmount: '0.6',
+                      LapPercentage: '12',
+                      BLFiles: '0.4',
+                      BlPercentage: '8',
+                      SBLFiles: '1.1',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Ujjain",
-                      "AllProductFiles": "3.8",
-                      "HLFiles": "2.3",
-                      "financialAmount": "60",
-                      "finalAmount": "0.5",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.3",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.8",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Ujjain',
+                      AllProductFiles: '3.8',
+                      HLFiles: '2.3',
+                      financialAmount: '60',
+                      finalAmount: '0.5',
+                      LapPercentage: '12',
+                      BLFiles: '0.3',
+                      BlPercentage: '8',
+                      SBLFiles: '0.8',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Dewas",
-                      "AllProductFiles": "4.3",
-                      "HLFiles": "2.6",
-                      "financialAmount": "60",
-                      "finalAmount": "0.5",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.3",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.9",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Dewas',
+                      AllProductFiles: '4.3',
+                      HLFiles: '2.6',
+                      financialAmount: '60',
+                      finalAmount: '0.5',
+                      LapPercentage: '12',
+                      BLFiles: '0.3',
+                      BlPercentage: '8',
+                      SBLFiles: '0.9',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Gwalior",
-                  "AllProductFiles": "10.0",
-                  "HLFiles": "6.0",
-                  "financialAmount": "60",
-                  "finalAmount": "1.2",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.8",
-                  "BlPercentage": "8",
-                  "SBLFiles": "2.0",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Gwalior',
+                  AllProductFiles: '10.0',
+                  HLFiles: '6.0',
+                  financialAmount: '60',
+                  finalAmount: '1.2',
+                  LapPercentage: '12',
+                  BLFiles: '0.8',
+                  BlPercentage: '8',
+                  SBLFiles: '2.0',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Gwalior",
-                      "AllProductFiles": "4.0",
-                      "HLFiles": "2.4",
-                      "financialAmount": "60",
-                      "finalAmount": "0.5",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.3",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.8",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Gwalior',
+                      AllProductFiles: '4.0',
+                      HLFiles: '2.4',
+                      financialAmount: '60',
+                      finalAmount: '0.5',
+                      LapPercentage: '12',
+                      BLFiles: '0.3',
+                      BlPercentage: '8',
+                      SBLFiles: '0.8',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Morena",
-                      "AllProductFiles": "2.8",
-                      "HLFiles": "1.7",
-                      "financialAmount": "60",
-                      "finalAmount": "0.3",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.6",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Morena',
+                      AllProductFiles: '2.8',
+                      HLFiles: '1.7',
+                      financialAmount: '60',
+                      finalAmount: '0.3',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.6',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Bhind",
-                      "AllProductFiles": "3.2",
-                      "HLFiles": "1.9",
-                      "financialAmount": "60",
-                      "finalAmount": "0.4",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.3",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.6",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Bhind',
+                      AllProductFiles: '3.2',
+                      HLFiles: '1.9',
+                      financialAmount: '60',
+                      finalAmount: '0.4',
+                      LapPercentage: '12',
+                      BLFiles: '0.3',
+                      BlPercentage: '8',
+                      SBLFiles: '0.6',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Bhopal",
-                  "AllProductFiles": "8.1",
-                  "HLFiles": "4.9",
-                  "financialAmount": "60",
-                  "finalAmount": "1.0",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.6",
-                  "BlPercentage": "8",
-                  "SBLFiles": "1.6",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Bhopal',
+                  AllProductFiles: '8.1',
+                  HLFiles: '4.9',
+                  financialAmount: '60',
+                  finalAmount: '1.0',
+                  LapPercentage: '12',
+                  BLFiles: '0.6',
+                  BlPercentage: '8',
+                  SBLFiles: '1.6',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Bhopal",
-                      "AllProductFiles": "3.2",
-                      "HLFiles": "1.9",
-                      "financialAmount": "60",
-                      "finalAmount": "0.4",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.3",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.6",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Bhopal',
+                      AllProductFiles: '3.2',
+                      HLFiles: '1.9',
+                      financialAmount: '60',
+                      finalAmount: '0.4',
+                      LapPercentage: '12',
+                      BLFiles: '0.3',
+                      BlPercentage: '8',
+                      SBLFiles: '0.6',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Vidisha",
-                      "AllProductFiles": "2.3",
-                      "HLFiles": "1.4",
-                      "financialAmount": "60",
-                      "finalAmount": "0.3",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.5",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Vidisha',
+                      AllProductFiles: '2.3',
+                      HLFiles: '1.4',
+                      financialAmount: '60',
+                      finalAmount: '0.3',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.5',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Sehore",
-                      "AllProductFiles": "2.6",
-                      "HLFiles": "1.6",
-                      "financialAmount": "60",
-                      "finalAmount": "0.3",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.5",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Sehore',
+                      AllProductFiles: '2.6',
+                      HLFiles: '1.6',
+                      financialAmount: '60',
+                      finalAmount: '0.3',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.5',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Jabalpur",
-                  "AllProductFiles": "6.9",
-                  "HLFiles": "4.2",
-                  "financialAmount": "60",
-                  "finalAmount": "0.8",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.6",
-                  "BlPercentage": "8",
-                  "SBLFiles": "1.4",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Jabalpur',
+                  AllProductFiles: '6.9',
+                  HLFiles: '4.2',
+                  financialAmount: '60',
+                  finalAmount: '0.8',
+                  LapPercentage: '12',
+                  BLFiles: '0.6',
+                  BlPercentage: '8',
+                  SBLFiles: '1.4',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Jabalpur",
-                      "AllProductFiles": "2.8",
-                      "HLFiles": "1.7",
-                      "financialAmount": "60",
-                      "finalAmount": "0.3",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.6",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Jabalpur',
+                      AllProductFiles: '2.8',
+                      HLFiles: '1.7',
+                      financialAmount: '60',
+                      finalAmount: '0.3',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.6',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Sihora",
-                      "AllProductFiles": "1.9",
-                      "HLFiles": "1.2",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.4",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Sihora',
+                      AllProductFiles: '1.9',
+                      HLFiles: '1.2',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.4',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Mandla",
-                      "AllProductFiles": "2.2",
-                      "HLFiles": "1.3",
-                      "financialAmount": "60",
-                      "finalAmount": "0.3",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.4",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
-              }
-            ]
+                    data: {
+                      StateName: 'Mandla',
+                      AllProductFiles: '2.2',
+                      HLFiles: '1.3',
+                      financialAmount: '60',
+                      finalAmount: '0.3',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.4',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
+              },
+            ],
           },
           {
-            "data": {
-              "StateName": "Maharashtra",
-              "AllProductFiles": "22.8",
-              "HLFiles": "13.7",
-              "financialAmount": "60",
-              "finalAmount": "2.7",
-              "LapPercentage": "12",
-              "BLFiles": "1.8",
-              "BlPercentage": "8",
-              "SBLFiles": "4.6",
-              "SBLPercentage": "20"
+            data: {
+              StateName: 'Maharashtra',
+              AllProductFiles: '22.8',
+              HLFiles: '13.7',
+              financialAmount: '60',
+              finalAmount: '2.7',
+              LapPercentage: '12',
+              BLFiles: '1.8',
+              BlPercentage: '8',
+              SBLFiles: '4.6',
+              SBLPercentage: '20',
             },
-            "children": [
+            children: [
               {
-                "data": {
-                  "StateName": "Mumbai",
-                  "AllProductFiles": "8.0",
-                  "HLFiles": "4.8",
-                  "financialAmount": "60",
-                  "finalAmount": "1.0",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.6",
-                  "BlPercentage": "8",
-                  "SBLFiles": "1.6",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Mumbai',
+                  AllProductFiles: '8.0',
+                  HLFiles: '4.8',
+                  financialAmount: '60',
+                  finalAmount: '1.0',
+                  LapPercentage: '12',
+                  BLFiles: '0.6',
+                  BlPercentage: '8',
+                  SBLFiles: '1.6',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Navi Mumbai",
-                      "AllProductFiles": "3.2",
-                      "HLFiles": "1.9",
-                      "financialAmount": "60",
-                      "finalAmount": "0.4",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.3",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.6",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Navi Mumbai',
+                      AllProductFiles: '3.2',
+                      HLFiles: '1.9',
+                      financialAmount: '60',
+                      finalAmount: '0.4',
+                      LapPercentage: '12',
+                      BLFiles: '0.3',
+                      BlPercentage: '8',
+                      SBLFiles: '0.6',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Thane",
-                      "AllProductFiles": "2.2",
-                      "HLFiles": "1.3",
-                      "financialAmount": "60",
-                      "finalAmount": "0.3",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.4",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Thane',
+                      AllProductFiles: '2.2',
+                      HLFiles: '1.3',
+                      financialAmount: '60',
+                      finalAmount: '0.3',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.4',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Kalyan",
-                      "AllProductFiles": "2.5",
-                      "HLFiles": "1.5",
-                      "financialAmount": "60",
-                      "finalAmount": "0.3",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.5",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Kalyan',
+                      AllProductFiles: '2.5',
+                      HLFiles: '1.5',
+                      financialAmount: '60',
+                      finalAmount: '0.3',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.5',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Nashik",
-                  "AllProductFiles": 5.9,
-                  "HLFiles": "3.5",
-                  "financialAmount": "60",
-                  "finalAmount": "0.7",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.5",
-                  "BlPercentage": "8",
-                  "SBLFiles": "1.2",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Nashik',
+                  AllProductFiles: 5.9,
+                  HLFiles: '3.5',
+                  financialAmount: '60',
+                  finalAmount: '0.7',
+                  LapPercentage: '12',
+                  BLFiles: '0.5',
+                  BlPercentage: '8',
+                  SBLFiles: '1.2',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Nashik",
-                      "AllProductFiles": "2.4",
-                      "HLFiles": "1.4",
-                      "financialAmount": "60",
-                      "finalAmount": "0.3",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.5",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Nashik',
+                      AllProductFiles: '2.4',
+                      HLFiles: '1.4',
+                      financialAmount: '60',
+                      finalAmount: '0.3',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.5',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Malegaon",
-                      "AllProductFiles": "1.7",
-                      "HLFiles": "1.0",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.3",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Malegaon',
+                      AllProductFiles: '1.7',
+                      HLFiles: '1.0',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.3',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Sinnar",
-                      "AllProductFiles": "1.9",
-                      "HLFiles": "1.1",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.4",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Sinnar',
+                      AllProductFiles: '1.9',
+                      HLFiles: '1.1',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.4',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Pune",
-                  "AllProductFiles": "4.8",
-                  "HLFiles": "2.9",
-                  "financialAmount": "60",
-                  "finalAmount": "0.6",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.4",
-                  "BlPercentage": "8",
-                  "SBLFiles": "1.0",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Pune',
+                  AllProductFiles: '4.8',
+                  HLFiles: '2.9',
+                  financialAmount: '60',
+                  finalAmount: '0.6',
+                  LapPercentage: '12',
+                  BLFiles: '0.4',
+                  BlPercentage: '8',
+                  SBLFiles: '1.0',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Pune",
-                      "AllProductFiles": "1.9",
-                      "HLFiles": "1.1",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.2",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.4",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Pune',
+                      AllProductFiles: '1.9',
+                      HLFiles: '1.1',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.2',
+                      BlPercentage: '8',
+                      SBLFiles: '0.4',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Bhor",
-                      "AllProductFiles": "1.3",
-                      "HLFiles": "0.8",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.3",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Bhor',
+                      AllProductFiles: '1.3',
+                      HLFiles: '0.8',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.3',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Shikrapur",
-                      "AllProductFiles": "1.5",
-                      "HLFiles": "0.9",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.3",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
+                    data: {
+                      StateName: 'Shikrapur',
+                      AllProductFiles: '1.5',
+                      HLFiles: '0.9',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.3',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
               },
               {
-                "data": {
-                  "StateName": "Nagpur",
-                  "AllProductFiles": "4.1",
-                  "HLFiles": "2.5",
-                  "financialAmount": "60",
-                  "finalAmount": "0.5",
-                  "LapPercentage": "12",
-                  "BLFiles": "0.3",
-                  "BlPercentage": "8",
-                  "SBLFiles": "0.8",
-                  "SBLPercentage": "20"
+                data: {
+                  StateName: 'Nagpur',
+                  AllProductFiles: '4.1',
+                  HLFiles: '2.5',
+                  financialAmount: '60',
+                  finalAmount: '0.5',
+                  LapPercentage: '12',
+                  BLFiles: '0.3',
+                  BlPercentage: '8',
+                  SBLFiles: '0.8',
+                  SBLPercentage: '20',
                 },
-                "children": [
+                children: [
                   {
-                    "data": {
-                      "StateName": "Nagpur",
-                      "AllProductFiles": "1.6",
-                      "HLFiles": "1.0",
-                      "financialAmount": "60",
-                      "finalAmount": 0.2,
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.3",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Nagpur',
+                      AllProductFiles: '1.6',
+                      HLFiles: '1.0',
+                      financialAmount: '60',
+                      finalAmount: 0.2,
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.3',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Amravati",
-                      "AllProductFiles": "1.1",
-                      "HLFiles": "0.7",
-                      "financialAmount": "60",
-                      "finalAmount": "0.1",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.2",
-                      "SBLPercentage": "20"
-                    }
+                    data: {
+                      StateName: 'Amravati',
+                      AllProductFiles: '1.1',
+                      HLFiles: '0.7',
+                      financialAmount: '60',
+                      finalAmount: '0.1',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.2',
+                      SBLPercentage: '20',
+                    },
                   },
                   {
-                    "data": {
-                      "StateName": "Gondia",
-                      "AllProductFiles": "1.3",
-                      "HLFiles": "0.8",
-                      "financialAmount": "60",
-                      "finalAmount": "0.2",
-                      "LapPercentage": "12",
-                      "BLFiles": "0.1",
-                      "BlPercentage": "8",
-                      "SBLFiles": "0.3",
-                      "SBLPercentage": "20"
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-      
-    ]
+                    data: {
+                      StateName: 'Gondia',
+                      AllProductFiles: '1.3',
+                      HLFiles: '0.8',
+                      financialAmount: '60',
+                      finalAmount: '0.2',
+                      LapPercentage: '12',
+                      BLFiles: '0.1',
+                      BlPercentage: '8',
+                      SBLFiles: '0.3',
+                      SBLPercentage: '20',
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ];
   }
 
   onFilterChange(selectedValue: string) {
@@ -5069,7 +5070,43 @@ export class InsightsComponent {
 
   onStateFilterChange(selectedValue: string) {
     this.tableShow = true;
+    if (selectedValue === 'LAP') {
+      this.updateDataValues(0.6);
+    } else if (selectedValue === 'BL') {
+      this.updateDataValues(0.12);
+    } else if (selectedValue === 'SBL') {
+      this.updateDataValues(0.2);
+    } else {
+      console.log("df")
+      this.resetToOriginalData();
+    }
   }
+  resetToOriginalData() {
+   
+    this.files = JSON.parse(JSON.stringify(this.originalData));
+  }
+  updateDataValues(factor: number) {
+    this.files = this.modifyDataValues(this.originalData, factor);
+  }
+
+  modifyDataValues(originalData: any, factor: number): any {
+    // Recursively update values in the data object
+    function modify(obj: any) {
+      for (let key in obj) {
+        if (key !== 'percentage') {
+          if (typeof obj[key] === 'object') {
+            obj[key] = modify(obj[key]);
+          } else if (!isNaN(obj[key])) {
+            obj[key] = (parseFloat(obj[key]) * factor).toFixed(2);
+          }
+        }
+      }
+      return obj;
+    }
+
+    return modify(JSON.parse(JSON.stringify(originalData)));
+  }
+
 
   onTatChange(selectedValue: string) {
     this.tableShow = false;

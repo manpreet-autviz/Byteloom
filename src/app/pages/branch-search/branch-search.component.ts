@@ -143,7 +143,7 @@ export class BranchSearchComponent {
           },
           type: 'category',
           boundaryGap: true,
-          data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
+          data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
         },
       ],
       yAxis: [
@@ -165,7 +165,7 @@ export class BranchSearchComponent {
       ],
       series: [
         {
-          name: 'All Products',
+          name: 'All',
           type: 'line',
           color: '#EF9595',
 
@@ -272,7 +272,7 @@ export class BranchSearchComponent {
         },
         type: 'category',
 
-        data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
+        data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
         axisLabel: {
           interval: 0,
           rotate: -45,
@@ -322,7 +322,7 @@ export class BranchSearchComponent {
             tooltipText = 'No. of files: 200 <br/> Amount in Cr: 26';
           } else if (params.name === 'SBL') {
             tooltipText = 'No. of files: 600 <br/> Amount in Cr: 28';
-          } else if (params.name === 'All Products') {
+          } else if (params.name === 'All') {
             tooltipText = 'No. of files: 300 <br/> Amount in Cr: 36';
           }
 
@@ -357,7 +357,7 @@ export class BranchSearchComponent {
           data: [
             {
               value: 25,
-              name: 'All Products',
+              name: 'All',
               itemStyle: { color: '#7C41DA' },
             },
             { value: 34, name: 'HL', itemStyle: { color: '#F99B00' } },
@@ -397,7 +397,7 @@ export class BranchSearchComponent {
         },
         type: 'category',
 
-        data: ['All Products', 'HL', 'LAP', 'BL', 'SBL'],
+        data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
         axisLabel: {
           interval: 0,
           rotate: -45,
@@ -447,7 +447,7 @@ export class BranchSearchComponent {
       dataset: {
         dimensions: ['product', 'IRR', 'PF', 'Insurance'],
         source: [
-          { product: 'All Products', IRR: 8, PF: 3.5, Insurance: 3 },
+          { product: 'All', IRR: 8, PF: 3.5, Insurance: 3 },
           { product: 'HL', IRR: 10.5, PF: 3, Insurance: 2.7 },
           { product: 'LAP', IRR: 7, PF: 4, Insurance: 2.4 },
           { product: 'BL', IRR: 8.9, PF: 3.7, Insurance: 2.4 },

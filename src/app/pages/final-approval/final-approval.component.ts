@@ -119,7 +119,7 @@ export class FinalApprovalComponent {
             const randomAmount = randomAmounts[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return `No of Files: ${barValue}<br> Amount in cr: ${randomAmount}`;
+            return `No of Files: ${randomAmount}<br> Amount in cr: ${barValue}`;
           },
         },
         legend: {},
@@ -548,8 +548,7 @@ export class FinalApprovalComponent {
         },
         legend: {
           data: [
-            'Punjab',
-            'Haryana',
+            'PCH',
             'NCR',
             'Rajasthan',
             'Gujarat',
@@ -618,7 +617,7 @@ export class FinalApprovalComponent {
         ],
         series: [
           {
-            name: 'Punjab',
+            name: 'PCH',
             type: 'line',
 
             areaStyle: {
@@ -632,21 +631,7 @@ export class FinalApprovalComponent {
             },
             data: [12, 15, 25, 30, 35, 45, 55],
           },
-          {
-            name: 'Haryana',
-            type: 'line',
 
-            areaStyle: {
-              opacity: 0,
-            },
-            emphasis: {
-              focus: 'series',
-              areaStyle: {
-                opacity: 1, // Reduce opacity on hover to make it semi-transparent
-              },
-            },
-            data: [30, 35, 45, 50, 58, 65, 75],
-          },
           {
             name: 'NCR',
             type: 'line',

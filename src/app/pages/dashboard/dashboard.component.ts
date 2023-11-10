@@ -109,7 +109,9 @@ export class DashboardComponent {
   PFValue = 2.3;
   IrrValue = 13.2;
   jsonData: any;
+  DisbursalJsonData:any;
   selectedDate!: string;
+  DisbursalNumber: number = 100;
   constructor(
     private el: ElementRef,
     private router: Router,
@@ -297,12 +299,16 @@ export class DashboardComponent {
       this.jsonData = data;
       console.log(this.jsonData); // Outputs: "value"
     });
+    this.http.get('assets/disbursal-meter.json').subscribe((data: any) => {
+      this.DisbursalJsonData = data;
+      console.log(this.jsonData); // Outputs: "value"
+    });
   }
 
   onRegionChange(region: string) {
     this.selectedState = region;
     this.clusters = this.getClusters(region);
-     this.selectedCluster =  'All';
+    this.selectedCluster = 'All';
     this.branches = [];
     this.generateDisbursalMeter();
     this.generateDisbursalAchievement();
@@ -310,6 +316,7 @@ export class DashboardComponent {
     this.generateCardsRandomData(this.selectedState, '', '');
     this.generateWorkInQueue(this.selectedState, '', '');
     this.generateIRRPFvalue();
+    this.generateDisbursalRandomData(this.selectedState, '', '');
   }
   getClusters(region: string): string[] {
     if (region === 'PCH') {
@@ -339,6 +346,11 @@ export class DashboardComponent {
     this.onDateChange();
     this.generateWorkInQueue(this.selectedState, this.selectedCluster, '');
     this.generateIRRPFvalue();
+    this.generateDisbursalRandomData(
+      this.selectedState,
+      this.selectedCluster,
+      ''
+    );
   }
 
   getBranches(region: string, cluster: string): string[] {
@@ -418,6 +430,11 @@ export class DashboardComponent {
       this.selectedBranch
     );
     this.generateIRRPFvalue();
+    this.generateDisbursalRandomData(
+      this.selectedState,
+      this.selectedCluster,
+      this.selectedBranch
+    );
   }
 
   onPreviousDayClick() {
@@ -490,7 +507,9 @@ export class DashboardComponent {
       document.getElementById('DisbursalAchievementChart') as HTMLDivElement
     );
     this.trendDisbursalAchievementChart = echarts.init(
-      document.getElementById('dash-trend-Disbursal-Achievement') as HTMLDivElement
+      document.getElementById(
+        'dash-trend-Disbursal-Achievement'
+      ) as HTMLDivElement
     );
 
     this.disbursalAchievementOption = {
@@ -579,7 +598,6 @@ export class DashboardComponent {
         formatter: (params: any) => {
           const dataIndex = params[0].dataIndex;
           const barValue = params[0].value;
-          
 
           // Create the tooltip content with the actual value and random amount
           return `${barValue}%`;
@@ -732,7 +750,16 @@ export class DashboardComponent {
   }
 
   generateCardsRandomData(region: any, area: any, branch: any) {
-    if (
+    if (region === 'Pan India') {
+      this.loginTotalAmount = 550;
+      this.loginTotalFiles = 3050;
+      this.financialTotalAmount = 175;
+      this.financialTotalFiles = 1500;
+      this.disbursalTotalAmount = 150;
+      this.disbursalTotalFiles = 1300;
+      this.finalTotalFiles = 1350;
+      this.finalTotalAmount = 160;
+    } else if (
       region === 'PCH' ||
       region === 'NCR' ||
       region === 'Rajasthan' ||
@@ -749,7 +776,6 @@ export class DashboardComponent {
       this.finalTotalFiles = selectedRegion?.FinalFiles;
 
       if (this.selectedCluster !== 'All') {
-       
         const selectedArea = selectedRegion.areas[this.selectedCluster];
         this.loginTotalAmount = selectedArea?.loginAmount;
         this.loginTotalFiles = selectedArea?.loginFiles;
@@ -761,7 +787,7 @@ export class DashboardComponent {
         this.finalTotalFiles = selectedArea?.FinalFiles;
 
         if (this.selectedBranch !== 'All') {
-          console.log("here",this.selectedBranch)
+          console.log('here', this.selectedBranch);
           const selectedBranch = selectedArea?.branches[this.selectedBranch];
           this.loginTotalAmount = selectedBranch?.loginAmount;
           this.loginTotalFiles = selectedBranch?.loginFiles;
@@ -896,6 +922,33 @@ export class DashboardComponent {
       this.legalAmount = this.generateRandomData(7.5, 8.5);
       this.technicalFile = this.generateRandomData(55, 60);
       this.technicalAmount = this.generateRandomData(7, 8);
+    }
+  }
+
+  generateDisbursalRandomData(region: any, area: any, branch: any) {
+    if (region === 'Pan India') {
+      this.DisbursalNumber = 100;
+    } else if (
+      region === 'PCH' ||
+      region === 'NCR' ||
+      region === 'Rajasthan' ||
+      region === 'Maharashtra'
+    ) {
+      const selectedRegion = this.DisbursalJsonData.states[region];
+      this.DisbursalNumber = selectedRegion?.disbursalMeter;
+
+      if (this.selectedCluster !== 'All') {
+        const selectedArea = selectedRegion.areas[this.selectedCluster];
+        this.DisbursalNumber = selectedArea?.disbursalMeter;
+
+        if (this.selectedBranch !== 'All') {
+          console.log('here', this.selectedBranch);
+          const selectedBranch = selectedArea?.branches[this.selectedBranch];
+          this.DisbursalNumber = selectedBranch?.disbursalMeter;
+        }
+      }
+    } else {
+      this.DisbursalNumber = +(Math.random() * (20 - 10) + 10).toFixed(2);
     }
   }
 }

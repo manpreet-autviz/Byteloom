@@ -638,7 +638,7 @@ export class RejectionAnalysisComponent {
             },
             {
               value: 10,
-              name: 'CIN',
+              name: 'CNI',
               itemStyle: {
                 color: '#9D76C1',
               },

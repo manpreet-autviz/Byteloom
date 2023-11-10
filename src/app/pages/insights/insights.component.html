@@ -225,14 +225,14 @@
               </p-treeTable>
 
               <p-treeTable *ngIf="!tableShow"
-                [value]="selectedTat === 'Final Approvals' ? finalData : selectedTat === 'Financial Approvals' ? financialData : loginData"
+                [value]="selectedTat === 'Final Approvals' ? finalData : selectedTat === 'Financial Approvals' ? financialData : selectedTat === 'Disbursal' ? finalData : loginData"
                 [scrollable]="true"
                 [tableStyle]="{ 'min-width': '50rem' }"
               >
                 <ng-template pTemplate="header">
                   <tr class="tat-head-first-r text-center text-white">
                     <th colspan="2"></th>
-                    <th colspan="1" class="theadcolor-1">All Products</th>
+                    <th colspan="1" class="theadcolor-1">All</th>
                     <th colspan="2" class="theadcolor-2">HL</th>                    
                     <th colspan="2" class="theadcolor-1">LAP</th>                    
                     <th colspan="2" class="theadcolor-3">BL</th>

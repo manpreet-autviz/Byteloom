@@ -1,0 +1,222 @@
+{
+    "states": {
+      "PCH": {
+        "disbursalMeter": 8,
+        "areas": {
+          "Chandigarh": {
+            "disbursalMeter": 3.1,
+            "branches": {
+              "Chandigarh": {
+                "disbursalMeter": 1.1
+              },
+              "Ambala": {
+                "disbursalMeter": 1.0
+              },
+              "Patiala": {
+                "disbursalMeter": 1.0
+              }
+            }
+          },
+          "Ludhiana": {
+            "disbursalMeter": 3.5,
+            "branches": {
+              "Ludhiana": {
+                "disbursalMeter": 1.0,
+                "": ""
+              },
+              "Jalandhar": {
+                "disbursalMeter": 1.0
+              },
+              "Moga": {
+                "disbursalMeter": 1.0
+              }
+            }
+          },
+          "karnal": {
+            "disbursalMeter": 3.6,
+            "branches": {
+              "Kurukshetra": {
+                "disbursalMeter": 1.0
+              },
+              "Rohtak": {
+                "disbursalMeter": 1.0
+              },
+              "Panipat": {
+                "disbursalMeter": 1.0
+              }
+            }
+          },
+          "Hisar": {
+            "disbursalMeter": 3.0,
+            "branches": {
+              "Hisar": {
+                "disbursalMeter": 1.0
+              },
+              "Bhiwani": {
+                "disbursalMeter": 1.0
+              },
+              "Sirsa": {
+                "disbursalMeter": 1.0
+              }
+            }
+          }
+        }
+      },
+      "NCR": {
+        "disbursalMeter": 15,
+        "areas": {
+          "Delhi": {
+            "disbursalMeter": 9.0,
+            "branches": {
+              "Janakpuri": {
+                "disbursalMeter": 3.6
+              },
+              "Laxmi Nagar": {
+                "disbursalMeter": 2.5
+              },
+              "Sahibabad": {
+                "disbursalMeter": 2.9
+              }
+            }
+          },
+          "Gurgaon": {
+            "disbursalMeter": 6.0,
+            "branches": {
+              "Gurgaon": {
+                "disbursalMeter": 2.4
+              },
+              "Faridabad": {
+                "disbursalMeter": 1.7
+              },
+              "Meerut": {
+                "disbursalMeter": 1.9
+              }
+            }
+          }
+        }
+      },
+      "Rajasthan": {
+        "disbursalMeter": 30,
+        "areas": {
+          "Jaipur": {
+            "disbursalMeter": 10.5,
+            "branches": {
+              "Jaipur": {
+                "disbursalMeter": 4.2
+              },
+              "Sikar Road": {
+                "disbursalMeter": 2.9
+              },
+              "Behror": {
+                "disbursalMeter": 3.4
+              }
+            }
+          },
+          "Ajmer": {
+            "disbursalMeter": 7.8,
+            "branches": {
+              "Ajmer": {
+                "disbursalMeter": 3.1
+              },
+              "Kekri": {
+                "disbursalMeter": 2.2
+              },
+              "Merta": {
+                "disbursalMeter": 2.5
+              }
+            }
+          },
+          "Udaipur": {
+            "disbursalMeter": 6.3,
+            "branches": {
+              "Rajsamand": {
+                "disbursalMeter": 2.5
+              },
+              "Banswara": {
+                "disbursalMeter": 1.8
+              },
+              "Udaipur": {
+                "disbursalMeter": 2.0
+              }
+            }
+          },
+          "Kota": {
+            "disbursalMeter": 5.4,
+            "branches": {
+              "RamNagar": {
+                "disbursalMeter": 2.2
+              },
+              "Nayapura": {
+                "disbursalMeter": 1.5
+              },
+              "Talwandi": {
+                "disbursalMeter": 1.7
+              }
+            }
+          }
+        }
+      },
+      "Maharashtra": {
+        "disbursalMeter": 13,
+        "areas": {
+          "Mumbai": {
+            "disbursalMeter": 4.6,
+            "branches": {
+              "Navi Mumbai": {
+                "disbursalMeter": 1.8
+              },
+              "Thane": {
+                "disbursalMeter": 1.3
+              },
+              "Kalyan": {
+                "disbursalMeter": 1.5
+              }
+            }
+          },
+          "Nashik": {
+            "disbursalMeter": 3.4,
+            "branches": {
+              "Nashik": {
+                "disbursalMeter": 1.4
+              },
+              "Malegaon": {
+                "disbursalMeter": 1.1
+              },
+              "Sinnar": {
+                "disbursalMeter": 1.2
+              }
+            }
+          },
+          "Pune": {
+            "disbursalMeter": 4.0,
+            "branches": {
+              "Pune": {
+                "disbursalMeter": 1.1
+              },
+              "Bhor": {
+                "disbursalMeter": 1.2
+              },
+              "Shikrapur": {
+                "disbursalMeter": 1.3
+              }
+            }
+          },
+          "Nagpur": {
+            "disbursalMeter": 4.0,
+            "branches": {
+              "Nagpur": {
+                "disbursalMeter": 1.2
+              },
+              "Amravati": {
+                "disbursalMeter": 1.3
+              },
+              "Gondia": {
+                "disbursalMeter": 1.5
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
