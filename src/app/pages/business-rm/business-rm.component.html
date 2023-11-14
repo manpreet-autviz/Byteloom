@@ -8,14 +8,7 @@
               <span class="f-7 fs-5"> Business RM </span>
             </div>
             <div class="d-flex">
-              <!-- <button
-                type="button "
-                class="text-white filter-btn-trend btn bg-blue border me-2"
-                (click)="toggle()"
-              >
-                {{ !isToggled ? "View Trend" : "Normal View" }}
-                <i class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
-              </button> -->
+             
               <select
               
                 id="dropdown"
@@ -27,17 +20,7 @@
                   {{ filter }}
                 </option>
               </select>
-              <!-- <select
-                *ngIf="isToggled"
-                id="dropdown"
-                class="form-select me-2"
-                [(ngModel)]="selectedTrendFilter"
-                (ngModelChange)="onTrendFilterChange($event)"
-              >
-                <option *ngFor="let filter of monthFilters" [value]="filter">
-                  {{ filter }}
-                </option>
-              </select> -->
+              
               <select
                 id="dropdown"
                 class="cursor-pointer form-select"
@@ -298,7 +281,7 @@
                         <h6>Vintage with company</h6>
                       </div>
                       <div>
-                        <p class="header-data">WiseGrowth Capital</p>
+                        <p class="header-data">2 Years</p>
                       </div>
                     </div>
                     <div class="d-flex justify-content-between mt-4">
@@ -306,7 +289,7 @@
                         <h6>Total experience</h6>
                       </div>
                       <div>
-                        <p class="header-data">6 Year</p>
+                        <p class="header-data">6 Years</p>
                       </div>
                     </div>
                     <div class="d-flex justify-content-between mt-4">

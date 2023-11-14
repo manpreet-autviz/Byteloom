@@ -29,7 +29,7 @@ export class OtcPddComponent {
     // 'Select custom'
   ];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+ selectedFilter: string = 'November';
 
  
   TotalReportChart!: echarts.ECharts;
@@ -95,7 +95,7 @@ export class OtcPddComponent {
       },
       legend: {
         data: [
-          'No of OTCs',
+          'No. of OTCs',
           'No. of customers',],
         top: '10',
       },
@@ -105,14 +105,14 @@ export class OtcPddComponent {
         axisTick: {
           show: false, 
         },
-        data: [
-          'Maharashtra',
-          'MP',
-          'Gujarat',
-          'Rajasthan',
-          'NCR',
+        data: [  
           'PCH',
-        
+          'NCR',
+          'Rajasthan',
+          'Gujarat',
+          'MP',
+          'Maharashtra',
+ 
         ],
         axisLabel: {
           interval: 0,
@@ -148,23 +148,23 @@ export class OtcPddComponent {
       },
       series: [
         {
-          name: 'No of OTCs',
+          name: 'No. of customers',
           type: 'bar',
           
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [14,11,9.6,6.3,5.4,4.3],
+          data: [8,7,9.6,6.3,5.4,4.3],
           itemStyle: {
             color: '#EE9322',
             borderRadius: [0, 0, 4, 4],
           },
         },
         {
-          name: 'No. of customers',
+          name: 'No. of OTCs',
           type: 'bar',
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [17,16,14,12.5,10.5,9.6],
+          data: [10.5,11,10,12.5,12.5,14.6],
           itemStyle: {
             color: '#3C7EBE',
             borderRadius: [4, 4, 0, 0],// Color for Category 2
@@ -217,13 +217,13 @@ export class OtcPddComponent {
           show: false,
         },
         data: [
-          'Maharashtra',
-          'MP',
-          'Gujarat',
-          'Rajasthan',
-          'NCR',
           'PCH',
-          'Pan India',
+          'NCR',
+          'Rajasthan',
+          'Gujarat',
+          'MP',
+          'Maharashtra',
+ 
         ],
       },
 
@@ -307,13 +307,13 @@ export class OtcPddComponent {
           show: false, 
         },
         data: [
-          'Maharashtra',
-          'MP',
-          'Gujarat',
-          'Rajasthan',
-          'NCR',
           'PCH',
-          'Pan India',
+          'NCR',
+          'Rajasthan',
+          'Gujarat',
+          'MP',
+          'Maharashtra',
+ 
         ],
       },
 

@@ -16,7 +16,7 @@ export class WorkInProgressTablesComponent {
     'Haryana',
     'NCR',
     'Rajasthan',
-    'Gujrat',
+    'Gujarat',
     'MP',
     'Maharashtra',
   ];
@@ -90,7 +90,7 @@ export class WorkInProgressTablesComponent {
     {
       SNo: 5,
       leadNo: '1235',
-      state: 'Gujrat',
+      state: 'Gujarat',
       branchName: 'Ahmedabad',
       cluster: 'Ahmedabad',
       customerName: 'Amit Badana',
@@ -101,7 +101,7 @@ export class WorkInProgressTablesComponent {
     {
       SNo: 6,
       leadNo: '1236',
-      state: 'Gujrat',
+      state: 'Gujarat',
       branchName: 'Rundh',
       cluster: 'Surat',
       customerName: 'Shilpa Kumari',

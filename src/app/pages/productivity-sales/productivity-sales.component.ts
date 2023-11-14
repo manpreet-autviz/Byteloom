@@ -37,7 +37,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
   ];
 
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+ selectedFilter: string = 'November';
   isActiveButton: string = 'button1';
 
   AvgRMCharts!: echarts.ECharts;
@@ -67,8 +67,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       TotalLogins: '1200',
       TotalDisbursal: '120',
       State: 'PCH',
-      Target: '44',
-      Delinquency: '68',
+      Target: '115',
+      Delinquency: '1.2',
     },
     {
       SNo: 2,
@@ -79,8 +79,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       TotalLogins: '1400',
       TotalDisbursal: '140',
       State: 'MP',
-      Target: '25',
-      Delinquency: '40',
+      Target: '110',
+      Delinquency: '1.1',
     },
     {
       SNo: 3,
@@ -91,8 +91,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       TotalLogins: '1500',
       TotalDisbursal: '100',
       State: 'Maharashtra',
-      Target: '65',
-      Delinquency: '65',
+      Target: '105',
+      Delinquency: '0.9',
     },
     {
       SNo: 4,
@@ -103,8 +103,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       TotalLogins: '1290',
       TotalDisbursal: '90',
       State: 'Maharashtra',
-      Target: '55',
-      Delinquency: '55',
+      Target: '98',
+      Delinquency: '0.7',
     },
     {
       SNo: 5,
@@ -115,8 +115,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       TotalLogins: '1000',
       TotalDisbursal: '110',
       State: 'Rajasthan',
-      Target: '56',
-      Delinquency: '52',
+      Target: '95',
+      Delinquency: '0.65',
     },
     {
       SNo: 6,
@@ -127,8 +127,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       TotalLogins: '1400',
       TotalDisbursal: '95',
       State: 'PCH',
-      Target: '46',
-      Delinquency: '54',
+      Target: '93',
+      Delinquency: '0.65',
     },
     {
       SNo: 7,
@@ -139,8 +139,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       TotalLogins: '1200',
       TotalDisbursal: '150',
       State: 'PCH',
-      Target: '35',
-      Delinquency: '63',
+      Target: '90',
+      Delinquency: '0.5',
     },
     {
       SNo: 8,
@@ -151,8 +151,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       TotalLogins: '1400',
       TotalDisbursal: '145',
       State: 'PCH',
-      Target: '75',
-      Delinquency: '55',
+      Target: '85',
+      Delinquency: '0.35',
     },
     {
       SNo: 9,
@@ -163,8 +163,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       TotalLogins: '1000',
       TotalDisbursal: '125',
       State: 'Rajasthan',
-      Target: '66',
-      Delinquency: '65',
+      Target: '75',
+      Delinquency: '0.3',
     },
     {
       SNo: 10,
@@ -175,8 +175,8 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
       TotalLogins: '1250',
       TotalDisbursal: '120',
       State: 'MP',
-      Target: '95',
-      Delinquency: '25',
+      Target: '66',
+      Delinquency: '0.2',
     },
     // Add more data as needed
   ];
@@ -319,7 +319,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           min: 2,
           max: 8,
           interval: 2,
-          name: 'No of Files ',
+          name: 'No. of Files ',
           nameLocation: 'middle',
           nameGap: 20,
           nameTextStyle: {
@@ -443,7 +443,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
         trigger: 'item',
         formatter: (params: any) => {
           let tooltipText = '';
-          console.log(params);
+          (params);
           if (params.name === 'Direct') {
             tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 450';
           } else if (params.name === 'Power Partner') {
@@ -536,7 +536,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           const randomFiles = files[dataIndex];
           const totalFiles = 1600;
           // Create the tooltip content with the actual value and random amount
-          return `No of Files:${randomFiles} <br> Total Files:${totalFiles} <br>${barValue}`;
+          return `No. of Files:${randomFiles} <br> Total Files:${totalFiles} <br>${barValue}`;
         },
       },
       legend: {},
@@ -734,7 +734,7 @@ export class ProductivitySalesComponent implements AfterViewInit, OnDestroy {
           const randomFiles = files[dataIndex];
           const active = [1340, 745, 670, 770, 890];
           const randomActive = active[dataIndex];
-          return `No of Files : ${randomFiles} <br>Amount In Cr: ${randomActive} <br>${barValue}`;
+          return `No. of Files : ${randomFiles} <br>Amount In Cr: ${randomActive} <br>${barValue}`;
         },
       },
       legend: {

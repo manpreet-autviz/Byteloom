@@ -13,7 +13,7 @@ export class BusinessInsightsComponent {
     'Haryana',
     'NCR',
     'Rajasthan',
-    'Gujrat',
+    'Gujarat',
     'MP',
     'Maharashtra',
   ];
@@ -92,7 +92,7 @@ export class BusinessInsightsComponent {
     {
       SNo: 5,
       leadNo: '1235',
-      state: 'Gujrat',
+      state: 'Gujarat',
       branchName: 'Ahmedabad',
       cluster: 'Ahmedabad',
       customerName: 'Amit Badana',
@@ -103,7 +103,7 @@ export class BusinessInsightsComponent {
     {
       SNo: 6,
       leadNo: '1236',
-      state: 'Gujrat',
+      state: 'Gujarat',
       branchName: 'Rundh',
       cluster: 'Surat',
       customerName: 'Shilpa Kumari',
@@ -160,7 +160,7 @@ export class BusinessInsightsComponent {
 
   filteredData: any[];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+ selectedFilter: string = 'November';
 
   selectedFilterState: string = 'Pan India';
   selectedFilterBranch: string = 'Chandigarh';
@@ -235,7 +235,7 @@ export class BusinessInsightsComponent {
       'PCH',
       'NCR',
       'RAJASTHAN',
-      'GUJRAT',
+      'Gujarat',
       'SURAT',
       'MP',
       'MAHARASHTRA',

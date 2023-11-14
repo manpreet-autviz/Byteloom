@@ -33,17 +33,15 @@ export class LoginAuthComponent {
     if (this.userNameOrEmailAddress && this.password) {
       this.loginService.login(credentials).subscribe(
         (response) => {
-          console.log(response, response.success);
           if (response.success === true) {
             localStorage.setItem('accessToken', response.token);
-            console.log('Login successful', response);
+
             this.router.navigate(['/home']);
           } else {
             this.ErrorMessage = response.message;
           }
         },
         (error) => {
-          console.log(error, error.error.success);
           this.ErrorMessage = error.error.message;
         }
       );

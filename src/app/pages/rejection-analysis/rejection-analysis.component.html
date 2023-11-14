@@ -10,12 +10,12 @@
               <span class="f-7 fs-5"> Conversion/Rejection analysis</span>
             </div>
             <div class="breadcrumb-right-btn">
-              <!-- <button
+              <button
                 type="button "
                 class="text-white filter-btn-trend btn bg-blue border me-2"
               >
                 View Trend <i class="fa-solid fa-chart-line"></i>
-              </button> -->
+              </button>
               <select
                 id="dropdown"
                 class="cursor-pointer form-select me-2"
@@ -45,9 +45,7 @@
         </div>
 
         <div id="normal-view" class="normal-view w-100">
-
           <div class="card card-animate w-100 mt-1">
-
             <div class="card-body">
               <div class="w-100 mb-3">
                 <span class="f-7 fs-5 d-flex justify-content-center">
@@ -102,16 +100,12 @@
         </div>
 
         <div id="normal-view" class="normal-view w-100">
-
           <div class="card card-animate w-100 mt-1">
-
             <div class="card-body">
               <div class="w-100 mb-3">
-                
-                  <span class="f-7 fs-5 d-flex justify-content-center">
-                    Rejection Ratio-48%</span
-                  >
-               
+                <span class="f-7 fs-5 d-flex justify-content-center">
+                  Rejection Ratio-35%</span
+                >
               </div>
               <div class="row"></div>
               <div class="row">
@@ -146,8 +140,6 @@
                     <div class="card-body text-center">
                       <span class="f-6 title"> Rejection Analysis </span>
                       <div
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
                         class="state-chart"
                         id="rejection-analysis"
                         style="width: 100%; height: 300px"
@@ -163,23 +155,22 @@
         <!-- Modal -->
         <div
           class="modal fade"
-          id="exampleModal"
+          #RepaymentissueModal
           tabindex="-1"
-          aria-labelledby="exampleModalLabel"
+          aria-labelledby="myModal"
           aria-hidden="true"
         >
           <div class="modal-dialog custom-width">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">
-                  Repayment issue
+                  Repayment Issue
                 </h5>
                 <div class="close-icon">
                   <button
                     type="button"
                     class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
+                    (click)="close()"
                   ></button>
                 </div>
               </div>
@@ -263,6 +254,393 @@
             </div>
           </div>
         </div>
+
+        <div
+          class="modal fade"
+          #IncomeIssue
+          tabindex="-1"
+          aria-labelledby="myModal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog custom-width">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Income Issue</h5>
+                <div class="close-icon">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    (click)="close()"
+                  ></button>
+                </div>
+              </div>
+              <div class="modal-body">
+                <div class="issue-popup">
+                  <div class="main-head">
+                    <h5>Detailed reason</h5>
+                    <h5>Files</h5>
+                  </div>
+                  <div class="listing">
+                    <ul class="p-0 m-0">
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Customers criminal records</h6>
+                          <h6>3</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>
+                            Fake buisness shown while pd
+                          </h6>
+                          <h6>2</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Other income like agri/rental found fake at the time of physical verification</h6>
+                          <h6>7</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>buisness vintage of customer cannot be verified</h6>
+                          <h6>4</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Wrong information of stock & sales have been given</h6>
+                          <h6>5</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Negative profile/cautious profile/cash salaried</h6>
+                          <h6>4</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Negative reference check</h6>
+                          <h6>3</h6>
+                        </div>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="modal fade"
+          #Intentionissue
+          tabindex="-1"
+          aria-labelledby="myModal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog custom-width">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Intention Issue</h5>
+                <div class="close-icon">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    (click)="close()"
+                  ></button>
+                </div>
+              </div>
+              <div class="modal-body">
+                <div class="issue-popup">
+                  <div class="main-head">
+                    <h5>Detailed reason</h5>
+                    <h5>Files</h5>
+                  </div>
+                  <div class="listing">
+                    <ul class="p-0 m-0">
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Negative RCU report</h6>
+                          <h6>3</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>
+                            Loan rejected in other branch of our bank
+                          </h6>
+                          <h6>2</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Mismatch in KYC of customer</h6>
+                          <h6>7</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Property owner and income generator relationship cannot be verified</h6>
+                          <h6>4</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Salaried person case login in the name of fake firm</h6>
+                          <h6>5</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Actual ownership of buisness is escaped while credit verification</h6>
+                          <h6>4</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Medical history of customer/coapp</h6>
+                          <h6>3</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>
+                            Negative feedback of customer from other vertical
+                          </h6>
+                          <h6>2</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Others</h6>
+                          <h6>1</h6>
+                        </div>
+                      </li>
+                     
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div
+          class="modal fade"
+          #LegalTechnical
+          tabindex="-1"
+          aria-labelledby="myModal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog custom-width">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Legal /Technical</h5>
+                <div class="close-icon">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    (click)="close()"
+                  ></button>
+                </div>
+              </div>
+              <div class="modal-body">
+                <div class="issue-popup">
+                  <div class="main-head">
+                    <h5>Detailed reason</h5>
+                    <h5>Files</h5>
+                  </div>
+                  <div class="listing">
+                    <ul class="p-0 m-0">
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Property in negative area- salability issue</h6>
+                          <h6>3</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>
+                            Property in green/ecological zone
+                          </h6>
+                          <h6>2</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Mismatch in legal and actual area</h6>
+                          <h6>7</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Property in community dominated area-salability issue</h6>
+                          <h6>4</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Title chain missing</h6>
+                          <h6>5</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>No registered document of property</h6>
+                          <h6>4</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Property of rejected society</h6>
+                          <h6>3</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>
+                            Possession stability cannot be verified
+                          </h6>
+                          <h6>2</h6>
+                        </div>
+                      </li>
+                     
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="modal fade"
+          #Duplicatelead
+          tabindex="-1"
+          aria-labelledby="myModal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog custom-width">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Duplicate Lead</h5>
+                <div class="close-icon">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    (click)="close()"
+                  ></button>
+                </div>
+              </div>
+              <div class="modal-body">
+                <div class="issue-popup">
+                  <div class="main-head">
+                    <h5>Detailed reason</h5>
+                    <h5>Files</h5>
+                  </div>
+                  <div class="listing">
+                    <ul class="p-0 m-0">
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Specify the reason of such error</h6>
+                          <h6>3</h6>
+                        </div>
+                      </li>
+                
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="modal fade"
+          #CNI
+          tabindex="-1"
+          aria-labelledby="myModal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog custom-width">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">CNI</h5>
+                <div class="close-icon">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    (click)="close()"
+                  ></button>
+                </div>
+              </div>
+              <div class="modal-body">
+                <div class="issue-popup">
+                  <div class="main-head">
+                    <h5>Detailed reason</h5>
+                    <h5>Files</h5>
+                  </div>
+                  <div class="listing">
+                    <ul class="p-0 m-0">
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Due to high ROI- please mention whether applied for ROI deviation along with reason</h6>
+                          <h6>3</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>
+                            Customer requires higher amount i.e rejected due to higher LTV
+                          </h6>
+                          <h6>2</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Buisness documents non-availability at customer end </h6>
+                          <h6>7</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Miscommunication between buisness person & customer</h6>
+                          <h6>4</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Case not disbursed beyond 45 days i.e customer denied for loan due to excessive delay in disbursement</h6>
+                          <h6>5</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Dispute between proposed parties in the deal</h6>
+                          <h6>4</h6>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="d-flex justify-content-between">
+                          <h6>Customer have denied for property documents for valuation</h6>
+                          <h6>3</h6>
+                        </div>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
       </div>
     </div>
   </div>

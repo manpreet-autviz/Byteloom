@@ -14,7 +14,7 @@ export class BranchSearchComponent {
     'Haryana',
     'NCR',
     'Rajasthan',
-    'Gujrat',
+    'Gujarat',
     'MP',
     'Maharashtra',
   ];
@@ -116,7 +116,7 @@ export class BranchSearchComponent {
           const files = [34, 45, 60,70,80];
           const randomFiles = files[dataIndex];
           // Create the tooltip content with the actual value and random amount
-          return `No of Files:${randomFiles} <br> Days: ${barValue}`;
+          return `No. of Files:${randomFiles} <br> Days: ${barValue}`;
         },
 
       },
@@ -189,11 +189,11 @@ export class BranchSearchComponent {
         trigger: 'item',
         formatter: (params: any) => {
           let tooltipText = '';
-          if (params.name === '500Files') {
+          if (params.name === '128 Files') {
             tooltipText = 'Amount in Cr: 34';
-          } else if (params.name === '30Crs') {
+          } else if (params.name === '7.5 Cr') {
             tooltipText = 'No. of files: 400 ';
-          } else if (params.name === '25Crs') {
+          } else if (params.name === '6.5 Cr') {
             tooltipText = 'No. of files: 300';
           }
           return tooltipText;
@@ -242,9 +242,9 @@ export class BranchSearchComponent {
             },
           },
           data: [
-            { value: 60, name: '500Files', itemStyle: { color: '#F99B00' } },
-            { value: 40, name: '30Crs', itemStyle: { color: '#342D2D' } },
-            { value: 20, name: '25Crs', itemStyle: { color: '#7460EE' } },
+            { value: 60, name: '128 Files', itemStyle: { color: '#F99B00' } },
+            { value: 40, name: '7.5 Cr', itemStyle: { color: '#342D2D' } },
+            { value: 20, name: '6.5 Cr', itemStyle: { color: '#7460EE' } },
           ],
         },
       ],
@@ -275,7 +275,7 @@ export class BranchSearchComponent {
         data: ['All', 'HL', 'LAP', 'BL', 'SBL'],
         axisLabel: {
           interval: 0,
-          rotate: -45,
+          rotate: 0,
           overflow: 'break',
         },
       },
@@ -292,12 +292,16 @@ export class BranchSearchComponent {
         },
         name: 'Amount ( in Rs. Lacs ) ',
         nameLocation: 'middle',
-        nameGap: 25,
+        nameGap: 23,
+        nameTextStyle: {
+          fontWeight: 600,
+          fontSize: 12,
+        },
       },
       series: [
         {
           barWidth: 20,
-          data: [10.5, 9, 8.5, 7.5, 5],
+          data: [13.5, 11, 12.5, 9.5, 9.5],
           type: 'bar',
           itemStyle: {
             color: '#0747A6',
@@ -306,25 +310,24 @@ export class BranchSearchComponent {
       ],
     };
 
+
     this.DistributionMixOption = {
       tooltip: {
         trigger: 'item',
         formatter: (params: any) => {
-          console.log(params);
+
 
           let tooltipText = '';
 
           if (params.name === 'HL') {
-            tooltipText = 'No. of files: 500 <br/> Amount in Cr: 45';
+            tooltipText = 'No. of files: 500 <br/> Amount in Cr: 60';
           } else if (params.name === 'LAP') {
-            tooltipText = 'No. of files: 300 <br/> Amount in Cr: 27';
+            tooltipText = 'No. of files: 300 <br/> Amount in Cr: 12';
           } else if (params.name === 'BL') {
-            tooltipText = 'No. of files: 200 <br/> Amount in Cr: 26';
+            tooltipText = 'No. of files: 200 <br/> Amount in Cr: 8';
           } else if (params.name === 'SBL') {
-            tooltipText = 'No. of files: 600 <br/> Amount in Cr: 28';
-          } else if (params.name === 'All') {
-            tooltipText = 'No. of files: 300 <br/> Amount in Cr: 36';
-          }
+            tooltipText = 'No. of files: 600 <br/> Amount in Cr: 20';
+          } 
 
           return tooltipText;
         },
@@ -355,15 +358,11 @@ export class BranchSearchComponent {
             show: false,
           },
           data: [
-            {
-              value: 25,
-              name: 'All',
-              itemStyle: { color: '#7C41DA' },
-            },
-            { value: 34, name: 'HL', itemStyle: { color: '#F99B00' } },
-            { value: 20, name: 'LAP', itemStyle: { color: '#07A14E' } },
-            { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
-            { value: 15, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
+           
+            { value: 60, name: 'HL', itemStyle: { color: '#F99B00' } },
+            { value: 12, name: 'LAP', itemStyle: { color: '#07A14E' } },
+            { value: 8, name: 'BL', itemStyle: { color: '#636363' } },
+            { value: 20, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
           ],
         },
       ],
@@ -422,7 +421,7 @@ export class BranchSearchComponent {
       series: [
         {
           barWidth: 20,
-          data: [50, 35, 25, 20, 33],
+          data: [50, 55, 35, 35, 30],
           type: 'bar',
           itemStyle: {
             color: '#5D5BCC',
@@ -512,49 +511,57 @@ export class BranchSearchComponent {
     this.IMDOption = {
       tooltip: {
         trigger: 'item',
-        formatter: 'No of files: {c} <br>({d}%)',
-      },
-      legend: {
-        top: '5%',
-        left: 'center',
+        formatter: (params: any) => {
+          let tooltipText = '';
 
-        selectedMode: false,
+          if (params.name === 'Online') {
+            tooltipText = 'No. of files: 1000 <br/> Percentage : 16.65';
+          } else if (params.name === 'Cheque') {
+            tooltipText = 'No. of files: 700 <br/> Percentage : 11.68';
+          } else if (params.name === 'Cash') {
+            tooltipText = 'No. of files: 800 <br/> Percentage : 9.21';
+          } else if (params.name === 'UPI') {
+            tooltipText = 'No. of files: 900 <br/> Percentage : 12.46';
+          }
+
+          return tooltipText;
+        },
+      },
+      responsive: true,
+      legend: {
+        top: '-1%',
+        left: 'center',
+        // doesn't perfectly work with our tricks, disable it
+        // selectedMode: false,
+        // borderRadius: 50,
       },
       series: [
         {
-          
           type: 'pie',
-          radius: ['40%', '70%'],
-          center: ['50%', '70%'],
-
-          startAngle: 180,
-          labelLine:{
-            show:false,
+          radius: ['30%', '80%'],
+          avoidLabelOverlap: false,
+          label: {
+            show: false,
+            position: 'center',
           },
-          label:{
-            show:false,
+          emphasis: {
+            label: {
+              show: true,
+              formatter: '{c}%',
+              fontSize: 16,
+              fontWeight: 'bold',
+            },
+          },
+          labelLine: {
+            show: false,
           },
           data: [
-            { value: 104, name: 'Online', itemStyle: { color: '#7C41DA' } },
-            { value: 235, name: 'Cheque', itemStyle: { color: '#FB8C00' } },
-            { value: 380, name: 'Cash', itemStyle: { color: '#07A14E' } },
-            { value: 484, name: 'UPI', itemStyle: { color: '#636363' } },
-
-            {
-            
-              value: 104 + 235 + 380 + 484 + 300,
-              itemStyle: {
-               
-                color: 'none',
-                decal: {
-                  symbol: 'none',
-                },
-              },
-              label: {
-                show: false,
-              },
-            },
+            { value: 25, name: 'Online', itemStyle: { color: '#7C41DA' } },
+            { value: 35, name: 'Cheque', itemStyle: { color: '#FB8C00' } },
+            { value: 10, name: 'Cash', itemStyle: { color: '#07A14E' } },
+            { value: 30, name: 'UPI', itemStyle: { color: '#636363' } },
           ],
+          value: 1048 + 735 + 580 + 484 + 300,
         },
       ],
     };

@@ -39,7 +39,7 @@ export class BusinessSupervisorComponent {
   ];
   monthFilters: string[] = ['Year to Date', 'Three months'];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+ selectedFilter: string = 'November';
   selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
 
@@ -81,7 +81,7 @@ export class BusinessSupervisorComponent {
         tooltip: {
           trigger: 'axis',
           formatter: function (params: any) {
-            console.log(params)
+            (params)
             const branchTarget = params[0].data['Branch target'];
             const achievement = params[1].data['Achievement'];
             const achievementPercentage = (
@@ -161,11 +161,11 @@ export class BusinessSupervisorComponent {
   }
 
   onFilterChange(selectedValue: string) {
-    console.log(selectedValue);
+    (selectedValue);
   }
 
   onStateChange(selectedValue: string) {
-    console.log(selectedValue);
+    (selectedValue);
   }
 
   generateRandomAmount(min: number, max: number): number {

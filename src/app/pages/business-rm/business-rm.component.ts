@@ -47,7 +47,7 @@ export class BusinessRMComponent {
   ];
   monthFilters: string[] = ['Year to Date', 'Three months'];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+ selectedFilter: string = 'November';
   selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
 
@@ -229,11 +229,11 @@ export class BusinessRMComponent {
   }
 
   onFilterChange(selectedValue: string) {
-    console.log(selectedValue);
+    (selectedValue);
   }
 
   onStateChange(selectedValue: string) {
-    console.log(selectedValue);
+    (selectedValue);
   }
 
   generateRandomAmount(min: number, max: number): number {

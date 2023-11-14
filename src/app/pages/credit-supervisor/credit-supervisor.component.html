@@ -8,14 +8,7 @@
               <span class="f-7 fs-5"> Credit supervisor </span>
             </div>
             <div class="d-flex">
-              <!-- <button
-                type="button "
-                class="text-white filter-btn-trend btn bg-blue border me-2"
-                (click)="toggle()"
-              >
-                {{ !isToggled ? "View Trend" : "Normal View" }}
-                <i class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
-              </button> -->
+            
               <select
                 id="dropdown"
                 class="cursor-pointer form-select me-2"
@@ -26,17 +19,7 @@
                   {{ filter }}
                 </option>
               </select>
-              <!-- <select
-                *ngIf="isToggled"
-                id="dropdown"
-                class="form-select me-2"
-                [(ngModel)]="selectedTrendFilter"
-                (ngModelChange)="onTrendFilterChange($event)"
-              >
-                <option *ngFor="let filter of monthFilters" [value]="filter">
-                  {{ filter }}
-                </option>
-              </select> -->
+            
               <select
                 id="dropdown"
                 class="cursor-pointer form-select"
@@ -190,7 +173,7 @@
                   <div class="col-md-4">
                     <div class="card">
                       <div
-                        class="card-body credit-cards rm-light-violet rounded"
+                        class="card-body credit-cards rm-light-orange rounded"
                       >
                         <div
                           class="d-flex align-items-center justify-content-between"
@@ -268,32 +251,7 @@
                             </tr>
                           </tbody>
                         </table>
-                        <!-- <table class="simple-table">
-                          <thead>
-                            <tr>
-                              <th>Activity type</th>
-                              <th>Count</th>
-                              <th>Avg TAT in days</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>PDs</td>
-                              <td>10</td>
-                              <td>2.5</td>
-                            </tr>
-                            <tr>
-                              <td>Approvals</td>
-                              <td>30</td>
-                              <td>5</td>
-                            </tr>
-                            <tr>
-                              <td>Disbursal</td>
-                              <td>300</td>
-                              <td>9</td>
-                            </tr>
-                          </tbody>
-                        </table> -->
+                      
                       </div>
                     </div>
                   </div>
@@ -301,15 +259,15 @@
                     <div class="card box-s Activity-tat-card">
                       <div class="card-body text-center">
                         <span class="f-6">
-                          OTC/PDD pending/Cheque handover pending
+                          OTC/PDD/Cheque handover pending
                         </span>
 
                         <div class="otc-three-box">
                           <p>OTC</p>
                           <div class="cheque-polygon box-s mt-3">
                             <ul class="pending-cheque">
-                              <li>1835</li>
-                              <li>900</li>
+                              <li>270</li>
+                              <li>90</li>
                             </ul>
                           </div>
 
@@ -322,8 +280,8 @@
                                 class="cheque-polygon first-cheque box-s mt-3"
                               >
                                 <ul class="pending-cheque">
-                                  <li>240</li>
-                                  <li>120</li>
+                                  <li>45</li>
+                                  <li>36</li>
                                 </ul>
                               </div>
                             </div>
@@ -334,8 +292,8 @@
                                 class="cheque-polygon second-cheque box-s mt-3"
                               >
                                 <ul class="pending-cheque">
-                                  <li>120</li>
-                                  <li>35</li>
+                                  <li>36</li>
+                                  <li>18</li>
                                 </ul>
                               </div>
                             </div>
@@ -381,7 +339,7 @@
                         <h6>Vintage with company</h6>
                       </div>
                       <div>
-                        <p class="header-data">WiseGrowth Capital</p>
+                        <p class="header-data">2 Years</p>
                       </div>
                     </div>
                     <div class="d-flex justify-content-between mt-4">
@@ -389,7 +347,7 @@
                         <h6>Total experience</h6>
                       </div>
                       <div>
-                        <p class="header-data">6 Year</p>
+                        <p class="header-data">6 Years</p>
                       </div>
                     </div>
                     <div class="d-flex justify-content-between mt-4">
@@ -424,17 +382,17 @@
                     >
                       <h6>YTD</h6>
                       <div class="price">
-                        <h6>1000</h6>
+                        <h6>80000</h6>
                       </div>
                     </div>
                   </div>
                   <div class="incentive border mt-4">
                     <div class="card-body text-center">
-                      <span class="f-6">Attrition/ RM adequacy </span>
+                      <span class="f-6">Attrition/ CM adequacy </span>
                       <div
                         class="incentive-list d-flex justify-content-between align-items-center"
                       >
-                        <h6>Budgeted RM</h6>
+                        <h6>Budgeted CM</h6>
                         <div class="price">
                           <h6>15</h6>
                         </div>
@@ -442,7 +400,7 @@
                       <div
                         class="incentive-list d-flex justify-content-between align-items-center"
                       >
-                        <h6>Current RM</h6>
+                        <h6>Current CM</h6>
                         <div class="price">
                           <h6>12</h6>
                         </div>
@@ -460,7 +418,7 @@
                       >
                         <h6>Attrition YTD</h6>
                         <div class="price">
-                          <h6>5 (33%)</h6>
+                          <h6>5 </h6>
                         </div>
                       </div>
                     </div>

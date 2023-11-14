@@ -1,11 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import * as echarts from 'echarts';
+declare var $: any;
 @Component({
   selector: 'app-rejection-analysis',
   templateUrl: './rejection-analysis.component.html',
   styleUrls: ['./rejection-analysis.component.scss'],
 })
 export class RejectionAnalysisComponent {
+  @ViewChild('RepaymentissueModal')
+  RepaymentissueElement!: ElementRef;
+  @ViewChild('IncomeIssue')
+  IncomeIssueElement!: ElementRef;
+  @ViewChild('Intentionissue')
+  IntentionissueElement!: ElementRef;
+  @ViewChild('LegalTechnical')
+  LegalTechnicalElement!: ElementRef;
+  @ViewChild('Duplicatelead')
+  DuplicateleadElement!: ElementRef;
+  @ViewChild('CNI')
+  CNIElement!: ElementRef;
   ConversionStates: string[] = [
     'Pan India',
     'PCH',
@@ -66,6 +79,7 @@ export class RejectionAnalysisComponent {
   StateRejectionOption: any;
   AnalysisRejectionOption: any;
   ProductRejectionOption: any;
+  repaymentment: boolean = true;
 
   ngAfterViewInit(): void {
     this.initializeChart();
@@ -100,26 +114,18 @@ export class RejectionAnalysisComponent {
       tooltip: {
         trigger: 'item',
         formatter: (params: any) => {
-
           let tooltipText = '';
-          console.log(params, "params")
-
           if (params.name === 'Login to disb.') {
-
-            tooltipText = 'Login: 100 <br/> Disbursed:30 <br/> Percentage : 70%';
-
+            tooltipText =
+              'Login: 100 <br/> Disbursed:30 <br/> Percentage : 70%';
           } else if (params.name === 'FA to disb.') {
-
-            tooltipText = 'Approved: 100 <br/> Disbursed:70 <br/> Percentage : 30%';
-
+            tooltipText =
+              'Approved: 100 <br/> Disbursed:70 <br/> Percentage : 30%';
           } else if (params.name === 'Login to FA') {
-
             tooltipText = 'Login: 100 <br/> Approval:25 <br/> Percentage : 75%';
-
           }
 
           return tooltipText;
-
         },
       },
       xAxis: {
@@ -131,12 +137,7 @@ export class RejectionAnalysisComponent {
         axisTick: {
           show: false, // Hide tick lines
         },
-        data: [
-
-          'Login to disb.',
-          'FA to disb.',
-          'Login to FA',
-        ],
+        data: ['Login to disb.', 'FA to disb.', 'Login to FA'],
         axisLabel: {
           interval: 0,
           rotate: 0,
@@ -148,7 +149,9 @@ export class RejectionAnalysisComponent {
 
             // If the label text is longer than the maximum length, split it into multiple lines
             if (value.length > maxLabelLength) {
-              return value.match(new RegExp('.{1,' + maxLabelLength + '}', 'g')).join('\n');
+              return value
+                .match(new RegExp('.{1,' + maxLabelLength + '}', 'g'))
+                .join('\n');
             } else {
               return value;
             }
@@ -172,14 +175,12 @@ export class RejectionAnalysisComponent {
         nameTextStyle: {
           fontWeight: 600,
           fontSize: 14,
-
         },
-
       },
       series: [
         {
-          barWidth: 30,
-          data: [70, 30, 75],
+          barWidth: 20,
+          data: [48, 85, 55],
           type: 'bar',
           itemStyle: {
             color: '#6096B4',
@@ -195,33 +196,20 @@ export class RejectionAnalysisComponent {
           type: 'shadow',
         },
         formatter: (params: any) => {
-
           let tooltipText = '';
           if (params.seriesName === 'Login to FA') {
-
             tooltipText = 'Login: 1000 <br/> Approval : 60';
-
           } else if (params.seriesName === 'FA to disb.') {
-
             tooltipText = 'Approved: 600 <br/> Disbursed : 70';
-
           } else if (params.seriesName === 'Login to disb.') {
-
             tooltipText = 'Login: 400 <br/> Disbursal : 55';
-
           }
 
           return tooltipText;
-
         },
-
       },
       legend: {
-        data: [
-          'Login to FA',
-          'FA to disb.',
-          'Login to disb.',
-        ],
+        data: ['Login to disb.', 'FA to disb.', 'Login to FA'],
       },
       grid: {
         left: '3%',
@@ -264,18 +252,18 @@ export class RejectionAnalysisComponent {
 
       series: [
         {
-          name: 'Login to FA',
+          name: 'Login to disb.',
           type: 'bar',
-          data: [41, 40, 40, 35, 50, 40, 60],
+          data: [22, 20, 20, 20, 20, 30, 55],
           itemStyle: {
-            color: '#1A5F7A',
+            color: '#78D6C6',
             borderRadius: 15,
           },
           label: {
             show: true,
             position: 'right',
-            formatter: '{c}%',
-            fontSize:9,
+            formatter: '{c}% ',
+            fontSize: 9,
           },
         },
         {
@@ -290,22 +278,22 @@ export class RejectionAnalysisComponent {
             show: true,
             position: 'right',
             formatter: '{c}%',
-            fontSize:9,
+            fontSize: 9,
           },
         },
         {
-          name: 'Login to disb.',
+          name: 'Login to FA',
           type: 'bar',
-          data: [22, 20, 20, 20, 20, 30, 55],
+          data: [41, 40, 40, 35, 50, 40, 60],
           itemStyle: {
-            color: '#78D6C6',
+            color: '#1A5F7A',
             borderRadius: 15,
           },
           label: {
             show: true,
             position: 'right',
-            formatter: '{c}% ',
-            fontSize:9,
+            formatter: '{c}%',
+            fontSize: 9,
           },
         },
       ],
@@ -362,7 +350,7 @@ export class RejectionAnalysisComponent {
             show: false,
           },
           splitLine: {
-            show: false
+            show: false,
           },
           min: 10,
           max: 100,
@@ -393,7 +381,6 @@ export class RejectionAnalysisComponent {
           },
           data: [60, 50, 48, 45],
         },
-
       ],
     };
 
@@ -457,10 +444,9 @@ export class RejectionAnalysisComponent {
 
       series: [
         {
-
           type: 'bar',
           barWidth: '25%',
-          data: [41, 41, 42, 40, 35, 50, 45],
+          data: [37, 30, 32, 33, 38, 41, 35],
           label: {
             show: true,
             position: 'right',
@@ -553,7 +539,7 @@ export class RejectionAnalysisComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [29, 35, 30, 45,],
+          data: [29, 35, 30, 45],
         },
       ],
     };
@@ -563,7 +549,7 @@ export class RejectionAnalysisComponent {
         trigger: 'item',
       },
       legend: {
-        top: '-2%',
+        top: '-1%',
         left: 'center',
       },
       series: [
@@ -572,6 +558,7 @@ export class RejectionAnalysisComponent {
           radius: ['30%', '70%'],
           avoidLabelOverlap: false,
           top: '6%',
+
           itemStyle: {
             borderRadius: 0,
 
@@ -589,6 +576,7 @@ export class RejectionAnalysisComponent {
               formatter: '{c}%',
             },
           },
+
           labelLine: {
             show: false,
           },
@@ -600,13 +588,13 @@ export class RejectionAnalysisComponent {
                 color: '#7D6E83',
               },
             },
-            {
-              value: 8,
-              name: 'End use',
-              itemStyle: {
-                color: '#A75D5D',
-              },
-            },
+            // {
+            //   value: 8,
+            //   name: 'End use',
+            //   itemStyle: {
+            //     color: '#A75D5D',
+            //   },
+            // },
             {
               value: 10,
               name: 'Income Issue',
@@ -643,8 +631,6 @@ export class RejectionAnalysisComponent {
                 color: '#9D76C1',
               },
             },
-
-
           ],
         },
       ],
@@ -656,6 +642,9 @@ export class RejectionAnalysisComponent {
     this.StateRejectionChart.setOption(this.StateRejectionOption);
     this.ProductRejectionChart.setOption(this.ProductRejectionOption);
     this.AnalysisRejectionChart.setOption(this.AnalysisRejectionOption);
+    this.AnalysisRejectionChart.on('click', (params: any) => {
+      this.openRepaymentModal(params.name);
+    });
   }
 
   onConversionFilterChange(selectedValue: string) {
@@ -690,12 +679,8 @@ export class RejectionAnalysisComponent {
     const loginToFinancialApprovalMax = [60, 60, 60, 60, 60, 60, 60, 80];
     const financialApprovalToDisbursalMin = [29, 29, 29, 29, 29, 29, 29, 70];
     const financialApprovalToDisbursalMax = [32, 32, 32, 32, 32, 65, 32, 72];
-    const loginToDisbursalMin = [
-      22, 22, 22, 22, 22, 22, 22, 55,
-    ];
-    const loginToDisbursalMax = [
-      25, 25, 25, 25, 25, 25, 25, 57,
-    ];
+    const loginToDisbursalMin = [22, 22, 22, 22, 22, 22, 22, 55];
+    const loginToDisbursalMax = [25, 25, 25, 25, 25, 25, 25, 57];
 
     // Generate random values for each series
     const loginToFinancialApprovalValues = this.generateRandomValues(
@@ -811,5 +796,100 @@ export class RejectionAnalysisComponent {
       const max = maxArray[index];
       return Math.floor(Math.random() * (max - min + 1)) + min;
     });
+  }
+
+  openRepaymentModal(name: string) {
+    if (name === 'Repayment issue') {
+      const modal = this.RepaymentissueElement.nativeElement;
+      if (modal) {
+        modal.style.display = 'block';
+        modal.classList.add('show');
+      } else {
+        console.error('Modal element is not defined.');
+      }
+    }
+    else if (name === 'Income Issue') {
+      const modal = this.IncomeIssueElement.nativeElement;
+      if (modal) {
+        modal.style.display = 'block';
+        modal.classList.add('show');
+      } else {
+        console.error('Modal element is not defined.');
+      }
+    }
+    else if (name === 'Intention issue') {
+      const modal = this.IntentionissueElement.nativeElement;
+      if (modal) {
+        modal.style.display = 'block';
+        modal.classList.add('show');
+      } else {
+        console.error('Modal element is not defined.');
+      }
+    }
+    else if (name === 'Legal / Technical') {
+      const modal = this.LegalTechnicalElement.nativeElement;
+      if (modal) {
+        modal.style.display = 'block';
+        modal.classList.add('show');
+      } else {
+        console.error('Modal element is not defined.');
+      }
+    }
+    else if (name === 'Duplicate lead') {
+      const modal = this.DuplicateleadElement.nativeElement;
+      if (modal) {
+        modal.style.display = 'block';
+        modal.classList.add('show');
+      } else {
+        console.error('Modal element is not defined.');
+      }
+    }
+    else{
+      const modal = this.CNIElement.nativeElement;
+      if (modal) {
+        modal.style.display = 'block';
+        modal.classList.add('show');
+      } else {
+        console.error('Modal element is not defined.');
+      }
+    }
+  }
+  close() {
+    const modal1 = this.RepaymentissueElement?.nativeElement;
+    const modal2 = this.IncomeIssueElement?.nativeElement;
+    const modal3 = this.IntentionissueElement?.nativeElement;
+    const modal4 = this.LegalTechnicalElement?.nativeElement;
+    const modal5 = this.DuplicateleadElement?.nativeElement;
+    const modal6= this.CNIElement?.nativeElement;
+    if (modal1) {
+      modal1.style.display = 'none';
+    } else {
+      console.error('Modal element is not defined.');
+    }
+    if (modal2) {
+      modal2.style.display = 'none';
+    } else {
+      console.error('Modal element is not defined.');
+    }
+    if (modal3) {
+      modal3.style.display = 'none';
+    } else {
+      console.error('Modal element is not defined.');
+    }
+    if (modal4) {
+      modal4.style.display = 'none';
+    } else {
+      console.error('Modal element is not defined.');
+    }
+    if (modal5) {
+      modal5.style.display = 'none';
+    } else {
+      console.error('Modal element is not defined.');
+    }
+    if (modal6) {
+      modal6.style.display = 'none';
+    } else {
+      console.error('Modal element is not defined.');
+    }
   }
 }

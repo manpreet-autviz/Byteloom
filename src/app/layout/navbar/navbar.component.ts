@@ -41,7 +41,7 @@ export class NavbarComponent {
   } else if (trimmedQuery.startsWith('mark')) { // Case-insensitive comparison
     this.menu.setSearchTerm('/credit-supervisor');
     this.router.navigate(['/credit-supervisor']);
-  } else if (trimmedQuery.startsWith('punjab')) { // Case-insensitive comparison
+  } else if (trimmedQuery.startsWith('jaipur')) { // Case-insensitive comparison
     this.router.navigate(['/branch-search']);
   } else if (trimmedQuery.startsWith('56565')) { // Case-insensitive comparison
     this.router.navigate(['/search']);

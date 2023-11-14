@@ -31,7 +31,7 @@ export class PortfolioHealthComponent {
   ];
   monthFilters: string[] = ['Year to Date', 'Three months'];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+ selectedFilter: string = 'November';
   selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
 
@@ -119,6 +119,10 @@ export class PortfolioHealthComponent {
           axisLine: {
             show: false,
           },
+          axisLabel: {
+            formatter: '{value}',
+            margin: 1,
+          },
           splitLine: {
             show: false,
           },
@@ -132,7 +136,7 @@ export class PortfolioHealthComponent {
         },
         series: [
           {
-            barWidth: 30,
+            barWidth: 25,
             data: [
               { value: 2.2, itemStyle: { color: '#3C7EBE' } },
               { value: 1.2, itemStyle: { color: '#5BC8EF' } }, // Set a different color here
@@ -154,15 +158,15 @@ export class PortfolioHealthComponent {
               backgroundColor: '#6a7985',
             },
           },
-          formatter: (params: any) => { 
-            const dataIndex = params[0].dataIndex;
-            const amount = [100, 800, 600][dataIndex];
-            const percent = [2.5, 1.8, 1.2];
-            const percentage = percent[dataIndex];
+          // formatter: (params: any) => { 
+          //   const dataIndex = params[0].dataIndex;
+          //   const amount = [100, 800, 600][dataIndex];
+          //   const percentage = params[0].value;
+          //   // const percentage = percent[dataIndex];
   
-            // Create the tooltip content with the actual value and random amount
-            return `Amount in Cr: ${amount}<br> Percentage: ${percentage}`;
-           },
+          //   // Create the tooltip content with the actual value and random amount
+          //   return `Amount in Cr: ${amount}<br> Percentage: ${percentage}`;
+          //  },
         },
         legend: {
           data: ['ED', 'NPA'],
@@ -199,7 +203,7 @@ export class PortfolioHealthComponent {
             min: 0.50,
             max: 2.5,
             interval: 0.5,
-            name: 'Percentage ',
+            name: 'Percentage %',
             nameLocation: 'middle',
             nameGap: 23,
             nameTextStyle: {

@@ -37,7 +37,7 @@ export class DashboardComponent {
     'November',
   ];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+  selectedFilter: string = 'November';
   selectedCluster: string = 'All';
   selectedBranch: string = 'All';
 
@@ -132,176 +132,17 @@ export class DashboardComponent {
     const inputElement = this.el.nativeElement.querySelector('#birthday');
     this.renderer.setStyle(inputElement, 'cursor', 'pointer');
     this.getjsonData();
-    // this.IrrChart = echarts.init(
-    //   document.getElementById('IrrChartValue') as HTMLDivElement
-    // );
-    // this.pfChart = echarts.init(
-    //   document.getElementById('PfChartValue') as HTMLDivElement
-    // );
 
-    // const IrrOption = {
-    //   series: [
-    //     {
-    //       type: 'gauge',
-    //       center: ['50%', '60%'],
-    //       startAngle: 220,
-    //       endAngle: -40,
-    //       min: 0,
-    //       max: 15,
-    //       splitNumber: 12,
-    //       itemStyle: {
-    //         color: '#FF821C',
-    //       },
-    //       progress: {
-    //         show: true,
-    //         width: 15,
-    //       },
-
-    //       pointer: {
-    //         show: false,
-    //       },
-    //       axisLine: {
-    //         lineStyle: {
-    //           width: 15,
-    //         },
-    //       },
-    //       axisTick: {
-    //         show: false,
-    //         distance: -45,
-    //         splitNumber: 5,
-    //         lineStyle: {
-    //           width: 2,
-    //           color: '#999',
-    //         },
-    //       },
-    //       splitLine: {
-    //         show: false,
-    //         distance: -52,
-    //         length: 14,
-    //         lineStyle: {
-    //           width: 3,
-    //           color: '#999',
-    //         },
-    //       },
-    //       axisLabel: {
-    //         show: false,
-    //         distance: -20,
-    //         color: '#999',
-    //         fontSize: 20,
-    //       },
-    //       anchor: {
-    //         show: false,
-    //       },
-    //       title: {
-    //         show: false,
-    //       },
-    //       detail: {
-    //         valueAnimation: true,
-    //         width: '60%',
-    //         lineHeight: 10,
-    //         borderRadius: 8,
-    //         offsetCenter: [0, '-15%'],
-    //         fontSize: 10,
-    //         fontWeight: 'bolder',
-    //         formatter: '{value}%',
-    //         color: 'inherit',
-    //       },
-    //       data: [
-    //         {
-    //           value: 14,
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // };
-
-    // const pfOption = {
-    //   series: [
-    //     {
-    //       type: 'gauge',
-    //       center: ['50%', '60%'],
-    //       startAngle: 220,
-    //       endAngle: -40,
-    //       min: 0,
-    //       max: 15,
-    //       splitNumber: 12,
-    //       itemStyle: {
-    //         color: '#7E74FB',
-    //       },
-    //       progress: {
-    //         show: true,
-    //         width: 15,
-    //       },
-
-    //       pointer: {
-    //         show: false,
-    //       },
-    //       axisLine: {
-    //         lineStyle: {
-    //           width: 15,
-    //         },
-    //       },
-    //       axisTick: {
-    //         show: false,
-    //         distance: -45,
-    //         splitNumber: 5,
-    //         lineStyle: {
-    //           width: 2,
-    //           color: '#999',
-    //         },
-    //       },
-    //       splitLine: {
-    //         show: false,
-    //         distance: -52,
-    //         length: 14,
-    //         lineStyle: {
-    //           width: 3,
-    //           color: '#999',
-    //         },
-    //       },
-    //       axisLabel: {
-    //         show: false,
-    //         distance: -20,
-    //         color: '#999',
-    //         fontSize: 20,
-    //       },
-    //       anchor: {
-    //         show: false,
-    //       },
-    //       title: {
-    //         show: false,
-    //       },
-    //       detail: {
-    //         valueAnimation: true,
-    //         width: '60%',
-    //         lineHeight: 20,
-    //         borderRadius: 8,
-    //         offsetCenter: [0, '-15%'],
-    //         fontSize: 10,
-    //         fontWeight: 'bolder',
-    //         formatter: '{value}%',
-    //         color: 'inherit',
-    //       },
-    //       data: [
-    //         {
-    //           value: 2.3,
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // };
-    // this.IrrChart.setOption(IrrOption);
-    // this.pfChart.setOption(pfOption);
   }
 
   getjsonData() {
     this.http.get('assets/data.json').subscribe((data: any) => {
       this.jsonData = data;
-      console.log(this.jsonData); // Outputs: "value"
+      (this.jsonData); // Outputs: "value"
     });
     this.http.get('assets/disbursal-meter.json').subscribe((data: any) => {
       this.DisbursalJsonData = data;
-      console.log(this.jsonData); // Outputs: "value"
+      (this.jsonData); // Outputs: "value"
     });
   }
 
@@ -523,6 +364,11 @@ export class DashboardComponent {
           )} <br/>${params.value}%`;
         },
       },
+      toolbox: {
+        feature: {
+          saveAsImage: {},
+        },
+      },
       series: [
         {
           type: 'gauge',
@@ -627,7 +473,7 @@ export class DashboardComponent {
             show: false,
           },
           boundaryGap: true,
-          data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+          data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov'],
           axisLabel: {
             formatter: '{value}',
             margin: 30, // Add a margin of 15 pixels above the labels
@@ -672,7 +518,7 @@ export class DashboardComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [90, 93, 94, 82, 97, 99, 100],
+          data: [90, 93, 94, 82, 97, 95, 99,100],
           itemStyle: {
             color: '#07A14E',
           },
@@ -750,6 +596,7 @@ export class DashboardComponent {
   }
 
   generateCardsRandomData(region: any, area: any, branch: any) {
+    (region)
     if (region === 'Pan India') {
       this.loginTotalAmount = 550;
       this.loginTotalFiles = 3050;
@@ -759,7 +606,27 @@ export class DashboardComponent {
       this.disbursalTotalFiles = 1300;
       this.finalTotalFiles = 1350;
       this.finalTotalAmount = 160;
-    } else if (
+    }else if(region === 'November'){
+      this.loginTotalAmount = 550;
+      this.loginTotalFiles = 3050;
+      this.financialTotalAmount = 175;
+      this.financialTotalFiles = 1500;
+      this.disbursalTotalAmount = 150;
+      this.disbursalTotalFiles = 1300;
+      this.finalTotalFiles = 1350;
+      this.finalTotalAmount = 160;
+    }
+    else if(region === 'September'){
+      this.loginTotalAmount = 525;
+      this.loginTotalFiles = 2850;
+      this.financialTotalAmount = 170;
+      this.financialTotalFiles = 1400;
+      this.disbursalTotalAmount = 145;
+      this.disbursalTotalFiles = 1250;
+      this.finalTotalFiles = 1300;
+      this.finalTotalAmount = 158;
+    }
+     else if (
       region === 'PCH' ||
       region === 'NCR' ||
       region === 'Rajasthan' ||
@@ -787,7 +654,7 @@ export class DashboardComponent {
         this.finalTotalFiles = selectedArea?.FinalFiles;
 
         if (this.selectedBranch !== 'All') {
-          console.log('here', this.selectedBranch);
+
           const selectedBranch = selectedArea?.branches[this.selectedBranch];
           this.loginTotalAmount = selectedBranch?.loginAmount;
           this.loginTotalFiles = selectedBranch?.loginFiles;
@@ -942,7 +809,6 @@ export class DashboardComponent {
         this.DisbursalNumber = selectedArea?.disbursalMeter;
 
         if (this.selectedBranch !== 'All') {
-          console.log('here', this.selectedBranch);
           const selectedBranch = selectedArea?.branches[this.selectedBranch];
           this.DisbursalNumber = selectedBranch?.disbursalMeter;
         }

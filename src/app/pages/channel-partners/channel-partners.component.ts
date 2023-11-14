@@ -34,7 +34,7 @@ export class ChannelPartnersComponent {
   ];
 
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+ selectedFilter: string = 'November';
   isActiveButton: string = 'button1';
 
   CPLoginsChart!: echarts.ECharts;
@@ -382,7 +382,7 @@ export class ChannelPartnersComponent {
         splitLine: {
           show: false,
         },
-        name: 'Number of CPs',
+        name: '% of Total Login',
         nameLocation: 'middle',
         nameGap: 25,
         nameTextStyle: {
@@ -397,7 +397,7 @@ export class ChannelPartnersComponent {
       series: [
         {
           barWidth: 20,
-          data: [26, 31, 28, 31, 31, 27, 31],
+          data: [30, 31, 28, 31, 31, 27, 31],
           type: 'bar',
           itemStyle: {
             color: '#DBA39A',
@@ -472,7 +472,7 @@ export class ChannelPartnersComponent {
       series: [
         {
           barWidth: 20,
-          data: [18, 20.5, 19, 18.5, 20.5, 18.5, 20.5],
+          data: [22, 20.5, 19, 18.5, 20.5, 18.5, 25],
           type: 'bar',
           itemStyle: {
             color: '#0747A6',
@@ -554,7 +554,7 @@ export class ChannelPartnersComponent {
         {
           name: 'Overall',
           barWidth: 20,
-          data: [0.95, 1.15, 1.05, 1.15, 1.03, 1.15, 1.03],
+          data: [0.85, 1, 1.05, 1.15, 1.03, 1.15, 1.03],
           type: 'bar',
           itemStyle: {
             color: '#8675A9',
@@ -563,7 +563,7 @@ export class ChannelPartnersComponent {
         {
           name: 'CP',
           barWidth: 20,
-          data: [0.9, 1.17, 1.01, 1.18, 1.0, 1.17, 1.0],
+          data: [1, 1.17, 1.01, 1.18, 1.0, 1.17, 1.0],
           type: 'bar',
           itemStyle: {
             color: '#D2BEFB',

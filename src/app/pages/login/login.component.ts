@@ -63,7 +63,7 @@ export class LoginComponent implements AfterViewInit {
   clusters: string[] = [];
   selectedTrendFilter: string = 'Year to Date';
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+  selectedFilter: string = 'November';
 
   showContent!: boolean;
   stateOption: any;
@@ -174,7 +174,7 @@ export class LoginComponent implements AfterViewInit {
             const randomAmount = randomAmounts[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return `No of Files: ${barValue}<br> Amount in Cr: ${randomAmount}`;
+            return `No. of Files: ${barValue}<br> Amount in Cr: ${randomAmount}`;
           },
         },
         responsive: true,
@@ -376,7 +376,7 @@ export class LoginComponent implements AfterViewInit {
           formatter: (params: any) => {
             let tooltipText = '';
 
-            if (params.name === 'Home Loan') {
+            if (params.name === 'HL') {
               tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 150';
             } else if (params.name === 'LAP') {
               tooltipText = 'No. of files: 700 <br/> Amount in Cr: 100';
@@ -415,7 +415,7 @@ export class LoginComponent implements AfterViewInit {
               show: false,
             },
             data: [
-              { value: 55, name: 'Home Loan', itemStyle: { color: '#7C41DA' } },
+              { value: 55, name: 'HL', itemStyle: { color: '#7C41DA' } },
               { value: 15, name: 'LAP', itemStyle: { color: '#F99B00' } },
               { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
               { value: 20, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
@@ -496,7 +496,7 @@ export class LoginComponent implements AfterViewInit {
             // const randomAmount = randomAmounts[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return `No of Files: ${barValue} <br> Percentage: ${values}%`;
+            return `No. of Files: ${barValue} <br> Percentage: ${values}%`;
           },
         },
         responsive: true,
@@ -627,9 +627,9 @@ export class LoginComponent implements AfterViewInit {
             splitLine: {
               show: false,
             },
-            min: 0.5,
-            max: 4.0,
-            interval: 0.5,
+            min: 0,
+            max: 1.0,
+            interval: 0.2,
             name: 'Number of files (In Thousands)',
             nameLocation: 'middle',
             nameGap: 25,
@@ -653,7 +653,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [0.6, 1.0, 1.2, 1.5, 1.7, 1.9, 2.0, 2.3],
+            data: [0.244, 0.214, 0.183, 0.259, 0.244, 0.244, 0.275, 0.244],
           },
           {
             name: 'NCR',
@@ -668,7 +668,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [0.8, 1.3, 1.5, 1.9, 2.1, 2.3, 2.4, 3],
+            data: [0.458, 0.488, 0.427, 0.458, 0.61, 0.58, 0.397, 0.427],
           },
           {
             name: 'Rajasthan',
@@ -683,7 +683,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [0.95, 1.5, 1.65, 1.98, 2.2, 2.5, 2.6, 3.1],
+            data: [0.915, 0.854, 0.958, 0.671, 0.915, 0.915, 0.946, 0.915],
           },
           {
             name: 'Gujarat',
@@ -698,7 +698,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [1.0, 1.5, 1.8, 2.1, 2.5, 3.0, 3.1, 3.5],
+            data: [0.366, 0.366, 0.305, 0.366, 0.458, 0.488, 0.427, 0.397],
           },
           {
             name: 'MP',
@@ -713,7 +713,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [1.1, 1.6, 1.9, 2.3, 2.7, 3.2, 3.3, 3.9],
+            data: [0.671, 0.763, 0.702, 0.732, 0.458, 0.549, 0.61, 0.671],
           },
           {
             name: 'Maharashtra',
@@ -728,7 +728,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [1.4, 1.9, 2.1, 2.7, 3.0, 3.8, 3.9, 4.0],
+            data: [0.397, 0.397, 0.366, 0.564, 0.366, 0.396, 0.397],
           },
         ],
       };
@@ -776,9 +776,9 @@ export class LoginComponent implements AfterViewInit {
             splitLine: {
               show: false,
             },
-            min: 2,
-            max: 20,
-            interval: 2,
+            min: 1,
+            max: 10,
+            interval: 1,
             name: 'Number of files',
             nameLocation: 'middle',
             nameGap: 25,
@@ -802,7 +802,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [3, 3.5, 4, 4.5, 4.9, 5, 6, 6.5],
+            data: [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
           },
           {
             name: 'NCR',
@@ -817,7 +817,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [4, 4.5, 5, 5.5, 5.9, 6, 7, 6.9],
+            data: [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
           },
           {
             name: 'Rajasthan',
@@ -832,7 +832,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [5, 5.5, 6, 6.5, 6.9, 7, 8, 8.5],
+            data: [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
           },
           {
             name: 'Gujarat',
@@ -847,7 +847,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [6, 6.5, 7, 7.5, 7.9, 8, 9, 9.9],
+            data: [4.2, 4.5, 5, 5.2, 4.9, 4.7, 4.2, 4.5],
           },
           {
             name: 'MP',
@@ -862,7 +862,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [7, 7.5, 8, 8.5, 8.9, 9, 10, 10.6],
+            data: [3.5, 3.2, 3, 3.9, 4.1, 4, 4.5, 4],
           },
           {
             name: 'Maharashtra',
@@ -877,7 +877,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [8, 8.5, 9, 9.5, 9.9, 10, 11, 12],
+            data: [3.8, 4, 3.5, 4.3, 4.3, 4.5, 3.9, 4],
           },
         ],
       };
@@ -893,7 +893,7 @@ export class LoginComponent implements AfterViewInit {
           },
         },
         legend: {
-          data: ['Home Loan', 'LAP', 'BL', 'SBL'],
+          data: ['HL', 'LAP', 'BL', 'SBL'],
         },
 
         grid: {
@@ -931,9 +931,9 @@ export class LoginComponent implements AfterViewInit {
             splitLine: {
               show: false,
             },
-            min: 0.5,
-            max: 4.0,
-            interval: 0.5,
+            min: 0,
+            max: 1.0,
+            interval: 0.2,
             name: 'Number of files (In Thousands)',
             nameLocation: 'middle',
             nameGap: 25,
@@ -945,7 +945,7 @@ export class LoginComponent implements AfterViewInit {
         ],
         series: [
           {
-            name: 'Home Loan',
+            name: 'HL',
             type: 'line',
 
             areaStyle: {
@@ -957,7 +957,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [2, 2.5, 1.8, 2.8, 3, 3.2, 2.9, 3.4],
+            data: [0.915, 0.854, 0.999, 0.671, 0.915, 0.915, 0.946, 0.915],
           },
           {
             name: 'LAP',
@@ -972,7 +972,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [0.9, 1.9, 2.5, 1.7, 2.4, 3, 2.9, 3.4],
+            data: [0.458, 0.488, 0.427, 0.458, 0.61, 0.58, 0.397, 0.427],
           },
           {
             name: 'BL',
@@ -987,7 +987,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [0.8, 1.5, 2.2, 2.7, 2.4, 3.3, 2.9, 3.4],
+            data: [0.244, 0.214, 0.183, 0.259, 0.244, 0.244, 0.275, 0.244],
           },
           {
             name: 'SBL',
@@ -1002,7 +1002,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [1, 1.5, 2.5, 2.9, 2.4, 3.6, 2.8, 3.7],
+            data: [0.366, 0.336, 0.305, 0.366, 0.458, 0.488, 0.427, 0.397],
           },
         ],
       };
@@ -1055,9 +1055,9 @@ export class LoginComponent implements AfterViewInit {
             splitLine: {
               show: false,
             },
-            min: 0.5,
-            max: 4.0,
-            interval: 0.5,
+            min: 0,
+            max: 1.0,
+            interval: 0.2,
             name: 'Number of files (In Thousands)',
             nameLocation: 'middle',
             nameGap: 25,
@@ -1081,7 +1081,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [0.9, 1.9, 2.5, 1.7, 2.4, 3, 2.9, 3.4],
+            data: [0.915, 0.854, 0.999, 0.671, 0.915, 0.915, 0.946, 0.915],
           },
           {
             name: 'Fresh',
@@ -1096,7 +1096,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [2.2, 2.9, 2.5, 3.1, 2.4, 2.5, 1.9, 2.4],
+            data: [0.458, 0.488, 0.427, 0.458, 0.61, 0.58, 0.397, 0.427],
           },
           {
             name: 'BT',
@@ -1111,7 +1111,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [1, 1.5, 2.5, 2.9, 2.4, 3.6, 2.8, 3.7],
+            data: [0.244, 0.214, 0.183, 0.259, 0.244, 0.244, 0.275, 0.244],
           },
         ],
       };
@@ -1164,9 +1164,9 @@ export class LoginComponent implements AfterViewInit {
             splitLine: {
               show: false,
             },
-            min: 10,
-            max: 110,
-            interval: 10,
+            min: 100,
+            max: 1100,
+            interval: 100,
             name: 'Number of files',
             nameLocation: 'middle',
             nameGap: 25,
@@ -1190,7 +1190,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [55, 65, 70, 76, 100, 89, 95, 107],
+            data: [915, 854, 1068, 671, 915, 915, 946, 915],
           },
           {
             name: 'DSA',
@@ -1205,10 +1205,10 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [41, 47, 59, 78, 91, 97, 106, 108],
+            data: [229, 256, 214, 224, 336, 275, 189, 229],
           },
           {
-            name: 'Power Partner',
+            name: 'P.P.',
             type: 'line',
 
             areaStyle: {
@@ -1220,7 +1220,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [42, 48, 60, 79, 92, 98, 107, 109],
+            data: [183, 171, 320, 168, 305, 305, 189, 122],
           },
           {
             name: 'Saathi',
@@ -1235,10 +1235,10 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [43, 49, 62, 81, 94, 100, 108, 110],
+            data: [229, 214, 320, 112, 244, 290, 189, 229],
           },
           {
-            name: 'Online Partner',
+            name: 'Online/Tele',
             type: 'line',
 
             areaStyle: {
@@ -1250,8 +1250,10 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [49, 55, 65, 85, 96, 103, 109, 110],
+            data: [122, 114, 142, 134, 122, 122, 205, 122],
           },
+          
+     
         ],
       };
 
@@ -1264,7 +1266,7 @@ export class LoginComponent implements AfterViewInit {
   }
 
   onFilterChange(selectedValue: string) {
-    console.log(selectedValue);
+    (selectedValue);
     this.generateStateFilterRandomData();
     this.generateAverageStateFilterRandomData();
     this.generateSchemeRandomData();
@@ -1386,7 +1388,7 @@ export class LoginComponent implements AfterViewInit {
   }
 
   onStateChange(selectedValue: string) {
-    console.log(selectedValue);
+    (selectedValue);
     this.onRegionChange(selectedValue);
   }
 
@@ -1575,7 +1577,7 @@ export class LoginComponent implements AfterViewInit {
     this.stateOption.series[0].data = newClusterData;
 
     this.StateChart.setOption(this.stateOption);
-    console.log(this.StateChart.setOption(this.stateOption));
+    (this.StateChart.setOption(this.stateOption));
   }
 
   generateAverageStateRandomData(region: string) {
@@ -1738,7 +1740,7 @@ export class LoginComponent implements AfterViewInit {
       const max = maxValues[index];
       return Math.floor(Math.random() * (max - min + 1)) + min;
     });
-    console.log(newData);
+    (newData);
     this.stateOption.series[0].data = newData;
     this.StateChart.setOption(this.stateOption);
   }
@@ -1786,7 +1788,7 @@ export class LoginComponent implements AfterViewInit {
     const newData = [
       {
         value: this.getRandomValue(41, 45),
-        name: 'Home Loan',
+        name: 'HL',
         itemStyle: { color: '#7C41DA' },
       },
       {
@@ -1851,12 +1853,14 @@ export class LoginComponent implements AfterViewInit {
   }
   ontrendClusterChange(cluster: string) {
     this.branches = this.getBranches(this.selectedState, cluster);
-    this.TrendgenerateStateRandomData(
+    this.TrendgenerateClusterRandomData(
       this.selectedState,
+      cluster,
       this.selectedTrendFilter
     );
-    this.TrendgenerateAverageStateRandomData(
+    this.TrendgenerateAverageClusterRandomData(
       this.selectedState,
+      cluster,
       this.selectedTrendFilter
     );
     this.TrendgenerateSchemeRandomData(
@@ -1923,18 +1927,42 @@ export class LoginComponent implements AfterViewInit {
     if (selectedTrendFilter === 'Three months') {
       const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [0.55, 1.0, 2.5];
-      const StatemaxValues = [1.0, 2.0, 3.5];
+      const StateminValues = [
+        [0.183, 0.244, 0.263], // Min values for Sep
+        [0.397, 0.427, 0.58],
+        [0.671, 0.946, 0.915],
+        [0.488, 0.427, 0.397],
+        [0.549, 0.61, 0.671],
+        [0.274, 0.396, 0.397],
+      ];
+
+      const StatemaxValues = [
+        [0.214, 0.259, 0.275], // Max values for Sep
+        [0.4, 0.458, 0.61],
+        [0.658, 0.948, 0.918],
+        [0.49, 0.429, 0.4],
+        [0.561, 0.612, 0.673],
+        [0.276, 0.398, 0.399],
+      ];
 
       this.trendStateOption.series.forEach((series: any, index: any) => {
-        series.data = StateminValues.map((min, i) => {
-          const max = StatemaxValues[i];
-          return Math.floor(Math.random() * (max - min + 1)) + min;
-        });
+        // Check if StateminValues and StatemaxValues are defined for the current index
+        if (StateminValues[index] && StatemaxValues[index]) {
+          // Check if series.data is defined
+          series.data = StateminValues[index].map((min, i) => {
+            // Check if StatemaxValues[index][i] is defined
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
       this.trendStateChart.setOption(this.trendStateOption);
     } else {
-      const newAxisdata = [
+      const newAxisData = [
         'Apr',
         'May',
         'Jun',
@@ -1944,97 +1972,310 @@ export class LoginComponent implements AfterViewInit {
         'Oct',
         'Nov',
       ];
+      this.trendStateOption.xAxis[0].data = newAxisData;
+
+      let legend: string[] = [];
+      let cityData: number[][] = [];
+      if (region === 'Pan India') {
+        (legend = ['PCH', 'NCR', 'Rajasthan', 'Gujarat', 'MP', 'Maharashtra']),
+          (cityData = [
+            [0.244, 0.214, 0.183, 0.259, 0.244, 0.244, 0.275, 0.244],
+            [0.458, 0.488, 0.427, 0.458, 0.61, 0.58, 0.397, 0.427],
+            [0.915, 0.854, 0.958, 0.671, 0.915, 0.915, 0.946, 0.915],
+            [0.366, 0.366, 0.305, 0.366, 0.458, 0.488, 0.427, 0.397],
+            [0.671, 0.763, 0.702, 0.732, 0.458, 0.549, 0.61, 0.671],
+            [0.397, 0.397, 0.366, 0.564, 0.366, 0.396, 0.397],
+          ]);
+      } else if (region === 'PCH') {
+        legend = ['Chandigarh', 'Ludhiana', 'Karnal'];
+        cityData = [
+          [0.105, 0.09, 0.096, 0.114, 0.111, 0.096, 0.099, 0.1],
+          [0.078, 0.096, 0.066, 0.06, 0.084, 0.066, 0.09, 0.083],
+          [0.063, 0.054, 0.075, 0.045, 0.054, 0.069, 0.06, 0.057],
+        ];
+      } else if (region === 'NCR') {
+        legend = ['Delhi', 'Gurgaon'];
+        cityData = [
+          [0.105, 0.09, 0.096, 0.114, 0.111, 0.096, 0.099, 0.1],
+          [0.078, 0.096, 0.066, 0.06, 0.084, 0.066, 0.09, 0.083],
+        ];
+      } else if (region === 'Rajasthan') {
+        legend = ['Jaipur', 'Udaipur', 'Ajmer', 'Kota'];
+        cityData = [
+          [0.105, 0.09, 0.096, 0.114, 0.111, 0.096, 0.099, 0.1],
+          [0.078, 0.096, 0.066, 0.06, 0.084, 0.066, 0.09, 0.083],
+          [0.063, 0.054, 0.075, 0.045, 0.054, 0.069, 0.06, 0.057],
+          [0.054, 0.06, 0.063, 0.081, 0.051, 0.069, 0.051, 0.06],
+        ];
+      } else if (region === 'Gujarat') {
+        legend = ['Ahmedabad', 'Surat', 'Rajkot', 'Vadodara'];
+        cityData = [
+          [0.105, 0.09, 0.096, 0.114, 0.111, 0.096, 0.099, 0.1],
+          [0.078, 0.096, 0.066, 0.06, 0.084, 0.066, 0.09, 0.083],
+          [0.063, 0.054, 0.075, 0.045, 0.054, 0.069, 0.06, 0.057],
+          [0.054, 0.06, 0.063, 0.081, 0.051, 0.069, 0.051, 0.06],
+        ];
+      } else if (region === 'MP') {
+        legend = ['Indore', 'Bhopal', 'Gwalior', 'Jabalpur'];
+        cityData = [
+          [0.105, 0.09, 0.096, 0.114, 0.111, 0.096, 0.099, 0.1],
+          [0.078, 0.096, 0.066, 0.06, 0.084, 0.066, 0.09, 0.083],
+          [0.063, 0.054, 0.075, 0.045, 0.054, 0.069, 0.06, 0.057],
+          [0.054, 0.06, 0.063, 0.081, 0.051, 0.069, 0.051, 0.06],
+        ];
+      } else if (region === 'Maharashtra') {
+        legend = ['Mumbai', 'Pune', 'Nashik', 'Nagpur'];
+        cityData = [
+          [0.105, 0.09, 0.096, 0.114, 0.111, 0.096, 0.099, 0.1],
+          [0.078, 0.096, 0.066, 0.06, 0.084, 0.066, 0.09, 0.083],
+          [0.063, 0.054, 0.075, 0.045, 0.054, 0.069, 0.06, 0.057],
+          [0.054, 0.06, 0.063, 0.081, 0.051, 0.069, 0.051, 0.06],
+        ];
+      }
+
+      this.trendStateOption.series = legend.map((city, index) => ({
+        name: city,
+        type: 'line',
+        areaStyle: { opacity: 0 },
+        emphasis: {
+          focus: 'series',
+          areaStyle: { opacity: 0.5 },
+        },
+        data: cityData[index],
+      }));
+      this.trendStateChart.clear();
+      this.trendStateOption.legend.data = legend;
+      this.trendStateChart.setOption(this.trendStateOption);
+      this.trendStateChart.resize(); // Resize the chart
+    }
+  }
+
+  TrendgenerateClusterRandomData(
+    region: string,
+    cluster: string,
+    selectedTrendFilter: string
+  ) {
+    if (selectedTrendFilter === 'Three months') {
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues1 = [0.55, 1.0, 2.0, 2.5, 3.1, 3.5, 3.7, 3.9];
-      const StatemaxValues1 = [0.57, 1.2, 2.2, 2.7, 3.3, 3.7, 3.9, 4.0];
-      const StateminValues2 = [0.59, 1.1, 2.2, 2.5, 3.3, 3.7, 3.8, 3.9];
-      const StatemaxValues2 = [1.0, 1.3, 2.5, 2.7, 3.5, 3.8, 3.9, 4.0];
-      const StateminValues3 = [1.0, 1.3, 1.5, 2.2, 2.3, 3.1, 3.5, 3.6];
-      const StatemaxValues3 = [1.2, 1.5, 1.7, 2.5, 2.6, 3.3, 3.7, 3.9];
-      const StateminValues4 = [1.1, 1.4, 1.7, 2.1, 2.5, 3.2, 3.6, 3.7];
-      const StatemaxValues4 = [1.3, 1.6, 1.9, 2.3, 2.7, 3.4, 3.8, 3.9];
-      const StateminValues5 = [1.4, 1.6, 2.3, 2.2, 3.1, 3.3, 3.6, 3.8];
-      const StatemaxValues5 = [1.5, 1.7, 2.4, 2.5, 3.2, 3.5, 3.7, 4.0];
+      const StateminValues = [
+        [0.183, 0.244, 0.263], // Min values for Sep
+        [0.397, 0.427, 0.58],
+        [0.671, 0.946, 0.915],
+        [0.488, 0.427, 0.397],
+        [0.549, 0.61, 0.671],
+        [0.274, 0.396, 0.397],
+      ];
 
-      // Assuming you have the 'region' variable indicating the selected region/state
+      const StatemaxValues = [
+        [0.214, 0.259, 0.275], // Max values for Sep
+        [0.4, 0.458, 0.61],
+        [0.658, 0.948, 0.918],
+        [0.49, 0.429, 0.4],
+        [0.561, 0.612, 0.673],
+        [0.276, 0.398, 0.399],
+      ];
 
-      // let legend: any[] = [];
-      // let newData: any[] = [];
-
-      // if (region === 'PCH') {
-      //   legend = ['Chandigarh', 'Ludhiana', 'Karnal'];
-      //   newData = [0.85, 0.63, 0.51];
-      // } else if (region === 'NCR') {
-      //   legend = ['Delhi', 'Gurgaon'];
-      //   newData = [0.275, 0.183];
-      // } else if (region === 'Rajasthan') {
-      //   legend = ['Jaipur', 'Udaipur', 'Ajmer', 'Kota'];
-      //   newData = [0.32, 0.192, 0.238, 0.165];
-      // } else if (region === 'Gujarat') {
-      //   legend = ['Ahmedabad', 'Surat', 'Rajkot', 'Vadodara'];
-      //   newData = [1.9, 0.6, 0.7, 2.0]; // Modify these values based on your requirements
-      // } else if (region === 'MP') {
-      //   legend = ['Indore', 'Bhopal', 'Gwalior', 'Jabalpur'];
-      //   newData = [1.9, 0.6, 0.7, 2.0]; // Modify these values based on your requirements
-      // } else if (region === 'Maharashtra') {
-      //   legend = ['Mumbai', 'Pune', 'Nashik', 'Nagpur'];
-      //   newData = [0.8, 0.83, 0.103, 0.71];
-      // }
-
-      // // Update the series data based on the selected region
-      // this.trendStateOption.series = legend.map((city, index) => {
-      //   return {
-      //     name: city,
-      //     type: 'line',
-      //     areaStyle: {
-      //       opacity: 0,
-      //     },
-      //     emphasis: {
-      //       focus: 'series',
-      //       areaStyle: {
-      //         opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-      //       },
-      //     },
-      //     data: [newData[index]], // Set the data for each city based on the newData array
-      //   };
-      // });
-
-      // // Update the legend data
-      // this.trendStateOption.legend.data = legend;
-      // this.trendStateChart.setOption(this.trendStateOption);
-
-      const newData1 = StateminValues1.map((min, index) => {
-        const max = StatemaxValues1[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendStateOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendStateOption.series[0].data = newData1;
       this.trendStateChart.setOption(this.trendStateOption);
-      const newData2 = StateminValues2.map((min, index) => {
-        const max = StatemaxValues2[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendStateOption.series[1].data = newData2;
-      this.trendStateChart.setOption(this.trendStateOption);
-      const newData3 = StateminValues3.map((min, index) => {
-        const max = StatemaxValues3[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendStateOption.series[2].data = newData3;
-      this.trendStateChart.setOption(this.trendStateOption);
+    } else {
+      const newAxisData = [
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+      ];
+      this.trendStateOption.xAxis[0].data = newAxisData;
 
-      const newData4 = StateminValues4.map((min, index) => {
-        const max = StatemaxValues4[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendStateOption.series[3].data = newData4;
-      this.trendStateChart.setOption(this.trendStateOption);
+      let yAxisLabels: string[] = [];
+      let cityData: number[][] = [];
 
-      const newData5 = StateminValues5.map((min, index) => {
-        const max = StatemaxValues5[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendStateOption.series[4].data = newData5;
+      if (region === 'PCH') {
+        if (cluster === 'Chandigarh') {
+          yAxisLabels = ['Chandigarh', 'Ambala', 'Patiala'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Ludhiana') {
+          yAxisLabels = ['Ludhiana', 'Jalandhar', 'Moga'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Karnal') {
+          yAxisLabels = ['Karnal', 'Rohtak', 'Panipat'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        }
+      } else if (region === 'NCR') {
+        if (cluster === 'Delhi') {
+          yAxisLabels = ['Janakpuri', 'Laxmi Nagar', 'Sahibabad'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Gurgaon') {
+          yAxisLabels = ['Gurgoan', 'Faridabad', 'Meerut'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        }
+      } else if (region === 'Rajasthan') {
+        if (cluster === 'Jaipur') {
+          yAxisLabels = ['Jaipur', 'Sikar Road', 'Behror'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Ajmer') {
+          yAxisLabels = ['Ajmer', 'Kekri', 'Merta'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Udaipur') {
+          yAxisLabels = ['Rajsamand', 'Banswara', 'Udaipur'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Kota') {
+          yAxisLabels = [];
+          cityData = [];
+        }
+      } else if (region === 'Gujarat') {
+        if (cluster === 'Ahmedabad') {
+          yAxisLabels = ['Ahmedabad', 'Gandhinagar', 'Sanand'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Surat') {
+          yAxisLabels = ['Surat', 'Kadodara', 'Rundh'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Rajkot') {
+          yAxisLabels = ['Rajkot', 'Jamnagar', 'Junagadh'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Vadodara') {
+          yAxisLabels = ['Vadodara', 'Anand', 'Dabhoi'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        }
+      } else if (region === 'Maharashtra') {
+        if (cluster === 'Mumbai') {
+          yAxisLabels = ['Navi Mumbai', 'Thane', 'Kalyan'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Nashik') {
+          yAxisLabels = ['Nashik', 'Malegaon', 'Sinnar'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Pune') {
+          yAxisLabels = ['Pune', 'Bhor', 'Shikrapur'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Nagpur') {
+          yAxisLabels = ['Nagpur', 'Amravati', 'Gondia'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        }
+      } else if (region === 'MP') {
+        if (cluster === 'Indore') {
+          yAxisLabels = ['Indore', 'Ujjain', 'Dewas'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Gwalior') {
+          yAxisLabels = ['Gwalior', 'Morena', 'Bhind'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Bhopal') {
+          yAxisLabels = ['Bhopal', 'Vidisha', 'Sehore'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        } else if (cluster === 'Jabalpur') {
+          yAxisLabels = ['Jabalpur', 'Sihora', 'Mandla'];
+          cityData = [
+            [0.048, 0.045, 0.05, 0.052, 0.044, 0.053, 0.047, 0.046],
+            [0.033, 0.035, 0.036, 0.038, 0.034, 0.032, 0.03, 0.04],
+            [0.039, 0.04, 0.034, 0.03, 0.042, 0.035, 0.043, 0.034],
+          ];
+        }
+      }
+
+      this.trendStateOption.series = yAxisLabels.map((city, index) => ({
+        name: city,
+        type: 'line',
+        areaStyle: { opacity: 0 },
+        emphasis: {
+          focus: 'series',
+          areaStyle: { opacity: 0.5 },
+        },
+        data: cityData[index],
+      }));
+      this.trendStateChart.clear();
+      this.trendStateOption.legend.data = yAxisLabels;
       this.trendStateChart.setOption(this.trendStateOption);
+      this.trendStateChart.resize(); // Resize the chart
     }
   }
 
@@ -2042,22 +2283,42 @@ export class LoginComponent implements AfterViewInit {
     region: string,
     selectedTrendFilter: string
   ) {
-    console.log(region);
     if (selectedTrendFilter === 'Three months') {
       const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendAverageStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [12.5, 14, 15];
-      const StatemaxValues = [13, 15, 16];
+      const StateminValues = [
+        [6, 5.25, 5.5], // Min values for Sep
+        [6.1, 5.75, 6],
+        [6, 5.5, 6],
+        [4.7, 4.2, 4.5],
+        [4, 4.5, 4],
+        [4.5, 3.9, 4],
+      ];
+
+      const StatemaxValues = [
+        [7, 6.25, 6.5], // Min values for Sep
+        [7.1, 6.75, 7],
+        [7, 6.5, 7],
+        [5.7, 5.2, 5.5],
+        [5, 5.5, 5],
+        [5.5, 4.9, 5],
+      ];
 
       this.trendAverageStateOption.series.forEach((series: any, index: any) => {
-        series.data = StateminValues.map((min, i) => {
-          const max = StatemaxValues[i];
-          return Math.floor(Math.random() * (max - min + 1)) + min;
-        });
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
       this.trendAverageStateChart.setOption(this.trendAverageStateOption);
     } else {
-      const newAxisdata = [
+      const newAxisData = [
         'Apr',
         'May',
         'Jun',
@@ -2067,53 +2328,310 @@ export class LoginComponent implements AfterViewInit {
         'Oct',
         'Nov',
       ];
+      this.trendAverageStateOption.xAxis[0].data = newAxisData;
+
+      let legend: string[] = [];
+      let cityData: number[][] = [];
+      if (region === 'Pan India') {
+        (legend = ['PCH', 'NCR', 'Rajasthan', 'Gujarat', 'MP', 'Maharashtra']),
+          (cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+            [4.2, 4.5, 5, 5.2, 4.9, 4.7, 4.2, 4.5],
+            [3.5, 3.2, 3, 3.9, 4.1, 4, 4.5, 4],
+            [3.8, 4, 3.5, 4.3, 4.3, 4.5, 3.9, 4],
+          ]);
+      } else if (region === 'PCH') {
+        legend = ['Chandigarh', 'Ludhiana', 'Karnal'];
+        cityData = [
+          [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+          [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+          [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+        ];
+      } else if (region === 'NCR') {
+        legend = ['Delhi', 'Gurgaon'];
+        cityData = [
+          [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+          [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+        ];
+      } else if (region === 'Rajasthan') {
+        legend = ['Jaipur', 'Udaipur', 'Ajmer', 'Kota'];
+        cityData = [
+          [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+          [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+          [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          [4.2, 4.5, 5, 5.2, 4.9, 4.7, 4.2, 4.5],
+        ];
+      } else if (region === 'Gujarat') {
+        legend = ['Ahmedabad', 'Surat', 'Rajkot', 'Vadodara'];
+        cityData = [
+          [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+          [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+          [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          [4.2, 4.5, 5, 5.2, 4.9, 4.7, 4.2, 4.5],
+        ];
+      } else if (region === 'MP') {
+        legend = ['Indore', 'Bhopal', 'Gwalior', 'Jabalpur'];
+        cityData = [
+          [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+          [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+          [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          [4.2, 4.5, 5, 5.2, 4.9, 4.7, 4.2, 4.5],
+        ];
+      } else if (region === 'Maharashtra') {
+        legend = ['Mumbai', 'Pune', 'Nashik', 'Nagpur'];
+        cityData = [
+          [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+          [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+          [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          [4.2, 4.5, 5, 5.2, 4.9, 4.7, 4.2, 4.5],
+        ];
+      }
+
+      this.trendAverageStateOption.series = legend.map((city, index) => ({
+        name: city,
+        type: 'line',
+        areaStyle: { opacity: 0 },
+        emphasis: {
+          focus: 'series',
+          areaStyle: { opacity: 0.5 },
+        },
+        data: cityData[index],
+      }));
+      this.trendAverageStateChart.clear();
+      this.trendAverageStateOption.legend.data = legend;
+      this.trendAverageStateChart.setOption(this.trendAverageStateOption);
+      this.trendAverageStateChart.resize(); // Resize the chart
+    }
+  }
+
+  TrendgenerateAverageClusterRandomData(
+    region: string,
+    cluster: string,
+    selectedTrendFilter: string
+  ) {
+    if (selectedTrendFilter === 'Three months') {
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendAverageStateOption.xAxis[0].data = newAxisdata;
-      this.trendStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues1 = [2, 4, 6, 8, 10.12, 14, 16];
-      const StatemaxValues1 = [3, 5, 7, 9, 11.13, 15, 17];
-      const StateminValues2 = [3, 5, 7, 9, 11.13, 15, 17];
-      const StatemaxValues2 = [4, 6, 9, 11, 14, 16, 18, 20];
-      const StateminValues3 = [3.5, 5.5, 7.5, 9.5, 11.5, 13.5, 15.5, 17.5];
-      const StatemaxValues3 = [3.7, 5.7, 7.7, 9.7, 11.7, 13.7, 15.7, 17.7];
-      const StateminValues4 = [3.9, 5.9, 7.9, 9.9, 11.9, 13.9, 15.9, 17.9];
-      const StatemaxValues4 = [4, 6, 9, 11, 14, 16, 18, 19];
-      const StateminValues5 = [3, 5, 7, 9, 11.13, 15, 17];
-      const StatemaxValues5 = [3.5, 5.5, 7.5, 9.5, 11.5, 13.5, 15.5, 17.5];
+      const StateminValues = [
+        [6, 5.25, 5.5], // Min values for Sep
+        [6.1, 5.75, 6],
+        [6, 5.5, 6],
+        [4.7, 4.2, 4.5],
+        [4, 4.5, 4],
+        [4.5, 3.9, 4],
+      ];
 
-      const newData1 = StateminValues1.map((min, index) => {
-        const max = StatemaxValues1[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendAverageStateOption.series[0].data = newData1;
-      this.trendAverageStateChart.setOption(this.trendAverageStateOption);
+      const StatemaxValues = [
+        [7, 6.25, 6.5], // Min values for Sep
+        [7.1, 6.75, 7],
+        [7, 6.5, 7],
+        [5.7, 5.2, 5.5],
+        [5, 5.5, 5],
+        [5.5, 4.9, 5],
+      ];
 
-      const newData2 = StateminValues2.map((min, index) => {
-        const max = StatemaxValues2[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendAverageStateOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendAverageStateOption.series[1].data = newData2;
       this.trendAverageStateChart.setOption(this.trendAverageStateOption);
+    } else {
+      const newAxisData = [
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+      ];
+      this.trendAverageStateOption.xAxis[0].data = newAxisData;
 
-      const newData3 = StateminValues3.map((min, index) => {
-        const max = StatemaxValues3[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendAverageStateOption.series[2].data = newData3;
-      this.trendAverageStateChart.setOption(this.trendAverageStateOption);
+      let yAxisLabels: string[] = [];
+      let cityData: number[][] = [];
 
-      const newData4 = StateminValues4.map((min, index) => {
-        const max = StatemaxValues4[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendAverageStateOption.series[3].data = newData4;
-      this.trendAverageStateChart.setOption(this.trendAverageStateOption);
+      if (region === 'PCH') {
+        if (cluster === 'Chandigarh') {
+          yAxisLabels = ['Chandigarh', 'Ambala', 'Patiala'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Ludhiana') {
+          yAxisLabels = ['Ludhiana', 'Jalandhar', 'Moga'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Karnal') {
+          yAxisLabels = ['Karnal', 'Rohtak', 'Panipat'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        }
+      } else if (region === 'NCR') {
+        if (cluster === 'Delhi') {
+          yAxisLabels = ['Janakpuri', 'Laxmi Nagar', 'Sahibabad'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Gurgaon') {
+          yAxisLabels = ['Gurgoan', 'Faridabad', 'Meerut'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        }
+      } else if (region === 'Rajasthan') {
+        if (cluster === 'Jaipur') {
+          yAxisLabels = ['Jaipur', 'Sikar Road', 'Behror'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Ajmer') {
+          yAxisLabels = ['Ajmer', 'Kekri', 'Merta'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Udaipur') {
+          yAxisLabels = ['Rajsamand', 'Banswara', 'Udaipur'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Kota') {
+          yAxisLabels = [];
+          cityData = [];
+        }
+      } else if (region === 'Gujarat') {
+        if (cluster === 'Ahmedabad') {
+          yAxisLabels = ['Ahmedabad', 'Gandhinagar', 'Sanand'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Surat') {
+          yAxisLabels = ['Surat', 'Kadodara', 'Rundh'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Rajkot') {
+          yAxisLabels = ['Rajkot', 'Jamnagar', 'Junagadh'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Vadodara') {
+          yAxisLabels = ['Vadodara', 'Anand', 'Dabhoi'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        }
+      } else if (region === 'Maharashtra') {
+        if (cluster === 'Mumbai') {
+          yAxisLabels = ['Navi Mumbai', 'Thane', 'Kalyan'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Nashik') {
+          yAxisLabels = ['Nashik', 'Malegaon', 'Sinnar'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Pune') {
+          yAxisLabels = ['Pune', 'Bhor', 'Shikrapur'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Nagpur') {
+          yAxisLabels = ['Nagpur', 'Amravati', 'Gondia'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        }
+      } else if (region === 'MP') {
+        if (cluster === 'Indore') {
+          yAxisLabels = ['Indore', 'Ujjain', 'Dewas'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Gwalior') {
+          yAxisLabels = ['Gwalior', 'Morena', 'Bhind'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Bhopal') {
+          yAxisLabels = ['Bhopal', 'Vidisha', 'Sehore'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        } else if (cluster === 'Jabalpur') {
+          yAxisLabels = ['Jabalpur', 'Sihora', 'Mandla'];
+          cityData = [
+            [3, 3.5, 4, 4.5, 5, 6, 5.25, 5.5],
+            [4, 4.1, 4.2, 4.7, 4.8, 6.1, 5.75, 6],
+            [5, 5.2, 5.3, 3.8, 4.9, 6, 5.5, 6],
+          ];
+        }
+      }
 
-      const newData5 = StateminValues5.map((min, index) => {
-        const max = StatemaxValues5[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendAverageStateOption.series[4].data = newData5;
+      this.trendAverageStateOption.series = yAxisLabels.map((city, index) => ({
+        name: city,
+        type: 'line',
+        areaStyle: { opacity: 0 },
+        emphasis: {
+          focus: 'series',
+          areaStyle: { opacity: 0.5 },
+        },
+        data: cityData[index],
+      }));
+      this.trendAverageStateChart.clear();
+      this.trendAverageStateOption.legend.data = yAxisLabels;
       this.trendAverageStateChart.setOption(this.trendAverageStateOption);
+      this.trendAverageStateChart.resize(); // Resize the chart
     }
   }
 
@@ -2124,45 +2642,86 @@ export class LoginComponent implements AfterViewInit {
     if (selectedTrendFilter === 'Three months') {
       const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendSchemeloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [0.55, 1.0, 2.5];
-      const StatemaxValues = [1.0, 2.0, 3.5];
+      const StateminValues = [
+        [0.915, 0.946, 0.915], // Min values for Sep
+        [0.58, 0.397, 0.427],
+        [0.244, 0.275, 0.244],
+      ];
+
+      const StatemaxValues = [
+        [0.917, 0.948, 0.917], // Min values for Sep
+        [0.582, 0.399, 0.429],
+        [0.246, 0.277, 0.246],
+      ];
 
       this.trendSchemeloginsOption.series.forEach((series: any, index: any) => {
-        series.data = StateminValues.map((min, i) => {
-          const max = StatemaxValues[i];
-          return Math.floor(Math.random() * (max - min + 1)) + min;
-        });
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
       this.trendSchemeLoginsChart.setOption(this.trendSchemeloginsOption);
     } else {
-      const newAxisdata = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = [
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+      ];
       this.trendSchemeloginsOption.xAxis[0].data = newAxisdata;
 
       this.trendStateOption.xAxis[0].data = newAxisdata;
-      const StateminValues1 = [0.55, 1.0, 2.0, 2.5, 3.1, 3.5, 3.7, 3.9];
-      const StatemaxValues1 = [0.57, 1.2, 2.2, 2.7, 3.3, 3.7, 3.9, 4.0];
-      const StateminValues2 = [0.59, 1.1, 2.2, 2.5, 3.3, 3.7, 3.8, 3.9];
-      const StatemaxValues2 = [1.0, 1.3, 2.5, 2.7, 3.5, 3.8, 3.9, 4.0];
-      const StateminValues3 = [1.0, 1.3, 1.5, 2.2, 2.3, 3.1, 3.5, 3.6];
-      const StatemaxValues3 = [1.2, 1.5, 1.7, 2.5, 2.6, 3.3, 3.7, 3.9];
+      let StateminValues: any[] = [];
+      let StatemaxValues: any[] = [];
+      if (selectedState === 'Pan India') {
+        StateminValues = [
+          [0.915, 0.854, 0.999, 0.671, 0.915, 0.915, 0.946, 0.915], // Min values for Sep
+          [0.458, 0.488, 0.427, 0.458, 0.61, 0.58, 0.397, 0.427],
+          [0.244, 0.214, 0.183, 0.259, 0.244, 0.244, 0.275, 0.244],
+        ];
 
-      const newData1 = StateminValues1.map((min, index) => {
-        const max = StatemaxValues1[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+        StatemaxValues = [
+          [0.917, 0.855, 0.999, 0.673, 0.917, 0.917, 0.948, 0.917], // Min values for Sep
+          [0.46, 0.49, 0.429, 0.46, 0.612, 0.582, 0.399, 0.429],
+          [0.246, 0.216, 0.185, 0.261, 0.246, 0.246, 0.277, 0.246],
+        ];
+      } else {
+        StateminValues = [
+          [0.183, 0.171, 0.214, 0.2, 0.183, 0.183, 0.189, 0.183], // Min values for Sep
+          [0.046, 0.049, 0.043, 0.046, 0.061, 0.058, 0.04, 0.043],
+          [0.024, 0.021, 0.018, 0.026, 0.024, 0.024, 0.027, 0.024],
+        ];
+
+        StatemaxValues = [
+          [0.185, 0.173, 0.216, 0.202, 0.185, 0.185, 0.191, 0.185], // Min values for Sep
+          [0.048, 0.051, 0.045, 0.048, 0.063, 0.06, 0.042, 0.045],
+          [0.026, 0.023, 0.02, 0.028, 0.026, 0.026, 0.029, 0.026],
+        ];
+      }
+      this.trendSchemeloginsOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map(
+            (min: number, i: string | number) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+          );
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendSchemeloginsOption.series[0].data = newData1;
-      this.trendSchemeLoginsChart.setOption(this.trendSchemeloginsOption);
-      const newData2 = StateminValues2.map((min, index) => {
-        const max = StatemaxValues2[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendSchemeloginsOption.series[1].data = newData2;
-      this.trendSchemeLoginsChart.setOption(this.trendSchemeloginsOption);
-      const newData3 = StateminValues3.map((min, index) => {
-        const max = StatemaxValues3[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendSchemeloginsOption.series[2].data = newData3;
       this.trendSchemeLoginsChart.setOption(this.trendSchemeloginsOption);
     }
   }
@@ -2174,15 +2733,32 @@ export class LoginComponent implements AfterViewInit {
     if (selectedTrendFilter === 'Three months') {
       const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendProductloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [0.55, 1.0, 2.5];
-      const StatemaxValues = [1.0, 2.0, 3.5];
+      const StateminValues = [
+        [0.915, 0.946, 0.915], // Min values for Sep
+        [0.58, 0.397, 0.427],
+        [0.244, 0.275, 0.244],
+        [ 0.488, 0.427, 0.397],
+      ];
+
+      const StatemaxValues = [
+        [0.917, 0.948, 0.917], // Min values for Sep
+        [0.582, 0.399, 0.429],
+        [0.246, 0.277, 0.246],
+        [ 0.49, 0.429, 0.399],
+      ];
 
       this.trendProductloginsOption.series.forEach(
         (series: any, index: any) => {
-          series.data = StateminValues.map((min, i) => {
-            const max = StatemaxValues[i];
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-          });
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map((min, i) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            });
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
         }
       );
       this.trendProductLoginsChart.setOption(this.trendProductloginsOption);
@@ -2190,41 +2766,53 @@ export class LoginComponent implements AfterViewInit {
       const newAxisdata = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'];
 
       this.trendProductloginsOption.xAxis[0].data = newAxisdata;
-      const StateminValues1 = [0.55, 1.0, 2.0, 2.5, 3.1, 3.5, 3.7, 3.9];
-      const StatemaxValues1 = [0.57, 1.2, 2.2, 2.7, 3.3, 3.7, 3.9, 4.0];
-      const StateminValues2 = [0.59, 1.1, 2.2, 2.5, 3.3, 3.7, 3.8, 3.9];
-      const StatemaxValues2 = [1.0, 1.3, 2.5, 2.7, 3.5, 3.8, 3.9, 4.0];
-      const StateminValues3 = [1.0, 1.3, 1.5, 2.2, 2.3, 3.1, 3.5, 3.6];
-      const StatemaxValues3 = [1.2, 1.5, 1.7, 2.5, 2.6, 3.3, 3.7, 3.9];
-      const StateminValues4 = [1.1, 1.4, 1.7, 2.1, 2.5, 3.2, 3.6, 3.7];
-      const StatemaxValues4 = [1.3, 1.6, 1.9, 2.3, 2.7, 3.4, 3.8, 3.9];
+      let StateminValues: any[] = [];
+      let StatemaxValues: any[] = [];
+      if (selectedState === 'Pan India') {
+        StateminValues = [
+          [0.915, 0.854, 0.999, 0.671, 0.915, 0.915, 0.946, 0.915],
+          [0.458, 0.488, 0.427, 0.458, 0.61, 0.58, 0.397, 0.427],
+          [0.244, 0.214, 0.183, 0.259, 0.244, 0.244, 0.275, 0.244],
+          [0.366, 0.336, 0.305, 0.366, 0.458, 0.488, 0.427, 0.397],
+        ];
 
-      const newData1 = StateminValues1.map((min, index) => {
-        const max = StatemaxValues1[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendProductloginsOption.series[0].data = newData1;
-      this.trendProductLoginsChart.setOption(this.trendProductloginsOption);
+        StatemaxValues = [
+          [0.917, 0.855, 0.999, 0.673, 0.917, 0.917, 0.948, 0.917], // Min values for Sep
+          [0.46, 0.49, 0.429, 0.46, 0.612, 0.582, 0.399, 0.429],
+          [0.246, 0.216, 0.185, 0.261, 0.246, 0.246, 0.277, 0.246],
+          [0.368, 0.338, 0.307, 0.368, 0.46, 0.49, 0.429, 0.399],
+        ];
+      } else {
+        StateminValues = [
+          [0.16, 0.17, 0.18, 0.19, 0.165, 0.175, 0.185, 0.195], // Min values for Sep
+          [0.078, 0.096, 0.085, 0.078, 0.084, 0.066, 0.09, 0.078],
+          [0.063, 0.054, 0.075, 0.045, 0.054, 0.069, 0.06, 0.057],
+          [0.054, 0.06, 0.063, 0.081, 0.051, 0.069, 0.051, 0.06],
+        ];
 
-      const newData2 = StateminValues2.map((min, index) => {
-        const max = StatemaxValues2[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendProductloginsOption.series[1].data = newData2;
-      this.trendProductLoginsChart.setOption(this.trendProductloginsOption);
-
-      const newData3 = StateminValues3.map((min, index) => {
-        const max = StatemaxValues3[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendProductloginsOption.series[2].data = newData3;
-      this.trendProductLoginsChart.setOption(this.trendProductloginsOption);
-
-      const newData4 = StateminValues4.map((min, index) => {
-        const max = StatemaxValues4[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendProductloginsOption.series[3].data = newData4;
+        StatemaxValues = [
+          [0.162, 0.172, 0.182, 0.192, 0.167, 0.177, 0.187, 0.197], // Min values for Sep
+          [0.08, 0.097, 0.087, 0.08, 0.086, 0.068, 0.092, 0.08],
+          [0.065, 0.056, 0.077, 0.047, 0.056, 0.071, 0.062, 0.059],
+          [0.056, 0.062, 0.065, 0.083, 0.053, 0.071, 0.053, 0.062],
+        ];
+      }
+      this.trendProductloginsOption.series.forEach(
+        (series: any, index: any) => {
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map(
+              (min: number, i: string | number) => {
+                const max = StatemaxValues[index][i];
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+              }
+            );
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
+        }
+      );
       this.trendProductLoginsChart.setOption(this.trendProductloginsOption);
     }
   }
@@ -2235,43 +2823,98 @@ export class LoginComponent implements AfterViewInit {
     if (selectedTrendFilter === 'Three months') {
       const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendSourceOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [45, 49, 50];
-      const StatemaxValues = [47, 50, 60];
+      const StateminValues = [
+        [ 915, 946, 915],
+        [ 275, 189, 229],
+        [ 122, 205, 122],
+        [ 290, 189, 229],
+        [ 305, 189, 122]
+      ];
+
+      const StatemaxValues = [
+        [ 917, 948, 917],
+        [ 277, 191, 231],
+        [ 124, 207, 124],
+        [ 292, 191, 231],
+        [ 307, 191, 124]
+      ];
 
       this.trendSourceOption.series.forEach((series: any, index: any) => {
-        series.data = StateminValues.map((min, i) => {
-          const max = StatemaxValues[i];
-          return Math.floor(Math.random() * (max - min + 1)) + min;
-        });
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
       this.trendSourceChart.setOption(this.trendSourceOption);
     } else {
       const newAxisdata = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'];
       this.trendSourceOption.xAxis[0].data = newAxisdata;
-      const StateminValues1 = [55, 58, 63, 67, 72, 75, 79, 81];
-      const StatemaxValues1 = [57, 59, 64, 69, 73, 76, 80, 82];
-      const StateminValues2 = [59, 63, 65, 67, 69, 73, 75, 77];
-      const StatemaxValues2 = [60, 64, 67, 68, 71, 75, 76, 80];
-      const StateminValues3 = [61, 64, 69, 70, 73, 76, 77, 82];
-      const StatemaxValues3 = [64, 65, 72, 74, 76, 78, 79, 84];
 
-      const newData1 = StateminValues1.map((min, index) => {
-        const max = StatemaxValues1[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      let StateminValues: any[] = [];
+      let StatemaxValues: any[] = [];
+      if (selectedState === 'Pan India') {
+        StateminValues = [
+          [915, 854, 1068, 671, 915, 915, 946, 915],
+          [229, 256, 214, 224, 336, 275, 189, 229],
+          [122, 114, 142, 134, 122, 122, 205, 122],
+          [229, 214, 320, 112, 244, 290, 189, 229],
+          [183, 171, 320, 168, 305, 305, 189, 122]
+      ];
+
+        StatemaxValues = [
+          [917, 856, 1070, 673, 917, 917, 948, 917],
+          [231, 258, 216, 226, 337, 277, 191, 231],
+          [124, 116, 144, 136, 124, 124, 207, 124],
+          [231, 216, 322, 114, 246, 292, 191, 231],
+          [185, 173, 322, 170, 307, 307, 191, 124]
+        ];
+      } else {
+        const newYAxisConfig = {
+          min: 0,
+          max: 220,
+          interval: 20,
+        };
+        
+        this.trendSourceOption.yAxis[0] = {
+          ...this.trendSourceOption.yAxis[0],
+          ...newYAxisConfig,
+        };
+        StateminValues = [
+          [183,171,214,134,183,183,189,183], // Min values for Sep
+          [46,51,43,45,67,55,38,46],
+          [37,34,64,34,61,61,38,24],
+          [46,43,64,22,49,58,38,46],
+          [24,23,28,27,24,24,41,24]
+        ];
+
+        StatemaxValues = [
+          [185,173,216,136,185,185,191,185], // Min values for Sep
+          [47,53,45,47,69,57,40,48],
+          [39,36,66,36,63,63,40,26],
+          [48,45,66,24,51,60,40,48],
+          [26,25,30,29,26,26,43,26]
+        ];
+      }
+      this.trendSourceOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map(
+            (min: number, i: string | number) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+          );
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendSourceOption.series[0].data = newData1;
-      this.trendSourceChart.setOption(this.trendSourceOption);
-      const newData2 = StateminValues2.map((min, index) => {
-        const max = StatemaxValues2[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendSourceOption.series[1].data = newData2;
-      this.trendSourceChart.setOption(this.trendSourceOption);
-      const newData3 = StateminValues3.map((min, index) => {
-        const max = StatemaxValues3[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendSourceOption.series[2].data = newData3;
       this.trendSourceChart.setOption(this.trendSourceOption);
     }
   }

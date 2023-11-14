@@ -42,7 +42,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   ];
   monthFilters: string[] = ['Year to Date', 'Three months'];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+ selectedFilter: string = 'November';
   selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
 
@@ -119,7 +119,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
             const randomAmount = randomAmounts[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return `No of Files: ${randomAmount}<br> Amount in cr: ${barValue}`;
+            return `No. of Files: ${randomAmount}<br> Amount in cr: ${barValue}`;
           },
         },
         legend: {},
@@ -258,15 +258,15 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   
             if (params.name === 'BT') {
   
-              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 65'  ;
   
             } else if (params.name === 'Top-Up') {
   
-              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 27' ;
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 15' ;
   
             } else if (params.name === 'Fresh') {
   
-              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 26' ;
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 20' ;
   
             }
   
@@ -299,9 +299,9 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               show: false,
             },
             data: [
-              { value: 45, name: 'Fresh', itemStyle: { color: '#F6C342' } },
-              { value: 27, name: 'Top-Up', itemStyle: { color: '#6C757D' } },
-              { value: 26, name: 'BT', itemStyle: { color: '#198754' } },
+              { value: 65, name: 'Fresh', itemStyle: { color: '#F6C342' } },
+              { value: 15, name: 'Top-Up', itemStyle: { color: '#6C757D' } },
+              { value: 20, name: 'BT', itemStyle: { color: '#198754' } },
             ],
           },
         ],
@@ -316,19 +316,19 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   
             if (params.name === 'HL') {
   
-              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 60'  ;
   
             } else if (params.name === 'LAP') {
   
-              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 20' ;
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 12' ;
   
             } else if (params.name === 'BL') {
   
-              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 10' ;
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 8' ;
   
             } else if (params.name === 'SBL') {
   
-              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 25' ;
+              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 20' ;
   
             }
   
@@ -361,10 +361,10 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               show: false,
             },
             data: [
-              { value: 45, name: 'HL', itemStyle: { color: '#7C41DA' } },
-              { value: 20, name: 'LAP', itemStyle: { color: '#F99B00' } },
-              { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
-              { value: 25, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
+              { value: 60, name: 'HL', itemStyle: { color: '#7C41DA' } },
+              { value: 12, name: 'LAP', itemStyle: { color: '#F99B00' } },
+              { value: 8, name: 'BL', itemStyle: { color: '#636363' } },
+              { value: 20, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
             ],
           },
         ],
@@ -587,6 +587,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               'Aug',
               'Sep',
               'Oct',
+              'Nov'
             ],
             axisLabel: {
               formatter: '{value}',
@@ -629,7 +630,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [12, 15, 25, 30, 35, 45, 55],
+            data: [12, 15, 25, 30, 35, 45, 55,56],
           },
         
           {
@@ -645,7 +646,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [35, 45, 47, 50, 55, 67, 77],
+            data: [35, 45, 47, 50, 55, 67, 77,78],
           },
           {
             name: 'Rajasthan',
@@ -660,7 +661,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [37, 46, 48, 52, 57, 69, 75],
+            data: [37, 46, 48, 52, 57, 69, 75,76],
           },
           {
             name: 'Gujarat',
@@ -675,7 +676,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [39, 48, 50, 55, 60, 70, 80],
+            data: [39, 48, 50, 55, 60, 70, 80,82],
           },
           {
             name: 'MP',
@@ -690,7 +691,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [40, 50, 53, 58, 63, 73, 79],
+            data: [40, 50, 53, 58, 63, 73, 79,81],
           },
           {
             name: 'Maharashtra',
@@ -705,7 +706,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [43, 54, 59, 62, 67, 85, 90],
+            data: [43, 54, 59, 62, 67, 85, 90,92],
           },
         ],
       };
@@ -757,6 +758,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               'Aug',
               'Sep',
               'Oct',
+              'Nov'
             ],
             axisLabel: {
               formatter: '{value}',
@@ -799,7 +801,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [12, 15, 25, 30, 35, 45, 55],
+            data: [12, 15, 25, 30, 35, 45, 55,57],
           },
           {
             name: 'LAP',
@@ -814,7 +816,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [30, 35, 45, 50, 58, 65, 70],
+            data: [30, 35, 45, 50, 58, 65, 70,72],
           },
           {
             name: 'BL',
@@ -829,7 +831,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [37, 46, 48, 52, 57, 69, 74],
+            data: [37, 46, 48, 52, 57, 69, 74,72],
           },
           {
             name: 'SBL',
@@ -844,7 +846,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [39, 48, 50, 55, 60, 70, 75],
+            data: [39, 48, 50, 55, 60, 70, 75,77],
           },
         ],
       };
@@ -1022,6 +1024,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               'Aug',
               'Sep',
               'Oct',
+              'Nov'
             ],
             axisLabel: {
               formatter: '{value}',
@@ -1057,7 +1060,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [11.0, 11.2, 11.3, 12.3, 12.5, 12.7, 13],
+            data: [11.0, 11.2, 11.3, 12.3, 12.5, 12.7, 13,13.5],
           },
           {
             name: 'HL',
@@ -1072,7 +1075,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [11.1, 11.5, 11.9, 12, 12.3, 12.5, 12.9],
+            data: [11.1, 11.5, 11.9, 12, 12.3, 12.5, 12.9,13],
           },
           {
             name: 'LAP',
@@ -1087,7 +1090,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [11.3, 11.6, 12, 12.4, 12.6, 12.9, 13],
+            data: [11.3, 11.6, 12, 12.4, 12.6, 12.9, 13,13.3],
           },
           {
             name: 'BL',
@@ -1102,7 +1105,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [11.5, 11.9, 13.4, 13.9, 14, 14.2, 14.6],
+            data: [11.5, 11.9, 13.4, 13.9, 14, 14.2, 14.6,14.8],
           },
           {
             name: 'SBL',
@@ -1117,7 +1120,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [11.7, 12, 12.5, 13, 13.3, 13.9, 14.9],
+            data: [11.7, 12, 12.5, 13, 13.3, 13.9, 14.9,15],
           },
         ],
       };
@@ -1168,6 +1171,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               'Aug',
               'Sep',
               'Oct',
+              'Nov'
             ],
             axisLabel: {
               formatter: '{value}',
@@ -1210,7 +1214,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [1.4, 2.4, 5.4, 7.1, 8.4, 8.5, 9],
+            data: [1.4, 2.4, 5.4, 7.1, 8.4, 8.5, 9,9.5],
           },
           {
             name: 'HL',
@@ -1225,7 +1229,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [2, 3, 5, 7, 8, 8.5, 9],
+            data: [2, 3, 5, 7, 8, 8.5, 9,9.7],
           },
           {
             name: 'LAP',
@@ -1240,7 +1244,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [3, 3.5, 4, 4.5, 5, 5.5, 6],
+            data: [3, 3.5, 4, 4.5, 5, 5.5, 6,6.5],
           },
           {
             name: 'BL',
@@ -1255,7 +1259,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [4, 5, 6, 7, 8, 9, 10],
+            data: [4, 5, 6, 7, 8, 9, 10,10.2],
           },
           {
             name: 'SBL',
@@ -1270,7 +1274,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [5, 6, 7, 8, 9, 10, 11],
+            data: [5, 6, 7, 8, 9, 10, 11,11.4],
           },
         ],
       };
@@ -1325,6 +1329,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
               'Aug',
               'Sep',
               'Oct',
+              'Nov'
             ],
           },
         ],
@@ -1368,7 +1373,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [41.5, 42, 42.9, 43, 43.5, 44, 44.5],
+            data: [41.5, 42, 42.9, 43, 43.5, 44, 44.5,45],
           },
           {
             name: 'HL',
@@ -1383,7 +1388,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [42.5, 43, 43.9, 44, 44.5, 45, 45.5],
+            data: [42.5, 43, 43.9, 44, 44.5, 45, 45.5,46],
           },
           {
             name: 'LAP',
@@ -1398,7 +1403,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [42.6, 43, 44, 44.4, 44.9, 45.3, 45.7],
+            data: [42.6, 43, 44, 44.4, 44.9, 45.3, 45.7,46],
           },
           {
             name: 'BL',
@@ -1413,7 +1418,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [42.7, 43.3, 44.5, 44.9, 45.1, 45.6, 46],
+            data: [42.7, 43.3, 44.5, 44.9, 45.1, 45.6, 46,46.6],
           },
           {
             name: 'SBL',
@@ -1428,7 +1433,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [42.9, 43.7, 44.6, 45, 45.8, 46, 47],
+            data: [42.9, 43.7, 44.6, 45, 45.8, 46, 47,47.6],
           },
         ],
       };
@@ -1445,7 +1450,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   }
 
   onFilterChange(selectedValue: string) {
-    console.log(selectedValue);
+    (selectedValue);
     this.generateStateRandomData();
     this.generateAverageStateRandomData();
     this.generateSchemeRandomData();
@@ -1572,7 +1577,7 @@ export class FinancialApprovalsComponent implements AfterViewInit {
   }
 
   ontrendStateChange(selectedValue: string){
-    console.log(selectedValue)
+    (selectedValue)
     this.trendStateregionchange(selectedValue);
     
   }
@@ -1588,16 +1593,40 @@ export class FinancialApprovalsComponent implements AfterViewInit {
 
   TrendgenerateStateRandomData(selectedValue: string) {
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = [ 'Sep', 'Oct','Nov'];
       this.trendStateApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64, 74];
-      const StatemaxValues = [60, 67, 78, 88];
+     
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      const StateminValues = [
+        [ 35, 45, 55],
+        [ 55, 67, 77],
+        [ 57, 69, 75],
+        [60, 70, 80],
+        [ 63, 73, 79],
+        [ 67, 85, 90]
+      ];
+
+      const StatemaxValues = [
+        [ 37, 47, 57],
+        [ 57, 69, 79],
+        [ 59, 71, 77],
+        [ 62, 72, 82],
+        [ 65, 75, 81],
+        [ 69, 87, 92]
+      ];
+
+      this.trendStateApprovalOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendStateApprovalOption.series[0].data = newData;
       this.trendStateApprovalChart.setOption(this.trendStateApprovalOption);
     }
     else{
@@ -1607,33 +1636,76 @@ export class FinancialApprovalsComponent implements AfterViewInit {
       'Jul',
       'Aug',
       'Sep',
-      'Oct',];
+      'Oct',
+      'Nov'
+    ];
       this.trendStateApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64,68,75, 85];
-      const StatemaxValues = [60, 67, 78,83,90, 95];
+      const StateminValues = [
+        [12, 15, 25, 30, 35, 45, 55,56],
+        [35, 45, 47, 50, 55, 67, 77,78],
+        [37, 46, 48, 52, 57, 69, 75,76],
+        [39, 48, 50, 55, 60, 70, 80,82],
+        [40, 50, 53, 58, 63, 73, 79,81],
+        [43, 54, 59, 62, 67, 85, 90,92]
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      const StatemaxValues = [
+        [14, 17, 27, 32, 37, 47, 57,58],
+        [37, 47, 49, 52, 57, 69, 79,80],
+        [39, 48, 50, 54, 59, 71, 77,79],
+        [41, 50, 52, 57, 62, 72, 82,84],
+        [42, 52, 55, 60, 65, 75, 81,83],
+        [45, 56, 61, 64, 69, 87, 92,94]
+      ];
+
+      this.trendStateApprovalOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendStateApprovalOption.series[0].data = newData;
       this.trendStateApprovalChart.setOption(this.trendStateApprovalOption);
     }
   }
 
   TrendgenerateAverageStateRandomData(selectedValue: string) {
-    console.log("here",selectedValue)
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = ['Sep', 'Oct','Nov'];
       this.trendAverageApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [10.7, 12.5, 14, 24];
-      const StatemaxValues = [11, 13, 15, 25];
+      const StateminValues = [
+        [ 12.7, 13,13.5],
+        [ 12.5, 12.9,13],
+        [ 12.9, 13,13.3],
+        [ 14.2, 14.6,14.8],
+        [ 13.9, 14.9,15],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      const StatemaxValues = [
+        [ 12.9, 13.7,13.7],
+        [ 12.7, 13,13.4],
+        [ 13.2, 13.3,13.4],
+        [ 14.5, 14.7,15],
+        [14, 15,15],
+      ];
+
+      this.trendAverageApprovalOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendAverageApprovalOption.series[0].data = newData;
       this.trendAverageApprovalChart.setOption(this.trendAverageApprovalOption);
     }
     else{
@@ -1643,31 +1715,72 @@ export class FinancialApprovalsComponent implements AfterViewInit {
       'Jul',
       'Aug',
       'Sep',
-      'Oct',];
+      'Oct',
+      'Nov'
+    ];
       this.trendAverageApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [10.7, 11.5,12.2,13.4, 14, 24];
-      const StatemaxValues = [11,12, 13,14, 15, 25];
+      const StateminValues = [
+        [11.0, 11.2, 11.3, 12.3, 12.5, 12.7, 13,13.5],
+        [11.1, 11.5, 11.9, 12, 12.3, 12.5, 12.9,13],
+        [11.3, 11.6, 12, 12.4, 12.6, 12.9, 13,13.3],
+        [11.5, 11.9, 13.4, 13.9, 14, 14.2, 14.6,14.8],
+        [11.7, 12, 12.5, 13, 13.3, 13.9, 14.7,14.9],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      const StatemaxValues = [
+        [11.2, 11.5, 11.6, 12.7, 12.9, 12.9, 13.7,13.7],
+        [11.3, 11.7, 12.3, 12.4, 12.5, 12.7, 13,13.4],
+        [11.4, 11.7, 12.3, 12.5, 12.8, 13.2, 13.3,13.4],
+        [11.7, 12, 13.6, 14, 14.3, 14.5, 14.7,15],
+        [11.9, 12.3, 12.7, 13.3, 13.6,14, 14.8,15],
+      ];
+
+      this.trendAverageApprovalOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendAverageApprovalOption.series[0].data = newData;
+
       this.trendAverageApprovalChart.setOption(this.trendAverageApprovalOption);
     }
   }
   TrendgenerateSchemeRandomData(selectedValue: string) {
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = [ 'Sep', 'Oct','Nov'];
       this.trendSchemeApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64, 74];
-      const StatemaxValues = [60, 67, 78, 85];
+      const StateminValues = [
+        [ 45, 55,57],
+        [ 65, 70,72],
+        [ 69, 74,76],
+        
+      ];
+  
+      const StatemaxValues = [
+        [ 47, 57,59],
+        [ 67, 72,74],
+        [ 71, 76,78],
+        
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendSchemeApprovalOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendSchemeApprovalOption.series[0].data = newData;
       this.trendSchemeApprovalChart.setOption(this.trendSchemeApprovalOption);
     }
     else{
@@ -1677,32 +1790,70 @@ export class FinancialApprovalsComponent implements AfterViewInit {
       'Jul',
       'Aug',
       'Sep',
-      'Oct',];
+      'Oct',
+      'Nov'
+    ];
       this.trendSchemeApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64,68,75, 85];
-      const StatemaxValues = [60, 67, 78,83,90, 95];
+      const StateminValues = [
+        [12, 15, 25, 30, 35, 45, 55,57],
+        [30, 35, 45, 50, 58, 65, 70,72],
+        [37, 46, 48, 52, 57, 69, 74,76],
+       
+      ];
+  
+      const StatemaxValues = [
+        [14, 17, 27, 32, 37, 47, 57,59],
+        [32, 37, 47, 52, 60, 67, 72,74],
+        [39, 48, 50, 54, 59, 71, 76,78],
+      
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendSchemeApprovalOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendSchemeApprovalOption.series[0].data = newData;
       this.trendSchemeApprovalChart.setOption(this.trendSchemeApprovalOption);
     }
   }
 
   TrendgenerateProductRandomData(selectedValue: string) {
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = [ 'Sep', 'Oct', 'Nov'];
       this.trendProductApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64, 74];
-      const StatemaxValues = [60, 67, 78, 80];
+      const StateminValues = [
+        [ 45, 55,57],
+        [ 65, 70,72],
+        [ 69, 74,76],
+        [ 70, 75,77],
+      ];
+  
+      const StatemaxValues = [
+        [ 47, 57,59],
+        [ 67, 72,74],
+        [ 71, 76,78],
+        [ 72, 77,79],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendProductApprovalOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendProductApprovalOption.series[0].data = newData;
       this.trendProductApprovalChart.setOption(this.trendProductApprovalOption);
     }
     else{
@@ -1712,31 +1863,71 @@ export class FinancialApprovalsComponent implements AfterViewInit {
       'Jul',
       'Aug',
       'Sep',
-      'Oct',];
-      this.trendProductApprovalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64,68,75, 80];
-      const StatemaxValues = [60, 67, 78,83,90, 95];
+      'Oct',
+      'Nov'
+    ];
+    this.trendProductApprovalOption.xAxis[0].data = newAxisdata;
+    const StateminValues = [
+      [12, 15, 25, 30, 35, 45, 55,57],
+      [30, 35, 45, 50, 58, 65, 70,72],
+      [37, 46, 48, 52, 57, 69, 74,76],
+      [39, 48, 50, 55, 60, 70, 75,77],
+    ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendProductApprovalOption.series[0].data = newData;
+    const StatemaxValues = [
+      [14, 17, 27, 32, 37, 47, 57,59],
+      [32, 37, 47, 52, 60, 67, 72,74],
+      [39, 48, 50, 54, 59, 71, 76,78],
+      [41, 50, 52, 57, 62, 72, 77,79],
+    ];
+
+    this.trendProductApprovalOption.series.forEach((series: any, index: any) => {
+      if (StateminValues[index] && StatemaxValues[index]) {
+        series.data = StateminValues[index].map((min, i) => {
+          const max = StatemaxValues[index][i];
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        });
+      } else {
+        console.error(
+          `StateminValues or StatemaxValues is undefined for index ${index}`
+        );
+      }
+    });
       this.trendProductApprovalChart.setOption(this.trendProductApprovalOption);
     }
   }
   TrendgenerateConversionRandomData(selectedValue: string) {
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = ['Sep', 'Oct','Nov'];
       this.trendConversionOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [40.6, 45, 49, 55];
-      const StatemaxValues = [46, 47, 50, 60];
+      const StateminValues = [
+        [44, 44.5, 45],
+        [45, 45.5, 46],
+        [45.3, 45.7, 46],
+        [45.6, 46, 46.6],
+        [46, 47, 47.6],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      const StatemaxValues = [
+        [44.4, 44.8, 45.5],
+        [45.3, 45.7, 46.3],
+        [45.5, 45.9, 46.4],
+        [45.8, 46.3, 46.8],
+        [46.4, 47.4, 47.8],
+      ];
+
+      this.trendConversionOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendConversionOption.series[0].data = newData;
       this.trendConversionApprovalChart.setOption(this.trendConversionOption);
     }
     else{
@@ -1747,32 +1938,71 @@ export class FinancialApprovalsComponent implements AfterViewInit {
       'Aug',
       'Sep',
       'Oct',
+      'Nov'
     ];
       this.trendConversionOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [40.5, 43, 45.5,46,48,55];
-      const StatemaxValues = [43, 45, 47,47.5,50,60];
+      const StateminValues = [
+        [41.5, 42, 42.9, 43, 43.5, 44, 44.5, 45],
+        [42.5, 43, 43.9, 44, 44.5, 45, 45.5, 46],
+        [42.6, 43, 44, 44.4, 44.9, 45.3, 45.7, 46],
+        [42.7, 43.3, 44.5, 44.9, 45.1, 45.6, 46, 46.6],
+        [42.9, 43.7, 44.6, 45, 45.8, 46, 47, 47.6],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      const StatemaxValues = [
+        [41.7, 42.4, 43, 43.3, 43.7, 44.4, 44.8, 45.5],
+        [42.5, 43.4, 45, 44.3, 44.7, 45.3, 45.7, 46.3],
+        [42.8, 43.4, 44.5, 44.8, 45, 45.5, 45.9, 46.4],
+        [42.9, 43.6, 44.7, 45, 45.3, 45.8, 46.3, 46.8],
+        [43, 43.9, 44.8, 45.4, 46, 46.4, 47.4, 47.8],
+      ];
+  
+      this.trendConversionOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendConversionOption.series[0].data = newData;
       this.trendConversionApprovalChart.setOption(this.trendConversionOption);
     }
   }
 
   TrendgenerateFinancialTatRandomdata(selectedValue: string) {
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = ['Sep', 'Oct','Nov'];
       this.trendFinancialTatOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64, 74];
-      const StatemaxValues = [60, 67, 78, 85];
+      const StateminValues = [
+        [ 8.5, 9,9.7],
+        [ 5.5, 6,6.5],
+        [9, 10,10.2],
+        [10, 11,11.4],
+      ];
+  
+      const StatemaxValues = [
+        [ 8.9, 9.5,10],
+        [ 5.7, 6.4,6.9],
+        [ 9.3, 10.3,10.7],
+        [ 10.5, 11.4,11.9],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      this.trendFinancialTatOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendFinancialTatOption.series[0].data = newData;
       this.trendFinancialTatApprovalChart.setOption(this.trendFinancialTatOption);
     }
     else{
@@ -1783,16 +2013,35 @@ export class FinancialApprovalsComponent implements AfterViewInit {
       'Aug',
       'Sep',
       'Oct',
+      'Nov'
     ];
       this.trendFinancialTatOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64,68,75,80];
-      const StatemaxValues = [60, 67, 78,83,90,95];
-
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      const StateminValues = [
+        [2, 3, 5, 7, 8, 8.5, 9,9.7],
+        [3, 3.5, 4, 4.5, 5, 5.5, 6,6.5],
+        [4, 5, 6, 7, 8, 9, 10,10.2],
+        [5, 6, 7, 8, 9, 10, 11,11.4],
+      ];
+  
+      const StatemaxValues = [
+        [2.3, 3.4, 5.5, 7.5, 8.6, 8.9, 9.5,10],
+        [3.4, 3.5, 4.4, 4.7, 5.4, 5.7, 6.4,6.9],
+        [4.2, 5.5, 6.5, 7.3, 8.4, 9.3, 10.3,10.7],
+        [5.5, 6.5, 7.4, 8.5, 9.5, 10.5, 11.4,11.9],
+      ];
+  
+      this.trendFinancialTatOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendFinancialTatOption.series[0].data = newData;
       this.trendFinancialTatApprovalChart.setOption(this.trendFinancialTatOption);
     }
   }

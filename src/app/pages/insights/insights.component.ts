@@ -30,12 +30,12 @@ export class InsightsComponent {
   ];
   loginTotalAmount: number = 550;
   loginTotalFiles: number = 3050;
-  financialTotalAmount: number = 550;
-  financialTotalFiles: number = 3050;
-  finalTotalAmount: number = 550;
-  finalTotalFiles: number = 3050;
-  disbursalTotalAmount: number = 500;
-  disbursalTotalFiles: number = 2650;
+  financialTotalAmount: number = 175;
+  financialTotalFiles: number = 1500;
+  finalTotalAmount: number = 160;
+  finalTotalFiles: number = 1350;
+  disbursalTotalAmount: number = 150;
+  disbursalTotalFiles: number = 1300;
 
   minfinalAmountValue = 350;
   maxfinalAmountValue = 500;
@@ -56,7 +56,7 @@ export class InsightsComponent {
   maxDisbursalFileValue = 1400;
 
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+ selectedFilter: string = 'November';
 
   tats: string[] = [
     'Stage of Files',
@@ -5077,7 +5077,7 @@ export class InsightsComponent {
     } else if (selectedValue === 'SBL') {
       this.updateDataValues(0.2);
     } else {
-      console.log("df")
+      ("df")
       this.resetToOriginalData();
     }
   }

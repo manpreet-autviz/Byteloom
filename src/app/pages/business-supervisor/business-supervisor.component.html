@@ -8,16 +8,7 @@
               <span class="f-7 fs-5"> Business Supervisor </span>
             </div>
             <div class="d-flex">
-<!--               <button
-                type="button "
-                class="text-white filter-btn-trend btn bg-blue border me-2"
-                (click)="toggle()"
-              >
-                {{ !isToggled ? "View Trend" : "Normal View" }}
-                <i class="fa-solid fa-chart-line" *ngIf="!isToggled"></i>
-              </button> -->
               <select
-                
                 id="dropdown"
                 class="cursor-pointer form-select me-2"
                 [(ngModel)]="selectedFilter"
@@ -27,25 +18,12 @@
                   {{ filter }}
                 </option>
               </select>
-<!--               <select
-                *ngIf="isToggled"
-                id="dropdown"
-                class="form-select me-2"
-                [(ngModel)]="selectedTrendFilter"
-                (ngModelChange)="onTrendFilterChange($event)"
-              >
-                <option *ngFor="let filter of monthFilters" [value]="filter">
-                  {{ filter }}
-                </option>
-              </select> -->
+
               <select
                 id="dropdown"
                 class="cursor-pointer form-select"
                 [(ngModel)]="selectedState"
-                (ngModelChange)="
-                  onStateChange($event)
-                  
-                "
+                (ngModelChange)="onStateChange($event)"
               >
                 <option *ngFor="let state of states" [value]="state">
                   {{ state }}
@@ -61,7 +39,7 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="card business-rm-boxes">
-                      <div class="card-body bg-pink rounded ">
+                      <div class="card-body bg-pink rounded">
                         <div
                           class="rm-cards d-flex align-items-center justify-content-between"
                         >
@@ -83,8 +61,8 @@
                     </div>
                   </div>
                   <div class="col-md-4">
-                    <div class="card  business-rm-boxes">
-                      <div class="card-body rm-blue rounded ">
+                    <div class="card business-rm-boxes">
+                      <div class="card-body rm-blue rounded">
                         <div
                           class="rm-cards d-flex align-items-center justify-content-between"
                         >
@@ -98,18 +76,16 @@
                             <p class="f-7 mb-0">Disbursal</p>
                           </div>
                           <div class="business-box">
-                           
-                              <p class="mb-0">Amount</p>
-                              <h4 class="f-7 mb-0">45 Lacs</h4>
-                           
-                         </div>
+                            <p class="mb-0">Amount</p>
+                            <h4 class="f-7 mb-0">45 Lacs</h4>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="card business-rm-boxes">
-                      <div class="card-body rm-sky-blue rounded ">
+                      <div class="card-body rm-sky-blue rounded">
                         <div
                           class="rm-cards d-flex align-items-center justify-content-between"
                         >
@@ -123,12 +99,9 @@
                             <p class="f-7 mb-0">%Achievement</p>
                           </div>
                           <div class="business-box">
-                           
                             <p class="mb-0">Disbursal</p>
                             <h4 class="f-7 mb-0">85%</h4>
-                         
-                       </div>
-                         
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -157,7 +130,7 @@
                   </div>
                   <div class="col-md-4">
                     <div class="card business-rm-boxes">
-                      <div class="card-body rm-light-violet rounded ">
+                      <div class="card-body rm-light-violet rounded">
                         <div
                           class="rm-cards d-flex align-items-center justify-content-between"
                         >
@@ -202,112 +175,176 @@
                   <div class="col-md-12 mt-2">
                     <div class="card box-s">
                       <div class="card-body text-center">
-                        <span class="f-6 title"> Branch wise target and achievment </span>
-                     
+                        <span class="f-6 title">
+                          Branch wise target and achievment
+                        </span>
+
                         <div
-                        class="state-chart"
-                        id="supervisor-Irr-pf-Insurance"
-                        style="width: 100%; height: 250px"
-                      ></div>
+                          class="state-chart"
+                          id="supervisor-Irr-pf-Insurance"
+                          style="width: 100%; height: 250px"
+                        ></div>
                       </div>
                     </div>
                   </div>
- 
-                 
-                    <div class="col-xl-6 col-md-12 mt-2">
-                      <div class="card box-s h-100">
-                        <div class="card-body text-center">
-                          <span class="f-6 title"> Disbursal </span>
-     
-                          <div class="space"></div>
-                          <div class="cursor-pointer">
-                            <div class="box-s rounded d-inline-block justify-content-center py-2 ">
-                              <div class=" d-flex mx-3">
-                                <div class="indicators align-items-center d-flex mx-3 fs-12">
-                                  <div class="disbursal-dots dot-purple mx-1"></div>Gross
-                                </div>
-                                <div class="indicators align-items-center d-flex mx-3 fs-12">
-                                  <div class="disbursal-dots dot-blue mx-1"></div>Cancellation
-                                </div>
-                                <div class="indicators align-items-center d-flex mx-3 fs-12">
-                                  <div class="disbursal-dots  dot-gray mx-1"></div>Net
-                                </div>
+
+                  <div class="col-xl-6 col-md-12 mt-2">
+                    <div class="card box-s h-100">
+                      <div class="card-body text-center">
+                        <span class="f-6 title"> Disbursal </span>
+
+                        <div class="space"></div>
+                        <div class="cursor-pointer">
+                          <div
+                            class="box-s rounded d-inline-block justify-content-center py-2"
+                          >
+                            <div class="d-flex mx-3">
+                              <div
+                                class="indicators align-items-center d-flex mx-3 fs-12"
+                              >
+                                <div
+                                  class="disbursal-dots dot-purple mx-1"
+                                ></div>
+                                Gross
+                              </div>
+                              <div
+                                class="indicators align-items-center d-flex mx-3 fs-12"
+                              >
+                                <div class="disbursal-dots dot-blue mx-1"></div>
+                                Cancellation
+                              </div>
+                              <div
+                                class="indicators align-items-center d-flex mx-3 fs-12"
+                              >
+                                <div class="disbursal-dots dot-gray mx-1"></div>
+                                Net
                               </div>
                             </div>
                           </div>
-                          <div class="progres-line-bg cursor-pointer ">
-                            <div class="progress">
-                              <div class="progress-bar purple-bar" role="progressbar" [style.width]="progressValue1 + '%'"
-                                [attr.aria-valuenow]="progressValue1" [attr.aria-valuemin]="minValue1"
-                                [attr.aria-valuemax]="maxValue1">
-                                180 Lacs
-                              </div>
-                              <div class="progress-bar blue-bar" role="progressbar" [style.width]="progressValue2 + '%'"
-                                [attr.aria-valuenow]="progressValue2" [attr.aria-valuemin]="minValue2"
-                                [attr.aria-valuemax]="maxValue2">
-                               9 Lacs
-                              </div>
-                              <div class="progress-bar gray-bar" role="progressbar" [style.width]="progressValue3 + '%'"
-                                [attr.aria-valuenow]="progressValue3" [attr.aria-valuemin]="minValue3"
-                                [attr.aria-valuemax]="maxValue3">
-                               171 Lacs
-                              </div>
+                        </div>
+                        <div class="progres-line-bg cursor-pointer">
+                          <div class="progress">
+                            <div
+                              class="progress-bar purple-bar"
+                              role="progressbar"
+                              [style.width]="progressValue1 + '%'"
+                              [attr.aria-valuenow]="progressValue1"
+                              [attr.aria-valuemin]="minValue1"
+                              [attr.aria-valuemax]="maxValue1"
+                            >
+                              180 Lacs
                             </div>
-                            <div class="progress-number d-flex justify-content-around">
-                              <p>90%</p>
-                              <p class="pro-no">5%</p>
-                              <p class="pro-no2">85%</p>
+                            <div
+                              class="progress-bar blue-bar"
+                              role="progressbar"
+                              [style.width]="progressValue2 + '%'"
+                              [attr.aria-valuenow]="progressValue2"
+                              [attr.aria-valuemin]="minValue2"
+                              [attr.aria-valuemax]="maxValue2"
+                            >
+                              9 Lacs
                             </div>
+                            <div
+                              class="progress-bar gray-bar"
+                              role="progressbar"
+                              [style.width]="progressValue3 + '%'"
+                              [attr.aria-valuenow]="progressValue3"
+                              [attr.aria-valuemin]="minValue3"
+                              [attr.aria-valuemax]="maxValue3"
+                            >
+                              171 Lacs
+                            </div>
+                          </div>
+                          <div
+                            class="progress-number d-flex justify-content-around"
+                          >
+                            <p>90%</p>
+                            <p class="pro-no">5%</p>
+                            <p class="pro-no2">85%</p>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-xl-6 col-md-12 mt-2">
-                      <div class="card box-s">
-                        <div class="card-body text-center">
-                          <span class="f-6 title">
-                            Branch performance (Disbursement)
-                          </span>
-                          <button class="branch-number">Total Number of branches - 100</button>
-                          <div class="mt-3 cursor-pointer">
-                            <div class="box-s rounded d-inline-block justify-content-center py-2 ">
-                              <div class=" d-flex mx-3">
-                                <div class="indicators align-items-center d-flex mx-3 fs-12">
-                                  <div class="disbursal-dots dot-green mx-1"></div>90% +
-                                </div>
-                                <div class="indicators align-items-center d-flex mx-3 fs-12">
-                                  <div class="disbursal-dots dot-orange mx-1"></div>80-90 %
-                                </div>
-                                <div class="indicators align-items-center d-flex mx-3 fs-12">
-                                  <div class="disbursal-dots  dot-red mx-1"></div>< 80 %
-                                </div>
+                  </div>
+                  <div class="col-xl-6 col-md-12 mt-2">
+                    <div class="card box-s">
+                      <div class="card-body text-center">
+                        <span class="f-6 title">
+                          Branch performance (Disbursement)
+                        </span>
+                        <button class="branch-number">
+                          Total Number of branches - 6
+                        </button>
+                        <div class="mt-3 cursor-pointer">
+                          <div
+                            class="box-s rounded d-inline-block justify-content-center py-2"
+                          >
+                            <div class="d-flex mx-3">
+                              <div
+                                class="indicators align-items-center d-flex mx-3 fs-12"
+                              >
+                                <div
+                                  class="disbursal-dots dot-green mx-1"
+                                ></div>
+                                90% +
+                              </div>
+                              <div
+                                class="indicators align-items-center d-flex mx-3 fs-12"
+                              >
+                                <div
+                                  class="disbursal-dots dot-orange mx-1"
+                                ></div>
+                                80-90 %
+                              </div>
+                              <div
+                                class="indicators align-items-center d-flex mx-3 fs-12"
+                              >
+                                <div class="disbursal-dots dot-red mx-1"></div>
+                                < 80 %
                               </div>
                             </div>
                           </div>
-                          <div class="progres-line-bg cursor-pointer ">
-                            <div class="progress">
-                              <div class="progress-bar green-bar" role="progressbar" [style.width]="progressValue1 + '%'"
-                                [attr.aria-valuenow]="progressValue1" [attr.aria-valuemin]="minValue1"
-                                [attr.aria-valuemax]="maxValue1">
-                                4
-                              </div>
-                              <div class="progress-bar orange-bar" role="progressbar" [style.width]="progressValue2 + '%'"
-                                [attr.aria-valuenow]="progressValue2" [attr.aria-valuemin]="minValue2"
-                                [attr.aria-valuemax]="maxValue2">
-                               1
-                              </div>
-                              <div class="progress-bar red-bar" role="progressbar" [style.width]="progressValue3 + '%'"
-                                [attr.aria-valuenow]="progressValue3" [attr.aria-valuemin]="minValue3"
-                                [attr.aria-valuemax]="maxValue3">
+                        </div>
+                        <div class="progres-line-bg cursor-pointer">
+                          <div class="progress">
+                            <div
+                              class="progress-bar green-bar"
+                              role="progressbar"
+                              [style.width]="progressValue1 + '%'"
+                              [attr.aria-valuenow]="progressValue1"
+                              [attr.aria-valuemin]="minValue1"
+                              [attr.aria-valuemax]="maxValue1"
+                            >
+                              4
+                            </div>
+                            <div
+                              class="progress-bar orange-bar"
+                              role="progressbar"
+                              [style.width]="progressValue2 + '%'"
+                              [attr.aria-valuenow]="progressValue2"
+                              [attr.aria-valuemin]="minValue2"
+                              [attr.aria-valuemax]="maxValue2"
+                            >
                               1
-                              </div>
+                            </div>
+                            <div
+                              class="progress-bar red-bar"
+                              role="progressbar"
+                              [style.width]="progressValue3 + '%'"
+                              [attr.aria-valuenow]="progressValue3"
+                              [attr.aria-valuemin]="minValue3"
+                              [attr.aria-valuemax]="maxValue3"
+                            >
+                              1
                             </div>
                           </div>
-                          <p>The number inside the bar denotes number of branches </p>
                         </div>
+                        <p>
+                          The number inside the bar denotes number of branches
+                        </p>
                       </div>
                     </div>
-                 
+                  </div>
                 </div>
               </div>
             </div>
@@ -315,11 +352,11 @@
               <div class="card box-s profile-box">
                 <div class="card-body">
                   <div class="text-center">
-                  <img
-                    class="user-img"
-                    src="../../../assets/icons/user-img.png"
-                  />
-                  <h6 class="mt-3">Jems Anderson</h6>
+                    <img
+                      class="user-img"
+                      src="../../../assets/icons/user-img.png"
+                    />
+                    <h6 class="mt-3">Jems Anderson</h6>
                   </div>
                   <div class="border profile-info">
                     <div class="d-flex justify-content-between">
@@ -327,7 +364,7 @@
                         <h6>Vintage with company</h6>
                       </div>
                       <div>
-                        <p class="header-data">WiseGrowth Capital</p>
+                        <p class="header-data">2 Years</p>
                       </div>
                     </div>
                     <div class="d-flex justify-content-between mt-4">
@@ -335,7 +372,7 @@
                         <h6>Total experience</h6>
                       </div>
                       <div>
-                        <p class="header-data">6 Year</p>
+                        <p class="header-data">6 Years</p>
                       </div>
                     </div>
                     <div class="d-flex justify-content-between mt-4">
@@ -356,14 +393,18 @@
                     </div>
                   </div>
                   <div class="incentive border mt-4">
-                    <h6 class="text-center">Incentive earned </h6>
-                    <div class="incentive-list d-flex justify-content-between align-items-center">
+                    <h6 class="text-center">Incentive earned</h6>
+                    <div
+                      class="incentive-list d-flex justify-content-between align-items-center"
+                    >
                       <h6>Last Month</h6>
                       <div class="price">
                         <h6>1000</h6>
                       </div>
                     </div>
-                    <div class="incentive-list d-flex justify-content-between align-items-center">
+                    <div
+                      class="incentive-list d-flex justify-content-between align-items-center"
+                    >
                       <h6>YTD</h6>
                       <div class="price">
                         <h6>50000</h6>
@@ -373,28 +414,36 @@
                   <div class="incentive border mt-4">
                     <div class="card-body text-center">
                       <span class="f-6">Attrition/ RM adequacy </span>
-                      <div class="incentive-list d-flex justify-content-between align-items-center">
+                      <div
+                        class="incentive-list d-flex justify-content-between align-items-center"
+                      >
                         <h6>Budgeted RM</h6>
                         <div class="price">
                           <h6>15</h6>
                         </div>
                       </div>
-                      <div class="incentive-list d-flex justify-content-between align-items-center">
+                      <div
+                        class="incentive-list d-flex justify-content-between align-items-center"
+                      >
                         <h6>Current RM</h6>
                         <div class="price">
                           <h6>12</h6>
                         </div>
                       </div>
-                      <div class="incentive-list d-flex justify-content-between align-items-center">
+                      <div
+                        class="incentive-list d-flex justify-content-between align-items-center"
+                      >
                         <h6>Adequacy</h6>
                         <div class="price">
                           <h6>80%</h6>
                         </div>
                       </div>
-                      <div class="incentive-list d-flex justify-content-between align-items-center">
+                      <div
+                        class="incentive-list d-flex justify-content-between align-items-center"
+                      >
                         <h6>Attrition YTD</h6>
                         <div class="price">
-                          <h6>5 (33%)</h6>
+                          <h6>5</h6>
                         </div>
                       </div>
                     </div>
@@ -403,7 +452,6 @@
               </div>
             </div>
           </div>
- 
         </div>
       </div>
     </div>

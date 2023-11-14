@@ -13,7 +13,7 @@ export class ThreeSixtyComponent {
     'PCH',
     'NCR',
     'Rajasthan',
-    'Gujrat',
+    'Gujarat',
     'MP',
     'Maharashtra',
   ];
@@ -108,7 +108,7 @@ export class ThreeSixtyComponent {
           const files = [1340, 745, 670, 770, 890];
           const randomFiles = files[dataIndex];
           // Create the tooltip content with the actual value and random amount
-          return `No of Files:${randomFiles} <br> Days: ${barValue}`;
+          return `No. of Files:${randomFiles} <br> Days: ${barValue}`;
         },
       },
       responsive: true,
@@ -183,11 +183,11 @@ export class ThreeSixtyComponent {
         trigger: 'item',
         formatter: (params: any) => {
           let tooltipText = '';
-          if (params.name === '2000Files') {
+          if (params.name === '2000 Files') {
             tooltipText = 'Amount in Cr: 345';
-          } else if (params.name === '300Crs') {
+          } else if (params.name === '300 Crs') {
             tooltipText = 'No. of files: 1400 ';
-          } else if (params.name === '250Crs') {
+          } else if (params.name === '250 Crs') {
             tooltipText = 'No. of files: 2300';
           }
           return tooltipText;
@@ -237,9 +237,9 @@ export class ThreeSixtyComponent {
             },
           },
           data: [
-            { value: 60, name: '2000Files', itemStyle: { color: '#F99B00' } },
-            { value: 40, name: '300Cr', itemStyle: { color: '#342D2D' } },
-            { value: 20, name: '250Cr', itemStyle: { color: '#7460EE' } },
+            { value: 60, name: '2000 Files', itemStyle: { color: '#F99B00' } },
+            { value: 40, name: '300 Cr', itemStyle: { color: '#342D2D' } },
+            { value: 20, name: '250 Cr', itemStyle: { color: '#7460EE' } },
           ],
         },
       ],
@@ -309,7 +309,7 @@ export class ThreeSixtyComponent {
       tooltip: {
         trigger: 'item',
         formatter: (params: any) => {
-          console.log(params);
+          (params);
 
           let tooltipText = '';
 
@@ -352,10 +352,10 @@ export class ThreeSixtyComponent {
             show: false,
           },
           data: [
-            { value: 45, name: 'HL', itemStyle: { color: '#7C41DA' } },
-            { value: 20, name: 'LAP', itemStyle: { color: '#07A14E' } },
-            { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
-            { value: 25, name: 'SBL', itemStyle: { color: '#F99B00' } },
+            { value: 60, name: 'HL', itemStyle: { color: '#7C41DA' } },
+            { value: 12, name: 'LAP', itemStyle: { color: '#07A14E' } },
+            { value: 8, name: 'BL', itemStyle: { color: '#636363' } },
+            { value: 20, name: 'SBL', itemStyle: { color: '#F99B00' } },
           ],
         },
       ],
@@ -418,7 +418,7 @@ export class ThreeSixtyComponent {
       series: [
         {
           barWidth: 20,
-          data: [70, 55, 45, 40, 53],
+          data: [50, 55, 45, 40, 30],
           type: 'bar',
           itemStyle: {
             color: '#7460EE',
@@ -663,7 +663,6 @@ export class ThreeSixtyComponent {
   }
 
   onStateChange(selectedValue: string) {
-    console.log(selectedValue);
     this.generateProductRandomData();
     this.generateDistributionRandomData();
     this.generateEdRandomData();
@@ -690,11 +689,11 @@ export class ThreeSixtyComponent {
     // Update the tooltip formatter to display random values
     this.LoginApprovalsDisbursalOption.tooltip.formatter = (params: any) => {
       let tooltipText = '';
-      if (params.name === '2000Files') {
+      if (params.name === '2000 Files') {
         tooltipText = `Amount in Cr: ${randomCr1}`;
-      } else if (params.name === '300Cr') {
+      } else if (params.name === '300 Cr') {
         tooltipText = `No. of files: ${randomFiles}`;
-      } else if (params.name === '250Cr') {
+      } else if (params.name === '250 Cr') {
         tooltipText = `No. of files: ${randomCr2}`;
       }
       return tooltipText;
@@ -704,11 +703,11 @@ export class ThreeSixtyComponent {
     this.LoginApprovalsDisbursalOption.series[0].data = [
       {
         value: randomFiles,
-        name: '2000Files',
+        name: '2000 Files',
         itemStyle: { color: '#F99B00' },
       },
-      { value: randomCr1, name: '300Cr', itemStyle: { color: '#342D2D' } },
-      { value: randomCr2, name: '250Cr', itemStyle: { color: '#7460EE' } },
+      { value: randomCr1, name: '300 Cr', itemStyle: { color: '#342D2D' } },
+      { value: randomCr2, name: '250 Cr', itemStyle: { color: '#7460EE' } },
     ];
 
     // Set the chart option to update the chart

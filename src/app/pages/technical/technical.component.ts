@@ -28,7 +28,7 @@ export class TechnicalComponent {
     // 'Select custom'
   ];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+ selectedFilter: string = 'November';
 
   TatChart!: echarts.ECharts;
   TotalReportChart!: echarts.ECharts;
@@ -255,17 +255,25 @@ export class TechnicalComponent {
             },
           ],
           emphasis: {
+            label: {
+              show: true,
+              formatter: '{c}%',
+              fontSize: 16,
+              fontWeight: 'bold',
+            },
             itemStyle: {
               shadowBlur: 10,
               shadowOffsetX: 0,
               shadowColor: 'rgba(0, 0, 0, 0.5)',
             },
+            
           },
           labelLine: {
             show: false, // Set this to false to remove lines connecting slices to labels
           },
           label: {
-            show: false, // Set this to false to hide labels on pie chart slices
+            show: false,
+            position: 'center',
           },
           itemStyle: {
             normal: {
@@ -276,6 +284,7 @@ export class TechnicalComponent {
               borderColor: 'white',
               borderWidth: 2,
             },
+            
           },
         },
       ],
@@ -291,7 +300,7 @@ export class TechnicalComponent {
         formatter: 'No. of Reports: {c}',
       },
       legend: {
-        data: [],
+        data: ['Total Reports','Internal Reports'],
         top: '10',
       },
       xAxis: {
@@ -319,11 +328,11 @@ export class TechnicalComponent {
       },
       yAxis: {
         type: 'value',
-        min: 200,
-        max: 1800,
-        interval: 200,
+        min: 0,
+        max: 100,
+        interval: 20,
 
-        name: 'Number Of Reports',
+        name: 'Percentage %',
         nameLocation: 'middle',
         nameGap: 45,
         nameTextStyle: {
@@ -342,23 +351,23 @@ export class TechnicalComponent {
       },
       series: [
         {
-          name: 'Category 1',
+          name: 'Internal Reports',
           type: 'bar',
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [1400, 1100, 960, 630, 540, 430, 330],
+          data: [15, 18, 20, 22, 20, 25, 17],
           itemStyle: {
-            color: '#F0B86E', // Color for Category 1
+            color: '#F0997D', // Color for Category 1
           },
         },
         {
-          name: 'Category 2',
+          name: 'Total Reports',
           type: 'bar',
           stack: 'barStack',
           barWidth: '25%', // Adjust the bar width as needed
-          data: [1780, 1600, 1400, 1250, 1050, 960, 700],
+          data: [85, 82, 80, 78, 80, 75, 83],
           itemStyle: {
-            color: '#F0997D', // Color for Category 2
+            color: '#F0B86E', // Color for Category 2
           },
         },
       ],

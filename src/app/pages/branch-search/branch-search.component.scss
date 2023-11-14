@@ -42,7 +42,25 @@
 ul.pending-cheque {
     padding: 20px 12px;
 }
-
+// .cheque-polygon.first-cheque:after {
+//     position: absolute;
+//     content: "";
+//     background: #E3E3E3;
+//     height: 127px;
+//     width: 2px;
+//     top: -138px;
+//     left: 45px;
+// }
+// .cheque-polygon.second-cheque:after {
+//     position: absolute;
+//     content: "";
+//     background: #E3E3E3;
+//     height: 135px;
+//     width: 2px;
+//     top: -29px;
+//     left: -80px;
+//     transform: rotateZ(91deg);
+// }
 .otc-three-box:after {
     position: absolute;
     content: "";
@@ -89,9 +107,9 @@ ul.pending-cheque {
 }
 ul.pending-cheque.ot-normal {
     position: absolute;
-    left: calc(50% - 60px);
+    left: calc(50% - 45px);
     bottom: -20px;
-}
+ }
 .otc-three-box {
     margin-top: 20px;
     position: relative;
@@ -190,7 +208,40 @@ ul.pending-cheque.ot-normal {
     left: 50px;
     top: 55px;
 }
-
+.aum-orange{
+    background: #F0B86E;
+}
+.total-btn p {
+    margin: 0;
+    font-size: 20px;
+   width: fit-content;
+    border: 1px solid #000;
+    padding: 6px 8px;
+    position: absolute;
+    right: calc(50% - 65px);
+    top: 25%;
+    font-weight: 700;
+     border-radius: 4px;
+}
+.card.aum-box h3 {
+    font-size: 18px;
+}
+.card.aum-box h5 {
+    font-size: 25px !important;
+    font-weight: 600;
+}
+.aum-dblue {
+    background: #ceeaf6 !important;
+}
+.aum-yellow {
+    background: #fef1d1;
+}
+.aum-gray {
+    background: #d2d2d2;
+}
+.aum-purple {
+    background: #ead7ea;
+}
 
 
 
@@ -214,4 +265,13 @@ ul.pending-cheque.ot-normal {
     .pending-cheque.ot-normal li {
         text-align: center !important;
     }
+}
+.aum-box .card-body{
+    padding: 20px !important;
+}
+.aum-box .card-body .amount{
+    padding-top: 10px;
+}
+.amount h6{
+    font-size: 20px;
 }

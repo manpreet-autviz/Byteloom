@@ -1,4 +1,9 @@
-import { ChangeDetectorRef, Component, ElementRef, NgZone } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  NgZone,
+} from '@angular/core';
 import * as echarts from 'echarts';
 declare var $: any;
 
@@ -28,14 +33,10 @@ export class ChequesSummaryComponent {
     'November',
     // 'Select custom'
   ];
-  statusList :string[] = [
-    'Financial Approved',
-    'Final Approved',
-    
-  ];
+  statusList: string[] = ['Financial Approved', 'Final Approved'];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
-  selectedStatus:string = 'Financial Approved'
+  selectedFilter: string = 'November';
+  selectedStatus: string = 'Financial Approved';
 
   FinancialApprovalChart!: echarts.ECharts;
   FinalApprovalChart!: echarts.ECharts;
@@ -53,9 +54,10 @@ export class ChequesSummaryComponent {
       loanAmount: '15',
       technicalRecieved: 'Y',
       legalRecieved: 'N',
-      loginDate:'10/16/2023',
+      loginDate: '10/16/2023',
       rmName: 'Nikhil Rana',
-      
+      branch:'Chandigarh',
+      state:'PCH'
     },
     {
       SNo: 2,
@@ -66,8 +68,10 @@ export class ChequesSummaryComponent {
       loanAmount: '15',
       technicalRecieved: 'Y',
       legalRecieved: 'N',
-      loginDate:'10/16/2023',
-      rmName: 'Nikhil Rana',
+      loginDate: '10/16/2023',
+      rmName: 'Raman Rana',
+      branch:'Chandigarh',
+      state:'PCH'
     },
     {
       SNo: 3,
@@ -78,8 +82,10 @@ export class ChequesSummaryComponent {
       loanAmount: '15',
       technicalRecieved: 'Y',
       legalRecieved: 'N',
-      loginDate:'10/16/2023',
-      rmName: 'Nikhil Rana',
+      loginDate: '10/16/2023',
+      rmName: 'Amit Verma',
+      branch:'Chandigarh',
+      state:'PCH'
     },
     {
       SNo: 4,
@@ -90,8 +96,10 @@ export class ChequesSummaryComponent {
       loanAmount: 15,
       technicalRecieved: 'Y',
       legalRecieved: 'N',
-      loginDate:'10/16/2023',
-      rmName: 'Nikhil Rana',
+      loginDate: '10/16/2023',
+      rmName: 'Rajesh Kumar',
+      branch:'Chandigarh',
+      state:'PCH'
     },
     {
       SNo: 5,
@@ -102,8 +110,10 @@ export class ChequesSummaryComponent {
       loanAmount: '15',
       technicalRecieved: 'Y',
       legalRecieved: 'N',
-      loginDate:'10/16/2023',
-      rmName: 'Nikhil Rana',
+      loginDate: '10/16/2023',
+      rmName: 'Nirmal Singh',
+      branch:'Chandigarh',
+      state:'PCH'
     },
     {
       SNo: 6,
@@ -114,8 +124,10 @@ export class ChequesSummaryComponent {
       loanAmount: '11',
       technicalRecieved: 'Y',
       legalRecieved: 'N',
-      loginDate:'10/16/2023',
-      rmName: 'Nikhil Rana',
+      loginDate: '10/16/2023',
+      rmName: 'Gaurav Kapoor',
+      branch:'Chandigarh',
+      state:'PCH'
     },
     {
       SNo: 7,
@@ -126,8 +138,10 @@ export class ChequesSummaryComponent {
       loanAmount: '15',
       technicalRecieved: 'Y',
       legalRecieved: 'N',
-      loginDate:'10/16/2023',
-      rmName: 'Nikhil Rana',
+      loginDate: '10/16/2023',
+      rmName: 'Nikhil Teneja',
+      branch:'Delhi',
+      state:'NCR'
     },
     {
       SNo: 8,
@@ -138,8 +152,10 @@ export class ChequesSummaryComponent {
       loanAmount: '13',
       technicalRecieved: 'N',
       legalRecieved: 'N',
-      loginDate:'10/16/2023',
-      rmName: 'Nikhil Rana',
+      loginDate: '10/16/2023',
+      rmName: 'Anil Gupta',
+      branch:'Delhi',
+      state:'NCR'
     },
     {
       SNo: 9,
@@ -150,8 +166,10 @@ export class ChequesSummaryComponent {
       loanAmount: '12.5',
       technicalRecieved: 'Y',
       legalRecieved: 'N',
-      loginDate:'10/16/2023',
-      rmName: 'Nikhil Rana',
+      loginDate: '10/16/2023',
+      rmName: 'Saurabh Saini',
+      branch:'Delhi',
+      state:'NCR'
     },
     {
       SNo: 10,
@@ -162,8 +180,10 @@ export class ChequesSummaryComponent {
       loanAmount: '13',
       technicalRecieved: 'N',
       legalRecieved: 'Y',
-      loginDate:'10/16/2023',
-      rmName: 'Nikhil Rana',
+      loginDate: '10/16/2023',
+      rmName: 'Vivek',
+      branch:'Delhi',
+      state:'NCR'
     },
     // Add more data as needed
   ];
@@ -182,12 +202,11 @@ export class ChequesSummaryComponent {
     this.generateRandomData();
   }
 
-
   generateRandomData() {
-    this.data.forEach(item => {
+    this.data.forEach((item) => {
       item.SNo = Math.floor(Math.random() * 1000) + 1;
       item.leadNo = '0109';
-      item.custName = 'Anita'; 
+      item.custName = 'Anita';
       item.product = 'BL';
       item.scheme = 'BT';
       item.loanAmount = 12.5;
@@ -223,13 +242,13 @@ export class ChequesSummaryComponent {
     this.FinancialApprovalOption = {
       tooltip: {
         trigger: 'axis',
-        formatter: function(params: any[]) {
+        formatter: function (params: any[]) {
           let tooltip = params[0].axisValue + '<br>';
-          params.forEach(function(item) {
+          params.forEach(function (item) {
             if (item.seriesType === 'bar') {
               tooltip += 'No. of Files' + ': ' + item.value + ' <br>';
             } else if (item.seriesType === 'line') {
-              tooltip += 'Amount(in Lacs.)' + ': ' + item.value ;
+              tooltip += 'Amount(in Lacs.)' + ': ' + item.value;
             }
           });
           return tooltip;
@@ -237,7 +256,7 @@ export class ChequesSummaryComponent {
       },
 
       legend: {
-       data: ['Financial approvals no.', 'Financial approvals amount'],
+        data: ['Financial approvals no.', 'Financial approvals amount'],
       },
       xAxis: [
         {
@@ -254,7 +273,7 @@ export class ChequesSummaryComponent {
             rotate: -45,
             overflow: 'break',
           },
-          data: ['Maharashtra', 'MP', 'Gujarat', 'Rajasthan', 'NCR', 'PCH'],
+          data: ['PCH', 'NCR', 'Rajasthan', 'Gujarat', 'MP', 'Maharashtra'],
           axisPointer: {
             type: 'shadow',
           },
@@ -263,12 +282,12 @@ export class ChequesSummaryComponent {
       yAxis: [
         {
           type: 'value',
-          name: 'No of Files',
+          name: 'No. of Files',
           nameLocation: 'middle',
           nameGap: 40,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
           min: 10,
           max: 100,
@@ -290,7 +309,7 @@ export class ChequesSummaryComponent {
           nameGap: 40,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
           min: 10,
           max: 90,
@@ -308,7 +327,7 @@ export class ChequesSummaryComponent {
       ],
       series: [
         {
-          name:"Financial approvals no.",
+          name: 'Financial approvals no.',
           barWidth: 20,
           type: 'bar',
           tooltip: {
@@ -323,9 +342,9 @@ export class ChequesSummaryComponent {
         },
 
         {
-          name:"Financial approvals amount",
+          name: 'Financial approvals amount',
           type: 'line',
-         
+
           yAxisIndex: 1,
           tooltip: {
             valueFormatter: function (value: any) {
@@ -343,22 +362,22 @@ export class ChequesSummaryComponent {
     this.FinalApprovalOption = {
       tooltip: {
         trigger: 'axis',
-      
-        formatter: function(params: any[]) {
+
+        formatter: function (params: any[]) {
           let tooltip = params[0].axisValue + '<br>';
-          params.forEach(function(item) {
+          params.forEach(function (item) {
             if (item.seriesType === 'bar') {
               tooltip += 'No. of Files' + ': ' + item.value + ' <br>';
             } else if (item.seriesType === 'line') {
-              tooltip += 'Amount(in Lacs.)' + ': ' + item.value ;
+              tooltip += 'Amount(in Lacs.)' + ': ' + item.value;
             }
           });
           return tooltip;
         },
       },
-    
+
       legend: {
-       data: ['Financial approvals no.', 'Financial approvals amount'],
+        data: ['Financial approvals no.', 'Financial approvals amount'],
       },
       xAxis: [
         {
@@ -375,7 +394,7 @@ export class ChequesSummaryComponent {
             rotate: -45,
             overflow: 'break',
           },
-          data: ['Maharashtra', 'MP', 'Gujarat', 'Rajasthan', 'NCR', 'PCH'],
+          data: ['PCH', 'NCR', 'Rajasthan', 'Gujarat', 'MP', 'Maharashtra'],
           axisPointer: {
             type: 'shadow',
           },
@@ -384,12 +403,12 @@ export class ChequesSummaryComponent {
       yAxis: [
         {
           type: 'value',
-          name: 'No of Files',
+          name: 'No. of Files',
           nameLocation: 'middle',
           nameGap: 40,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
           min: 10,
           max: 100,
@@ -411,7 +430,7 @@ export class ChequesSummaryComponent {
           nameGap: 40,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
           min: 10,
           max: 90,
@@ -429,7 +448,7 @@ export class ChequesSummaryComponent {
       ],
       series: [
         {
-          name:"Financial approvals no.",
+          name: 'Financial approvals no.',
           barWidth: 20,
           type: 'bar',
           tooltip: {
@@ -444,7 +463,7 @@ export class ChequesSummaryComponent {
         },
 
         {
-          name:"Financial approvals amount",
+          name: 'Financial approvals amount',
           type: 'line',
           yAxisIndex: 1,
           tooltip: {

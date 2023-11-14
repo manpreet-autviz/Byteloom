@@ -47,10 +47,10 @@ export class DisbursalComponent {
   ];
   monthFilters: string[] = ['Year to Date', 'Three months'];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+  selectedFilter: string = 'November';
   selectedTrendFilter: string = 'Year to Date';
   showContent!: boolean;
-  DisbursalJsonData:any;
+  DisbursalJsonData: any;
   disbursalAchievementOption: any;
   irrPFInsOption: any;
   stateDisbursalOption: any;
@@ -70,14 +70,13 @@ export class DisbursalComponent {
   trendIrPfOption: any;
 
   public isToggled = false;
-  constructor(private cdRef: ChangeDetectorRef, private http: HttpClient,) {}
+  constructor(private cdRef: ChangeDetectorRef, private http: HttpClient) {}
   ngAfterViewInit(): void {
     this.initializeChart();
   }
   ngOnInit(): void {
     this.getjsonData();
   }
-
 
   toggle(): void {
     this.isToggled = !this.isToggled;
@@ -86,7 +85,6 @@ export class DisbursalComponent {
     }, 0);
     this.cdRef.detectChanges();
   }
-
 
   initializeChart() {
     if (!this.isToggled) {
@@ -124,13 +122,9 @@ export class DisbursalComponent {
 
       this.disbursalAchievementOption = {
         tooltip: {
-
-          formatter: function (params:any) {
-  
+          formatter: function (params: any) {
             return `Number of Files: 2000<br/>Amount in Cr: 234 <br/>${params.value}%`;
-  
           },
-  
         },
         series: [
           {
@@ -183,7 +177,7 @@ export class DisbursalComponent {
               valueAnimation: true,
               formatter: '{value}%',
               color: 'inherit',
-              fontSize:  13.5,
+              fontSize: 13.5,
             },
             data: [
               {
@@ -207,7 +201,7 @@ export class DisbursalComponent {
             const randomAmount = randomAmounts[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return `No of Files: ${barValue}<br> Amount in cr: ${randomAmount}`;
+            return `No. of Files: ${barValue}<br> Amount in cr: ${randomAmount}`;
           },
         },
         responsive: true,
@@ -239,12 +233,11 @@ export class DisbursalComponent {
           nameGap: -150,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
             align: 'right',
-            verticalAlign: 'top',          
+            verticalAlign: 'top',
             padding: [30, 0, 0, 0],
           },
-         
         },
         yAxis: {
           type: 'category',
@@ -254,14 +247,7 @@ export class DisbursalComponent {
           axisTick: {
             show: false, // Hide tick lines
           },
-          data: [
-            'Maharashtra',
-            'MP',
-            'Gujarat',
-            'Rajasthan',
-            'NCR',
-            'PCH',
-          ],
+          data: ['Maharashtra', 'MP', 'Gujarat', 'Rajasthan', 'NCR', 'PCH'],
         },
         series: [
           {
@@ -278,9 +264,8 @@ export class DisbursalComponent {
       this.averageDisbursalOption = {
         tooltip: {
           trigger: 'axis',
-          
+
           formatter: (params: any) => {
-            
             const dataIndex = params[0].dataIndex;
             const avgNoOfFile = [100, 80, 70, 50, 90][dataIndex];
             const amountInCr = [13.5, 11.5, 12.5, 10][dataIndex];
@@ -327,7 +312,7 @@ export class DisbursalComponent {
           nameGap: 20,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
         },
         series: [
@@ -346,25 +331,17 @@ export class DisbursalComponent {
         tooltip: {
           trigger: 'item',
           formatter: (params: any) => {
-
             let tooltipText = '';
-  
+
             if (params.name === 'BT') {
-  
-              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
-  
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 65';
             } else if (params.name === 'Top-Up') {
-  
-              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 27' ;
-  
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 15';
             } else if (params.name === 'Fresh') {
-  
-              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 26' ;
-  
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 20';
             }
-  
+
             return tooltipText;
-  
           },
         },
         legend: {
@@ -392,9 +369,9 @@ export class DisbursalComponent {
               show: false,
             },
             data: [
-              { value: 45, name: 'Fresh', itemStyle: { color: '#F6C342' } },
-              { value: 27, name: 'Top-Up', itemStyle: { color: '#6C757D ' } },
-              { value: 26, name: 'BT', itemStyle: { color: '#198754' } },
+              { value: 65, name: 'Fresh', itemStyle: { color: '#F6C342' } },
+              { value: 15, name: 'Top-Up', itemStyle: { color: '#6C757D ' } },
+              { value: 20, name: 'BT', itemStyle: { color: '#198754' } },
             ],
           },
         ],
@@ -404,29 +381,19 @@ export class DisbursalComponent {
         tooltip: {
           trigger: 'item',
           formatter: (params: any) => {
-
             let tooltipText = '';
-  
+
             if (params.name === 'HL') {
-  
-              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45'  ;
-  
+              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 60';
             } else if (params.name === 'LAP') {
-  
-              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 20' ;
-  
+              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 12';
             } else if (params.name === 'BL') {
-  
-              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 10' ;
-  
+              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 8';
             } else if (params.name === 'SBL') {
-  
-              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 25' ;
-  
+              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 20';
             }
-  
+
             return tooltipText;
-  
           },
         },
         legend: {
@@ -454,10 +421,10 @@ export class DisbursalComponent {
               show: false,
             },
             data: [
-              { value: 45, name: 'HL', itemStyle: { color: '#7C41DA' } },
-              { value: 20, name: 'LAP', itemStyle: { color: '#F99B00' } },
-              { value: 10, name: 'BL', itemStyle: { color: '#636363' } },
-              { value: 25, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
+              { value: 60, name: 'HL', itemStyle: { color: '#7C41DA' } },
+              { value: 12, name: 'LAP', itemStyle: { color: '#F99B00' } },
+              { value: 8, name: 'BL', itemStyle: { color: '#636363' } },
+              { value: 20, name: 'SBL', itemStyle: { color: '#0B9DE8' } },
             ],
           },
         ],
@@ -466,8 +433,7 @@ export class DisbursalComponent {
       this.irrPFInsOption = {
         legend: {},
         tooltip: {
-          formatter: function (params:any) {
-
+          formatter: function (params: any) {
             return `
   
               Product: ${params.data.product}<br/>
@@ -479,7 +445,6 @@ export class DisbursalComponent {
               Insurance: ${params.data.Insurance}%
   
             `;
-  
           },
         },
         dataset: {
@@ -528,7 +493,7 @@ export class DisbursalComponent {
           nameGap: 20,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
         },
         // Declare several bar series, each will be mapped
@@ -562,7 +527,6 @@ export class DisbursalComponent {
             type: 'shadow',
           },
           formatter: (params: any) => {
-            
             const dataIndex = params[0].dataIndex;
             const avgNoOfFile = [100, 80, 70, 50, 90][dataIndex];
             const days = [15, 13, 10, 9, 7];
@@ -607,7 +571,7 @@ export class DisbursalComponent {
           nameGap: 20,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
         },
         series: [
@@ -636,7 +600,7 @@ export class DisbursalComponent {
             const randomAmount = randomAmounts[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return `No of Files: ${noOfFiles}<br> Amount in cr: ${randomAmount}<br/>%: ${percent}`;
+            return `No. of Files: ${noOfFiles}<br> Amount in cr: ${randomAmount}<br/>%: ${percent}`;
           },
         },
         xAxis: {
@@ -678,7 +642,7 @@ export class DisbursalComponent {
           },
           nameTextStyle: {
             fontWeight: 600,
-            fontSize:14,
+            fontSize: 14,
           },
         },
         series: [
@@ -709,7 +673,9 @@ export class DisbursalComponent {
         document.getElementById('trendStateWiseDisbursal') as HTMLDivElement
       );
       this.trendAverageDisbursalChart = echarts.init(
-        document.getElementById('Disbursal-trend-Average-Ticket-size') as HTMLDivElement
+        document.getElementById(
+          'Disbursal-trend-Average-Ticket-size'
+        ) as HTMLDivElement
       );
 
       this.trendLoginDisbursalRatioChart = echarts.init(
@@ -743,7 +709,7 @@ export class DisbursalComponent {
           },
         },
         legend: {},
-   
+
         grid: {
           left: '3%',
           right: '4%',
@@ -756,25 +722,17 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            labelLine:{
+            labelLine: {
               show: false,
             },
             axisTick: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             boundaryGap: true,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
+            data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
             axisLabel: {
               formatter: '{value}',
               margin: 30, // Add a margin of 15 pixels above the labels
@@ -787,7 +745,7 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             min: 10,
@@ -802,7 +760,7 @@ export class DisbursalComponent {
             },
             nameTextStyle: {
               fontWeight: 600,
-              fontSize:14,
+              fontSize: 14,
             },
           },
         ],
@@ -819,7 +777,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [90, 93, 94, 92, 99, 100, 110],
+            data: [65, 75, 90, 93, 94, 92, 99, 100],
           },
         ],
       };
@@ -846,7 +804,7 @@ export class DisbursalComponent {
             'Maharashtra',
           ],
         },
-      
+
         grid: {
           left: '3%',
           right: '4%',
@@ -859,25 +817,17 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            labelLine:{
+            labelLine: {
               show: false,
             },
             axisTick: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             boundaryGap: true,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
+            data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
             axisLabel: {
               formatter: '{value}',
               margin: 30, // Add a margin of 15 pixels above the labels
@@ -887,6 +837,9 @@ export class DisbursalComponent {
         yAxis: [
           {
             type: 'value',
+            splitLine: {
+              show: false,
+            },
             axisLine: {
               show: false,
             },
@@ -898,7 +851,7 @@ export class DisbursalComponent {
             nameGap: 20,
             nameTextStyle: {
               fontWeight: 600,
-              fontSize:14,
+              fontSize: 14,
             },
           },
         ],
@@ -916,7 +869,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [12, 15, 25, 30, 35, 45, 55],
+            data: [12, 15, 25, 30, 35, 45, 55, 57],
           },
           {
             name: 'Haryana',
@@ -931,7 +884,7 @@ export class DisbursalComponent {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [30, 35, 45, 50, 58, 65, 75],
+            data: [30, 35, 45, 50, 58, 65, 75, 77],
           },
           {
             name: 'NCR',
@@ -946,7 +899,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [35, 45, 47, 50, 55, 67, 77],
+            data: [35, 45, 47, 50, 55, 67, 77, 79],
           },
           {
             name: 'Rajasthan',
@@ -961,7 +914,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [37, 46, 48, 52, 57, 69, 79],
+            data: [37, 46, 48, 52, 57, 69, 79, 81],
           },
           {
             name: 'Gujarat',
@@ -976,7 +929,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [39, 48, 50, 55, 60, 70, 80],
+            data: [39, 48, 50, 55, 60, 70, 80, 82],
           },
           {
             name: 'MP',
@@ -991,7 +944,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [40, 50, 53, 58, 63, 73, 83],
+            data: [40, 50, 53, 58, 63, 73, 83, 85],
           },
           {
             name: 'Maharashtra',
@@ -1006,7 +959,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [43, 54, 59, 62, 67, 85, 95],
+            data: [43, 54, 59, 62, 67, 85, 95, 96],
           },
         ],
       };
@@ -1025,7 +978,7 @@ export class DisbursalComponent {
         legend: {
           data: ['HL', 'LAP', 'BL', 'SBL'],
         },
-      
+
         grid: {
           left: '3%',
           right: '4%',
@@ -1038,25 +991,17 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            labelLine:{
+            labelLine: {
               show: false,
             },
             axisTick: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             boundaryGap: true,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
+            data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
             axisLabel: {
               formatter: '{value}',
               margin: 30, // Add a margin of 15 pixels above the labels
@@ -1069,7 +1014,7 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             min: 10,
@@ -1084,7 +1029,7 @@ export class DisbursalComponent {
             },
             nameTextStyle: {
               fontWeight: 600,
-              fontSize:14,
+              fontSize: 14,
             },
           },
         ],
@@ -1102,7 +1047,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [12, 15, 25, 30, 35, 45, 55],
+            data: [12, 15, 25, 30, 35, 45, 55, 57],
           },
           {
             name: 'LAP',
@@ -1117,7 +1062,7 @@ export class DisbursalComponent {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [30, 35, 45, 50, 58, 65, 75],
+            data: [30, 35, 45, 50, 58, 65, 75, 76],
           },
           {
             name: 'BL',
@@ -1132,7 +1077,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [37, 46, 48, 52, 57, 69, 79],
+            data: [37, 46, 48, 52, 57, 69, 79, 80],
           },
           {
             name: 'SBL',
@@ -1147,7 +1092,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [39, 48, 50, 55, 60, 70, 80],
+            data: [39, 48, 50, 55, 60, 70, 80, 82],
           },
         ],
       };
@@ -1166,7 +1111,7 @@ export class DisbursalComponent {
         legend: {
           data: ['Fresh', 'Top Up', 'BT'],
         },
-     
+
         grid: {
           left: '3%',
           right: '4%',
@@ -1179,25 +1124,17 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            labelLine:{
+            labelLine: {
               show: false,
             },
             axisTick: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             boundaryGap: true,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
+            data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
             axisLabel: {
               formatter: '{value}',
               margin: 30, // Add a margin of 15 pixels above the labels
@@ -1210,7 +1147,7 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             min: 10,
@@ -1225,7 +1162,7 @@ export class DisbursalComponent {
             },
             nameTextStyle: {
               fontWeight: 600,
-              fontSize:14,
+              fontSize: 14,
             },
           },
         ],
@@ -1243,7 +1180,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [15, 20, 25, 30, 35, 40, 45],
+            data: [15, 20, 25, 30, 35, 40, 45, 47],
           },
           {
             name: 'Fresh',
@@ -1258,7 +1195,7 @@ export class DisbursalComponent {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [20, 25, 30, 35, 40, 45, 50],
+            data: [20, 25, 30, 35, 40, 45, 50, 51],
           },
           {
             name: 'BT',
@@ -1273,7 +1210,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [25, 30, 35, 40, 45, 50, 55],
+            data: [25, 30, 35, 40, 45, 50, 52, 54],
           },
         ],
       };
@@ -1292,7 +1229,7 @@ export class DisbursalComponent {
         legend: {
           data: ['HL', 'LAP', 'BL', 'SBL'],
         },
-    
+
         grid: {
           left: '3%',
           right: '4%',
@@ -1305,25 +1242,17 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            labelLine:{
+            labelLine: {
               show: false,
             },
             axisTick: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             boundaryGap: true,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
+            data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
             axisLabel: {
               formatter: '{value}',
               margin: 30, // Add a margin of 15 pixels above the labels
@@ -1336,7 +1265,7 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             min: 12,
@@ -1358,7 +1287,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [12.1, 12.5, 12.9, 13, 13.3, 13.5, 13.9],
+            data: [12.1, 12.5, 12.9, 13, 13.3, 13.5, 13.9, 14],
           },
           {
             name: 'LAP',
@@ -1373,7 +1302,7 @@ export class DisbursalComponent {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [12.3, 12.6, 13, 13.4, 13.6, 13.9, 14],
+            data: [12.3, 12.6, 13, 13.4, 13.6, 13.9, 14, 14.2],
           },
           {
             name: 'BL',
@@ -1388,7 +1317,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [12.5, 12.9, 14.4, 14.9, 15, 15.2, 15.6],
+            data: [12.5, 12.9, 14.4, 14.9, 15, 15.2, 15.6, 15.6],
           },
           {
             name: 'SBL',
@@ -1403,7 +1332,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [12.7, 13, 13.5, 14, 14.3, 14.9, 15],
+            data: [12.7, 13, 13.5, 14, 14.3, 14.9, 15, 15.3],
           },
         ],
       };
@@ -1422,7 +1351,7 @@ export class DisbursalComponent {
         legend: {
           data: ['HL', 'LAP', 'BL', 'SBL'],
         },
-  
+
         grid: {
           left: '3%',
           right: '4%',
@@ -1435,25 +1364,17 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            labelLine:{
+            labelLine: {
               show: false,
             },
             axisTick: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             boundaryGap: true,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
+            data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
             axisLabel: {
               formatter: '{value}',
               margin: 30, // Add a margin of 15 pixels above the labels
@@ -1466,13 +1387,13 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             min: 10,
             max: 100,
             interval: 10,
-            name: 'Percentage %' ,
+            name: 'Percentage %',
             nameLocation: 'middle',
             nameGap: 20,
             axisLabel: {
@@ -1481,7 +1402,7 @@ export class DisbursalComponent {
             },
             nameTextStyle: {
               fontWeight: 600,
-              fontSize:14,
+              fontSize: 14,
             },
           },
         ],
@@ -1499,7 +1420,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [12, 15, 25, 30, 35, 45, 55],
+            data: [12, 15, 25, 30, 35, 45, 52, 53],
           },
           {
             name: 'LAP',
@@ -1514,7 +1435,7 @@ export class DisbursalComponent {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [30, 35, 45, 50, 58, 65, 75],
+            data: [30, 35, 45, 50, 58, 65, 75, 77],
           },
           {
             name: 'BL',
@@ -1529,7 +1450,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [37, 46, 48, 52, 57, 69, 79],
+            data: [37, 46, 48, 52, 57, 69, 79, 80],
           },
           {
             name: 'SBL',
@@ -1544,7 +1465,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [39, 48, 50, 55, 60, 70, 80],
+            data: [39, 48, 50, 55, 60, 70, 80, 82],
           },
         ],
       };
@@ -1563,7 +1484,7 @@ export class DisbursalComponent {
         legend: {
           data: ['HL', 'LAP', 'BL', 'SBL'],
         },
-  
+
         grid: {
           left: '3%',
           right: '4%',
@@ -1576,25 +1497,17 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            labelLine:{
+            labelLine: {
               show: false,
             },
             axisTick: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             boundaryGap: true,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
+            data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
             axisLabel: {
               formatter: '{value}',
               margin: 30, // Add a margin of 15 pixels above the labels
@@ -1607,7 +1520,7 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             min: 5,
@@ -1622,7 +1535,7 @@ export class DisbursalComponent {
             },
             nameTextStyle: {
               fontWeight: 600,
-              fontSize:14,
+              fontSize: 14,
             },
           },
         ],
@@ -1655,7 +1568,7 @@ export class DisbursalComponent {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [6.6, 7, 7.2, 7.4, 8.9, 8.3, 9.7],
+            data: [6.6, 7, 7.2, 7.4, 8.9, 8.3, 9.7, 9.9],
           },
           {
             name: 'BL',
@@ -1670,7 +1583,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [7.7, 8.3, 8.5, 8.9, 9.1, 9.6, 10],
+            data: [7.7, 8.3, 8.5, 8.9, 9.1, 9.6, 10.3, 10.5],
           },
           {
             name: 'SBL',
@@ -1685,7 +1598,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [9, 9.7, 7.6, 10, 10.8, 11, 12],
+            data: [9, 9.7, 7.6, 10, 10.8, 11, 12.5, 13],
           },
         ],
       };
@@ -1704,7 +1617,7 @@ export class DisbursalComponent {
         legend: {
           data: ['IRR', 'PF', 'Insurance'],
         },
-   
+
         grid: {
           left: '3%',
           right: '4%',
@@ -1717,25 +1630,17 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            labelLine:{
+            labelLine: {
               show: false,
             },
             axisTick: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             boundaryGap: true,
-            data: [
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-            ],
+            data: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
             axisLabel: {
               formatter: '{value}',
               margin: 30, // Add a margin of 15 pixels above the labels
@@ -1748,7 +1653,7 @@ export class DisbursalComponent {
             axisLine: {
               show: false,
             },
-            splitLine:{
+            splitLine: {
               show: false,
             },
             min: 2,
@@ -1763,7 +1668,7 @@ export class DisbursalComponent {
             },
             nameTextStyle: {
               fontWeight: 600,
-              fontSize:14,
+              fontSize: 14,
             },
           },
         ],
@@ -1781,7 +1686,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [12, 13, 12.5, 14, 14.5, 15, 20],
+            data: [8, 9, 11, 11.9, 12, 13, 12.5, 14],
           },
           {
             name: 'PF',
@@ -1796,7 +1701,7 @@ export class DisbursalComponent {
                 opacity: 1, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [2.3, 2.5, 2.4, 2.9, 2.8, 3, 4],
+            data: [2.3, 2.5, 2.4, 2.9, 2.8, 3, 4, 4.5],
           },
           {
             name: 'Insurance',
@@ -1811,7 +1716,7 @@ export class DisbursalComponent {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [3.2, 3.4, 3.3, 3.7, 3.6, 3.9, 4.5],
+            data: [3.2, 3.4, 3.3, 3.7, 3.6, 3.9, 4.5, 4.7],
           },
         ],
       };
@@ -1843,7 +1748,7 @@ export class DisbursalComponent {
     this.generateProductRandomData();
     this.generateloginDisbursalRatioRandomData();
     this.generateDisbursalTatRandomdata();
-    this.generateDisbursalRandomData(selectedValue)
+    this.generateDisbursalRandomData(selectedValue);
   }
 
   onStateChange(selectedValue: string) {
@@ -1855,7 +1760,7 @@ export class DisbursalComponent {
     this.generateProductRandomData();
     this.generateloginDisbursalRatioRandomData();
     this.generateDisbursalTatRandomdata();
-    this.generateDisbursalRandomData(selectedValue)
+    this.generateDisbursalRandomData(selectedValue);
   }
 
   toggleContent() {
@@ -2085,16 +1990,32 @@ export class DisbursalComponent {
 
   TrendgenerateDisbursalAchievement(selectedValue: string) {
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendDisbursalAchievementOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [91, 94, 97,100];
-      const StatemaxValues = [95, 97, 100,110];
+      const StateminValues = [
+        
+        [70, 75, 77],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendDisbursalAchievementOption.series[0].data = newData;
+      const StatemaxValues = [
+       
+        [72, 77, 79],
+      ];
+
+      this.trendDisbursalAchievementOption.series.forEach(
+        (series: any, index: any) => {
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map((min, i) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            });
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
+        }
+      );
       this.trendDisbursalAchievementChart.setOption(
         this.trendDisbursalAchievementOption
       );
@@ -2107,16 +2028,33 @@ export class DisbursalComponent {
         'Aug',
         'Sep',
         'Oct',
+        'Nov',
       ];
       this.trendDisbursalAchievementOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [91, 93, 96, 96, 98, 100];
-      const StatemaxValues = [93, 95.5, 97, 5, 98, 100,105];
+      const StateminValues = [
+     
+        [70, 75, 77, 80, 83, 86, 90, 93],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendDisbursalAchievementOption.series[0].data = newData;
+      const StatemaxValues = [
+       
+        [72, 77, 79, 82, 85, 88, 92, 95],
+      ];
+
+      this.trendDisbursalAchievementOption.series.forEach(
+        (series: any, index: any) => {
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map((min, i) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            });
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
+        }
+      );
       this.trendDisbursalAchievementChart.setOption(
         this.trendDisbursalAchievementOption
       );
@@ -2125,16 +2063,36 @@ export class DisbursalComponent {
 
   TrendgenerateProductRandomData(selectedValue: string) {
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendProductDisbursalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64, 74];
-      const StatemaxValues = [60, 67, 78, 88];
+      const StateminValues = [
+        [45, 55, 57],
+        [65, 70, 72],
+        [69, 74, 76],
+        [70, 75, 77],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendProductDisbursalOption.series[0].data = newData;
+      const StatemaxValues = [
+        [47, 57, 59],
+        [67, 72, 74],
+        [71, 76, 78],
+        [72, 77, 79],
+      ];
+
+      this.trendProductDisbursalOption.series.forEach(
+        (series: any, index: any) => {
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map((min, i) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            });
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
+        }
+      );
       this.trendProductDisbursalChart.setOption(
         this.trendProductDisbursalOption
       );
@@ -2147,16 +2105,37 @@ export class DisbursalComponent {
         'Aug',
         'Sep',
         'Oct',
+        'Nov',
       ];
       this.trendProductDisbursalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64, 68, 75, 85];
-      const StatemaxValues = [60, 67, 78, 83, 90, 100];
+      const StateminValues = [
+        [45, 55, 57, 59, 65, 75, 77, 85],
+        [65, 70, 72, 77, 79, 84, 86, 89],
+        [69, 74, 76, 78, 80, 83, 86, 90],
+        [70, 75, 77, 80, 83, 86, 90, 93],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendProductDisbursalOption.series[0].data = newData;
+      const StatemaxValues = [
+        [47, 57, 57, 61, 67, 77, 79, 87],
+        [67, 72, 74, 79, 81, 86, 88, 91],
+        [71, 76, 78, 80, 82, 85, 88, 92],
+        [72, 77, 79, 82, 85, 88, 92, 95],
+      ];
+
+      this.trendProductDisbursalOption.series.forEach(
+        (series: any, index: any) => {
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map((min, i) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            });
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
+        }
+      );
       this.trendProductDisbursalChart.setOption(
         this.trendProductDisbursalOption
       );
@@ -2165,16 +2144,36 @@ export class DisbursalComponent {
 
   TrendgenerateSchemeRandomData(selectedValue: string) {
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendSchemeDisbursalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64, 74];
-      const StatemaxValues = [60, 67, 78, 85];
+      const StateminValues = [
+       
+        [65, 70, 72],
+        [69, 74, 76],
+        [70, 75, 77],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendSchemeDisbursalOption.series[0].data = newData;
+      const StatemaxValues = [
+       
+        [67, 72, 74],
+        [71, 76, 78],
+        [72, 77, 79],
+      ];
+
+      this.trendSchemeDisbursalOption.series.forEach(
+        (series: any, index: any) => {
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map((min, i) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            });
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
+        }
+      );
       this.trendSchemeDisbursalChart.setOption(this.trendSchemeDisbursalOption);
     } else {
       const newAxisdata = [
@@ -2185,32 +2184,73 @@ export class DisbursalComponent {
         'Aug',
         'Sep',
         'Oct',
+        'Nov',
       ];
       this.trendSchemeDisbursalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64, 68, 75, 85];
-      const StatemaxValues = [60, 67, 78, 83, 90, 95];
+      const StateminValues = [
+       
+        [65, 70, 72, 77, 79, 84, 86, 89],
+        [69, 74, 76, 78, 80, 83, 86, 90],
+        [70, 75, 77, 80, 83, 86, 90, 93],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendSchemeDisbursalOption.series[0].data = newData;
+      const StatemaxValues = [
+      
+        [67, 72, 74, 79, 81, 86, 88, 91],
+        [71, 76, 78, 80, 82, 85, 88, 92],
+        [72, 77, 79, 82, 85, 88, 92, 95],
+      ];
+
+      this.trendSchemeDisbursalOption.series.forEach(
+        (series: any, index: any) => {
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map((min, i) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            });
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
+        }
+      );
       this.trendSchemeDisbursalChart.setOption(this.trendSchemeDisbursalOption);
     }
   }
 
   TrendgenerateAverageStateRandomData(selectedValue: string) {
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendAverageDisbursalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [12.7, 13.5, 15, 25];
-      const StatemaxValues = [14, 15, 18, 25];
+      const StateminValues = [
+        [12.5, 13, 13.7],
+        [13, 13.4, 14],
+        [14.3,15, 15.3],
+        [15, 15.6, 16.3],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendAverageDisbursalOption.series[0].data = newData;
+      const StatemaxValues = [
+        [12.7, 13.5, 13.9],
+        [13.3, 13.7, 14.4],
+        [14.6,15.6, 15.6],
+        [15.3, 15.7, 16.7],
+      ];
+
+      this.trendAverageDisbursalOption.series.forEach(
+        (series: any, index: any) => {
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map((min, i) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            });
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
+        }
+      );
       this.trendAverageDisbursalChart.setOption(
         this.trendAverageDisbursalOption
       );
@@ -2223,16 +2263,37 @@ export class DisbursalComponent {
         'Aug',
         'Sep',
         'Oct',
+        'Nov',
       ];
       this.trendAverageDisbursalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [10.7, 11.5, 12.2, 13.4, 14, 20];
-      const StatemaxValues = [11, 12, 13, 14, 15, 25];
+      const StateminValues = [
+        [12.5, 13, 13.7,13.9,14,14.3,14.5,14.7],
+        [13, 13.4, 14,14.2,14.5,14.7,15,15.3],
+        [14.3,15, 15.3,15.5,15.7,15.9,16,16.2],
+        [15, 15.6, 16.3,16.6,16.9,17,17.3,17.5],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendAverageDisbursalOption.series[0].data = newData;
+      const StatemaxValues = [
+        [12.7, 13.5, 13.9,14,14.3,14.5,14.7,14.9],
+        [13.3, 13.7, 14.4,14.6,14.8,15,15.2,15.4],
+        [14.6,15.6, 15.6,15.8,16,16.2,16.4,16.8],
+        [15.3, 15.7, 16.7,16.9,17.2,17.5,17.6,17.7],
+      ];
+
+      this.trendAverageDisbursalOption.series.forEach(
+        (series: any, index: any) => {
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map((min, i) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            });
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
+        }
+      );
       this.trendAverageDisbursalChart.setOption(
         this.trendAverageDisbursalOption
       );
@@ -2241,16 +2302,42 @@ export class DisbursalComponent {
 
   TrendgenerateStateRandomData(selectedValue: string) {
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendStateDisbursalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64, 75];
-      const StatemaxValues = [60, 67, 78, 85];
+      const StateminValues = [
+        [45, 55, 57],
+        [65, 70, 72],
+        [69, 74, 76],
+        [70, 75, 77],
+        [72, 74, 78],
+        [74, 76, 79],
+        [75, 78, 81],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendStateDisbursalOption.series[0].data = newData;
+      const StatemaxValues = [
+        [47, 57, 59],
+        [67, 72, 74],
+        [71, 76, 78],
+        [72, 77, 79],
+        [73, 75, 80],
+        [75, 77, 82],
+        [77, 80, 83],
+      ];
+
+      this.trendStateDisbursalOption.series.forEach(
+        (series: any, index: any) => {
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map((min, i) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            });
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
+        }
+      );
       this.trendStateDisbursalChart.setOption(this.trendStateDisbursalOption);
     } else {
       const newAxisdata = [
@@ -2261,32 +2348,78 @@ export class DisbursalComponent {
         'Aug',
         'Sep',
         'Oct',
+        'Nov',
       ];
       this.trendStateDisbursalOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64, 68, 75, 80];
-      const StatemaxValues = [60, 67, 78, 83, 90, 85];
+      const StateminValues = [
+        [45, 55, 57, 59, 65, 75, 77, 85],
+        [65, 70, 72, 77, 79, 84, 86, 89],
+        [69, 74, 76, 78, 80, 83, 86, 90],
+        [70, 75, 77, 80, 83, 86, 90, 93],
+        [72, 74, 78, 82, 85, 88, 92, 95],
+        [74, 76, 79, 81, 85, 87, 90, 93],
+        [75, 78, 81, 84, 88, 90, 93, 96],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendStateDisbursalOption.series[0].data = newData;
+      const StatemaxValues = [
+        [47, 57, 57, 61, 67, 77, 79, 87],
+        [67, 72, 74, 79, 81, 86, 88, 91],
+        [71, 76, 78, 80, 82, 85, 88, 92],
+        [72, 77, 79, 82, 85, 88, 92, 95],
+        [73, 75, 80, 84, 87, 89, 93, 97],
+        [75, 77, 82, 83, 87, 89, 93, 95],
+        [77, 80, 83, 85, 90, 95, 98],
+      ];
+
+      this.trendStateDisbursalOption.series.forEach(
+        (series: any, index: any) => {
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map((min, i) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            });
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
+        }
+      );
       this.trendStateDisbursalChart.setOption(this.trendStateDisbursalOption);
     }
   }
 
   TrendgenerateDisbursalTatRandomdata(selectedValue: string) {
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendDisbursalTatOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [6, 7, 12, 15];
-      const StatemaxValues = [9, 10, 18, 20];
+      const StateminValues = [
+        [12.5, 13, 13.7],
+        [13, 13.4, 14],
+        [14.3,15, 15.3],
+        [15, 15.6, 16.3],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      const StatemaxValues = [
+        [12.7, 13.5, 13.9],
+        [13.3, 13.7, 14.4],
+        [14.6,15.6, 15.6],
+        [15.3, 15.7, 16.7],
+      ];
+
+
+      this.trendDisbursalTatOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendDisbursalTatOption.series[0].data = newData;
       this.trendDisbursalTatChart.setOption(this.trendDisbursalTatOption);
     } else {
       const newAxisdata = [
@@ -2297,32 +2430,72 @@ export class DisbursalComponent {
         'Aug',
         'Sep',
         'Oct',
+        'Nov',
       ];
       this.trendDisbursalTatOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [6, 7, 12, 15, 18, 20];
-      const StatemaxValues = [9, 10, 14, 17, 20, 25];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      const StateminValues = [
+        [12.5, 13, 13.7,13.9,14,14,3,14.5,14.7],
+        [13, 13.4, 14,14.2,14.5,14.7,15,15.3],
+        [14.3,15, 15.3,15.5,15.7,15.9,16,16.2],
+        [15, 15.6, 16.3,16.6,16.9,17,17.3,17.5],
+      ];
+
+      const StatemaxValues = [
+        [12.7, 13.5, 13.9,14,14.3,14.5,14.7,14.9],
+        [13.3, 13.7, 14.4,14.6,14.8,15,15.2,15.4],
+        [14.6,15.6, 15.6,15.8,16,16.2,16.4,16.8],
+        [15.3, 15.7, 16.7,16.9,17.2,17.5,17.6,17.7],
+      ];
+
+      this.trendDisbursalTatOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendDisbursalTatOption.series[0].data = newData;
       this.trendDisbursalTatChart.setOption(this.trendDisbursalTatOption);
     }
   }
 
   TrendgenerateloginDisbursalRatioRandomData(selectedValue: string) {
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendLoginDisbursalRatioOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64, 70];
-      const StatemaxValues = [60, 67, 78, 85];
+      const StateminValues = [
+        [45, 55, 57],
+        [65, 70, 72],
+        [69, 74, 76],
+        [70, 75, 77],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendLoginDisbursalRatioOption.series[0].data = newData;
+      const StatemaxValues = [
+        [47, 57, 59],
+        [67, 72, 74],
+        [71, 76, 78],
+        [72, 77, 79],
+      ];
+
+      this.trendLoginDisbursalRatioOption.series.forEach(
+        (series: any, index: any) => {
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map((min, i) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            });
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
+        }
+      );
       this.trendLoginDisbursalRatioChart.setOption(
         this.trendLoginDisbursalRatioOption
       );
@@ -2335,16 +2508,37 @@ export class DisbursalComponent {
         'Aug',
         'Sep',
         'Oct',
+        'Nov',
       ];
       this.trendLoginDisbursalRatioOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [55, 60, 64, 68, 75, 80];
-      const StatemaxValues = [60, 67, 78, 83, 90, 95];
+      const StateminValues = [
+        [45, 55, 57, 59, 65, 75, 77, 85],
+        [65, 70, 72, 77, 79, 84, 86, 89],
+        [69, 74, 76, 78, 80, 83, 86, 90],
+        [70, 75, 77, 80, 83, 86, 90, 93],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      });
-      this.trendLoginDisbursalRatioOption.series[0].data = newData;
+      const StatemaxValues = [
+        [47, 57, 57, 61, 67, 77, 79, 87],
+        [67, 72, 74, 79, 81, 86, 88, 91],
+        [71, 76, 78, 80, 82, 85, 88, 92],
+        [72, 77, 79, 82, 85, 88, 92, 95],
+      ];
+
+      this.trendLoginDisbursalRatioOption.series.forEach(
+        (series: any, index: any) => {
+          if (StateminValues[index] && StatemaxValues[index]) {
+            series.data = StateminValues[index].map((min, i) => {
+              const max = StatemaxValues[index][i];
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            });
+          } else {
+            console.error(
+              `StateminValues or StatemaxValues is undefined for index ${index}`
+            );
+          }
+        }
+      );
       this.trendLoginDisbursalRatioChart.setOption(
         this.trendLoginDisbursalRatioOption
       );
@@ -2353,16 +2547,34 @@ export class DisbursalComponent {
 
   TrendgenerateIRPFRandomdata(selectedValue: string) {
     if (selectedValue === 'Three months') {
-      const newAxisdata = ['Jul', 'Aug', 'Sep', 'Oct'];
+      const newAxisdata = ['Sep', 'Oct', 'Nov'];
       this.trendIrPfOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [2.3, 2.5, 12, 15];
-      const StatemaxValues = [3, 4, 15, 20];
+      const StateminValues = [
+        [4, 5, 7],
+        [6, 7, 9],
+        [9, 11, 13],
+        [7, 9, 11],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      const StatemaxValues = [
+        [6, 7, 9],
+        [7, 9, 11],
+        [10, 12.5, 13.5],
+        [9, 11,13],
+      ];
+
+      this.trendIrPfOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendIrPfOption.series[0].data = newData;
       this.trendIrPfChart.setOption(this.trendIrPfOption);
     } else {
       const newAxisdata = [
@@ -2373,24 +2585,41 @@ export class DisbursalComponent {
         'Aug',
         'Sep',
         'Oct',
+        'Nov',
       ];
       this.trendIrPfOption.xAxis[0].data = newAxisdata;
-      const StateminValues = [2.3, 2.5, 3, 4, 12, 15, 20];
-      const StatemaxValues = [3, 4, 4.5, 5, 15, 20, 25];
+      const StateminValues = [
+        [4, 5, 7,7.7,8,8.5,9,9.2,9.4],
+        [6, 7, 9,9.2,9.5,9.7,9.9,10],
+        [9, 11, 13,13.2,13.4,13.6,13.8,14],
+        [7, 9, 11,11.2,11.4,11.6,11.8,12],
+      ];
 
-      const newData = StateminValues.map((min, index) => {
-        const max = StatemaxValues[index];
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+      const StatemaxValues = [
+        [6, 7, 9,9.2,9.4,9.6,9.7,11.2],
+        [7, 9, 11,11.2,11.4,11.6,11.8,12],
+        [10, 12.5, 13.5,13.6,13.7,13.8,13.9,14],
+        [9, 11,13,13.2,13.4,13,6,13.7,13.9],
+      ];
+
+      this.trendIrPfOption.series.forEach((series: any, index: any) => {
+        if (StateminValues[index] && StatemaxValues[index]) {
+          series.data = StateminValues[index].map((min, i) => {
+            const max = StatemaxValues[index][i];
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          });
+        } else {
+          console.error(
+            `StateminValues or StatemaxValues is undefined for index ${index}`
+          );
+        }
       });
-      this.trendIrPfOption.series[0].data = newData;
       this.trendIrPfChart.setOption(this.trendIrPfOption);
     }
   }
   getjsonData() {
-   
     this.http.get('assets/disbursal-meter.json').subscribe((data: any) => {
       this.DisbursalJsonData = data;
-      
     });
   }
 
@@ -2405,8 +2634,6 @@ export class DisbursalComponent {
     ) {
       const selectedRegion = this.DisbursalJsonData.states[region];
       this.DisbursalNumber = selectedRegion?.disbursalMeter;
-
-      
     } else {
       this.DisbursalNumber = +(Math.random() * (20 - 10) + 10).toFixed(2);
     }

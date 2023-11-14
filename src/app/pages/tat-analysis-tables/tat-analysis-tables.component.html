@@ -101,19 +101,19 @@
                     <th>Current month login</th>
                     <th>Carry Forward</th>
                     <th>Total</th>
-                    <th colspan="2">Within 03 days</th>
-                    <th colspan="2">04 to 05 days</th>
-                    <th colspan="2">More than 5 days</th>
+                    <th colspan="2" *ngIf="selectedTat === '<= 3 Days' || selectedTat === 'Select TAT'" >Within 03 days</th>
+                    <th colspan="2" *ngIf="selectedTat === '4 to 5 Days' || selectedTat === 'Select TAT'">04 to 05 days</th>
+                    <th colspan="2" *ngIf="selectedTat === '> 5 Days'|| selectedTat === 'Select TAT'">More than 5 days</th>
                     <th colspan="2">Reject before PD</th>
                   </tr>
                   <tr class="tat-head-second-r " >
                     <th colspan="5"></th>
-                        <th class="text-center">No</th>
-                        <th class="text-center border-end">%</th>
-                        <th class="text-center">No</th>
-                        <th class="text-center border-end">%</th>  
-                        <th class="text-center">No</th>
-                        <th class="text-center border-end">%</th>
+                        <th class="text-center" *ngIf="selectedTat === '<= 3 Days' || selectedTat === 'Select TAT'" >No</th>
+                        <th class="text-center border-end" *ngIf="selectedTat === '<= 3 Days' || selectedTat === 'Select TAT'">%</th>
+                        <th class="text-center" *ngIf="selectedTat === '4 to 5 Days' || selectedTat === 'Select TAT'">No</th>
+                        <th class="text-center border-end" *ngIf="selectedTat === '4 to 5 Days' || selectedTat === 'Select TAT'">%</th>  
+                        <th class="text-center" *ngIf="selectedTat === '> 5 Days' || selectedTat === 'Select TAT'">No</th>
+                        <th class="text-center border-end" *ngIf="selectedTat === '> 5 Days' || selectedTat === 'Select TAT'">%</th>
                         <th class="text-center">No</th>
                         <th class="text-center">%</th>
                   </tr>
@@ -129,14 +129,14 @@
                     <td class="text-center">{{ rowData.CurrentMmonthLogin }}</td>
                     <td class="text-center cursor-pointer" (click)="navigateTOTable('Login to PD TAT Table')">{{ rowData.CarryForward }}</td>
                     <td class="text-center">{{ rowData.Total }}</td>
-                    <td class="text-center">{{ rowData.Within03Number }}</td>
-                    <td class="text-center">{{ rowData.Within03percent }}</td>
+                    <td class="text-center" *ngIf="selectedTat === '<= 3 Days' || selectedTat === 'Select TAT'">{{ rowData.Within03Number }}</td>
+                    <td class="text-center" *ngIf="selectedTat === '<= 3 Days' || selectedTat === 'Select TAT'">{{ rowData.Within03percent }}</td>
                     
-                    <td class="text-center">{{ rowData.to05number }}</td>
-                    <td class="text-center">{{ rowData.to05npercent }}</td>
+                    <td class="text-center" *ngIf="selectedTat === '4 to 5 Days' || selectedTat === 'Select TAT'">{{ rowData.to05number }}</td>
+                    <td class="text-center" *ngIf="selectedTat === '4 to 5 Days' || selectedTat === 'Select TAT'">{{ rowData.to05npercent }}</td>
 
-                    <td class="text-center">{{ rowData.Morethan5Number }}</td>
-                    <td class="text-center">{{ rowData.Morethan5Percent }}</td>
+                    <td class="text-center" *ngIf="selectedTat === '> 5 Days' || selectedTat === 'Select TAT'">{{ rowData.Morethan5Number }}</td>
+                    <td class="text-center" *ngIf="selectedTat === '> 5 Days'|| selectedTat === 'Select TAT'">{{ rowData.Morethan5Percent }}</td>
                     
                     <td class="text-center">{{ rowData.RejectBeforeNumber }}</td>
                     <td class="text-center">{{ rowData.RejectBeforePercent }}</td>

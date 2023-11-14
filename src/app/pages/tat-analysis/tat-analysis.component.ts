@@ -29,12 +29,24 @@ export class TatAnalysisComponent {
   ];
 
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+ selectedFilter: string = 'November';
   showContent!: boolean;
 
-  progressValue1: number = 85;
-  progressValue2: number = 12;
-  progressValue3: number = 8;
+  progressValue1: number = 84;
+  progressValue2: number = 10;
+  progressValue3: number = 6;
+  progressValue4: number = 75;
+  progressValue5: number = 13;
+  progressValue6: number = 12;
+  progressValue7: number = 80;
+  progressValue8: number = 12;
+  progressValue9: number = 8;
+  progressValue10: number = 73;
+  progressValue11: number = 16;
+  progressValue12: number = 11;
+  progressValue13: number = 85;
+  progressValue14: number = 10;
+  progressValue15: number = 5;
   minValue1: number = 75;
   maxValue1: number = 80;
   minValue2: number = 10;

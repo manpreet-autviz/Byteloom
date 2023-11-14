@@ -14,7 +14,7 @@ export class WorkInProgressComponent {
     'PCH',
     'NCR',
     'Rajasthan',
-    'Gujrat',
+    'Gujarat',
     'MP',
     'Maharashtra',
   ];

@@ -35,7 +35,7 @@ export class CreditComponent {
   ];
 
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+ selectedFilter: string = 'November';
   isActiveButton: string = 'button1';
 
   AvgCMFilesChart!: echarts.ECharts;
@@ -491,7 +491,7 @@ export class CreditComponent {
           const files = [405, 456, 707, 770, 89, 675, 459];
           const randomFiles = files[dataIndex];
           // Create the tooltip content with the actual value and random amount
-          return `No of Files: ${randomFiles} <br>Days:${barValue}  `;
+          return `No. of Files: ${randomFiles} <br>Days:${barValue}  `;
         },
       },
       legend: {
@@ -763,7 +763,7 @@ export class CreditComponent {
           min: 60,
           max: 85,
           interval: 5,
-          name: 'Days',
+          name: 'Percentage %',
           nameLocation: 'middle',
           nameGap: 17,
           nameTextStyle: {

@@ -28,7 +28,7 @@ export class LegalComponent {
     // 'Select custom'
   ];
   selectedState: string = 'Pan India';
-  selectedFilter: string = 'September';
+ selectedFilter: string = 'November';
 
   TatChart!: echarts.ECharts;
   TMChart!: echarts.ECharts;
@@ -259,6 +259,12 @@ export class LegalComponent {
            
           ],
           emphasis: {
+            label: {
+              show: true,
+              formatter: '{c}%',
+              fontSize: 16,
+              fontWeight: 'bold',
+            },
             itemStyle: {
               shadowBlur: 10,
               shadowOffsetX: 0,
@@ -269,6 +275,7 @@ export class LegalComponent {
             show: false, // Set this to false to remove lines connecting slices to labels
           },
           label: {
+            position: 'center',
             show: false, // Set this to false to hide labels on pie chart slices
           },
           itemStyle: {

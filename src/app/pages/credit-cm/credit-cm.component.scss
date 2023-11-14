@@ -123,6 +123,9 @@
 ul.pending-cheque {
   padding: 20px 12px;
 }
+.Activity-tat-card .card-body {
+   padding: 6px 16px 25px !important;
+}
 .otc-three-box:after {
   position: absolute;
   content: "";
@@ -170,7 +173,7 @@ ul.pending-cheque {
 ul.pending-cheque.ot-normal {
   position: absolute;
   left: calc(50% - 50px);
-  bottom: -20px;
+  bottom: -45px;
 }
 .otc-three-box {
   margin-top: 20px;
