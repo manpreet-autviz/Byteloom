@@ -803,6 +803,7 @@ export class RejectionAnalysisComponent {
       const modal = this.RepaymentissueElement.nativeElement;
       if (modal) {
         modal.style.display = 'block';
+        modal.style.background = '#0000008a';
         modal.classList.add('show');
       } else {
         console.error('Modal element is not defined.');
@@ -812,6 +813,7 @@ export class RejectionAnalysisComponent {
       const modal = this.IncomeIssueElement.nativeElement;
       if (modal) {
         modal.style.display = 'block';
+        modal.style.background = '#0000008a';
         modal.classList.add('show');
       } else {
         console.error('Modal element is not defined.');
@@ -821,6 +823,7 @@ export class RejectionAnalysisComponent {
       const modal = this.IntentionissueElement.nativeElement;
       if (modal) {
         modal.style.display = 'block';
+        modal.style.background = '#0000008a';
         modal.classList.add('show');
       } else {
         console.error('Modal element is not defined.');
@@ -830,6 +833,7 @@ export class RejectionAnalysisComponent {
       const modal = this.LegalTechnicalElement.nativeElement;
       if (modal) {
         modal.style.display = 'block';
+        modal.style.background = '#0000008a';
         modal.classList.add('show');
       } else {
         console.error('Modal element is not defined.');
@@ -839,6 +843,7 @@ export class RejectionAnalysisComponent {
       const modal = this.DuplicateleadElement.nativeElement;
       if (modal) {
         modal.style.display = 'block';
+        modal.style.background = '#0000008a';
         modal.classList.add('show');
       } else {
         console.error('Modal element is not defined.');
@@ -848,6 +853,7 @@ export class RejectionAnalysisComponent {
       const modal = this.CNIElement.nativeElement;
       if (modal) {
         modal.style.display = 'block';
+        modal.style.background = '#0000008a';
         modal.classList.add('show');
       } else {
         console.error('Modal element is not defined.');
