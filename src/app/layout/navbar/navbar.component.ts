@@ -12,7 +12,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class NavbarComponent {
   searchQuery: string = '';
-  isMenuVisible: boolean = true;
+  isMenuVisible: boolean = false;
 
   constructor(private router: Router, private menu: MenuService,private loginService:LoginService) {}
 
