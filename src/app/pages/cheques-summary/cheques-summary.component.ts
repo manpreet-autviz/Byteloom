@@ -22,6 +22,15 @@ export class ChequesSummaryComponent {
     'MP',
     'Maharashtra',
   ];
+  sanctionedStates: string[] = [
+    'Pan India',
+    'PCH',
+    'NCR',
+    'Rajasthan',
+    'Gujarat',
+    'MP',
+    'Maharashtra',
+  ];
   filters: string[] = [
     'April',
     'May',
@@ -187,12 +196,15 @@ export class ChequesSummaryComponent {
     },
     // Add more data as needed
   ];
+  filterdata: ({ SNo: number; custName: string; leadNo: string; product: string; scheme: string; loanAmount: string; technicalRecieved: string; legalRecieved: string; loginDate: string; rmName: string; branch: string; state: string; } | { SNo: number; custName: string; leadNo: string; product: string; scheme: string; loanAmount: number; technicalRecieved: string; legalRecieved: string; loginDate: string; rmName: string; branch: string; state: string; })[];
 
   constructor(
     private elementRef: ElementRef,
     private zone: NgZone,
     private cdRef: ChangeDetectorRef
-  ) {}
+  ) {
+    this.filterdata = this.data
+  }
 
   onFilterChange(selectedValue: string) {}
 
@@ -482,5 +494,14 @@ export class ChequesSummaryComponent {
     this.FinancialApprovalChart.setOption(this.FinancialApprovalOption);
 
     this.FinalApprovalChart.setOption(this.FinalApprovalOption);
+  }
+
+
+  onSanctionedStateChange(state:string){
+    if(state === 'Pan India'){
+      this.filterdata = this.data;
+    }else{
+      this.filterdata = this.data.filter(item => item.state === state);
+    }
   }
 }

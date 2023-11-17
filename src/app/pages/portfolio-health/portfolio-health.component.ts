@@ -374,7 +374,7 @@ export class PortfolioHealthComponent {
           {
             name: 'Financial',
             type: 'bar',
-            data: [123, 120, 150, 25, 65, 120],
+            data: [0, 1, 2, 1, 0, 1],
             label: {
               show: true,
               position: 'right',
@@ -388,7 +388,7 @@ export class PortfolioHealthComponent {
           {
             name: 'Non-financial',
             type: 'bar',
-            data: [111, 110, 115, 110, 65, 130],
+            data: [20, 16, 17, 15, 8, 12],
             label: {
               show: true,
               position: 'right',

@@ -461,7 +461,7 @@ export class CreditComponent {
         nameGap: 23,
         nameTextStyle: {
           fontWeight: 600,
-          fontSize: 14,
+          fontSize: 10,
         },
         axisLabel: {
           formatter: '{value}',
@@ -546,16 +546,16 @@ export class CreditComponent {
           splitLine: {
             show: false,
           },
-          min: 1,
-          max: 6,
-          interval: 1,
+          min: 0,
+          max: 16,
+          interval: 2,
           name: 'Days',
           nameLocation: 'middle',
           nameTextStyle: {
             fontWeight: 600,
-            fontSize: 14,
+            fontSize: 10,
           },
-          nameGap: 5,
+          nameGap: 12,
           axisLabel: {
             margin: 1,
           },
@@ -593,7 +593,7 @@ export class CreditComponent {
               opacity: 0.5,
             },
           },
-          data: [2.3, 2.1, 2.2, 2, 2.3, 2.4, 2.1],
+          data: [3, 4.4, 4,5, 5.6,5, 7],
           itemStyle: {
             color: '#A2D5F2',
           },
@@ -611,7 +611,7 @@ export class CreditComponent {
               opacity: 0.5,
             },
           },
-          data: [1.8, 1.9, 1.7, 1.5, 1.9, 1.8, 1.7],
+          data: [10.8, 11.9, 10.7, 12.5, 12.9, 13.8, 14.7],
           itemStyle: {
             color: '#07689F',
           },
@@ -673,10 +673,10 @@ export class CreditComponent {
         },
         name: 'Percentage %',
         nameLocation: 'middle',
-        nameGap: 20,
+        nameGap: 18,
         nameTextStyle: {
           fontWeight: 600,
-          fontSize: 14,
+          fontSize: 10,
         },
         axisLabel: {
           formatter: '{value}',
@@ -768,7 +768,7 @@ export class CreditComponent {
           nameGap: 17,
           nameTextStyle: {
             fontWeight: 600,
-            fontSize: 14,
+            fontSize: 10,
           },
           axisLabel: {
             margin: 1,

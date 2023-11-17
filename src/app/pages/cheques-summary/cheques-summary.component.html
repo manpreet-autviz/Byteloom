@@ -4,7 +4,7 @@
       <div class="breadcrumb">
         <div class="card card-animate w-100">
           <div
-            class="card-body d-flex align-items-center justify-content-between"
+            class="card-body d-md-flex d-md-block align-items-center justify-content-between"
           >
             <div>
               <span class="f-7 fs-5">Sanctioned undisbursed cases</span>
@@ -39,7 +39,7 @@
           <div class="card-body box-s">
             <div class="row">
               <div class="col-md-6">
-                <div class="card box-s">
+                <div class="card box-s cheque-pan">
                   <div class="card-body text-center">
                     <span class="f-6 title"> Financial Approved</span>
                     <div class="pan-btn" >
@@ -57,7 +57,7 @@
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="card box-s">
+                <div class="card box-s cheque-pan">
                   <div class="card-body text-center">
                     <span class="f-6 title"> Final Approved</span>
                     <div class="pan-btn3" >
@@ -78,7 +78,8 @@
 
             <div class="card card-grey w-100 mt-3">
               <div class="row p-1">
-                <div class="col-md-3">
+                <div class="d-flex gap-3">
+                  <div>
                   <select
                   id="dropdown"
                   class="cursor-pointer form-select"
@@ -90,11 +91,24 @@
                   </option>
                 </select>
                 </div>
+                <div>
+                <select
+                id="dropdown"
+                class="cursor-pointer form-select"
+                [(ngModel)]="selectedState"
+                (ngModelChange)="onSanctionedStateChange($event)"
+              >
+                <option *ngFor="let state of sanctionedStates" [value]="state">
+                  {{ state }}
+                </option>
+              </select>
+              </div>
+                </div>
               </div>
             </div>
 
             <div class="box-s p-2 mt-3">
-              <div >
+              <div class="business-insights">
                 <table
                   id="table"
                   class="table border rounded business-insights-table"
@@ -112,10 +126,12 @@
                       <th class="border-bottom">Legal </th>
                       <th class="border-bottom">Login Date</th>
                       <th class="border-bottom">RM Name</th>
+                      <th class="border-bottom">State</th>
+                      <th class="border-bottom">Branch</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let item of data">
+                    <tr *ngFor="let item of filterdata">
                       <td class="border-bottom">{{ item.SNo }}</td>
                       <td class="border-bottom">{{ item.leadNo }}</td>
                       <td class="border-bottom">{{ item.custName }}</td>
@@ -132,6 +148,8 @@
                         {{ item.loginDate }}
                       </td>
                       <td class="border-bottom">{{ item.rmName }}</td>
+                      <td class="border-bottom">{{ item.state }}</td>
+                      <td class="border-bottom">{{ item.branch }}</td>
                     </tr>
                   </tbody>
                 </table>

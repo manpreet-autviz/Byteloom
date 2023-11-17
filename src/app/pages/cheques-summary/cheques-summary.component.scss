@@ -16,7 +16,9 @@
   .simple-table {
     margin-top: 20px;
   }
-  
+.business-insights {
+  overflow-x: auto;
+}
   
 .productivity-tabs ul.nav-pills {
   border: 1px solid #908C8C;
@@ -145,4 +147,10 @@ div#table_info {
   border-radius: 4px;
   font-weight: 600;
   font-size: 12px;
+}
+
+@media (max-width: 991px) {
+  .cheque-pan .card-body {
+    text-align: left !important;
+  }
 }

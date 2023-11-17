@@ -254,7 +254,7 @@ export class RejectionAnalysisComponent {
         {
           name: 'Login to disb.',
           type: 'bar',
-          data: [22, 20, 20, 20, 20, 30, 55],
+          data: [44, 49, 48, 50, 47, 44, 48],
           itemStyle: {
             color: '#78D6C6',
             borderRadius: 15,
@@ -269,7 +269,7 @@ export class RejectionAnalysisComponent {
         {
           name: 'FA to disb.',
           type: 'bar',
-          data: [29, 30, 28, 45, 32, 45, 70],
+          data: [79, 81, 85, 86, 80, 75, 85],
           itemStyle: {
             color: '#419197',
             borderRadius: 15,
@@ -284,7 +284,7 @@ export class RejectionAnalysisComponent {
         {
           name: 'Login to FA',
           type: 'bar',
-          data: [41, 40, 40, 35, 50, 40, 60],
+          data: [49, 53, 56, 55, 50, 48, 55],
           itemStyle: {
             color: '#1A5F7A',
             borderRadius: 15,
@@ -557,7 +557,7 @@ export class RejectionAnalysisComponent {
           type: 'pie',
           radius: ['30%', '70%'],
           avoidLabelOverlap: false,
-          top: '6%',
+          top: '10%',
 
           itemStyle: {
             borderRadius: 0,
@@ -571,7 +571,7 @@ export class RejectionAnalysisComponent {
           emphasis: {
             label: {
               show: true,
-              fontSize: 20,
+              fontSize: 18,
               fontWeight: 'bold',
               formatter: '{c}%',
             },
