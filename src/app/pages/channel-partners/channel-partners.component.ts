@@ -244,37 +244,29 @@ export class ChannelPartnersComponent {
         dimensions: ['state', 'Total Number of CPs', 'Active CPs'],
 
         source: [
+          
           {
-            state: 'Pan India',
-            'Total Number of CPs': 1410,
-            'Active CPs': 1250,
+            state: 'PCH',
+            'Total Number of CPs': 160,
+            'Active CPs': 115,
           },
-          {
-            state: 'Punjab',
-            'Total Number of CPs': 1400,
-            'Active CPs': 1230,
-          },
-          {
-            state: 'Haryana',
-            'Total Number of CPs': 1450,
-            'Active CPs': 1370,
-          },
-          { state: 'NCR', 'Total Number of CPs': 1400, 'Active CPs': 1190 },
+          
+          { state: 'NCR', 'Total Number of CPs': 300, 'Active CPs': 220 },
           {
             state: 'Rajasthan',
-            'Total Number of CPs': 1480,
-            'Active CPs': 1350,
+            'Total Number of CPs': 600,
+            'Active CPs': 425,
           },
           {
             state: 'Gujarat',
-            'Total Number of CPs': 1400,
-            'Active CPs': 1190,
+            'Total Number of CPs': 250,
+            'Active CPs': 180,
           },
-          { state: 'MP', 'Total Number of CPs': 1430, 'Active CPs': 1340 },
+          { state: 'MP', 'Total Number of CPs': 440, 'Active CPs': 330 },
           {
             state: 'Maharashtra',
-            'Total Number of CPs': 1400,
-            'Active CPs': 1260,
+            'Total Number of CPs': 260,
+            'Active CPs': 180,
           },
         ],
       },
@@ -293,8 +285,8 @@ export class ChannelPartnersComponent {
         },
       },
       yAxis: {
-        min: 1000,
-        max: 1500,
+        min: 0,
+        max: 600,
         interval: 100,
         axisLine: {
           show: false,
@@ -339,87 +331,14 @@ export class ChannelPartnersComponent {
         },
         formatter: (params: any) => {
           const barValue = params[0].value;
-          const totalLogin = 340;
+         
           const dataIndex = params[0].dataIndex;
-          const percentage = [40, 45, 70, 77, 89, 67, 45];
+          const totalLogin = [3050,244,458,915,366,671,397];
+          const randomtotal = totalLogin[dataIndex];
+          const percentage = [950,90,125,350,105,150,130];
           const randomPerc = percentage[dataIndex];
           // Create the tooltip content with the actual value and random amount
-          return `CP login: ${barValue} <br>Total Login:${totalLogin} <br>  ${randomPerc}% `;
-        },
-      },
-      xAxis: {
-        type: 'category',
-
-        data: [
-          'Pan India',
-          'PCH',
-          'NCR',
-          'Rajasthan',
-          'Gujarat',
-          'MP',
-          'Maharashtra',
-        ],
-        axisLabel: {
-          interval: 0,
-          rotate: 45,
-          overflow: 'break',
-        },
-        axisTick: {
-          show: false,
-        },
-        axisLine: {
-          show: false,
-        },
-      },
-      yAxis: {
-        type: 'value',
-        min: 20,
-        max: 35,
-        interval: 2,
-        axisLine: {
-          show: false,
-        },
-        splitLine: {
-          show: false,
-        },
-        name: '% of Total Login',
-        nameLocation: 'middle',
-        nameGap: 25,
-        nameTextStyle: {
-          fontWeight: 600,
-          fontSize: 14,
-        },
-        axisLabel: {
-          formatter: '{value}',
-          margin: 1,
-        },
-      },
-      series: [
-        {
-          barWidth: 20,
-          data: [30, 31, 28, 31, 31, 27, 31],
-          type: 'bar',
-          itemStyle: {
-            color: '#DBA39A',
-          },
-        },
-      ],
-    };
-
-    this.CPDisbursalOption = {
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow',
-        },
-        formatter: (params: any) => {
-          const barValue = params[0].value;
-          const total = 340;
-          const dataIndex = params[0].dataIndex;
-          const amount = [140, 145, 170, 177, 189, 167, 245];
-          const disbursalAmount = amount[dataIndex];
-
-          return `Total disbursal (amount in Cr): ${total} <br>CP disbursal (amount in Cr) :${disbursalAmount} <br>  ${barValue}% `;
+          return `CP login: ${randomPerc} <br>Total Login:${randomtotal} <br>  ${barValue}% `;
         },
       },
       xAxis: {
@@ -449,7 +368,84 @@ export class ChannelPartnersComponent {
       yAxis: {
         type: 'value',
         min: 5,
-        max: 30,
+        max: 40,
+        interval: 5,
+        axisLine: {
+          show: false,
+        },
+        splitLine: {
+          show: false,
+        },
+        name: '% of Total Login',
+        nameLocation: 'middle',
+        nameGap: 25,
+        nameTextStyle: {
+          fontWeight: 600,
+          fontSize: 14,
+        },
+        axisLabel: {
+          formatter: '{value}',
+          margin: 1,
+        },
+      },
+      series: [
+        {
+          barWidth: 20,
+          data: [31, 37, 27, 38, 29, 22, 33],
+          type: 'bar',
+          itemStyle: {
+            color: '#DBA39A',
+          },
+        },
+      ],
+    };
+
+    this.CPDisbursalOption = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow',
+        },
+        formatter: (params: any) => {
+          const barValue = params[0].value;
+          
+          const dataIndex = params[0].dataIndex;
+          const total = [1300,104,195,390,157,286,169];
+          const totalDisb = total[dataIndex];
+          const amount = [405, 38, 53, 149, 45, 64, 55];
+          const disbursalAmount = amount[dataIndex];
+
+          return `Total disbursal (amount in Cr): ${totalDisb} <br>CP disbursal (amount in Cr) :${disbursalAmount} <br>  ${barValue}% `;
+        },
+      },
+      xAxis: {
+        type: 'category',
+
+        data: [
+          'Pan India',
+          'PCH',
+          'NCR',
+          'Rajasthan',
+          'Gujarat',
+          'MP',
+          'Maharashtra',
+        ],
+        axisLabel: {
+          interval: 0,
+          rotate: 45,
+          overflow: 'break',
+        },
+        axisTick: {
+          show: false,
+        },
+        axisLine: {
+          show: false,
+        },
+      },
+      yAxis: {
+        type: 'value',
+        min: 5,
+        max: 40,
         interval: 5,
         axisLine: {
           show: false,
@@ -472,7 +468,7 @@ export class ChannelPartnersComponent {
       series: [
         {
           barWidth: 20,
-          data: [22, 20.5, 19, 18.5, 20.5, 18.5, 25],
+          data: [31, 37, 27,38, 29, 22, 33],
           type: 'bar',
           itemStyle: {
             color: '#0747A6',
@@ -529,9 +525,9 @@ export class ChannelPartnersComponent {
       },
       yAxis: {
         type: 'value',
-        min: 0.75,
+        min: 0,
         max: 1.25,
-        interval: 0.1,
+        interval: 0.25,
         axisLine: {
           show: false,
         },
@@ -554,7 +550,7 @@ export class ChannelPartnersComponent {
         {
           name: 'Overall',
           barWidth: 20,
-          data: [0.85, 1, 1.05, 1.15, 1.03, 1.15, 1.03],
+          data: [0.8, 0.85, 1.1, 0.65, 1.12, 0.88, 1.01],
           type: 'bar',
           itemStyle: {
             color: '#8675A9',
@@ -563,7 +559,7 @@ export class ChannelPartnersComponent {
         {
           name: 'CP',
           barWidth: 20,
-          data: [1, 1.17, 1.01, 1.18, 1.0, 1.17, 1.0],
+          data: [0.9, 0.98, 1.08, 0.75, 1.36, 0.85, 1.0],
           type: 'bar',
           itemStyle: {
             color: '#D2BEFB',

@@ -4,7 +4,7 @@
       <div class="breadcrumb">
         <div class="card card-animate w-100">
           <div
-            class="card-body d-flex align-items-center justify-content-between"
+            class="card-body d-md-flex d-md-block align-items-center justify-content-between"
           >
             <div>
               <span class="f-7 fs-5">OTC/PDD & Cheque handover</span>
@@ -45,10 +45,16 @@
                       <span class="f-6 title"
                         >Total OTCs pending & no. of customers
                       </span>
-                      <div class="pan-btn" *ngIf="selectedState === 'Pan India'">
+                      <div
+                        class="pan-btn"
+                        *ngIf="selectedState === 'Pan India'"
+                      >
                         <p>Pan India - 1800</p>
                       </div>
-                      <div class="pan-btn2" *ngIf="selectedState === 'Pan India'">
+                      <div
+                        class="pan-btn2"
+                        *ngIf="selectedState === 'Pan India'"
+                      >
                         <p>Pan India - 320</p>
                       </div>
                       <div
@@ -60,60 +66,152 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title"
-                          >Critical/Non critical
-                        </span>
-                        <div
-                          class="state-chart"
-                          id="Critical-NonCritical-Chart"
-                          style="width: 100%; height: 250px"
-                        ></div>
-                      </div>
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">Critical/Non critical </span>
+                      <div
+                        class="state-chart"
+                        id="Critical-NonCritical-Chart"
+                        style="width: 100%; height: 250px"
+                      ></div>
                     </div>
                   </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <div class="sales w-100">
-            <div class="card card-animate w-100 mt-2">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="card box-s">
-                      <div class="card-body text-center">
-                        <span class="f-6 title"
-                          >Owner wise
-                        </span>
-                        <div
-                          class="state-chart"
-                          id="owner-wise-chart"
-                          style="width: 100%; height: 250px"
-                        ></div>
-                      </div>
+          <div class="card card-animate w-100 mt-2">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">Owner wise </span>
+                      <div
+                        class="state-chart"
+                        id="owner-wise-chart"
+                        style="width: 100%; height: 250px"
+                      ></div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                      <div class="card box-s">
-                        <div class="card-body text-center">
-                          <span class="f-6 title"
-                            >Days wise OTCs pending
-                          </span>
-                          <div
-                            class="state-chart"
-                            id="Days-wise-otc"
-                            style="width: 100%; height: 250px"
-                          ></div>
-                        </div>
-                      </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">Days wise OTCs pending </span>
+                      <div
+                        class="state-chart"
+                        id="Days-wise-otc"
+                        style="width: 100%; height: 250px"
+                      ></div>
                     </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="sales w-100">
+          <div class="card card-animate w-100 mt-2">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card box-s">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">Partially disbursed cases<br>Days Wise </span>
+                      <div class="overflow-auto">
+                      <table id="table" class="bucket-list table mt-1" style="width: 100%">
+                        <thead>
+                          <tr class="bg-gray mid-head">
+                            <th class="border-top-0">Bucket<br>(Days)</th>
+                            <th class="border-top-0">Count</th>
+                            <th class="border-top-0">Percentage<br> (%)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center table-data">
+                                <div>
+                                  <h6 class="mb-0 bg-lightpurple">1 - 30</h6>
+                                </div>
+                              </div>
+                            </td>
+                            <td>112</td>      
+                            <td>20</td>                          
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center table-data">
+                                <div>
+                                  <h6 class="mb-0 bg-lightred">31 - 60</h6>
+                                </div>
+                              </div>
+                            </td>
+                            <td>56</td>
+                            <td>10</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center table-data">
+                                <div>
+                                  <h6 class="mb-0 bg-lightyellow">61 - 90</h6>
+                                </div>
+                              </div>
+                            </td>
+                            <td>168</td>
+                            <td>30</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center table-data">
+                                <div>
+                                  <h6 class="mb-0 bg-lightgreen">90+</h6>
+                                </div>
+                              </div>
+                            </td>
+                            <td>224</td>
+                            <td>40</td>                      
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card box-s h-100">
+                    <div class="card-body text-center">
+                      <span class="f-6 title">Partially disbursed cases</span>
+                      <div
+                      class="pan-btn3"
+                      *ngIf="selectedState === 'Pan India'"
+                    >
+                      <p>Pan India - 560</p>
+                    </div>
+                    <div
+                      class="pan-btn4"
+                      *ngIf="selectedState === 'Pan India'"
+                    >
+                      <p>Pan India - 24 Cr</p>
+                    </div>
+                      <div
+                        class="state-chart"
+                        id="otc-handover-chart"
+                        style="width: 100%; height: 250px"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

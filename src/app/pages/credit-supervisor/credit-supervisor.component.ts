@@ -1,4 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
+import { Router } from '@angular/router';
 import * as echarts from 'echarts';
 
 @Component({
@@ -40,7 +41,7 @@ export class CreditSupervisorComponent {
   stateApprovalOption: any;
 
   public isToggled = false;
-  constructor(private cdRef: ChangeDetectorRef) {}
+  constructor(private cdRef: ChangeDetectorRef,private router: Router) {}
 
   ngAfterViewInit(): void {
     this.initializeChart();
@@ -180,4 +181,7 @@ export class CreditSupervisorComponent {
   ontrendStateChange(selectedValue: string) {}
 
   onTrendFilterChange(selectedValue: string) {}
+  openlist(){
+    this.router.navigate(['/work-in-progress-table', 'Pending OTCs']);
+  }
 }

@@ -8,6 +8,14 @@
               <span class="f-7 fs-5">Legal</span>
             </div>
             <div class="d-flex">
+              <button
+              type="button "
+              class="text-white filter-btn-trend btn bg-blue border me-2"
+              
+            >
+               View Trend 
+              <i class="fa-solid fa-chart-line" ></i>
+            </button>
               <select id="dropdown" class="cursor-pointer form-select me-2" [(ngModel)]="selectedFilter"
                 (ngModelChange)="onFilterChange($event)">
                 <option *ngFor="let filter of filters" [value]="filter">
@@ -40,7 +48,7 @@
                 <div class="col-md-4">
                   <div class="card box-s">
                     <div class="card-body text-center">
-                      <span class="f-6 title"> TM wise vetting </span>
+                      <span class="f-6 title"> Legal Manager wise vetting </span>
                       <div class="state-chart" id="legal-TM-wise-vetting" style="width: 100%; height: 300px"></div>
                     </div>
                   </div>
@@ -48,7 +56,11 @@
                 <div class="col-md-3">
                       <div class="text-left">
                         <h5>Assignee</h5>
-                        <span>Total issues :1006</span>
+                        <span>No. of Files :1006</span>
+                      </div>
+                      <div class="text-end">
+                        <p>%</p>
+                        
                       </div>
                       <hr />
                       <div class="assignee-list">
@@ -59,7 +71,7 @@
                                 <h6>K Rahul</h6>
                               </div>
                               <div class="number">
-                                <h6>16</h6>
+                                <h6>15</h6>
                               </div>
                             </div>
                           </li>
@@ -69,7 +81,7 @@
                                 <h6>Harpreet Kaur</h6>
                               </div>
                               <div class="number">
-                                <h6>29</h6>
+                                <h6>16</h6>
                               </div>
                             </div>
                           </li>
@@ -79,7 +91,7 @@
                                 <h6>Manoj Tiwary</h6>
                               </div>
                               <div class="number">
-                                <h6>13</h6>
+                                <h6>18</h6>
                               </div>
                             </div>
                           </li>
@@ -89,7 +101,7 @@
                                 <h6>Ankit Sharma</h6>
                               </div>
                               <div class="number">
-                                <h6>8</h6>
+                                <h6>12</h6>
                               </div>
                             </div>
                           </li>
@@ -99,18 +111,18 @@
                                 <h6>Rahul Thakur</h6>
                               </div>
                               <div class="number">
-                                <h6>9</h6>
+                                <h6>15</h6>
                               </div>
                             </div>
                           </li>
-
+                          
                           <li class="vikram">
                             <div class="name-clr-no">
                               <div class="name">
                                 <h6>Vikram Saini</h6>
                               </div>
                               <div class="number">
-                                <h6>6</h6>
+                                <h6>10</h6>
                               </div>
                             </div>
                           </li>
@@ -120,7 +132,7 @@
                                 <h6>Saurab Kumar</h6>
                               </div>
                               <div class="number">
-                                <h6>5</h6>
+                                <h6>14</h6>
                               </div>
                             </div>
                           </li>

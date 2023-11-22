@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, ElementRef, NgZone } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as XLSX from 'xlsx';
 declare var $: any;
 @Component({
   selector: 'app-work-in-progress-tables',
@@ -53,6 +54,10 @@ export class WorkInProgressTablesComponent {
       productName: 'HL',
       Scheme: 'Top Up',
       LoginDate: '09/25/2023',
+      LoanAmount:'9.00',
+      CurrentStatus: 'PD Positive',
+      RMName:'Nikhil Rana'
+      
     },
     {
       SNo: 2,
@@ -64,6 +69,9 @@ export class WorkInProgressTablesComponent {
       productName: 'SBL',
       Scheme: 'Fresh',
       LoginDate: '09/25/2023',
+      LoanAmount:'10.00',
+      CurrentStatus: 'Financial Approved',
+      RMName:'Amit Verma'
     },
     {
       SNo: 3,
@@ -75,6 +83,9 @@ export class WorkInProgressTablesComponent {
       productName: 'SBL',
       Scheme: 'BT',
       LoginDate: '09/25/2023',
+      LoanAmount:'5.00',
+      CurrentStatus: 'Final Approved',
+      RMName:'Rajesh Kumar'
     },
     {
       SNo: 4,
@@ -86,6 +97,9 @@ export class WorkInProgressTablesComponent {
       productName: 'SBL',
       Scheme: 'SBL',
       LoginDate: '09/25/2023',
+      LoanAmount:'7.00',
+      CurrentStatus: 'Disbursed',
+      RMName:'Nirmal Singh'
     },
     {
       SNo: 5,
@@ -97,6 +111,9 @@ export class WorkInProgressTablesComponent {
       productName: 'LAP',
       Scheme: 'Fresh',
       LoginDate: '09/25/2023',
+      LoanAmount:'15.00',
+      CurrentStatus: 'Under Query',
+      RMName:'Gaurav Kapoor'
     },
     {
       SNo: 6,
@@ -108,6 +125,9 @@ export class WorkInProgressTablesComponent {
       productName: 'BL',
       Scheme: 'Top Up',
       LoginDate: '09/25/2023',
+      LoanAmount:'20.00',
+      CurrentStatus: 'Disbursed',
+      RMName:'Nikhil Taneja'
     },
     {
       SNo: 7,
@@ -119,6 +139,9 @@ export class WorkInProgressTablesComponent {
       productName: 'LAP',
       Scheme: 'Fresh',
       LoginDate: '09/25/2023',
+      LoanAmount:'30.00',
+      CurrentStatus: 'PD Negative',
+      RMName:'Anil Gupta'
     },
     {
       SNo: 8,
@@ -130,6 +153,9 @@ export class WorkInProgressTablesComponent {
       productName: 'LAP',
       Scheme: 'Fresh',
       LoginDate: '09/25/2023',
+      LoanAmount:'15.00',
+      CurrentStatus: 'PD Pending',
+      RMName:'Saurabh Saini'
     },
     {
       SNo: 9,
@@ -141,6 +167,9 @@ export class WorkInProgressTablesComponent {
       productName: 'SBL',
       Scheme: 'BT',
       LoginDate: '09/25/2023',
+      LoanAmount:'8.00',
+      CurrentStatus: 'BTR',
+      RMName:'Vivek'
     },
     {
       SNo: 10,
@@ -152,6 +181,9 @@ export class WorkInProgressTablesComponent {
       productName: 'SBL',
       Scheme: 'Top Up',
       LoginDate: '09/25/2023',
+      LoanAmount:'25.00',
+      CurrentStatus: 'PD Pending',
+      RMName:'Raman Rana'
     },
    
   ];
@@ -190,4 +222,10 @@ export class WorkInProgressTablesComponent {
   onFilterChange(selectedValue: string) {}
 
   onStateChange(selectedValue: string) {}
+  exportToExcel(data: any[], fileName: string, sheetName: string): void {
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(data);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, sheetName);
+    XLSX.writeFile(wb, `${fileName}.xlsx`);
+  }
 }

@@ -65,9 +65,9 @@
   margin-right: 110px !important;
 }
 
-.wip-binery-tree ul.wip-tree-fourth-step {
-  margin-right: 90px !important;
-}
+// .wip-binery-tree ul.wip-tree-fourth-step {
+//   margin-right: 90px !important;
+// }
 .wip-binery-tree ul.wip-tree-second-step {
   margin-left: 90px !important;
 }
@@ -91,7 +91,7 @@
 .tree.vertical li:after {
   border-top: 1px solid #ddd;
   height: 0;
-  width: 100%;
+  width: 170%;
 }
 .wip-binery-tree li:first-child:after {
   width: 110% !important;
@@ -323,15 +323,15 @@ ul.tree.vertical ul li div p {
   content: "";
   background: #e4e4e4;
   height: 1px;
-  width: 31%;
+  width: 50%;
 }
 .divider:after {
   top: 0;
-  left: 252px;
+  left: 80px;
 }
 .divider:before {
   top: 0;
-  right: 252px;
+  right: 230px;
 }
 .divider2 {
   padding: 0 !important;
@@ -344,15 +344,16 @@ ul.tree.vertical ul li div p {
   content: "";
   background: #ddd;
   width: 1px;
-  height: 25px;
+  height: 40px;
 }
 .divider2:after {
-  top: -54px;
+  top: -71px;
   left: 413px;
+  height: 42px;
 }
 .divider2:before {
-  top: -54px;
-  right: 413px;
+  top: -69px;
+  right: 562px;
 }
 .single-top-border .box-s.custom-top:before {
   position: absolute;

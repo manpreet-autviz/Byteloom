@@ -216,7 +216,7 @@ export class ChequesSummaryComponent {
 
   generateRandomData() {
     this.data.forEach((item) => {
-      item.SNo = Math.floor(Math.random() * 1000) + 1;
+    
       item.leadNo = '0109';
       item.custName = 'Anita';
       item.product = 'BL';
@@ -301,8 +301,8 @@ export class ChequesSummaryComponent {
             fontWeight: 600,
             fontSize: 14,
           },
-          min: 10,
-          max: 100,
+          min: 0,
+          max: 50,
           interval: 10,
           axisLine: {
             show: false,
@@ -323,9 +323,9 @@ export class ChequesSummaryComponent {
             fontWeight: 600,
             fontSize: 14,
           },
-          min: 10,
-          max: 90,
-          interval: 10,
+          min: 0,
+          max: 600,
+          interval: 100,
           axisLine: {
             show: false,
           },
@@ -347,7 +347,7 @@ export class ChequesSummaryComponent {
               return value;
             },
           },
-          data: [50, 55, 40, 55, 60, 40],
+          data: [10, 18, 36, 14, 26, 16],
           itemStyle: {
             color: '#55BBCC',
           },
@@ -363,7 +363,7 @@ export class ChequesSummaryComponent {
               return value;
             },
           },
-          data: [50, 55, 40, 55, 60, 40],
+          data: [120, 225, 450, 180, 330, 195],
           itemStyle: {
             color: '#F0B86E',
           },
@@ -422,9 +422,9 @@ export class ChequesSummaryComponent {
             fontWeight: 600,
             fontSize: 14,
           },
-          min: 10,
-          max: 100,
-          interval: 10,
+          min: 0,
+          max: 25,
+          interval: 5,
           axisLine: {
             show: false,
           },
@@ -444,9 +444,9 @@ export class ChequesSummaryComponent {
             fontWeight: 600,
             fontSize: 14,
           },
-          min: 10,
-          max: 90,
-          interval: 10,
+          min: 0,
+          max: 300,
+          interval: 50,
           axisLine: {
             show: false,
           },
@@ -468,7 +468,7 @@ export class ChequesSummaryComponent {
               return value;
             },
           },
-          data: [50, 55, 40, 55, 60, 40],
+          data: [5, 9, 18, 7, 13, 8],
           itemStyle: {
             color: '#8294C4',
           },
@@ -483,7 +483,7 @@ export class ChequesSummaryComponent {
               return value;
             },
           },
-          data: [50, 55, 40, 55, 60, 40],
+          data: [64, 120, 240, 96, 176, 104],
           itemStyle: {
             color: 'rgba(239, 149, 149, 0.6)',
           },

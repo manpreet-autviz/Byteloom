@@ -237,7 +237,7 @@ export class BranchSearchComponent {
           },
           emphasis: {
             label: {
-              fontSize: 10,
+              fontSize: 13,
               color: 'white',
             },
           },

@@ -205,14 +205,14 @@
                     <span class="f-6 title">Business Status</span>
                   </div>
                   <div class="d-flex justify-content-end calendar-icon">
-                    <input type="date" class="cursor-pointer" id="birthday" name="birthday" [(ngModel)]="selectedDate" (change)="onDateSelected()"  />
+                    <input type="date" class="cursor-pointer" id="birthday"  max="2023-11-25" name="birthday" [(ngModel)]="selectedDate" (change)="onDateSelected()"  />
                   </div>
                 </div>
                 <div class="table-responsive text-center mt-4">
                   <div class="bg-lightgray c-head">
                     <i class="fas fa-angle-left cursor-pointer" (click)="onPreviousDayClick()"
                       [ngClass]="{ disabled: isPreviousDisabled }"></i>&nbsp;
-                    {{ currentDate | date : "dd-MM-yyyy" }}
+                    {{ (currentDate > maxlimitDate ? maxlimitDate : currentDate)  | date : "dd-MM-yyyy" }}
                     &nbsp;
                     <i class="fas fa-angle-right cursor-pointer" (click)="onNextDayClick()"
                       [ngClass]="{ disabled: isNextDisabled }"></i>

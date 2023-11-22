@@ -36,12 +36,14 @@ export class OtcPddComponent {
   CriticalNonCriticalChart!: echarts.ECharts;
   OwnerWiseChart!: echarts.ECharts;
   DaysWiseOTCChart!: echarts.ECharts;
+  OTCHandoverChart!: echarts.ECharts;
  
 
   TotalReportOption:any;
   CriticalNonCriticalOption:any;
   OwnerWiseOption:any;
   DaysWiseOTCOption:any;
+  OTCHandoveroption:any;
 
   constructor(
     private elementRef: ElementRef,
@@ -75,6 +77,9 @@ export class OtcPddComponent {
     );
     this.DaysWiseOTCChart = echarts.init(
       document.getElementById('Days-wise-otc') as HTMLDivElement
+    );
+    this.OTCHandoverChart = echarts.init(
+      document.getElementById('otc-handover-chart') as HTMLDivElement
     );
 
 
@@ -431,9 +436,130 @@ export class OtcPddComponent {
       ],
     };
 
+    this.OTCHandoveroption = {
+      tooltip: {
+        trigger: 'axis',
+        formatter: function (params: any[]) {
+          let tooltip = params[0].axisValue + '<br>';
+          params.forEach(function (item) {
+            if (item.seriesType === 'bar') {
+              tooltip += 'No. of Files' + ': ' + item.value + ' <br>';
+            } else if (item.seriesType === 'line') {
+              tooltip += 'Amount(in Lacs.)' + ': ' + item.value;
+            }
+          });
+          return tooltip;
+        },
+      },
+
+      legend: {
+        // data: ['Financial approvals no.', 'Financial approvals amount'],
+      },
+      xAxis: [
+        {
+          type: 'category',
+          axisLine: {
+            show: false,
+          },
+
+          axisTick: {
+            show: false,
+          },
+          axisLabel: {
+            interval: 0,
+            rotate: -45,
+            overflow: 'break',
+          },
+          data: ['PCH', 'NCR', 'Rajasthan', 'Gujarat', 'MP', 'Maharashtra'],
+          axisPointer: {
+            type: 'shadow',
+          },
+        },
+      ],
+      yAxis: [
+        {
+          type: 'value',
+          name: 'No. of Files',
+          nameLocation: 'middle',
+          nameGap: 40,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize: 14,
+          },
+          min: 25,
+          max: 200,
+          interval: 25,
+          axisLine: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+          axisLabel: {
+            formatter: '{value} ',
+          },
+        },
+        {
+          type: 'value',
+          name: 'Amount (In Cr)',
+          nameLocation: 'middle',
+          nameGap: 40,
+          nameTextStyle: {
+            fontWeight: 600,
+            fontSize: 14,
+          },
+          min: 0,
+          max: 8,
+          interval: 1,
+          axisLine: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+          axisLabel: {
+            formatter: '{value} ',
+          },
+        },
+      ],
+      series: [
+        {
+         
+          barWidth: 20,
+          type: 'bar',
+          tooltip: {
+            valueFormatter: function (value: any) {
+              return value;
+            },
+          },
+          data: [45, 84, 168, 67, 123, 73],
+          itemStyle: {
+            color: '#55BBCC',
+          },
+        },
+
+        {
+          
+          type: 'line',
+
+          yAxisIndex: 1,
+          tooltip: {
+            valueFormatter: function (value: any) {
+              return value;
+            },
+          },
+          data: [1.92, 3.6, 7.2, 2.88, 5.28, 3.12],
+          itemStyle: {
+            color: '#F0B86E',
+          },
+        },
+      ],
+    };
+
     this.TotalReportChart.setOption(this.TotalReportOption);
     this.CriticalNonCriticalChart.setOption(this.CriticalNonCriticalOption)
     this.OwnerWiseChart.setOption(this.OwnerWiseOption)
     this.DaysWiseOTCChart.setOption(this.DaysWiseOTCOption)
+    this.OTCHandoverChart.setOption(this.OTCHandoveroption)
   }
 }

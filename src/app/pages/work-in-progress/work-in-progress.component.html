@@ -403,6 +403,34 @@
                             </div>
                           </div>
                         </li>
+                        <li>
+                          <div class="box-s">
+                            <p
+                              class="bg-bred cursor-pointer"
+                              (click)="
+                                workInprogressTable(
+                                  'PD Positive, PD Negative, Under query & Appraisal pending'
+                                )
+                              "
+                            >
+                             Rejected 
+                            </p>
+                            <div class="d-flex align-items-center fs-12r m-0">
+                              <div
+                                class="disbursal-dots dot-purple mx-1 m-0"
+                              ></div>
+                              10
+                              <div
+                                class="indicators align-items-center d-flex mx-3 fs-12 m-0"
+                              >
+                                <div
+                                  class="disbursal-dots dot-orange mx-1"
+                                ></div>
+                                20CR
+                              </div>
+                            </div>
+                          </div>
+                        </li>
                       </ul>
                     </li>
                   </ul>
@@ -422,7 +450,11 @@
                       </div>
                       <ul>
                         <li>
-                          <div class="box-s cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="No. of Files  &#013;PCH : 46 &#013;NCR : 25&#013;Rajasthan : 9&#013;Gujarat : 23&#013;MP : 51&#013;Maharashtra : 46">
+                          <div  (click)="
+                          workInprogressTable(
+                            'Technical'
+                          )
+                        " class="box-s cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="No. of Files  &#013;PCH : 46 &#013;NCR : 25&#013;Rajasthan : 9&#013;Gujarat : 23&#013;MP : 51&#013;Maharashtra : 46">
                             <p class="bg-purple">Technical</p>
                             <div class="d-flex align-items-center fs-12 m-0">
                               <div

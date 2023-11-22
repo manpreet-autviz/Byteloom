@@ -8,7 +8,14 @@
               <span class="f-7 fs-5"> Credit supervisor </span>
             </div>
             <div class="d-flex">
-            
+              <button
+              type="button "
+              class="text-white filter-btn-trend btn bg-blue border me-2"
+              
+            >
+               View Trend 
+              <i class="fa-solid fa-chart-line" ></i>
+            </button>
               <select
                 id="dropdown"
                 class="cursor-pointer form-select me-2"
@@ -264,7 +271,7 @@
 
                         <div class="otc-three-box">
                           <p>OTC</p>
-                          <div class="cheque-polygon box-s mt-3">
+                          <div (click)="openlist()" class="cursor-pointer cheque-polygon box-s mt-3">
                             <ul class="pending-cheque">
                               <li>270</li>
                               <li>90</li>

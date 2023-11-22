@@ -2,6 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 import * as echarts from 'echarts';
 import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import { Router } from '@angular/router';
 const today = new Date();
 const currentMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
 const currentMonthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0);
@@ -15,12 +16,13 @@ const customValidRange = {
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements AfterViewInit {
+  
   calendarOptions: CalendarOptions = {
     plugins: [dayGridPlugin],
     initialView: 'dayGridMonth',
     visibleRange: {
       start: new Date(), // Start from the current date
-      end: new Date(new Date().getFullYear(), new Date().getMonth(), 1), // End at the first day of the current month
+      end: new Date('2023-11-25')// End at the first day of the current month
     },
     // weekends: true,
 
@@ -84,7 +86,7 @@ export class LoginComponent implements AfterViewInit {
   selectedBranch: string = 'All';
 
   public isToggled = false;
-  constructor(private cdRef: ChangeDetectorRef) {}
+  constructor(private cdRef: ChangeDetectorRef,private router :Router) {}
 
   ngAfterViewInit(): void {
     this.initializeChart();
@@ -103,7 +105,7 @@ export class LoginComponent implements AfterViewInit {
   }
 
   generateRandomEvents() {
-    const today = new Date();
+    const today : Date = new Date('2023-11-25');
     const startDate = new Date(today.getFullYear(), today.getMonth(), 1); // 1st day of the current month
     const endDate = today;
 
@@ -170,7 +172,7 @@ export class LoginComponent implements AfterViewInit {
           formatter: (params: any) => {
             const dataIndex = params[0].dataIndex;
             const barValue = params[0].value * 1000;
-            const randomAmounts = [350, 145, 167, 370, 290, 300, 320, 550];
+            const randomAmounts = [71.5, 121, 66, 165, 82.5, 44];
             const randomAmount = randomAmounts[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
@@ -244,14 +246,14 @@ export class LoginComponent implements AfterViewInit {
             const dataIndex = params[0].dataIndex;
             const files = [11, 8, 6, 12, 10, 7, 9];
             const avgNoOfFile = files[dataIndex];
-            const amount = [35, 20, 24, 67, 32, 21, 23];
+            const amount = [244, 458, 915, 366, 671, 397];
             const amountInCr = amount[dataIndex];
-            const randomAmount = [77, 75, 76, 79, 80, 77, 89];
+            const randomAmount = [48, 90, 180, 72, 132, 78];
 
             const activeRMs = randomAmount[dataIndex];
 
             // Create the tooltip content with the actual value and random amount
-            return `Avg no. of files : ${avgNoOfFile}<br> Amount in Cr: ${amountInCr}<br> Active RMs: ${activeRMs}`;
+            return `Avg no. of files : ${avgNoOfFile}<br> Total Files: ${amountInCr}<br> Active RMs: ${activeRMs}`;
           },
         },
         responsive: true,
@@ -326,11 +328,11 @@ export class LoginComponent implements AfterViewInit {
             let tooltipText = '';
 
             if (params.name === 'BT') {
-              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 45';
+              tooltipText = 'No. of files: 1983 ';
             } else if (params.name === 'Top-Up') {
-              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 27';
+              tooltipText = 'No. of files: 458 ';
             } else if (params.name === 'Fresh') {
-              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 26';
+              tooltipText = 'No. of files: 610 ';
             }
 
             return tooltipText;
@@ -363,8 +365,8 @@ export class LoginComponent implements AfterViewInit {
             },
             data: [
               { value: 65, name: 'Fresh', itemStyle: { color: '#f6c342' } },
-              { value: 27, name: 'Top-Up', itemStyle: { color: '#6c757d' } },
-              { value: 26, name: 'BT', itemStyle: { color: '#198754' } },
+              { value: 15, name: 'Top-Up', itemStyle: { color: '#6c757d' } },
+              { value: 20, name: 'BT', itemStyle: { color: '#198754' } },
             ],
           },
         ],
@@ -377,13 +379,13 @@ export class LoginComponent implements AfterViewInit {
             let tooltipText = '';
 
             if (params.name === 'HL') {
-              tooltipText = 'No. of files: 1000 <br/> Amount in Cr: 150';
+              tooltipText = 'No. of files: 1678 ';
             } else if (params.name === 'LAP') {
-              tooltipText = 'No. of files: 700 <br/> Amount in Cr: 100';
+              tooltipText = 'No. of files: 458' ;
             } else if (params.name === 'BL') {
-              tooltipText = 'No. of files: 800 <br/> Amount in Cr: 120';
+              tooltipText = 'No. of files: 305 ';
             } else if (params.name === 'SBL') {
-              tooltipText = 'No. of files: 900 <br/> Amount in Cr: 135';
+              tooltipText = 'No. of files: 610 ';
             }
 
             return tooltipText;
@@ -431,13 +433,13 @@ export class LoginComponent implements AfterViewInit {
             let tooltipText = '';
 
             if (params.name === 'Online') {
-              tooltipText = 'No. of files: 1000 <br/> Percentage : 25';
+              tooltipText = 'No. of files: 763 ';
             } else if (params.name === 'Cheque') {
-              tooltipText = 'No. of files: 700 <br/> Percentage : 35';
+              tooltipText = 'No. of files: 1068 ';
             } else if (params.name === 'Cash') {
-              tooltipText = 'No. of files: 800 <br/> Percentage : 10';
+              tooltipText = 'No. of files: 305 ';
             } else if (params.name === 'UPI') {
-              tooltipText = 'No. of files: 900 <br/> Percentage : 30';
+              tooltipText = 'No. of files: 915 ';
             }
 
             return tooltipText;
@@ -957,7 +959,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [0.915, 0.854, 0.999, 0.671, 0.915, 0.915, 0.946, 0.915],
+            data: [0.915, 0.854, 0.999, 0.808, 0.915, 0.915, 0.946, 0.915],
           },
           {
             name: 'LAP',
@@ -1069,7 +1071,7 @@ export class LoginComponent implements AfterViewInit {
         ],
         series: [
           {
-            name: 'Top Up',
+            name: 'Fresh',
             type: 'line',
 
             areaStyle: {
@@ -1081,10 +1083,10 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [0.915, 0.854, 0.999, 0.671, 0.915, 0.915, 0.946, 0.915],
+            data: [0.915, 0.854, 0.999, 0.810, 0.915, 0.915, 0.946, 0.915],
           },
           {
-            name: 'Fresh',
+            name: 'Top Up',
             type: 'line',
 
             areaStyle: {
@@ -1169,7 +1171,7 @@ export class LoginComponent implements AfterViewInit {
             interval: 100,
             name: 'Number of files',
             nameLocation: 'middle',
-            nameGap: 25,
+            nameGap: 28,
             nameTextStyle: {
               fontWeight: 600,
               fontSize: 14,
@@ -1190,7 +1192,7 @@ export class LoginComponent implements AfterViewInit {
                 opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
               },
             },
-            data: [915, 854, 1068, 671, 915, 915, 946, 915],
+            data: [915, 854, 1068, 760, 915, 915, 946, 915],
           },
           {
             name: 'DSA',
@@ -2917,5 +2919,9 @@ export class LoginComponent implements AfterViewInit {
       });
       this.trendSourceChart.setOption(this.trendSourceOption);
     }
+  }
+
+  loginNavigation(){
+    this.router.navigate(['/work-in-progress-table', 'State Wise Login']);
   }
 }

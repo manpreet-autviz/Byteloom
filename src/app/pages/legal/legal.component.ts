@@ -166,9 +166,9 @@ export class LegalComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [4, 3, 4, 5, 3, 4, 5],
+          data: [3.3, 3.5, 3.3, 2.8, 4.2, 3.8, 3.2],
           itemStyle: {
-            color: '#B0578D',
+            color: '#9D76C1',
           },
         },
         {
@@ -184,9 +184,9 @@ export class LegalComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [2,3, 2, 3, 5, 4, 6],
+          data: [1.8, 2.2, 2.3, 2.5, 1.5, 1.4, 1.2],
           itemStyle: {
-            color: '#EF9595',
+            color: '#DE8F5F',
           },
         },
       ],
@@ -207,14 +207,14 @@ export class LegalComponent {
 
           data: [
             {
-              value: 16,
+              value: 15,
               name: 'K Rahul',
               itemStyle: {
                 color: '#9D76C1',
               },
             },
             {
-              value: 29,
+              value: 16,
               name: 'Harpreet kaur',
               itemStyle: {
                 color: '#7D6E83',
@@ -222,35 +222,35 @@ export class LegalComponent {
             },
 
             {
-              value: 13,
+              value: 18,
               name: 'Manoj Tiwary',
               itemStyle: {
                 color: '#A75D5D',
               },
             },
             {
-              value: 8,
+              value: 12,
               name: 'Ankit Sharma',
               itemStyle: {
                 color: '#DBA39A',
               },
             },
             {
-              value: 9,
+              value: 10,
               name: 'Rahul Thakur',
               itemStyle: {
                 color: '#DF7861',
               },
             },
             {
-              value: 6,
+              value: 15,
               name: 'Vikram Saini',
               itemStyle: {
                 color: '#ECB390',
               },
             },
             {
-              value: 5,
+              value: 14,
               name: 'Saurabh Kumar',
               itemStyle: {
                 color: '#AD8B73',

@@ -56,8 +56,8 @@
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <div class="export-btn">
-                                <a href="">Export <img src="../../../assets/icons/ph_export-fill.svg"></a>
+                              <div class="export-btn cursor-pointer" (click)="exportToExcel(data, 'excel-file', 'Sheet1')">
+                                <a>Export <img src="../../../assets/icons/ph_export-fill.svg"></a>
                               </div>
                             </div>
                           </div>

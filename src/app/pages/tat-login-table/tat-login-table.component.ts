@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, ElementRef, NgZone } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as XLSX from 'xlsx';
 declare var $: any;
 
 @Component({
@@ -197,4 +198,10 @@ export class TatLoginTableComponent {
   onFilterChange(selectedValue: string) {}
 
   onStateChange(selectedValue: string) {}
+  exportToExcel(data: any[], fileName: string, sheetName: string): void {
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(data);
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, sheetName);
+    XLSX.writeFile(wb, `${fileName}.xlsx`);
+  }
 }

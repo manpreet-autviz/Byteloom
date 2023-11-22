@@ -185,6 +185,7 @@
                 [value]="files"
                 [scrollable]="true"
                 [tableStyle]="{ 'min-width': '50rem' }"
+                
               >
                 <ng-template pTemplate="header">
                   <tr class="tat-head-first-r text-center text-white">
@@ -228,6 +229,7 @@
                 [value]="selectedTat === 'Final Approvals' ? finalData : selectedTat === 'Financial Approvals' ? financialData : selectedTat === 'Disbursal' ? finalData : loginData"
                 [scrollable]="true"
                 [tableStyle]="{ 'min-width': '50rem' }"
+               >
               >
                 <ng-template pTemplate="header">
                   <tr class="tat-head-first-r text-center text-white">

@@ -152,24 +152,6 @@ export class TechnicalComponent {
       ],
       series: [
         {
-          name: 'Vetting',
-          type: 'line',
-
-          areaStyle: {
-            opacity: 0,
-          },
-          emphasis: {
-            focus: 'series',
-            areaStyle: {
-              opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
-            },
-          },
-          data: [2, 4, 3, 5, 6, 5, 6],
-          itemStyle: {
-            color: '#9D76C1',
-          },
-        },
-        {
           name: 'Report',
           type: 'line',
 
@@ -182,7 +164,25 @@ export class TechnicalComponent {
               opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
             },
           },
-          data: [2, 2, 3, 3, 4, 3, 5],
+          data: [3.3, 3.5, 3.3, 2.8, 4.2, 3.8, 3.2],
+          itemStyle: {
+            color: '#9D76C1',
+          },
+        },
+        {
+          name: 'Vetting',
+          type: 'line',
+
+          areaStyle: {
+            opacity: 0,
+          },
+          emphasis: {
+            focus: 'series',
+            areaStyle: {
+              opacity: 0.5, // Reduce opacity on hover to make it semi-transparent
+            },
+          },
+          data: [1.8, 2.2, 2.3, 2.5, 1.5, 1.4, 1.2],
           itemStyle: {
             color: '#DE8F5F',
           },
@@ -204,14 +204,14 @@ export class TechnicalComponent {
 
           data: [
             {
-              value: 16,
+              value: 15,
               name: 'K Rahul',
               itemStyle: {
                 color: '#9D76C1',
               },
             },
             {
-              value: 29,
+              value: 16,
               name: 'Harpreet kaur',
               itemStyle: {
                 color: '#7D6E83',
@@ -219,40 +219,41 @@ export class TechnicalComponent {
             },
 
             {
-              value: 13,
+              value: 18,
               name: 'Manoj Tiwary',
               itemStyle: {
                 color: '#A75D5D',
               },
             },
             {
-              value: 8,
+              value: 12,
               name: 'Ankit Sharma',
               itemStyle: {
                 color: '#DBA39A',
               },
             },
             {
-              value: 9,
+              value: 10,
               name: 'Rahul Thakur',
               itemStyle: {
                 color: '#DF7861',
               },
             },
             {
-              value: 6,
+              value: 15,
               name: 'Vikram Saini',
               itemStyle: {
                 color: '#ECB390',
               },
             },
             {
-              value: 5,
+              value: 14,
               name: 'Saurabh Kumar',
               itemStyle: {
                 color: '#AD8B73',
               },
             },
+           
           ],
           emphasis: {
             label: {
@@ -297,7 +298,7 @@ export class TechnicalComponent {
       },
       tooltip: {
         trigger: 'axis',
-        formatter: 'No. of Reports: {c}',
+        formatter: 'Percentage: {c}%',
       },
       legend: {
         data: ['Total Reports','Internal Reports'],

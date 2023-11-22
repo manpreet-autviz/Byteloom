@@ -1,6 +1,6 @@
 .pan-btn p{
     margin: 0;
-    font-size: 14px;
+    font-size: 10px !important;
     background: rgba(60, 126, 190, 0.2);
     width: fit-content;
     padding: 6px 8px;
@@ -13,14 +13,90 @@
 }
 .pan-btn2 p{
     margin: 0;
-    font-size: 14px;
+    font-size: 10px !important;
     background: rgba(238, 147, 34, 0.20);
     width: fit-content;
     padding: 6px 8px;
     position: absolute;
     right: 20px;
-    top: 55px;
+    top: 45px;
     border-radius: 4px;
     font-weight: 600;
     font-size: 12px;
+}
+.pan-btn3 p{
+    margin: 0;
+    font-size: 10px !important;
+    background: #55bbcc;
+    width: fit-content;
+    padding: 6px 8px;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 12px;
+}
+.pan-btn4 p{
+    margin: 0;
+    font-size: 10px !important;
+    background: #f1bb73;
+    width: fit-content;
+    padding: 6px 8px;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 12px;
+}
+.bucket-list tbody, td, tfoot, th, thead, tr{
+    border-style: none !important;
+    padding-top: 10px;
+}
+.border-bottom{
+    border-bottom:  1px solid #ccc !important;
+}
+.bg-gray{
+    background-color: #E8E8E8;
+}
+.bucket-list tr {
+    border-bottom: 1px solid #cbcbcb !important;
+}
+.table-data h6 {
+    padding: 5px;
+    min-width: 100px;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+.bg-lightpurple {
+    background-color: rgba(41, 98, 255, 0.1);
+}
+.bg-lightred {
+    background-color: rgba(254, 84, 25, 0.24);
+}
+.bg-lightyellow{
+    background-color: rgba(249, 155, 0, 0.2);
+}
+.bg-lightgreen {
+    background-color: rgb(241, 126, 126);
+}
+
+@media (max-width: 991px) {
+    .pan-btn p{
+        right: 0px;
+        top: 5px;
+    }
+    .pan-btn2 p{
+        right: 0px;
+        top: 45px;
+    }
+    .pan-btn3 p{
+        right: 0px;
+    }
+    .pan-btn4 p{
+        right: 0px
+    }
 }

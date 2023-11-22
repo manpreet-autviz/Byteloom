@@ -112,6 +112,7 @@ export class DashboardComponent {
   DisbursalJsonData:any;
   selectedDate!: string;
   DisbursalNumber: number = 100;
+   maxlimitDate: Date = new Date('2023-11-25');
   constructor(
     private el: ElementRef,
     private router: Router,
@@ -298,8 +299,12 @@ export class DashboardComponent {
     if (!this.isNextDisabled) {
       const newDate = new Date(this.currentDate);
       newDate.setDate(newDate.getDate() + 1);
-      this.currentDate = newDate;
-      this.onDateChange();
+      
+      if (newDate <= this.maxlimitDate) {  // Assuming maxDate is set to November 25th
+        this.currentDate = newDate;
+        this.onDateChange();
+      }
+    
     }
 
     this.isPreviousDisabled = false;
