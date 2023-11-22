@@ -123,7 +123,7 @@ export class CreditSupervisorComponent {
             interval: 10,
             name: 'Percentage',
             nameLocation: 'middle',
-            nameGap: 43,
+            nameGap: 30,
             nameTextStyle: {
               fontWeight: 600,
               fontSize:14,

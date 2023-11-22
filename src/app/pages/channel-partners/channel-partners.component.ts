@@ -415,7 +415,7 @@ export class ChannelPartnersComponent {
           const amount = [405, 38, 53, 149, 45, 64, 55];
           const disbursalAmount = amount[dataIndex];
 
-          return `Total disbursal (amount in Cr): ${totalDisb} <br>CP disbursal (amount in Cr) :${disbursalAmount} <br>  ${barValue}% `;
+          return `Total disbursal (Cr): ${totalDisb} <br>CP disbursal (Cr) :${disbursalAmount} <br>  ${barValue}% `;
         },
       },
       xAxis: {
@@ -536,7 +536,7 @@ export class ChannelPartnersComponent {
         },
         name: 'Delinquency in %',
         nameLocation: 'middle',
-        nameGap: 25,
+        nameGap: 27,
         nameTextStyle: {
           fontWeight: 600,
           fontSize: 14,

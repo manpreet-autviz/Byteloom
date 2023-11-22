@@ -128,7 +128,7 @@ export class PortfolioHealthComponent {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 20,
+          nameGap: 19,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,
@@ -205,7 +205,7 @@ export class PortfolioHealthComponent {
             interval: 0.5,
             name: 'Percentage %',
             nameLocation: 'middle',
-            nameGap: 23,
+            nameGap: 20,
             nameTextStyle: {
               fontWeight: 600,
               fontSize:14,
@@ -297,7 +297,7 @@ export class PortfolioHealthComponent {
           },
           name: 'Percentage %',
           nameLocation: 'middle',
-          nameGap: 20,
+          nameGap: 19,
           nameTextStyle: {
             fontWeight: 600,
             fontSize:14,

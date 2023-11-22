@@ -389,7 +389,7 @@ export class ChequesSummaryComponent {
       },
 
       legend: {
-        data: ['Financial approvals no.', 'Financial approvals amount'],
+        data: ['Final approvals no.', 'Final approvals amount'],
       },
       xAxis: [
         {
@@ -460,7 +460,7 @@ export class ChequesSummaryComponent {
       ],
       series: [
         {
-          name: 'Financial approvals no.',
+          name: 'Final approvals no.',
           barWidth: 20,
           type: 'bar',
           tooltip: {
@@ -475,7 +475,7 @@ export class ChequesSummaryComponent {
         },
 
         {
-          name: 'Financial approvals amount',
+          name: 'Final approvals amount',
           type: 'line',
           yAxisIndex: 1,
           tooltip: {
